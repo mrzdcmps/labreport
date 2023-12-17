@@ -1,0 +1,35 @@
+---
+title: "Change of Evidence"
+format: 
+  html:
+    page-layout: full
+    css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+editor: visual
+execute: 
+  echo: false
+---
+
+Last update: 04 May 2020
+
+Change of Evidence measures compare the Bayesian evidence for an effect over the course of data collection to those of monte-carlo simulations. They can reveal unusual changes in evidence which can be the consequence of the rise and decline of volatile effects.
+
+```{r}
+st2 <- readRDS("coe.rds")
+
+library(formattable)
+formattable(format(st2, digits=2, nsmall = 2, scientific=F),
+            align = c("l",rep("c", NCOL(st2) - 1)),
+            list(`MaxBF p` = formatter("span",
+                                       style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
+                 `Energy p` = formatter("span",
+                                       style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
+                 `FFT p` = formatter("span",
+                                       style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
+                 `Experimental condition` = formatter("span", 
+                                   x ~ icontext(ifelse(x == F, "remove", "ok")), 
+                                   style = x ~ style(color = ifelse(x == F, "red", "green"))),
+                 `Labstudy` = formatter("span", 
+                                        x ~ icontext(ifelse(x == F, "globe", "home")), 
+                                        style = x ~ style(color = ifelse(x == F, "royalblue", "darkblue")))))
+
+```

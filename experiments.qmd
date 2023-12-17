@@ -1,0 +1,32 @@
+---
+title: "Experiments"
+format: 
+  html:
+    page-layout: full
+    css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+editor: visual
+execute: 
+  echo: false
+---
+
+Last update: 04 May 2020
+
+## Overview
+
+```{r}
+st <- readRDS("overview.rds")
+
+library(formattable)
+formattable(format(st, digits=2, nsmall = 2, scientific=F),
+            align = c("l",rep("c", NCOL(st) - 1)),
+            list(`Hits (%)` = color_tile("coral2","cornflowerblue"),
+                 `Experimental condition` = formatter("span", 
+                                   x ~ icontext(ifelse(x == F, "remove", "ok")), 
+                                   style = x ~ style(color = ifelse(x == F, "red", "green"))),
+                 `p` = formatter("span",
+                                     style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
+                 `Labstudy` = formatter("span", 
+                                   x ~ icontext(ifelse(x == F, "globe", "home")), 
+                                   style = x ~ style(color = ifelse(x == F, "royalblue", "darkblue")))))
+
+```

@@ -1,0 +1,13 @@
+project: 
+  type: website
+  output-dir: docs
+  
+website: 
+  title: Maier Lab Report on Micro-Pk Experiments
+  navbar: 
+    background: light
+    left: 
+      - index.qmd
+      - experiments.qmd
+      - changeofevidence.qmd
+      - metaanalysis.qmd
