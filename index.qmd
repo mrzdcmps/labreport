@@ -12,8 +12,10 @@ The Maier Lab is located at LMU Munich under the supervision of Prof. Markus Mai
 
 ## Micro-Psychokinesis
 
-Micro-Psychokinesis (Micro-Pk) describes a mental influence on probabilistic systems, e.g. quantum random number generators (qRNGs).
+Micro-Psychokinesis (Micro-Pk) describes a mental influence on inanimate, probabilistic systems, e.g. quantum random number generators (qRNGs), detectable through statistical means.
 
 ## The Lab Report
 
-This website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases reslting from selective publication of results.
+This website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results.
+
+For each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the 'change of evidence' analyses, as well as an overall meta-analytical assessment.

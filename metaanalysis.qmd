@@ -1,9 +1,141 @@
 ---
-title: "Meta-analysis"
-format: html
+title: "Meta-Analysis"
+format: 
+  html:
+    page-layout: full
 editor: visual
-execute: 
-  echo: false
 ---
 
 Last update: 04 May 2020
+
+## Frequentist Meta-Analysis
+
+::: panel-tabset
+## Experimental Studies
+
+In this analysis all Micro-Pk studies of the Maier Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for "Smokers 1" is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses.
+
+```{r}
+st <- readRDS("overview.rds")
+
+# Select studies / conditions
+data <- subset(st, st$`Experimental condition` == TRUE)
+
+knitr::kable(data)
+```
+
+### Forest Plot
+
+The forest plot visually represents the effect sizes and confidence intervals for each study.
+
+```{r}
+#| warning: false
+
+#Frequentist m-a with metafor 
+library(metafor)
+
+# Specify parameters of Exp Studies
+yi=data$ES
+vi=data$Var
+studies=data$Study
+# invert ES of Smokers 1, since the hypothesis was two-sided and the results showed a negative effect (smokers are avoiding smoking-related images)
+yi[which(studies == "Smokers 1 Exp")] <- -yi[which(studies == "Smokers 1 Exp")]
+
+# Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316
+# knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018
+
+res <- rma(
+  yi,
+  vi, 
+  method="REML",
+  #mods = ~ data$Labstudy,
+  knha=TRUE,
+  slab=paste(studies)
+  )
+
+# forest plot
+forest(res, 
+       xlab="ES", mlab="RE", psize=1)
+
+```
+
+### Summary statistics
+
+These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0.
+
+The Tau² represents the between-study variance, and the I² the heterogeneity. A significant test for Heterogeneity indicates a genuine variability of true effects across studies.
+
+```{r}
+summary.rma(res)
+```
+
+### Funnel Plot
+
+```{r}
+# funnel plot (publication bias)
+funnel(res)
+```
+
+## Control studies
+
+In this analysis all Micro-Pk studies of the Maier Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
+
+```{r}
+st <- readRDS("overview.rds")
+
+# Select studies / conditions
+data <- subset(st, st$`Experimental condition` == FALSE)
+
+knitr::kable(data)
+```
+
+### Forest Plot
+
+The forest plot visually represents the effect sizes and confidence intervals for each study.
+
+```{r}
+#| warning: false
+
+#Frequentist m-a with metafor 
+library(metafor)
+
+# Specify parameters of Exp Studies
+yi=data$ES
+vi=data$Var
+studies=data$Study
+
+# Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316
+# knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018
+
+res <- rma(
+  yi,
+  vi, 
+  method="REML",
+  #mods = ~ data$Labstudy,
+  knha=TRUE,
+  slab=paste(studies)
+  )
+
+# forest plot
+forest(res, 
+       xlab="ES", mlab="RE", psize=1)
+
+```
+
+### Summary statistics
+
+These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0.
+
+The Tau² represents the between-study variance, and the I² the heterogeneity. A significant test for Heterogeneity indicates a genuine variability of true effects across studies.
+
+```{r}
+summary.rma(res)
+```
+
+### Funnel Plot
+
+```{r}
+# funnel plot (publication bias)
+funnel(res)
+```
+:::
