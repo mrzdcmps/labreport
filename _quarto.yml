@@ -3,7 +3,7 @@ project:
   output-dir: docs
   
 website: 
-  title: Maier Lab Report on Micro-Pk Experiments
+  title: Maier Lab Report on Micro-Pk
   navbar: 
     background: light
     left: 
@@ -11,3 +11,7 @@ website:
       - experiments.qmd
       - changeofevidence.qmd
       - metaanalysis.qmd
+  back-to-top-navigation: true
+  page-footer:
+    center: "&copy; 2024 Dr. Moritz Dechamps"
+    background: light

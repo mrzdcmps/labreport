@@ -59,7 +59,7 @@ forest(res,
 
 ```
 
-### Summary statistics
+### Summary Statistics
 
 These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0.
 
@@ -76,7 +76,7 @@ summary.rma(res)
 funnel(res)
 ```
 
-## Control studies
+## Control Studies
 
 In this analysis all Micro-Pk studies of the Maier Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
 
@@ -122,7 +122,7 @@ forest(res,
 
 ```
 
-### Summary statistics
+### Summary Statistics
 
 These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0.
 
