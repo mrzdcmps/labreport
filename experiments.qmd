@@ -4,9 +4,14 @@ format:
   html:
     page-layout: full
     css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+toc: true
+toc-depth: 3
 editor: visual
 execute: 
   echo: false
+  warning: false
+bibliography: references.bib
+csl: apa.csl
 ---
 
 Last update: 04 May 2020
@@ -30,3 +35,59 @@ formattable(format(st, digits=2, nsmall = 2, scientific=F),
                                    style = x ~ style(color = ifelse(x == F, "royalblue", "darkblue")))))
 
 ```
+
+## Description of Experiments
+
+### General Information
+
+#### Generation of Randomness
+
+When not specified otherwise, we used a quantum-based random number generator (qRNG) *Quantis* by idquantique to generate true randomness and coupled the outcome of these random events to the display of relevant stimulus material. A micro-Pk effect should result in a (temporary; see [*change of evidence*](changeofevidence.html)) biasing of the qRNG outcome corresponding to the presentation of more or less of the relevant stimuli.
+
+#### Online Studies
+
+If an experiment is classified as an online study, it was set up with the software jsPsych [@deleeuw2023] and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.
+
+### Loving Kind
+
+#### Hypothesis
+
+Participants underwent a pre-recorded "loving kindness"-meditation. At the end of the hypnosis they were asked to listen to sounds that were either classified *neutral* (white noise) or *meditation-related* (singing bowl; mantra). We hypothesized an increase of meditation-related sounds ("hits").
+
+#### Participants
+
+Participants
+
+#### Materials
+
+Materials
+
+#### Procedures
+
+Procedures
+
+#### Resources
+
+OSF-Project: NA
+
+### Prayer
+
+#### Hypothesis
+
+Participants were asked to pray to enter a state of devotion. Subsequently they were presented a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli ("hits").
+
+#### Participants
+
+Participants
+
+#### Materials
+
+Materials
+
+#### Procedures
+
+Procedures
+
+#### Resources
+
+OSF-Project: NA
