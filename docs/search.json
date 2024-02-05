@@ -53,7 +53,7 @@
     "href": "index.html#the-lab-report",
     "title": "About",
     "section": "The Lab Report",
-    "text": "The Lab Report\nThis website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results.\nFor each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the ‘change of evidence’ analyses, as well as an overall meta-analytical assessment."
+    "text": "The Lab Report\nThis website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results (see e.g. Rothstein et al., 2005).\nFor each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the ‘change of evidence’ analyses, as well as an overall meta-analytical assessment."
   },
   {
     "objectID": "metaanalysis.html#frequentist-meta-analysis",

@@ -18,6 +18,6 @@ Micro-Psychokinesis (Micro-Pk) describes a mental influence on inanimate, probab
 
 ## The Lab Report
 
-This website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results.
+This website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results [see e.g. @publicat2005].
 
-For each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the 'change of evidence' analyses, as well as an overall meta-analytical assessment.
+For each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the *'change of evidence'* analyses, as well as an overall meta-analytical assessment.
