@@ -24,7 +24,7 @@ For each study it will show the main results (differentiating between experiment
 
 ### Included Studies
 
-In this report we include all studies
+In this report we include all studies conducted in the LMU Lab exploring a general micro-Pk effect. Not included a precognition experiments.
 
 ## Reference This Report
 

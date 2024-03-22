@@ -48,7 +48,12 @@ When not specified otherwise, we used a quantum-based random number generator (q
 
 If an experiment is classified as an online study, it was set up with the software jsPsych [@deleeuw2023] and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.
 
-### Loving Kind
+```{r}
+# load study data
+load("study_objects.RData")
+```
+
+### Loving Kindness
 
 #### Hypothesis
 
@@ -56,19 +61,58 @@ Participants underwent a pre-recorded "loving kindness"-meditation. At the end o
 
 #### Participants
 
-Participants
+```{r}
+library(tidyverse)
+library(gt)
+
+df <- study1_lovingkind
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$DE02_01)
+sd_age <- sd(df$DE02_01)
+female_count <- sum(df$DE01 == 1)
+male_count <- sum(df$DE01 == 2)
+
+# Create the table
+data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    female_count, 
+    male_count,
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+) %>%
+  gt() %>%
+  cols_label(Count_Statistics = 'Count/Statistic') %>%
+  tab_caption("Sample Charcteristics")
+
+```
 
 #### Materials
 
-Materials
+We used a guided meditation by Inga Jagadamba Stendel as guided loving kindness meditation. Target sounds consisted of singing bowl sounds in f-key and a chanted "Yam"-sound. In spiritual acoustics the f-key corresponds with the frequency of the heart chakra, which according to yogic teaching is responsible for the experience and processing of love and kindness and related emotions. The chanted "Yam"-sound is one of the seven Bija-mantras and is attributed to the heart-chakra as well (Bodian, 2007).
 
 #### Procedures
 
-Procedures
+Participants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.
 
-#### Resources
+Additional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.
 
-OSF-Project: NA
+::: {.callout-tip title="Data" collapse="true"}
+```{r}
+#write_excel_csv(study1_lovingkind, "study1.csv")
+```
+[Download .csv](study1.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Preregistration](https://osf.io/g92ts)
+-   [Questionnaire](https://osf.io/qzj9m)
+-   [Experimental Program](https://osf.io/xebd5)
+:::
 
 ### Prayer
 
@@ -78,7 +122,37 @@ Participants were asked to pray to enter a state of devotion. Subsequently they 
 
 #### Participants
 
-Participants
+```{r}
+library(tidyverse)
+library(gt)
+
+df <- study2_prayer
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$DE02_01, na.rm=T)
+sd_age <- sd(df$DE02_01, na.rm=T)
+female_count <- sum(df$DE01 == 1, na.rm=T)
+male_count <- sum(df$DE01 == 2, na.rm=T)
+other_count <- sum(df$DE01 == 3, na.rm=T)
+
+# Create the table
+data.frame(
+  Characteristic = c("N", "Female", "Male", "Other", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    female_count, 
+    male_count,
+    other_count,
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+) %>%
+  gt() %>%
+  cols_label(Count_Statistics = 'Count/Statistic') %>%
+  tab_caption("Sample Charcteristics")
+
+```
 
 #### Materials
 

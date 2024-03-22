@@ -32,7 +32,7 @@
     "href": "index.html",
     "title": "About",
     "section": "",
-    "text": "The Maier Lab is located at LMU Munich under the supervision of Prof. Markus Maier."
+    "text": "This project addresses the relationship between mind and matter and studies observational effects on quantum state reductions. It is located at LMU Munich under the supervision of Prof. Markus Maier and Dr. Moritz Dechamps."
   },
   {
     "objectID": "index.html#the-maier-lab",
@@ -53,7 +53,7 @@
     "href": "index.html#the-lab-report",
     "title": "About",
     "section": "The Lab Report",
-    "text": "The Lab Report\nThis website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results (see e.g. Rothstein et al., 2005).\nFor each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the ‘change of evidence’ analyses, as well as an overall meta-analytical assessment."
+    "text": "The Lab Report\nThis website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results (see e.g. Rothstein et al., 2005).\nFor each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the ‘change of evidence’ analyses, as well as an overall meta-analytical assessment.\n\nIncluded Studies\nIn this report we include all studies"
   },
   {
     "objectID": "metaanalysis.html#frequentist-meta-analysis",
@@ -81,6 +81,20 @@
     "href": "experiments.html#description-of-experiments",
     "title": "Experiments",
     "section": "Description of Experiments",
-    "text": "Description of Experiments\n\nGeneral Information\n\nGeneration of Randomness\nWhen not specified otherwise, we used a quantum-based random number generator (qRNG) Quantis by idquantique to generate true randomness and coupled the outcome of these random events to the display of relevant stimulus material. A micro-Pk effect should result in a (temporary; see change of evidence) biasing of the qRNG outcome corresponding to the presentation of more or less of the relevant stimuli.\n\n\nOnline Studies\nIf an experiment is classified as an online study, it was set up with the software jsPsych (Leeuw, Gilbert, and Luchterhandt 2023) and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.\n\n\n\nLoving Kind\n\nHypothesis\nParticipants underwent a pre-recorded “loving kindness”-meditation. At the end of the hypnosis they were asked to listen to sounds that were either classified neutral (white noise) or meditation-related (singing bowl; mantra). We hypothesized an increase of meditation-related sounds (“hits”).\n\n\nParticipants\nParticipants\n\n\nMaterials\nMaterials\n\n\nProcedures\nProcedures\n\n\nResources\nOSF-Project: NA\n\n\n\nPrayer\n\nHypothesis\nParticipants were asked to pray to enter a state of devotion. Subsequently they were presented a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”).\n\n\nParticipants\nParticipants\n\n\nMaterials\nMaterials\n\n\nProcedures\nProcedures\n\n\nResources\nOSF-Project: NA"
+    "text": "Description of Experiments\n\nGeneral Information\n\nGeneration of Randomness\nWhen not specified otherwise, we used a quantum-based random number generator (qRNG) Quantis by idquantique to generate true randomness and coupled the outcome of these random events to the display of relevant stimulus material. A micro-Pk effect should result in a (temporary; see change of evidence) biasing of the qRNG outcome corresponding to the presentation of more or less of the relevant stimuli.\n\n\nOnline Studies\nIf an experiment is classified as an online study, it was set up with the software jsPsych (Leeuw et al., 2023) and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.\n\n\n\nLoving Kindness\n\nHypothesis\nParticipants underwent a pre-recorded “loving kindness”-meditation. At the end of the hypnosis they were asked to listen to sounds that were either classified neutral (white noise) or meditation-related (singing bowl; mantra). We hypothesized an increase of meditation-related sounds (“hits”).\n\n\nParticipants\n\n\n\n\n\n\n  Sample Charcteristics\n  \n    \n      Characteristic\n      Count/Statistic\n    \n  \n  \n    N\n171\n    Female\n127\n    Male\n44\n    Mean Age\n33.29 years\n    SD Age\n14.26 years\n  \n  \n  \n\n\n\n\n\n\nMaterials\nWe used a guided meditation by Inga Jagadamba Stendel as guided loving kindness meditation. Target sounds consisted of singing bowl sounds in f-key and a chanted “Yam”-sound. In spiritual acoustics the f-key corresponds with the frequency of the heart chakra, which according to yogic teaching is responsible for the experience and processing of love and kindness and related emotions. The chanted “Yam”-sound is one of the seven Bija-mantras and is attributed to the heart-chakra as well (Bodian, 2007).\n\n\nProcedures\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload .csv\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nQuestionnaire\nExperimental Program\n\n\n\n\n\n\n\nPrayer\n\nHypothesis\nParticipants were asked to pray to enter a state of devotion. Subsequently they were presented a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”).\n\n\nParticipants\n\n\n\n\n\n\n  Sample Charcteristics\n  \n    \n      Characteristic\n      Count/Statistic\n    \n  \n  \n    N\n431\n    Female\n235\n    Male\n166\n    Other\n4\n    Mean Age\n41.18 years\n    SD Age\n13.09 years\n  \n  \n  \n\n\n\n\n\n\nMaterials\nMaterials\n\n\nProcedures\nProcedures\n\n\nResources\nOSF-Project: NA"
+  },
+  {
+    "objectID": "index.html#the-lmu-micro-pk-project",
+    "href": "index.html#the-lmu-micro-pk-project",
+    "title": "About",
+    "section": "",
+    "text": "This project addresses the relationship between mind and matter and studies observational effects on quantum state reductions. It is located at LMU Munich under the supervision of Prof. Markus Maier and Dr. Moritz Dechamps."
+  },
+  {
+    "objectID": "index.html#reference-this-report",
+    "href": "index.html#reference-this-report",
+    "title": "About",
+    "section": "Reference This Report",
+    "text": "Reference This Report\nDOI. Ref."
   }
 ]
