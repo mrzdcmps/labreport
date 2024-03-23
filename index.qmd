@@ -2,10 +2,9 @@
 title: "About"
 format: html
 editor: visual
+sidebar: false
 execute: 
   echo: false
-bibliography: references.bib
-csl: apa.csl
 ---
 
 ## The LMU Micro-PK Project

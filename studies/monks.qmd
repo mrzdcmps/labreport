@@ -1,0 +1,72 @@
+---
+title: "Monks"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+In this experiment we tested experienced meditators and monks and explored their influence on the outcome of an qRNG which corresponded to neutral and negative images. Every person participated in two runs. While they did not know about the goal of study for the first run, experimenters explained to them the idea and hypothesis of the experiment and asked them to deliberately influence the qRNG into avoiding the negative images for the second run. We hypothesized that meditators could influence the outcome to less than 50% negative stimuli and explored the relationship of the effect with meditation experience and being informed about the purpose of the study. We also added a control group consisting of participants with no meditation experience.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- study3_monks
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$Alter, na.rm=T)
+sd_age <- sd(df$Alter, na.rm=T)
+female_count <- sum(df$Geschlecht == 0, na.rm=T)
+male_count <- sum(df$Geschlecht == 1, na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    female_count, 
+    male_count,
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+We used 10 images from IAPS with very negative valence, and 10 images with neutral valence. Images were displayed on the computer screen with a size of 900x600 pixels for a duration of 300 ms. Before each image a fixation cross was shown for 2500 ms, and a black inter trial interval of 500 ms was included. The experimental program was written by one of the experimenters in C#.
+
+## Procedures
+
+Participants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.
+
+::: {.callout-tip title="Data" collapse="true"}
+-   [Download .csv](../data/monks.csv)
+-   [Download exp .csv](../data/monks_exp.csv)
+-   [Download con .csv](../data/monks_con.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Questionnaires](https://osf.io/kvjm2)
+-   [Explanation Chart](https://osf.io/rjnmc)
+-   [Stimuli](https://osf.io/ab29p/files/osfstorage)
+:::

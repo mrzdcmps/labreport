@@ -1,0 +1,71 @@
+---
+title: "Prayer"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+Participants were asked to pray to enter a state of devotion. Subsequently they were presented a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli ("hits").
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- study2_prayer
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$DE02_01, na.rm=T)
+sd_age <- sd(df$DE02_01, na.rm=T)
+female_count <- sum(df$DE01 == 1, na.rm=T)
+male_count <- sum(df$DE01 == 2, na.rm=T)
+other_count <- sum(df$DE01 == 3, na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Other", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    female_count, 
+    male_count,
+    other_count,
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+Picture stimuli comprised 100 positive and 100 negative images further described in study 12. Audio stimuli comprised two consonant chords and two dissonant chords.
+
+## Procedures
+
+Participants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.
+
+::: {.callout-tip title="Data" collapse="true"}
+[Download .csv](../data/prayer.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Questionnaire](https://osf.io/rfzv8)
+-   [Experimental Program](https://osf.io/y6f57)
+:::

@@ -4,6 +4,7 @@ format:
   html:
     page-layout: full
 editor: visual
+sidebar: false
 ---
 
 Last update: 04 May 2020
@@ -19,7 +20,7 @@ In this analysis all Micro-Pk studies of the Maier Lab are included that hypothe
 st <- readRDS("overview.rds")
 
 # Select studies / conditions
-data <- subset(st, st$`Experimental condition` == TRUE)
+data <- subset(st, st$Experimental == TRUE)
 
 knitr::kable(data)
 ```
@@ -84,7 +85,7 @@ In this analysis all Micro-Pk studies of the Maier Lab are included that hypothe
 st <- readRDS("overview.rds")
 
 # Select studies / conditions
-data <- subset(st, st$`Experimental condition` == FALSE)
+data <- subset(st, st$Experimental == FALSE)
 
 knitr::kable(data)
 ```

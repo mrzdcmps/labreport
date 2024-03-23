@@ -2,16 +2,33 @@ project:
   type: website
   output-dir: docs
   
+bibliography: references.bib
+csl: apa.csl
+  
 website: 
   title: The LMU Micro-PK Project
   navbar: 
     background: light
     left: 
       - index.qmd
-      - experiments.qmd
+      - text: "Experiments"
+        file: experiments.qmd
       - changeofevidence.qmd
       - metaanalysis.qmd
-  back-to-top-navigation: true
+      
+  sidebar: 
+    - title: "Experiments"
+      style: "docked"
+      background: light
+      alignment: "center"
+      contents: 
+        - experiments.qmd
+        - auto: studies
+        #- lovekind.qmd
+        #- prayer.qmd
+        #- monks.qmd
+        #- meditation.qmd
+  back-to-top-navigation: false
   page-footer:
     center: "&copy; 2024 Dr. Moritz Dechamps"
     background: light
