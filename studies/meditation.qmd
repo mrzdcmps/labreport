@@ -1,0 +1,75 @@
+---
+title: "Meditation"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+Participants were asked to to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli ("hits") in the second run after the meditation.
+
+## Participants
+
+```{r}
+# library(tidyverse)
+# library(knitr)
+# 
+# df <- study4_meditation
+# 
+# # Data
+# total_participants <- nrow(df)
+# mean_age <- mean(df$DE02_01, na.rm=T)
+# sd_age <- sd(df$DE02_01, na.rm=T)
+# female_count <- sum(df$DE01 == 1, na.rm=T)
+# male_count <- sum(df$DE01 == 2, na.rm=T)
+# other_count <- sum(df$DE01 == 3, na.rm=T)
+# 
+# # Create the table
+# table_data <- data.frame(
+#   Characteristic = c("N", "Female", "Male", "Other", "Mean Age", "SD Age"),
+#   Count_Statistics = c(
+#     total_participants, 
+#     female_count, 
+#     male_count,
+#     other_count,
+#     paste0(round(mean_age, 2), " years"), 
+#     paste0(round(sd_age, 2), " years")
+#     )
+# )
+# 
+# # Print the table using kable
+# kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+#   kableExtra::kable_styling(full_width = FALSE)
+print("Demographic Data Not Available")
+
+```
+
+## Materials
+
+Picture stimuli comprised 100 positive and 100 negative images further described in study 12. Audio stimuli comprised two consonant chords and two dissonant chords.
+The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.
+
+## Procedures
+
+Participants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them. They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After thisd set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.
+
+::: {.callout-tip title="Data" collapse="true"}
+[Download Data](../data/meditation.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Relaxation Audio](https://osf.io/9gnds)
+-   [Relaxation Audio English](https://osf.io/pbzrv)
+-   [Experimental Program](https://osf.io/hjxad)
+-   [Questionnaire Structure](https://osf.io/4asug)
+:::

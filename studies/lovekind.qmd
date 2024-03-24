@@ -63,7 +63,7 @@ Additional questions were asked concerning native language, experience with medi
 #write_excel_csv(study1_lovingkind, "study1.csv")
 ```
 
-[Download .csv](../data/lovingkind.csv)
+[Download Data](../data/lovingkind.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}

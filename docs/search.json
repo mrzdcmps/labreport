@@ -263,7 +263,7 @@
     "href": "studies/lovekind.html#procedures",
     "title": "Loving Kindness",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload .csv\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nQuestionnaire\nExperimental Program"
+    "text": "Procedures\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nQuestionnaire\nExperimental Program"
   },
   {
     "objectID": "studies/monks.html",
@@ -298,7 +298,7 @@
     "href": "studies/monks.html#procedures",
     "title": "Monks",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload .csv\nDownload exp .csv\nDownload con .csv\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nQuestionnaires\nExplanation Chart\nStimuli"
+    "text": "Procedures\nParticipants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\nDownload Exp Data\nDownload Con Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nQuestionnaires\nExplanation Chart\nStimuli"
   },
   {
     "objectID": "studies/prayer.html",
@@ -333,6 +333,41 @@
     "href": "studies/prayer.html#procedures",
     "title": "Prayer",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload .csv\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nQuestionnaire\nExperimental Program"
+    "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nQuestionnaire\nExperimental Program"
+  },
+  {
+    "objectID": "studies/meditation.html",
+    "href": "studies/meditation.html",
+    "title": "Meditation",
+    "section": "",
+    "text": "Participants were asked to to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation."
+  },
+  {
+    "objectID": "studies/meditation.html#hypothesis",
+    "href": "studies/meditation.html#hypothesis",
+    "title": "Meditation",
+    "section": "",
+    "text": "Participants were asked to to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation."
+  },
+  {
+    "objectID": "studies/meditation.html#participants",
+    "href": "studies/meditation.html#participants",
+    "title": "Meditation",
+    "section": "Participants",
+    "text": "Participants\n\n\n[1] \"Not available\""
+  },
+  {
+    "objectID": "studies/meditation.html#materials",
+    "href": "studies/meditation.html#materials",
+    "title": "Meditation",
+    "section": "Materials",
+    "text": "Materials\nPicture stimuli comprised 100 positive and 100 negative images further described in study 12. Audio stimuli comprised two consonant chords and two dissonant chords. The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed."
+  },
+  {
+    "objectID": "studies/meditation.html#procedures",
+    "href": "studies/meditation.html#procedures",
+    "title": "Meditation",
+    "section": "Procedures",
+    "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them. They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After thisd set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nRelaxation Audio\nRelaxation Audio English\nExperimental Program\nQuestionnaire Structure"
   }
 ]
