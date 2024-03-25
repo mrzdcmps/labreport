@@ -3,7 +3,7 @@ title: "Overview"
 format: 
   html:
     page-layout: full
-    css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+    #css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 #toc: true
 toc-depth: 3
 editor: visual
@@ -65,13 +65,13 @@ ft <- st %>%
     `Hits (%)` = color_tile("coral2","cornflowerblue")(`Hits (%)`),
     p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
     Experimental = ifelse(Experimental, "✔", "✖"),
-    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "green", "red")),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
     `Lab/Online` = ifelse(Labstudy, "🏠", "🌍"),
     Study = text_spec(Study, link = links)
     ) %>% select(-Labstudy)
 
-kableExtra::kbl(ft, escape = F) %>%
-  kable_classic("hover", full_width = T, fixed_thead = T)
+kbl(ft, escape = F) %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## General Information

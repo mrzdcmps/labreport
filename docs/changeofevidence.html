@@ -60,8 +60,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+
 </head>
 
 <body class="nav-fixed">
@@ -133,1239 +135,495 @@ ul.task-list li input[type="checkbox"] {
 <p>Change of Evidence measures compare the Bayesian evidence for an effect over the course of data collection to those of monte-carlo simulations. They can reveal unusual changes in evidence which can be the consequence of the rise and decline of volatile effects.</p>
 <div class="cell">
 <div class="cell-output-display">
-
-<table class="table table-condensed">
+<table class="lightable-classic lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
 <thead>
-<tr>
-<th style="text-align:left;">
-Study
-</th>
-<th style="text-align:center;">
-Experimental
-</th>
-<th style="text-align:center;">
-N
-</th>
-<th style="text-align:center;">
-MaxBF
-</th>
-<th style="text-align:center;">
-MaxBF p
-</th>
-<th style="text-align:center;">
-Energy
-</th>
-<th style="text-align:center;">
-Energy p
-</th>
-<th style="text-align:center;">
+<tr class="header">
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="TRUE">
+Max BF
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="TRUE">
+BF Energy
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="TRUE">
 FFT Amplitude sum
-</th>
-<th style="text-align:center;">
-FFT p
-</th>
-<th style="text-align:center;">
-Direction
-</th>
-<th style="text-align:center;">
-Labstudy
-</th>
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide;"></th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Study</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Effect expected</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">N</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">MaxBF</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">p</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Energy</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">p</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Asum</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">p</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Direction</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Lab/Online</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Loving Kind
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-171
-</td>
-<td style="text-align:center;">
-4.16 (n=32)
-</td>
-<td style="text-align:center;">
-<span>0.107</span>
-</td>
-<td style="text-align:center;">
-17.33
-</td>
-<td style="text-align:center;">
-<span>0.173</span>
-</td>
-<td style="text-align:center;">
-3.22
-</td>
-<td style="text-align:center;">
-<span>0.118</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/lovekind.html" style="     ">Loving Kind</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">171</td>
+<td style="text-align: left;">4.16 (n=32)</td>
+<td style="text-align: left;"><span style="     ">0.11</span></td>
+<td style="text-align: right;">17.33</td>
+<td style="text-align: left;"><span style="     ">0.17</span></td>
+<td style="text-align: right;">3.22</td>
+<td style="text-align: left;"><span style="     ">0.12</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Prayer
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-431
-</td>
-<td style="text-align:center;">
-1.44 (n=17)
-</td>
-<td style="text-align:center;">
-<span>0.500</span>
-</td>
-<td style="text-align:center;">
--269.85
-</td>
-<td style="text-align:center;">
-<span>0.731</span>
-</td>
-<td style="text-align:center;">
-1.42
-</td>
-<td style="text-align:center;">
-<span>0.487</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/prayer.html" style="     ">Prayer</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">431</td>
+<td style="text-align: left;">1.44 (n=17)</td>
+<td style="text-align: left;"><span style="     ">0.5</span></td>
+<td style="text-align: right;">-269.85</td>
+<td style="text-align: left;"><span style="     ">0.73</span></td>
+<td style="text-align: right;">1.42</td>
+<td style="text-align: left;"><span style="     ">0.49</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Monks T1 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-23
-</td>
-<td style="text-align:center;">
-1.98 (n=22)
-</td>
-<td style="text-align:center;">
-<span>0.150</span>
-</td>
-<td style="text-align:center;">
-6.44
-</td>
-<td style="text-align:center;">
-<span>0.106</span>
-</td>
-<td style="text-align:center;">
-1.80
-</td>
-<td style="text-align:center;">
-<span>0.132</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/monks.html" style="     ">Monks T1 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">1.98 (n=22)</td>
+<td style="text-align: left;"><span style="     ">0.15</span></td>
+<td style="text-align: right;">6.44</td>
+<td style="text-align: left;"><span style="     ">0.11</span></td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: left;"><span style="     ">0.13</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Monks T1 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-29
-</td>
-<td style="text-align:center;">
-1 (n=1)
-</td>
-<td style="text-align:center;">
-<span>0.579</span>
-</td>
-<td style="text-align:center;">
--9.66
-</td>
-<td style="text-align:center;">
-<span>0.792</span>
-</td>
-<td style="text-align:center;">
-0.94
-</td>
-<td style="text-align:center;">
-<span>0.892</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/monks.html" style="     ">Monks T1 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;">1 (n=1)</td>
+<td style="text-align: left;"><span style="     ">0.58</span></td>
+<td style="text-align: right;">-9.66</td>
+<td style="text-align: left;"><span style="     ">0.79</span></td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: left;"><span style="     ">0.89</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Monks T2 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-23
-</td>
-<td style="text-align:center;">
-1.74 (n=14)
-</td>
-<td style="text-align:center;">
-<span>0.196</span>
-</td>
-<td style="text-align:center;">
-4.11
-</td>
-<td style="text-align:center;">
-<span>0.145</span>
-</td>
-<td style="text-align:center;">
-1.53
-</td>
-<td style="text-align:center;">
-<span>0.189</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/monks.html" style="     ">Monks T2 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">1.74 (n=14)</td>
+<td style="text-align: left;"><span style="     ">0.2</span></td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: left;"><span style="     ">0.14</span></td>
+<td style="text-align: right;">1.53</td>
+<td style="text-align: left;"><span style="     ">0.19</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Monks T2 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-29
-</td>
-<td style="text-align:center;">
-1.18 (n=7)
-</td>
-<td style="text-align:center;">
-<span>0.445</span>
-</td>
-<td style="text-align:center;">
--5.08
-</td>
-<td style="text-align:center;">
-<span>0.472</span>
-</td>
-<td style="text-align:center;">
-1.09
-</td>
-<td style="text-align:center;">
-<span>0.472</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/monks.html" style="     ">Monks T2 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;">1.18 (n=7)</td>
+<td style="text-align: left;"><span style="     ">0.44</span></td>
+<td style="text-align: right;">-5.08</td>
+<td style="text-align: left;"><span style="     ">0.47</span></td>
+<td style="text-align: right;">1.09</td>
+<td style="text-align: left;"><span style="     ">0.47</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Meditation T1
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-40
-</td>
-<td style="text-align:center;">
-1 (n=1)
-</td>
-<td style="text-align:center;">
-<span>0.621</span>
-</td>
-<td style="text-align:center;">
--17.86
-</td>
-<td style="text-align:center;">
-<span>0.913</span>
-</td>
-<td style="text-align:center;">
-0.86
-</td>
-<td style="text-align:center;">
-<span>1.000</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/meditation.html" style="     ">Meditation T1</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">1 (n=1)</td>
+<td style="text-align: left;"><span style="     ">0.62</span></td>
+<td style="text-align: right;">-17.86</td>
+<td style="text-align: left;"><span style="     ">0.91</span></td>
+<td style="text-align: right;">0.86</td>
+<td style="text-align: left;"><span style="     ">1</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Meditation T2
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-48
-</td>
-<td style="text-align:center;">
-1.74 (n=4)
-</td>
-<td style="text-align:center;">
-<span>0.262</span>
-</td>
-<td style="text-align:center;">
--13.48
-</td>
-<td style="text-align:center;">
-<span>0.584</span>
-</td>
-<td style="text-align:center;">
-1.34
-</td>
-<td style="text-align:center;">
-<span>0.337</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/meditation.html" style="     ">Meditation T2</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">1.74 (n=4)</td>
+<td style="text-align: left;"><span style="     ">0.26</span></td>
+<td style="text-align: right;">-13.48</td>
+<td style="text-align: left;"><span style="     ">0.58</span></td>
+<td style="text-align: right;">1.34</td>
+<td style="text-align: left;"><span style="     ">0.34</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Sound preference
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-70
-</td>
-<td style="text-align:center;">
-1.27 (n=53)
-</td>
-<td style="text-align:center;">
-<span>0.455</span>
-</td>
-<td style="text-align:center;">
--1.29
-</td>
-<td style="text-align:center;">
-<span>0.230</span>
-</td>
-<td style="text-align:center;">
-1.34
-</td>
-<td style="text-align:center;">
-<span>0.361</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/sound.html" style="     ">Sound preference</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">1.27 (n=53)</td>
+<td style="text-align: left;"><span style="     ">0.46</span></td>
+<td style="text-align: right;">-1.29</td>
+<td style="text-align: left;"><span style="     ">0.23</span></td>
+<td style="text-align: right;">1.34</td>
+<td style="text-align: left;"><span style="     ">0.36</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-All-will-be-good
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-38
-</td>
-<td style="text-align:center;">
-1.77 (n=5)
-</td>
-<td style="text-align:center;">
-<span>0.232</span>
-</td>
-<td style="text-align:center;">
--9.02
-</td>
-<td style="text-align:center;">
-<span>0.555</span>
-</td>
-<td style="text-align:center;">
-1.43
-</td>
-<td style="text-align:center;">
-<span>0.286</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/allgood.html" style="     ">All-will-be-good</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">1.77 (n=5)</td>
+<td style="text-align: left;"><span style="     ">0.23</span></td>
+<td style="text-align: right;">-9.02</td>
+<td style="text-align: left;"><span style="     ">0.56</span></td>
+<td style="text-align: right;">1.43</td>
+<td style="text-align: left;"><span style="     ">0.29</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-One-armed Bandit
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-40
-</td>
-<td style="text-align:center;">
-4.15 (n=24)
-</td>
-<td style="text-align:center;">
-<span>0.051</span>
-</td>
-<td style="text-align:center;">
-44.75
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.031</span>
-</td>
-<td style="text-align:center;">
-3.87
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.041</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/bandit.html" style="     ">One-armed Bandit</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">4.15 (n=24)</td>
+<td style="text-align: left;"><span style="     ">0.05</span></td>
+<td style="text-align: right;">44.75</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.03</span></td>
+<td style="text-align: right;">3.87</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.04</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Coin Toss
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-40
-</td>
-<td style="text-align:center;">
-1.15 (n=17)
-</td>
-<td style="text-align:center;">
-<span>0.512</span>
-</td>
-<td style="text-align:center;">
--2.65
-</td>
-<td style="text-align:center;">
-<span>0.310</span>
-</td>
-<td style="text-align:center;">
-1.20
-</td>
-<td style="text-align:center;">
-<span>0.418</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/cointoss.html" style="     ">Coin Toss</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">1.15 (n=17)</td>
+<td style="text-align: left;"><span style="     ">0.51</span></td>
+<td style="text-align: right;">-2.65</td>
+<td style="text-align: left;"><span style="     ">0.31</span></td>
+<td style="text-align: right;">1.20</td>
+<td style="text-align: left;"><span style="     ">0.42</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Incongruence Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-236
-</td>
-<td style="text-align:center;">
-10.72 (n=153)
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.038</span>
-</td>
-<td style="text-align:center;">
-564.28
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.018</span>
-</td>
-<td style="text-align:center;">
-9.89
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.029</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/incongruence.html" style="     ">Incongruence Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">236</td>
+<td style="text-align: left;">10.72 (n=153)</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.04</span></td>
+<td style="text-align: right;">564.28</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.02</span></td>
+<td style="text-align: right;">9.89</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.03</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Incongruence Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-271
-</td>
-<td style="text-align:center;">
-1.17 (n=125)
-</td>
-<td style="text-align:center;">
-<span>0.616</span>
-</td>
-<td style="text-align:center;">
--89.81
-</td>
-<td style="text-align:center;">
-<span>0.405</span>
-</td>
-<td style="text-align:center;">
-1.25
-</td>
-<td style="text-align:center;">
-<span>0.525</span>
-</td>
-<td style="text-align:center;">
-different
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/incongruence.html" style="     ">Incongruence Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">271</td>
+<td style="text-align: left;">1.17 (n=125)</td>
+<td style="text-align: left;"><span style="     ">0.62</span></td>
+<td style="text-align: right;">-89.81</td>
+<td style="text-align: left;"><span style="     ">0.41</span></td>
+<td style="text-align: right;">1.25</td>
+<td style="text-align: left;"><span style="     ">0.52</span></td>
+<td style="text-align: left;">different</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Smokers 1 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-122
-</td>
-<td style="text-align:center;">
-66.06 (n=122)
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.008</span>
-</td>
-<td style="text-align:center;">
-497.53
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.012</span>
-</td>
-<td style="text-align:center;">
-44.31
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.009</span>
-</td>
-<td style="text-align:center;">
-different
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/smokers1.html" style="     ">Smokers 1 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">122</td>
+<td style="text-align: left;">66.06 (n=122)</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.01</span></td>
+<td style="text-align: right;">497.53</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.01</span></td>
+<td style="text-align: right;">44.31</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.01</span></td>
+<td style="text-align: left;">different</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Smokers 1 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-132
-</td>
-<td style="text-align:center;">
-1 (n=1)
-</td>
-<td style="text-align:center;">
-<span>0.555</span>
-</td>
-<td style="text-align:center;">
--99.07
-</td>
-<td style="text-align:center;">
-<span>0.986</span>
-</td>
-<td style="text-align:center;">
-0.80
-</td>
-<td style="text-align:center;">
-<span>1.000</span>
-</td>
-<td style="text-align:center;">
-different
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/smokers1.html" style="     ">Smokers 1 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">132</td>
+<td style="text-align: left;">1 (n=1)</td>
+<td style="text-align: left;"><span style="     ">0.56</span></td>
+<td style="text-align: right;">-99.07</td>
+<td style="text-align: left;"><span style="     ">0.99</span></td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: left;"><span style="     ">1</span></td>
+<td style="text-align: left;">different</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Smokers 2 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-175
-</td>
-<td style="text-align:center;">
-10.19 (n=7)
-</td>
-<td style="text-align:center;">
-<span>0.052</span>
-</td>
-<td style="text-align:center;">
--59.18
-</td>
-<td style="text-align:center;">
-<span>0.119</span>
-</td>
-<td style="text-align:center;">
-6.94
-</td>
-<td style="text-align:center;">
-<span>0.055</span>
-</td>
-<td style="text-align:center;">
-less
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/smokers2.html" style="     ">Smokers 2 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">175</td>
+<td style="text-align: left;">10.19 (n=7)</td>
+<td style="text-align: left;"><span style="     ">0.05</span></td>
+<td style="text-align: right;">-59.18</td>
+<td style="text-align: left;"><span style="     ">0.12</span></td>
+<td style="text-align: right;">6.94</td>
+<td style="text-align: left;"><span style="     ">0.06</span></td>
+<td style="text-align: left;">less</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Smokers 2 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-220
-</td>
-<td style="text-align:center;">
-3.56 (n=10)
-</td>
-<td style="text-align:center;">
-<span>0.155</span>
-</td>
-<td style="text-align:center;">
--138.72
-</td>
-<td style="text-align:center;">
-<span>0.285</span>
-</td>
-<td style="text-align:center;">
-2.29
-</td>
-<td style="text-align:center;">
-<span>0.177</span>
-</td>
-<td style="text-align:center;">
-different
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/smokers2.html" style="     ">Smokers 2 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">220</td>
+<td style="text-align: left;">3.56 (n=10)</td>
+<td style="text-align: left;"><span style="     ">0.16</span></td>
+<td style="text-align: right;">-138.72</td>
+<td style="text-align: left;"><span style="     ">0.28</span></td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: left;"><span style="     ">0.18</span></td>
+<td style="text-align: left;">different</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Smokers 3
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-203
-</td>
-<td style="text-align:center;">
-1.89 (n=3)
-</td>
-<td style="text-align:center;">
-<span>0.283</span>
-</td>
-<td style="text-align:center;">
--130.01
-</td>
-<td style="text-align:center;">
-<span>0.289</span>
-</td>
-<td style="text-align:center;">
-1.30
-</td>
-<td style="text-align:center;">
-<span>0.341</span>
-</td>
-<td style="text-align:center;">
-less
-</td>
-<td style="text-align:center;">
-<span style="color: darkblue"> <i class="glyphicon glyphicon-home"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/smokers3.html" style="     ">Smokers 3</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">203</td>
+<td style="text-align: left;">1.89 (n=3)</td>
+<td style="text-align: left;"><span style="     ">0.28</span></td>
+<td style="text-align: right;">-130.01</td>
+<td style="text-align: left;"><span style="     ">0.29</span></td>
+<td style="text-align: right;">1.30</td>
+<td style="text-align: left;"><span style="     ">0.34</span></td>
+<td style="text-align: left;">less</td>
+<td style="text-align: left;">🏠</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Psyscanner Style 1 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-542
-</td>
-<td style="text-align:center;">
-29.93 (n=267)
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.009</span>
-</td>
-<td style="text-align:center;">
-3209.85
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.004</span>
-</td>
-<td style="text-align:center;">
-26.42
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.009</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/psysc.html" style="     ">Psyscanner Style 1 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">542</td>
+<td style="text-align: left;">29.93 (n=267)</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.01</span></td>
+<td style="text-align: right;">3209.85</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0</span></td>
+<td style="text-align: right;">26.42</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.01</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Psyscanner Style 1 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-562
-</td>
-<td style="text-align:center;">
-2.91 (n=22)
-</td>
-<td style="text-align:center;">
-<span>0.176</span>
-</td>
-<td style="text-align:center;">
--273.40
-</td>
-<td style="text-align:center;">
-<span>0.752</span>
-</td>
-<td style="text-align:center;">
-2.01
-</td>
-<td style="text-align:center;">
-<span>0.269</span>
-</td>
-<td style="text-align:center;">
-different
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/psysc.html" style="     ">Psyscanner Style 1 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">562</td>
+<td style="text-align: left;">2.91 (n=22)</td>
+<td style="text-align: left;"><span style="     ">0.18</span></td>
+<td style="text-align: right;">-273.40</td>
+<td style="text-align: left;"><span style="     ">0.75</span></td>
+<td style="text-align: right;">2.01</td>
+<td style="text-align: left;"><span style="     ">0.27</span></td>
+<td style="text-align: left;">different</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Psyscanner Style 2 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-542
-</td>
-<td style="text-align:center;">
-8.44 (n=209)
-</td>
-<td style="text-align:center;">
-<span>0.065</span>
-</td>
-<td style="text-align:center;">
-1305.95
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.026</span>
-</td>
-<td style="text-align:center;">
-10.19
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.047</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/psysc.html" style="     ">Psyscanner Style 2 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">542</td>
+<td style="text-align: left;">8.44 (n=209)</td>
+<td style="text-align: left;"><span style="     ">0.06</span></td>
+<td style="text-align: right;">1305.95</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.03</span></td>
+<td style="text-align: right;">10.19</td>
+<td style="text-align: left;"><span style="     ">0.05</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Psyscanner Style 2 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-562
-</td>
-<td style="text-align:center;">
-1.89 (n=21)
-</td>
-<td style="text-align:center;">
-<span>0.310</span>
-</td>
-<td style="text-align:center;">
--155.63
-</td>
-<td style="text-align:center;">
-<span>0.303</span>
-</td>
-<td style="text-align:center;">
-1.75
-</td>
-<td style="text-align:center;">
-<span>0.341</span>
-</td>
-<td style="text-align:center;">
-different
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/psysc.html" style="     ">Psyscanner Style 2 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">562</td>
+<td style="text-align: left;">1.89 (n=21)</td>
+<td style="text-align: left;"><span style="     ">0.31</span></td>
+<td style="text-align: right;">-155.63</td>
+<td style="text-align: left;"><span style="     ">0.3</span></td>
+<td style="text-align: right;">1.75</td>
+<td style="text-align: left;"><span style="     ">0.34</span></td>
+<td style="text-align: left;">different</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Psyscanner Style 3 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-542
-</td>
-<td style="text-align:center;">
-2.51 (n=48)
-</td>
-<td style="text-align:center;">
-<span>0.266</span>
-</td>
-<td style="text-align:center;">
--62.42
-</td>
-<td style="text-align:center;">
-<span>0.244</span>
-</td>
-<td style="text-align:center;">
-2.84
-</td>
-<td style="text-align:center;">
-<span>0.215</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/psysc.html" style="     ">Psyscanner Style 3 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">542</td>
+<td style="text-align: left;">2.51 (n=48)</td>
+<td style="text-align: left;"><span style="     ">0.27</span></td>
+<td style="text-align: right;">-62.42</td>
+<td style="text-align: left;"><span style="     ">0.24</span></td>
+<td style="text-align: right;">2.84</td>
+<td style="text-align: left;"><span style="     ">0.22</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Psyscanner Style 3 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-562
-</td>
-<td style="text-align:center;">
-1.72 (n=17)
-</td>
-<td style="text-align:center;">
-<span>0.350</span>
-</td>
-<td style="text-align:center;">
--205.14
-</td>
-<td style="text-align:center;">
-<span>0.415</span>
-</td>
-<td style="text-align:center;">
-1.54
-</td>
-<td style="text-align:center;">
-<span>0.412</span>
-</td>
-<td style="text-align:center;">
-different
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/psysc.html" style="     ">Psyscanner Style 3 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">562</td>
+<td style="text-align: left;">1.72 (n=17)</td>
+<td style="text-align: left;"><span style="     ">0.35</span></td>
+<td style="text-align: right;">-205.14</td>
+<td style="text-align: left;"><span style="     ">0.42</span></td>
+<td style="text-align: right;">1.54</td>
+<td style="text-align: left;"><span style="     ">0.41</span></td>
+<td style="text-align: left;">different</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Relaxation
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-12571
-</td>
-<td style="text-align:center;">
-7.44 (n=380)
-</td>
-<td style="text-align:center;">
-<span>0.099</span>
-</td>
-<td style="text-align:center;">
--6614.03
-</td>
-<td style="text-align:center;">
-<span>0.111</span>
-</td>
-<td style="text-align:center;">
-7.51
-</td>
-<td style="text-align:center;">
-<span>0.093</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/relax.html" style="     ">Relaxation</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">12571</td>
+<td style="text-align: left;">7.44 (n=380)</td>
+<td style="text-align: left;"><span style="     ">0.1</span></td>
+<td style="text-align: right;">-6614.03</td>
+<td style="text-align: left;"><span style="     ">0.11</span></td>
+<td style="text-align: right;">7.51</td>
+<td style="text-align: left;"><span style="     ">0.09</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Priming 1 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-6155
-</td>
-<td style="text-align:center;">
-28.78 (n=1680)
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.024</span>
-</td>
-<td style="text-align:center;">
-20135.75
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.014</span>
-</td>
-<td style="text-align:center;">
-30.99
-</td>
-<td style="text-align:center;">
-<span style="font-weight: bold">0.023</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/priming1.html" style="     ">Priming 1 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">6155</td>
+<td style="text-align: left;">28.78 (n=1680)</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.02</span></td>
+<td style="text-align: right;">20135.75</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.01</span></td>
+<td style="text-align: right;">30.99</td>
+<td style="text-align: left;"><span style=" font-weight: bold;    ">0.02</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Priming 1 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-6155
-</td>
-<td style="text-align:center;">
-1.15 (n=58)
-</td>
-<td style="text-align:center;">
-<span>0.784</span>
-</td>
-<td style="text-align:center;">
--4814.72
-</td>
-<td style="text-align:center;">
-<span>0.501</span>
-</td>
-<td style="text-align:center;">
-1.24
-</td>
-<td style="text-align:center;">
-<span>0.833</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/priming1.html" style="     ">Priming 1 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">6155</td>
+<td style="text-align: left;">1.15 (n=58)</td>
+<td style="text-align: left;"><span style="     ">0.78</span></td>
+<td style="text-align: right;">-4814.72</td>
+<td style="text-align: left;"><span style="     ">0.5</span></td>
+<td style="text-align: right;">1.24</td>
+<td style="text-align: left;"><span style="     ">0.83</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Priming 2 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-6099
-</td>
-<td style="text-align:center;">
-1.01 (n=28)
-</td>
-<td style="text-align:center;">
-<span>0.868</span>
-</td>
-<td style="text-align:center;">
--5344.89
-</td>
-<td style="text-align:center;">
-<span>0.826</span>
-</td>
-<td style="text-align:center;">
-1.22
-</td>
-<td style="text-align:center;">
-<span>0.844</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/priming2.html" style="     ">Priming 2 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">6099</td>
+<td style="text-align: left;">1.01 (n=28)</td>
+<td style="text-align: left;"><span style="     ">0.87</span></td>
+<td style="text-align: right;">-5344.89</td>
+<td style="text-align: left;"><span style="     ">0.83</span></td>
+<td style="text-align: right;">1.22</td>
+<td style="text-align: left;"><span style="     ">0.84</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Priming 2 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-6099
-</td>
-<td style="text-align:center;">
-1 (n=1)
-</td>
-<td style="text-align:center;">
-<span>0.879</span>
-</td>
-<td style="text-align:center;">
--4443.37
-</td>
-<td style="text-align:center;">
-<span>0.389</span>
-</td>
-<td style="text-align:center;">
-1.43
-</td>
-<td style="text-align:center;">
-<span>0.704</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/priming2.html" style="     ">Priming 2 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">6099</td>
+<td style="text-align: left;">1 (n=1)</td>
+<td style="text-align: left;"><span style="     ">0.88</span></td>
+<td style="text-align: right;">-4443.37</td>
+<td style="text-align: left;"><span style="     ">0.39</span></td>
+<td style="text-align: right;">1.43</td>
+<td style="text-align: left;"><span style="     ">0.7</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Priming 3 Exp
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-3996
-</td>
-<td style="text-align:center;">
-1.65 (n=11)
-</td>
-<td style="text-align:center;">
-<span>0.539</span>
-</td>
-<td style="text-align:center;">
--3459.03
-</td>
-<td style="text-align:center;">
-<span>0.886</span>
-</td>
-<td style="text-align:center;">
-1.50
-</td>
-<td style="text-align:center;">
-<span>0.655</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/priming3.html" style="     ">Priming 3 Exp</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">3996</td>
+<td style="text-align: left;">1.65 (n=11)</td>
+<td style="text-align: left;"><span style="     ">0.54</span></td>
+<td style="text-align: right;">-3459.03</td>
+<td style="text-align: left;"><span style="     ">0.89</span></td>
+<td style="text-align: right;">1.50</td>
+<td style="text-align: left;"><span style="     ">0.66</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Priming 3 Con
-</td>
-<td style="text-align:center;">
-FALSE
-</td>
-<td style="text-align:center;">
-3996
-</td>
-<td style="text-align:center;">
-1.56 (n=5)
-</td>
-<td style="text-align:center;">
-<span>0.562</span>
-</td>
-<td style="text-align:center;">
--3608.74
-</td>
-<td style="text-align:center;">
-<span>0.972</span>
-</td>
-<td style="text-align:center;">
-1.37
-</td>
-<td style="text-align:center;">
-<span>0.731</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/priming3.html" style="     ">Priming 3 Con</a></td>
+<td style="text-align: left;"><span style="     color: red !important;">✖</span></td>
+<td style="text-align: right;">3996</td>
+<td style="text-align: left;">1.56 (n=5)</td>
+<td style="text-align: left;"><span style="     ">0.56</span></td>
+<td style="text-align: right;">-3608.74</td>
+<td style="text-align: left;"><span style="     ">0.97</span></td>
+<td style="text-align: right;">1.37</td>
+<td style="text-align: left;"><span style="     ">0.73</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Erotic Images 1
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-241
-</td>
-<td style="text-align:center;">
-1.39 (n=111)
-</td>
-<td style="text-align:center;">
-<span>0.487</span>
-</td>
-<td style="text-align:center;">
--54.62
-</td>
-<td style="text-align:center;">
-<span>0.282</span>
-</td>
-<td style="text-align:center;">
-1.42
-</td>
-<td style="text-align:center;">
-<span>0.429</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="odd">
+<td style="text-align: left;"><a href="studies/erotic1.html" style="     ">Erotic Images 1</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">241</td>
+<td style="text-align: left;">1.39 (n=111)</td>
+<td style="text-align: left;"><span style="     ">0.49</span></td>
+<td style="text-align: right;">-54.62</td>
+<td style="text-align: left;"><span style="     ">0.28</span></td>
+<td style="text-align: right;">1.42</td>
+<td style="text-align: left;"><span style="     ">0.43</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Erotic Images 2
-</td>
-<td style="text-align:center;">
-TRUE
-</td>
-<td style="text-align:center;">
-678
-</td>
-<td style="text-align:center;">
-5.24 (n=363)
-</td>
-<td style="text-align:center;">
-<span>0.115</span>
-</td>
-<td style="text-align:center;">
-482.41
-</td>
-<td style="text-align:center;">
-<span>0.059</span>
-</td>
-<td style="text-align:center;">
-5.29
-</td>
-<td style="text-align:center;">
-<span>0.099</span>
-</td>
-<td style="text-align:center;">
-greater
-</td>
-<td style="text-align:center;">
-<span style="color: royalblue"> <i class="glyphicon glyphicon-globe"></i> </span>
-</td>
+<tr class="even">
+<td style="text-align: left;"><a href="studies/erotic2.html" style="     ">Erotic Images 2</a></td>
+<td style="text-align: left;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: right;">678</td>
+<td style="text-align: left;">5.24 (n=363)</td>
+<td style="text-align: left;"><span style="     ">0.12</span></td>
+<td style="text-align: right;">482.41</td>
+<td style="text-align: left;"><span style="     ">0.06</span></td>
+<td style="text-align: right;">5.29</td>
+<td style="text-align: left;"><span style="     ">0.1</span></td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">🌍</td>
 </tr>
 </tbody>
-
 </table>
+
+
 </div>
 </div>
 

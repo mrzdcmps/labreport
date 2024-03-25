@@ -3,11 +3,12 @@ title: "Change of Evidence"
 format: 
   html:
     page-layout: full
-    css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+    #css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 editor: visual
 sidebar: false
 execute: 
   echo: false
+  warning: false
 ---
 
 Last update: 04 May 2020
@@ -18,19 +19,72 @@ Change of Evidence measures compare the Bayesian evidence for an effect over the
 st2 <- readRDS("coe.rds")
 
 library(formattable)
-formattable(format(st2, digits=2, nsmall = 2, scientific=F),
-            align = c("l",rep("c", NCOL(st2) - 1)),
-            list(`MaxBF p` = formatter("span",
-                                       style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
-                 `Energy p` = formatter("span",
-                                       style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
-                 `FFT p` = formatter("span",
-                                       style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
-                 `Experimental condition` = formatter("span", 
-                                   x ~ icontext(ifelse(x == F, "remove", "ok")), 
-                                   style = x ~ style(color = ifelse(x == F, "red", "green"))),
-                 `Labstudy` = formatter("span", 
-                                        x ~ icontext(ifelse(x == F, "globe", "home")), 
-                                        style = x ~ style(color = ifelse(x == F, "royalblue", "darkblue")))))
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+links = c(
+  "studies/lovekind.html",
+  "studies/prayer.html",
+  "studies/monks.html",
+  "studies/monks.html",
+  "studies/monks.html",
+  "studies/monks.html",
+  "studies/meditation.html",
+  "studies/meditation.html",
+  "studies/sound.html",
+  "studies/allgood.html",
+  "studies/bandit.html",
+  "studies/cointoss.html",
+  "studies/incongruence.html",
+  "studies/incongruence.html",
+  "studies/smokers1.html",
+  "studies/smokers1.html",
+  "studies/smokers2.html",
+  "studies/smokers2.html",
+  "studies/smokers3.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/relax.html",
+  "studies/priming1.html",
+  "studies/priming1.html",
+  "studies/priming2.html",
+  "studies/priming2.html",
+  "studies/priming3.html",
+  "studies/priming3.html",
+  "studies/erotic1.html",
+  "studies/erotic2.html"
+)
+
+ft <- st2 %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `MaxBF p` = cell_spec(`MaxBF p`, bold = ifelse(`MaxBF p` < 0.05, TRUE, FALSE)),
+    `Energy p` = cell_spec(`Energy p`, bold = ifelse(`Energy p` < 0.05, TRUE, FALSE)),
+    `FFT p` = cell_spec(`FFT p`, bold = ifelse(`FFT p` < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    `Labstudy` = ifelse(Labstudy, "🏠", "🌍"),
+    Study = text_spec(Study, link = links)
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "MaxBF",
+                  "p",
+                  "Energy",
+                  "p",
+                  "Asum",
+                  "p",
+                  "Direction",
+                  "Lab/Online")) %>%
+  kable_classic("hover", fixed_thead = T) %>%
+  add_header_above(c(" " = 3, "Max BF" = 2, "BF Energy" = 2, "FFT Amplitude sum" = 2, " " = 2))
 
 ```
