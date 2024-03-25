@@ -18,18 +18,60 @@ Last update: 04 May 2020
 st <- readRDS("overview.rds")
 
 library(formattable)
-formattable(format(st, digits=2, nsmall = 2, scientific=F),
-            align = c("l",rep("c", NCOL(st) - 1)),
-            list(`Hits (%)` = color_tile("coral2","cornflowerblue"),
-                 `Experimental condition` = formatter("span", 
-                                   x ~ icontext(ifelse(x == F, "remove", "ok")), 
-                                   style = x ~ style(color = ifelse(x == F, "red", "green"))),
-                 `p` = formatter("span",
-                                     style = x ~ style("font-weight" = ifelse(x <= 0.05, "bold", NA))),
-                 `Labstudy` = formatter("span", 
-                                   x ~ icontext(ifelse(x == F, "globe", "home")), 
-                                   style = x ~ style(color = ifelse(x == F, "royalblue", "darkblue")))))
+library(dplyr)
+library(knitr)
+library(kableExtra)
 
+links = c(
+  "studies/lovekind.html",
+  "studies/prayer.html",
+  "studies/monks.html",
+  "studies/monks.html",
+  "studies/monks.html",
+  "studies/monks.html",
+  "studies/meditation.html",
+  "studies/meditation.html",
+  "studies/sound.html",
+  "studies/allgood.html",
+  "studies/bandit.html",
+  "studies/cointoss.html",
+  "studies/incongruence.html",
+  "studies/incongruence.html",
+  "studies/smokers1.html",
+  "studies/smokers1.html",
+  "studies/smokers2.html",
+  "studies/smokers2.html",
+  "studies/smokers3.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/psysc.html",
+  "studies/relax.html",
+  "studies/priming1.html",
+  "studies/priming1.html",
+  "studies/priming2.html",
+  "studies/priming2.html",
+  "studies/priming3.html",
+  "studies/priming3.html",
+  "studies/erotic1.html",
+  "studies/erotic2.html"
+)
+
+ft <- st %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "green", "red")),
+    `Lab/Online` = ifelse(Labstudy, "🏠", "🌍"),
+    Study = text_spec(Study, link = links)
+    ) %>% select(-Labstudy)
+
+kableExtra::kbl(ft, escape = F) %>%
+  kable_classic("hover", full_width = T, fixed_thead = T)
 ```
 
 ## General Information
