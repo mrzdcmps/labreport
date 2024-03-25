@@ -53,7 +53,7 @@
     "href": "index.html#the-lab-report",
     "title": "About",
     "section": "The Lab Report",
-    "text": "The Lab Report\nThis website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results (see e.g. Rothstein et al., 2005).\nFor each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the ‘change of evidence’ analyses, as well as an overall meta-analytical assessment.\n\nIncluded Studies\nIn this report we include all studies conducted in the LMU Lab exploring a general micro-Pk effect. Not included a precognition experiments."
+    "text": "The Lab Report\nThis website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results (see e.g. Rothstein et al., 2005).\nFor each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the ‘change of evidence’ analyses, as well as an overall meta-analytical assessment.\n\nIncluded Studies\nIn this report we include all studies conducted in the LMU Lab exploring a general micro-Pk effect. Not included are experiments of individuals precognition experiments."
   },
   {
     "objectID": "metaanalysis.html#frequentist-meta-analysis",
@@ -340,14 +340,14 @@
     "href": "studies/meditation.html",
     "title": "Meditation",
     "section": "",
-    "text": "Participants were asked to to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation."
+    "text": "Participants were asked to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation."
   },
   {
     "objectID": "studies/meditation.html#hypothesis",
     "href": "studies/meditation.html#hypothesis",
     "title": "Meditation",
     "section": "",
-    "text": "Participants were asked to to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation."
+    "text": "Participants were asked to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation."
   },
   {
     "objectID": "studies/meditation.html#participants",
@@ -369,5 +369,40 @@
     "title": "Meditation",
     "section": "Procedures",
     "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them. They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After thisd set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nRelaxation Audio\nRelaxation Audio English\nExperimental Program\nQuestionnaire Structure"
+  },
+  {
+    "objectID": "studies/sound.html",
+    "href": "studies/sound.html",
+    "title": "Sound Preference",
+    "section": "",
+    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants."
+  },
+  {
+    "objectID": "studies/sound.html#hypothesis",
+    "href": "studies/sound.html#hypothesis",
+    "title": "Sound Preference",
+    "section": "",
+    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants."
+  },
+  {
+    "objectID": "studies/sound.html#participants",
+    "href": "studies/sound.html#participants",
+    "title": "Sound Preference",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n70\n\n\nFemale\n56\n\n\nMale\n14\n\n\nMean Age\n25.1 years\n\n\nSD Age\n10.83 years"
+  },
+  {
+    "objectID": "studies/sound.html#materials",
+    "href": "studies/sound.html#materials",
+    "title": "Sound Preference",
+    "section": "Materials",
+    "text": "Materials\nAudio stimuli were taken from the International Affective Digitized Sounds (Bradley & Lang, 2007) and consisted of 12 audio files with positive valence, e.g. laughter, bonfire, music (IDs: 110, 151, 220, 352, 377, 725, 726, 811, 815, 817, 820) and 12 audio files with negative valence, e.g. crying, bees, alarm (IDs: 115, 242, 255, 261, 277, 380, 420, 624, 709, 712, 719). Sounds had a duration of 6 seconds.\nThe relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed."
+  },
+  {
+    "objectID": "studies/sound.html#procedures",
+    "href": "studies/sound.html#procedures",
+    "title": "Sound Preference",
+    "section": "Procedures",
+    "text": "Procedures\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program"
   }
 ]

@@ -1,0 +1,70 @@
+---
+title: "Sound Preference"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli ("hits") for all participants.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- study5_sound
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$A002_01, na.rm=T)
+sd_age <- sd(df$A002_01, na.rm=T)
+female_count <- sum(df$A001 == 1, na.rm=T)
+male_count <- sum(df$A001 == 2, na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants,
+    female_count,
+    male_count,
+    paste0(round(mean_age, 2), " years"),
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+Audio stimuli were taken from the International Affective Digitized Sounds [@bradley2007international] and consisted of 12 audio files with positive valence, e.g. laughter, bonfire, music (IDs: 110, 151, 220, 352, 377, 725, 726, 811, 815, 817, 820) and 12 audio files with negative valence, e.g. crying, bees, alarm (IDs: 115, 242, 255, 261, 277, 380, 420, 624, 709, 712, 719). Sounds had a duration of 6 seconds.
+
+The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.
+
+## Procedures
+
+Participants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.
+
+::: {.callout-tip title="Data" collapse="true"}
+[Download Data](../data/sound.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Experimental Program](https://osf.io/bznp9)
+:::
