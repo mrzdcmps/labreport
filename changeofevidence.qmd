@@ -83,7 +83,8 @@ kbl(ft, escape = F,
                   "Asum",
                   "p",
                   "Direction",
-                  "Lab/Online")) %>%
+                  "Lab/Online"),
+    align = "lcccccccccc") %>%
   kable_classic("hover", fixed_thead = T) %>%
   add_header_above(c(" " = 3, "Max BF" = 2, "BF Energy" = 2, "FFT Amplitude sum" = 2, " " = 2))
 

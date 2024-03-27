@@ -66,11 +66,26 @@ ft <- st %>%
     p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
     Experimental = ifelse(Experimental, "✔", "✖"),
     Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
-    `Lab/Online` = ifelse(Labstudy, "🏠", "🌍"),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍"),
     Study = text_spec(Study, link = links)
-    ) %>% select(-Labstudy)
+    )
 
-kbl(ft, escape = F) %>%
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
   kable_classic("hover", fixed_thead = T)
 ```
 

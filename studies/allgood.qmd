@@ -1,0 +1,69 @@
+---
+title: "All-will-be-good"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+Participants were asked to listen to a prerecorded relaxation exercise. They were then asked to look at 40 visual and auditory stimuli consisting of positive images and consonant sounds or negative images and negative sounds. While doing so, they were instructed to continuously say "all will be good" to themselves. We hypothesized more positive outcomes that suggested by chance and explored the relation of the effect to how conscientious the instructions were followed.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- study6_allgood
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$PT04_01, na.rm=T)
+sd_age <- sd(df$PT04_01, na.rm=T)
+female_count <- sum(df$PT03 == 1, na.rm=T)
+male_count <- sum(df$PT03 == 2, na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants,
+    female_count,
+    male_count,
+    paste0(round(mean_age, 2), " years"),
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+Picture stimuli comprised 100 positive and 100 negative images further described in study "relaxation". Audio stimuli comprised two consonant chords and two dissonant chords. The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.
+
+## Procedures
+
+Participants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying "all will be good" over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.
+
+::: {.callout-tip title="Data" collapse="true"}
+[Download Data](../data/allgood.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Experimental Program](https://osf.io/avf4h)
+-   [Questionnaire](https://osf.io/t64zj)
+:::
