@@ -67,4 +67,6 @@ Participants were tested online. After welcoming them a prerecorded relaxation a
 
 ::: {.callout-note title="Resources" collapse="true"}
 -   [Experimental Program](https://osf.io/bznp9)
+-   [Relaxation Audio](https://osf.io/9gnds)
+-   [Relaxation Audio English](https://osf.io/pbzrv)
 :::

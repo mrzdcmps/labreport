@@ -67,8 +67,8 @@ Participants were tested online. After welcoming them audio playback was tested 
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
--   [Relaxation Audio](https://osf.io/9gnds)
--   [Relaxation Audio English](https://osf.io/pbzrv)
 -   [Experimental Program](https://osf.io/hjxad)
 -   [Questionnaire Structure](https://osf.io/4asug)
+-   [Relaxation Audio](https://osf.io/9gnds)
+-   [Relaxation Audio English](https://osf.io/pbzrv)
 :::

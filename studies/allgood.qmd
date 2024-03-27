@@ -66,4 +66,6 @@ Participants were tested in the lab. A prerecorded relaxation audio file was rea
 ::: {.callout-note title="Resources" collapse="true"}
 -   [Experimental Program](https://osf.io/avf4h)
 -   [Questionnaire](https://osf.io/t64zj)
+-   [Relaxation Audio](https://osf.io/9gnds)
+-   [Relaxation Audio English](https://osf.io/pbzrv)
 :::
