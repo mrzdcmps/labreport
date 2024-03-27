@@ -1,6 +1,8 @@
 ---
 title: "About"
-format: html
+format: 
+  html:
+    page-layout: full
 editor: visual
 sidebar: false
 execute: 
@@ -23,7 +25,7 @@ For each study it will show the main results (differentiating between experiment
 
 ### Included Studies
 
-In this report we include all studies conducted in the LMU Lab exploring a general micro-Pk effect. Not included are experiments of individuals precognition experiments.
+In this report we include all studies conducted in the LMU Lab exploring a general micro-Pk effect. Not included are experiments of individuals or on related psi effects like precognition.
 
 ## Reference This Report
 

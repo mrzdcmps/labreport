@@ -24,10 +24,7 @@ website:
       contents: 
         - experiments.qmd
         - auto: studies
-        #- lovekind.qmd
-        #- prayer.qmd
-        #- monks.qmd
-        #- meditation.qmd
+        
   back-to-top-navigation: false
   page-footer:
     center: "&copy; 2024 Dr. Moritz Dechamps"

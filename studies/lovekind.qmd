@@ -50,7 +50,7 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 ## Materials
 
-We used a guided meditation by Inga Jagadamba Stendel as guided loving kindness meditation. Target sounds consisted of singing bowl sounds in f-key and a chanted "Yam"-sound. In spiritual acoustics the f-key corresponds with the frequency of the heart chakra, which according to yogic teaching is responsible for the experience and processing of love and kindness and related emotions. The chanted "Yam"-sound is one of the seven Bija-mantras and is attributed to the heart-chakra as well (Bodian, 2007).
+We used a guided meditation by Inga Jagadamba Stendel as guided loving kindness meditation. Target sounds consisted of singing bowl sounds in f-key and a chanted "Yam"-sound. In spiritual acoustics the f-key corresponds with the frequency of the heart chakra, which according to yogic teaching is responsible for the experience and processing of love and kindness and related emotions. The chanted "Yam"-sound is one of the seven Bija-mantras and is attributed to the heart-chakra as well.
 
 ## Procedures
 
