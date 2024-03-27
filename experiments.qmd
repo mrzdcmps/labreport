@@ -98,3 +98,7 @@ When not specified otherwise, we used a quantum-based random number generator (q
 ### Online Studies
 
 If an experiment is classified as an online study, it was set up with the software jsPsych [@deleeuw2023] and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.
+
+### Procedural Details
+
+Please refer to the experimental programs attached to the resources of each study for all procedural details, like stimulus presentation timings, questionnaires, etc.
