@@ -228,7 +228,7 @@
     "href": "experiments.html#general-information",
     "title": "Overview",
     "section": "General Information",
-    "text": "General Information\n\nGeneration of Randomness\nWhen not specified otherwise, we used a quantum-based random number generator (qRNG) Quantis by idquantique to generate true randomness and coupled the outcome of these random events to the display of relevant stimulus material. A micro-Pk effect should result in a (temporary; see change of evidence) biasing of the qRNG outcome corresponding to the presentation of more or less of the relevant stimuli.\n\n\nOnline Studies\nIf an experiment is classified as an online study, it was set up with the software jsPsych (Leeuw et al., 2023) and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer."
+    "text": "General Information\n\nGeneration of Randomness\nWhen not specified otherwise, we used a quantum-based random number generator (qRNG) Quantis by idquantique to generate true randomness and coupled the outcome of these random events to the display of relevant stimulus material. A micro-Pk effect should result in a (temporary; see change of evidence) biasing of the qRNG outcome corresponding to the presentation of more or less of the relevant stimuli.\n\n\nOnline Studies\nIf an experiment is classified as an online study, it was set up with the software jsPsych (Leeuw et al., 2023) and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.\n\n\nProcedural Details\nPlease refer to the experimental programs attached to the resources of each study for all procedural details, like stimulus presentation timings, questionnaires, etc."
   },
   {
     "objectID": "studies/lovekind.html",
@@ -263,7 +263,7 @@
     "href": "studies/lovekind.html#procedures",
     "title": "Loving Kindness",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nQuestionnaire\nExperimental Program"
+    "text": "Procedures\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nExperimental Program\nQuestionnaire"
   },
   {
     "objectID": "studies/monks.html",
@@ -333,7 +333,7 @@
     "href": "studies/prayer.html#procedures",
     "title": "Prayer",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nQuestionnaire\nExperimental Program"
+    "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire"
   },
   {
     "objectID": "studies/meditation.html",
@@ -368,7 +368,7 @@
     "href": "studies/meditation.html#procedures",
     "title": "Meditation",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them (2 mins). They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After this set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nRelaxation Audio\nRelaxation Audio English\nExperimental Program\nQuestionnaire Structure"
+    "text": "Procedures\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them (2 mins). They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After this set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire Structure\nRelaxation Audio\nRelaxation Audio English"
   },
   {
     "objectID": "studies/sound.html",
@@ -403,21 +403,21 @@
     "href": "studies/sound.html#procedures",
     "title": "Sound Preference",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program"
+    "text": "Procedures\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nRelaxation Audio\nRelaxation Audio English"
   },
   {
     "objectID": "studies/allgood.html",
     "href": "studies/allgood.html",
     "title": "All-will-be-good",
     "section": "",
-    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants."
+    "text": "Participants were asked to listen to a prerecorded relaxation exercise. They were then asked to look at 40 visual and auditory stimuli consisting of positive images and consonant sounds or negative images and negative sounds. While doing so, they were instructed to continuously say “all will be good” to themselves. We hypothesized more positive outcomes that suggested by chance and explored the relation of the effect to how conscientious the instructions were followed."
   },
   {
     "objectID": "studies/allgood.html#hypothesis",
     "href": "studies/allgood.html#hypothesis",
     "title": "All-will-be-good",
     "section": "",
-    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants."
+    "text": "Participants were asked to listen to a prerecorded relaxation exercise. They were then asked to look at 40 visual and auditory stimuli consisting of positive images and consonant sounds or negative images and negative sounds. While doing so, they were instructed to continuously say “all will be good” to themselves. We hypothesized more positive outcomes that suggested by chance and explored the relation of the effect to how conscientious the instructions were followed."
   },
   {
     "objectID": "studies/allgood.html#participants",
@@ -431,13 +431,13 @@
     "href": "studies/allgood.html#materials",
     "title": "All-will-be-good",
     "section": "Materials",
-    "text": "Materials\nAudio stimuli were taken from the International Affective Digitized Sounds (Bradley & Lang, 2007) and consisted of 12 audio files with positive valence, e.g. laughter, bonfire, music (IDs: 110, 151, 220, 352, 377, 725, 726, 811, 815, 817, 820) and 12 audio files with negative valence, e.g. crying, bees, alarm (IDs: 115, 242, 255, 261, 277, 380, 420, 624, 709, 712, 719). Sounds had a duration of 6 seconds.\nThe relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed."
+    "text": "Materials\nPicture stimuli comprised 100 positive and 100 negative images further described in study “relaxation”. Audio stimuli comprised two consonant chords and two dissonant chords. The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed."
   },
   {
     "objectID": "studies/allgood.html#procedures",
     "href": "studies/allgood.html#procedures",
     "title": "All-will-be-good",
     "section": "Procedures",
-    "text": "Procedures\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program"
+    "text": "Procedures\nParticipants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying “all will be good” over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire\nRelaxation Audio\nRelaxation Audio English"
   }
 ]

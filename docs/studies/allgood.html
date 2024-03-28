@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -222,7 +203,7 @@ div.csl-indent {
 
 <section id="hypothesis" class="level2">
 <h2 class="anchored" data-anchor-id="hypothesis">Hypothesis</h2>
-<p>Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.</p>
+<p>Participants were asked to listen to a prerecorded relaxation exercise. They were then asked to look at 40 visual and auditory stimuli consisting of positive images and consonant sounds or negative images and negative sounds. While doing so, they were instructed to continuously say “all will be good” to themselves. We hypothesized more positive outcomes that suggested by chance and explored the relation of the effect to how conscientious the instructions were followed.</p>
 </section>
 <section id="participants" class="level2">
 <h2 class="anchored" data-anchor-id="participants">Participants</h2>
@@ -265,12 +246,11 @@ div.csl-indent {
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<p>Audio stimuli were taken from the International Affective Digitized Sounds <span class="citation" data-cites="bradley2007international">(<a href="#ref-bradley2007international" role="doc-biblioref">Bradley &amp; Lang, 2007</a>)</span> and consisted of 12 audio files with positive valence, e.g.&nbsp;laughter, bonfire, music (IDs: 110, 151, 220, 352, 377, 725, 726, 811, 815, 817, 820) and 12 audio files with negative valence, e.g.&nbsp;crying, bees, alarm (IDs: 115, 242, 255, 261, 277, 380, 420, 624, 709, 712, 719). Sounds had a duration of 6 seconds.</p>
-<p>The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.</p>
+<p>Picture stimuli comprised 100 positive and 100 negative images further described in study “relaxation”. Audio stimuli comprised two consonant chords and two dissonant chords. The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.</p>
 </section>
 <section id="procedures" class="level2">
 <h2 class="anchored" data-anchor-id="procedures">Procedures</h2>
-<p>Participants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.</p>
+<p>Participants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying “all will be good” over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Data">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -283,7 +263,7 @@ Data
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../data/sound.csv">Download Data</a></p>
+<p><a href="../data/allgood.csv">Download Data</a></p>
 </div>
 </div>
 </div>
@@ -300,21 +280,19 @@ Resources
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://osf.io/bznp9">Experimental Program</a></li>
+<li><a href="https://osf.io/avf4h">Experimental Program</a></li>
+<li><a href="https://osf.io/t64zj">Questionnaire</a></li>
+<li><a href="https://osf.io/9gnds">Relaxation Audio</a></li>
+<li><a href="https://osf.io/pbzrv">Relaxation Audio English</a></li>
 </ul>
 </div>
 </div>
 </div>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
-<div id="ref-bradley2007international" class="csl-entry" role="listitem">
-Bradley, M., &amp; Lang, P. (2007). The international affective digitized sounds: Affective ratings of sounds and instruction manual (technical report no. B-3). University of florida. <em>NIMH Center for the Study of Emotion and Attention, Gainesville, FL</em>, 30.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
