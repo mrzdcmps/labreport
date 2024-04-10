@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The LMU Micro-PK Project - Sound Preference</title>
+<title>The LMU Micro-PK Project - One-Armed Bandit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -129,7 +110,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../studies/allgood.html">Studies</a></li><li class="breadcrumb-item"><a href="../studies/sound.html">Sound Preference</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../studies/allgood.html">Studies</a></li><li class="breadcrumb-item"><a href="../studies/bandit.html">One-Armed Bandit</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -164,7 +145,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../studies/bandit.html" class="sidebar-item-text sidebar-link">
+  <a href="../studies/bandit.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">One-Armed Bandit</span></a>
   </div>
 </li>
@@ -194,7 +175,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../studies/sound.html" class="sidebar-item-text sidebar-link active">
+  <a href="../studies/sound.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sound Preference</span></a>
   </div>
 </li>
@@ -211,7 +192,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sound Preference</h1>
+<h1 class="title">One-Armed Bandit</h1>
 </div>
 
 
@@ -228,7 +209,7 @@ div.csl-indent {
 
 <section id="hypothesis" class="level2">
 <h2 class="anchored" data-anchor-id="hypothesis">Hypothesis</h2>
-<p>Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.</p>
+<p>This study was conducted by students in an empirical course. It was hypothesized that participants with a high motivation to win in a game of chance would influence a micro-Pk effect resulting in more wins than chance suggests.</p>
 </section>
 <section id="participants" class="level2">
 <h2 class="anchored" data-anchor-id="participants">Participants</h2>
@@ -244,23 +225,23 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">N</td>
-<td style="text-align: left;">70</td>
+<td style="text-align: left;">40</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Female</td>
-<td style="text-align: left;">56</td>
+<td style="text-align: left;">21</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Male</td>
-<td style="text-align: left;">14</td>
+<td style="text-align: left;">19</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Mean Age</td>
-<td style="text-align: left;">25.1 years</td>
+<td style="text-align: left;">23.98 years</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">SD Age</td>
-<td style="text-align: left;">10.83 years</td>
+<td style="text-align: left;">12.51 years</td>
 </tr>
 </tbody>
 </table>
@@ -271,12 +252,11 @@ div.csl-indent {
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<p>Audio stimuli were taken from the International Affective Digitized Sounds <span class="citation" data-cites="bradley2007international">(<a href="#ref-bradley2007international" role="doc-biblioref">Bradley &amp; Lang, 2007</a>)</span> and consisted of 12 audio files with positive valence, e.g.&nbsp;laughter, bonfire, music (IDs: 110, 151, 220, 352, 377, 725, 726, 811, 815, 817, 820) and 12 audio files with negative valence, e.g.&nbsp;crying, bees, alarm (IDs: 115, 242, 255, 261, 277, 380, 420, 624, 709, 712, 719). Sounds had a duration of 6 seconds.</p>
-<p>The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.</p>
+<p>This was a lab study using the same experimental program as study <a href="monks.html">Monks</a>. Two sets consisting of 10 images each were created that indicated either a win or a loss of the game</p>
 </section>
 <section id="procedures" class="level2">
 <h2 class="anchored" data-anchor-id="procedures">Procedures</h2>
-<p>Participants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.</p>
+<p>Participants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. The qRNG first selected a random image 1 out of 10, then a fixation cross was shown before the qRNG selected a random bit 0 or 1 determining whether the image should be shown out of the win or loss set. This way, 10 sets of 20 trials each with short breaks in between were presented to the participants. For each block with more than 50% hits they received a candy (Smartie) for each additional hit (e.g.&nbsp;12 hits = 2 smarties).</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Data">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -289,7 +269,7 @@ Data
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../data/sound.csv">Download Data</a></p>
+<p><a href="../data/bandit.csv">Download Data</a></p>
 </div>
 </div>
 </div>
@@ -306,23 +286,19 @@ Resources
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://osf.io/bznp9">Experimental Program</a></li>
-<li><a href="https://osf.io/9gnds">Relaxation Audio</a></li>
-<li><a href="https://osf.io/pbzrv">Relaxation Audio English</a></li>
+<li><a href="https://osf.io/523y7">Preregistration</a></li>
+<li><a href="https://osf.io/tqbfw">Stimulus material</a></li>
+<li><a href="https://osf.io/phnqf">Questionnaire</a></li>
+<li><a href="https://osf.io/6s7fr">Student report</a></li>
 </ul>
 </div>
 </div>
 </div>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
-<div id="ref-bradley2007international" class="csl-entry" role="listitem">
-Bradley, M., &amp; Lang, P. (2007). The international affective digitized sounds: Affective ratings of sounds and instruction manual (technical report no. B-3). University of florida. <em>NIMH Center for the Study of Emotion and Attention, Gainesville, FL</em>, 30.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

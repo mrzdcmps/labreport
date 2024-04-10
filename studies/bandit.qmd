@@ -1,0 +1,71 @@
+---
+title: "One-Armed Bandit"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+This study was conducted by students in an empirical course. It was hypothesized that participants with a high motivation to win in a game of chance would influence a micro-Pk effect resulting in more wins than chance suggests. 
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- study7_bandit
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$Alter, na.rm=T)
+sd_age <- sd(df$Alter, na.rm=T)
+female_count <- sum(df$Geschlecht == "w", na.rm=T)
+male_count <- sum(df$Geschlecht == "m", na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants,
+    female_count,
+    male_count,
+    paste0(round(mean_age, 2), " years"),
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+This was a lab study using the same experimental program as study [Monks](monks.html). Two sets consisting of 10 images each were created that indicated either a win or a loss of the game
+
+## Procedures
+
+Participants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. The qRNG first selected a random image 1 out of 10, then a fixation cross was shown before the qRNG selected a random bit 0 or 1 determining whether the image should be shown out of the win or loss set. This way, 10 sets of 20 trials each with short breaks in between were presented to the participants. For each block with more than 50% hits they received a candy (Smartie) for each additional hit (e.g. 12 hits = 2 smarties).
+
+::: {.callout-tip title="Data" collapse="true"}
+[Download Data](../data/bandit.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Preregistration](https://osf.io/523y7)
+-   [Stimulus material](https://osf.io/tqbfw)
+-   [Questionnaire](https://osf.io/phnqf)
+-   [Student report](https://osf.io/6s7fr)
+:::
