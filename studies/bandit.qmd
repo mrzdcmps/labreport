@@ -16,7 +16,7 @@ load("../study_objects.RData")
 
 ## Hypothesis
 
-This study was conducted by students in an empirical course. It was hypothesized that participants with a high motivation to win in a game of chance would influence a micro-Pk effect resulting in more wins than chance suggests. 
+This study was conducted by students in an empirical course. It was hypothesized that participants with a high motivation to win in a game of chance would influence a micro-Pk effect resulting in more wins than chance suggests.
 
 ## Participants
 
@@ -53,7 +53,7 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 ## Materials
 
-This was a lab study using the same experimental program as study [Monks](monks.html). Two sets consisting of 10 images each were created that indicated either a win or a loss of the game
+This was a lab study using the same experimental program as study [Monks](monks.html). Two sets consisting of 10 images each were created that indicated either a win or a loss of the game.
 
 ## Procedures
 
