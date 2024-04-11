@@ -1,0 +1,338 @@
+---
+title: "Custom Meta-Analysis"
+format: 
+  html:
+    page-layout: full
+editor: visual
+sidebar: false
+filters:
+  - shinylive
+---
+
+Last update: 04 May 2020
+
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 1200
+
+library(shiny)
+library(bslib)
+
+st <- structure(list(Study = c("Loving Kind", "Prayer", "Monks T1 Exp", 
+"Monks T1 Con", "Monks T2 Exp", "Monks T2 Con", "Meditation T1", 
+"Meditation T2", "Sound preference", "All-will-be-good", "One-armed Bandit", 
+"Coin Toss", "Incongruence Exp", "Incongruence Con", "Smokers 1 Exp", 
+"Smokers 1 Con", "Smokers 2 Exp", "Smokers 2 Con", "Smokers 3", 
+"Psyscanner Style 1 Exp", "Psyscanner Style 1 Con", "Psyscanner Style 2 Exp", 
+"Psyscanner Style 2 Con", "Psyscanner Style 3 Exp", "Psyscanner Style 3 Con", 
+"Relaxation", "Priming 1 Exp", "Priming 1 Con", "Priming 2 Exp", 
+"Priming 2 Con", "Priming 3 Exp", "Priming 3 Con", "Erotic Images 1", 
+"Erotic Images 2"), Experimental = c(TRUE, TRUE, TRUE, FALSE, 
+TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, 
+TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, 
+FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE
+), N = c(171L, 431L, 23L, 29L, 23L, 29L, 40L, 48L, 70L, 38L, 
+40L, 40L, 236L, 271L, 122L, 132L, 175L, 220L, 203L, 542L, 562L, 
+542L, 562L, 542L, 562L, 12571L, 6155L, 6155L, 6099L, 6099L, 3996L, 
+3996L, 241L, 678L), Trials = c(100L, 100L, 400L, 400L, 400L, 
+400L, 100L, 100L, 40L, 100L, 200L, 200L, 10L, 10L, 400L, 400L, 
+400L, 400L, 400L, 30L, 30L, 30L, 30L, 30L, 30L, 100L, 20L, 20L, 
+20L, 20L, 20L, 20L, 200L, 50L), M = c(49.7251461988304, 49.6380510440835, 
+202.347826086957, 198.344827586207, 201.347826086957, 199.793103448276, 
+49.275, 50.2291666666667, 20.3142857142857, 49.7105263157895, 
+101.125, 100.525, 5.18220338983051, 5.04428044280443, 196.704918032787, 
+200.530303030303, 200.291428571429, 198.981818181818, 199.137931034483, 
+15.2416974169742, 15.0409252669039, 15.1752767527675, 15.1512455516014, 
+15.0184501845018, 15.0622775800712, 50.0177392411105, 10.0550771730301, 
+10.0222583265638, 9.96409247417609, 9.96507624200689, 9.98948948948949, 
+9.91391391391391, 100.510373443983, 25.1283185840708), SD = c(4.93014847130271, 
+4.80589172396806, 6.85968920348287, 9.79167234391758, 8.02047774394435, 
+9.6487575452743, 5.7645579366616, 4.53937657793579, 2.93179895875818, 
+5.0985312921592, 6.18180746948201, 7.70942646441721, 1.57799395171466, 
+1.53896145198318, 9.87415737557, 9.68231203379056, 10.3751851230838, 
+10.3416362149079, 10.1117855781943, 2.63677169106241, 2.71460653233964, 
+2.75102021354226, 2.65017543162426, 2.75688199475488, 2.70169296784607, 
+5.06168036588943, 2.25561549054791, 2.25163612232843, 2.31466641058703, 
+2.36271329396309, 2.19474617623822, 2.25220717142659, 7.31557245037086, 
+3.52493466278969), `Hits (%)` = c(49.7251461988304, 49.6380510440835, 
+50.5869565217391, 49.5862068965517, 50.3369565217391, 49.948275862069, 
+49.275, 50.2291666666667, 50.7857142857143, 49.7105263157895, 
+50.5625, 50.2625, 51.8220338983051, 50.4428044280443, 50.8237704918033, 
+49.8674242424242, 49.9271428571429, 50.2545454545455, 50.2155172413793, 
+50.8056580565806, 50.1364175563464, 50.5842558425584, 50.5041518386714, 
+50.0615006150061, 50.2075919335706, 50.0177392411105, 50.2753858651503, 
+50.1112916328188, 49.8204623708805, 49.8253812100344, 49.9474474474474, 
+49.5695695695696, 50.2551867219917, 50.2566371681416), t = c(-0.729020606896472, 
+-1.56355074666508, 1.64144147425297, -0.910301725734865, 0.80593039992534, 
+-0.115473108722475, -0.795430049905895, 0.349764601595015, 0.896890604548625, 
+-0.349990130526922, 1.15097805463926, 0.430692420311948, 1.77381008529611, 
+0.473662342963556, -3.68592159561277, 0.629262715060855, 0.371582538427842, 
+-1.46031794247476, -1.21468083119759, 2.13402314340298, 0.357398551813647, 
+1.48330404334891, 1.35293254642545, 0.155805283071515, 0.54646694117528, 
+0.392939088080033, 1.91566957214344, 0.775547373209846, -1.21150828588556, 
+-1.15435466369368, -0.302727761515244, -2.41622495687227, 1.08304942073651, 
+0.947879944064241), p = c(0.76650389013035, 0.940670635153101, 
+0.0574627918303569, 0.814783199306179, 0.214454429536027, 0.545552850690794, 
+0.784410930217886, 0.364038921318237, 0.186447985565466, 0.635834691657821, 
+0.128374637526894, 0.334531532212438, 0.0386947595357356, 0.636123474407962, 
+0.000342320770390312, 0.530272916593505, 0.644672109833505, 0.145635796988015, 
+0.112952923092978, 0.0166449524736531, 0.720927870929834, 0.0692879809112358, 
+0.17662215612942, 0.438122311924763, 0.584962273280754, 0.347185567036483, 
+0.0277267283310387, 0.219023042334429, 0.887126197345885, 0.875799984964553, 
+0.61894344988975, 0.992136536799251, 0.139936692912905, 0.343528791879829
+), ES = c(-0.0557495991793054, -0.0753135893826642, 0.342264207212838, 
+-0.16903878680349, 0.168048105111216, -0.0214428179745754, -0.125768533852202, 
+0.050484171720971, 0.107198930999974, -0.0567758963558183, 0.18198560947649, 
+0.0680984509578162, 0.115465201645751, 0.0287729382353057, -0.333707661513032, 
+0.0547702892090559, 0.0280889996632621, -0.0984546155969091, 
+-0.0852538811123782, 0.0916641428582632, 0.0150759479933327, 
+0.0637133641929295, 0.0570700149871691, 0.00669240995332663, 
+0.0230513166419594, 0.00350461503457129, 0.0244178022632209, 
+0.00988540126135096, -0.0155130457070047, -0.0147812085716645, 
+-0.0047889412563075, -0.0382229872892009, 0.0697653461087004, 
+0.036403109942822), Var = c(0.0481274608340183, 0.0023267658198906, 
+0.0460248866856311, 0.0349754157145516, 0.0440921775137276, 0.0344906861110809, 
+0.0251977215513417, 0.0208598817874412, 0.0143677972200538, 0.0263582039790396, 
+0.0254139845257066, 0.0250579674877857, 0.00426553434913367, 
+0.00369156435788689, 0.00865311804652662, 0.00758712039613653, 
+0.00571653997686309, 0.00456748479848258, 0.00494401040454365, 
+0.00185276966336341, 0.00177956164075436, 0.00184876327746936, 
+0.00178225710552548, 0.00184505976785146, 0.00177983217366453, 
+7.95486549330419e-05, 0.000162517971492069, 0.000162477475317473, 
+0.000163981034152083, 0.000163979216603282, 0.000250253119864659, 
+0.000250433057652316, 0.00415947552597026, 0.00147590352980347
+), BF = c(0.303471211595679, 0.144842277097853, 1.81552525845098, 
+0.486015264106817, 1.04565878136535, 0.649371730492584, 0.465106928003074, 
+0.745273785083545, 1.20005672396555, 0.472909967051332, 1.27186885170697, 
+0.801891520709238, 2.24173090936873, 0.41779739595062, 66.0635984927554, 
+0.163053978946462, 0.0902945945464987, 0.296360424685573, 0.395879650832266, 
+5.06347779766114, 0.441130214017381, 1.8164150372646, 1.18198699986214, 
+0.404840735603627, 0.508265232894753, 0.0993028953060386, 1.306826559933, 
+0.169979234365898, 0.0364066820404983, 0.153884707180039, 0.08401371427802, 
+0.0272477897764476, 0.973461367252893, 0.635992234368561), Direction = c("greater", 
+"greater", "greater", "greater", "greater", "greater", "greater", 
+"greater", "greater", "greater", "greater", "greater", "greater", 
+"different", "different", "different", "less", "different", "less", 
+"greater", "different", "greater", "different", "greater", "different", 
+"greater", "greater", "greater", "greater", "greater", "greater", 
+"greater", "greater", "greater"), Labstudy = c(TRUE, FALSE, TRUE, 
+TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, 
+TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, 
+FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, 
+FALSE, FALSE)), row.names = c(NA, 34L), class = "data.frame")
+  
+ui <- page_fillable(
+  
+  card(
+    card_header("Select Studies"),
+    selectInput(
+      "condition",
+      label = NULL,
+      choices = list("Experimental" = TRUE, "Control" = FALSE),
+      selected = 1
+    ),
+    checkboxGroupInput(
+      "labOnline",
+      label = NULL,
+      choices = list("Lab" = "lab", "Online" = "online"),
+      selected = 1
+    )
+  ),
+  card(dataTableOutput("selectedStudies"))
+  
+)
+
+# Define your Shiny server logic here
+server <- function(input, output, session) {
+  output$selectedStudies <- renderDataTable({
+  
+  # Select studies / conditions
+  st <- subset(st, st$Experimental == input$condition)
+  if(input$labOnline > 1) {
+    st <- ifelse(input$labOnline == 2, 
+                 subset(st, st$Labstudy == TRUE),
+                 subset(st, st$Labstudy == FALSE))
+  }
+  })
+}
+
+# Create and launch the Shiny app
+shinyApp(ui, server)
+
+```
+
+<!-- In this analysis all Micro-Pk studies of the Maier Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for "Smokers 1" is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses. -->
+
+<!-- ```{r} -->
+
+<!-- st <- readRDS("overview.rds") -->
+
+<!-- # Select studies / conditions -->
+
+<!-- data <- subset(st, st$Experimental == TRUE) -->
+
+<!-- knitr::kable(data) -->
+
+<!-- ``` -->
+
+<!-- ### Forest Plot -->
+
+<!-- The forest plot visually represents the effect sizes and confidence intervals for each study. -->
+
+<!-- ```{r} -->
+
+<!-- #| warning: false -->
+
+<!-- #Frequentist m-a with metafor  -->
+
+<!-- library(metafor) -->
+
+<!-- # Specify parameters of Exp Studies -->
+
+<!-- yi=data$ES -->
+
+<!-- vi=data$Var -->
+
+<!-- studies=data$Study -->
+
+<!-- # invert ES of Smokers 1, since the hypothesis was two-sided and the results showed a negative effect (smokers are avoiding smoking-related images) -->
+
+<!-- yi[which(studies == "Smokers 1 Exp")] <- -yi[which(studies == "Smokers 1 Exp")] -->
+
+<!-- # Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316 -->
+
+<!-- # knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018 -->
+
+<!-- res <- rma( -->
+
+<!--   yi, -->
+
+<!--   vi,  -->
+
+<!--   method="REML", -->
+
+<!--   #mods = ~ data$Labstudy, -->
+
+<!--   knha=TRUE, -->
+
+<!--   slab=paste(studies) -->
+
+<!--   ) -->
+
+<!-- # forest plot -->
+
+<!-- forest(res,  -->
+
+<!--        xlab="ES", mlab="RE", psize=1) -->
+
+<!-- ``` -->
+
+<!-- ### Summary Statistics -->
+
+<!-- These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0. -->
+
+<!-- The Tau² represents the between-study variance, and the I² the heterogeneity. A significant test for Heterogeneity indicates a genuine variability of true effects across studies. -->
+
+<!-- ```{r} -->
+
+<!-- summary.rma(res) -->
+
+<!-- ``` -->
+
+<!-- ### Funnel Plot -->
+
+<!-- ```{r} -->
+
+<!-- # funnel plot (publication bias) -->
+
+<!-- funnel(res) -->
+
+<!-- ``` -->
+
+<!-- ## Control Studies -->
+
+<!-- In this analysis all Micro-Pk studies of the Maier Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included. -->
+
+<!-- ```{r} -->
+
+<!-- st <- readRDS("overview.rds") -->
+
+<!-- # Select studies / conditions -->
+
+<!-- data <- subset(st, st$Experimental == FALSE) -->
+
+<!-- knitr::kable(data) -->
+
+<!-- ``` -->
+
+<!-- ### Forest Plot -->
+
+<!-- The forest plot visually represents the effect sizes and confidence intervals for each study. -->
+
+<!-- ```{r} -->
+
+<!-- #| warning: false -->
+
+<!-- #Frequentist m-a with metafor  -->
+
+<!-- library(metafor) -->
+
+<!-- # Specify parameters of Exp Studies -->
+
+<!-- yi=data$ES -->
+
+<!-- vi=data$Var -->
+
+<!-- studies=data$Study -->
+
+<!-- # Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316 -->
+
+<!-- # knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018 -->
+
+<!-- res <- rma( -->
+
+<!--   yi, -->
+
+<!--   vi,  -->
+
+<!--   method="REML", -->
+
+<!--   #mods = ~ data$Labstudy, -->
+
+<!--   knha=TRUE, -->
+
+<!--   slab=paste(studies) -->
+
+<!--   ) -->
+
+<!-- # forest plot -->
+
+<!-- forest(res,  -->
+
+<!--        xlab="ES", mlab="RE", psize=1) -->
+
+<!-- ``` -->
+
+<!-- ### Summary Statistics -->
+
+<!-- These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0. -->
+
+<!-- The Tau² represents the between-study variance, and the I² the heterogeneity. A significant test for Heterogeneity indicates a genuine variability of true effects across studies. -->
+
+<!-- ```{r} -->
+
+<!-- summary.rma(res) -->
+
+<!-- ``` -->
+
+<!-- ### Funnel Plot -->
+
+<!-- ```{r} -->
+
+<!-- # funnel plot (publication bias) -->
+
+<!-- funnel(res) -->
+
+<!-- ``` -->
+
+<!-- ::: -->
