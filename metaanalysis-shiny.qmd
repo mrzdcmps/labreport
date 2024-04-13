@@ -129,13 +129,13 @@ ui <- page_fillable(
       "condition",
       label = NULL,
       choices = list("Experimental" = TRUE, "Control" = FALSE),
-      selected = 1
+      selected = TRUE
     ),
     checkboxGroupInput(
       "labOnline",
       label = NULL,
-      choices = list("Lab" = "lab", "Online" = "online"),
-      selected = 1
+      choices = list("Lab" = TRUE, "Online" = FALSE),
+      selected = c(TRUE, FALSE)
     )
   ),
   card(dataTableOutput("selectedStudies"))
@@ -144,17 +144,27 @@ ui <- page_fillable(
 
 # Define your Shiny server logic here
 server <- function(input, output, session) {
+
   output$selectedStudies <- renderDataTable({
-  
-  # Select studies / conditions
-  st <- subset(st, st$Experimental == input$condition)
-  if(input$labOnline > 1) {
-    st <- ifelse(input$labOnline == 2, 
-                 subset(st, st$Labstudy == TRUE),
-                 subset(st, st$Labstudy == FALSE))
-  }
+    
+    # Select studies / conditions
+    st <- subset(st, st$Experimental == input$condition)
+    
+    # Check if no checkboxes are selected
+    if (length(input$labOnline) == 0) {
+      # If none are selected, return an empty data frame
+      return(data.frame())
+    } else {
+      # Filter the data based on the selected checkboxes
+      st <- subset(st, st$Labstudy %in% input$labOnline)
+    }
+    
+    st
+    
   })
+
 }
+
 
 # Create and launch the Shiny app
 shinyApp(ui, server)
