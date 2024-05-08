@@ -17,7 +17,6 @@ Last update: 04 May 2020
 ```{r}
 st <- readRDS("overview.rds")
 
-library(formattable)
 library(dplyr)
 library(knitr)
 library(kableExtra)
@@ -62,7 +61,7 @@ links = c(
 ft <- st %>%
   mutate(
     across(where(is.numeric), ~ round(., 2)),
-    `Hits (%)` = color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
     p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
     Experimental = ifelse(Experimental, "✔", "✖"),
     Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
