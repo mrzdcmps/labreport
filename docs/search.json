@@ -1,5 +1,65 @@
 [
   {
+    "objectID": "studies/sound.html",
+    "href": "studies/sound.html",
+    "title": "Sound Preference",
+    "section": "",
+    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Sound Preference"
+    ]
+  },
+  {
+    "objectID": "studies/sound.html#hypothesis",
+    "href": "studies/sound.html#hypothesis",
+    "title": "Sound Preference",
+    "section": "",
+    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Sound Preference"
+    ]
+  },
+  {
+    "objectID": "studies/sound.html#participants",
+    "href": "studies/sound.html#participants",
+    "title": "Sound Preference",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n70\n\n\nFemale\n56\n\n\nMale\n14\n\n\nMean Age\n25.1 years\n\n\nSD Age\n10.83 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Sound Preference"
+    ]
+  },
+  {
+    "objectID": "studies/sound.html#materials",
+    "href": "studies/sound.html#materials",
+    "title": "Sound Preference",
+    "section": "Materials",
+    "text": "Materials\nAudio stimuli were taken from the International Affective Digitized Sounds (Bradley & Lang, 2007) and consisted of 12 audio files with positive valence, e.g. laughter, bonfire, music (IDs: 110, 151, 220, 352, 377, 725, 726, 811, 815, 817, 820) and 12 audio files with negative valence, e.g. crying, bees, alarm (IDs: 115, 242, 255, 261, 277, 380, 420, 624, 709, 712, 719). Sounds had a duration of 6 seconds.\nThe relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Sound Preference"
+    ]
+  },
+  {
+    "objectID": "studies/sound.html#procedures",
+    "href": "studies/sound.html#procedures",
+    "title": "Sound Preference",
+    "section": "Procedures",
+    "text": "Procedures\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nRelaxation Audio\nRelaxation Audio English",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Sound Preference"
+    ]
+  },
+  {
     "objectID": "studies/smokers1.html",
     "href": "studies/smokers1.html",
     "title": "Smokers 1",
@@ -28,7 +88,7 @@
     "href": "studies/smokers1.html#participants",
     "title": "Smokers 1",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n254\n\n\nFemale\n145\n\n\nMale\n109\n\n\nMean Age\n30.3 years\n\n\nSD Age\n12.88 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n254\n\n\nFemale\n145\n\n\nMale\n109\n\n\nMean Age\n30.3 years\n\n\nSD Age\n12.88 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -72,66 +132,6 @@
     ]
   },
   {
-    "objectID": "studies/sound.html",
-    "href": "studies/sound.html",
-    "title": "Sound Preference",
-    "section": "",
-    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Sound Preference"
-    ]
-  },
-  {
-    "objectID": "studies/sound.html#hypothesis",
-    "href": "studies/sound.html#hypothesis",
-    "title": "Sound Preference",
-    "section": "",
-    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Sound Preference"
-    ]
-  },
-  {
-    "objectID": "studies/sound.html#participants",
-    "href": "studies/sound.html#participants",
-    "title": "Sound Preference",
-    "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n70\n\n\nFemale\n56\n\n\nMale\n14\n\n\nMean Age\n25.1 years\n\n\nSD Age\n10.83 years",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Sound Preference"
-    ]
-  },
-  {
-    "objectID": "studies/sound.html#materials",
-    "href": "studies/sound.html#materials",
-    "title": "Sound Preference",
-    "section": "Materials",
-    "text": "Materials\nAudio stimuli were taken from the International Affective Digitized Sounds (Bradley & Lang, 2007) and consisted of 12 audio files with positive valence, e.g. laughter, bonfire, music (IDs: 110, 151, 220, 352, 377, 725, 726, 811, 815, 817, 820) and 12 audio files with negative valence, e.g. crying, bees, alarm (IDs: 115, 242, 255, 261, 277, 380, 420, 624, 709, 712, 719). Sounds had a duration of 6 seconds.\nThe relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Sound Preference"
-    ]
-  },
-  {
-    "objectID": "studies/sound.html#procedures",
-    "href": "studies/sound.html#procedures",
-    "title": "Sound Preference",
-    "section": "Procedures",
-    "text": "Procedures\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nRelaxation Audio\nRelaxation Audio English",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Sound Preference"
-    ]
-  },
-  {
     "objectID": "studies/monks.html",
     "href": "studies/monks.html",
     "title": "Monks",
@@ -160,7 +160,7 @@
     "href": "studies/monks.html#participants",
     "title": "Monks",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n52\n\n\nFemale\n15\n\n\nMale\n36\n\n\nMean Age\n31.56 years\n\n\nSD Age\n12.79 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n52\n\n\nFemale\n15\n\n\nMale\n36\n\n\nMean Age\n31.56 years\n\n\nSD Age\n12.79 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -220,7 +220,7 @@
     "href": "studies/lovekind.html#participants",
     "title": "Loving Kindness",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n171\n\n\nFemale\n127\n\n\nMale\n44\n\n\nMean Age\n33.29 years\n\n\nSD Age\n14.26 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n171\n\n\nFemale\n127\n\n\nMale\n44\n\n\nMean Age\n33.29 years\n\n\nSD Age\n14.26 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -280,7 +280,7 @@
     "href": "studies/cointoss.html#participants",
     "title": "Coin Toss",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n24\n\n\nMale\n16\n\n\nMean Age\n26.45 years\n\n\nSD Age\n5.59 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n24\n\n\nMale\n16\n\n\nMean Age\n26.45 years\n\n\nSD Age\n5.59 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -340,7 +340,7 @@
     "href": "studies/allgood.html#participants",
     "title": "All-will-be-good",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n38\n\n\nFemale\n29\n\n\nMale\n9\n\n\nMean Age\n23.03 years\n\n\nSD Age\n6.7 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n38\n\n\nFemale\n29\n\n\nMale\n9\n\n\nMean Age\n23.03 years\n\n\nSD Age\n6.7 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -370,6 +370,77 @@
       "Studies",
       "All-will-be-good"
     ]
+  },
+  {
+    "objectID": "metaanalysis-shiny.html",
+    "href": "metaanalysis-shiny.html",
+    "title": "Custom Meta-Analysis",
+    "section": "",
+    "text": "Last update: 04 May 2020\n#| standalone: true\n#| viewerHeight: 1200\n\nlibrary(shiny)\nlibrary(bslib)\n\nst &lt;- structure(list(Study = c(\"Loving Kind\", \"Prayer\", \"Monks T1 Exp\", \n\"Monks T1 Con\", \"Monks T2 Exp\", \"Monks T2 Con\", \"Meditation T1\", \n\"Meditation T2\", \"Sound preference\", \"All-will-be-good\", \"One-armed Bandit\", \n\"Coin Toss\", \"Incongruence Exp\", \"Incongruence Con\", \"Smokers 1 Exp\", \n\"Smokers 1 Con\", \"Smokers 2 Exp\", \"Smokers 2 Con\", \"Smokers 3\", \n\"Psyscanner Style 1 Exp\", \"Psyscanner Style 1 Con\", \"Psyscanner Style 2 Exp\", \n\"Psyscanner Style 2 Con\", \"Psyscanner Style 3 Exp\", \"Psyscanner Style 3 Con\", \n\"Relaxation\", \"Priming 1 Exp\", \"Priming 1 Con\", \"Priming 2 Exp\", \n\"Priming 2 Con\", \"Priming 3 Exp\", \"Priming 3 Con\", \"Erotic Images 1\", \n\"Erotic Images 2\"), Experimental = c(TRUE, TRUE, TRUE, FALSE, \nTRUE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, \nTRUE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, \nFALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE\n), N = c(171L, 431L, 23L, 29L, 23L, 29L, 40L, 48L, 70L, 38L, \n40L, 40L, 236L, 271L, 122L, 132L, 175L, 220L, 203L, 542L, 562L, \n542L, 562L, 542L, 562L, 12571L, 6155L, 6155L, 6099L, 6099L, 3996L, \n3996L, 241L, 678L), Trials = c(100L, 100L, 400L, 400L, 400L, \n400L, 100L, 100L, 40L, 100L, 200L, 200L, 10L, 10L, 400L, 400L, \n400L, 400L, 400L, 30L, 30L, 30L, 30L, 30L, 30L, 100L, 20L, 20L, \n20L, 20L, 20L, 20L, 200L, 50L), M = c(49.7251461988304, 49.6380510440835, \n202.347826086957, 198.344827586207, 201.347826086957, 199.793103448276, \n49.275, 50.2291666666667, 20.3142857142857, 49.7105263157895, \n101.125, 100.525, 5.18220338983051, 5.04428044280443, 196.704918032787, \n200.530303030303, 200.291428571429, 198.981818181818, 199.137931034483, \n15.2416974169742, 15.0409252669039, 15.1752767527675, 15.1512455516014, \n15.0184501845018, 15.0622775800712, 50.0177392411105, 10.0550771730301, \n10.0222583265638, 9.96409247417609, 9.96507624200689, 9.98948948948949, \n9.91391391391391, 100.510373443983, 25.1283185840708), SD = c(4.93014847130271, \n4.80589172396806, 6.85968920348287, 9.79167234391758, 8.02047774394435, \n9.6487575452743, 5.7645579366616, 4.53937657793579, 2.93179895875818, \n5.0985312921592, 6.18180746948201, 7.70942646441721, 1.57799395171466, \n1.53896145198318, 9.87415737557, 9.68231203379056, 10.3751851230838, \n10.3416362149079, 10.1117855781943, 2.63677169106241, 2.71460653233964, \n2.75102021354226, 2.65017543162426, 2.75688199475488, 2.70169296784607, \n5.06168036588943, 2.25561549054791, 2.25163612232843, 2.31466641058703, \n2.36271329396309, 2.19474617623822, 2.25220717142659, 7.31557245037086, \n3.52493466278969), `Hits (%)` = c(49.7251461988304, 49.6380510440835, \n50.5869565217391, 49.5862068965517, 50.3369565217391, 49.948275862069, \n49.275, 50.2291666666667, 50.7857142857143, 49.7105263157895, \n50.5625, 50.2625, 51.8220338983051, 50.4428044280443, 50.8237704918033, \n49.8674242424242, 49.9271428571429, 50.2545454545455, 50.2155172413793, \n50.8056580565806, 50.1364175563464, 50.5842558425584, 50.5041518386714, \n50.0615006150061, 50.2075919335706, 50.0177392411105, 50.2753858651503, \n50.1112916328188, 49.8204623708805, 49.8253812100344, 49.9474474474474, \n49.5695695695696, 50.2551867219917, 50.2566371681416), t = c(-0.729020606896472, \n-1.56355074666508, 1.64144147425297, -0.910301725734865, 0.80593039992534, \n-0.115473108722475, -0.795430049905895, 0.349764601595015, 0.896890604548625, \n-0.349990130526922, 1.15097805463926, 0.430692420311948, 1.77381008529611, \n0.473662342963556, -3.68592159561277, 0.629262715060855, 0.371582538427842, \n-1.46031794247476, -1.21468083119759, 2.13402314340298, 0.357398551813647, \n1.48330404334891, 1.35293254642545, 0.155805283071515, 0.54646694117528, \n0.392939088080033, 1.91566957214344, 0.775547373209846, -1.21150828588556, \n-1.15435466369368, -0.302727761515244, -2.41622495687227, 1.08304942073651, \n0.947879944064241), p = c(0.76650389013035, 0.940670635153101, \n0.0574627918303569, 0.814783199306179, 0.214454429536027, 0.545552850690794, \n0.784410930217886, 0.364038921318237, 0.186447985565466, 0.635834691657821, \n0.128374637526894, 0.334531532212438, 0.0386947595357356, 0.636123474407962, \n0.000342320770390312, 0.530272916593505, 0.644672109833505, 0.145635796988015, \n0.112952923092978, 0.0166449524736531, 0.720927870929834, 0.0692879809112358, \n0.17662215612942, 0.438122311924763, 0.584962273280754, 0.347185567036483, \n0.0277267283310387, 0.219023042334429, 0.887126197345885, 0.875799984964553, \n0.61894344988975, 0.992136536799251, 0.139936692912905, 0.343528791879829\n), ES = c(-0.0557495991793054, -0.0753135893826642, 0.342264207212838, \n-0.16903878680349, 0.168048105111216, -0.0214428179745754, -0.125768533852202, \n0.050484171720971, 0.107198930999974, -0.0567758963558183, 0.18198560947649, \n0.0680984509578162, 0.115465201645751, 0.0287729382353057, -0.333707661513032, \n0.0547702892090559, 0.0280889996632621, -0.0984546155969091, \n-0.0852538811123782, 0.0916641428582632, 0.0150759479933327, \n0.0637133641929295, 0.0570700149871691, 0.00669240995332663, \n0.0230513166419594, 0.00350461503457129, 0.0244178022632209, \n0.00988540126135096, -0.0155130457070047, -0.0147812085716645, \n-0.0047889412563075, -0.0382229872892009, 0.0697653461087004, \n0.036403109942822), Var = c(0.0481274608340183, 0.0023267658198906, \n0.0460248866856311, 0.0349754157145516, 0.0440921775137276, 0.0344906861110809, \n0.0251977215513417, 0.0208598817874412, 0.0143677972200538, 0.0263582039790396, \n0.0254139845257066, 0.0250579674877857, 0.00426553434913367, \n0.00369156435788689, 0.00865311804652662, 0.00758712039613653, \n0.00571653997686309, 0.00456748479848258, 0.00494401040454365, \n0.00185276966336341, 0.00177956164075436, 0.00184876327746936, \n0.00178225710552548, 0.00184505976785146, 0.00177983217366453, \n7.95486549330419e-05, 0.000162517971492069, 0.000162477475317473, \n0.000163981034152083, 0.000163979216603282, 0.000250253119864659, \n0.000250433057652316, 0.00415947552597026, 0.00147590352980347\n), BF = c(0.303471211595679, 0.144842277097853, 1.81552525845098, \n0.486015264106817, 1.04565878136535, 0.649371730492584, 0.465106928003074, \n0.745273785083545, 1.20005672396555, 0.472909967051332, 1.27186885170697, \n0.801891520709238, 2.24173090936873, 0.41779739595062, 66.0635984927554, \n0.163053978946462, 0.0902945945464987, 0.296360424685573, 0.395879650832266, \n5.06347779766114, 0.441130214017381, 1.8164150372646, 1.18198699986214, \n0.404840735603627, 0.508265232894753, 0.0993028953060386, 1.306826559933, \n0.169979234365898, 0.0364066820404983, 0.153884707180039, 0.08401371427802, \n0.0272477897764476, 0.973461367252893, 0.635992234368561), Direction = c(\"greater\", \n\"greater\", \"greater\", \"greater\", \"greater\", \"greater\", \"greater\", \n\"greater\", \"greater\", \"greater\", \"greater\", \"greater\", \"greater\", \n\"different\", \"different\", \"different\", \"less\", \"different\", \"less\", \n\"greater\", \"different\", \"greater\", \"different\", \"greater\", \"different\", \n\"greater\", \"greater\", \"greater\", \"greater\", \"greater\", \"greater\", \n\"greater\", \"greater\", \"greater\"), Labstudy = c(TRUE, FALSE, TRUE, \nTRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, \nTRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, \nFALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, \nFALSE, FALSE)), row.names = c(NA, 34L), class = \"data.frame\")\n  \nui &lt;- page_fillable(\n  \n  card(\n    card_header(\"Select Studies\"),\n    selectInput(\n      \"condition\",\n      label = NULL,\n      choices = list(\"Experimental\" = TRUE, \"Control\" = FALSE),\n      selected = TRUE\n    ),\n    checkboxGroupInput(\n      \"labOnline\",\n      label = NULL,\n      choices = list(\"Lab\" = TRUE, \"Online\" = FALSE),\n      selected = c(TRUE, FALSE)\n    )\n  ),\n  card(dataTableOutput(\"selectedStudies\"))\n  \n)\n\n# Define your Shiny server logic here\nserver &lt;- function(input, output, session) {\n\n  output$selectedStudies &lt;- renderDataTable({\n    \n    # Select studies / conditions\n    st &lt;- subset(st, st$Experimental == input$condition)\n    \n    # Check if no checkboxes are selected\n    if (length(input$labOnline) == 0) {\n      # If none are selected, return an empty data frame\n      return(data.frame())\n    } else {\n      # Filter the data based on the selected checkboxes\n      st &lt;- subset(st, st$Labstudy %in% input$labOnline)\n    }\n    \n    st\n    \n  })\n\n}\n\n\n# Create and launch the Shiny app\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "experiments.html",
+    "href": "experiments.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Last update: 04 May 2020\nStudy\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nLoving Kind\n✔\n171\n100\n49.73\n4.93\n49.73\n-0.73\n0.77\n-0.06\n0.05\n0.30\ngreater\n🏠\n\n\nPrayer\n✔\n431\n100\n49.64\n4.81\n49.64\n-1.56\n0.94\n-0.08\n0.00\n0.14\ngreater\n🌍\n\n\nMonks T1 Exp\n✔\n23\n400\n202.35\n6.86\n50.59\n1.64\n0.06\n0.34\n0.05\n1.82\ngreater\n🏠\n\n\nMonks T1 Con\n✖\n29\n400\n198.34\n9.79\n49.59\n-0.91\n0.81\n-0.17\n0.03\n0.49\ngreater\n🏠\n\n\nMonks T2 Exp\n✔\n23\n400\n201.35\n8.02\n50.34\n0.81\n0.21\n0.17\n0.04\n1.05\ngreater\n🏠\n\n\nMonks T2 Con\n✖\n29\n400\n199.79\n9.65\n49.95\n-0.12\n0.55\n-0.02\n0.03\n0.65\ngreater\n🏠\n\n\nMeditation T1\n✖\n40\n100\n49.27\n5.76\n49.27\n-0.80\n0.78\n-0.13\n0.03\n0.47\ngreater\n🌍\n\n\nMeditation T2\n✔\n48\n100\n50.23\n4.54\n50.23\n0.35\n0.36\n0.05\n0.02\n0.75\ngreater\n🌍\n\n\nSound preference\n✔\n70\n40\n20.31\n2.93\n50.79\n0.90\n0.19\n0.11\n0.01\n1.20\ngreater\n🏠\n\n\nAll-will-be-good\n✔\n38\n100\n49.71\n5.10\n49.71\n-0.35\n0.64\n-0.06\n0.03\n0.47\ngreater\n🏠\n\n\nOne-armed Bandit\n✔\n40\n200\n101.12\n6.18\n50.56\n1.15\n0.13\n0.18\n0.03\n1.27\ngreater\n🏠\n\n\nCoin Toss\n✔\n40\n200\n100.53\n7.71\n50.26\n0.43\n0.33\n0.07\n0.03\n0.80\ngreater\n🏠\n\n\nIncongruence Exp\n✔\n236\n10\n5.18\n1.58\n51.82\n1.77\n0.04\n0.12\n0.00\n2.24\ngreater\n🏠\n\n\nIncongruence Con\n✖\n271\n10\n5.04\n1.54\n50.44\n0.47\n0.64\n0.03\n0.00\n0.42\ndifferent\n🏠\n\n\nSmokers 1 Exp\n✔\n122\n400\n196.70\n9.87\n50.82\n-3.69\n0\n-0.33\n0.01\n66.06\ndifferent\n🏠\n\n\nSmokers 1 Con\n✖\n132\n400\n200.53\n9.68\n49.87\n0.63\n0.53\n0.05\n0.01\n0.16\ndifferent\n🏠\n\n\nSmokers 2 Exp\n✔\n175\n400\n200.29\n10.38\n49.93\n0.37\n0.64\n0.03\n0.01\n0.09\nless\n🏠\n\n\nSmokers 2 Con\n✖\n220\n400\n198.98\n10.34\n50.25\n-1.46\n0.15\n-0.10\n0.00\n0.30\ndifferent\n🏠\n\n\nSmokers 3\n✔\n203\n400\n199.14\n10.11\n50.22\n-1.21\n0.11\n-0.09\n0.00\n0.40\nless\n🏠\n\n\nPsyscanner Style 1 Exp\n✔\n542\n30\n15.24\n2.64\n50.81\n2.13\n0.02\n0.09\n0.00\n5.06\ngreater\n🌍\n\n\nPsyscanner Style 1 Con\n✖\n562\n30\n15.04\n2.71\n50.14\n0.36\n0.72\n0.02\n0.00\n0.44\ndifferent\n🌍\n\n\nPsyscanner Style 2 Exp\n✔\n542\n30\n15.18\n2.75\n50.58\n1.48\n0.07\n0.06\n0.00\n1.82\ngreater\n🌍\n\n\nPsyscanner Style 2 Con\n✖\n562\n30\n15.15\n2.65\n50.50\n1.35\n0.18\n0.06\n0.00\n1.18\ndifferent\n🌍\n\n\nPsyscanner Style 3 Exp\n✔\n542\n30\n15.02\n2.76\n50.06\n0.16\n0.44\n0.01\n0.00\n0.40\ngreater\n🌍\n\n\nPsyscanner Style 3 Con\n✖\n562\n30\n15.06\n2.70\n50.21\n0.55\n0.58\n0.02\n0.00\n0.51\ndifferent\n🌍\n\n\nRelaxation\n✔\n12571\n100\n50.02\n5.06\n50.02\n0.39\n0.35\n0.00\n0.00\n0.10\ngreater\n🌍\n\n\nPriming 1 Exp\n✔\n6155\n20\n10.06\n2.26\n50.28\n1.92\n0.03\n0.02\n0.00\n1.31\ngreater\n🌍\n\n\nPriming 1 Con\n✖\n6155\n20\n10.02\n2.25\n50.11\n0.78\n0.22\n0.01\n0.00\n0.17\ngreater\n🌍\n\n\nPriming 2 Exp\n✔\n6099\n20\n9.96\n2.31\n49.82\n-1.21\n0.89\n-0.02\n0.00\n0.04\ngreater\n🌍\n\n\nPriming 2 Con\n✖\n6099\n20\n9.97\n2.36\n49.83\n-1.15\n0.88\n-0.01\n0.00\n0.15\ngreater\n🌍\n\n\nPriming 3 Exp\n✔\n3996\n20\n9.99\n2.19\n49.95\n-0.30\n0.62\n0.00\n0.00\n0.08\ngreater\n🌍\n\n\nPriming 3 Con\n✖\n3996\n20\n9.91\n2.25\n49.57\n-2.42\n0.99\n-0.04\n0.00\n0.03\ngreater\n🌍\n\n\nErotic Images 1\n✔\n241\n200\n100.51\n7.32\n50.26\n1.08\n0.14\n0.07\n0.00\n0.97\ngreater\n🌍\n\n\nErotic Images 2\n✔\n678\n50\n25.13\n3.52\n50.26\n0.95\n0.34\n0.04\n0.00\n0.64\ngreater\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "experiments.html#general-information",
+    "href": "experiments.html#general-information",
+    "title": "Overview",
+    "section": "General Information",
+    "text": "General Information\n\nGeneration of Randomness\nWhen not specified otherwise, we used a quantum-based random number generator (qRNG) Quantis by idquantique to generate true randomness and coupled the outcome of these random events to the display of relevant stimulus material. A micro-Pk effect should result in a (temporary; see change of evidence) biasing of the qRNG outcome corresponding to the presentation of more or less of the relevant stimuli.\n\n\nOnline Studies\nIf an experiment is classified as an online study, it was set up with the software jsPsych (Leeuw et al., 2023) and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.\n\n\nProcedural Details\nPlease refer to the experimental programs attached to the resources of each study for all procedural details, like stimulus presentation timings, questionnaires, etc.",
+    "crumbs": [
+      "Experiments",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "changeofevidence.html",
+    "href": "changeofevidence.html",
+    "title": "Change of Evidence",
+    "section": "",
+    "text": "Last update: 04 May 2020\nChange of Evidence measures compare the Bayesian evidence for an effect over the course of data collection to those of monte-carlo simulations. They can reveal unusual changes in evidence which can be the consequence of the rise and decline of volatile effects.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax BF\n\n\nBF Energy\n\n\nFFT Amplitude sum\n\n\n\n\nStudy\nEffect expected\nN\nMaxBF\np\nEnergy\np\nAsum\np\nDirection\nLab/Online\n\n\n\n\nLoving Kind\n✔\n171\n4.16 (n=32)\n0.11\n17.33\n0.17\n3.22\n0.12\ngreater\n🏠\n\n\nPrayer\n✔\n431\n1.44 (n=17)\n0.5\n-269.85\n0.73\n1.42\n0.49\ngreater\n🌍\n\n\nMonks T1 Exp\n✔\n23\n1.98 (n=22)\n0.15\n6.44\n0.11\n1.80\n0.13\ngreater\n🏠\n\n\nMonks T1 Con\n✖\n29\n1 (n=1)\n0.58\n-9.66\n0.79\n0.94\n0.89\ngreater\n🏠\n\n\nMonks T2 Exp\n✔\n23\n1.74 (n=14)\n0.2\n4.11\n0.14\n1.53\n0.19\ngreater\n🏠\n\n\nMonks T2 Con\n✖\n29\n1.18 (n=7)\n0.44\n-5.08\n0.47\n1.09\n0.47\ngreater\n🏠\n\n\nMeditation T1\n✖\n40\n1 (n=1)\n0.62\n-17.86\n0.91\n0.86\n1\ngreater\n🌍\n\n\nMeditation T2\n✔\n48\n1.74 (n=4)\n0.26\n-13.48\n0.58\n1.34\n0.34\ngreater\n🌍\n\n\nSound preference\n✔\n70\n1.27 (n=53)\n0.46\n-1.29\n0.23\n1.34\n0.36\ngreater\n🏠\n\n\nAll-will-be-good\n✔\n38\n1.77 (n=5)\n0.23\n-9.02\n0.56\n1.43\n0.29\ngreater\n🏠\n\n\nOne-armed Bandit\n✔\n40\n4.15 (n=24)\n0.05\n44.75\n0.03\n3.87\n0.04\ngreater\n🏠\n\n\nCoin Toss\n✔\n40\n1.15 (n=17)\n0.51\n-2.65\n0.31\n1.20\n0.42\ngreater\n🏠\n\n\nIncongruence Exp\n✔\n236\n10.72 (n=153)\n0.04\n564.28\n0.02\n9.89\n0.03\ngreater\n🏠\n\n\nIncongruence Con\n✖\n271\n1.17 (n=125)\n0.62\n-89.81\n0.41\n1.25\n0.52\ndifferent\n🏠\n\n\nSmokers 1 Exp\n✔\n122\n66.06 (n=122)\n0.01\n497.53\n0.01\n44.31\n0.01\ndifferent\n🏠\n\n\nSmokers 1 Con\n✖\n132\n1 (n=1)\n0.56\n-99.07\n0.99\n0.80\n1\ndifferent\n🏠\n\n\nSmokers 2 Exp\n✔\n175\n10.19 (n=7)\n0.05\n-59.18\n0.12\n6.94\n0.06\nless\n🏠\n\n\nSmokers 2 Con\n✖\n220\n3.56 (n=10)\n0.16\n-138.72\n0.28\n2.29\n0.18\ndifferent\n🏠\n\n\nSmokers 3\n✔\n203\n1.89 (n=3)\n0.28\n-130.01\n0.29\n1.30\n0.34\nless\n🏠\n\n\nPsyscanner Style 1 Exp\n✔\n542\n29.93 (n=267)\n0.01\n3209.85\n0\n26.42\n0.01\ngreater\n🌍\n\n\nPsyscanner Style 1 Con\n✖\n562\n2.91 (n=22)\n0.18\n-273.40\n0.75\n2.01\n0.27\ndifferent\n🌍\n\n\nPsyscanner Style 2 Exp\n✔\n542\n8.44 (n=209)\n0.06\n1305.95\n0.03\n10.19\n0.05\ngreater\n🌍\n\n\nPsyscanner Style 2 Con\n✖\n562\n1.89 (n=21)\n0.31\n-155.63\n0.3\n1.75\n0.34\ndifferent\n🌍\n\n\nPsyscanner Style 3 Exp\n✔\n542\n2.51 (n=48)\n0.27\n-62.42\n0.24\n2.84\n0.22\ngreater\n🌍\n\n\nPsyscanner Style 3 Con\n✖\n562\n1.72 (n=17)\n0.35\n-205.14\n0.42\n1.54\n0.41\ndifferent\n🌍\n\n\nRelaxation\n✔\n12571\n7.44 (n=380)\n0.1\n-6614.03\n0.11\n7.51\n0.09\ngreater\n🌍\n\n\nPriming 1 Exp\n✔\n6155\n28.78 (n=1680)\n0.02\n20135.75\n0.01\n30.99\n0.02\ngreater\n🌍\n\n\nPriming 1 Con\n✖\n6155\n1.15 (n=58)\n0.78\n-4814.72\n0.5\n1.24\n0.83\ngreater\n🌍\n\n\nPriming 2 Exp\n✔\n6099\n1.01 (n=28)\n0.87\n-5344.89\n0.83\n1.22\n0.84\ngreater\n🌍\n\n\nPriming 2 Con\n✖\n6099\n1 (n=1)\n0.88\n-4443.37\n0.39\n1.43\n0.7\ngreater\n🌍\n\n\nPriming 3 Exp\n✔\n3996\n1.65 (n=11)\n0.54\n-3459.03\n0.89\n1.50\n0.66\ngreater\n🌍\n\n\nPriming 3 Con\n✖\n3996\n1.56 (n=5)\n0.56\n-3608.74\n0.97\n1.37\n0.73\ngreater\n🌍\n\n\nErotic Images 1\n✔\n241\n1.39 (n=111)\n0.49\n-54.62\n0.28\n1.42\n0.43\ngreater\n🌍\n\n\nErotic Images 2\n✔\n678\n5.24 (n=363)\n0.12\n482.41\n0.06\n5.29\n0.1\ngreater\n🌍"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "This project addresses the relationship between mind and matter and studies observational effects on quantum state reductions. It is located at LMU Munich under the supervision of Prof. Markus Maier and Dr. Moritz Dechamps."
+  },
+  {
+    "objectID": "index.html#the-lmu-micro-pk-project",
+    "href": "index.html#the-lmu-micro-pk-project",
+    "title": "About",
+    "section": "",
+    "text": "This project addresses the relationship between mind and matter and studies observational effects on quantum state reductions. It is located at LMU Munich under the supervision of Prof. Markus Maier and Dr. Moritz Dechamps."
+  },
+  {
+    "objectID": "index.html#micro-psychokinesis",
+    "href": "index.html#micro-psychokinesis",
+    "title": "About",
+    "section": "Micro-Psychokinesis",
+    "text": "Micro-Psychokinesis\nMicro-Psychokinesis (Micro-Pk) describes a mental influence on inanimate, probabilistic systems, e.g. quantum random number generators (qRNGs), detectable through statistical means (Varvoglis & Bancel, 2015)."
+  },
+  {
+    "objectID": "index.html#the-lab-report",
+    "href": "index.html#the-lab-report",
+    "title": "About",
+    "section": "The Lab Report",
+    "text": "The Lab Report\nThis website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results (see e.g. Rothstein et al., 2005).\nFor each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the ‘change of evidence’ analyses, as well as an overall meta-analytical assessment.\n\nIncluded Studies\nIn this report we include all studies conducted in the LMU Lab exploring a general micro-Pk effect. Not included are experiments of individuals or on related psi effects like precognition."
+  },
+  {
+    "objectID": "index.html#reference-this-report",
+    "href": "index.html#reference-this-report",
+    "title": "About",
+    "section": "Reference This Report",
+    "text": "Reference This Report\nDOI. Ref."
   },
   {
     "objectID": "metaanalysis.html",
@@ -414,7 +485,7 @@
     "href": "studies/bandit.html#participants",
     "title": "One-Armed Bandit",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n21\n\n\nMale\n19\n\n\nMean Age\n23.98 years\n\n\nSD Age\n12.51 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n21\n\n\nMale\n19\n\n\nMean Age\n23.98 years\n\n\nSD Age\n12.51 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -474,7 +545,7 @@
     "href": "studies/incongruence.html#participants",
     "title": "Incongruence",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n507\n\n\nFemale\n365\n\n\nMale\n141\n\n\nMean Age\n23.41 years\n\n\nSD Age\n6.73 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n507\n\n\nFemale\n365\n\n\nMale\n141\n\n\nMean Age\n23.41 years\n\n\nSD Age\n6.73 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -594,7 +665,7 @@
     "href": "studies/prayer.html#participants",
     "title": "Prayer",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n431\n\n\nFemale\n235\n\n\nMale\n166\n\n\nOther\n4\n\n\nMean Age\n41.18 years\n\n\nSD Age\n13.09 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n431\n\n\nFemale\n235\n\n\nMale\n166\n\n\nOther\n4\n\n\nMean Age\n41.18 years\n\n\nSD Age\n13.09 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -626,25 +697,75 @@
     ]
   },
   {
-    "objectID": "experiments.html",
-    "href": "experiments.html",
-    "title": "Overview",
+    "objectID": "studies/smokers2.html",
+    "href": "studies/smokers2.html",
+    "title": "Smokers 1",
     "section": "",
-    "text": "Last update: 04 May 2020\nStudy\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nLoving Kind\n✔\n171\n100\n49.73\n4.93\n49.73\n-0.73\n0.77\n-0.06\n0.05\n0.30\ngreater\n🏠\n\n\nPrayer\n✔\n431\n100\n49.64\n4.81\n49.64\n-1.56\n0.94\n-0.08\n0.00\n0.14\ngreater\n🌍\n\n\nMonks T1 Exp\n✔\n23\n400\n202.35\n6.86\n50.59\n1.64\n0.06\n0.34\n0.05\n1.82\ngreater\n🏠\n\n\nMonks T1 Con\n✖\n29\n400\n198.34\n9.79\n49.59\n-0.91\n0.81\n-0.17\n0.03\n0.49\ngreater\n🏠\n\n\nMonks T2 Exp\n✔\n23\n400\n201.35\n8.02\n50.34\n0.81\n0.21\n0.17\n0.04\n1.05\ngreater\n🏠\n\n\nMonks T2 Con\n✖\n29\n400\n199.79\n9.65\n49.95\n-0.12\n0.55\n-0.02\n0.03\n0.65\ngreater\n🏠\n\n\nMeditation T1\n✖\n40\n100\n49.27\n5.76\n49.27\n-0.80\n0.78\n-0.13\n0.03\n0.47\ngreater\n🌍\n\n\nMeditation T2\n✔\n48\n100\n50.23\n4.54\n50.23\n0.35\n0.36\n0.05\n0.02\n0.75\ngreater\n🌍\n\n\nSound preference\n✔\n70\n40\n20.31\n2.93\n50.79\n0.90\n0.19\n0.11\n0.01\n1.20\ngreater\n🏠\n\n\nAll-will-be-good\n✔\n38\n100\n49.71\n5.10\n49.71\n-0.35\n0.64\n-0.06\n0.03\n0.47\ngreater\n🏠\n\n\nOne-armed Bandit\n✔\n40\n200\n101.12\n6.18\n50.56\n1.15\n0.13\n0.18\n0.03\n1.27\ngreater\n🏠\n\n\nCoin Toss\n✔\n40\n200\n100.53\n7.71\n50.26\n0.43\n0.33\n0.07\n0.03\n0.80\ngreater\n🏠\n\n\nIncongruence Exp\n✔\n236\n10\n5.18\n1.58\n51.82\n1.77\n0.04\n0.12\n0.00\n2.24\ngreater\n🏠\n\n\nIncongruence Con\n✖\n271\n10\n5.04\n1.54\n50.44\n0.47\n0.64\n0.03\n0.00\n0.42\ndifferent\n🏠\n\n\nSmokers 1 Exp\n✔\n122\n400\n196.70\n9.87\n50.82\n-3.69\n0\n-0.33\n0.01\n66.06\ndifferent\n🏠\n\n\nSmokers 1 Con\n✖\n132\n400\n200.53\n9.68\n49.87\n0.63\n0.53\n0.05\n0.01\n0.16\ndifferent\n🏠\n\n\nSmokers 2 Exp\n✔\n175\n400\n200.29\n10.38\n49.93\n0.37\n0.64\n0.03\n0.01\n0.09\nless\n🏠\n\n\nSmokers 2 Con\n✖\n220\n400\n198.98\n10.34\n50.25\n-1.46\n0.15\n-0.10\n0.00\n0.30\ndifferent\n🏠\n\n\nSmokers 3\n✔\n203\n400\n199.14\n10.11\n50.22\n-1.21\n0.11\n-0.09\n0.00\n0.40\nless\n🏠\n\n\nPsyscanner Style 1 Exp\n✔\n542\n30\n15.24\n2.64\n50.81\n2.13\n0.02\n0.09\n0.00\n5.06\ngreater\n🌍\n\n\nPsyscanner Style 1 Con\n✖\n562\n30\n15.04\n2.71\n50.14\n0.36\n0.72\n0.02\n0.00\n0.44\ndifferent\n🌍\n\n\nPsyscanner Style 2 Exp\n✔\n542\n30\n15.18\n2.75\n50.58\n1.48\n0.07\n0.06\n0.00\n1.82\ngreater\n🌍\n\n\nPsyscanner Style 2 Con\n✖\n562\n30\n15.15\n2.65\n50.50\n1.35\n0.18\n0.06\n0.00\n1.18\ndifferent\n🌍\n\n\nPsyscanner Style 3 Exp\n✔\n542\n30\n15.02\n2.76\n50.06\n0.16\n0.44\n0.01\n0.00\n0.40\ngreater\n🌍\n\n\nPsyscanner Style 3 Con\n✖\n562\n30\n15.06\n2.70\n50.21\n0.55\n0.58\n0.02\n0.00\n0.51\ndifferent\n🌍\n\n\nRelaxation\n✔\n12571\n100\n50.02\n5.06\n50.02\n0.39\n0.35\n0.00\n0.00\n0.10\ngreater\n🌍\n\n\nPriming 1 Exp\n✔\n6155\n20\n10.06\n2.26\n50.28\n1.92\n0.03\n0.02\n0.00\n1.31\ngreater\n🌍\n\n\nPriming 1 Con\n✖\n6155\n20\n10.02\n2.25\n50.11\n0.78\n0.22\n0.01\n0.00\n0.17\ngreater\n🌍\n\n\nPriming 2 Exp\n✔\n6099\n20\n9.96\n2.31\n49.82\n-1.21\n0.89\n-0.02\n0.00\n0.04\ngreater\n🌍\n\n\nPriming 2 Con\n✖\n6099\n20\n9.97\n2.36\n49.83\n-1.15\n0.88\n-0.01\n0.00\n0.15\ngreater\n🌍\n\n\nPriming 3 Exp\n✔\n3996\n20\n9.99\n2.19\n49.95\n-0.30\n0.62\n0.00\n0.00\n0.08\ngreater\n🌍\n\n\nPriming 3 Con\n✖\n3996\n20\n9.91\n2.25\n49.57\n-2.42\n0.99\n-0.04\n0.00\n0.03\ngreater\n🌍\n\n\nErotic Images 1\n✔\n241\n200\n100.51\n7.32\n50.26\n1.08\n0.14\n0.07\n0.00\n0.97\ngreater\n🌍\n\n\nErotic Images 2\n✔\n678\n50\n25.13\n3.52\n50.26\n0.95\n0.34\n0.04\n0.00\n0.64\ngreater\n🌍",
+    "text": "In this replication study (Smokers 1), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
     "crumbs": [
       "Experiments",
-      "Overview"
+      "Studies",
+      "Smokers 1"
     ]
   },
   {
-    "objectID": "experiments.html#general-information",
-    "href": "experiments.html#general-information",
-    "title": "Overview",
-    "section": "General Information",
-    "text": "General Information\n\nGeneration of Randomness\nWhen not specified otherwise, we used a quantum-based random number generator (qRNG) Quantis by idquantique to generate true randomness and coupled the outcome of these random events to the display of relevant stimulus material. A micro-Pk effect should result in a (temporary; see change of evidence) biasing of the qRNG outcome corresponding to the presentation of more or less of the relevant stimuli.\n\n\nOnline Studies\nIf an experiment is classified as an online study, it was set up with the software jsPsych (Leeuw et al., 2023) and running on a dedicated web server in the departments IT infrastructure. A qRNG is directly connected to the web server via USB and provides random events without a buffer.\n\n\nProcedural Details\nPlease refer to the experimental programs attached to the resources of each study for all procedural details, like stimulus presentation timings, questionnaires, etc.",
+    "objectID": "studies/smokers2.html#hypothesis",
+    "href": "studies/smokers2.html#hypothesis",
+    "title": "Smokers 1",
+    "section": "",
+    "text": "In this replication study (Smokers 1), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
     "crumbs": [
       "Experiments",
-      "Overview"
+      "Studies",
+      "Smokers 1"
+    ]
+  },
+  {
+    "objectID": "studies/smokers2.html#participants",
+    "href": "studies/smokers2.html#participants",
+    "title": "Smokers 1",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n395\n\n\nFemale\n208\n\n\nMale\n184\n\n\nMean Age\n31.3 years\n\n\nSD Age\n13.11 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 1"
+    ]
+  },
+  {
+    "objectID": "studies/smokers2.html#materials",
+    "href": "studies/smokers2.html#materials",
+    "title": "Smokers 1",
+    "section": "Materials",
+    "text": "Materials\nSoftware and Computer\nThe study was conducted on different sets of Laptops in combination with quantum random number generators (QRNG; Quantis by idquantique). An experimental program written by one of the experimenters in C# accesses the output of the QRNG and depicts a random picture out of two different picture sets depending on the result of the quantum experiment inside the QRNG.\nStimuli\nThe neutral stimulus pictures were taken from the International Affective Picture System (IAPS) (Lang et al., 1999), which provides an experimental set of 1169 digitized photographs with normative rating scores (using a 9 point rating scale) on valence and arousal. A set of 10 neutral pictures (valence mean = 4.90; SD = 0.27) were used. The target stimulus pictures were taken from the Geneva Smoking Photographs (GSP) (Khazaal et al., 2012), a normative database providing 60 addiction-relevant photographs for nicotine and tobacco research. Again 10 pictures were chosen showing varying aspects of nicotine products, smoking behavior and tobacco related cues.\nQuantum State Generation\nA quantum based number generator (QRNG) was used to create the quantum experiment. This device creates a quantum state consisting of two eigenstates that correspond to the two possible states of a bit (0/1) that is transferred to the computer. A 0 bit lead to the display of a neutral image while a 1 bit lead to the display of a target stimuli. The QRNG device is connected to the laptop via USB. Since it is not operating with a buffer, it is ensured that the bit that decides which stimulus is shown is generated directly prior to the display of the picture.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 1"
+    ]
+  },
+  {
+    "objectID": "studies/smokers2.html#procedure",
+    "href": "studies/smokers2.html#procedure",
+    "title": "Smokers 1",
+    "section": "Procedure",
+    "text": "Procedure\nThe participants were tested individually in a quiet and distraction-free environment. The experimenters will introduced themselves and read a standardized instruction. Since there is no physical interaction other than observing, participants were explicitly and repeatedly asked to maintain attention on the pictures for the whole time and to not become distracted. They were told they may interrupt the experiment at any time if they are not feeling well.\nParticipants then were presented with a total of 400 pictures. Each trial started with a fixation cross for 700 msecs followed by the stimulus for 400 msecs and a 400 msecs long inter-trial interval showing only a black screen. Depending on the outcome of the QRNG a random picture was chosen out of the pool of either the neutral stimuli or the tobacco-related target stimuli. Each picture of the two pools had the same probability to be shown in every trial.\nAfter completion of the 400 trials the experimenter prepared the laptop to show a digital questionnaire which asked whether the participant is a smoker or non-smoker. Additionally, with smokers the nicotine dependence was assessed via the Fagerström Test for Nicotine Dependencies (FTND-G; German version by (John et al., 2003)) as well as the general attitude towards smoking. The experiment and the questionnaire took about 15-20 mins.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 1"
+    ]
+  },
+  {
+    "objectID": "studies/smokers2.html#sample-size-and-data-analyses",
+    "href": "studies/smokers2.html#sample-size-and-data-analyses",
+    "title": "Smokers 1",
+    "section": "Sample Size and Data Analyses",
+    "text": "Sample Size and Data Analyses\nFor sample size estimation, data collection, and data analyses, the suggestions made by Eric-Jan Wagenmakers were followed (made in a previous review and in personal communication with Dr. Maier):\nTo the test for differences from the expected mean (50%), Bayesian analyses with a r = .5 from the Cauchy distribution were performed. Data was checked separately for each group, smokers and non-smokers, by performing Bayesian one sample t-tests to determine if the mean number of shown target stimuli differs from the expected value (200) in the group of smokers and non-smokers, respectively. We expect the group of smokers to show a different number of smoking-associated pictures than a truly random distribution would suggest while the measured value should not differ from the expected value in the group of non-smokers.\nIf smokers see more or less of the target pictures, a mechanism influencing the selection of the eigenstate that leads to the correspondent picture based on a psychological variable can be assumed.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\nDownload Data “Smokers”\nDownload Data “Non-Smokers”\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication\nOSF Project",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 1"
     ]
   }
 ]

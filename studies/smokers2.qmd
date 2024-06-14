@@ -16,7 +16,7 @@ load("../study_objects.RData")
 
 ## Hypothesis
 
-In this study, we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture (two-sided hypothesis).
+In this replication study ([Smokers 1](smokers1.html)), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.
 
 We tested non-smokers as control group and hypothesized no deviation from chance for this subsample.
 
@@ -26,7 +26,7 @@ We tested non-smokers as control group and hypothesized no deviation from chance
 library(tidyverse)
 library(knitr)
 
-df <- subset(study10_smokers, Study == 1)
+df <- subset(study10_smokers, Study == 2)
 
 # Data
 total_participants <- nrow(df)
@@ -84,9 +84,9 @@ To the test for differences from the expected mean (50%), Bayesian analyses with
 If smokers see more or less of the target pictures, a mechanism influencing the selection of the eigenstate that leads to the correspondent picture based on a psychological variable can be assumed.
 
 ::: {.callout-tip title="Data" collapse="true"}
--   [Download Data](../data/smokers1.csv)
--   [Download Data "Smokers"](../smokers1_exp.csv)
--   [Download Data "Non-Smokers"](../data/smokers1_con.csv)
+-   [Download Data](../data/smokers2.csv)
+-   [Download Data "Smokers"](../smokers2_exp.csv)
+-   [Download Data "Non-Smokers"](../data/smokers2_con.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
