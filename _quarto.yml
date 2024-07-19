@@ -15,7 +15,7 @@ website:
         file: experiments.qmd
       - changeofevidence.qmd
       - metaanalysis.qmd
-      - metaanalysis-shiny.qmd
+      #- metaanalysis-shiny.qmd
       
   sidebar: 
     - title: "Experiments"

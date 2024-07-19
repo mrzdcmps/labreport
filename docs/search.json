@@ -699,73 +699,133 @@
   {
     "objectID": "studies/smokers2.html",
     "href": "studies/smokers2.html",
-    "title": "Smokers 1",
+    "title": "Smokers 2",
     "section": "",
     "text": "In this replication study (Smokers 1), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
     "crumbs": [
       "Experiments",
       "Studies",
-      "Smokers 1"
+      "Smokers 2"
     ]
   },
   {
     "objectID": "studies/smokers2.html#hypothesis",
     "href": "studies/smokers2.html#hypothesis",
-    "title": "Smokers 1",
+    "title": "Smokers 2",
     "section": "",
     "text": "In this replication study (Smokers 1), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
     "crumbs": [
       "Experiments",
       "Studies",
-      "Smokers 1"
+      "Smokers 2"
     ]
   },
   {
     "objectID": "studies/smokers2.html#participants",
     "href": "studies/smokers2.html#participants",
-    "title": "Smokers 1",
+    "title": "Smokers 2",
     "section": "Participants",
     "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n395\n\n\nFemale\n208\n\n\nMale\n184\n\n\nMean Age\n31.3 years\n\n\nSD Age\n13.11 years",
     "crumbs": [
       "Experiments",
       "Studies",
-      "Smokers 1"
+      "Smokers 2"
     ]
   },
   {
     "objectID": "studies/smokers2.html#materials",
     "href": "studies/smokers2.html#materials",
-    "title": "Smokers 1",
+    "title": "Smokers 2",
     "section": "Materials",
     "text": "Materials\nSoftware and Computer\nThe study was conducted on different sets of Laptops in combination with quantum random number generators (QRNG; Quantis by idquantique). An experimental program written by one of the experimenters in C# accesses the output of the QRNG and depicts a random picture out of two different picture sets depending on the result of the quantum experiment inside the QRNG.\nStimuli\nThe neutral stimulus pictures were taken from the International Affective Picture System (IAPS) (Lang et al., 1999), which provides an experimental set of 1169 digitized photographs with normative rating scores (using a 9 point rating scale) on valence and arousal. A set of 10 neutral pictures (valence mean = 4.90; SD = 0.27) were used. The target stimulus pictures were taken from the Geneva Smoking Photographs (GSP) (Khazaal et al., 2012), a normative database providing 60 addiction-relevant photographs for nicotine and tobacco research. Again 10 pictures were chosen showing varying aspects of nicotine products, smoking behavior and tobacco related cues.\nQuantum State Generation\nA quantum based number generator (QRNG) was used to create the quantum experiment. This device creates a quantum state consisting of two eigenstates that correspond to the two possible states of a bit (0/1) that is transferred to the computer. A 0 bit lead to the display of a neutral image while a 1 bit lead to the display of a target stimuli. The QRNG device is connected to the laptop via USB. Since it is not operating with a buffer, it is ensured that the bit that decides which stimulus is shown is generated directly prior to the display of the picture.",
     "crumbs": [
       "Experiments",
       "Studies",
-      "Smokers 1"
+      "Smokers 2"
     ]
   },
   {
     "objectID": "studies/smokers2.html#procedure",
     "href": "studies/smokers2.html#procedure",
-    "title": "Smokers 1",
+    "title": "Smokers 2",
     "section": "Procedure",
     "text": "Procedure\nThe participants were tested individually in a quiet and distraction-free environment. The experimenters will introduced themselves and read a standardized instruction. Since there is no physical interaction other than observing, participants were explicitly and repeatedly asked to maintain attention on the pictures for the whole time and to not become distracted. They were told they may interrupt the experiment at any time if they are not feeling well.\nParticipants then were presented with a total of 400 pictures. Each trial started with a fixation cross for 700 msecs followed by the stimulus for 400 msecs and a 400 msecs long inter-trial interval showing only a black screen. Depending on the outcome of the QRNG a random picture was chosen out of the pool of either the neutral stimuli or the tobacco-related target stimuli. Each picture of the two pools had the same probability to be shown in every trial.\nAfter completion of the 400 trials the experimenter prepared the laptop to show a digital questionnaire which asked whether the participant is a smoker or non-smoker. Additionally, with smokers the nicotine dependence was assessed via the Fagerström Test for Nicotine Dependencies (FTND-G; German version by (John et al., 2003)) as well as the general attitude towards smoking. The experiment and the questionnaire took about 15-20 mins.",
     "crumbs": [
       "Experiments",
       "Studies",
-      "Smokers 1"
+      "Smokers 2"
     ]
   },
   {
     "objectID": "studies/smokers2.html#sample-size-and-data-analyses",
     "href": "studies/smokers2.html#sample-size-and-data-analyses",
-    "title": "Smokers 1",
+    "title": "Smokers 2",
     "section": "Sample Size and Data Analyses",
     "text": "Sample Size and Data Analyses\nFor sample size estimation, data collection, and data analyses, the suggestions made by Eric-Jan Wagenmakers were followed (made in a previous review and in personal communication with Dr. Maier):\nTo the test for differences from the expected mean (50%), Bayesian analyses with a r = .5 from the Cauchy distribution were performed. Data was checked separately for each group, smokers and non-smokers, by performing Bayesian one sample t-tests to determine if the mean number of shown target stimuli differs from the expected value (200) in the group of smokers and non-smokers, respectively. We expect the group of smokers to show a different number of smoking-associated pictures than a truly random distribution would suggest while the measured value should not differ from the expected value in the group of non-smokers.\nIf smokers see more or less of the target pictures, a mechanism influencing the selection of the eigenstate that leads to the correspondent picture based on a psychological variable can be assumed.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\nDownload Data “Smokers”\nDownload Data “Non-Smokers”\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication\nOSF Project",
     "crumbs": [
       "Experiments",
       "Studies",
-      "Smokers 1"
+      "Smokers 2"
+    ]
+  },
+  {
+    "objectID": "studies/smokers3.html",
+    "href": "studies/smokers3.html",
+    "title": "Smokers 3",
+    "section": "",
+    "text": "In this study, we used cigarette addiction as unconscious drive (see Smokers 1 and Smokers 2). We hypothesized that smoking participants would influence the outcome of a qRNG in such a way that the effect follows a specific pattern derived from post-hoc analyses of the previous studies.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 3"
+    ]
+  },
+  {
+    "objectID": "studies/smokers3.html#hypothesis",
+    "href": "studies/smokers3.html#hypothesis",
+    "title": "Smokers 3",
+    "section": "",
+    "text": "In this study, we used cigarette addiction as unconscious drive (see Smokers 1 and Smokers 2). We hypothesized that smoking participants would influence the outcome of a qRNG in such a way that the effect follows a specific pattern derived from post-hoc analyses of the previous studies.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 3"
+    ]
+  },
+  {
+    "objectID": "studies/smokers3.html#participants",
+    "href": "studies/smokers3.html#participants",
+    "title": "Smokers 3",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n236\n\n\nFemale\n116\n\n\nMale\n120\n\n\nMean Age\n32.64 years\n\n\nSD Age\n14.32 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 3"
+    ]
+  },
+  {
+    "objectID": "studies/smokers3.html#materials",
+    "href": "studies/smokers3.html#materials",
+    "title": "Smokers 3",
+    "section": "Materials",
+    "text": "Materials\nAll materials and procedural decisions were identical to those of Studies 1 and 2.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 3"
+    ]
+  },
+  {
+    "objectID": "studies/smokers3.html#sample-size-and-data-analyses",
+    "href": "studies/smokers3.html#sample-size-and-data-analyses",
+    "title": "Smokers 3",
+    "section": "Sample Size and Data Analyses",
+    "text": "Sample Size and Data Analyses\nParticipants were added until a total of 500 smokers had been reached, including all participants from Studies 1 and 2.\nWe hypothesized a non-linear effect development resulting in the cumulative z-score of all studies following a fitted dampened harmonic oscillation. To test this hypothesis, we compared the actual cumulative z-score to that of 10,000 simulations and predicted a closer match than 5% of simulations for the following test statistics:\n\nThe area between the experimental data curve and the prediction.\nThe Euclidian distance of the local maximum compared with that of the prediction.\nThe Euclidian distance of the end point compared with that of the end point of the prediction.\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication\nOSF Project",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Smokers 3"
     ]
   }
 ]

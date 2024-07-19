@@ -1,0 +1,75 @@
+---
+title: "Smokers 3"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+In this study, we used cigarette addiction as unconscious drive (see [Smokers 1](smokers1.html) and [Smokers 2](smokers2.html)). We hypothesized that smoking participants would influence the outcome of a qRNG in such a way that the effect follows a specific pattern derived from post-hoc analyses of the previous studies.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- subset(study10_smokers, Study == 3)
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$Age, na.rm=T)
+sd_age <- sd(df$Age, na.rm=T)
+female_count <- sum(df$Sex == 1, na.rm=T)
+male_count <- sum(df$Sex == 2, na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants,
+    female_count,
+    male_count,
+    paste0(round(mean_age, 2), " years"),
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+All materials and procedural decisions were identical to those of Studies [1](smokers1.html) and [2](smokers2.html).
+
+## Sample Size and Data Analyses
+
+Participants were added until a total of 500 smokers had been reached, including all participants from Studies 1 and 2.
+
+We hypothesized a non-linear effect development resulting in the cumulative z-score of all studies following a fitted dampened harmonic oscillation. To test this hypothesis, we compared the actual cumulative z-score to that of 10,000 simulations and predicted a closer match than 5% of simulations for the following test statistics:
+
+1.  The area between the experimental data curve and the prediction.
+2.  The Euclidian distance of the local maximum compared with that of the prediction.
+3.  The Euclidian distance of the end point compared with that of the end point of the prediction.
+
+::: {.callout-tip title="Data" collapse="true"}
+-   [Download Data](../data/smokers3.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Publication](https://www.scientificexploration.org/docs/33/jse_33_3_Dechamps_Maier.pdf)
+-   [OSF Project](https://osf.io/wk9es)
+:::
