@@ -104,13 +104,13 @@ Participants were tested in the department's lab, which contained ten identicall
 After completing the third task, participants were asked to complete the post-task questionnaire, in which they were asked to indicate how unpleasant they found the disgusting pictures (from 1 = "very unpleasant" to 5 = "not at all unpleasant") and to state their assumptions about the aim of the study.
 
 ::: {.callout-tip title="Data" collapse="true"}
--   [Download Data](../data/incongruence.csv) 
--   [Download Data "High"](../data/incongruence_high.csv) 
+-   [Download Data](../data/incongruence.csv)
+-   [Download Data "High"](../data/incongruence_high.csv)
 -   [Download Data "Low"](../data/incongruence_low.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
--   [Publication](https://www.parapsychologypress.org/jparticle/jp-84-2-227-253)
+-   [Publication](https://www.parapsychologypress.org/jparticle/jp-84-2-227-253) [@jakob2020]
 -   [Preregistration](https://osf.io/xm4wf)
 -   [OSF Project](https://osf.io/gnryu/)
 :::
