@@ -63,11 +63,11 @@ Additional questions were asked concerning native language, experience with medi
 #write_excel_csv(study1_lovingkind, "study1.csv")
 ```
 
-[Download Data](../data/lovingkind.csv)
+[Download Data](../data/lovingkind/lovingkind.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
--   [Preregistration](https://osf.io/g92ts)
--   [Experimental Program](https://osf.io/xebd5)
--   [Questionnaire](https://osf.io/qzj9m)
+-   [Preregistration](../data/lovingkind/preregistration.pdf)
+-   [Experimental Program](../data/lovingkind/klang.html)
+-   [Questionnaire](../data/lovingkind/questionnaire.pdf)
 :::
