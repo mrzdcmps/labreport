@@ -84,9 +84,9 @@ To the test for differences from the expected mean (50%), Bayesian analyses with
 If smokers see more or less of the target pictures, a mechanism influencing the selection of the eigenstate that leads to the correspondent picture based on a psychological variable can be assumed.
 
 ::: {.callout-tip title="Data" collapse="true"}
--   [Download Data](../data/smokers2.csv)
--   [Download Data "Smokers"](../smokers2_exp.csv)
--   [Download Data "Non-Smokers"](../data/smokers2_con.csv)
+-   [Download Data](../data/smokers/smokers2.csv)
+-   [Download Data "Smokers"](../smokers/smokers2_exp.csv)
+-   [Download Data "Non-Smokers"](../data/smokers/smokers2_con.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
