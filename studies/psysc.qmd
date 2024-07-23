@@ -1,0 +1,104 @@
+---
+title: "Psyscanner"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+In this study, a micro-PK task was created using target sentences reflecting typical concerns of Cluster C personality traits (PTs) and neutral sentences. The task included three independent blocks of stimuli, with each block focusing on one of the three PTs. We hypothesized that individuals with pronounced PT characteristics (high scores on the relevant scale = target group) would influence the qRNG to produce outcomes aligning with their implicit expectations in each block. Specifically, we predicted that high scorers would encounter more PT-specific meaningful target stimuli than chance would dictate. Conversely, individuals with low PT scores (control group) were expected to show no or weaker deviations from chance.
+
+We tested a specific preregistered hypothesis for each of the three Cluster C PTs:
+
+1.  DE-PT: Participants with high DE-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., "Will we part in dispute?") than neutral stimuli (e.g., "We see a forest").
+
+2.  AV-PT: Participants with high AV-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., "What should I say?") than neutral stimuli (e.g., "The shirt is white").
+
+3.  OC-PT: Participants with high OC-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., "Did I miss a mistake in my work?") than neutral stimuli (e.g., "Digital watches are common").
+
+We hypothesized that the control subsamples (low PT scorers) would not show strong evidence for H1, and we predicted in our preregistration that at least one target group (high scorers) would achieve a BF10 \> 10, indicating strong Bayesian evidence for H1 during data collection.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- subset(study11_psyscanner)
+
+# Data
+total_participants <- nrow(df)
+age1 <- sum(df$Age == "A1", na.rm=T)/total_participants*100
+age2 <- sum(df$Age == "A2", na.rm=T)/total_participants*100
+age3 <- sum(df$Age == "A3", na.rm=T)/total_participants*100
+age4 <- sum(df$Age == "A4", na.rm=T)/total_participants*100
+age5 <- sum(df$Age == "A5", na.rm=T)/total_participants*100
+female_count <- sum(df$Sex == "F", na.rm=T)
+male_count <- sum(df$Sex == "M", na.rm=T)
+diverse_count <- sum(df$Sex == "D", na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Other", "18 - 27 yrs", "28 - 37 yrs", "38 - 47 yrs", "48 - 57 yrs", "> 57 yrs"),
+  Count_Statistics = c(
+    total_participants,
+    female_count,
+    male_count,
+    diverse_count,
+    paste0(round(age1, 2), "%"),
+    paste0(round(age2, 2), "%"),
+    paste0(round(age3, 2), "%"),
+    paste0(round(age4, 2), "%"),
+    paste0(round(age5, 2), "%")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Procedure
+
+Participants took part in an online study with two fixed-order experiments, the second being the current study. Both studies lasted about thirty minutes in total. Initially, participants provided digital consent. The current study collected demographic data and assessed the three Cluster C personality traits (PT) scales. Participants then proceeded through three blocks of 30 trials each, with block order randomized by a quantum random number generator (QRNG). Each block featured sentences related to one of the three PTs and neutral control sentences. Participants passively observed the sentences without responding, following a fixation cue, stimulus display, and inter-stimulus interval. The QRNG determined whether the next sentence would be trait-related or neutral before each presentation.
+
+## Materials
+
+**Hardware and Software**
+
+The study was conducted online, with stimuli displayed on a black background (500 x 400 pixels). A presentation procedure using jsPsych (v 5.0.3) translated QRNG outputs into trait-related or neutral stimuli. The QRNG, producing random states via photon deflection, ensured true quantum randomness for each trial. The QRNG passed stringent randomness tests and did not use post-correction procedures.
+
+**Assessment of Personality Traits**
+
+Cluster C PTs were measured using the VDS-30 questionnaire, taking around ten minutes to complete. It includes ten items per PT, rated on a four-point scale, and has good internal consistency (α = .72 to α = .86) and retest reliability (r = .70 to r = .83). Scores were divided into high scorers (target group) and low scorers (control group) based on a mean cut-off (≥ 1.00).
+
+**Stimuli**
+
+For each PT, five target stimuli were created based on VDS-30 items, aimed at triggering doubts in individuals with respective PTs. Five neutral control sentences were also selected. An online pre-study rated these sentences on valence, correlating ratings with VDS-30 scores. Initial data collection involved 73 participants rating 60 sentences in randomized order, with filler sentences to avoid negative mood shifts. Adequate trait-specific correlations were found for DE-PT and AV-PT targets, with additional sentences created as needed. However, OC-PT targets initially showed poor specificity, leading to a second pre-study with 34 participants. Four OC-PT target sentences were identified, with one additional sentence created based on validated stimuli.
+
+## Sample Size and Data Analyses
+
+Data analysis was conducted using Bayesian inference techniques with a preregistered strategy. The Bayes Factor (BF) was used to quantify the evidence for or against a hypothesized effect. For the three target groups with high PT scores, each hypothesis was tested using a one-sided Bayesian one-sample t-test, assessing the number of trait-related targets with a threshold probability of more than 50%.
+
+For the control groups with low PT scores, two-sided Bayesian one-sample t-tests were performed against a 50% probability. Given that 30 stimuli were presented per trait, the expected number of trait-related targets by chance was 15. A narrow informed prior of δ \~ Cauchy(.05, .05) was used. The stopping rule was set at BF = 10, indicating strong evidence in either direction (H0 or H1). It was predicted that at least one high PT group would show a BF10 \> 10 in favor of H1. Additionally, p-values from frequentist t-tests were provided, and a maximum sample size of 1,000 participants was preregistered to ensure the detection of a trend towards BF = 10 if no clear evidence emerged at this sample size.
+
+::: {.callout-tip title="Data" collapse="true"}
+-   [Download Data](../data/psyscanner.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Publication](https://journals.lub.lu.se/jaex/article/view/23809) [@jakob2024]
+-   [Preregistration](https://osf.io/qxu3s/registrations)
+-   [OSF Project](https://osf.io/qxu3s/)
+:::

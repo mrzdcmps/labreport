@@ -55,7 +55,7 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 We used 10 images from IAPS with very negative valence, and 10 images with neutral valence. Images were displayed on the computer screen with a size of 900x600 pixels for a duration of 300 ms. Before each image a fixation cross was shown for 2500 ms, and a black inter trial interval of 500 ms was included. The experimental program was written by one of the experimenters in C#.
 
-## Procedures
+## Procedure
 
 Participants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.
 

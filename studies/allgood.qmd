@@ -55,7 +55,7 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 Picture stimuli comprised 100 positive and 100 negative images further described in study "relaxation". Audio stimuli comprised two consonant chords and two dissonant chords. The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.
 
-## Procedures
+## Procedure
 
 Participants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying "all will be good" over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.
 

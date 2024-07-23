@@ -57,7 +57,7 @@ Audio stimuli were taken from the International Affective Digitized Sounds [@bra
 
 The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.
 
-## Procedures
+## Procedure
 
 Participants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.
 

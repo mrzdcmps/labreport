@@ -57,7 +57,7 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 Picture stimuli comprised 100 positive and 100 negative images further described in study 12. Audio stimuli comprised two consonant chords and two dissonant chords.
 
-## Procedures
+## Procedure
 
 Participants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.
 

@@ -55,7 +55,7 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 This was a lab study using the same experimental program as study [Monks](monks.html). Stimuli consisted of two images representing heads (front of 1 Euro-coin, colored in red) and tails (back of 1 Euro-coin, colored in blue).
 
-## Procedures
+## Procedure
 
 Participants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. They were told a cover story about gambing research and asked to play a coin tossing game for two rounds, consisting of 100 tosses each. For each round they could decide on "heads" (1 bit) or "tails" (0 bit). Subsequently, the qRNG would produce random bits that were translated to either seide of the coin. For the second round, participants could change their target if they wanted. Then they were asked to fill out a questionnaire asking if they changed their strategy, looked at the screen, felt that the outcome was important to them, felt that they could influence the outcome, and if they considered themselves to be a "lucky child".
 
