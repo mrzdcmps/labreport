@@ -62,11 +62,11 @@ The relaxation exercise consisted of a 2-minute prerecorded audio file asking pa
 Participants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.
 
 ::: {.callout-tip title="Data" collapse="true"}
-[Download Data](../data/sound.csv)
+[Download Data](../data/sound/sound.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
--   [Experimental Program](https://osf.io/bznp9)
--   [Relaxation Audio](https://osf.io/9gnds)
--   [Relaxation Audio English](https://osf.io/pbzrv)
+-   [Experimental Program](../data/sound/nor-sound.html)
+-   [Relaxation Audio](../data/meditation/relaxation.mp3)
+-   [Relaxation Audio English](../data/meditation/relaxation_e.mp3)
 :::
