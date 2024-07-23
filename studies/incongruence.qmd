@@ -18,31 +18,33 @@ load("../study_objects.RData")
 
 **Research Questions**
 
-We expect that a high state of incongruence of the psychological basic needs tends to express itself through micro-PK-effects. According to [@grawe1998psychologische] the four basic psychological needs are attachment, self-esteem enhancement/protection, orientation and control and pleasure maximisation and disstress avoidance. These needs can be satisfied through goals of approach or avoidance. We therefore conduct an experiment that relates the needs for attachment, self-esteem protection and orientation and control to the output of a true random number generator (tRNG). We exclude the need for pleasure maximisation and disstress avoidance because it could not be operationalized concretly enough in our study. We designed the need for attachment as approach orientated and the needs for self-esteem protection and orientation and control as avoidance orientated to gain a deeper understanding of the differences between these motivational strategies.
-
-In contrast to most previous research on the influence of participants on RNGs, we focus on the effect of unconscious motivational patterns instead of conscious attempts to manipulate the RNG (see also [@maier2018]). According to "Generalized Quantum Theory" [@filk2010] quantum-phenomena can occur on a macroscopic level within complex systems like conscious human individuals. We therefore use a quantum based RNG in our experiment. Depending on the outcome of the tRNG a need-focused or a neutral stimulus is presented to the participant. We hypothesize that the participant´s observation in combination with the corresponding emotional reaction causes quantum-entanglement between the individual and a reality that either fulfills or frustrates their basic needs. Because deprived needs tend to cause high emotional activation if they are ignored in general, they are more likely to express themselves in micro-PK-effects. This study therefore aims to explore the differences in micro-PK effects between high- and low-incongruence participants on corresponding stimuli.
+The study investigates how high levels of incongruence in basic psychological needs manifest through micro-PK effects, focusing on attachment, self-esteem protection, and orientation/control needs. These needs, based on [@grawe1998psychologische] model, can be satisfied through approach or avoidance goals. The need for pleasure maximization and distress avoidance was excluded due to operationalization challenges. The study hypothesizes that unconscious motivational patterns influence the outcomes of a true random number generator (tRNG), rather than conscious attempts to manipulate it.
 
 **Hypotheses**
 
-A)  High-incongruence of needs and micro-PK
+A)  High-Incongruence of Needs and Micro-PK
 
 <!-- -->
 
-1)  Attachment Individuals with a high incongruence of the need for attachment are expected to show a deviation from randomness when presented pictures addressing this need. Since the target stimuli are designed to resemble an approach motivated way of satisfying the need, we hypothesize that high-incongruence participants, i.e. participants who are generally unable to satisfy this need adequately, show less target stimuli (attachment) than chance suggests.
+1.  *Attachment*: Participants with high incongruence in the need for attachment are expected to show fewer attachment-related target stimuli than chance suggests.
 
-2)  Self-esteem Since the target stimuli are designed to resemble an avoidance motivated way of satisfying the need, we hypothesize that high-incongruence participants, i.e. participants who are generally unable to avoid self-worth reducing stimuli adequately, show more target stimuli (self-esteem) than chance suggests.
+2.  *Self-Esteem*: High-incongruence participants for self-esteem protection will show more self-esteem-related target stimuli than chance.
 
-3)  Control We hypothesize that high-incongruence (need for orientation and control) participants, i.e. participants who are generally unable to exert control sufficiently, experience more trials with no opportunity to end the display of the stimulus (non-control trials) than chance suggests.
+3.  *Control*: Those with high incongruence in orientation and control will experience more non-control trials than chance.
 
 <!-- -->
 
-B)  Low-incongruence of need and micro-PK
+B)  Low-Incongruence of Needs and Micro-PK
 
-We expect low-incongruence participants to show no deviation from chance. Since the need for attachment is a growth-orientated need (i.e. this need can never be oversaturated) low-incongruence participants might also show a less strong deviation in the same direction as the high-incongruence group.
+<!-- -->
 
-In contrast both avoidance orientated needs - the need for self-esteem protection and the need for orientation and control - are deficiency-orientated (i.e. constant frustration of this need leads to psychological distress) . We therefore expect the low-incongruence participants to show no deviation or a less strong deviation in the opposite direction as the high-incongruence group, because they might be able to avoid negative experiences even more so.
+1.  *General*: Low-incongruence participants are expected to show no deviation from chance.
 
-Because of the specific features of micro-PK only small effects (d ≤ .2) turn out to be reliable in research practice [@vonLucado2007-VONSPA], for which reason we predict low deviations from a random distribution.
+2.  *Attachment*: Since attachment is growth-oriented, low-incongruence participants might show a less strong deviation in the same direction as high-incongruence participants.
+
+3.  *Self-Esteem and Control*: As these needs are deficiency-oriented, low-incongruence participants might show no deviation or a less strong deviation in the opposite direction compared to high-incongruence participants.
+
+<!-- -->
 
 ## Participants
 
@@ -83,34 +85,37 @@ This was an online study.
 
 **Study design**
 
-In this study a between subjects design is used. Participants will be divided into two groups (low-incongruence vs. high-incongruence) based on their average overall-incongruence in the psychological needs measured by the “Inkongruenzfragebogen (INK)” [@grosse2004inkongruenzfragebogen]. The dividing point will be the standardized average value for healthy individuals given in the manual.
+The study was conducted online, using a between-subjects design. Participants were divided into two groups (low-incongruence vs. high-incongruence) based on their scores on the "Inkongruenzfragebogen (INK)" [@grosse2004inkongruenzfragebogen]. The division point was the standardized average value for healthy individuals as specified in the manual.
 
 **Measured variables**
 
-1)  Attachment: Target stimuli contain 20 pictures of happy couples. These are designed to address the need for attachment within the partipants. The pictures are obtained from Shutterstock (www.shutterstock.com), a provider of royalty-free stock photos. Neutral stimuli are obtained from OASIS [@kurdi2016], a picture set containing 900 validated stimuli. 20 pictures depicting everyday objects and rated very low on arousal and with neutral valence are selected.
+1)  *Attachment*: Target stimuli consisted of 20 pictures of happy couples, sourced from Shutterstock, aimed at addressing the need for attachment. Neutral stimuli, sourced from the OASIS picture set [@kurdi2016], included 20 pictures of everyday objects rated low on arousal and neutral in valence. The outcome variable for attachment was the number of displayed target stimuli.
 
-2)  Self-esteem: Target stimuli contain words phrased in a way to challenge the need for self-esteem protection in participants. These are generally negatively perceived adjectives that address physical appearance (e.g. "ugly"), sense of self-worth (e.g. "worthless"), and academic skills (e.g. "stupid"). These categories correspond to the self-esteem-related dimensions in the "Feelings of Inadequacy Scale" [@1960-07155-005]. Neutral stimuli contain adjectives that are not typically used to describe persons and therefore don't possess a quality towards self-esteem. We re using adjectives describing geometric figures and surface textures (e.g. "five-cornered", "dotted").
+2)  *Self-esteem*: The target stimuli included negatively perceived adjectives that challenge self-esteem (e.g., "ugly," "worthless," "stupid"), corresponding to dimensions in the "Feelings of Inadequacy Scale" [@1960-07155-005]. Neutral stimuli included adjectives describing geometric figures and surface textures (e.g., "five-cornered," "dotted"). The outcome variable for self-esteem was the number of displayed target stimuli.
 
-The outcome variables regarding the need for attachment and self-esteem protection will be the number of displayed target stimuli.
-
-3)  Control: To test the need for orientation and control participants are presented displeasant, nauseating pictures. The pictures are taken out of the International Affective Pictures System (IAPS) [@lang1999international] and are rated with a comparatively negative valence and high arousal. The display of the pictures either can be ended as soon as it is displayed by pressing a button (control trial) or takes 2500 ms regardless of a button being pressed or not (non-control-trial). To create a feeling of “loss of control” we choose a percentage of 75% trials, in which it is possible to exert control over the presentation time.
-
-The outcome variable regarding the need for control will be the number of trials where pressing a button will not end the display (non-control-trial).
+3)  *Control*: To test the need for orientation and control, participants were shown unpleasant pictures from the International Affective Pictures System (IAPS) [@lang1999international], which have a negative valence and high arousal. In control trials, participants could end the display by pressing a button, whereas in non-control trials, the display lasted 2500 ms regardless of button press. 75% of the trials allowed for control over the presentation time. The outcome variable for control was the number of non-control trials.
 
 ## Procedure
 
-Participants were tested in the department's lab, which contained ten identically equipped test computers separated by room dividers. The entire experiment took approximately 30 minutes. The experimenter read a standardized text explaining the procedure in a friendly but factual manner. If the participants had no further questions, the experimenter gave the signal to start the INK. After answering all questions, participants were instructed to continue by clicking the "Next" button and to start the image display by pressing any button when ready. Participants attended attentively to three consecutive series of ten trials each. The micro-PK tasks were administered in the following order: "attachment", "self-esteem protection", and "loss of control". After each task, the program asked the subjects to focus and press the button again to confirm their attention. On each trial, they first looked at a fixation cue (700 msec), then at the stimulus (pictures: 400 msec; words: 800 msec), and finally at a black screen (interstimulus interval: 400 msec). This procedure was repeated a total of 30 times. In each sequence, the QRNG decided whether the next image shown would be from a set of need-related or neutral images. BitBabbler's randomization function selected which of the stimuli from the selected set would be shown. At the beginning of each trial, the QRNG selected a number corresponding to one of the 20 stimuli from both sets. After the fixation cue, the sequence generated by the QRNG was completed to select the final stimulus by determining the category. Stimuli were selected by means of substitution sampling.
+Participants were tested in a lab with ten identical computers, each separated by dividers. The entire experiment lasted around 30 minutes. An experimenter explained the procedure using a standardized script and answered any participant questions. Once ready, participants began by completing the INK questionnaire and then proceeded to the image display by pressing any button.
 
-After completing the third task, participants were asked to complete the post-task questionnaire, in which they were asked to indicate how unpleasant they found the disgusting pictures (from 1 = "very unpleasant" to 5 = "not at all unpleasant") and to state their assumptions about the aim of the study.
+The experiment consisted of three micro-PK tasks performed in the following order: "attachment," "self-esteem protection," and "loss of control." Each task involved three series of ten trials, totaling 30 trials. Participants viewed a fixation cue for 700 ms, then a stimulus (pictures for 400 ms; words for 800 ms), followed by a black screen for 400 ms.
+
+For each trial, a quantum random number generator (QRNG) determined whether the stimulus would be need-related or neutral, and BitBabbler’s randomization function selected the specific stimulus from the chosen set. The QRNG’s randomization ensured that the selected stimulus was either from a need-related set or a neutral set.
+
+After the third task, participants completed a post-task questionnaire. They rated the unpleasantness of the disgusting pictures on a scale from 1 (very unpleasant) to 5 (not at all unpleasant) and shared their assumptions about the study's purpose.
 
 ::: {.callout-tip title="Data" collapse="true"}
--   [Download Data](../data/incongruence.csv)
--   [Download Data "High"](../data/incongruence_high.csv)
--   [Download Data "Low"](../data/incongruence_low.csv)
+-   [Download Data](../data/incongruence/incongruence.csv)
+-   [Download Data "High"](../data/incongruence/incongruence_high.csv)
+-   [Download Data "Low"](../data/incongruence/incongruence_low.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
 -   [Publication](https://www.parapsychologypress.org/jparticle/jp-84-2-227-253) [@jakob2020]
 -   [Preregistration](https://osf.io/xm4wf)
 -   [OSF Project](https://osf.io/gnryu/)
+-   [Experimental Program](../data/incongruence/ink.html)
+-   [Questionnaire](../data/incongruence/variables_bink_2017-05-23_15-57.csv)
+-   [Stimuli](../data/incongruence/INK.zip)
 :::

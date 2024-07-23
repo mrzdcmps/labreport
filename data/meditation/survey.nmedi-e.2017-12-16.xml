@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE surveyProject SYSTEM "doctype.survey.dtd">
+<surveyProject version="2.4" timestamp="2017-12-16 03:07:01" program="oFb" progversion="2.6.00-i 1231">
+<title>Pos-Neg Sound Meditierende Eng</title>
+<description />
+<attributes.specific program="ofb">
+<attr id="language">eng</attr>
+<attr id="translations">spa</attr>
+<attr id="projectBackground">scientific</attr>
+</attributes.specific>
+<section>
+<title>Bilder angeschaut</title>
+<attributes.specific program="ofb">
+<attr id="id">BI</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+<question>
+<description>Bilder angeschaut</description>
+<class>selscale</class>
+<title>
+<txt>Did you look at the pictures?</txt>
+<txt lng="spa">¿Has visto las imagines?</txt>
+</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="displayNumbering">asc</attr>
+<attr id="numbering.start">1</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>
+<txt>No</txt>
+<txt lng="spa">No</txt>
+</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>
+<txt>Most of them</txt>
+<txt lng="spa">La mayoría</txt>
+</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>
+<txt>Yes</txt>
+<txt lng="spa">Sí</txt>
+</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Ernsthaftigkeit</description>
+<class>selscale</class>
+<title>How seriously have you done the meditation?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="displayNumbering">asc</attr>
+<attr id="numbering.start">1</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Not at all seriously</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Very seriously</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Sensation Seeking (Bem)</title>
+<attributes.specific program="ofb">
+<attr id="id">SS</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<question>
+<description>Sensation Seeking</description>
+<class>scale</class>
+<title> Do the following statements apply to you?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">I don’t agree</li>
+<li i="5">I agree</li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="scale.metrics.interim">50</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="composition">extended</attr>
+</attributes.specific>
+<item>
+<text>a. I get bored quickly</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>b. I like watching movies I have already seen</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Feeling The Future</title>
+<attributes.specific program="ofb">
+<attr id="id">FF</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+<question>
+<description>FTF</description>
+<class>scale</class>
+<title>Please tell us if you agree with the following statements. There are no right or wrong answers.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">I don’t agree</li>
+<li i="7">I agree</li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="scale.label_align">outside</attr>
+<attr id="scale.metrics.interim">30</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asc</attr>
+<attr id="numbering.start">1</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Nothing in life comes free.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>You have to fight for everything.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Life is not always good to me.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>On your way to success, there are a lot of obstacles to overcome.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>There will be no change.</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text> When it rains, it pours.</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I am convinced that everything will be okay.</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Opt/Pess LOT-R</title>
+<attributes.specific program="ofb">
+<attr id="id">OP</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+<question>
+<description>LOT-R</description>
+<class>scale</class>
+<title>Please state if you agree with the following sentences.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">I disagree a lot</li>
+<li i="2">I disagree a little</li>
+<li i="3">I neither agree nor disagree</li>
+<li i="4">I agree a little</li>
+<li i="5">I agree a lot</li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="scale.display">complete</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>In uncertain times, I usually expect the best.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>It´s easy for me to relax.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>If something can go wrong for me, it will.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I`m always optimistic about my future.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I enjoy my friends a lot.</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>It`s important for me to keep busy.</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I hardly ever expect thinks to go my way.</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I don`t get upset too easily.</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I rarely count on good things happening to me.</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Overall, I expect more good things to happen to me than bad.</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Meditationserfahrung</title>
+<attributes.specific program="ofb">
+<attr id="id">ME</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+<question>
+<description>Meditation_JaNein</description>
+<class>dropdown</class>
+<title>Do you have experience with meditation? </title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="restrictions.answered">probe</attr>
+</attributes.specific>
+<item>
+<text>Yes</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>No</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Meditation_Länge</description>
+<class>dropdown</class>
+<title>How long have you been meditating?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">probe</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text>Up to two months</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Two months – one year</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>1 – 3 years</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3 – 10 years</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>More than ten years</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Meditation_Regelm</description>
+<class>dropdown</class>
+<title>How often do you usually meditate?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="restrictions.answered">probe</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text> On a daily basis</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Several times a week</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Several times a month</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Not so often</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Meditation_Dauer</description>
+<class>dropdown</class>
+<title>How long do you usually meditate?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="restrictions.answered">probe</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text>Up to 5 minutes</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>5 to 15 minutes</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>15 to 30 minutes</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>30 to 60 minutes</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>More than one hour</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Form</description>
+<class>checkbox</class>
+<title>What type of meditation do you practice?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+<item>
+<text>Zen</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Mindfullness</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Metta/ loving-kindness meditation</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Visualization Meditation</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Diamond Way/Buddhism Meditation</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Jyoti Meditation (Guided Light Meditation)</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Other</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Other</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Örtlichkeit</description>
+<class>checkbox</class>
+<title>Where and how do you meditate?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+<item>
+<text>At home by myself</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>In a meditation group</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Intensive retreats over several days</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Longer stays over several weeks or months in a monastery, Ashram or Meditation centre.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Post-Task</title>
+<attributes.specific program="ofb">
+<attr id="id">PT</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+<question>
+<description>Untersuchen</description>
+<class>text</class>
+<title>What do you think this study is about?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="height">75</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Merkwürdig</description>
+<class>select</class>
+<title>
+<![CDATA[Did you find something odd or unusual?
+]]>
+</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<item>
+<text>No</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Yes</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">2</attr>
+<attr id="width">350</attr>
+<attr id="height">50</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Demographisch</title>
+<attributes.specific program="ofb">
+<attr id="id">DE</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+<question>
+<description>Geschlecht</description>
+<class>dropdown</class>
+<title>What is your gender?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Female</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Male</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Not specified</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Alter</description>
+<class>text</class>
+<title>How old are you?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="metrics.width_label">50</attr>
+</attributes.specific>
+<item>
+<text />
+<suffix>years</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="width">50</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Muttersprache</description>
+<class>dropdown</class>
+<title>Is English your native language?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">3</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Yes</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>No</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>English knowledge</description>
+<class>selscale</class>
+<title>
+<![CDATA[How good are your English skills.
+]]>
+</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">4</attr>
+<attr id="restrictions.answered">probe</attr>
+</attributes.specific>
+<item>
+<text>Not very good</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Good</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Very good</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Email</title>
+<attributes.specific program="ofb">
+<attr id="id">EM</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+<question>
+<description>Email</description>
+<class>contact</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="texts">
+<li i="2">no</li>
+<li i="3">I am interested in the findings of this study and would like to receive a summary via E-Mail. The email-address will be saved sperately from the other data.</li>
+<li i="4">no</li>
+</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Teilen1</description>
+<class>email</class>
+<title>Falls Sie Bekannte haben, die ebenfalls über Meditationserfahrung verfügen, würden wir uns freuen, wenn Sie diesen von der Studie erzählen.</title>
+<explanation>Wenn Sie möchten können Sie hier Emailadressen von Kontakten angeben, an welche wir eine freundliche Einleidung zur Teilnahme am Experiment schicken werden. Die Emailadressen werden nicht gespeichert.</explanation>
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="texts">
+<li i="1">Email</li>
+<li i="2">Einladung zur Teilnahme an Meditationsstudie</li>
+<li i="3">Text</li>
+</attr>
+<attr id="settings">
+<li i="1">51269</li>
+</attr>
+</attributes.specific>
+</question>
+</section>
+<layoutTexts>
+<layoutText id="default.imprint"><txt lng="eng"><![CDATA[<a href="mailto:moritz.dechamps@psy.lmu.de">Allgemeine Psychologie 2</a>, 
+Ludwig-Maximilians-Universität München – 2017]]></txt></layoutText>
+</layoutTexts>
+<questionnaire>
+<title>Fragebogen</title>
+<attributes.specific program="ofb">
+<attr id="id">base</attr>
+<attr id="content">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;questionnaire&gt;
+
+&lt;!-- Seite 1 --&gt;
+&lt;page intID=&quot;1&quot;&gt;
+&lt;question id=&quot;BI01&quot; intID=&quot;2&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 2 --&gt;
+&lt;page intID=&quot;28&quot;&gt;
+&lt;question id=&quot;BI02&quot; intID=&quot;29&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 3 --&gt;
+&lt;page intID=&quot;3&quot;&gt;
+&lt;question id=&quot;SS01&quot; intID=&quot;4&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 4 --&gt;
+&lt;page intID=&quot;5&quot;&gt;
+&lt;question id=&quot;FF01&quot; intID=&quot;6&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 5 --&gt;
+&lt;page intID=&quot;7&quot;&gt;
+&lt;question id=&quot;OP01&quot; intID=&quot;8&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 6 --&gt;
+&lt;page intID=&quot;15&quot;&gt;
+&lt;question id=&quot;ME01&quot; intID=&quot;16&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 7 --&gt;
+&lt;page intID=&quot;17&quot;&gt;
+&lt;php intID=&quot;23&quot;&gt;&lt;![CDATA[
+if (value('ME01') == 2) {
+  goToPage('pt');  // Springt direkt weiter zur Seite 3
+}
+]]&gt;&lt;/php&gt;
+&lt;question id=&quot;ME02&quot; intID=&quot;18&quot; /&gt;
+&lt;question id=&quot;ME03&quot; intID=&quot;19&quot; /&gt;
+&lt;question id=&quot;ME04&quot; intID=&quot;20&quot; /&gt;
+&lt;question id=&quot;ME05&quot; intID=&quot;21&quot; /&gt;
+&lt;question id=&quot;ME06&quot; intID=&quot;22&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 8 --&gt;
+&lt;page ident=&quot;pt&quot; intID=&quot;9&quot;&gt;
+&lt;question id=&quot;PT01&quot; intID=&quot;10&quot; /&gt;
+&lt;question id=&quot;PT02&quot; intID=&quot;11&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 9 --&gt;
+&lt;page intID=&quot;12&quot;&gt;
+&lt;question id=&quot;DE01&quot; intID=&quot;13&quot; /&gt;
+&lt;question id=&quot;DE02&quot; intID=&quot;14&quot; /&gt;
+&lt;question id=&quot;DE05&quot; intID=&quot;24&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 10 --&gt;
+&lt;page intID=&quot;25&quot;&gt;
+&lt;php intID=&quot;26&quot;&gt;&lt;![CDATA[
+if (value('DE05') == 2) {
+  question('DE06');
+}
+]]&gt;&lt;/php&gt;
+&lt;question id=&quot;EM01&quot; intID=&quot;27&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;/questionnaire&gt;</attr>
+<attr id="goodbye">
+<![CDATA[<h1>Thank your for participating in this study!</h1>
+
+<!-- Hier evtl. noch Zweck der Studie, Ansprechpartner, etc. -->
+ 
+<p>All answers have been saved. You can close this windows now.</p>
+
+<!-- Zusätzlicher Abstand (ggf. entfernen/anpassen) -->
+<div style="padding-bottom: 20px"></div>]]>
+</attr>
+<attr id="panelForm">no</attr>
+<attr id="access">password</attr>
+<attr id="password">sprpstn</attr>
+<attr id="probePreset">no</attr>
+</attributes.specific>
+</questionnaire>
+</surveyProject>
