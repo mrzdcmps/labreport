@@ -60,13 +60,13 @@ We used 10 images from IAPS with very negative valence, and 10 images with neutr
 Participants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.
 
 ::: {.callout-tip title="Data" collapse="true"}
--   [Download Data](../data/monks.csv)
--   [Download Exp Data](../data/monks_exp.csv)
--   [Download Con Data](../data/monks_con.csv)
+-   [Download Data](../data/monks/monks.csv)
+-   [Download Exp Data](../data/monks/monks_exp.csv)
+-   [Download Con Data](../data/monks/monks_con.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
--   [Questionnaires](https://osf.io/kvjm2)
--   [Explanation Chart](https://osf.io/rjnmc)
--   [Stimuli](https://osf.io/ab29p/files/osfstorage)
+-   [Questionnaires](../data/monks/questionnaire.pdf)
+-   [Explanation Chart](../data/monks/chart.pdf)
+-   [Stimuli](../data/monks/stimuli.zip)
 :::
