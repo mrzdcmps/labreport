@@ -1,0 +1,96 @@
+---
+title: "Relaxation"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+In this study, participants were placed in a state conducive to positive inner beliefs through a brief relaxation and optimism-inducing meditation before participating in a micro-PK experiment. This setup aimed to foster an unconscious belief in positive outcomes, potentially influencing the results of the experiment. The experiment presented stimuli, including positive and negative images and sounds, selected by a qRNG.
+
+We hypothesized that the mean score for positive stimuli would be above the chance level of 50%, without expecting any decline or oscillation effects at the beginning of the study. Our main objective was to rigorously test micro-PK using a Bayesian approach, which permits data collection until a predefined evidence threshold is reached. Given the expected small effects of micro-PK, a large sample size in the thousands was necessary.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- subset(study12_relaxation)
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$age, na.rm=T)
+sd_age <- sd(df$age, na.rm=T)
+female_count <- sum(df$sex == 1, na.rm=T)
+male_count <- sum(df$sex == 2, na.rm=T)
+other_count <- sum(df$DE01 == 3, na.rm=T)
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    female_count, 
+    male_count,
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+**Experimental Program**
+
+The study was conducted online, allowing participants to join from any computer with internet access and audio output. It ran in full-screen mode using jsPsych, a JavaScript library for web-based behavioral experiments, on a dedicated university webserver. The Quantis tRNG for stimulus selection was connected to the server via USB.
+
+**Stimuli**
+
+Visual stimuli were sourced from Shutterstock, selecting 100 positive and 100 negative images. Positive images included social scenes, landscapes, and cute animals, while negative images depicted danger, distress, and unpleasant scenes. The images were chosen by the authors based on their expertise in emotion induction.
+
+To enhance emotional impact, audio stimuli were included. Positive and negative effects were conveyed through consonant and dissonant piano chords, respectively. From a set of eight consonant and eight dissonant chords, two of each type were selected for the study.
+
+## Procedure
+
+Participants received an email invitation from a data collection company to join a survey. They were instructed to find a quiet environment and tested for audio capability by identifying the content of a short audio clip. Upon successful audio test completion, they were redirected to the university’s webserver where the experiment ran in full-screen mode.
+
+Participants first completed a 2-minute relaxation exercise designed to induce a relaxed and optimistic mood. This exercise was available in German, Italian, and Spanish, narrated by native speakers. The exercise encouraged slow, calm breathing and muscle relaxation to foster a sense of comfort and safety.
+
+After the relaxation exercise, participants were informed about the study and instructed that they would view pleasant and unpleasant images and hear corresponding sounds, with the option to abort by closing the window. The tRNG then randomly selected visual and auditory stimuli for 100 trials, each lasting about 6 minutes. During each trial, a fixation cross appeared for 700 ms, followed by the stimuli for 400 ms, and then a black screen for 1100 ms.
+
+After the trials, participants completed a questionnaire. They rated their belief in general contentedness and hopeful confidence on a seven-point scale. Stimulus seeking was assessed using a scale with two statements about boredom and enjoyment of rewatching movies, scored on a five-point scale (Cronbach’s α = 0.59).
+
+Participants also filled out a self-efficacy attitude measure regarding life outcome expectancies, rating six statements on a seven-point scale (Cronbach’s α = 0.80). Finally, they completed the Life Orientation Test-Revised (LOT-R), which assesses generalized optimism (Cronbach’s α = 0.76) and pessimism (Cronbach’s α = 0.73) with three items each.
+
+## Sample Size and Data Analyses
+
+The study used a Bayesian inference approach for hypothesis testing, allowing for the accumulation of data until a specified Bayes factor (BF) was reached. This method provides a more flexible and effective way to test hypotheses compared to frequentist methods. The stopping criterion for data collection was set at a BF of 10, indicating strong evidence for either the effect (H1) or the null effect (H0).
+
+In Bayesian analysis, the BF quantifies the relative evidence for H1 versus H0. A BF10 = 10 suggests that H1 is ten times more likely than H0. The study used a Cauchy distribution (δ ∼ Cauchy \[0, r\]) with an r value of 0.1 to account for typically small effect sizes in Psi research.
+
+Data were analyzed using a Bayesian one-sample t-test with a one-tailed approach, comparing the mean score of positive stimuli presentations against chance (50%). These analyses were conducted weekly from November 2016 to July 2017 using the JASP software (Version 0.8.2). Data collection continued until the BF of 10 was achieved, signaling strong evidence for the hypothesis.
+
+::: {.callout-tip title="Data" collapse="true"}
+-   [Download Data](../data/relaxation.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Publication](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full) [@maier2018b]
+-   [Data Sets Including Simulations](https://open-data.spr.ac.uk/dataset/intentional-observer-effects-quantum-randomness)
+:::
