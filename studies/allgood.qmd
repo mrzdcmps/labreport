@@ -60,12 +60,12 @@ Picture stimuli comprised 100 positive and 100 negative images further described
 Participants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying "all will be good" over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.
 
 ::: {.callout-tip title="Data" collapse="true"}
-[Download Data](../data/allgood.csv)
+[Download Data](../data/allgood/allgood.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
--   [Experimental Program](https://osf.io/avf4h)
--   [Questionnaire](https://osf.io/t64zj)
--   [Relaxation Audio](https://osf.io/9gnds)
--   [Relaxation Audio English](https://osf.io/pbzrv)
+-   [Experimental Program](../data/allgood/experiment-sound-bitbabbler.html)
+-   [Questionnaire](../data/allgood/questionnaire.csv)
+-   [Relaxation Audio](../data/meditation/entspannung.mp3)
+-   [Relaxation Audio English](../data/meditation/entspannung_e.mp3)
 :::
