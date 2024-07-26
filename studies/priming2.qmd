@@ -55,7 +55,7 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 All materials and procedures were identical to those in [Priming 1](priming1.html).
 
-## Sample Size and Data Analyses
+## Sample Size and Data Analysis
 
 Participant recruitment and data collection for the study were conducted by Norstat, following the same protocol as Study 1. Initially, data collection was planned to stop when the sequential Bayes Factor (BF) reached the predefined threshold, which occurred at n = 937. However, due to concerns about the small predicted effect size and potential lack of statistical power, the researchers decided to continue collecting data. They closely monitored the BF and eventually stopped recruitment when the sample size reached N = 2,063. Demographic data were available for 2,021 participants.
 
@@ -64,9 +64,10 @@ Participant recruitment and data collection for the study were conducted by Nors
 :::
 
 ::: {.callout-note title="Resources" collapse="true"}
--   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@jakob2024]
+-   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
 -   [Preregistration](https://osf.io/83efr)
 -   [OSF Project](https://osf.io/hgxt3)
--   [Analyses and Sample Stimuli](https://osf.io/hgxt3/files/osfstorage)
+-   [Analyses](https://osf.io/hgxt3/files/osfstorage)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/priming/n-prime.html)
+-   [Stimuli](../data/priming/NPrime.zip)
 :::

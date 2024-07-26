@@ -1,0 +1,515 @@
+<!doctype html>
+<meta charset="utf-8" />
+<html>
+<head>
+    <title>Experiment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-button-response.js"></script>
+    <script src="jspsych-5.0.3/plugins/single-stim-quantis-prime.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-multi-stim-multi-response.js"></script>    
+    <script src="jspsych-5.0.3/plugins/jspsych-single-stim.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-likert.js"></script>
+
+    <link href="jspsych-5.0.3/css/jspsych1200.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+<div width="100%" height="100%" bgcolor="#000">
+<script>
+    
+// function to read pid
+    
+    function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+};
+    
+    var subject_id = getParameterByName('pid');
+    //var subject_id = jsPsych.randomization.randomID(8);
+    
+    /////////////////////
+
+    // ------------------------- EDIT THIS VARIABLES ------------------------------------
+    // ---> note that all file pathes are relative to the apache base directory which is normally
+    // var/www/html
+    // ---> time is always in ms
+    // ---> text can be formatted with HTML text formatting elements like <p> <b> <mark> and so on
+    // ---> IMPORTANT! Firefox has problems with empty strings like ''. Try to fill all strings!
+    // this behavior does not happen on Chromium
+
+    // total number of trials
+    var Ntrials = 40;
+    
+    // number of different stimuli
+    var Npics = 14; 
+    
+    // first text to show = welcome text
+
+    var TEXT_STARTEXPERIMENT_DE = "<p>Schieben Sie nun bitte den Mauszeiger zur Seite und drücken Sie eine beliebige Taste um mit der Darstellung der Bilder zu beginnen.</p>";
+    
+    var TEXT_STARTEXPERIMENT_IT = "<p>Ora spostare il puntatore del mouse di lato e premere un tasto qualsiasi per iniziare a visualizzare le immagini.</p>";
+    
+    var TEXT_VOLLBILD_DE = "<p>Für diese Befragung werden Ihnen flackernde Bildreize und Bilder von unterschiedlichen Personen in schneller Abfolge dargeboten. Bitte betrachten Sie die Bilder aufmerksam und richten Sie Ihren Blick auf das <b>+</b> in der Mitte des Bildschirms. Sollte die Darstellung auf irgendeine Art und Weise unangenehm für Sie sein, können Sie sie natürlich jederzeit abbrechen. Bitte schließen Sie dazu das Browserfenster.</p><p>Dauer: ca. <b>5 Min</b></p>";
+    
+    var TEXT_VOLLBILD_IT = "<p>In questa parte dello studio vengono presentati stimoli pittorici tremolanti e immagini dai contenuti sgradevoli e piacevoli. Se per voi sono inaccettabili, potete fermarvi in qualsiasi momento. Chiudere la finestra del browser.</p>";
+    
+    var TEXT_ACTIVATEFS_DE = "<center><p>Bitte aktivieren Sie für den folgenden Teil den Vollbildmodus Ihres Browsers.</p><p>Drücken Sie dazu die Taste</p><p><font size='6'>F11</font></b></p><p>Bei Laptops müssen Sie evtl zusätzlich die Fn-Taste drücken. Alternativ können Sie den Vollbildmodus auch im Menü Ihres Browsers aktivieren. Sie können <a href='http://www.giga.de/downloads/google-chrome/tipps/vollbildmodus-tastenkombination-fuer-euren-browser/' target='_blank'>hier</a> nachsehen, wie das funktioniert.</p>";
+    
+    var TEXT_ACTIVATEFS_IT = "<center><p>Si prega di attivare la modalitÃ  a schermo intero del browser per la parte seguente.</p><p>Per fare questo, premere il pulsante</p><p><font size='6'>F11</font></b></p><p>Per i computer portatili, potrebbe essere necessario premere il tasto Fn. In alternativa, Ã¨ possibile attivare la modalitÃ  a schermo intero nel menu del browser.</p>";
+    
+    //var TEXT_END_DE = "<p>Vielen Dank!</p><p>Sie können den Vollbildmodus nun wieder deaktivieren, beispielsweise durch Drücken der Taste <b>Esc</b> oder <b>F11</b>.</p><p><a href='http://backlink?id=" + subject_id + "'>Klick bitte hier, um die Befragung zu beenden.</a></p>";
+    
+    var TEXT_END_DE = "<p>Vielen Dank!</p><p>Sie können den Vollbildmodus nun wieder deaktivieren, beispielsweise durch Drücken der Taste <b>Esc</b> oder <b>F11</b>.</p><p><a href='https://passback.lifepointspanel.com/Survey/Complete?ProjectToken=9a2ab6f0-fd5f-4a5e-bfdb-4a3fc9dc8f7f'>Klicken Sie bitte hier, um die Befragung zu beenden.</a></p>";
+ 
+    var TEXT_END_IT = "<p>Grazie mille!</p><p>Ora Ã¨ possibile disattivare nuovamente la modalitÃ  a schermo intero, ad esempio premendo Esc o F11.</p><p><a href='http://norstatsurveys.com/wix/p1874301048.aspx?__sid__=" + subject_id + "'>Clicca qui per rispondere ad alcune domande finali.</a></p>";
+    
+    
+    
+    // text after end of experiment
+   // var TEXT_DEBRIEF =  "<p>Vielen Dank!</p>" +
+// "<p><a href='http://norstatsurveys.com/wix/p1853828385.aspx?__sid__=" + subject_id + "'>Klick bitte hier, um einige abschließende Fragen zu beantworten.</a></p>";
+
+    // duration of fixation cross in ms
+    var TIME_CROSS = 1200;
+    // duration of stimulus image
+    var TIME_STIMULUS = 1000;
+    // delay after stimulus
+    var TIME_POST_STIMULUS = 1200;
+    // durations of mask, prime, mask
+    var TIME_MASKED_PRIME = [160,40,200];
+    var TIME_PRIME_DURATION = 400;
+
+    // picture to use as fixation cross between trials
+    var IM_FIXATION_CROSS = 'img/Norstat-Prime/E/cross.png';
+    
+
+    var images_pos = [];
+    var images_neg = [];
+    var images_neu = [];
+    var images_mask1 = [];
+    var images_mask2 = [];
+    //var images_p50 = [];
+    //var images_p60 = [];
+    //var images_p70 = [];
+    
+    for (var j = 1; j <= Npics; j++) {
+        images_pos.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'pos.jpg');
+        images_neg.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'neg.jpg');
+        images_neu.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'neu.jpg');
+        images_mask1.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'mask1.jpg');
+        images_mask2.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'mask2.jpg');
+        /*images_p50.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'-50.jpg');
+        images_p60.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'-60.jpg');
+        images_p70.push('img/Norstat-Prime/E/'+("00" + j).slice(-2)+'-70.jpg'); */
+    }
+
+
+    // ------------------------- END VARIABLE BLOCK ------------------------------------
+   
+
+    // generate a random subject ID
+     //Math.floor(Math.random()*100000);
+    
+    var datetime = new Date();
+    
+    var filename = 'NP_Ek_' +
+		datetime.getFullYear() +'.'+datetime.getMonth()+1+'.'+datetime.getDate()+' '+
+		datetime.getHours() +'.' + datetime.getMinutes()+
+		' ' + subject_id;
+            // add id and datetime to data. each file line will contain this information
+            jsPsych.data.addProperties({
+                time : datetime,
+                subject_id: subject_id
+            });
+    console.log('subject id = ' + subject_id );
+    
+    // define order of images displayed in each trial
+    var trial_order = [];
+    for (var j = 0; j < Npics; j++) {
+    trial_order.push(j);
+    }
+    var trial_order = jsPsych.randomization.sample(trial_order, Ntrials, true);
+    // console.log('trial order = ' + trial_order);
+    
+    // set trial number
+    var i_trial = 0;
+    
+    // define random order of experimental or control condition: e.g. choose randomly 20 out of 40.
+    var list = [];
+    for (var j = 0; j < Ntrials; j++) {
+    list.push(j);
+    }
+
+    var random_trial_list = jsPsych.randomization.sample(list, Ntrials/2, false)
+//    console.log('random trial list = ' + random_trial_list);
+
+    // randomisation of images and sounds
+    //
+    /*images_pos = jsPsych.randomization.sample(images_pos, Ntrials, true);
+    images_neg = jsPsych.randomization.sample(images_neg, Ntrials, true);
+    images_mask = jsPsych.randomization.sample(images_mask, Ntrials, true);
+    images_p50 = jsPsych.randomization.sample(images_p50, Ntrials, true);
+    images_p60 = jsPsych.randomization.sample(images_p60, Ntrials, true);
+    images_p70= jsPsych.randomization.sample(images_p70, Ntrials, true); */
+
+	/*
+    function repeatArray(arr, count) {
+	  var ln = arr.length;
+	  var b = new Array();
+	  for(i=0; i<count; i++) {
+		b.push(arr[i%ln]);		  
+	  }
+		return b;
+	}
+    */
+
+	var images = {stim_A: images_pos, stim_B: images_neg};
+	// var sounds = {positive: sounds_pos_list, negative: sounds_neg_list};
+
+
+    // HTML player elements
+    // var player=document.getElementById('player');
+    // var sourceMp3=document.getElementById('player');
+
+    var language = 'de';
+    
+    /*
+    var language_block = {
+        type: 'button-response',
+        stimulus: "img/language.png",
+        choices: ['Deutsch','Italiano'],
+        on_finish: function(data) {
+            console.log(data.button_pressed);
+            if(data.button_pressed == 0){
+                language = 'de';
+                console.log("Language ",language);
+            } else {
+                console.log("Language IT");
+            }
+        }
+    } */
+    
+
+
+    
+    var pages1 = function(){
+       if(language == 'de'){
+           return [TEXT_ACTIVATEFS_DE, TEXT_VOLLBILD_DE]
+       } else {
+           return [TEXT_ACTIVATEFS_IT, TEXT_VOLLBILD_IT]
+       }
+    }
+    
+    var pages2 = function(){
+       if(language == 'de'){
+           return TEXT_STARTEXPERIMENT_DE
+       } else {
+           return TEXT_STARTEXPERIMENT_IT
+       }
+    }
+    
+    var pages3 = function(){
+       if(language == 'de'){
+           return TEXT_END_DE
+       } else {
+           return TEXT_END_IT
+       }
+    }
+        
+    var vollbild_block = {
+        type: 'instructions',
+        pages: pages1,
+        show_clickable_nav: true
+    }    
+
+    
+    /* define start experiment block */
+    var startexperiment_block = {
+        type: "text",
+        text: pages2,
+        timing_post_trial: 500
+    }
+    
+    // Post-task questionnaire
+    var q1 = {
+        type: 'survey-text',
+        questions: ["1. Alter"],
+        columns: [5],
+        required: true,
+        preamble: "<p>Bevor es losgeht, würden wir gerne noch einige wenige persönliche Informationen über Sie erfahren. Bitte beantworten Sie die Fragen nach Alter und Geschlecht auf dieser und der nächsten Seite. Bestätigen Sie die Eingabe bitte durch Klicken auf den Button und nicht durch Betätigen der Enter-Taste.</p><p><b><a href='https://passback.lifepointspanel.com/Survey/EarlyScreenOut?ProjectToken=9e4bf0f9-b3aa-536b-d8c3-c9c3bf287ac8'>Klicken Sie bitte hier, falls Sie unter 18 Jahre alt sind.</a></b></p>"
+    }
+    
+    var q2 = {
+        type: 'survey-multi-choice',
+        questions: ["2. Geschlecht"],
+        options: [["weiblich","männlich","divers"]],
+        required: true,
+        horizontal: false
+    }
+    
+    var q3scale = ["Stimme gar nicht zu","","","Weder noch","","","Stimme total zu"];
+    var q3 = {
+        type: 'survey-likert',
+        questions: ["Die freundlichen Gesichter habe ich positiv wahrgenommen.", "Die unfreundlichen Gesichter habe ich negativ wahrgenommen.","Ich habe das Gefühl, dass mir heute alles gelingt."],
+        labels: [q3scale,q3scale,q3scale],
+        required: true,
+        preamble: "<p><b>Bitte geben Sie zuletzt an, in wie weit Sie den folgenden Aussagen zustimmen.</b></p><p>Klicken Sie bitte in einen der Kreise, so dass ihn ein schwarzer Punkt ausgefüllt erscheinen lässt.</p>"
+    }
+        
+
+    jsPsych.pluginAPI.preloadImages(images_pos, function () {
+    }, function () {
+        console.log('loading pos images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_neu, function () {
+    }, function () {
+        console.log('loading neu images...')
+    });
+  /*  jsPsych.pluginAPI.preloadImages(images_p50, function () {
+    }, function () {
+        console.log('loading p50 images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_p60, function () {
+    }, function () {
+        console.log('loading p60 images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_p70, function () {
+    }, function () {
+        console.log('loading p70 images...')
+    }); */
+    jsPsych.pluginAPI.preloadImages(images_mask1, function () {
+    }, function () {
+        console.log('loading mask1 images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_mask2, function () {
+    }, function () {
+        console.log('loading mask2 images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_neg, function () {
+        startExperiment();
+    }, function () {
+        console.log('loading neg images...')
+    });
+
+    
+
+    /* define test block */
+    var test_stimuli = [
+        {
+            stimulus: images,
+            data: {}
+        }
+    ];
+    
+/*
+    var show_prime50 = function(){
+        return [images_mask[trial_order[i_trial]], images_p50[trial_order[i_trial]], images_mask[trial_order[i_trial]]]
+    }
+
+    var show_prime60 = function(){
+        return [images_mask[trial_order[i_trial]], images_p60[trial_order[i_trial]], images_mask[trial_order[i_trial]]]
+    }
+    
+    var show_prime70 = function(){
+        return [images_mask[trial_order[i_trial]], images_p70[trial_order[i_trial]], images_mask[trial_order[i_trial]]]
+    }
+ */   
+    var show_primeneu = function(){
+        return [images_mask1[trial_order[i_trial]], images_neu[trial_order[i_trial]], images_mask2[trial_order[i_trial]]]
+    }
+    
+    var show_primepos = function(){
+        return [images_mask1[trial_order[i_trial]], images_pos[trial_order[i_trial]], images_mask2[trial_order[i_trial]]]
+    }
+
+ /*   var get_cross_or_number = function(){
+        return images_cross_rnd[i_trial]
+    };
+*/   
+/*
+  var prime50 = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime50,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: TIME_PRIME_DURATION,
+    response_ends_trial: false,
+//    on_finish: function () {
+//        console.log('P 50 i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+//    }
+   } 
+  
+  var prime60 = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime60,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: TIME_PRIME_DURATION,
+    response_ends_trial: false,
+//    on_finish: function () {
+//        console.log('P 60 i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+//   }
+  }
+  
+  var prime70 = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime70,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: TIME_PRIME_DURATION,
+    response_ends_trial: false,
+//    on_finish: function () {
+//        console.log('P 70 i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+//   }
+  }
+*/
+    
+  var primeneu = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_primeneu,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: TIME_PRIME_DURATION,
+    response_ends_trial: false,
+    on_finish: function () {
+        console.log('PNeu i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+   }
+  }
+  
+  var primepos = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_primepos,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: TIME_PRIME_DURATION,
+    response_ends_trial: false,
+    on_finish: function () {
+        console.log('PPos i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+   }
+  }
+
+  var intertrial = {
+        type: 'single-stim',
+        stimulus: IM_FIXATION_CROSS,
+//        stimulus: get_cross_or_number,
+        is_html: false,
+        timing_response: TIME_CROSS,
+        timing_post_trial: 0,
+        response_ends_trial: false    };
+
+
+  var test_block = {
+        type: "single-stim-quantis-prime",
+        choices: 'none',
+
+        timing_stim: TIME_STIMULUS,
+        timing_response: TIME_STIMULUS,
+        timing_post_trial: TIME_POST_STIMULUS,
+
+        stimuli: images,
+        device_address : '111599A410',
+        
+        //sounds: sounds,
+        //player: player,
+        //sourceMp3: sourceMp3,
+
+
+        i_trial: function(){return i_trial}, // current trial modulo number of images
+        trial_order: function(){return trial_order[i_trial]},
+        on_finish: function (data) {
+            jsPsych.data.addDataToLastTrial(
+                    {   trial_number: i_trial
+                    });
+            if (random_trial_list.indexOf(i_trial) > -1) {
+               jsPsych.data.addDataToLastTrial(
+                    {   exp_condition: 1
+                    }); 
+            } else {
+                jsPsych.data.addDataToLastTrial(
+                    {   exp_condition: 0
+                    }); 
+            }
+            i_trial++;
+        },
+        timeline: test_stimuli
+    };
+
+   var save_block = {
+    type: 'single-stim',
+//    stimulus: 'saving data',
+    is_html: true,
+    timing_response: 100,
+    response_ends_trial: false,
+    on_finish:  function (data) {
+                saveData('data/norstat-prime/ekman/' + filename + '.csv', jsPsych.data.dataAsCSV())
+            }
+    };
+
+    var debrief_block = {
+        type: "text",
+        text: pages3,
+        cont_key: '?'
+    };
+
+
+    /* create experiment timeline array */
+    var timeline = [];
+    //timeline.push(language_block);
+    timeline.push(vollbild_block);
+    //timeline.push(q1);
+    //timeline.push(q2);
+    timeline.push(startexperiment_block);
+    for(var i=0; i < Ntrials; i++){
+      timeline.push(intertrial); // add a fixation trial
+        if (random_trial_list.indexOf(i) > -1) {
+      timeline.push(primepos);
+      timeline.push(primepos);
+      timeline.push(primepos);
+        } else {
+      timeline.push(primeneu);
+      timeline.push(primeneu);
+      timeline.push(primeneu);
+        }
+      timeline.push(test_block); // add a word trial
+    }
+    timeline.push(q3);
+    timeline.push(save_block);
+    timeline.push(debrief_block);
+
+    function saveData(filename, filedata) {
+        console.log("starting save data...", filename, filedata);
+        $.ajax({
+            type: 'post',
+            cache: false,
+            url: 'save-data.php', // this is the path to the above PHP script
+            data: {filename: filename, filedata: filedata}
+        })
+                .done(function (data) {
+                    // alert("OK OK OK" + data)
+                })
+                .fail(function () {
+                    alert("Ajax failed to send data")
+                });
+        console.log("finished save data");
+    }
+
+    /* start the experiment */
+    function startExperiment() {
+        jsPsych.init({
+            timeline: timeline
+	  //  fullscreen: true
+        });
+    }
+</script>
+    </div>
+</body>
+</html>

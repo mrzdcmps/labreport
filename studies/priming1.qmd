@@ -91,7 +91,7 @@ Each participant completed 40 trials. Half of the 20 matched target pairs were r
 
 After the task, participants completed a questionnaire assessing stimulus-seeking behavior, self-efficacy attitude related to general life outcomes, and generalized optimism and pessimism using the Life Orientation Test-Revised (LOT-R). These measures were exploratory, with no specific hypotheses, and results will be reported in a future publication.
 
-## Sample Size and Data Analyses
+## Sample Size and Data Analysis
 
 The study employed a Bayesian approach, which allows for data accumulation until a specific stopping criterion is met. The stopping rule was defined as a Bayes Factor (BF) of 10, indicating strong evidence for either the null hypothesis (H0) or the alternative hypothesis (H1). For the analyses in Study 1, an uninformed prior following a Cauchy distribution centered around 0 with an r = 0.1 was chosen, based on an estimated effect size of Cohen’s d = 0.1, which has been previously applied in similar research. The prediction was that there would be more positive stimuli than expected by chance in the experimental condition, with a smaller effect in the control condition. Two separate one-sample Bayesian t-tests with a one-tailed approach were used for the analyses, performed regularly (almost weekly) with updated sample means. The statistical software JASP (Version 0.9) was used for these analyses. Data collection occurred from March to July 2018.
 
@@ -104,6 +104,7 @@ Although the stopping criterion of BF10 = 10 was reached multiple times during d
 ::: {.callout-note title="Resources" collapse="true"}
 -   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
 -   [OSF Project](https://osf.io/hgxt3)
--   [Analyses and Sample Stimuli](https://osf.io/hgxt3/files/osfstorage)
+-   [Analyses](https://osf.io/hgxt3/files/osfstorage)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/priming/n-prime.html)
+-   [Stimuli](../data/priming/NPrime.zip)
 :::

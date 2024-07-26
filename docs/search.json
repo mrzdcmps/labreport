@@ -204,6 +204,78 @@
     ]
   },
   {
+    "objectID": "studies/priming4.html",
+    "href": "studies/priming4.html",
+    "title": "Priming 4",
+    "section": "",
+    "text": "The preregistered study was a conceptual replication of Study 3, testing the Model of Pragmatic Information (MPI) (Lucadou et al., 2007). The MPI predicts that initial evidence for an effect will decline over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study. The study aimed to reappear the effect in the experimental (positive priming) condition, with potential decline over time.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 4"
+    ]
+  },
+  {
+    "objectID": "studies/priming4.html#hypothesis",
+    "href": "studies/priming4.html#hypothesis",
+    "title": "Priming 4",
+    "section": "",
+    "text": "The preregistered study was a conceptual replication of Study 3, testing the Model of Pragmatic Information (MPI) (Lucadou et al., 2007). The MPI predicts that initial evidence for an effect will decline over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study. The study aimed to reappear the effect in the experimental (positive priming) condition, with potential decline over time.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 4"
+    ]
+  },
+  {
+    "objectID": "studies/priming4.html#participants",
+    "href": "studies/priming4.html#participants",
+    "title": "Priming 4",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n4060\n\n\nFemale\n49.29%\n\n\nMale\n46.75%\n\n\nOther\n1.28%\n\n\nMean Age\n46.25 years\n\n\nSD Age\n12.86 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 4"
+    ]
+  },
+  {
+    "objectID": "studies/priming4.html#materials",
+    "href": "studies/priming4.html#materials",
+    "title": "Priming 4",
+    "section": "Materials",
+    "text": "Materials\nThe experiment replicated the previous studies with a nearly identical setup, except for modifications in the priming procedure and the stimuli used for primes and targets to conduct a conceptual replication instead of a direct one.\nThe stimuli comprised images from the Pictures of Facial Affect by Ekman and Friesen (Ekman & Friesen, 1976), which includes 110 photographs of 14 actors showing various emotional states. For this study, images depicting happiness, anger, and neutral expressions were selected, resulting in 14 sets of three images each. The principal investigators chose these expressions because they are the most aversive (angry faces) and most appetitive (happy faces) to human observers. Scrambled versions of neutral faces served as masks in the priming procedure, leveraging established effectiveness in subliminal processing of facial expressions.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 4"
+    ]
+  },
+  {
+    "objectID": "studies/priming4.html#procedure",
+    "href": "studies/priming4.html#procedure",
+    "title": "Priming 4",
+    "section": "Procedure",
+    "text": "Procedure\nA design similar to previous studies was used, involving 20 experimental (positive priming) and 20 control (neutral priming) trials presented in random order. Participants saw masked neutral facial expressions as primes in the neutral priming condition and masked happy facial expressions in the positive priming condition.\nParticipants were recruited via email by Kantar, a polling company, and directed to the study hosted on an LMU web server. After enabling full-screen mode, they provided demographic information and began the experiment. A pseudo-RNG determined the trial order and conditions, with trials randomly assigned to positive or neutral priming conditions. Each participant experienced 40 trials, with stimulus sets selected from 14 available sets via sampling with replacement.\nThe procedure for each trial involved displaying a fixation cross (1200 ms), a forward mask (160 ms), a prime (40 ms), and a backward mask (200 ms), repeated three times with the same prime. Neutral or happy primes, masks, and target faces were matched and derived from the same actor. A qRNG then determined whether a happy (“0” bit) or angry facial expression (“1” bit) was displayed as the target stimulus for 1000 ms. Each trial was followed by a black inter-trial interval (1200 ms).\nAfter all 40 trials, participants rated their perception of friendly faces as positive and angry faces as negative on a seven-point scale and indicated their overall feeling of success for the day. Finally, they were thanked and directed back to the polling company for a short debriefing.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 4"
+    ]
+  },
+  {
+    "objectID": "studies/priming4.html#sample-size-and-data-analysis",
+    "href": "studies/priming4.html#sample-size-and-data-analysis",
+    "title": "Priming 4",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nThe analysis strategy for this study followed the same approach as Study 3, focusing on changes in evidence using sequential Bayes factors (BFs) from two Bayesian one-sample t-tests (one-tailed) on the raw data (mean of positive pictures) from the positive and neutral priming conditions. Due to the anticipated volatile effect, a fixed BF threshold could not be used as a stopping criterion. Based on the positive results of Study 1, the pre-registered target sample size was around 4,000 participants.\nData collection was conducted by Kantar between February and March 2020, with about 100 participants recruited per day. The final sample consisted of 3,996 participants (with demographic data for 3,951 participants). Once the target sample size was reached, data collection was halted, and the data were analyzed.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Dechamps et al., 2021)\nPreregistration\nOSF Project\nAnalyses\nExperimental Program\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 4"
+    ]
+  },
+  {
     "objectID": "studies/priming2.html",
     "href": "studies/priming2.html",
     "title": "Priming 2",
@@ -252,11 +324,11 @@
     ]
   },
   {
-    "objectID": "studies/priming2.html#sample-size-and-data-analyses",
-    "href": "studies/priming2.html#sample-size-and-data-analyses",
+    "objectID": "studies/priming2.html#sample-size-and-data-analysis",
+    "href": "studies/priming2.html#sample-size-and-data-analysis",
     "title": "Priming 2",
-    "section": "Sample Size and Data Analyses",
-    "text": "Sample Size and Data Analyses\nParticipant recruitment and data collection for the study were conducted by Norstat, following the same protocol as Study 1. Initially, data collection was planned to stop when the sequential Bayes Factor (BF) reached the predefined threshold, which occurred at n = 937. However, due to concerns about the small predicted effect size and potential lack of statistical power, the researchers decided to continue collecting data. They closely monitored the BF and eventually stopped recruitment when the sample size reached N = 2,063. Demographic data were available for 2,021 participants.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Jakob et al., 2024)\nPreregistration\nOSF Project\nAnalyses and Sample Stimuli\nExperimental Program",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nParticipant recruitment and data collection for the study were conducted by Norstat, following the same protocol as Study 1. Initially, data collection was planned to stop when the sequential Bayes Factor (BF) reached the predefined threshold, which occurred at n = 937. However, due to concerns about the small predicted effect size and potential lack of statistical power, the researchers decided to continue collecting data. They closely monitored the BF and eventually stopped recruitment when the sample size reached N = 2,063. Demographic data were available for 2,021 participants.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Dechamps et al., 2021)\nPreregistration\nOSF Project\nAnalyses\nExperimental Program\nStimuli",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -889,15 +961,75 @@
     ]
   },
   {
-    "objectID": "studies/priming1.html#sample-size-and-data-analyses",
-    "href": "studies/priming1.html#sample-size-and-data-analyses",
+    "objectID": "studies/priming1.html#sample-size-and-data-analysis",
+    "href": "studies/priming1.html#sample-size-and-data-analysis",
     "title": "Priming 1",
-    "section": "Sample Size and Data Analyses",
-    "text": "Sample Size and Data Analyses\nThe study employed a Bayesian approach, which allows for data accumulation until a specific stopping criterion is met. The stopping rule was defined as a Bayes Factor (BF) of 10, indicating strong evidence for either the null hypothesis (H0) or the alternative hypothesis (H1). For the analyses in Study 1, an uninformed prior following a Cauchy distribution centered around 0 with an r = 0.1 was chosen, based on an estimated effect size of Cohen’s d = 0.1, which has been previously applied in similar research. The prediction was that there would be more positive stimuli than expected by chance in the experimental condition, with a smaller effect in the control condition. Two separate one-sample Bayesian t-tests with a one-tailed approach were used for the analyses, performed regularly (almost weekly) with updated sample means. The statistical software JASP (Version 0.9) was used for these analyses. Data collection occurred from March to July 2018.\nAlthough the stopping criterion of BF10 = 10 was reached multiple times during data collection, it went unnoticed due to the large volume of data points added weekly. As a result, data collection continued until the criterion was securely met, which occurred at N = 4,092 participants. Demographic data were available for 4,034 participants. Data collection was then stopped according to Bayesian rules of analysis.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Dechamps et al., 2021)\nOSF Project\nAnalyses and Sample Stimuli\nExperimental Program",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nThe study employed a Bayesian approach, which allows for data accumulation until a specific stopping criterion is met. The stopping rule was defined as a Bayes Factor (BF) of 10, indicating strong evidence for either the null hypothesis (H0) or the alternative hypothesis (H1). For the analyses in Study 1, an uninformed prior following a Cauchy distribution centered around 0 with an r = 0.1 was chosen, based on an estimated effect size of Cohen’s d = 0.1, which has been previously applied in similar research. The prediction was that there would be more positive stimuli than expected by chance in the experimental condition, with a smaller effect in the control condition. Two separate one-sample Bayesian t-tests with a one-tailed approach were used for the analyses, performed regularly (almost weekly) with updated sample means. The statistical software JASP (Version 0.9) was used for these analyses. Data collection occurred from March to July 2018.\nAlthough the stopping criterion of BF10 = 10 was reached multiple times during data collection, it went unnoticed due to the large volume of data points added weekly. As a result, data collection continued until the criterion was securely met, which occurred at N = 4,092 participants. Demographic data were available for 4,034 participants. Data collection was then stopped according to Bayesian rules of analysis.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Dechamps et al., 2021)\nOSF Project\nAnalyses\nExperimental Program\nStimuli",
     "crumbs": [
       "Experiments",
       "Studies",
       "Priming 1"
+    ]
+  },
+  {
+    "objectID": "studies/priming3.html",
+    "href": "studies/priming3.html",
+    "title": "Priming 3",
+    "section": "",
+    "text": "This study was a pre-registered experiment designed to test P3. P3 is a more complex model than P2, also proposing the existence of Micro-PK, but differing in its prediction of a non-random oscillating pattern of evidence for the effect over time. Specifically, the study aimed to observe a non-random oscillation of evidence in the positive priming condition, with smaller or no oscillations in the neutral priming condition, replicating previous post-hoc results.\nThe prediction derived from P3 was tested using three temporal analyses from the post-hoc analyses:\n\nThe maximal Bayes Factor (BF) reached (maxBF analysis)\nThe energy of the sequential BF (BF energy analysis)\nThe sum of amplitudes from Fast Fourier Transform (FFT) analyses\n\nThese were computed and compared to 10,000 simulations of these conditions, which served as null distributions.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 3"
+    ]
+  },
+  {
+    "objectID": "studies/priming3.html#hypothesis",
+    "href": "studies/priming3.html#hypothesis",
+    "title": "Priming 3",
+    "section": "",
+    "text": "This study was a pre-registered experiment designed to test P3. P3 is a more complex model than P2, also proposing the existence of Micro-PK, but differing in its prediction of a non-random oscillating pattern of evidence for the effect over time. Specifically, the study aimed to observe a non-random oscillation of evidence in the positive priming condition, with smaller or no oscillations in the neutral priming condition, replicating previous post-hoc results.\nThe prediction derived from P3 was tested using three temporal analyses from the post-hoc analyses:\n\nThe maximal Bayes Factor (BF) reached (maxBF analysis)\nThe energy of the sequential BF (BF energy analysis)\nThe sum of amplitudes from Fast Fourier Transform (FFT) analyses\n\nThese were computed and compared to 10,000 simulations of these conditions, which served as null distributions.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 3"
+    ]
+  },
+  {
+    "objectID": "studies/priming3.html#participants",
+    "href": "studies/priming3.html#participants",
+    "title": "Priming 3",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n6099\n\n\nFemale\n49.16%\n\n\nMale\n50.01%\n\n\nMean Age\n51.25 years\n\n\nSD Age\n14.44 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 3"
+    ]
+  },
+  {
+    "objectID": "studies/priming3.html#materials-and-procedure",
+    "href": "studies/priming3.html#materials-and-procedure",
+    "title": "Priming 3",
+    "section": "Materials and Procedure",
+    "text": "Materials and Procedure\nAll materials and procedures were identical to those in Priming 1 and Priming 2.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 3"
+    ]
+  },
+  {
+    "objectID": "studies/priming3.html#sample-size-and-data-analysis",
+    "href": "studies/priming3.html#sample-size-and-data-analysis",
+    "title": "Priming 3",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nParticipant recruitment and data collection were conducted by Norstat, following the same protocol as in Studies 1 and 2. Due to the exhaustion of the German participant pool during Study 3, additional invitations were sent to Austrian panelists. Data collection took place from October to December 2019, resulting in a final sample size of 6,099 participants, with demographic data available for 6,047 of them.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Dechamps et al., 2021)\nPreregistration\nOSF Project\nAnalyses\nExperimental Program\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Priming 3"
     ]
   },
   {

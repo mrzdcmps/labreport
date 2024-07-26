@@ -1,0 +1,81 @@
+---
+title: "Priming 3"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+This study was a pre-registered experiment designed to test P3. P3 is a more complex model than P2, also proposing the existence of Micro-PK, but differing in its prediction of a non-random oscillating pattern of evidence for the effect over time. Specifically, the study aimed to observe a non-random oscillation of evidence in the positive priming condition, with smaller or no oscillations in the neutral priming condition, replicating previous post-hoc results.
+
+The prediction derived from P3 was tested using three temporal analyses from the post-hoc analyses:
+
+-   The maximal Bayes Factor (BF) reached (maxBF analysis)
+-   The energy of the sequential BF (BF energy analysis)
+-   The sum of amplitudes from Fast Fourier Transform (FFT) analyses
+
+These were computed and compared to 10,000 simulations of these conditions, which served as null distributions.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- subset(study13_priming.3)
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$S2, na.rm=T)
+sd_age <- sd(df$S2, na.rm=T)
+female_count <- sum(df$gender_image == 2, na.rm=T)/total_participants*100
+male_count <- sum(df$gender_image == 1, na.rm=T)/total_participants*100
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    paste0(round(female_count, 2), "%"),
+    paste0(round(male_count, 2), "%"),
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials and Procedure
+
+All materials and procedures were identical to those in [Priming 1](priming1.html) and [Priming 2](priming2.html).
+
+## Sample Size and Data Analysis
+
+Participant recruitment and data collection were conducted by Norstat, following the same protocol as in Studies 1 and 2. Due to the exhaustion of the German participant pool during Study 3, additional invitations were sent to Austrian panelists. Data collection took place from October to December 2019, resulting in a final sample size of 6,099 participants, with demographic data available for 6,047 of them.
+
+::: {.callout-tip title="Data" collapse="true"}
+-   [Download Data](../data/priming/priming3.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
+-   [Preregistration](https://osf.io/894cb)
+-   [OSF Project](https://osf.io/hgxt3)
+-   [Analyses](https://osf.io/hgxt3/files/osfstorage)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/priming/n-prime.html)
+-   [Stimuli](../data/priming/NPrime.zip)
+:::
