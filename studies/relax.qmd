@@ -26,7 +26,7 @@ We hypothesized that the mean score for positive stimuli would be above the chan
 library(tidyverse)
 library(knitr)
 
-df <- subset(study12_relaxation)
+df <- study12_relaxation
 
 # Data
 total_participants <- nrow(df)

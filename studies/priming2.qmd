@@ -1,0 +1,72 @@
+---
+title: "Priming 2"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+This study was a direct replication of [Priming 1](priming1.html). All predictions were identical to those in the first study.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- subset(study13_priming.2)
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$s2, na.rm=T)
+sd_age <- sd(df$s2, na.rm=T)
+female_count <- sum(df$gender_image == 2, na.rm=T)/total_participants*100
+male_count <- sum(df$gender_image == 1, na.rm=T)/total_participants*100
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    paste0(round(female_count, 2), "%"),
+    paste0(round(male_count, 2), "%"),
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials and Procedure
+
+All materials and procedures were identical to those in [Priming 1](priming1.html).
+
+## Sample Size and Data Analyses
+
+Participant recruitment and data collection for the study were conducted by Norstat, following the same protocol as Study 1. Initially, data collection was planned to stop when the sequential Bayes Factor (BF) reached the predefined threshold, which occurred at n = 937. However, due to concerns about the small predicted effect size and potential lack of statistical power, the researchers decided to continue collecting data. They closely monitored the BF and eventually stopped recruitment when the sample size reached N = 2,063. Demographic data were available for 2,021 participants.
+
+::: {.callout-tip title="Data" collapse="true"}
+-   [Download Data](../data/priming/priming2.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@jakob2024]
+-   [Preregistration](https://osf.io/83efr)
+-   [OSF Project](https://osf.io/hgxt3)
+-   [Analyses and Sample Stimuli](https://osf.io/hgxt3/files/osfstorage)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/priming/n-prime.html)
+:::

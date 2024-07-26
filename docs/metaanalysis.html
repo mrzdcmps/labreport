@@ -518,22 +518,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">27</td>
 <td style="text-align: left;">Priming 1 Exp</td>
 <td style="text-align: left;">TRUE</td>
-<td style="text-align: right;">6155</td>
+<td style="text-align: right;">4092</td>
 <td style="text-align: right;">20</td>
-<td style="text-align: right;">10.055077</td>
-<td style="text-align: right;">2.255616</td>
-<td style="text-align: right;">50.27539</td>
-<td style="text-align: right;">1.9156696</td>
-<td style="text-align: right;">0.0277267</td>
-<td style="text-align: right;">0.0244178</td>
-<td style="text-align: right;">0.0001625</td>
-<td style="text-align: right;">1.3068266</td>
+<td style="text-align: right;">10.102395</td>
+<td style="text-align: right;">2.265882</td>
+<td style="text-align: right;">50.51197</td>
+<td style="text-align: right;">2.8907394</td>
+<td style="text-align: right;">0.0019318</td>
+<td style="text-align: right;">0.0451899</td>
+<td style="text-align: right;">0.0002446</td>
+<td style="text-align: right;">19.8004286</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">29</td>
 <td style="text-align: left;">Priming 2 Exp</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2063</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">9.961222</td>
+<td style="text-align: right;">2.232693</td>
+<td style="text-align: right;">49.80611</td>
+<td style="text-align: right;">-0.7888809</td>
+<td style="text-align: right;">0.7848638</td>
+<td style="text-align: right;">-0.0173685</td>
+<td style="text-align: right;">0.0004848</td>
+<td style="text-align: right;">0.0884220</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Priming 3 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">6099</td>
 <td style="text-align: right;">20</td>
@@ -548,25 +565,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">greater</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">31</td>
-<td style="text-align: left;">Priming 3 Exp</td>
+<tr class="odd">
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">Priming 4 Exp</td>
 <td style="text-align: left;">TRUE</td>
-<td style="text-align: right;">3996</td>
+<td style="text-align: right;">4060</td>
 <td style="text-align: right;">20</td>
-<td style="text-align: right;">9.989489</td>
-<td style="text-align: right;">2.194746</td>
-<td style="text-align: right;">49.94745</td>
-<td style="text-align: right;">-0.3027278</td>
-<td style="text-align: right;">0.6189434</td>
-<td style="text-align: right;">-0.0047889</td>
-<td style="text-align: right;">0.0002503</td>
+<td style="text-align: right;">9.995567</td>
+<td style="text-align: right;">2.189693</td>
+<td style="text-align: right;">49.97783</td>
+<td style="text-align: right;">-0.1290108</td>
+<td style="text-align: right;">0.5513223</td>
+<td style="text-align: right;">-0.0020247</td>
+<td style="text-align: right;">0.0002463</td>
 <td style="text-align: right;">0.0840137</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">33</td>
+<tr class="even">
+<td style="text-align: left;">35</td>
 <td style="text-align: left;">Erotic Images 1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">241</td>
@@ -582,8 +599,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">greater</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">34</td>
+<tr class="odd">
+<td style="text-align: left;">36</td>
 <td style="text-align: left;">Erotic Images 2</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">678</td>
@@ -649,23 +666,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.rma</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Random-Effects Model (k = 22; tau^2 estimator: REML)
+Random-Effects Model (k = 23; tau^2 estimator: REML)
 
   logLik  deviance       AIC       BIC      AICc   
- 21.8313  -43.6625  -39.6625  -37.5735  -38.9959   
+ 23.2993  -46.5986  -42.5986  -40.4165  -41.9671   
 
-tau^2 (estimated amount of total heterogeneity): 0.0004 (SE = 0.0004)
-tau (square root of estimated tau^2 value):      0.0203
-I^2 (total heterogeneity / total variability):   35.65%
-H^2 (total variability / sampling variability):  1.55
+tau^2 (estimated amount of total heterogeneity): 0.0006 (SE = 0.0005)
+tau (square root of estimated tau^2 value):      0.0252
+I^2 (total heterogeneity / total variability):   45.34%
+H^2 (total variability / sampling variability):  1.83
 
 Test for Heterogeneity:
-Q(df = 21) = 38.4014, p-val = 0.0116
+Q(df = 22) = 43.4629, p-val = 0.0041
 
 Model Results:
 
 estimate      se    tval  df    pval    ci.lb   ci.ub    
-  0.0156  0.0109  1.4311  21  0.1671  -0.0071  0.0384    
+  0.0170  0.0115  1.4729  22  0.1549  -0.0069  0.0409    
 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
@@ -892,22 +909,39 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: left;">28</td>
 <td style="text-align: left;">Priming 1 Con</td>
 <td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">6155</td>
+<td style="text-align: right;">4092</td>
 <td style="text-align: right;">20</td>
-<td style="text-align: right;">10.022258</td>
-<td style="text-align: right;">2.251636</td>
-<td style="text-align: right;">50.11129</td>
-<td style="text-align: right;">0.7755474</td>
-<td style="text-align: right;">0.2190230</td>
-<td style="text-align: right;">0.0098854</td>
-<td style="text-align: right;">0.0001625</td>
-<td style="text-align: right;">0.1699792</td>
+<td style="text-align: right;">10.025660</td>
+<td style="text-align: right;">2.260601</td>
+<td style="text-align: right;">50.12830</td>
+<td style="text-align: right;">0.7261019</td>
+<td style="text-align: right;">0.2339089</td>
+<td style="text-align: right;">0.0113509</td>
+<td style="text-align: right;">0.0002444</td>
+<td style="text-align: right;">0.2331401</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">30</td>
 <td style="text-align: left;">Priming 2 Con</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2063</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">10.015511</td>
+<td style="text-align: right;">2.234278</td>
+<td style="text-align: right;">50.07756</td>
+<td style="text-align: right;">0.3153284</td>
+<td style="text-align: right;">0.3762721</td>
+<td style="text-align: right;">0.0069425</td>
+<td style="text-align: right;">0.0004847</td>
+<td style="text-align: right;">0.2230455</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">Priming 3 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">6099</td>
 <td style="text-align: right;">20</td>
@@ -918,23 +952,23 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.8758000</td>
 <td style="text-align: right;">-0.0147812</td>
 <td style="text-align: right;">0.0001640</td>
-<td style="text-align: right;">0.1538847</td>
+<td style="text-align: right;">0.0375426</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">32</td>
-<td style="text-align: left;">Priming 3 Con</td>
+<tr class="odd">
+<td style="text-align: left;">34</td>
+<td style="text-align: left;">Priming 4 Con</td>
 <td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">3996</td>
+<td style="text-align: right;">4060</td>
 <td style="text-align: right;">20</td>
-<td style="text-align: right;">9.913914</td>
-<td style="text-align: right;">2.252207</td>
-<td style="text-align: right;">49.56957</td>
-<td style="text-align: right;">-2.4162250</td>
-<td style="text-align: right;">0.9921365</td>
-<td style="text-align: right;">-0.0382230</td>
-<td style="text-align: right;">0.0002504</td>
+<td style="text-align: right;">9.904926</td>
+<td style="text-align: right;">2.255174</td>
+<td style="text-align: right;">49.52463</td>
+<td style="text-align: right;">-2.6862364</td>
+<td style="text-align: right;">0.9963722</td>
+<td style="text-align: right;">-0.0421581</td>
+<td style="text-align: right;">0.0002465</td>
 <td style="text-align: right;">0.0272478</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: left;">FALSE</td>
@@ -987,23 +1021,23 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.rma</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Random-Effects Model (k = 12; tau^2 estimator: REML)
+Random-Effects Model (k = 13; tau^2 estimator: REML)
 
   logLik  deviance       AIC       BIC      AICc   
- 15.1104  -30.2209  -26.2209  -25.4251  -24.7209   
+ 17.2904  -34.5808  -30.5808  -29.6110  -29.2474   
 
-tau^2 (estimated amount of total heterogeneity): 0.0006 (SE = 0.0007)
-tau (square root of estimated tau^2 value):      0.0248
-I^2 (total heterogeneity / total variability):   46.15%
-H^2 (total variability / sampling variability):  1.86
+tau^2 (estimated amount of total heterogeneity): 0.0006 (SE = 0.0006)
+tau (square root of estimated tau^2 value):      0.0235
+I^2 (total heterogeneity / total variability):   42.66%
+H^2 (total variability / sampling variability):  1.74
 
 Test for Heterogeneity:
-Q(df = 11) = 17.5990, p-val = 0.0914
+Q(df = 12) = 18.7120, p-val = 0.0957
 
 Model Results:
 
 estimate      se     tval  df    pval    ci.lb   ci.ub    
- -0.0060  0.0120  -0.5023  11  0.6254  -0.0324  0.0203    
+ -0.0051  0.0109  -0.4704  12  0.6465  -0.0290  0.0187    
 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>

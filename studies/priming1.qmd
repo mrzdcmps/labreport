@@ -1,0 +1,109 @@
+---
+title: "Priming 1"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+load("../study_objects.RData")
+```
+
+## Hypothesis
+
+In these studies, an experimental manipulation of participants' unconscious states using a within-subject design was conducted to test a micro-PK effect. Each participant completed 40 trials where either a positive or negative picture (e.g., aggressive dog vs. friendly dog) chosen by a quantum random number generator (qRNG) was shown. Before each picture presentation, a subliminal priming technique was applied: positive outcomes were primed in the experimental condition, and a neutral mix in the control condition. The predictions were:
+
+1.  **P1:** According to standard quantum mechanics (QM), outcomes should be random (50% positive and 50% negative) regardless of the observer's state.
+
+2.  **P2:** A model assuming the existence of a micro-PK effect would predict more positive images in the experimental condition and smaller or null effects in the control condition.
+
+3.  **P3:** An elaborated micro-PK model predicting oscillating patterns of evidence for the effect over time would show non-random fluctuations in the experimental condition, with smaller or no oscillations in the control condition.
+
+4.  **P4:** The *Model of Pragmatic Information* (MPI) [@7-05370-002] predicts initial evidence for an effect that declines over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study.
+
+Four studies were conducted:
+
+-   **Study 1:** Tested P1 and P2.
+
+-   **Study 2:** Attempted to replicate Study 1, again testing P1 and P2, and explored P3 post-hoc.
+
+-   **Study 3:** Tested P3 and P4 a priori.
+
+-   **Study 4:** Tested P4.
+
+Studies 2, 3, and 4 were pre-registered. All studies were conducted online.
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- subset(study13_priming.1)
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$s2, na.rm=T)
+sd_age <- sd(df$s2, na.rm=T)
+female_count <- sum(df$gender_image == 2, na.rm=T)/total_participants*100
+male_count <- sum(df$gender_image == 1, na.rm=T)/total_participants*100
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    paste0(round(female_count, 2), "%"),
+    paste0(round(male_count, 2), "%"),
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+The study was conducted online, allowing participants to join from any location using their private computers and internet access. The experimental program was executed on a dedicated webserver based at the university and displayed via participants' web browsers, implemented using jsPsych, a JavaScript library designed for online behavioral experiments.
+
+**Stimuli:** Positive and negative pictures served as target stimuli, with a mixture of these as prime stimuli. The target stimuli were sourced from Shutterstock and included 20 positive photographs (depicting pets, peaceful landscapes, and happy people) and 20 negative photographs (depicting dangerous or attacking animals and other negative scenarios). These images were selected based on valence estimations by two experts in experimental emotion induction techniques. Each positive image was paired with a similar negative image to create matched pairs (e.g., a friendly dog vs. an aggressive dog). To balance color differences, all images were converted to black-and-white.
+
+Two classes of priming stimuli were created: neutral (control) and positive (experimental). Neutral primes were constructed by overlaying two matched target pictures (50/50 blend), resulting in 20 neutral primes. These primes were accompanied by forward and backward masks, created by scrambling the prime image into blocks to destroy meaningful content. Positive priming involved the same matched target pairs, but with a progressive increase in the positive image share (50/50, then 60/40, then 70/30) to make the positive picture more dominant in the participant's unconscious mind.
+
+**Priming Procedure:** Each trial included presenting a subliminal prime followed by a target picture. Each priming stimulus was shown three times before the target display, and the target picture was randomly selected by a quantum random number generator (qRNG) from the pair used to create the prime. The assignment of neutral or positive priming to a trial was performed by a pseudo-random number generator (pRNG).
+
+This experimental setup aimed to test the influence of unconscious priming on participants' perception of positive or negative stimuli, examining how the priming affected the likelihood of selecting positive or negative target images.
+
+## Procedure
+
+Participants were invited via email by the polling company Norstat and advised to ensure an undisturbed environment before starting the survey. After providing demographic information and accessing the experiment link, they activated their browser's full-screen mode and read the task instructions. They were informed that they would see flickering visual stimuli and positive and negative images, which they should watch passively. Participants could abort the experiment at any time.
+
+Each participant completed 40 trials. Half of the 20 matched target pairs were randomly assigned to the positive priming condition and the other half to the neutral priming condition. Each pair was used twice, resulting in 40 trials. A pseudo-RNG determined the order of these trials. In each trial, a fixation cross was shown first, followed by the priming sequence. In the neutral priming condition, a 50/50 mixture prime was shown three times for 55 ms each, with forward and backward masks. In the positive priming condition, the primes varied between a 50/50, 60/40, and 70/30 mixture. After the priming sequence, a qRNG determined whether the positive or negative target stimulus would be displayed for 1000 ms. Each trial ended with a 1200 ms black inter-trial interval before the next trial began. The dependent variables were the mean number of positive pictures and the number of 0 bits generated by the qRNG in both priming conditions.
+
+After the task, participants completed a questionnaire assessing stimulus-seeking behavior, self-efficacy attitude related to general life outcomes, and generalized optimism and pessimism using the Life Orientation Test-Revised (LOT-R). These measures were exploratory, with no specific hypotheses, and results will be reported in a future publication.
+
+## Sample Size and Data Analyses
+
+The study employed a Bayesian approach, which allows for data accumulation until a specific stopping criterion is met. The stopping rule was defined as a Bayes Factor (BF) of 10, indicating strong evidence for either the null hypothesis (H0) or the alternative hypothesis (H1). For the analyses in Study 1, an uninformed prior following a Cauchy distribution centered around 0 with an r = 0.1 was chosen, based on an estimated effect size of Cohen’s d = 0.1, which has been previously applied in similar research. The prediction was that there would be more positive stimuli than expected by chance in the experimental condition, with a smaller effect in the control condition. Two separate one-sample Bayesian t-tests with a one-tailed approach were used for the analyses, performed regularly (almost weekly) with updated sample means. The statistical software JASP (Version 0.9) was used for these analyses. Data collection occurred from March to July 2018.
+
+Although the stopping criterion of BF10 = 10 was reached multiple times during data collection, it went unnoticed due to the large volume of data points added weekly. As a result, data collection continued until the criterion was securely met, which occurred at N = 4,092 participants. Demographic data were available for 4,034 participants. Data collection was then stopped according to Bayesian rules of analysis.
+
+::: {.callout-tip title="Data" collapse="true"}
+-   [Download Data](../data/priming/priming1.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="true"}
+-   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
+-   [OSF Project](https://osf.io/hgxt3)
+-   [Analyses and Sample Stimuli](https://osf.io/hgxt3/files/osfstorage)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/priming/n-prime.html)
+:::

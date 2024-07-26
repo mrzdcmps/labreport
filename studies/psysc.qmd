@@ -103,7 +103,7 @@ For the control groups with low PT scores, two-sided Bayesian one-sample t-tests
 -   [OSF Project](https://osf.io/qxu3s/)
 -   [Main Analyses](../data/psyscanner/psyscanner-analysis.html)
 -   [CoE Analyses](../data/psyscanner/psyscanner-changeofevidence.html)
--   [Experimental Program](../data/psyscanner/psycsc.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/psyscanner/psycsc.html)
 -   [Stimuli](../data/psyscanner/Psycsc.zip)
 :::
 
