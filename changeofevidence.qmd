@@ -56,6 +56,8 @@ links = c(
   "studies/priming2.html",
   "studies/priming3.html",
   "studies/priming3.html",
+  # "studies/priming4.html",
+  # "studies/priming4.html",
   "studies/erotic1.html",
   "studies/erotic2.html"
 )

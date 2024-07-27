@@ -31,6 +31,7 @@ The forest plot visually represents the effect sizes and confidence intervals fo
 
 ```{r}
 #| warning: false
+#| fig.height: 8
 
 #Frequentist m-a with metafor 
 library(metafor)
@@ -96,6 +97,7 @@ The forest plot visually represents the effect sizes and confidence intervals fo
 
 ```{r}
 #| warning: false
+#| fig.height: 6
 
 #Frequentist m-a with metafor 
 library(metafor)
