@@ -25,6 +25,15 @@ website:
       contents: 
         - experiments.qmd
         - auto: studies
+    - title: "Change of Evidence"
+      style: "docked"
+      background: light
+      alignment: "center"
+      contents: 
+        - text: "Overview"
+          file: changeofevidence.qmd
+        - text: "Measures"
+          file: coe-measures.qmd
         
   back-to-top-navigation: false
   page-footer:

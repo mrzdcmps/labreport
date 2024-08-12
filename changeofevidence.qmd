@@ -5,7 +5,6 @@ format:
     page-layout: full
     #css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 editor: visual
-sidebar: false
 execute: 
   echo: false
   warning: false

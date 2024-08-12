@@ -1,0 +1,77 @@
+---
+title: "Change of Evidence Measures"
+format: html
+editor: visual
+execute: 
+  warning: false
+toc: true
+toc-depth: 3
+---
+
+Empirical research on Micro-Pk often times reports a decline of initially present effects [@Colborn_2018]. This phenomenon can be explained either by an initial false positive followed naturally by a regression to the true mean. Alternatively, it fits the predictions of the Model of Pragmatic Information, which states that novel, autonomous effects are inversely linked to their confirmation or detectability [@7-05370-002]. This would result in a decrease of effect size over time, since accumulated data means more power and possibility of convincing confirmatory results [@maier2022].
+
+Recently, efforts have been made to find ways to methodically distinguish false positives from decline effects using so called *change of evidence*-measures [@dechamps2019a]. These measures work by analyzing the temporal development of Bayesian evidence for the effect over the course of data collection and compare certain characteristics to a set of simulations representing possible an empirical null distribution.
+
+## Bayesian Analysis
+
+In Bayesian statistics, test results often times are reported as *Bayes Factors* (BF). A BF characterizes the relative evidence for two hypotheses, e.g. the presence of an effect versus the absence of an effect. A BF of 1 indicates equal evidence for both hypotheses, a BF \> 1 indicates evidence for the presence of an effect (H1), and a BF \< 1 indicates evidence for the absence of an effect (H0). A BF is symmetrical around 1, meaning that a BF of 0.5 indicates the same evidence for H0 as a BF of 2 indicates for H1. Similar to the convetion of using a p-value of 0.05 as a threshold for significance, a BF can be classified into different categories of evidence strength, whereas a BF \> 3 is considered moderate evidence, and a BF \> 10 is considered strong evidence [@jeffreys1961theory]
+
+$$ BF = \frac{P(D|H1)}{P(D|H0)} $$
+
+An advantage of Bayesian testing is that it allows for the continuous updating of evidence as new data comes in. In contrast to using p-values, there is no need for an a priori power analysis. Instead a desired level of evidence can be set, and the data collection can be stopped as soon as this level is reached. Even then, data can be added to further substantiate the evidence without the risk of inflating error rates, since the BF is consistent over time.
+
+The possibility of monitoring the change of evidence over time is especially useful in the context of Micro-Pk research, where an effect volatility could be assumed. If this was the case, the BF would not be consistent, but dependent on the level of confirmatory power. This would result in unusual patterns of evidence change, which could be detected by comparing the empirical BF to a set of simulated BFs as is done with the following change of evidence-measures.
+
+## Simulations
+
+The change of evidence measures are based on a set of Monte-Carlo simulations. These simulations are based on the same data generating process as the empirical data, but with the effect size set to 0. This means that the simulations represent the null hypothesis, and the BFs calculated from these simulations represent the empirical null distribution. The empirical BF is then compared to this distribution to detect unusual patterns of evidence change.
+
+The simulations used for the analysis of this lab report are generated with true random numbers using the same qRNG as most of the studies. This ensures that the simulations are based on the same random process as the empirical data. The number of simulations is set to 1000, which is a common number in the literature.
+
+## Measures
+
+### Maximum BF
+
+The highest reached Bayes Factor at *any time* during data collection characterizes the maximum evidence for the presence of an effect. If the examined effect is indeed volatile this is a useful characteristic indicative of the strength of the effect before it declines.
+
+Example:
+
+```{r results='hide'}
+library(changeofevidence)
+bf <- readRDS("incongruence-bf.rds")
+sims <- readRDS("sims.rds")
+
+plotbf(bf, sims)
+```
+
+```{r}
+res <- maxbf(bf, sims)
+```
+
+### Energy of BF
+
+The energy of the Bayes Factor provides an indicator for the *general orientation* of the BF curve over the course of data collection. It is calculated as the integral of the BF in relation to the BF=1 line. Areas above the BF=1 line are positive, areas below are negative. The energy of the BF is a measure of the overall evidence for the presence of an effect at any point in time.
+
+Example:
+
+```{r}
+res <- energybf(bf, sims)
+```
+
+### Frequency Analysis
+
+The Frequency Analysis provides a measure of the pronouncedness of oscillatory patterns in the BF curve. If an effect is countered by a decline effect the BF curve will oscillate between and increase and decrease of evidence. This measure is calculated by specifying the Fast Fourier transforms of the experimental and simulated BF curves and adding up all amplitude values. A sampling rate of 1 over the number of data points is used and only the first half of the fft is considered, since it is symmetrical.
+
+Example:
+
+```{r results='hide'}
+plotfft(fftcreate(bf), sims)
+```
+
+```{r}
+res <- ffttest(bf, sims)
+```
+
+## The changeofevidence package
+
+The `changeofevidence` package is a collection of functions to calculate the change of evidence measures. It is available on [Github](https://github.com/mrzdcmps/changeofevidence).
