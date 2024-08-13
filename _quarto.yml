@@ -34,7 +34,7 @@ website:
           file: changeofevidence.qmd
         - text: "Measures"
           file: coe-measures.qmd
-    - title: "Meta-Analysis"
+    - title: "Meta-Analyses"
       style: "docked"
       background: light
       alignment: "center"

@@ -1,6 +1,8 @@
 ---
 title: "Meta-Analysis"
-format: html
+format: 
+  html:
+    page-layout: full
 editor: visual
 ---
 

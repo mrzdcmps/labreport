@@ -15,7 +15,7 @@ Last update: 04 May 2020
 Change of Evidence measures compare the Bayesian evidence for an effect over the course of data collection to those of monte-carlo simulations. They can reveal unusual changes in evidence which can be the consequence of the rise and decline of volatile effects.
 
 ```{r}
-st2 <- readRDS("coe.rds")
+coe <- readRDS("coe.rds")
 
 library(formattable)
 library(dplyr)
@@ -61,7 +61,7 @@ links = c(
   "studies/erotic2.html"
 )
 
-ft <- st2 %>%
+ft <- coe %>%
   mutate(
     across(where(is.numeric), ~ round(., 2)),
     `MaxBF p` = cell_spec(`MaxBF p`, bold = ifelse(`MaxBF p` < 0.05, TRUE, FALSE)),

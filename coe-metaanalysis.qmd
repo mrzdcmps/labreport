@@ -1,6 +1,8 @@
 ---
 title: "CoE Meta-Analysis"
-format: html
+format: 
+  html:
+    page-layout: full
 editor: visual
 ---
 
@@ -8,73 +10,55 @@ Last update: 04 May 2020
 
 ## Meta-Analysis of Change of Evidence Measures
 
+In these meta-analyses, we will analyze the overall significance of the change of evidence-measures in all experimental and control studies. Since we don't have effect sizes for these measures, we will combine the empirical p-values of the studies, this means, we will analyze the amount of simulations that show an equal or higher value in the maxbf, energybf, and frequency tests than the empirical BF.
+
+The resulting p-values will be analyzed using the inverse chi-square method, which converts each p-value into a chi-square statistic and then sums them up. The method allows for the incorporation of different degrees of freedom, making it particularly useful when the p-values come from tests with varying sample sizes.
+
 ::: panel-tabset
 ## Experimental Studies
 
-In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for "Smokers 1" is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses.
+In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included.
 
 ```{r}
-st <- readRDS("overview.rds")
+coe <- readRDS("coe.rds")
 
 # Select studies / conditions
-data <- subset(st, st$Experimental == TRUE)
+data <- subset(coe, coe$Experimental == TRUE)
 
 knitr::kable(data)
+
+library(metap)
+istwo <- ifelse(data$Direction == "different", TRUE, FALSE) # two-tailed test
+df <- data$N-1 # degrees of freedom
 ```
 
-### Forest Plot
-
-The forest plot visually represents the effect sizes and confidence intervals for each study.
+### Max BF
 
 ```{r}
-#| warning: false
-#| fig.height: 8
+pvals <- two2one(data$`MaxBF p`, istwo)
 
-#Frequentist m-a with metafor 
-library(metafor)
+res <- invchisq(pvals, k=df)
+print(res)
+plot(res)
+```
+### BF Energy
 
-# Specify parameters of Exp Studies
-yi=data$ES
-vi=data$Var
-studies=data$Study
-# invert ES of Smokers 1, since the hypothesis was two-sided and the results showed a negative effect (smokers are avoiding smoking-related images)
-yi[which(studies == "Smokers 1 Exp")] <- -yi[which(studies == "Smokers 1 Exp")]
+```{r}
+pvals <- two2one(data$`Energy p`, istwo)
 
-# Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316
-# knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018
-
-res <- rma(
-  yi,
-  vi, 
-  method="REML",
-  #mods = ~ data$Labstudy,
-  knha=TRUE,
-  slab=paste(studies)
-  )
-
-# forest plot
-forest(res, 
-       xlab="ES", mlab="RE", psize=1,
-       ilab = data$N, ilab.lab = "N",
-       header=T, shade=T)
-
+res <- invchisq(pvals, k=df)
+print(res)
+plot(res)
 ```
 
-### Summary Statistics
-
-These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0.
-
-The Tau² represents the between-study variance, and the I² the heterogeneity. A significant test for Heterogeneity indicates a genuine variability of true effects across studies.
+### FFT Amplitude Sum
 
 ```{r}
-summary.rma(res)
-```
+pvals <- two2one(data$`FFT p`, istwo)
 
-### Funnel Plot
-
-```{r}
-# funnel plot (publication bias)
-funnel(res)
+res <- invchisq(pvals, k=df)
+print(res)
+plot(res)
 ```
 
 ## Control Studies
@@ -82,64 +66,45 @@ funnel(res)
 In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
 
 ```{r}
-st <- readRDS("overview.rds")
+coe <- readRDS("coe.rds")
 
 # Select studies / conditions
-data <- subset(st, st$Experimental == FALSE)
+data <- subset(coe, coe$Experimental == FALSE)
 
 knitr::kable(data)
+
+library(metap)
+istwo <- ifelse(data$Direction == "different", TRUE, FALSE) # two-tailed test
+df <- data$N-1 # degrees of freedom
 ```
 
-### Forest Plot
-
-The forest plot visually represents the effect sizes and confidence intervals for each study.
+### Max BF
 
 ```{r}
-#| warning: false
-#| fig.height: 6
+pvals <- two2one(data$`MaxBF p`, istwo)
 
-#Frequentist m-a with metafor 
-library(metafor)
-
-# Specify parameters of Exp Studies
-yi=data$ES
-vi=data$Var
-studies=data$Study
-
-# Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316
-# knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018
-
-res <- rma(
-  yi,
-  vi, 
-  method="REML",
-  #mods = ~ data$Labstudy,
-  knha=TRUE,
-  slab=paste(studies)
-  )
-
-# forest plot
-forest(res, 
-       xlab="ES", mlab="RE", psize=1,
-       ilab = data$N, ilab.lab = "N",
-       header=T, shade=T)
-
+res <- invchisq(pvals, k=df)
+print(res)
+plot(res)
 ```
-
-### Summary Statistics
-
-These are the results of the meta-analysis. The model results reflect the overall estimated effect size, its confidence interval and whether it differs significantly from 0.
-
-The Tau² represents the between-study variance, and the I² the heterogeneity. A significant test for Heterogeneity indicates a genuine variability of true effects across studies.
+### BF Energy
 
 ```{r}
-summary.rma(res)
+pvals <- two2one(data$`Energy p`, istwo)
+
+res <- invchisq(pvals, k=df)
+print(res)
+plot(res)
 ```
 
-### Funnel Plot
+### FFT Amplitude Sum
 
 ```{r}
-# funnel plot (publication bias)
-funnel(res)
+pvals <- two2one(data$`FFT p`, istwo)
+
+res <- invchisq(pvals, k=df)
+print(res)
+plot(res)
 ```
+
 :::
