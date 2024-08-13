@@ -34,6 +34,17 @@ website:
           file: changeofevidence.qmd
         - text: "Measures"
           file: coe-measures.qmd
+    - title: "Meta-Analysis"
+      style: "docked"
+      background: light
+      alignment: "center"
+      contents: 
+        - text: "Micro-PK"
+          file: metaanalysis.qmd
+        - text: "Change of Evidence"
+          file: coe-metaanalysis.qmd
+#        - text: "Shiny App"
+#          file: metaanalysis-shiny.qmd
         
   back-to-top-navigation: false
   page-footer:

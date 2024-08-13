@@ -239,7 +239,7 @@ window.Quarto = {
   <li><a href="#energy-of-bf" id="toc-energy-of-bf" class="nav-link" data-scroll-target="#energy-of-bf">Energy of BF</a></li>
   <li><a href="#frequency-analysis" id="toc-frequency-analysis" class="nav-link" data-scroll-target="#frequency-analysis">Frequency Analysis</a></li>
   </ul></li>
-  <li><a href="#the-changeofevidence-package" id="toc-the-changeofevidence-package" class="nav-link" data-scroll-target="#the-changeofevidence-package">The changeofevidence package</a></li>
+  <li><a href="#the-changeofevidence-package" id="toc-the-changeofevidence-package" class="nav-link" data-scroll-target="#the-changeofevidence-package">The ‘changeofevidence’ package</a></li>
   </ul>
 </nav>
     </div>
@@ -326,7 +326,7 @@ Sims with this or higher Energy: 1.9 % </code></pre>
 </section>
 <section id="frequency-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="frequency-analysis">Frequency Analysis</h3>
-<p>The Frequency Analysis provides a measure of the pronouncedness of oscillatory patterns in the BF curve. If an effect is countered by a decline effect the BF curve will oscillate between and increase and decrease of evidence. This measure is calculated by specifying the Fast Fourier transforms of the experimental and simulated BF curves and adding up all amplitude values. A sampling rate of 1 over the number of data points is used and only the first half of the fft is considered, since it is symmetrical.</p>
+<p>The Frequency Analysis provides a measure of the pronouncedness of <em>oscillatory patterns</em> in the BF curve. If an effect is countered by a decline effect the BF curve will oscillate between and increase and decrease of evidence. This measure is calculated by specifying the Fast Fourier transforms of the experimental and simulated BF curves and adding up all amplitude values. A sampling rate of 1 over the number of data points is used and only the first half of the fft is considered, since it is symmetrical.</p>
 <p>Example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotfft</span>(<span class="fu">fftcreate</span>(bf), sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -352,7 +352,7 @@ Simulations with this or higher amplitude sum: 1.8 % </code></pre>
 </section>
 </section>
 <section id="the-changeofevidence-package" class="level2">
-<h2 class="anchored" data-anchor-id="the-changeofevidence-package">The changeofevidence package</h2>
+<h2 class="anchored" data-anchor-id="the-changeofevidence-package">The ‘changeofevidence’ package</h2>
 <p>The <code>changeofevidence</code> package is a collection of functions to calculate the change of evidence measures. It is available on <a href="https://github.com/mrzdcmps/changeofevidence">Github</a>.</p>
 
 

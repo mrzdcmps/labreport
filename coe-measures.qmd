@@ -5,7 +5,7 @@ editor: visual
 execute: 
   warning: false
 toc: true
-toc-depth: 3
+#toc-depth: 3
 ---
 
 Empirical research on Micro-Pk often times reports a decline of initially present effects [@Colborn_2018]. This phenomenon can be explained either by an initial false positive followed naturally by a regression to the true mean. Alternatively, it fits the predictions of the Model of Pragmatic Information, which states that novel, autonomous effects are inversely linked to their confirmation or detectability [@7-05370-002]. This would result in a decrease of effect size over time, since accumulated data means more power and possibility of convincing confirmatory results [@maier2022].
@@ -60,7 +60,7 @@ res <- energybf(bf, sims)
 
 ### Frequency Analysis
 
-The Frequency Analysis provides a measure of the pronouncedness of oscillatory patterns in the BF curve. If an effect is countered by a decline effect the BF curve will oscillate between and increase and decrease of evidence. This measure is calculated by specifying the Fast Fourier transforms of the experimental and simulated BF curves and adding up all amplitude values. A sampling rate of 1 over the number of data points is used and only the first half of the fft is considered, since it is symmetrical.
+The Frequency Analysis provides a measure of the pronouncedness of *oscillatory patterns* in the BF curve. If an effect is countered by a decline effect the BF curve will oscillate between and increase and decrease of evidence. This measure is calculated by specifying the Fast Fourier transforms of the experimental and simulated BF curves and adding up all amplitude values. A sampling rate of 1 over the number of data points is used and only the first half of the fft is considered, since it is symmetrical.
 
 Example:
 
@@ -72,6 +72,6 @@ plotfft(fftcreate(bf), sims)
 res <- ffttest(bf, sims)
 ```
 
-## The changeofevidence package
+## The 'changeofevidence' package
 
 The `changeofevidence` package is a collection of functions to calculate the change of evidence measures. It is available on [Github](https://github.com/mrzdcmps/changeofevidence).

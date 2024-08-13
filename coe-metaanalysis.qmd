@@ -1,12 +1,12 @@
 ---
-title: "Meta-Analysis"
+title: "CoE Meta-Analysis"
 format: html
 editor: visual
 ---
 
 Last update: 04 May 2020
 
-## Frequentist Meta-Analysis
+## Meta-Analysis of Change of Evidence Measures
 
 ::: panel-tabset
 ## Experimental Studies
