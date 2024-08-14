@@ -287,20 +287,40 @@ window.Quarto = {
 <p>Example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(changeofevidence)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>bf <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"incongruence-bf.rds"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"sims.rds"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plotbf</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>maxbfcoord <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">which.max</span>(bf<span class="sc">$</span>BF), <span class="fu">max</span>(bf<span class="sc">$</span>BF))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(bf) <span class="co"># Incongruence Exp Study</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  Sequential Bayesian Testing
+  --------------------------------  
+  Test type: one-sample
+  Sample size: 236
+  Final Bayes Factor: BF10=2.242; BF01=0.446
+  Parameter prior: Cauchy(0, 0.1)
+  Directionality of H1 analysis prior: greater
+  Orthodox Test: t-value=1.774; p=0.039
+              </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotbf</span>(bf, sims)<span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>maxbfcoord[<span class="dv">1</span>], <span class="at">y=</span>maxbfcoord[<span class="dv">2</span>]), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x=</span>maxbfcoord[<span class="dv">1</span>], <span class="at">y=</span>maxbfcoord[<span class="dv">2</span>], <span class="at">label=</span><span class="fu">paste</span>(<span class="st">"Max BF:"</span>, <span class="fu">round</span>(maxbfcoord[<span class="dv">2</span>], <span class="dv">2</span>))), <span class="at">vjust=</span><span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="coe-measures_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-maxbf" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-maxbf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="coe-measures_files/figure-html/fig-maxbf-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maxbf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Empirical Bayes Factor (black) and simulated Bayes Factors (grey) for the Incongruence Exp Study. The red point indicates the maximum Bayes Factor.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">maxbf</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">maxbf</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&gt;&gt; MAXIMUM BF &lt;&lt; 
 Highest BF: 10.71555 ( at N = 153 ) 
@@ -313,7 +333,24 @@ Sims with this or a higher BFs: 1.7 % </code></pre>
 <p>The energy of the Bayes Factor provides an indicator for the <em>general orientation</em> of the BF curve over the course of data collection. It is calculated as the integral of the BF in relation to the BF=1 line. Areas above the BF=1 line are positive, areas below are negative. The energy of the BF is a measure of the overall evidence for the presence of an effect at any point in time.</p>
 <p>Example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">energybf</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotbf</span>(bf)<span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(bf<span class="sc">$</span>BF), <span class="at">ymin =</span> <span class="fu">pmin</span>(bf<span class="sc">$</span>BF, <span class="dv">1</span>), <span class="at">ymax =</span> <span class="dv">1</span>), <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(bf<span class="sc">$</span>BF), <span class="at">ymin =</span> <span class="dv">1</span>, <span class="at">ymax =</span> <span class="fu">pmax</span>(bf<span class="sc">$</span>BF, <span class="dv">1</span>)), <span class="at">fill =</span> <span class="st">"green"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-energybf" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-energybf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="coe-measures_files/figure-html/fig-energybf-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-energybf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The green area indicates the positive energy (bf directed towards H<sub>1</sub>), the red area the negative energy (bf directed towards H<sub>0</sub>).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">energybf</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&gt;&gt; BF ENERGY &lt;&lt; 
 Calculating Energy of sims... 
@@ -329,17 +366,22 @@ Sims with this or higher Energy: 1.9 % </code></pre>
 <p>The Frequency Analysis provides a measure of the pronouncedness of <em>oscillatory patterns</em> in the BF curve. If an effect is countered by a decline effect the BF curve will oscillate between and increase and decrease of evidence. This measure is calculated by specifying the Fast Fourier transforms of the experimental and simulated BF curves and adding up all amplitude values. A sampling rate of 1 over the number of data points is used and only the first half of the fft is considered, since it is symmetrical.</p>
 <p>Example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotfft</span>(<span class="fu">fftcreate</span>(bf), sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotfft</span>(<span class="fu">fftcreate</span>(bf), sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="coe-measures_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-fft" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fft-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="coe-measures_files/figure-html/fig-fft-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fft-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The Fast Fourier Transform of the Bayes Factor curve. The x-axis represents the frequency of the oscillations, the y-axis the amplitude. Only the first 50 frequencies are displayed.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">ffttest</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">ffttest</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&gt;&gt; FREQUENCY ANALYSIS &lt;&lt; 
 

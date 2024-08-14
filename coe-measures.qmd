@@ -35,13 +35,23 @@ The simulations used for the analysis of this lab report are generated with true
 The highest reached Bayes Factor at *any time* during data collection characterizes the maximum evidence for the presence of an effect. If the examined effect is indeed volatile this is a useful characteristic indicative of the strength of the effect before it declines.
 
 Example:
-
-```{r results='hide'}
-library(changeofevidence)
+```{r echo=FALSE}
 bf <- readRDS("incongruence-bf.rds")
 sims <- readRDS("sims.rds")
+```
 
-plotbf(bf, sims)
+```{r}
+library(changeofevidence)
+maxbfcoord <- c(which.max(bf$BF), max(bf$BF))
+print(bf) # Incongruence Exp Study
+```
+
+```{r results='hide'}
+#| label: fig-maxbf
+#| fig-cap: "Empirical Bayes Factor (black) and simulated Bayes Factors (grey) for the Incongruence Exp Study. The red point indicates the maximum Bayes Factor."
+plotbf(bf, sims)+
+  geom_point(aes(x=maxbfcoord[1], y=maxbfcoord[2]), color="red", size=3)+
+  geom_text(aes(x=maxbfcoord[1], y=maxbfcoord[2], label=paste("Max BF:", round(maxbfcoord[2], 2))), vjust=-1)
 ```
 
 ```{r}
@@ -54,6 +64,15 @@ The energy of the Bayes Factor provides an indicator for the *general orientatio
 
 Example:
 
+```{r results='hide'}
+#| label: fig-energybf
+#| fig-cap: "The green area indicates the positive energy (bf directed towards H~1~), the red area the negative energy (bf directed towards H~0~)."
+plotbf(bf)+
+  geom_ribbon(aes(x=1:length(bf$BF), ymin = pmin(bf$BF, 1), ymax = 1), fill = "red", alpha = 0.3) +
+  geom_ribbon(aes(x=1:length(bf$BF), ymin = 1, ymax = pmax(bf$BF, 1)), fill = "green", alpha = 0.3)
+
+```
+
 ```{r}
 res <- energybf(bf, sims)
 ```
@@ -65,6 +84,8 @@ The Frequency Analysis provides a measure of the pronouncedness of *oscillatory 
 Example:
 
 ```{r results='hide'}
+#| label: fig-fft
+#| fig-cap: "The Fast Fourier Transform of the Bayes Factor curve. The x-axis represents the frequency of the oscillations, the y-axis the amplitude. Only the first 50 frequencies are displayed."
 plotfft(fftcreate(bf), sims)
 ```
 
