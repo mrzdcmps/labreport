@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(grepl("Psyscanner", Study)) %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -93,11 +124,11 @@ Data analysis was conducted using Bayesian inference techniques with a preregist
 
 For the control groups with low PT scores, two-sided Bayesian one-sample t-tests were performed against a 50% probability. Given that 30 stimuli were presented per trait, the expected number of trait-related targets by chance was 15. A narrow informed prior of δ \~ Cauchy(.05, .05) was used. The stopping rule was set at BF = 10, indicating strong evidence in either direction (H0 or H1). It was predicted that at least one high PT group would show a BF10 \> 10 in favor of H1. Additionally, p-values from frequentist t-tests were provided, and a maximum sample size of 1,000 participants was preregistered to ensure the detection of a trend towards BF = 10 if no clear evidence emerged at this sample size.
 
-::: {.callout-tip title="Data" collapse="true"}
+::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/psyscanner/psyscanner.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Publication](https://journals.lub.lu.se/jaex/article/view/23809) [@jakob2024]
 -   [Preregistration](https://osf.io/qxu3s/registrations)
 -   [OSF Project](https://osf.io/qxu3s/)
@@ -106,4 +137,3 @@ For the control groups with low PT scores, two-sided Bayesian one-sample t-tests
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/psyscanner/psycsc.html)
 -   [Stimuli](../data/psyscanner/Psycsc.zip)
 :::
-

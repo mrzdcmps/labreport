@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(Study == "Loving Kind") %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -58,15 +89,11 @@ Participants were tested in the laboratory in a quiet and distraction-free envir
 
 Additional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.
 
-::: {.callout-tip title="Data" collapse="true"}
-```{r}
-#write_excel_csv(study1_lovingkind, "study1.csv")
-```
-
-[Download Data](../data/lovingkind/lovingkind.csv)
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/lovingkind/lovingkind.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Preregistration](../data/lovingkind/preregistration.pdf)
 -   [Experimental Program](../data/lovingkind/klang.html)
 -   [Questionnaire](../data/lovingkind/questionnaire.pdf)

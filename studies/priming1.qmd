@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(grepl("Priming 1", Study)) %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -97,11 +128,11 @@ The study employed a Bayesian approach, which allows for data accumulation until
 
 Although the stopping criterion of BF10 = 10 was reached multiple times during data collection, it went unnoticed due to the large volume of data points added weekly. As a result, data collection continued until the criterion was securely met, which occurred at N = 4,092 participants. Demographic data were available for 4,034 participants. Data collection was then stopped according to Bayesian rules of analysis.
 
-::: {.callout-tip title="Data" collapse="true"}
+::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming1.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
 -   [OSF Project](https://osf.io/hgxt3)
 -   [Analyses](https://osf.io/hgxt3/files/osfstorage)

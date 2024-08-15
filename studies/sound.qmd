@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(Study == "Sound preference") %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -61,11 +92,11 @@ The relaxation exercise consisted of a 2-minute prerecorded audio file asking pa
 
 Participants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.
 
-::: {.callout-tip title="Data" collapse="true"}
-[Download Data](../data/sound/sound.csv)
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/sound/sound.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Experimental Program](../data/sound/nor-sound.html)
 -   [Relaxation Audio](../data/meditation/relaxation.mp3)
 -   [Relaxation Audio English](../data/meditation/relaxation_e.mp3)

@@ -4,7 +4,7 @@
     "href": "studies/sound.html",
     "title": "Sound Preference",
     "section": "",
-    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nSound preference\n✔\n70\n40\n20.31\n2.93\n50.79\n0.9\n0.19\n0.11\n0.01\n1.2\ngreater\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -15,8 +15,8 @@
     "objectID": "studies/sound.html#hypothesis",
     "href": "studies/sound.html#hypothesis",
     "title": "Sound Preference",
-    "section": "",
-    "text": "Participants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nParticipants were asked to listen to 40 positive or negative audio stimuli. Before the stimulus presentation, a prerecorded relaxation exercise was played back. We hypothesized more positive audio stimuli (“hits”) for all participants.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -52,7 +52,7 @@
     "href": "studies/sound.html#procedure",
     "title": "Sound Preference",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nRelaxation Audio\nRelaxation Audio English",
+    "text": "Procedure\nParticipants were tested online. After welcoming them a prerecorded relaxation audio file was read to them (2 mins). They were then presented with 40 audio stimuli, each one either randomly chosen from the positive stimulus set or from the negative stimulus set, depending on the qRNG outcome. They were then thanked and asked to fill out a questionnaire.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nRelaxation Audio\nRelaxation Audio English",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -64,7 +64,7 @@
     "href": "studies/smokers2.html",
     "title": "Smokers 2",
     "section": "",
-    "text": "In this replication study (Smokers 1), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nSmokers 2 Exp\n✔\n175\n400\n200.29\n10.38\n49.93\n0.37\n0.64\n0.03\n0.01\n0.09\nless\n🏠\n\n\nSmokers 2 Con\n✖\n220\n400\n198.98\n10.34\n50.25\n-1.46\n0.15\n-0.10\n0.00\n0.30\ndifferent\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -75,8 +75,8 @@
     "objectID": "studies/smokers2.html#hypothesis",
     "href": "studies/smokers2.html#hypothesis",
     "title": "Smokers 2",
-    "section": "",
-    "text": "In this replication study (Smokers 1), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this replication study (Smokers 1), we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture. We predicted that smokers would show less smoking-related stimuli than expected by chance, matching their motivational state of deficiency with regard to smoking or nicotine.\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -136,7 +136,7 @@
     "href": "studies/relax.html",
     "title": "Relaxation",
     "section": "",
-    "text": "In this study, participants were placed in a state conducive to positive inner beliefs through a brief relaxation and optimism-inducing meditation before participating in a micro-PK experiment. This setup aimed to foster an unconscious belief in positive outcomes, potentially influencing the results of the experiment. The experiment presented stimuli, including positive and negative images and sounds, selected by a qRNG.\nWe hypothesized that the mean score for positive stimuli would be above the chance level of 50%, without expecting any decline or oscillation effects at the beginning of the study. Our main objective was to rigorously test micro-PK using a Bayesian approach, which permits data collection until a predefined evidence threshold is reached. Given the expected small effects of micro-PK, a large sample size in the thousands was necessary.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nRelaxation\n✔\n12571\n100\n50.02\n5.06\n50.02\n0.39\n0.35\n0\n0\n0.1\ngreater\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -147,8 +147,8 @@
     "objectID": "studies/relax.html#hypothesis",
     "href": "studies/relax.html#hypothesis",
     "title": "Relaxation",
-    "section": "",
-    "text": "In this study, participants were placed in a state conducive to positive inner beliefs through a brief relaxation and optimism-inducing meditation before participating in a micro-PK experiment. This setup aimed to foster an unconscious belief in positive outcomes, potentially influencing the results of the experiment. The experiment presented stimuli, including positive and negative images and sounds, selected by a qRNG.\nWe hypothesized that the mean score for positive stimuli would be above the chance level of 50%, without expecting any decline or oscillation effects at the beginning of the study. Our main objective was to rigorously test micro-PK using a Bayesian approach, which permits data collection until a predefined evidence threshold is reached. Given the expected small effects of micro-PK, a large sample size in the thousands was necessary.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this study, participants were placed in a state conducive to positive inner beliefs through a brief relaxation and optimism-inducing meditation before participating in a micro-PK experiment. This setup aimed to foster an unconscious belief in positive outcomes, potentially influencing the results of the experiment. The experiment presented stimuli, including positive and negative images and sounds, selected by a qRNG.\nWe hypothesized that the mean score for positive stimuli would be above the chance level of 50%, without expecting any decline or oscillation effects at the beginning of the study. Our main objective was to rigorously test micro-PK using a Bayesian approach, which permits data collection until a predefined evidence threshold is reached. Given the expected small effects of micro-PK, a large sample size in the thousands was necessary.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -208,7 +208,7 @@
     "href": "studies/priming4.html",
     "title": "Priming 4",
     "section": "",
-    "text": "The preregistered study was a conceptual replication of Study 3, testing the Model of Pragmatic Information (MPI) (Lucadou et al., 2007). The MPI predicts that initial evidence for an effect will decline over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study. The study aimed to reappear the effect in the experimental (positive priming) condition, with potential decline over time.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nPriming 4 Exp\n✔\n4060\n20\n10.0\n2.19\n49.98\n-0.13\n0.55\n0.00\n0\n0.08\ngreater\n🌍\n\n\nPriming 4 Con\n✖\n4060\n20\n9.9\n2.26\n49.52\n-2.69\n1\n-0.04\n0\n0.03\ngreater\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -219,8 +219,8 @@
     "objectID": "studies/priming4.html#hypothesis",
     "href": "studies/priming4.html#hypothesis",
     "title": "Priming 4",
-    "section": "",
-    "text": "The preregistered study was a conceptual replication of Study 3, testing the Model of Pragmatic Information (MPI) (Lucadou et al., 2007). The MPI predicts that initial evidence for an effect will decline over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study. The study aimed to reappear the effect in the experimental (positive priming) condition, with potential decline over time.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThe preregistered study was a conceptual replication of Study 3, testing the Model of Pragmatic Information (MPI) (Lucadou et al., 2007). The MPI predicts that initial evidence for an effect will decline over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study. The study aimed to reappear the effect in the experimental (positive priming) condition, with potential decline over time.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -280,7 +280,7 @@
     "href": "studies/priming2.html",
     "title": "Priming 2",
     "section": "",
-    "text": "This study was a direct replication of Priming 1. All predictions were identical to those in the first study.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nPriming 2 Exp\n✔\n2063\n20\n9.96\n2.23\n49.81\n-0.79\n0.78\n-0.02\n0\n0.09\ngreater\n🌍\n\n\nPriming 2 Con\n✖\n2063\n20\n10.02\n2.23\n50.08\n0.32\n0.38\n0.01\n0\n0.22\ngreater\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -291,8 +291,8 @@
     "objectID": "studies/priming2.html#hypothesis",
     "href": "studies/priming2.html#hypothesis",
     "title": "Priming 2",
-    "section": "",
-    "text": "This study was a direct replication of Priming 1. All predictions were identical to those in the first study.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis study was a direct replication of Priming 1. All predictions were identical to those in the first study.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -340,7 +340,7 @@
     "href": "studies/prayer.html",
     "title": "Prayer",
     "section": "",
-    "text": "Participants were asked to pray to enter a state of devotion. Subsequently they were presented a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”).",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nPrayer\n✔\n431\n100\n49.64\n4.81\n49.64\n-1.56\n0.94\n-0.08\n0\n0.14\ngreater\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -351,8 +351,8 @@
     "objectID": "studies/prayer.html#hypothesis",
     "href": "studies/prayer.html#hypothesis",
     "title": "Prayer",
-    "section": "",
-    "text": "Participants were asked to pray to enter a state of devotion. Subsequently they were presented a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”).",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nParticipants were asked to pray to enter a state of devotion. Subsequently they were presented a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”).",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -388,7 +388,7 @@
     "href": "studies/prayer.html#procedure",
     "title": "Prayer",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire",
+    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -400,7 +400,7 @@
     "href": "studies/meditation.html",
     "title": "Meditation",
     "section": "",
-    "text": "Participants were asked to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nMeditation T1\n✖\n40\n100\n49.27\n5.76\n49.27\n-0.80\n0.78\n-0.13\n0.03\n0.47\ngreater\n🌍\n\n\nMeditation T2\n✔\n48\n100\n50.23\n4.54\n50.23\n0.35\n0.36\n0.05\n0.02\n0.75\ngreater\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -411,8 +411,8 @@
     "objectID": "studies/meditation.html#hypothesis",
     "href": "studies/meditation.html#hypothesis",
     "title": "Meditation",
-    "section": "",
-    "text": "Participants were asked to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nParticipants were asked to 2 runs of stimuli perception. Before the first run, a prerecorded relaxation exercise was played back. For the second run, they were asked to put themselves in a meditative state. Stimuli consisted of a combination of either positive images and sounds or negative images and sounds. We hypothesized more positive stimuli (“hits”) in the second run after the meditation.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -448,7 +448,7 @@
     "href": "studies/meditation.html#procedure",
     "title": "Meditation",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them (2 mins). They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After this set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire Structure\nRelaxation Audio\nRelaxation Audio English",
+    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them (2 mins). They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After this set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire Structure\nRelaxation Audio\nRelaxation Audio English",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -460,7 +460,7 @@
     "href": "studies/incongruence.html",
     "title": "Incongruence",
     "section": "",
-    "text": "Research Questions\nThe study investigates how high levels of incongruence in basic psychological needs manifest through micro-PK effects, focusing on attachment, self-esteem protection, and orientation/control needs. These needs, based on (Grawe, 1998) model, can be satisfied through approach or avoidance goals. The need for pleasure maximization and distress avoidance was excluded due to operationalization challenges. The study hypothesizes that unconscious motivational patterns influence the outcomes of a true random number generator (tRNG), rather than conscious attempts to manipulate it.\nHypotheses\n\nHigh-Incongruence of Needs and Micro-PK\n\n\n\nAttachment: Participants with high incongruence in the need for attachment are expected to show fewer attachment-related target stimuli than chance suggests.\nSelf-Esteem: High-incongruence participants for self-esteem protection will show more self-esteem-related target stimuli than chance.\nControl: Those with high incongruence in orientation and control will experience more non-control trials than chance.\n\n\n\nLow-Incongruence of Needs and Micro-PK\n\n\n\nGeneral: Low-incongruence participants are expected to show no deviation from chance.\nAttachment: Since attachment is growth-oriented, low-incongruence participants might show a less strong deviation in the same direction as high-incongruence participants.\nSelf-Esteem and Control: As these needs are deficiency-oriented, low-incongruence participants might show no deviation or a less strong deviation in the opposite direction compared to high-incongruence participants.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nIncongruence Exp\n✔\n236\n10\n5.18\n1.58\n51.82\n1.77\n0.04\n0.12\n0\n2.24\ngreater\n🏠\n\n\nIncongruence Con\n✖\n271\n10\n5.04\n1.54\n50.44\n0.47\n0.64\n0.03\n0\n0.42\ndifferent\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -471,8 +471,8 @@
     "objectID": "studies/incongruence.html#hypothesis",
     "href": "studies/incongruence.html#hypothesis",
     "title": "Incongruence",
-    "section": "",
-    "text": "Research Questions\nThe study investigates how high levels of incongruence in basic psychological needs manifest through micro-PK effects, focusing on attachment, self-esteem protection, and orientation/control needs. These needs, based on (Grawe, 1998) model, can be satisfied through approach or avoidance goals. The need for pleasure maximization and distress avoidance was excluded due to operationalization challenges. The study hypothesizes that unconscious motivational patterns influence the outcomes of a true random number generator (tRNG), rather than conscious attempts to manipulate it.\nHypotheses\n\nHigh-Incongruence of Needs and Micro-PK\n\n\n\nAttachment: Participants with high incongruence in the need for attachment are expected to show fewer attachment-related target stimuli than chance suggests.\nSelf-Esteem: High-incongruence participants for self-esteem protection will show more self-esteem-related target stimuli than chance.\nControl: Those with high incongruence in orientation and control will experience more non-control trials than chance.\n\n\n\nLow-Incongruence of Needs and Micro-PK\n\n\n\nGeneral: Low-incongruence participants are expected to show no deviation from chance.\nAttachment: Since attachment is growth-oriented, low-incongruence participants might show a less strong deviation in the same direction as high-incongruence participants.\nSelf-Esteem and Control: As these needs are deficiency-oriented, low-incongruence participants might show no deviation or a less strong deviation in the opposite direction compared to high-incongruence participants.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nResearch Questions\nThe study investigates how high levels of incongruence in basic psychological needs manifest through micro-PK effects, focusing on attachment, self-esteem protection, and orientation/control needs. These needs, based on (Grawe, 1998) model, can be satisfied through approach or avoidance goals. The need for pleasure maximization and distress avoidance was excluded due to operationalization challenges. The study hypothesizes that unconscious motivational patterns influence the outcomes of a true random number generator (tRNG), rather than conscious attempts to manipulate it.\nHypotheses\n\nHigh-Incongruence of Needs and Micro-PK\n\n\n\nAttachment: Participants with high incongruence in the need for attachment are expected to show fewer attachment-related target stimuli than chance suggests.\nSelf-Esteem: High-incongruence participants for self-esteem protection will show more self-esteem-related target stimuli than chance.\nControl: Those with high incongruence in orientation and control will experience more non-control trials than chance.\n\n\n\nLow-Incongruence of Needs and Micro-PK\n\n\n\nGeneral: Low-incongruence participants are expected to show no deviation from chance.\nAttachment: Since attachment is growth-oriented, low-incongruence participants might show a less strong deviation in the same direction as high-incongruence participants.\nSelf-Esteem and Control: As these needs are deficiency-oriented, low-incongruence participants might show no deviation or a less strong deviation in the opposite direction compared to high-incongruence participants.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -520,7 +520,7 @@
     "href": "studies/bandit.html",
     "title": "One-Armed Bandit",
     "section": "",
-    "text": "This study was conducted by students in an empirical course. It was hypothesized that participants with a high motivation to win in a game of chance would influence a micro-Pk effect resulting in more wins than chance suggests.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nOne-armed Bandit\n✔\n40\n200\n101.12\n6.18\n50.56\n1.15\n0.13\n0.18\n0.03\n1.27\ngreater\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -531,8 +531,8 @@
     "objectID": "studies/bandit.html#hypothesis",
     "href": "studies/bandit.html#hypothesis",
     "title": "One-Armed Bandit",
-    "section": "",
-    "text": "This study was conducted by students in an empirical course. It was hypothesized that participants with a high motivation to win in a game of chance would influence a micro-Pk effect resulting in more wins than chance suggests.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis study was conducted by students in an empirical course. It was hypothesized that participants with a high motivation to win in a game of chance would influence a micro-Pk effect resulting in more wins than chance suggests.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -568,7 +568,7 @@
     "href": "studies/bandit.html#procedure",
     "title": "One-Armed Bandit",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. The qRNG first selected a random image 1 out of 10, then a fixation cross was shown before the qRNG selected a random bit 0 or 1 determining whether the image should be shown out of the win or loss set. This way, 10 sets of 20 trials each with short breaks in between were presented to the participants. For each block with more than 50% hits they received a candy (Smartie) for each additional hit (e.g. 12 hits = 2 smarties).\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nStimulus material\nQuestionnaire\nStudent report",
+    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. The qRNG first selected a random image 1 out of 10, then a fixation cross was shown before the qRNG selected a random bit 0 or 1 determining whether the image should be shown out of the win or loss set. This way, 10 sets of 20 trials each with short breaks in between were presented to the participants. For each block with more than 50% hits they received a candy (Smartie) for each additional hit (e.g. 12 hits = 2 smarties).\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nStimulus material\nQuestionnaire\nStudent report",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -754,7 +754,7 @@
     "href": "studies/allgood.html",
     "title": "All-will-be-good",
     "section": "",
-    "text": "Participants were asked to listen to a prerecorded relaxation exercise. They were then asked to look at 40 visual and auditory stimuli consisting of positive images and consonant sounds or negative images and negative sounds. While doing so, they were instructed to continuously say “all will be good” to themselves. We hypothesized more positive outcomes that suggested by chance and explored the relation of the effect to how conscientious the instructions were followed.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nAll-will-be-good\n✔\n38\n100\n49.71\n5.1\n49.71\n-0.35\n0.64\n-0.06\n0.03\n0.47\ngreater\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -765,8 +765,8 @@
     "objectID": "studies/allgood.html#hypothesis",
     "href": "studies/allgood.html#hypothesis",
     "title": "All-will-be-good",
-    "section": "",
-    "text": "Participants were asked to listen to a prerecorded relaxation exercise. They were then asked to look at 40 visual and auditory stimuli consisting of positive images and consonant sounds or negative images and negative sounds. While doing so, they were instructed to continuously say “all will be good” to themselves. We hypothesized more positive outcomes that suggested by chance and explored the relation of the effect to how conscientious the instructions were followed.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nParticipants were asked to listen to a prerecorded relaxation exercise. They were then asked to look at 40 visual and auditory stimuli consisting of positive images and consonant sounds or negative images and negative sounds. While doing so, they were instructed to continuously say “all will be good” to themselves. We hypothesized more positive outcomes that suggested by chance and explored the relation of the effect to how conscientious the instructions were followed.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -802,7 +802,7 @@
     "href": "studies/allgood.html#procedure",
     "title": "All-will-be-good",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying “all will be good” over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire\nRelaxation Audio\nRelaxation Audio English",
+    "text": "Procedure\nParticipants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying “all will be good” over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire\nRelaxation Audio\nRelaxation Audio English",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -814,7 +814,7 @@
     "href": "studies/cointoss.html",
     "title": "Coin Toss",
     "section": "",
-    "text": "This study was conducted by students in an empirical course. Participants were asked to play a coin toss game that consisted of 2 x 100 tosses. It was hypothesized that participants exerted a micro-Pk effect resulting more outcomes corresponding to their choice than change suggests.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nCoin Toss\n✔\n40\n200\n100.53\n7.71\n50.26\n0.43\n0.33\n0.07\n0.03\n0.8\ngreater\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -825,8 +825,8 @@
     "objectID": "studies/cointoss.html#hypothesis",
     "href": "studies/cointoss.html#hypothesis",
     "title": "Coin Toss",
-    "section": "",
-    "text": "This study was conducted by students in an empirical course. Participants were asked to play a coin toss game that consisted of 2 x 100 tosses. It was hypothesized that participants exerted a micro-Pk effect resulting more outcomes corresponding to their choice than change suggests.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis study was conducted by students in an empirical course. Participants were asked to play a coin toss game that consisted of 2 x 100 tosses. It was hypothesized that participants exerted a micro-Pk effect resulting more outcomes corresponding to their choice than change suggests.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -862,7 +862,7 @@
     "href": "studies/cointoss.html#procedure",
     "title": "Coin Toss",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. They were told a cover story about gambing research and asked to play a coin tossing game for two rounds, consisting of 100 tosses each. For each round they could decide on “heads” (1 bit) or “tails” (0 bit). Subsequently, the qRNG would produce random bits that were translated to either seide of the coin. For the second round, participants could change their target if they wanted. Then they were asked to fill out a questionnaire asking if they changed their strategy, looked at the screen, felt that the outcome was important to them, felt that they could influence the outcome, and if they considered themselves to be a “lucky child”.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStimulus material\nStudent report",
+    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. They were told a cover story about gambing research and asked to play a coin tossing game for two rounds, consisting of 100 tosses each. For each round they could decide on “heads” (1 bit) or “tails” (0 bit). Subsequently, the qRNG would produce random bits that were translated to either seide of the coin. For the second round, participants could change their target if they wanted. Then they were asked to fill out a questionnaire asking if they changed their strategy, looked at the screen, felt that the outcome was important to them, felt that they could influence the outcome, and if they considered themselves to be a “lucky child”.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStimulus material\nStudent report",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -874,7 +874,7 @@
     "href": "studies/lovekind.html",
     "title": "Loving Kindness",
     "section": "",
-    "text": "Participants underwent a pre-recorded “loving kindness”-meditation. At the end of the hypnosis they were asked to listen to sounds that were either classified neutral (white noise) or meditation-related (singing bowl; mantra). We hypothesized an increase of meditation-related sounds (“hits”).",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nLoving Kind\n✔\n171\n100\n49.73\n4.93\n49.73\n-0.73\n0.77\n-0.06\n0.01\n0.3\ngreater\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -885,8 +885,8 @@
     "objectID": "studies/lovekind.html#hypothesis",
     "href": "studies/lovekind.html#hypothesis",
     "title": "Loving Kindness",
-    "section": "",
-    "text": "Participants underwent a pre-recorded “loving kindness”-meditation. At the end of the hypnosis they were asked to listen to sounds that were either classified neutral (white noise) or meditation-related (singing bowl; mantra). We hypothesized an increase of meditation-related sounds (“hits”).",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nParticipants underwent a pre-recorded “loving kindness”-meditation. At the end of the hypnosis they were asked to listen to sounds that were either classified neutral (white noise) or meditation-related (singing bowl; mantra). We hypothesized an increase of meditation-related sounds (“hits”).",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -922,7 +922,7 @@
     "href": "studies/lovekind.html#procedure",
     "title": "Loving Kindness",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nExperimental Program\nQuestionnaire",
+    "text": "Procedure\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nExperimental Program\nQuestionnaire",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -934,7 +934,7 @@
     "href": "studies/monks.html",
     "title": "Monks",
     "section": "",
-    "text": "In this experiment we tested experienced meditators and monks and explored their influence on the outcome of an qRNG which corresponded to neutral and negative images. Every person participated in two runs. While they did not know about the goal of study for the first run, experimenters explained to them the idea and hypothesis of the experiment and asked them to deliberately influence the qRNG into avoiding the negative images for the second run. We hypothesized that meditators could influence the outcome to less than 50% negative stimuli and explored the relationship of the effect with meditation experience and being informed about the purpose of the study. We also added a control group consisting of participants with no meditation experience.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nMonks T1 Exp\n✔\n23\n400\n202.35\n6.86\n50.59\n1.64\n0.06\n0.34\n0.05\n1.82\ngreater\n🏠\n\n\nMonks T1 Con\n✖\n29\n400\n198.34\n9.79\n49.59\n-0.91\n0.81\n-0.17\n0.03\n0.49\ngreater\n🏠\n\n\nMonks T2 Exp\n✔\n23\n400\n201.35\n8.02\n50.34\n0.81\n0.21\n0.17\n0.04\n1.05\ngreater\n🏠\n\n\nMonks T2 Con\n✖\n29\n400\n199.79\n9.65\n49.95\n-0.12\n0.55\n-0.02\n0.03\n0.65\ngreater\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -945,8 +945,8 @@
     "objectID": "studies/monks.html#hypothesis",
     "href": "studies/monks.html#hypothesis",
     "title": "Monks",
-    "section": "",
-    "text": "In this experiment we tested experienced meditators and monks and explored their influence on the outcome of an qRNG which corresponded to neutral and negative images. Every person participated in two runs. While they did not know about the goal of study for the first run, experimenters explained to them the idea and hypothesis of the experiment and asked them to deliberately influence the qRNG into avoiding the negative images for the second run. We hypothesized that meditators could influence the outcome to less than 50% negative stimuli and explored the relationship of the effect with meditation experience and being informed about the purpose of the study. We also added a control group consisting of participants with no meditation experience.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this experiment we tested experienced meditators and monks and explored their influence on the outcome of an qRNG which corresponded to neutral and negative images. Every person participated in two runs. While they did not know about the goal of study for the first run, experimenters explained to them the idea and hypothesis of the experiment and asked them to deliberately influence the qRNG into avoiding the negative images for the second run. We hypothesized that meditators could influence the outcome to less than 50% negative stimuli and explored the relationship of the effect with meditation experience and being informed about the purpose of the study. We also added a control group consisting of participants with no meditation experience.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -994,7 +994,7 @@
     "href": "studies/priming1.html",
     "title": "Priming 1",
     "section": "",
-    "text": "In these studies, an experimental manipulation of participants’ unconscious states using a within-subject design was conducted to test a micro-PK effect. Each participant completed 40 trials where either a positive or negative picture (e.g., aggressive dog vs. friendly dog) chosen by a quantum random number generator (qRNG) was shown. Before each picture presentation, a subliminal priming technique was applied: positive outcomes were primed in the experimental condition, and a neutral mix in the control condition. The predictions were:\n\nP1: According to standard quantum mechanics (QM), outcomes should be random (50% positive and 50% negative) regardless of the observer’s state.\nP2: A model assuming the existence of a micro-PK effect would predict more positive images in the experimental condition and smaller or null effects in the control condition.\nP3: An elaborated micro-PK model predicting oscillating patterns of evidence for the effect over time would show non-random fluctuations in the experimental condition, with smaller or no oscillations in the control condition.\nP4: The Model of Pragmatic Information (MPI) (Lucadou et al., 2007) predicts initial evidence for an effect that declines over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study.\n\nFour studies were conducted:\n\nStudy 1: Tested P1 and P2.\nStudy 2: Attempted to replicate Study 1, again testing P1 and P2, and explored P3 post-hoc.\nStudy 3: Tested P3 and P4 a priori.\nStudy 4: Tested P4.\n\nStudies 2, 3, and 4 were pre-registered. All studies were conducted online.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nPriming 1 Exp\n✔\n4092\n20\n10.10\n2.27\n50.51\n2.89\n0\n0.05\n0\n19.80\ngreater\n🌍\n\n\nPriming 1 Con\n✖\n4092\n20\n10.03\n2.26\n50.13\n0.73\n0.23\n0.01\n0\n0.23\ngreater\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1005,8 +1005,8 @@
     "objectID": "studies/priming1.html#hypothesis",
     "href": "studies/priming1.html#hypothesis",
     "title": "Priming 1",
-    "section": "",
-    "text": "In these studies, an experimental manipulation of participants’ unconscious states using a within-subject design was conducted to test a micro-PK effect. Each participant completed 40 trials where either a positive or negative picture (e.g., aggressive dog vs. friendly dog) chosen by a quantum random number generator (qRNG) was shown. Before each picture presentation, a subliminal priming technique was applied: positive outcomes were primed in the experimental condition, and a neutral mix in the control condition. The predictions were:\n\nP1: According to standard quantum mechanics (QM), outcomes should be random (50% positive and 50% negative) regardless of the observer’s state.\nP2: A model assuming the existence of a micro-PK effect would predict more positive images in the experimental condition and smaller or null effects in the control condition.\nP3: An elaborated micro-PK model predicting oscillating patterns of evidence for the effect over time would show non-random fluctuations in the experimental condition, with smaller or no oscillations in the control condition.\nP4: The Model of Pragmatic Information (MPI) (Lucadou et al., 2007) predicts initial evidence for an effect that declines over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study.\n\nFour studies were conducted:\n\nStudy 1: Tested P1 and P2.\nStudy 2: Attempted to replicate Study 1, again testing P1 and P2, and explored P3 post-hoc.\nStudy 3: Tested P3 and P4 a priori.\nStudy 4: Tested P4.\n\nStudies 2, 3, and 4 were pre-registered. All studies were conducted online.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn these studies, an experimental manipulation of participants’ unconscious states using a within-subject design was conducted to test a micro-PK effect. Each participant completed 40 trials where either a positive or negative picture (e.g., aggressive dog vs. friendly dog) chosen by a quantum random number generator (qRNG) was shown. Before each picture presentation, a subliminal priming technique was applied: positive outcomes were primed in the experimental condition, and a neutral mix in the control condition. The predictions were:\n\nP1: According to standard quantum mechanics (QM), outcomes should be random (50% positive and 50% negative) regardless of the observer’s state.\nP2: A model assuming the existence of a micro-PK effect would predict more positive images in the experimental condition and smaller or null effects in the control condition.\nP3: An elaborated micro-PK model predicting oscillating patterns of evidence for the effect over time would show non-random fluctuations in the experimental condition, with smaller or no oscillations in the control condition.\nP4: The Model of Pragmatic Information (MPI) (Lucadou et al., 2007) predicts initial evidence for an effect that declines over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study.\n\nFour studies were conducted:\n\nStudy 1: Tested P1 and P2.\nStudy 2: Attempted to replicate Study 1, again testing P1 and P2, and explored P3 post-hoc.\nStudy 3: Tested P3 and P4 a priori.\nStudy 4: Tested P4.\n\nStudies 2, 3, and 4 were pre-registered. All studies were conducted online.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1066,7 +1066,7 @@
     "href": "studies/priming3.html",
     "title": "Priming 3",
     "section": "",
-    "text": "This study was a pre-registered experiment designed to test P3. P3 is a more complex model than P2, also proposing the existence of Micro-PK, but differing in its prediction of a non-random oscillating pattern of evidence for the effect over time. Specifically, the study aimed to observe a non-random oscillation of evidence in the positive priming condition, with smaller or no oscillations in the neutral priming condition, replicating previous post-hoc results.\nThe prediction derived from P3 was tested using three temporal analyses from the post-hoc analyses:\n\nThe maximal Bayes Factor (BF) reached (maxBF analysis)\nThe energy of the sequential BF (BF energy analysis)\nThe sum of amplitudes from Fast Fourier Transform (FFT) analyses\n\nThese were computed and compared to 10,000 simulations of these conditions, which served as null distributions.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nPriming 3 Exp\n✔\n6099\n20\n9.96\n2.31\n49.82\n-1.21\n0.89\n-0.02\n0\n0.04\ngreater\n🌍\n\n\nPriming 3 Con\n✖\n6099\n20\n9.97\n2.36\n49.83\n-1.15\n0.88\n-0.01\n0\n0.04\ngreater\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1077,8 +1077,8 @@
     "objectID": "studies/priming3.html#hypothesis",
     "href": "studies/priming3.html#hypothesis",
     "title": "Priming 3",
-    "section": "",
-    "text": "This study was a pre-registered experiment designed to test P3. P3 is a more complex model than P2, also proposing the existence of Micro-PK, but differing in its prediction of a non-random oscillating pattern of evidence for the effect over time. Specifically, the study aimed to observe a non-random oscillation of evidence in the positive priming condition, with smaller or no oscillations in the neutral priming condition, replicating previous post-hoc results.\nThe prediction derived from P3 was tested using three temporal analyses from the post-hoc analyses:\n\nThe maximal Bayes Factor (BF) reached (maxBF analysis)\nThe energy of the sequential BF (BF energy analysis)\nThe sum of amplitudes from Fast Fourier Transform (FFT) analyses\n\nThese were computed and compared to 10,000 simulations of these conditions, which served as null distributions.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis study was a pre-registered experiment designed to test P3. P3 is a more complex model than P2, also proposing the existence of Micro-PK, but differing in its prediction of a non-random oscillating pattern of evidence for the effect over time. Specifically, the study aimed to observe a non-random oscillation of evidence in the positive priming condition, with smaller or no oscillations in the neutral priming condition, replicating previous post-hoc results.\nThe prediction derived from P3 was tested using three temporal analyses from the post-hoc analyses:\n\nThe maximal Bayes Factor (BF) reached (maxBF analysis)\nThe energy of the sequential BF (BF energy analysis)\nThe sum of amplitudes from Fast Fourier Transform (FFT) analyses\n\nThese were computed and compared to 10,000 simulations of these conditions, which served as null distributions.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1126,7 +1126,7 @@
     "href": "studies/psysc.html",
     "title": "Psyscanner",
     "section": "",
-    "text": "In this study, a micro-PK task was created using target sentences reflecting typical concerns of Cluster C personality traits (PTs) and neutral sentences. The task included three independent blocks of stimuli, with each block focusing on one of the three PTs. We hypothesized that individuals with pronounced PT characteristics (high scores on the relevant scale = target group) would influence the qRNG to produce outcomes aligning with their implicit expectations in each block. Specifically, we predicted that high scorers would encounter more PT-specific meaningful target stimuli than chance would dictate. Conversely, individuals with low PT scores (control group) were expected to show no or weaker deviations from chance.\nWe tested a specific preregistered hypothesis for each of the three Cluster C PTs:\n\nDE-PT: Participants with high DE-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “Will we part in dispute?”) than neutral stimuli (e.g., “We see a forest”).\nAV-PT: Participants with high AV-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “What should I say?”) than neutral stimuli (e.g., “The shirt is white”).\nOC-PT: Participants with high OC-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “Did I miss a mistake in my work?”) than neutral stimuli (e.g., “Digital watches are common”).\n\nWe hypothesized that the control subsamples (low PT scorers) would not show strong evidence for H1, and we predicted in our preregistration that at least one target group (high scorers) would achieve a BF10 &gt; 10, indicating strong Bayesian evidence for H1 during data collection.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nPsyscanner Style 1 Exp\n✔\n1400\n30\n15.18\n2.68\n50.60\n2.51\n0.01\n0.07\n0\n10.41\ngreater\n🌍\n\n\nPsyscanner Style 1 Con\n✖\n1003\n30\n15.06\n2.69\n50.21\n0.73\n0.47\n0.02\n0\n0.46\ndifferent\n🌍\n\n\nPsyscanner Style 2 Exp\n✔\n1308\n30\n15.06\n2.71\n50.19\n0.78\n0.22\n0.02\n0\n0.50\ngreater\n🌍\n\n\nPsyscanner Style 2 Con\n✖\n1095\n30\n15.17\n2.74\n50.58\n2.08\n0.04\n0.06\n0\n3.27\ndifferent\n🌍\n\n\nPsyscanner Style 3 Exp\n✔\n1462\n30\n15.05\n2.74\n50.16\n0.68\n0.25\n0.02\n0\n0.41\ngreater\n🌍\n\n\nPsyscanner Style 3 Con\n✖\n941\n30\n14.88\n2.64\n49.61\n-1.37\n0.17\n-0.04\n0\n0.35\ndifferent\n🌍",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1137,8 +1137,8 @@
     "objectID": "studies/psysc.html#hypothesis",
     "href": "studies/psysc.html#hypothesis",
     "title": "Psyscanner",
-    "section": "",
-    "text": "In this study, a micro-PK task was created using target sentences reflecting typical concerns of Cluster C personality traits (PTs) and neutral sentences. The task included three independent blocks of stimuli, with each block focusing on one of the three PTs. We hypothesized that individuals with pronounced PT characteristics (high scores on the relevant scale = target group) would influence the qRNG to produce outcomes aligning with their implicit expectations in each block. Specifically, we predicted that high scorers would encounter more PT-specific meaningful target stimuli than chance would dictate. Conversely, individuals with low PT scores (control group) were expected to show no or weaker deviations from chance.\nWe tested a specific preregistered hypothesis for each of the three Cluster C PTs:\n\nDE-PT: Participants with high DE-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “Will we part in dispute?”) than neutral stimuli (e.g., “We see a forest”).\nAV-PT: Participants with high AV-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “What should I say?”) than neutral stimuli (e.g., “The shirt is white”).\nOC-PT: Participants with high OC-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “Did I miss a mistake in my work?”) than neutral stimuli (e.g., “Digital watches are common”).\n\nWe hypothesized that the control subsamples (low PT scorers) would not show strong evidence for H1, and we predicted in our preregistration that at least one target group (high scorers) would achieve a BF10 &gt; 10, indicating strong Bayesian evidence for H1 during data collection.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this study, a micro-PK task was created using target sentences reflecting typical concerns of Cluster C personality traits (PTs) and neutral sentences. The task included three independent blocks of stimuli, with each block focusing on one of the three PTs. We hypothesized that individuals with pronounced PT characteristics (high scores on the relevant scale = target group) would influence the qRNG to produce outcomes aligning with their implicit expectations in each block. Specifically, we predicted that high scorers would encounter more PT-specific meaningful target stimuli than chance would dictate. Conversely, individuals with low PT scores (control group) were expected to show no or weaker deviations from chance.\nWe tested a specific preregistered hypothesis for each of the three Cluster C PTs:\n\nDE-PT: Participants with high DE-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “Will we part in dispute?”) than neutral stimuli (e.g., “We see a forest”).\nAV-PT: Participants with high AV-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “What should I say?”) than neutral stimuli (e.g., “The shirt is white”).\nOC-PT: Participants with high OC-PT scores performing the micro-PK task would see more relevant target stimuli addressing their fears (e.g., “Did I miss a mistake in my work?”) than neutral stimuli (e.g., “Digital watches are common”).\n\nWe hypothesized that the control subsamples (low PT scorers) would not show strong evidence for H1, and we predicted in our preregistration that at least one target group (high scorers) would achieve a BF10 &gt; 10, indicating strong Bayesian evidence for H1 during data collection.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1198,7 +1198,7 @@
     "href": "studies/smokers1.html",
     "title": "Smokers 1",
     "section": "",
-    "text": "In this study, we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture (two-sided hypothesis).\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nSmokers 1 Exp\n✔\n122\n400\n196.70\n9.87\n50.82\n-3.69\n0\n-0.33\n0.01\n66.06\ndifferent\n🏠\n\n\nSmokers 1 Con\n✖\n132\n400\n200.53\n9.68\n49.87\n0.63\n0.53\n0.05\n0.01\n0.16\ndifferent\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1209,8 +1209,8 @@
     "objectID": "studies/smokers1.html#hypothesis",
     "href": "studies/smokers1.html#hypothesis",
     "title": "Smokers 1",
-    "section": "",
-    "text": "In this study, we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture (two-sided hypothesis).\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this study, we used cigarette addiction as unconscious drive. We hypothesized that regular cigarette smokers would influence the outcome of a quantum RNG that determined whether the participant was going to see a smoking-related or a neutral picture (two-sided hypothesis).\nWe tested non-smokers as control group and hypothesized no deviation from chance for this subsample.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1270,7 +1270,7 @@
     "href": "studies/smokers3.html",
     "title": "Smokers 3",
     "section": "",
-    "text": "In this study, we used cigarette addiction as unconscious drive (see Smokers 1 and Smokers 2). We hypothesized that smoking participants would influence the outcome of a qRNG in such a way that the effect follows a specific pattern derived from post-hoc analyses of the previous studies.",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nSmokers 3\n✔\n203\n400\n199.14\n10.11\n50.22\n-1.21\n0.11\n-0.09\n0\n0.4\nless\n🏠",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1281,8 +1281,8 @@
     "objectID": "studies/smokers3.html#hypothesis",
     "href": "studies/smokers3.html#hypothesis",
     "title": "Smokers 3",
-    "section": "",
-    "text": "In this study, we used cigarette addiction as unconscious drive (see Smokers 1 and Smokers 2). We hypothesized that smoking participants would influence the outcome of a qRNG in such a way that the effect follows a specific pattern derived from post-hoc analyses of the previous studies.",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this study, we used cigarette addiction as unconscious drive (see Smokers 1 and Smokers 2). We hypothesized that smoking participants would influence the outcome of a qRNG in such a way that the effect follows a specific pattern derived from post-hoc analyses of the previous studies.",
     "crumbs": [
       "Experiments",
       "Studies",

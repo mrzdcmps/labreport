@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(Study == "One-armed Bandit") %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -59,11 +90,11 @@ This was a lab study using the same experimental program as study [Monks](monks.
 
 Participants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. The qRNG first selected a random image 1 out of 10, then a fixation cross was shown before the qRNG selected a random bit 0 or 1 determining whether the image should be shown out of the win or loss set. This way, 10 sets of 20 trials each with short breaks in between were presented to the participants. For each block with more than 50% hits they received a candy (Smartie) for each additional hit (e.g. 12 hits = 2 smarties).
 
-::: {.callout-tip title="Data" collapse="true"}
-[Download Data](../data/bandit/bandit.csv)
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/bandit/bandit.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Preregistration](../data/bandit/preregistration.pdf)
 -   [Stimulus material](../data/bandit/stimuli.zip)
 -   [Questionnaire](../data/bandit/questionnaire.pdf)

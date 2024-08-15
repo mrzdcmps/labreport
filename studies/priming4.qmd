@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(grepl("Priming 4", Study)) %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -75,11 +106,11 @@ The analysis strategy for this study followed the same approach as Study 3, focu
 
 Data collection was conducted by Kantar between February and March 2020, with about 100 participants recruited per day. The final sample consisted of 3,996 participants (with demographic data for 3,951 participants). Once the target sample size was reached, data collection was halted, and the data were analyzed.
 
-::: {.callout-tip title="Data" collapse="true"}
+::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming4.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
 -   [Preregistration](https://osf.io/ckufx)
 -   [OSF Project](https://osf.io/hgxt3)

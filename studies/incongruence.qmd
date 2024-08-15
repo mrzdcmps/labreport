@@ -10,8 +10,40 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  # Study contains "Incongruence"
+  filter(grepl("Incongruence", Study)) %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -105,13 +137,13 @@ For each trial, a quantum random number generator (QRNG) determined whether the 
 
 After the third task, participants completed a post-task questionnaire. They rated the unpleasantness of the disgusting pictures on a scale from 1 (very unpleasant) to 5 (not at all unpleasant) and shared their assumptions about the study's purpose.
 
-::: {.callout-tip title="Data" collapse="true"}
+::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/incongruence/incongruence.csv)
 -   [Download Data "High"](../data/incongruence/incongruence_high.csv)
 -   [Download Data "Low"](../data/incongruence/incongruence_low.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Publication](https://www.parapsychologypress.org/jparticle/jp-84-2-227-253) [@jakob2020]
 -   [Preregistration](https://osf.io/xm4wf)
 -   [OSF Project](https://osf.io/gnryu/)

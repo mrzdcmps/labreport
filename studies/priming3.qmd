@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(grepl("Priming 3", Study)) %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -67,11 +98,11 @@ All materials and procedures were identical to those in [Priming 1](priming1.htm
 
 Participant recruitment and data collection were conducted by Norstat, following the same protocol as in Studies 1 and 2. Due to the exhaustion of the German participant pool during Study 3, additional invitations were sent to Austrian panelists. Data collection took place from October to December 2019, resulting in a final sample size of 6,099 participants, with demographic data available for 6,047 of them.
 
-::: {.callout-tip title="Data" collapse="true"}
+::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming3.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
 -   [Preregistration](https://osf.io/894cb)
 -   [OSF Project](https://osf.io/hgxt3)

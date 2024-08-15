@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(grepl("Priming 2", Study)) %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -59,11 +90,11 @@ All materials and procedures were identical to those in [Priming 1](priming1.htm
 
 Participant recruitment and data collection for the study were conducted by Norstat, following the same protocol as Study 1. Initially, data collection was planned to stop when the sequential Bayes Factor (BF) reached the predefined threshold, which occurred at n = 937. However, due to concerns about the small predicted effect size and potential lack of statistical power, the researchers decided to continue collecting data. They closely monitored the BF and eventually stopped recruitment when the sample size reached N = 2,063. Demographic data were available for 2,021 participants.
 
-::: {.callout-tip title="Data" collapse="true"}
+::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming2.csv)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
 -   [Preregistration](https://osf.io/83efr)
 -   [OSF Project](https://osf.io/hgxt3)

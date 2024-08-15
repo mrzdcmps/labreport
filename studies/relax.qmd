@@ -10,8 +10,39 @@ execute:
 ```{r}
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 
 load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(Study == "Relaxation") %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
 ```
 
 ## Hypothesis
@@ -86,12 +117,12 @@ In Bayesian analysis, the BF quantifies the relative evidence for H1 versus H0. 
 
 Data were analyzed using a Bayesian one-sample t-test with a one-tailed approach, comparing the mean score of positive stimuli presentations against chance (50%). These analyses were conducted weekly from November 2016 to July 2017 using the JASP software (Version 0.8.2). Data collection continued until the BF of 10 was achieved, signaling strong evidence for the hypothesis.
 
-::: {.callout-tip title="Data" collapse="true"}
+::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/relaxation/stimrelaxation.csv)
 -   [Data Sets Including Simulations](https://open-data.spr.ac.uk/dataset/intentional-observer-effects-quantum-randomness)
 :::
 
-::: {.callout-note title="Resources" collapse="true"}
+::: {.callout-note title="Resources" collapse="false"}
 -   [Publication](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full) [@maier2018b]
 -   [Experimental Program](../data/relaxation/experiment-sound.html)
 -   [Questionnaire](../data/relaxation/questionnaire.pdf)
