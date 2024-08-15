@@ -11,21 +11,21 @@ execute:
 
 ## The LMU Micro-PK Project
 
-This project addresses the relationship between mind and matter and studies observational effects on quantum state reductions. It is located at LMU Munich under the supervision of Prof. Markus Maier and Dr. Moritz Dechamps.
+This project addresses the relationship between mind and matter and studies observational effects on quantum state reductions. It is located at LMU Munich under the supervision of [Prof. Dr. Markus Maier](https://www.psy.lmu.de/gp/people/leitung/maier/index.html) and [Dr. Moritz Dechamps](https://www.psy.lmu.de/gp/people/mitarbeiter/moritz-dechamps/index.html).
 
 ## Micro-Psychokinesis
 
-Micro-Psychokinesis (Micro-Pk) describes a mental influence on inanimate, probabilistic systems, e.g. quantum random number generators (qRNGs), detectable through statistical means [@varvoglis2015micro].
+The studies conducted in this project use a paradigm called Micro-Psychokinesis (Micro-Pk). Micro-Pk describes a mental influence on inanimate, probabilistic systems, e.g. quantum random number generators (qRNGs), detectable through statistical means [@varvoglis2015micro].
 
 ## The Lab Report
 
-This website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the Maier Lab and their results. This effort is directed to counter biases resulting from selective publication of results [see e.g. @publicat2005].
+This website aims to provide a constantly updated overview of all Micro-Pk experiments conducted at the lab and their results. This effort is directed to counter biases resulting from selective publication of results [see e.g. @publicat2005] and aims for utmost transparency and reproducibility.
 
-For each study it will show the main results (differentiating between experimental and control conditions where applicable) and results of the *'change of evidence'* analyses, as well as an overall meta-analytical assessment.
+For each study it will show the [main results](experiments.html) (differentiating between experimental and control conditions where applicable) and results of the *'[change of evidence](changeofevidence.html)'* analyses, as well as overall meta-analytical assessments of both the [conventional effect](metaanalysis.html) descriptions and the [change of evidence measures](coe-metaanalysis.html).
 
 ### Included Studies
 
-In this report we include all studies conducted in the LMU Lab exploring a general micro-Pk effect. Not included are experiments of individuals or on related psi effects like precognition.
+In this report we include all studies conducted in the LMU Lab exploring a general Micro-Pk effect. Not included are case studies of individuals or on related psi effects like precognition. Please find detailed information on each study as well as relevant data and resources in the [experiments section](experiments.html).
 
 ## Reference This Report
 
