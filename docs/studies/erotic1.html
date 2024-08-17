@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -361,21 +341,7 @@ div.csl-indent {
 </div>
 <section id="hypothesis" class="level2">
 <h2 class="anchored" data-anchor-id="hypothesis">Hypothesis</h2>
-<p>In these studies, an experimental manipulation of participants’ unconscious states using a within-subject design was conducted to test a micro-PK effect. Each participant completed 40 trials where either a positive or negative picture (e.g., aggressive dog vs.&nbsp;friendly dog) chosen by a quantum random number generator (qRNG) was shown. Before each picture presentation, a subliminal priming technique was applied: positive outcomes were primed in the experimental condition, and a neutral mix in the control condition. The predictions were:</p>
-<ol type="1">
-<li><p><strong>P1:</strong> According to standard quantum mechanics (QM), outcomes should be random (50% positive and 50% negative) regardless of the observer’s state.</p></li>
-<li><p><strong>P2:</strong> A model assuming the existence of a micro-PK effect would predict more positive images in the experimental condition and smaller or null effects in the control condition.</p></li>
-<li><p><strong>P3:</strong> An elaborated micro-PK model predicting oscillating patterns of evidence for the effect over time would show non-random fluctuations in the experimental condition, with smaller or no oscillations in the control condition.</p></li>
-<li><p><strong>P4:</strong> The <em>Model of Pragmatic Information</em> (MPI) <span class="citation" data-cites="7-05370-002">(<a href="#ref-7-05370-002" role="doc-biblioref">Lucadou et al., 2007</a>)</span> predicts initial evidence for an effect that declines over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study.</p></li>
-</ol>
-<p>Four studies were conducted:</p>
-<ul>
-<li><p><strong>Study 1:</strong> Tested P1 and P2.</p></li>
-<li><p><strong>Study 2:</strong> Attempted to replicate Study 1, again testing P1 and P2, and explored P3 post-hoc.</p></li>
-<li><p><strong>Study 3:</strong> Tested P3 and P4 a priori.</p></li>
-<li><p><strong>Study 4:</strong> Tested P4.</p></li>
-</ul>
-<p>Studies 2, 3, and 4 were pre-registered. All studies were conducted online.</p>
+<p>…</p>
 </section>
 <section id="participants" class="level2">
 <h2 class="anchored" data-anchor-id="participants">Participants</h2>
@@ -395,11 +361,11 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Female</td>
-<td style="text-align: left;">53.53%</td>
+<td style="text-align: left;">46.06%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Male</td>
-<td style="text-align: left;">46.06%</td>
+<td style="text-align: left;">53.53%</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Mean Age</td>
@@ -418,22 +384,15 @@ div.csl-indent {
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<p>The study was conducted online, allowing participants to join from any location using their private computers and internet access. The experimental program was executed on a dedicated webserver based at the university and displayed via participants’ web browsers, implemented using jsPsych, a JavaScript library designed for online behavioral experiments.</p>
-<p><strong>Stimuli:</strong> Positive and negative pictures served as target stimuli, with a mixture of these as prime stimuli. The target stimuli were sourced from Shutterstock and included 20 positive photographs (depicting pets, peaceful landscapes, and happy people) and 20 negative photographs (depicting dangerous or attacking animals and other negative scenarios). These images were selected based on valence estimations by two experts in experimental emotion induction techniques. Each positive image was paired with a similar negative image to create matched pairs (e.g., a friendly dog vs.&nbsp;an aggressive dog). To balance color differences, all images were converted to black-and-white.</p>
-<p>Two classes of priming stimuli were created: neutral (control) and positive (experimental). Neutral primes were constructed by overlaying two matched target pictures (50/50 blend), resulting in 20 neutral primes. These primes were accompanied by forward and backward masks, created by scrambling the prime image into blocks to destroy meaningful content. Positive priming involved the same matched target pairs, but with a progressive increase in the positive image share (50/50, then 60/40, then 70/30) to make the positive picture more dominant in the participant’s unconscious mind.</p>
-<p><strong>Priming Procedure:</strong> Each trial included presenting a subliminal prime followed by a target picture. Each priming stimulus was shown three times before the target display, and the target picture was randomly selected by a quantum random number generator (qRNG) from the pair used to create the prime. The assignment of neutral or positive priming to a trial was performed by a pseudo-random number generator (pRNG).</p>
-<p>This experimental setup aimed to test the influence of unconscious priming on participants’ perception of positive or negative stimuli, examining how the priming affected the likelihood of selecting positive or negative target images.</p>
+<p>…</p>
 </section>
 <section id="procedure" class="level2">
 <h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
-<p>Participants were invited via email by the polling company Norstat and advised to ensure an undisturbed environment before starting the survey. After providing demographic information and accessing the experiment link, they activated their browser’s full-screen mode and read the task instructions. They were informed that they would see flickering visual stimuli and positive and negative images, which they should watch passively. Participants could abort the experiment at any time.</p>
-<p>Each participant completed 40 trials. Half of the 20 matched target pairs were randomly assigned to the positive priming condition and the other half to the neutral priming condition. Each pair was used twice, resulting in 40 trials. A pseudo-RNG determined the order of these trials. In each trial, a fixation cross was shown first, followed by the priming sequence. In the neutral priming condition, a 50/50 mixture prime was shown three times for 55 ms each, with forward and backward masks. In the positive priming condition, the primes varied between a 50/50, 60/40, and 70/30 mixture. After the priming sequence, a qRNG determined whether the positive or negative target stimulus would be displayed for 1000 ms. Each trial ended with a 1200 ms black inter-trial interval before the next trial began. The dependent variables were the mean number of positive pictures and the number of 0 bits generated by the qRNG in both priming conditions.</p>
-<p>After the task, participants completed a questionnaire assessing stimulus-seeking behavior, self-efficacy attitude related to general life outcomes, and generalized optimism and pessimism using the Life Orientation Test-Revised (LOT-R). These measures were exploratory, with no specific hypotheses, and results will be reported in a future publication.</p>
+<p>…</p>
 </section>
 <section id="sample-size-and-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="sample-size-and-data-analysis">Sample Size and Data Analysis</h2>
-<p>The study employed a Bayesian approach, which allows for data accumulation until a specific stopping criterion is met. The stopping rule was defined as a Bayes Factor (BF) of 10, indicating strong evidence for either the null hypothesis (H0) or the alternative hypothesis (H1). For the analyses in Study 1, an uninformed prior following a Cauchy distribution centered around 0 with an r = 0.1 was chosen, based on an estimated effect size of Cohen’s d = 0.1, which has been previously applied in similar research. The prediction was that there would be more positive stimuli than expected by chance in the experimental condition, with a smaller effect in the control condition. Two separate one-sample Bayesian t-tests with a one-tailed approach were used for the analyses, performed regularly (almost weekly) with updated sample means. The statistical software JASP (Version 0.9) was used for these analyses. Data collection occurred from March to July 2018.</p>
-<p>Although the stopping criterion of BF10 = 10 was reached multiple times during data collection, it went unnoticed due to the large volume of data points added weekly. As a result, data collection continued until the criterion was securely met, which occurred at N = 4,092 participants. Demographic data were available for 4,034 participants. Data collection was then stopped according to Bayesian rules of analysis.</p>
+<p>…</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Data">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -447,7 +406,7 @@ Data
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="../data/priming/priming1.csv">Download Data</a></li>
+<li><a href="../data/erotic/erotic2.csv">Download Data</a></li>
 </ul>
 </div>
 </div>
@@ -465,28 +424,17 @@ Resources
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://journals.lub.lu.se/jaex/article/view/23205">Publication</a> <span class="citation" data-cites="dechamps2021">(<a href="#ref-dechamps2021" role="doc-biblioref">Dechamps et al., 2021</a>)</span></li>
-<li><a href="https://osf.io/hgxt3">OSF Project</a></li>
-<li><a href="https://osf.io/hgxt3/files/osfstorage">Analyses</a></li>
-<li><a href="https://github.com/mrzdcmps/labreport/blob/main/data/priming/n-prime.html">Experimental Program</a></li>
-<li><a href="../data/priming/NPrime.zip">Stimuli</a></li>
+<li><a href="https://github.com/mrzdcmps/labreport/blob/main/data/erotic/isst1.html">Experimental Program</a></li>
+<li><a href="../data/erotic/isst_2017-05-18_14-23.csv">Questionnaire</a></li>
 </ul>
 </div>
 </div>
 </div>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-dechamps2021" class="csl-entry" role="listitem">
-Dechamps, M. C., Maier, M. A., Pflitsch, M., &amp; Duggan, M. (2021). Observer dependent biases of quantum randomness. <em>Journal of Anomalous Experience and Cognition</em>, <em>1</em>(1-2), 114–155. <a href="https://doi.org/10.31156/jaex.23205">https://doi.org/10.31156/jaex.23205</a>
-</div>
-<div id="ref-7-05370-002" class="csl-entry" role="listitem">
-Lucadou, W. von, Römer, H., &amp; Walach, H. (2007). Synchronistics phenomena as entanglement correlations in generalized quantum theory. <em>Journal of Consciousness Studies</em>, <em>14</em>(4), 50–74.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

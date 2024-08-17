@@ -5,6 +5,7 @@ editor: visual
 execute: 
   warning: false
 toc: true
+page-navigation: true
 #toc-depth: 3
 ---
 

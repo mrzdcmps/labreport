@@ -516,6 +516,78 @@
     ]
   },
   {
+    "objectID": "studies/erotic1.html",
+    "href": "studies/erotic1.html",
+    "title": "Erotic Images 1",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nErotic Images 1\n✔\n241\n200\n100.51\n7.32\n50.26\n1.08\n0.14\n0.07\n0\n0.97\ngreater\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 1"
+    ]
+  },
+  {
+    "objectID": "studies/erotic1.html#hypothesis",
+    "href": "studies/erotic1.html#hypothesis",
+    "title": "Erotic Images 1",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n…",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 1"
+    ]
+  },
+  {
+    "objectID": "studies/erotic1.html#participants",
+    "href": "studies/erotic1.html#participants",
+    "title": "Erotic Images 1",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n241\n\n\nFemale\n46.06%\n\n\nMale\n53.53%\n\n\nMean Age\n27 years\n\n\nSD Age\n6.43 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 1"
+    ]
+  },
+  {
+    "objectID": "studies/erotic1.html#materials",
+    "href": "studies/erotic1.html#materials",
+    "title": "Erotic Images 1",
+    "section": "Materials",
+    "text": "Materials\n…",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 1"
+    ]
+  },
+  {
+    "objectID": "studies/erotic1.html#procedure",
+    "href": "studies/erotic1.html#procedure",
+    "title": "Erotic Images 1",
+    "section": "Procedure",
+    "text": "Procedure\n…",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 1"
+    ]
+  },
+  {
+    "objectID": "studies/erotic1.html#sample-size-and-data-analysis",
+    "href": "studies/erotic1.html#sample-size-and-data-analysis",
+    "title": "Erotic Images 1",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\n…\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 1"
+    ]
+  },
+  {
     "objectID": "studies/bandit.html",
     "href": "studies/bandit.html",
     "title": "One-Armed Bandit",
@@ -630,7 +702,7 @@
     "href": "index.html#reference-this-report",
     "title": "About",
     "section": "Reference This Report",
-    "text": "Reference This Report\nDOI. Ref."
+    "text": "Reference This Report\nDechamps, M. C. (2024, August 17). The LMU Micro-PK Project. https://mrzdcmps.github.io/labreport"
   },
   {
     "objectID": "coe-metaanalysis.html",
@@ -867,6 +939,78 @@
       "Experiments",
       "Studies",
       "Coin Toss"
+    ]
+  },
+  {
+    "objectID": "studies/erotic2.html",
+    "href": "studies/erotic2.html",
+    "title": "Erotic Images 2",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nErotic Images 2\n✔\n678\n50\n25.13\n3.52\n50.26\n0.95\n0.34\n0.04\n0\n0.64\ngreater\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 2"
+    ]
+  },
+  {
+    "objectID": "studies/erotic2.html#hypothesis",
+    "href": "studies/erotic2.html#hypothesis",
+    "title": "Erotic Images 2",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThe study aimed to explore the potential micro-psychokinetic effects of viewing erotic images, specifically whether individuals can subconsciously influence the number of erotic images they see, deviating from what would be expected by chance. Six hypotheses were developed to test this phenomenon, comparing the number of erotic images seen by different participant groups against random chance using Bayesian one-sample t-tests.\nHypothesis 1 predicted that individuals who frequently consume pornography and have a positive, healthy relationship with it would see more erotic images than expected by chance, as their subconscious desire would influence the outcome.\nHypotheses 2 and 3 focused on singles: satisfied singles were expected to see more erotic images due to their contentment, while dissatisfied singles were predicted to see fewer images because of their perceived lack or deprivation, drawing on findings from a similar study involving nicotine-dependent smokers.\nHypotheses 4 and 5 mirrored this logic for people in relationships: satisfied individuals were expected to see more erotic images, while dissatisfied individuals were predicted to see fewer, again due to perceived lack.\nHypothesis 6 extended this reasoning to individuals addicted to internet pornography, suggesting that they would see fewer erotic images due to their addiction, which creates a constant sense of deprivation. This hypothesis was particularly influenced by the concept of a self-fulfilling prophecy, where the subconscious state of deprivation leads to fewer instances of the desired outcome, as seen in similar studies on addiction.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 2"
+    ]
+  },
+  {
+    "objectID": "studies/erotic2.html#participants",
+    "href": "studies/erotic2.html#participants",
+    "title": "Erotic Images 2",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n678\n\n\nFemale\n34.66%\n\n\nMale\n64.31%\n\n\nMean Age\n26.06 years\n\n\nSD Age\n7.77 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 2"
+    ]
+  },
+  {
+    "objectID": "studies/erotic2.html#materials",
+    "href": "studies/erotic2.html#materials",
+    "title": "Erotic Images 2",
+    "section": "Materials",
+    "text": "Materials\nThe study aimed to investigate whether people’s attitudes toward pornography could influence the number of erotic images they see, deviating from what a random generator would determine. To achieve this, an online questionnaire was used to collect demographic data and assess participants’ attitudes toward pornography, including their gender, age, sexual orientation, marital status, and satisfaction with their relationship. Participants were also asked about their pornography consumption habits, including type, duration, and frequency.\nTo assess pornography addiction, the Cyber Pornography Use Inventory (CPUI) was used. The CPUI consists of 31 items divided into three subscales, but only the addictive patterns subscale, which has strong internal consistency, was relevant for this study. The study was conducted in German, with a majority of participants being native German speakers.\nErotic images were used to test for micro-psychokinetic effects, with four sets of stimuli created. These included neutral images and erotic images tailored to different sexual orientations: heterosexual, lesbian, and gay. The neutral and heterosexual erotic images were sourced from the International Affective Picture System (IAPS), while the lesbian and gay erotic images were obtained from license-free websites and validated by individuals of each sexual orientation to ensure appropriateness and normative quality.muli, examining how the priming affected the likelihood of selecting positive or negative target images.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 2"
+    ]
+  },
+  {
+    "objectID": "studies/erotic2.html#procedure",
+    "href": "studies/erotic2.html#procedure",
+    "title": "Erotic Images 2",
+    "section": "Procedure",
+    "text": "Procedure\nThe study was conducted online to reach a broad range of participants and to encourage more honest responses on sensitive topics like sexuality and pornography consumption by minimizing social desirability bias. The sample included adults aged 18 and older, recruited through various channels such as social media platforms like Facebook, WhatsApp, and university contacts. The link to the study was shared in diverse groups, including those focused on psychological topics, as well as groups related to different sexual orientations.\nParticipants first answered demographic questions and completed part of the Cyber Pornography Use Inventory (CPUI) to assess their addiction to internet pornography. They also responded to questions about their pornography consumption habits and general attitudes toward pornography. Following this, participants were shown 50 images that matched their sexual orientation, which included either erotic content or neutral stimuli like everyday objects. After viewing the images, participants answered post-task questions to assess how seriously they had taken the study and the truthfulness of their responses. These answers were used to exclude any participants who might have provided dishonest or inattentive responses, ensuring the validity of the study’s findings. Finally, two questions related to self-efficacy were included, although they were not central to the research question and were intended for use in a different study.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 2"
+    ]
+  },
+  {
+    "objectID": "studies/erotic2.html#sample-size-and-data-analysis",
+    "href": "studies/erotic2.html#sample-size-and-data-analysis",
+    "title": "Erotic Images 2",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nThe study used Bayesian one-sample t-tests to evaluate the hypotheses. The test value—the expected number of erotic images seen by chance—was set at 25, assuming a 50:50 chance of viewing erotic versus neutral images out of 50 total images. A low Cauchy prior level of .1 was chosen for the Bayesian analysis, reflecting the expectation of weak effect sizes in micro-psychokinetic studies, where subtle, unconscious influences are at play. This decision was based on prior research indicating that such effects tend to be minimal.\nThe sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program\nQuestionnaire\nStimuli Sources",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 2"
     ]
   },
   {
@@ -1323,150 +1467,6 @@
       "Experiments",
       "Studies",
       "Smokers 3"
-    ]
-  },
-  {
-    "objectID": "studies/erotic2.html",
-    "href": "studies/erotic2.html",
-    "title": "Erotic Images 2",
-    "section": "",
-    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nErotic Images 2\n✔\n678\n50\n25.13\n3.52\n50.26\n0.95\n0.34\n0.04\n0\n0.64\ngreater\n🌍",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 2"
-    ]
-  },
-  {
-    "objectID": "studies/erotic2.html#hypothesis",
-    "href": "studies/erotic2.html#hypothesis",
-    "title": "Erotic Images 2",
-    "section": "Hypothesis",
-    "text": "Hypothesis\nThe study aimed to explore the potential micro-psychokinetic effects of viewing erotic images, specifically whether individuals can subconsciously influence the number of erotic images they see, deviating from what would be expected by chance. Six hypotheses were developed to test this phenomenon, comparing the number of erotic images seen by different participant groups against random chance using Bayesian one-sample t-tests.\nHypothesis 1 predicted that individuals who frequently consume pornography and have a positive, healthy relationship with it would see more erotic images than expected by chance, as their subconscious desire would influence the outcome.\nHypotheses 2 and 3 focused on singles: satisfied singles were expected to see more erotic images due to their contentment, while dissatisfied singles were predicted to see fewer images because of their perceived lack or deprivation, drawing on findings from a similar study involving nicotine-dependent smokers.\nHypotheses 4 and 5 mirrored this logic for people in relationships: satisfied individuals were expected to see more erotic images, while dissatisfied individuals were predicted to see fewer, again due to perceived lack.\nHypothesis 6 extended this reasoning to individuals addicted to internet pornography, suggesting that they would see fewer erotic images due to their addiction, which creates a constant sense of deprivation. This hypothesis was particularly influenced by the concept of a self-fulfilling prophecy, where the subconscious state of deprivation leads to fewer instances of the desired outcome, as seen in similar studies on addiction.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 2"
-    ]
-  },
-  {
-    "objectID": "studies/erotic2.html#participants",
-    "href": "studies/erotic2.html#participants",
-    "title": "Erotic Images 2",
-    "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n678\n\n\nFemale\n34.66%\n\n\nMale\n64.31%\n\n\nMean Age\n26.06 years\n\n\nSD Age\n7.77 years",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 2"
-    ]
-  },
-  {
-    "objectID": "studies/erotic2.html#materials",
-    "href": "studies/erotic2.html#materials",
-    "title": "Erotic Images 2",
-    "section": "Materials",
-    "text": "Materials\nThe study aimed to investigate whether people’s attitudes toward pornography could influence the number of erotic images they see, deviating from what a random generator would determine. To achieve this, an online questionnaire was used to collect demographic data and assess participants’ attitudes toward pornography, including their gender, age, sexual orientation, marital status, and satisfaction with their relationship. Participants were also asked about their pornography consumption habits, including type, duration, and frequency.\nTo assess pornography addiction, the Cyber Pornography Use Inventory (CPUI) was used. The CPUI consists of 31 items divided into three subscales, but only the addictive patterns subscale, which has strong internal consistency, was relevant for this study. The study was conducted in German, with a majority of participants being native German speakers.\nErotic images were used to test for micro-psychokinetic effects, with four sets of stimuli created. These included neutral images and erotic images tailored to different sexual orientations: heterosexual, lesbian, and gay. The neutral and heterosexual erotic images were sourced from the International Affective Picture System (IAPS), while the lesbian and gay erotic images were obtained from license-free websites and validated by individuals of each sexual orientation to ensure appropriateness and normative quality.muli, examining how the priming affected the likelihood of selecting positive or negative target images.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 2"
-    ]
-  },
-  {
-    "objectID": "studies/erotic2.html#procedure",
-    "href": "studies/erotic2.html#procedure",
-    "title": "Erotic Images 2",
-    "section": "Procedure",
-    "text": "Procedure\nThe study was conducted online to reach a broad range of participants and to encourage more honest responses on sensitive topics like sexuality and pornography consumption by minimizing social desirability bias. The sample included adults aged 18 and older, recruited through various channels such as social media platforms like Facebook, WhatsApp, and university contacts. The link to the study was shared in diverse groups, including those focused on psychological topics, as well as groups related to different sexual orientations.\nParticipants first answered demographic questions and completed part of the Cyber Pornography Use Inventory (CPUI) to assess their addiction to internet pornography. They also responded to questions about their pornography consumption habits and general attitudes toward pornography. Following this, participants were shown 50 images that matched their sexual orientation, which included either erotic content or neutral stimuli like everyday objects. After viewing the images, participants answered post-task questions to assess how seriously they had taken the study and the truthfulness of their responses. These answers were used to exclude any participants who might have provided dishonest or inattentive responses, ensuring the validity of the study’s findings. Finally, two questions related to self-efficacy were included, although they were not central to the research question and were intended for use in a different study.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 2"
-    ]
-  },
-  {
-    "objectID": "studies/erotic2.html#sample-size-and-data-analysis",
-    "href": "studies/erotic2.html#sample-size-and-data-analysis",
-    "title": "Erotic Images 2",
-    "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nThe study used Bayesian one-sample t-tests to evaluate the hypotheses. The test value—the expected number of erotic images seen by chance—was set at 25, assuming a 50:50 chance of viewing erotic versus neutral images out of 50 total images. A low Cauchy prior level of .1 was chosen for the Bayesian analysis, reflecting the expectation of weak effect sizes in micro-psychokinetic studies, where subtle, unconscious influences are at play. This decision was based on prior research indicating that such effects tend to be minimal.\nThe sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire\nStimuli Sources",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 2"
-    ]
-  },
-  {
-    "objectID": "studies/erotic1.html",
-    "href": "studies/erotic1.html",
-    "title": "Erotic Images 1",
-    "section": "",
-    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nLab/Online\n\n\n\n\nErotic Images 1\n✔\n241\n200\n100.51\n7.32\n50.26\n1.08\n0.14\n0.07\n0\n0.97\ngreater\n🌍",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 1"
-    ]
-  },
-  {
-    "objectID": "studies/erotic1.html#hypothesis",
-    "href": "studies/erotic1.html#hypothesis",
-    "title": "Erotic Images 1",
-    "section": "Hypothesis",
-    "text": "Hypothesis\nIn these studies, an experimental manipulation of participants’ unconscious states using a within-subject design was conducted to test a micro-PK effect. Each participant completed 40 trials where either a positive or negative picture (e.g., aggressive dog vs. friendly dog) chosen by a quantum random number generator (qRNG) was shown. Before each picture presentation, a subliminal priming technique was applied: positive outcomes were primed in the experimental condition, and a neutral mix in the control condition. The predictions were:\n\nP1: According to standard quantum mechanics (QM), outcomes should be random (50% positive and 50% negative) regardless of the observer’s state.\nP2: A model assuming the existence of a micro-PK effect would predict more positive images in the experimental condition and smaller or null effects in the control condition.\nP3: An elaborated micro-PK model predicting oscillating patterns of evidence for the effect over time would show non-random fluctuations in the experimental condition, with smaller or no oscillations in the control condition.\nP4: The Model of Pragmatic Information (MPI) (Lucadou et al., 2007) predicts initial evidence for an effect that declines over time, with non-random oscillations not replicable in a direct replication study but potentially reappearing in a conceptually different study.\n\nFour studies were conducted:\n\nStudy 1: Tested P1 and P2.\nStudy 2: Attempted to replicate Study 1, again testing P1 and P2, and explored P3 post-hoc.\nStudy 3: Tested P3 and P4 a priori.\nStudy 4: Tested P4.\n\nStudies 2, 3, and 4 were pre-registered. All studies were conducted online.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 1"
-    ]
-  },
-  {
-    "objectID": "studies/erotic1.html#participants",
-    "href": "studies/erotic1.html#participants",
-    "title": "Erotic Images 1",
-    "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n241\n\n\nFemale\n53.53%\n\n\nMale\n46.06%\n\n\nMean Age\n27 years\n\n\nSD Age\n6.43 years",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 1"
-    ]
-  },
-  {
-    "objectID": "studies/erotic1.html#materials",
-    "href": "studies/erotic1.html#materials",
-    "title": "Erotic Images 1",
-    "section": "Materials",
-    "text": "Materials\nThe study was conducted online, allowing participants to join from any location using their private computers and internet access. The experimental program was executed on a dedicated webserver based at the university and displayed via participants’ web browsers, implemented using jsPsych, a JavaScript library designed for online behavioral experiments.\nStimuli: Positive and negative pictures served as target stimuli, with a mixture of these as prime stimuli. The target stimuli were sourced from Shutterstock and included 20 positive photographs (depicting pets, peaceful landscapes, and happy people) and 20 negative photographs (depicting dangerous or attacking animals and other negative scenarios). These images were selected based on valence estimations by two experts in experimental emotion induction techniques. Each positive image was paired with a similar negative image to create matched pairs (e.g., a friendly dog vs. an aggressive dog). To balance color differences, all images were converted to black-and-white.\nTwo classes of priming stimuli were created: neutral (control) and positive (experimental). Neutral primes were constructed by overlaying two matched target pictures (50/50 blend), resulting in 20 neutral primes. These primes were accompanied by forward and backward masks, created by scrambling the prime image into blocks to destroy meaningful content. Positive priming involved the same matched target pairs, but with a progressive increase in the positive image share (50/50, then 60/40, then 70/30) to make the positive picture more dominant in the participant’s unconscious mind.\nPriming Procedure: Each trial included presenting a subliminal prime followed by a target picture. Each priming stimulus was shown three times before the target display, and the target picture was randomly selected by a quantum random number generator (qRNG) from the pair used to create the prime. The assignment of neutral or positive priming to a trial was performed by a pseudo-random number generator (pRNG).\nThis experimental setup aimed to test the influence of unconscious priming on participants’ perception of positive or negative stimuli, examining how the priming affected the likelihood of selecting positive or negative target images.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 1"
-    ]
-  },
-  {
-    "objectID": "studies/erotic1.html#procedure",
-    "href": "studies/erotic1.html#procedure",
-    "title": "Erotic Images 1",
-    "section": "Procedure",
-    "text": "Procedure\nParticipants were invited via email by the polling company Norstat and advised to ensure an undisturbed environment before starting the survey. After providing demographic information and accessing the experiment link, they activated their browser’s full-screen mode and read the task instructions. They were informed that they would see flickering visual stimuli and positive and negative images, which they should watch passively. Participants could abort the experiment at any time.\nEach participant completed 40 trials. Half of the 20 matched target pairs were randomly assigned to the positive priming condition and the other half to the neutral priming condition. Each pair was used twice, resulting in 40 trials. A pseudo-RNG determined the order of these trials. In each trial, a fixation cross was shown first, followed by the priming sequence. In the neutral priming condition, a 50/50 mixture prime was shown three times for 55 ms each, with forward and backward masks. In the positive priming condition, the primes varied between a 50/50, 60/40, and 70/30 mixture. After the priming sequence, a qRNG determined whether the positive or negative target stimulus would be displayed for 1000 ms. Each trial ended with a 1200 ms black inter-trial interval before the next trial began. The dependent variables were the mean number of positive pictures and the number of 0 bits generated by the qRNG in both priming conditions.\nAfter the task, participants completed a questionnaire assessing stimulus-seeking behavior, self-efficacy attitude related to general life outcomes, and generalized optimism and pessimism using the Life Orientation Test-Revised (LOT-R). These measures were exploratory, with no specific hypotheses, and results will be reported in a future publication.",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 1"
-    ]
-  },
-  {
-    "objectID": "studies/erotic1.html#sample-size-and-data-analysis",
-    "href": "studies/erotic1.html#sample-size-and-data-analysis",
-    "title": "Erotic Images 1",
-    "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nThe study employed a Bayesian approach, which allows for data accumulation until a specific stopping criterion is met. The stopping rule was defined as a Bayes Factor (BF) of 10, indicating strong evidence for either the null hypothesis (H0) or the alternative hypothesis (H1). For the analyses in Study 1, an uninformed prior following a Cauchy distribution centered around 0 with an r = 0.1 was chosen, based on an estimated effect size of Cohen’s d = 0.1, which has been previously applied in similar research. The prediction was that there would be more positive stimuli than expected by chance in the experimental condition, with a smaller effect in the control condition. Two separate one-sample Bayesian t-tests with a one-tailed approach were used for the analyses, performed regularly (almost weekly) with updated sample means. The statistical software JASP (Version 0.9) was used for these analyses. Data collection occurred from March to July 2018.\nAlthough the stopping criterion of BF10 = 10 was reached multiple times during data collection, it went unnoticed due to the large volume of data points added weekly. As a result, data collection continued until the criterion was securely met, which occurred at N = 4,092 participants. Demographic data were available for 4,034 participants. Data collection was then stopped according to Bayesian rules of analysis.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Dechamps et al., 2021)\nOSF Project\nAnalyses\nExperimental Program\nStimuli",
-    "crumbs": [
-      "Experiments",
-      "Studies",
-      "Erotic Images 1"
     ]
   }
 ]
