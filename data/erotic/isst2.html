@@ -1,0 +1,445 @@
+<!doctype html>
+<meta charset="utf-8" />
+<html>
+<head>
+    <title>Experiment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-5.0.3/plugins/single-stim-quantis.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-single-stim.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-text.js"></script>
+
+    <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+</body>
+<script>
+     //BROWSER CHECK//
+    ////////////////
+    
+    function getBrowserInfo()
+{
+        var ua = navigator.userAgent, tem,
+        M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if(/trident/i.test(M[1]))
+        {
+                tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+                return 'IE '+(tem[1] || '');
+        }
+        if(M[1]=== 'Chrome')
+        {
+                tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+                if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+        }
+        M = M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+        if((tem= ua.match(/version\/(\d+)/i))!= null)
+                M.splice(1, 1, tem[1]);
+        return { 'browser': M[0], 'version': M[1] };
+}
+
+var browserInfo = getBrowserInfo();
+if(browserInfo.browser !== 'Chrome' && browserInfo.browser !== 'Firefox')
+{
+document.write('<p>Der automatische Wechsel zur Vollbildanzeige funktioniert nur bei Mozilla Firefox oder Google Chrome richtig.</p>'
+                         +'<p>Starten Sie das Experiment im Idealfall mit einem der beiden Browser oder klicken Sie zunächst auf die Schaltfläche <b>Versuch starten</b> und beenden und aktivieren Sie den Vollbildmodus ein zweites Mal durch ein zweimaliges Drücken der Taste <b>F11</b>.</p>'
+            +'<p>Der Text sollte anschließend in der Mitte des Bildschirms und nicht bündig am linken Rand erscheinen.</p>');
+}
+    // ------------------------- EDIT THIS VARIABLES ------------------------------------
+    // ---> note that all file pathes are relative to the apache base directory which is normally
+    // var/www/html
+    // ---> time is always in ms
+    // ---> text can be formatted with HTML text formatting elements like <p> <b> <mark> and so on
+    // ---> IMPORTANT! Firefox has problems with empty strings like ''. Try to fill all strings!
+    // this behavior does not happen on Chromium
+
+    // total number of trials
+    var Ntrials = 50;
+    // first text to show = welcome text
+    var TEXT_WELCOME = "<p>Hier folgt die Darstellung von teilweise explizit erotischen und pornographischen Bildern. Bitte klicken Sie nur auf weiter, wenn Sie damit einverstanden sind und Sie mindestens 18 Jahre alt sind.</p>" +
+        "<p><a href='http://www.google.de'>Bitte klicken Sie <b>hier</b>, falls Sie <b>nicht</b> weitermachen möchten.</a></p>";
+    // instruction immediately after the welcome text
+    var TEXT_INSTRUCTION = "<p>Ihnen werden jetzt unterschiedliche Bilder auf dem Computerbildschirm gezeigt. Bitte richten Sie Ihre volle Aufmerksamkeit für die gesamte Länge des Versuchs auf den Bildschirm. Das aufmerksame Betrachten der Bilder ist für das Experiment <b>absolut notwendig</b>! Richten Sie dazu Ihren Blick auf das + in der Mitte des Bildschirms.</p>" +
+"<p>Sie können den Versuch natürlich jederzeit abbrechen, falls Sie sich unwohl fühlen. Schließen Sie dazu bitte das Fenster.</p><p>Nach etwa 2 Minuten ist dieser Teil beendet.</p>";
+    var TEXT_STARTEXPERIMENT = "<p>Schieben Sie nun bitte den Mauszeiger zur Seite und drücken Sie eine beliebige Taste um mit der Darstellung der Bilder zu beginnen.</p>";
+    // text after end of experiment
+
+    // duration of fixation cross in ms
+    var TIME_CROSS = 700;
+    // duration of stimulus image
+    var TIME_STIMULUS = 400;
+    // delay after stimulus
+    var TIME_POST_STIMULUS = 1100;
+
+    // picture to use as fixation cross between trials
+    var IM_FIXATION_CROSS = 'img/cross.png';
+
+    // an array of paths to images for stimuli
+    var images_A = ['img/A/1.jpg',
+                    'img/A/2.jpg',
+                    'img/A/3.jpg',
+                    'img/A/4.jpg',
+                    'img/A/5.jpg',
+                    'img/A/6.jpg',
+                    'img/A/7.jpg',
+                    'img/A/8.jpg',
+                    'img/A/9.jpg',
+                    'img/A/10.jpg',
+                    'img/A/11.jpg',
+                    'img/A/12.jpg',
+                    'img/A/13.jpg',
+                    'img/A/14.jpg',
+                    'img/A/15.jpg',
+                    'img/A/16.jpg',
+                    'img/A/17.jpg',
+                    'img/A/18.jpg',
+                    'img/A/19.jpg',
+                    'img/A/20.jpg',
+                    'img/A/21.jpg',
+                    'img/A/22.jpg',
+                    'img/A/23.jpg',
+                    'img/A/24.jpg',
+                    'img/A/25.jpg',
+                    'img/A/26.jpg',
+                    'img/A/27.jpg',
+                    'img/A/28.jpg',
+                    'img/A/29.jpg',
+                    'img/A/30.jpg',
+                    'img/A/31.jpg',
+                    'img/A/32.jpg',
+                    'img/A/33.jpg',
+                    'img/A/34.jpg',
+                    'img/A/35.jpg',
+                    'img/A/36.jpg',
+                    'img/A/37.jpg',
+                    'img/A/38.jpg',
+                    'img/A/39.jpg',
+                    'img/A/40.jpg',
+                    'img/A/41.jpg',
+                    'img/A/42.jpg',
+                    'img/A/43.jpg'];
+
+    var images_B1 = ['img/Porn/H/1.jpg',
+                    'img/Porn/H/2.jpg',
+                    'img/Porn/H/3.jpg',
+                    'img/Porn/H/4.jpg',
+                    'img/Porn/H/5.jpg',
+                    'img/Porn/H/6.jpg',
+                    'img/Porn/H/7.jpg',
+                    'img/Porn/H/8.jpg',
+                    'img/Porn/H/9.jpg',
+                    'img/Porn/H/10.jpg',
+                    'img/Porn/H/11.jpg',
+                    'img/Porn/H/12.jpg',
+                    'img/Porn/H/13.jpg',
+                    'img/Porn/H/14.jpg',
+                    'img/Porn/H/15.jpg',
+                    'img/Porn/H/16.jpg',
+                    'img/Porn/H/17.jpg',
+                    'img/Porn/H/18.jpg',
+                    'img/Porn/H/19.jpg',
+                    'img/Porn/H/20.jpg',
+                    'img/Porn/H/21.jpg',
+                    'img/Porn/H/22.jpg',
+                    'img/Porn/H/23.jpg',
+                    'img/Porn/H/24.jpg',
+                    'img/Porn/H/25.jpg',
+                    'img/Porn/H/26.jpg',
+                    'img/Porn/H/27.jpg',
+                    'img/Porn/H/28.jpg',
+                    'img/Porn/H/29.jpg',
+                    'img/Porn/H/30.jpg',
+                    'img/Porn/H/31.jpg',
+                    'img/Porn/H/32.jpg',
+                    'img/Porn/H/33.jpg',
+                    'img/Porn/H/34.jpg',
+                    'img/Porn/H/35.jpg',
+                    'img/Porn/H/36.jpg',
+                    'img/Porn/H/37.jpg',
+                    'img/Porn/H/38.jpg',
+                    'img/Porn/H/39.jpg',
+                    'img/Porn/H/40.jpg',
+                    'img/Porn/H/41.jpg',
+                    'img/Porn/H/42.jpg',
+                    'img/Porn/H/43.jpg'];
+
+    var images_B2 = ['img/Porn/S/1.jpg',
+                    'img/Porn/S/2.jpg',
+                    'img/Porn/S/3.jpg',
+                    'img/Porn/S/4.jpg',
+                    'img/Porn/S/5.jpg',
+                    'img/Porn/S/6.jpg',
+                    'img/Porn/S/7.jpg',
+                    'img/Porn/S/8.jpg',
+                    'img/Porn/S/9.jpg',
+                    'img/Porn/S/10.jpg',
+                    'img/Porn/S/11.jpg',
+                    'img/Porn/S/12.jpg',
+                    'img/Porn/S/13.jpg',
+                    'img/Porn/S/14.jpg',
+                    'img/Porn/S/15.jpg',
+                    'img/Porn/S/16.jpg',
+                    'img/Porn/S/17.jpg',
+                    'img/Porn/S/18.jpg',
+                    'img/Porn/S/19.jpg',
+                    'img/Porn/S/20.jpg',
+                    'img/Porn/S/21.jpg',
+                    'img/Porn/S/22.jpg',
+                    'img/Porn/S/23.jpg',
+                    'img/Porn/S/24.jpg',
+                    'img/Porn/S/25.jpg',
+                    'img/Porn/S/26.jpg',
+                    'img/Porn/S/27.jpg',
+                    'img/Porn/S/28.jpg',
+                    'img/Porn/S/29.jpg',
+                    'img/Porn/S/30.jpg',
+                    'img/Porn/S/31.jpg',
+                    'img/Porn/S/32.jpg',
+                    'img/Porn/S/33.jpg',
+                    'img/Porn/S/34.jpg',
+                    'img/Porn/S/35.jpg',
+                    'img/Porn/S/36.jpg',
+                    'img/Porn/S/37.jpg',
+                    'img/Porn/S/38.jpg',
+                    'img/Porn/S/39.jpg',
+                    'img/Porn/S/40.jpg',
+                    'img/Porn/S/41.jpg',
+                    'img/Porn/S/42.jpg',
+                    'img/Porn/S/43.jpg'];
+    
+    var images_B3 = ['img/Porn/L/1.jpg',
+                    'img/Porn/L/2.jpg',
+                    'img/Porn/L/3.jpg',
+                    'img/Porn/L/4.jpg',
+                    'img/Porn/L/5.jpg',
+                    'img/Porn/L/6.jpg',
+                    'img/Porn/L/7.jpg',
+                    'img/Porn/L/8.jpg',
+                    'img/Porn/L/9.jpg',
+                    'img/Porn/L/10.jpg',
+                    'img/Porn/L/11.jpg',
+                    'img/Porn/L/12.jpg',
+                    'img/Porn/L/13.jpg',
+                    'img/Porn/L/14.jpg',
+                    'img/Porn/L/15.jpg',
+                    'img/Porn/L/16.jpg',
+                    'img/Porn/L/17.jpg',
+                    'img/Porn/L/18.jpg',
+                    'img/Porn/L/19.jpg',
+                    'img/Porn/L/20.jpg',
+                    'img/Porn/L/21.jpg',
+                    'img/Porn/L/22.jpg',
+                    'img/Porn/L/23.jpg',
+                    'img/Porn/L/24.jpg',
+                    'img/Porn/L/25.jpg',
+                    'img/Porn/L/26.jpg',
+                    'img/Porn/L/27.jpg',
+                    'img/Porn/L/28.jpg',
+                    'img/Porn/L/29.jpg',
+                    'img/Porn/L/30.jpg',
+                    'img/Porn/L/31.jpg',
+                    'img/Porn/L/32.jpg',
+                    'img/Porn/L/33.jpg',
+                    'img/Porn/L/34.jpg',
+                    'img/Porn/L/35.jpg',
+                    'img/Porn/L/36.jpg',
+                    'img/Porn/L/37.jpg',
+                    'img/Porn/L/38.jpg',
+                    'img/Porn/L/39.jpg',
+                    'img/Porn/L/40.jpg',
+                    'img/Porn/L/41.jpg',
+                    'img/Porn/L/42.jpg',
+                    'img/Porn/L/43.jpg'];
+    
+    var images_cross = [
+            'img/8.png',
+            'img/14.png',
+            'img/cross.png'];
+
+ //   var images_cross_rnd = jsPsych.randomization.repeat(images_cross, Math.floor(Ntrials / images_cross.length) + 1);
+
+    // ------------------------- END VARIABLE BLOCK ------------------------------------
+
+    // Check ID and Token
+    function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+};
+    
+    // Read variables
+    
+    var subject_id = getParameterByName('vp');
+    var token = getParameterByName('tk');
+    var art = getParameterByName('art');
+    
+    
+    // determine file name
+    
+    var datetime = new Date();
+    
+    var filename = 'Porn2 ' +
+		datetime.getFullYear() +'.'+datetime.getMonth()+1+'.'+datetime.getDate()+' '+
+		datetime.getHours() +'.' + datetime.getMinutes()+
+		' ' + subject_id;
+            // add id and datetime to data. each file line will contain this information
+            jsPsych.data.addProperties({
+                time : datetime,
+                subject_id: subject_id
+            });
+    console.log('subject id = ' + subject_id );
+    
+    // current trial number
+    var i_trial = 0;
+
+   // var repeats = Math.floor(Ntrials / images_A.length);
+   // images_A = jsPsych.randomization.repeat(images_A, repeats);
+   // images_B = jsPsych.randomization.repeat(images_B, repeats);
+      
+      images_A = jsPsych.randomization.sample(images_A, Ntrials, true);
+    
+    // art 1 = hetero, 2 = schwul, 3 = lesbisch
+    if (art==2){
+      images_B = jsPsych.randomization.sample(images_B2, Ntrials, true);
+    }
+    else if (art==3){
+      images_B = jsPsych.randomization.sample(images_B3, Ntrials, true);
+    }
+    else {
+      images_B = jsPsych.randomization.sample(images_B1, Ntrials, true);
+    }
+    
+    var images = {stim_A: images_A, stim_B: images_B};
+
+
+    var welcomeinstructions_block = {
+    type: 'instructions',
+    pages: [
+        TEXT_WELCOME,
+        TEXT_INSTRUCTION
+    ],
+    show_clickable_nav: true,
+    timing_post_trial: 500
+};
+    
+    /* define start experiment block */
+    var startexperiment_block = {
+        type: "text",
+        text: TEXT_STARTEXPERIMENT,
+        timing_post_trial: 500
+    };
+
+
+    jsPsych.pluginAPI.preloadImages(images_A, function () {
+    }, function () {
+        console.log('loading A images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_B, function () {
+        startExperiment();
+    }, function () {
+        console.log('loading B images...')
+    });
+
+//  var im = [images_A, images_B];
+
+    /* define test block */
+    var test_stimuli = [
+        {
+            stimulus: images,
+            data: {}
+        }
+    ];
+
+    var get_cross_or_number = function(){
+        return images_cross_rnd[i_trial]
+    }
+
+    var intertrial = {
+        type: 'single-stim',
+        stimulus: IM_FIXATION_CROSS,
+//        stimulus: get_cross_or_number,
+        is_html: false,
+        timing_response: TIME_CROSS,
+        timing_post_trial: 0,
+        response_ends_trial: false    };
+
+    var test_block = {
+        type: "single-stim-quantis",
+        choices: 'none',
+
+        timing_stim: TIME_STIMULUS,
+        timing_response: TIME_STIMULUS,
+        timing_post_trial: TIME_POST_STIMULUS,
+
+        stimuli: images,
+
+        i_trial: function(){return i_trial}, // current trial modulo number of images
+        on_finish: function (data) {
+            jsPsych.data.addDataToLastTrial(
+                    {   trial_number: i_trial
+                    });
+            i_trial++;
+        },
+        timeline: test_stimuli
+    };
+
+   var save_block = {
+    type: 'single-stim',
+    stimulus: 'saving data',
+    is_html: true,
+    timing_response: 100,
+    response_ends_trial: false,
+    on_finish:  function (data) {
+                saveData('data/porn/' + filename + '.csv', jsPsych.data.dataAsCSV())
+            }
+    };
+
+    var debrief_block = {
+        type: "text",
+        text: "<p>Vielen Dank!</p><p><a href='https://www.soscisurvey.de/isst/?i=" + token + "'>Klicken Sie bitte hier, um Ihre Teilnahme mit wenigen kurzen Fragen zu beenden.</a></p><p>Sie können den Vollbildmodus wieder deaktivieren (F11 bzw. Esc).</p>",
+        cont_key: '?'
+    };
+
+
+    /* create experiment timeline array */
+    var timeline = [];
+    timeline.push(welcomeinstructions_block);
+    timeline.push(startexperiment_block);
+    for(var i=0; i < Ntrials; i++){
+      timeline.push(intertrial); // add a fixation trial
+      timeline.push(test_block); // add a word trial
+    }
+    timeline.push(save_block);
+    timeline.push(debrief_block);
+
+    function saveData(filename, filedata) {
+        console.log("starting save data...", filename, filedata);
+        $.ajax({
+            type: 'post',
+            cache: false,
+            url: 'save-data.php', // this is the path to the above PHP script
+            data: {filename: filename, filedata: filedata}
+        })
+                .done(function (data) {
+                    // alert("OK OK OK" + data)
+                })
+                .fail(function () {
+                    alert("Ajax failed to send data")
+                });
+        console.log("finished save data");
+    }
+
+    /* start the experiment */
+    function startExperiment() {
+        jsPsych.init({
+            timeline: timeline,
+            fullscreen: true
+        });
+    }
+</script>
+</html>

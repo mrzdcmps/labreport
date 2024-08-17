@@ -1,0 +1,1988 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE surveyProject SYSTEM "doctype.survey.dtd">
+<surveyProject version="2.4" timestamp="2018-10-10 11:07:53" program="oFb" progversion="3.1.05-i 1263">
+<title>Porno Exp</title>
+<description />
+<attributes.specific program="ofb">
+<attr id="language">ger</attr>
+<attr id="projectBackground">scientific</attr>
+</attributes.specific>
+<section>
+<title>Demographisch</title>
+<attributes.specific program="ofb">
+<attr id="id">DE</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+<question>
+<description>Geschlecht</description>
+<class>dropdown</class>
+<title>Bitte geben Sie Ihr Geschlecht an.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text>weiblich</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>männlich</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>anderes, und zwar: </text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="width">100</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Alter</description>
+<class>text</class>
+<title>Wie alt sind Sie?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="metrics.width_label">50</attr>
+</attributes.specific>
+<item>
+<text>Ich bin</text>
+<suffix>Jahre</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="width">50</attr>
+<attr id="restrictions.charset">number</attr>
+<attr id="restrictions.min">18</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Familienstand</description>
+<class>dropdown</class>
+<title>Wie ist Ihr Familienstand?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text>ledig</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>verheiratet</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>geschieden</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>verwitwet</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Beziehung</description>
+<class>select</class>
+<title>Befinden Sie sich momentan in einer festen Beziehung?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Nein</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ja, seit</text>
+<suffix>Monaten</suffix>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="width">50</attr>
+<attr id="restrictions.charset">number</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ja, seit</text>
+<suffix>Jahren</suffix>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="width">50</attr>
+<attr id="restrictions.charset">number</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Glück Beziehung</description>
+<class>selscale</class>
+<title>Wie zufrieden sind Sie in Ihrer Beziehung?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">5</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>nicht zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwas zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>sehr zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Glück Single</description>
+<class>selscale</class>
+<title>Wie zufrieden sind Sie damit Single zu sein?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">6</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>nicht zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwas zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>sehr zufrieden</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Sexuelle Orientierung</description>
+<class>dropdown</class>
+<title>Wie ist Ihre sexuelle Orientierung?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">7</attr>
+<attr id="displayNumbering">asc</attr>
+<attr id="numbering.start">0</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text>heterosexuell</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>homosexuell</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>bisexuell</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>asexuell</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>anderes, und zwar:</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">5</attr>
+<attr id="width">200</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Herkunft</description>
+<class>suggest</class>
+<title>Was ist Ihre Nationalität?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+<attr id="number">yes</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="restrictions.min">1</attr>
+</attributes.specific>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Bildungsstand</description>
+<class>dropdown</class>
+<title>Was ist Ihr höchster Bildungsabschluss?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+<attr id="number">yes</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>kein Abschluss</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Sonderschulabschluss</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Hauptschulsabschluss</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Mittlere Reife</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>(Fach-)Abitur</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ausbildung</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>(Fach-)Hochschulabschluss</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Sonstiges</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Religionszugehörigkeit</description>
+<class>select</class>
+<title>Sind Sie gläubig? Wenn ja, welcher Religion gehören Sie an?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="alignment">left</attr>
+</attributes.specific>
+<item>
+<text>Nein</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ja</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="width">500</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Land (weltweit, in de+en)</description>
+<class>suggest</class>
+<title>Was ist Ihr Heimatland?</title>
+<explanation>
+<![CDATA[<!--
+Basiert auf folgenden Länderlisten (Stand 06/2013)
+http://en.wikipedia.org/wiki/ISO_3166-1_numeric
+http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages
+-->]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<residualOptions>
+<li i="0">Keine Angabe</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">18</attr>
+<attr id="pos">11</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="alignment">left</attr>
+<attr id="texts">
+<li i="0">Land:</li>
+</attr>
+<attr id="settings">
+<li i="0">0</li>
+<li i="1">0</li>
+</attr>
+<attr id="metrics.width_texted">120</attr>
+<attr id="metrics.width_label">80</attr>
+<attr id="data">
+<![CDATA[1001|Abchasien;Apsny;Аҧсны;Abkhaziya;Абхазия
+4|Afghanistan;Afghanestan;افغانستان
+8|Albanien;Shqipëria
+10|Antarktis
+12|Algerien;Dzayer;ⴷⵣⴰⵢⴻⵔ;Al-Jazā'ir;الجزائر
+16|Amerikanische Samoa;Amerika Sāmoa;American Samoa
+20|Andorra;Andorra
+24|Angola;Angola
+660|Anguilla;Anguilla
+28|Antigua und Barbuda;Antigua and Barbuda
+32|Argentinien;Argentina
+51|Armenien;Hayastán;Հայաստան
+533|Aruba;Aruba;Aruba
+36|Australien;Australia
+40|Österreich;Austria
+31|Aserbaidschan;Azərbaycan
+44|Bahamas;The Bahamas
+48|Bahrain;Al-Baḥrayn;البحرين
+50|Bangladesch;Bangladesh;বাংলাদেশ
+52|Barbados;Barbados
+112|Belarus;Belarus’;Беларусь;Biełaruś;Belorussiya or Belorussiâ;Белоруссия
+56|Belgien;België;Belgique;Belgien
+248|Åland-Inseln;Åland;Ahvenanmaa
+84|Belize
+204|Benin;Bénin
+60|Bermuda
+64|Bhutan;Druk Yul;འབྲུག་ཡུལ
+68|Bolivien;Bolivia;Buliwya;Wuliwya;Volívia
+535|Karibische Niederlande;Caribisch Nederland;Bonaire, Sint Eustatius and Saba
+70|Bosnien und Herzegowina;Bosna i Hercegovina;Босна и Херцеговина
+72|Botswana
+76|Brasilien;Brasil
+74|Bouvet-Insel;Bouvetøya
+92|British Virgin Islands
+96|Brunei;Brunei;بروني
+86|Britisches Territorium im Indischen Ozean;Chagos Islands;फेहंद्वीप;Phehandweep;பேயிகான தீவுகள்;Paeikaana Theevukal;ފޭހަންދީބު;Feyhandheebu
+100|Bulgarien;Bulgariya or Bălgarija;България
+854|Burkina Faso
+104|Burma;Myanmar;မြန်မာ
+108|Burundi
+116|Kambodscha;Kampuchea;កម្ពុជា
+120|Kamerun;Cameroun;Cameroon
+124|Kanada;Canada
+132|Cape Verde;Cabo Verde
+136|Cayman Islands
+140|Zentralafrikanische Republik;République Centrafricaine;Ködörösêse tî Bêafrîka
+148|Chad;Tchad;Tšād;تشاد
+152|Chile
+156|China (Volksrepublik China);Zhōngguó (Zhōnghuá Rénmín Gònghéguó);中国 (中华人民共和国)
+162|Weihnachtsinsel
+166|Cocos Islands;Cocos Keeling Islands
+170|Kolumbien
+174|Komoren;Komori;Juzur al-Qamar;جزر القمر;Comores
+178|Republik Kongo;Congo;République du Congo;Congo-Brazzaville
+180|Demokratische Republik Kongo;République démocratique du Congo
+184|Cook Islands
+188|Costa Rica
+384|Côte d'Ivoire
+191|Kroatien;Hrvatska
+192|Kuba;Cuba
+531|Curaçao;Curaçao;Kòrsou
+196|Zypern;Kypros;Κύπρος;Kıbrıs
+203|Tschechische Republik;Česká republika;Česko
+208|Dänemark;Danmark
+262|Djibouti;Jībūtī;جيبوتي;Djibouti
+212|Dominica
+214|Dominikanische Republik;República Dominicana
+626|Osttimor;Timor Lorosa'e;Timor-Leste
+218|Ecuador
+818|Ägypten;Misr or Masr;مصر
+222|El Salvador
+226|Äquatorial-Guinea;Guinea Ecuatorial
+232|Eritrea;Iritriya;إرتريا;Erta;ኤርትራ
+233|Estland;Eesti
+231|Äthiopien;Ityop'ia;ኢትዮጵያ
+238|Falkland-Inseln
+234|Färöer-Inseln;Føroyar;Færøerne
+583|Föderierte Staaten von Mikronesien
+242|Fidschi;Fiji;Viti;फ़िजी
+246|Finnland;Suomi;Finland
+250|Frankreich
+254|Französisch-Guayana;Guyane
+258|Französisch-Polynesien;Polynésie française
+260|Französisch Southern Territories;Terres australes et antarctiques françaises;TAAF
+266|Gabun
+270|Gambia
+268|Georgia;Sak'art'velo;საქართველო
+276|Deutschland;Germany
+288|Ghana
+292|Gibraltar
+300|Griechenland;Hellas;Ελλάς or  Ellada;Ελλάδα
+304|Grönland;Kalaallit Nunaat;Grønland
+308|Grenada
+312|Guadeloupe
+316|Guam;Guåhån
+320|Guatemala;Guatemala
+831|Guernsey
+324|Guinea;Guinée;Gine;Gine
+624|Guinea-Bissau;Guiné-Bissau
+328|Guyana
+332|Haiti;Haïti;Ayiti
+334|Heard und McDonald-Inseln;HIMI
+336|Vatikanstadt;Città del Vaticano;Holy See
+340|Honduras
+344|Hong Kong;Heung Gong;香港
+348|Ungarn;Magyarország
+352|Island;Iceland
+356|Indien;Bharôt;ভাৰত;Bharot;ভারত;India, Hindustan;Bhārat;ભારત;Bhārat;भारत;Bhārata;ಭಾರತ;Bhārat;भारत;Inḍya, Bhāratam;ഇന്ത്യ, ഭാരതം;Bhārat;भारत;Bhārat;भारत;Bharôtô;ଭାରତ;Bhārat;ਭਾਰਤ;Bhāratam;भारतम्;Bhāratu;Indiyā, Bārata;இந்தியா, பாரத;Bhāratadēsham;భారత దేశం;Bhārat
+360|Indonesien;Indonesia
+364|Iran;Īrān;ایران
+368|Irak;Al-'Iraq;العراق;Îraq
+372|Irland;Éire;Ireland
+833|Isle of Man;Ellan Vannin
+376|Israel;yisrael;ישראל;Isrā'īl;إسرائيل
+380|Italien;Italia
+388|Jamaica
+392|Japan;Nihon;Nippon;日本
+832|Jersey;Jersey;Jersey;Jèrri
+400|Jordan;Al-’Urdun;الأردن
+398|Kasachstan;Qazaqstan;Қазақстан;قازاقستان;Kazakhstán;Казахстан
+404|Kenia
+296|Kiribati
+408|Nordkorea;Chosŏn;조선;朝鮮;Buk-han
+410|Südkorea;Hanguk;한국;韓國;Nam-josŏn
+1002|Kosovo;Kosova, Косово
+414|Kuwait;Al-Kuwayt;الكويت
+417|Kirgisistan;Kyrgyzstan;Кыргызстан;Kirgizija;Киргизия
+418|Laos;Lao;ປະເທດລາວ;Lao People's Democratic Republic
+428|Lettland;Latvija
+422|Libanon;Lubnān;لبنان
+426|Lesotho
+430|Liberia
+434|Libyen;Libya;ⵍⵉⴱⵢⴰ;Lībiyā;ليبيا
+438|Liechtenstein;Liechtenstein
+440|Litauen;Lietuva
+442|Luxemburg;Lëtzebuerg;Luxemburg;Luxembourg
+446|Macao;澳門;Macao
+807|Mazedonien;Makedonija;Македонија
+450|Madagaskar;Madagasikara;Madagascar
+454|Malawi
+458|Malaysien;Malaysia
+462|Malediven;Dhivehi Raajje;ދިވެހިރާއްޖެ
+466|Mali
+470|Malta
+584|Marshall Islands
+474|Martinique
+478|Mauretanien;Muritan / Agawec;ⵎⵓⵔⵉⵜⴰⵏ / ⴰⴳⴰⵡⵛ;Mūrītānyā;موريتانيا
+480|Mauritius;Maurice
+175|Mayotte;Mayotte
+484|Mexiko;México;Mēxihco
+498|Moldawien;Moldova
+492|Monaco
+496|Mongolei;Mongol Uls;Монгол Улс
+499|Montenegro;Crna Gora;Црна Гора
+500|Montserrat
+504|Marokko;Amerruk / Elmeɣrib;ⴰⵎⵔⵔⵓⴽ / ⵍⵎⵖⵔⵉⴱ;Al-maɣréb;المغرب
+508|Mosambik;Moçambique
+516|Namibia;Namibia
+520|Nauru;Nauru;Naoero
+524|Nepal;Nepāla;नेपाल
+528|Niederlande;Nederland;Nederlân
+540|Neukaledonien;Nouvelle-Calédonie
+554|Neuseeland;New Zealand;Aotearoa
+558|Nicaragua
+562|Niger
+566|Nigeria
+570|Niue;Niuē;Niue
+574|Norfolk-Insel
+580|Northern Mariana Islands
+1003|Nordzypern;Kuzey Kıbrıs
+578|Norwegen;Norge;Noreg
+512|Oman;‘Umān;عُمان
+586|Pakistan;Pākistān;پاکستان
+585|Palau;Belau
+275|Palästina;Palestinian National Authority;Filastīn;فلسطين
+591|Panama
+598|Papua-Neuguinea;Papua New Guinea;Papua Niugini;Papua Niugini
+600|Paraguay;Paraguay;Paraguái
+604|Peru;Perú
+608|Philippinen;Pilipinas;Philippines;Filipinas;pilipins;Filipinas;Pilipinas;Pilipinas;Filipinas;Pilipinas;Filipinas;Filipinas;Pilipinas
+612|Pitcairn Islands;Pitcairn
+616|Polen;Polska
+620|Portugal
+630|Puerto Rico
+634|Qatar;Qaṭar;قطر
+638|Réunion;Réunion
+642|Rumänien;România
+643|Russland;Rossiya or Rossiâ;Россия
+646|Ruanda
+652|Saint Barthélemy;Saint-Barthélemy
+654|St. Helena, Ascension und Tristan da Cunha
+659|St. Kitts und Nevis
+662|St. Lucia
+663|Sankt Martin;Saint-Martin
+666|Saint-Pierre und Miquelon;Saint-Pierre et Miquelon
+670|St. Vincent und die Grenadinen
+882|Samoa
+674|San Marino
+678|São Tomé und Príncipe;São Tomé e Príncipe
+682|Saudi-Arabien;Al-Mamlaka Al-‘Arabiyyah as Sa‘ūdiyyah;المملكة العربية السعودية
+686|Senegal;Sénégal
+688|Serbien;Србија
+690|Seychellen;Sesel;Seychelles;Seychelles
+694|Sierra Leone
+702|Singapur;Singapura;Singapore;Xīnjiāpō;新加坡;Singapur;சிங்கப்பூர்
+534|Sint Maarten;Sint Maarten;Sint Maarten
+703|Slowakei;Slovensko
+705|Slowenien;Slovenija
+90|Solomon Islands;Solomon Islands;Solomon Aelan
+706|Somalia;Soomaaliya;aş-Şūmāl;الصومال
+710|Südafrika;South Africa;Suid-Afrika;iNingizimu Afrika;uMzantsi Afrika;Afrika-Borwa;Afrika Borwa;Aforika Borwa;Afurika Tshipembe;Afrika Dzonga;iNingizimu Afrika;iSewula Afrika
+239|Süd-Georgien und Süd-Sandwich-Inseln;SGSSI
+1004|Südossetien;Khussar Iryston;Хуссар Ирыстон;Samkhret Oseti<br /> სამხრეთი ოსეთი;Южная Осетия;Yuzhnaya Osetiya
+728|Südsudan
+724|Spanien;España;Espanya;Espainia;Espanha
+144|Sri Lanka;Sri Lankā;ශ්‍රී ලංකාව;இலங்கை
+729|Sudan;As-Sudan;السودان
+740|Suriname
+744|Svalbard;Svalbard and Jan Mayen
+748|Swaziland
+752|Schweden;Sverige
+756|Schweiz;Schweiz;Suisse;Svizzera;Svizra
+760|Syrien;Suriyah;سورية;Syrian Arab Republic
+158|Taiwan;Zhōnghuá Mínguó or Táiwan;中華民國;臺灣/台灣
+762|Tadschikistan;Tojikistan;Тоҷикистон
+834|Tansania
+764|Thailand;Mueang Thai, Prathet Thai, Ratcha-anachak Thai;เมืองไทย, ประเทศไทย, ราชอาณาจักรไทย
+768|Togo
+772|Tokelau
+776|Tonga;Tonga
+780|Trinidad und Tobago
+788|Tunesien;Tunes;ⵜⵓⵏⵙ;Tūns;تونس
+792|Türkei;Türkiye
+795|Turkmenistan;Türkmenistan
+796|Turks- und Caicosinseln
+798|Tuvalu
+800|Uganda
+804|Ukraine;Ukraїna;Україна
+784|Vereinigte Arabische Emirate;Al-’Imārat Al-‘Arabiyyah Al-Muttaḥidah;الإمارات العربيّة المتّحدة
+826|Großbritannien;United Kingdom;Y Deyrnas Unedig;Unitit Kinrick;Rìoghachd Aonaichte;Ríocht Aontaithe;An Rywvaneth Unys;UK;England
+840|Vereinigte Staaten von Amerika;United States;USA;États-Unis;'Amelika-hui-pu-'ia
+581|United States Minor Outlying Islands
+858|Uruguay;República Oriental del Uruguay
+860|Usbekistan;O‘zbekiston;Ўзбекистон
+548|Vanuatu;Vanuatu
+862|Venezuela
+704|Vietnam;Việt Nam
+850|United States Virgin Islands
+876|Wallis und Futuna;Wallis-et-Futuna
+732|Westsahara
+887|Jemen;Al-Yaman;اليمن
+894|Sambia
+716|Simbabwe]]>
+</attr>
+<attr id="restrictions.valid">yes</attr>
+</attributes.specific>
+</question>
+</section>
+<section>
+<title>Pornography Addiction</title>
+<attributes.specific program="ofb">
+<attr id="id">PA</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<question>
+<description>CPUI-APS1</description>
+<class>scale</class>
+<title>Die folgenden Statements beziehen sich auf Ihren Pornographiekonsum im Internet.</title>
+<explanation>Bitte geben Sie an, inwiefern Sie diesen Aussagen zustimmen.</explanation>
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1"><![CDATA[stimme gar<br>nicht zu]]></li>
+<li i="7"><![CDATA[stimme<br>voll zu]]></li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asc</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="scale.niveau">7</attr>
+</attributes.specific>
+<item>
+<text>Es kommt vor, dass ich mir meinen Tagesablauf so einrichte, dass ich Zeit habe mir Pornographie anzusehen.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich stehe früher auf oder gehe später ins Bett als andere in meinem Haushalt, um mir ungestört Pornographie ansehen zu können.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich sage Freunden ab oder nehme an sozialen Aktivitäten nicht teil, um mir stattdessen Pornographie anzusehen.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich schiebe wichtige Aktivitäten (z.B. Lernen) auf, um mir Pornographie anzusehen.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich vermeide Situationen, in denen mein Pornographiekonsum aufgedeckt oder thematisiert werden könnte.</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich befürchte, jemand könnte eines Tages meinen geheimen Pornographiekonsum entdecken.</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich versuche den Inhalt meines Computers oder Bildschirms vor anderen zu verstecken.</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich bleibe bis spät in die Nacht auf, um Internetpornographie anzusehen.</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich nutze eine Suchmaschine, um Pornographie zu finden.</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>CPUI-APS2</description>
+<class>scale</class>
+<title />
+<explanation>Bitte geben Sie an, inwiefern Sie diesen Aussagen zustimmen.</explanation>
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1"><![CDATA[stimme gar<br>nicht zu]]></li>
+<li i="7"><![CDATA[stimme<br>voll zu]]></li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asc</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="alignment">center</attr>
+</attributes.specific>
+<item>
+<text>Ich befriedige mich selbst, während ich mir Pornographie im Internet ansehe.</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich glaube, ich bin süchtig nach Internetpornographie.</text>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich habe kein Problem, meinen Konsum von Internetpornographie zu kontrollieren.</text>
+<invert>yes</invert>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich kann nicht damit aufhören, Pornographie im Internet anzusehen.</text>
+<attributes.specific program="ofb">
+<attr id="id">13</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Selbst wenn ich keine Internetpornographie ansehen möchte, fühle ich mich stark dazu hingezogen.</text>
+<attributes.specific program="ofb">
+<attr id="id">14</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Es fällt mir leicht, auf eine Gelegenheit zu verzichten, in der ich Internetpornographie ansehen kann.</text>
+<invert>yes</invert>
+<attributes.specific program="ofb">
+<attr id="id">15</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich fühle mich ängstlich, wütend oder enttäuscht, wenn ich keine Möglichkeit habe, Internetpornographie anzusehen.</text>
+<attributes.specific program="ofb">
+<attr id="id">16</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Beizeiten benutze ich Internetpornographie als Belohnung für das Erledigen von Aufgaben.</text>
+<attributes.specific program="ofb">
+<attr id="id">17</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Pornographie hat mitunter Auswirkungen auf bestimmte Aspekte meines Lebens.</text>
+<attributes.specific program="ofb">
+<attr id="id">18</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Einstellung zur Pornographie</title>
+<attributes.specific program="ofb">
+<attr id="id">PE</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+<question>
+<description>Einstellung</description>
+<class>scale</class>
+<title>Bitte geben Sie an, inwiefern Sie den folgenden Aussagen bezüglich Pornographie zustimmen.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1"><![CDATA[stimme gar<br>nicht zu]]></li>
+<li i="2"><![CDATA[stimme<br>eher nicht<br>zu]]></li>
+<li i="3"><![CDATA[unent-<br>schieden]]></li>
+<li i="4"><![CDATA[stimme<br>eher<br>zu]]></li>
+<li i="5"><![CDATA[stimme<br>voll<br>zu]]></li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">1</attr>
+<attr id="scale.display">complete</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="restrictions.answered">probe</attr>
+<attr id="wedge.height">30</attr>
+</attributes.specific>
+<item>
+<text>Ich denke Pornographie sollte einfach erhältlich sein.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich denke Pornographie sollte gesetzlich verboten sein.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich meine die Zugänglichkeit von Pornographie sollte begrenzt sein.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich glaube, dass Pornographie das Sexleben stimulieren kann.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich denke Pornographie ist unterhaltsam.</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich finde Pornographie inspirierend.</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich denke Pornographie degradiert Frauen.</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich denke Pornographie degradiert Männer.</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Pornographie ist für junge Leute eins der besten Hilfsmittel um etwas über Sex zu lernen.</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Pornographiekonsum</title>
+<attributes.specific program="ofb">
+<attr id="id">PK</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+<question>
+<description>Konsum</description>
+<class>select</class>
+<title>Haben Sie jemals pornographisches Material im oder aus dem Internet konsumiert?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Ja</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Nein</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Häufigkeit</description>
+<class>dropdown</class>
+<title>Wie häufig sehen Sie sich durchschnittlich Pornographie im Internet an?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>mehrmals täglich</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>täglich</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>mehrmals die Woche</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwa einmal pro Woche</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>mehrmals im Monat</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwa einmal pro Monat</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>seltener</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Dauer</description>
+<class>dropdown</class>
+<title>Wie lange schauen Sie sich durchschnittlich pro Session Pornographie im Internet an?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>mehrere Stunden</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwa 1 Stunde</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>30 Minuten</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>10 Minuten</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>wenige Minuten</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Art</description>
+<class>dropdown</class>
+<title>Welche Form von Pornographie bevorzugen Sie in der Regel?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">nie</li>
+<li i="5">sehr oft</li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Heterosexuelle Pornographie</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Schwule Pornographie</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Lesbische Pornographie</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Art Jetzt</description>
+<class>select</class>
+<title>Wir werden Ihnen nun erotische und pornographische Bilder zeigen. Sie können wählen, welche Art von Inhalten Sie gerne sehen möchten.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Heterosexuelle Pornographie</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Schwule Pornographie</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Lesbische Pornographie</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Post-Task</title>
+<attributes.specific program="ofb">
+<attr id="id">PT</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+<question>
+<description>Bild Bewertung</description>
+<class>selscale</class>
+<title>Wie erotisch fanden Sie die eben gezeigten Bilder?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>nicht erotisch</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>eher nicht erotisch</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>eher erotisch</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>sehr erotisch</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Ehrlichkeit</description>
+<class>selscale</class>
+<title>Wie ehrlich haben Sie diesen Fragebogen beantwortet?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>unehrlich</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>wenig ehrlich</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwas ehrlich</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>ehrlich </text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Bilder Angeschaut</description>
+<class>selscale</class>
+<title>Wie aufmerksam haben Sie sich die Bilder angeschaut?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>gar nicht aufmerksam</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>wenig aufmerksam</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etws aufmerksam</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>sehr aufmerksam</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Gedanken zur Studie</description>
+<class>text</class>
+<title>Worum geht es Ihrer Meinung nach in dieser Studie? </title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="height">100</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>
+<![CDATA[Seriousness & Consent]]>
+</title>
+<attributes.specific program="ofb">
+<attr id="id">SC</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+<question>
+<description>Consent</description>
+<class>select</class>
+<title>Die Richtlinien guter ethischer Forschung sehen vor, dass sich die Teilnehmer/innen an empirischen Studien explizit und nachvollziehbar mit der Teilnahme einverstanden erklären.</title>
+<explanation>
+<![CDATA[<p>**Freiwilligkeit.** Ihre Teilnahme an dieser Untersuchung ist freiwillig. Es steht Ihnen zu jedem Zeitpunkt dieser Studie frei, Ihre Teilnahme abzubrechen, ohne dass Ihnen daraus Nachteile entstehen.</p>
+
+<p>**Anonymität.** Ihre Daten sind selbstverständlich vertraulich, werden nur in anonymisierter Form ausgewertet und nicht an Dritte weitergegeben. Demographische Angaben wie Alter oder Geschlecht lassen keinen eindeutigen Schluss auf Ihre Person zu.</p>
+
+<p>**Fragen.** Falls Sie noch Fragen zu dieser Studie haben sollten, finden Sie im Anschluss ein Impressum mit Kontaktdaten der Studienleiter.</p>
+
+<p style="margin-top: 2em">Hiermit bestätige ich, dass ich mindestens 18 Jahre alt bin sowie die Einverständniserklärung gelesen und verstanden habe.</p>]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="number">no</attr>
+<attr id="shading">none</attr>
+</attributes.specific>
+<item>
+<text>Nein (nicht an der Studie teilnehmen)</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ja</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Overall</description>
+<class>select</class>
+<title>Sie haben alle Fragen beantwortet, vielen Dank für Ihre Mühe! Können wir Ihre Daten in anonymer Form für wissenschaftliche Zwecke verwenden?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<item>
+<text>Ja, ich habe alle Fragen sinnvoll beantwortet. Meine Angaben können für die Auswertung verwendet werden.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Nein, ich wollte „nur mal gucken“, nehme zum wiederholten Mal teil oder möchte nicht, dass meine Angaben ausgewertet werden.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Relunctance</description>
+<class>select</class>
+<title>Jetzt mal Hand aufs Herz: Haben Sie gerne an dieser Studie teilgenommen? Bitte antworten Sie ehrlich - Ihre Antwort hat keine Konsequenzen für Sie!</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="number">no</attr>
+</attributes.specific>
+<item>
+<text>Nein</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Eher Nein</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Eher Ja</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ja</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Meaningless Responses</description>
+<class>select</class>
+<title>Haben Sie alle Aufgaben so ausgeführt, wie in den jeweiligen Instruktionen gebeten? Bitte antworten Sie auch hier ehrlich - Auch diese Antwort hat für Sie keine Konsequenzen!</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="number">no</attr>
+</attributes.specific>
+<item>
+<text>Ich habe alle Aufgaben, wie in den Instruktionen verlangt, bewältigt.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>__Manchmal__ habe ich irgendetwas geklickt, weil ich unmotiviert war oder mich einfach nicht ausgekannt habe.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich habe _häufig__ irgendetwas angeklickt, damit ich schnell fertig werde.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Distraction</description>
+<class>select</class>
+<title>Konnten Sie den Fragebogen in einem ausfüllen, ohne abgelenkt zu werden? Bitte antworten Sie auch hier ehrlich.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+<attr id="number">no</attr>
+</attributes.specific>
+<item>
+<text>Ja, ich habe der Studie vollste Aufmerksamkeit geschenkt und sie in einem durch gemacht.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich wurde durch meine Umwelt (Personen, Geräusche, etc.) __einmal__ kurz abgelenkt.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Ich wurde durch meine Umwelt (Personen, Geräusche, etc.) __mehrmals__ abgelenkt.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Research Question</description>
+<class>text</class>
+<title>Haben Sie eine Vermutung, worum es in der Untersuchung ging?</title>
+<explanation>Sie können in das Textfeld Ihre Gedanken kurz notieren. Sollten Sie keine Vorstellung haben, dann lassen Sie das Feld einfach frei.</explanation>
+<inputPosition>right</inputPosition>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+<attr id="number">no</attr>
+<attr id="alignment">center</attr>
+</attributes.specific>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="height">100</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Selbstwirksamkeit</title>
+<attributes.specific program="ofb">
+<attr id="id">SW</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+<question>
+<description>Selbstwirksamkeit1</description>
+<class>scale</class>
+<title>Bitte geben Sie an, wie sehr sie den folgenden Aussagen im Moment zustimmen.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">
+<![CDATA[stimmt 
+nicht]]>
+</li>
+<li i="2">
+<![CDATA[stimmt 
+kaum]]>
+</li>
+<li i="3">
+<![CDATA[stimmt 
+eher]]>
+</li>
+<li i="4">
+<![CDATA[stimmt 
+genau]]>
+</li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="scale.display">complete</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="scale.niveau">4</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Wenn sich Widerstände auftun, finde ich Mittel und Wege, mich durchzusetzen.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Die Lösung schwieriger Probleme gelingt mir immer, wenn ich mich darum bemühe.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Es bereitet mir keine Schwierigkeiten, meine Absichten und Ziele zu verwirklichen.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>In unerwarteten Situationen weiß ich immer, wie ich mich verhalten soll.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Auch bei überraschenden Ereignissen glaube ich, dass ich gut mit ihnen zurechtkommen kann.</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Selbstwirksamkeit2</description>
+<class>scale</class>
+<title>Bitte geben Sie an, wie sehr sie den folgenden Aussagen im Moment zustimmen.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">
+<![CDATA[stimmt 
+nicht]]>
+</li>
+<li i="2">
+<![CDATA[stimmt 
+kaum]]>
+</li>
+<li i="3">
+<![CDATA[stimmt 
+eher]]>
+</li>
+<li i="4">
+<![CDATA[stimmt 
+genau]]>
+</li>
+</labels>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="scale.display">complete</attr>
+<attr id="displayWedge">oFb1gen</attr>
+<attr id="scale.niveau">4</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Schwierigkeiten sehe ich gelassen entgegen, weil ich meinen Fähigkeiten immer vertrauen kann.</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Was auch immer passiert, ich werde schon klarkommen.</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Für jedes Problem kann ich eine Lösung finden.</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Wenn eine neue Sache auf mich zukommt, weiß ich, wie ich damit umgehen kann.</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Wenn ein Problem auftaucht, kann ich es aus eigener Kraft meistern.</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<textelement>
+<type>default</type>
+<content>
+<![CDATA[<p>
+	 Vielen Dank für das Beantworten der Fragen. Klicken Sie bitte auf weiter, um zum nächsten Teil der Studie zu gelangen.<br />
+</p>]]>
+</content>
+<label>Weiterleitung</label>
+<align>default</align>
+<attributes.specific program="ofb">
+<attr id="vsStamp">1231</attr>
+</attributes.specific>
+</textelement>
+<textelement>
+<type>default</type>
+<content>
+<![CDATA[<p>
+	 <strong>Herzlich Willkommen zur Studie!</strong>
+</p>
+<p>
+	In dieser Untersuchung werden explizite erotische und pornographische Bilder gezeigt, sowie Fragen zu Ihrem Sexualleben gestellt. Bitte nehmen Sie nur Teil, wenn Sie damit einverstanden sind.<br />
+</p>
+<p>
+	Die Teilnahme an der Studie wird etwa 10 bis 15 Minuten dauern.<br />
+</p>]]>
+</content>
+<label>Willkommen</label>
+<align>default</align>
+<attributes.specific program="ofb">
+<attr id="vsStamp">1238</attr>
+</attributes.specific>
+</textelement>
+<layoutTexts>
+<layoutText id="default.imprint"><txt lng="ger"><![CDATA[<a href="mailto:moritz.dechamps@psy.lmu.de">Allgemeine Psychologie 2</a>, 
+Ludwig-Maximilians-Universität München – 2017]]></txt></layoutText>
+</layoutTexts>
+<questionnaire>
+<title>Fragebogen</title>
+<attributes.specific program="ofb">
+<attr id="id">base</attr>
+<attr id="content">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;questionnaire&gt;
+
+&lt;!-- Seite 1 --&gt;
+&lt;page intID=&quot;35&quot;&gt;
+&lt;text id=&quot;Willkommen&quot; intID=&quot;37&quot;&gt;
+	&lt;spacing&gt;default&lt;/spacing&gt;
+&lt;/text&gt;
+&lt;question id=&quot;SC01&quot; intID=&quot;36&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 2 --&gt;
+&lt;page intID=&quot;1&quot;&gt;
+&lt;php intID=&quot;38&quot;&gt;&lt;![CDATA[
+if (value('SC01') == 1) {
+  goToPage('end');
+}
+]]&gt;&lt;/php&gt;
+&lt;question id=&quot;DE01&quot; intID=&quot;2&quot; /&gt;
+&lt;question id=&quot;DE02&quot; intID=&quot;3&quot; /&gt;
+&lt;question id=&quot;DE18&quot; intID=&quot;32&quot; /&gt;
+&lt;question id=&quot;DE09&quot; intID=&quot;33&quot; /&gt;
+&lt;question id=&quot;DE10&quot; intID=&quot;34&quot; /&gt;
+&lt;question id=&quot;DE03&quot; intID=&quot;4&quot; /&gt;
+&lt;question id=&quot;DE04&quot; intID=&quot;5&quot; /&gt;
+&lt;question id=&quot;DE05&quot; intID=&quot;6&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 3 --&gt;
+&lt;page intID=&quot;41&quot;&gt;
+&lt;php intID=&quot;21&quot;&gt;&lt;![CDATA[
+if (value('DE02_01') &lt; 18) {
+  goToPage('end');
+}
+
+if (value('DE04') == 1) {
+  question('DE07');
+}
+
+if (value('DE04') != 1) {
+  question('DE06');
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 4 --&gt;
+&lt;page intID=&quot;39&quot;&gt;
+&lt;question id=&quot;SW01&quot; intID=&quot;40&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 5 --&gt;
+&lt;page intID=&quot;7&quot;&gt;
+&lt;question id=&quot;PE02&quot; intID=&quot;8&quot; /&gt;
+&lt;question id=&quot;PK01&quot; intID=&quot;9&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 6 --&gt;
+&lt;page intID=&quot;10&quot;&gt;
+&lt;php intID=&quot;17&quot;&gt;&lt;![CDATA[
+if (value('PK01') == 2) {
+  goToPage('ART');
+}
+]]&gt;&lt;/php&gt;
+&lt;question id=&quot;PK04&quot; intID=&quot;18&quot; /&gt;
+&lt;question id=&quot;PK02&quot; intID=&quot;11&quot; /&gt;
+&lt;question id=&quot;PK03&quot; intID=&quot;12&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 7 --&gt;
+&lt;page intID=&quot;13&quot;&gt;
+&lt;question id=&quot;PA01&quot; intID=&quot;14&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 8 --&gt;
+&lt;page intID=&quot;15&quot;&gt;
+&lt;question id=&quot;PA02&quot; intID=&quot;16&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 9 --&gt;
+&lt;page ident=&quot;ART&quot; intID=&quot;25&quot;&gt;
+&lt;question id=&quot;PK05&quot; intID=&quot;26&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 10 --&gt;
+&lt;page intID=&quot;29&quot;&gt;
+&lt;php intID=&quot;30&quot;&gt;&lt;![CDATA[
+$art = value('PK05');
+registerVariable('art');
+]]&gt;&lt;/php&gt;
+&lt;text id=&quot;Weiterleitung&quot; intID=&quot;31&quot;&gt;
+	&lt;spacing&gt;default&lt;/spacing&gt;
+&lt;/text&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 11 --&gt;
+&lt;page intID=&quot;27&quot;&gt;
+&lt;php intID=&quot;28&quot;&gt;&lt;![CDATA[
+redirect('http://129.187.238.41/isst.html?tk=%caseToken%&amp;vp=%caseNumber%&amp;art='.$art, true);
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 12 --&gt;
+&lt;page intID=&quot;42&quot;&gt;
+&lt;question id=&quot;SW02&quot; intID=&quot;43&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 13 --&gt;
+&lt;page ident=&quot;PT&quot; intID=&quot;19&quot;&gt;
+&lt;image src=&quot;anker.png&quot; intID=&quot;44&quot; /&gt;
+&lt;question id=&quot;PT03&quot; intID=&quot;20&quot; /&gt;
+&lt;question id=&quot;PT01&quot; intID=&quot;22&quot; /&gt;
+&lt;question id=&quot;PT02&quot; intID=&quot;23&quot; /&gt;
+&lt;question id=&quot;PT04&quot; intID=&quot;24&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;/questionnaire&gt;</attr>
+<attr id="goodbye">
+<![CDATA[<h1>Vielen Dank für Ihre Teilnahme!</h1>
+
+<p>Wir möchten uns ganz herzlich für Ihre Mithilfe bedanken.</p>
+
+<!-- Hier evtl. noch Zweck der Studie, Ansprechpartner, etc. -->
+ 
+<p>Ihre Antworten wurden gespeichert, Sie können das Browser-Fenster nun schließen.</p>
+<br>
+<p>Versuchspersonenstunde (LMU)</p>
+<p><a href="mailto:celine.frey@psy.lmu.de?subject=VPh %caseNumber%">Klicken Sie bitte hier, um eine Email an den Versuchsleiter (LMU) zu senden, falls sie eine Versuchspersonenstunde benötigen.</a></p>
+<br>
+<p>Probandenstunde (Uni Bremen)</p>
+<p><a href="mailto:m.onkes@uni-bremen.de?subject=VPh %caseNumber%">Klicken Sie bitte hier, um eine Email an den Versuchsleiter (Uni Bremen) zu senden, falls sie eine Probandenstunde benötigen.</a></p>
+<br><br><br>
+<a href="http://129.187.238.41/isst-quellen.html" target="popup" onClick="javascript:open('', 'popup', 'height=800,width=670,resizable=no')">Quellenverzeichnis der verwendeten lizensierten Bilder.</a>
+
+<!-- Zusätzlicher Abstand (ggf. entfernen/anpassen) -->
+<div style="padding-bottom: 20px"></div>]]>
+</attr>
+<attr id="panelForm">no</attr>
+<attr id="selection">1</attr>
+</attributes.specific>
+</questionnaire>
+<setting name="DataFilter" key="df" encoding="json">
+{"mode.interview":"yes","mode.pretest":"no","mode.debug":"no","started.first":"2017-12-01 00:00:00","started.last":"","lastdata.first":"","lastdata.last":"","progress":"any","dfStatus":2,"cases.exclude":"1-448","cases.select":""}</setting>
+<file filename="anker.png" filesize="7322" encoding="base64">
+iVBORw0KGgoAAAANSUhEUgAAEAAAAAEICAMAAADoh8EyAAADAFBMVEUA/wDIyMn////+/v79/f38
+/Pz7+/v6+vr5+fn4+Pj39/f29vb19fX09PTz8/Py8vLx8fHw8PDv7+/u7u7t7e3s7Ozr6+vq6urp
+6eno6Ojn5+fm5ubl5eXk5OTj4+Pi4uLh4eHg4ODf39/e3t7d3d3c3Nzb29va2trZ2dnY2NjX19fW
+1tbV1dXU1NTT09PS0tLR0dHQ0NDPz8/Ozs7Nzc3MzMzLy8vKysrJycnIyMjHx8fGxsbFxcXExMTD
+w8PCwsLBwcHAwMC+vr69vb28vLy7u7u6urq5ubm4uLi3t7e2tra1tbW0tLSzs7OysrKxsbGwsLCv
+r6+urq6tra2srKyrq6uqqqqpqamoqKinp6empqalpaWkpKSjo6OioqKhoaGgoKCfn5+enp6dnZ2c
+nJybm5uampqZmZmYmJiXl5eWlpaVlZWUlJSTk5OSkpKRkZGQkJCPj4+Ojo6NjY2MjIyLi4uKioqJ
+iYmIiIiHh4eGhoaFhYWEhISDg4OCgoKBgYGAgIB/f39+fn59fX18fHx7e3t6enp5eXl4eHh3d3d2
+dnZ1dXV0dHRzc3NycnJxcXFwcHBvb29ubm5tbW1sbGxra2tqamppaWloaGhnZ2dmZmZlZWVkZGRj
+Y2NiYmJhYWFgYGBfX19eXl5dXV1cXFxbW1taWlpZWVlYWFhXV1dWVlZVVVVUVFRTU1NSUlJRUVFQ
+UFBPT09OTk5NTU1MTExLS0tKSkpJSUlISEhHR0dGRkZFRUVERERDQ0NCQkJBQUE/Pz8+Pj49PT08
+PDw7Ozs6Ojo5OTk4ODg3Nzc2NjY1NTU0NDQzMzMyMjIxMTEwMDAvLy8uLi4tLS0sLCwrKysqKiop
+KSkoKCgnJycmJiYlJSUkJCQjIyMiIiIhISEgICAfHx8eHh4dHR0cHBwbGxsaGhoZGRkYGBgXFxcW
+FhYVFRUUFBQTExMSEhIREREQEBAPDw8ODg4NDQ0MDAwLCwsKCgoJCQkICAgHBwcGBgYFBQUEBAQD
+AwMCAgIBAQEAAACYDdoUAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAGTNJREFU
+eJzt2fe//3MZx3E/tCiUEiHJ3it7y94je+9I9t5lU3ZmWVkZ4Vt8heyMEEKIIkSIIqKIOudzzue8
+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
+AID/A/8BD+copZ0p0nYAAAAASUVORK5CYII=
+</file>
+</surveyProject>

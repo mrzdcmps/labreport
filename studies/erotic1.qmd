@@ -1,0 +1,104 @@
+---
+title: "Erotic Images 1"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+load("../study_objects.RData")
+st <- readRDS("../overview.rds")
+
+ft <- st %>%
+  filter(Study == "Erotic Images 1") %>%
+  mutate(
+    across(where(is.numeric), ~ round(., 2)),
+    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
+    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
+    Experimental = ifelse(Experimental, "✔", "✖"),
+    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+    Labstudy = ifelse(Labstudy, "🏠", "🌍")
+    )
+
+kbl(ft, escape = F,
+    col.names = c("Study",
+                  "Effect expected",
+                  "N",
+                  "Trials",
+                  "M",
+                  "SD",
+                  "Hits (%)",
+                  "t",
+                  "p",
+                  "ES",
+                  "Var",
+                  "BF",
+                  "Direction",
+                  "Lab/Online"),
+    align = "lccccccccccccc") %>%
+  kable_classic("hover", fixed_thead = T)
+```
+
+## Hypothesis
+
+...
+
+## Participants
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+df <- subset(study14_erotic.1)
+
+# Data
+total_participants <- nrow(df)
+mean_age <- mean(df$DE02_01, na.rm=T)
+sd_age <- sd(df$DE02_01, na.rm=T)
+female_count <- sum(df$DE01 == 1, na.rm=T)/total_participants*100
+male_count <- sum(df$DE01 == 2, na.rm=T)/total_participants*100
+
+# Create the table
+table_data <- data.frame(
+  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
+  Count_Statistics = c(
+    total_participants, 
+    paste0(round(female_count, 2), "%"),
+    paste0(round(male_count, 2), "%"),
+    paste0(round(mean_age, 2), " years"), 
+    paste0(round(sd_age, 2), " years")
+    )
+)
+
+# Print the table using kable
+kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+```
+
+## Materials
+
+...
+
+## Procedure
+
+...
+
+## Sample Size and Data Analysis
+
+...
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/erotic/erotic2.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/erotic/isst1.html)
+-   [Questionnaire](../data/erotic/isst_2017-05-18_14-23.csv)
+:::
