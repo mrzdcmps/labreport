@@ -21,7 +21,7 @@ The resulting p-values will be analyzed using the inverse chi-square method, whi
 In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included.
 
 ```{r}
-coe <- readRDS("coe.rds")
+coe <- readRDS("data/coe.rds")
 
 # Select studies / conditions
 data <- subset(coe, coe$Experimental == TRUE)
@@ -67,8 +67,6 @@ plot(res)
 In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
 
 ```{r}
-coe <- readRDS("coe.rds")
-
 # Select studies / conditions
 data <- subset(coe, coe$Experimental == FALSE)
 

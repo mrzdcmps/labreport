@@ -8,46 +8,23 @@ execute:
 ---
 
 ```{r}
-library(tidyverse)
-library(knitr)
-library(kableExtra)
-
-load("../study_objects.RData")
-st <- readRDS("../overview.rds")
-
-ft <- st %>%
-  filter(Study == "Erotic Images 1") %>%
-  mutate(
-    across(where(is.numeric), ~ round(., 2)),
-    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
-    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
-    Experimental = ifelse(Experimental, "✔", "✖"),
-    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
-    Labstudy = ifelse(Labstudy, "🏠", "🌍")
-    )
-
-kbl(ft, escape = F,
-    col.names = c("Study",
-                  "Effect expected",
-                  "N",
-                  "Trials",
-                  "M",
-                  "SD",
-                  "Hits (%)",
-                  "t",
-                  "p",
-                  "ES",
-                  "Var",
-                  "BF",
-                  "Direction",
-                  "Lab/Online"),
-    align = "lccccccccccccc") %>%
-  kable_classic("hover", fixed_thead = T)
+source("../scripts/generate_table.R")
+generate_table("Erotic Images 1")
 ```
 
 ## Hypothesis
 
-...
+The research hypotheses of the study focus on testing the validity of a micropsychokinetic (micro-PK) effect, which refers to the idea that the mind can subconsciously influence random events, such as the viewing of erotic images. The study builds on previous work by Maier and Dechamps, who suggested that a micro-PK effect might manifest as a decrease in effect strength over time, following a pattern similar to a damped harmonic oscillation (a gradually diminishing wave-like pattern). The hypotheses are as follows:
+
+1.  The micro-PK effect will decrease over time during data collection.
+2.  The micro-PK effect will follow a systematic pattern similar to a damped harmonic oscillation, which would require a large sample size to observe.
+3.  If a micro-PK effect is present, the frequency of increases and decreases in the effect will be higher when analyzed sequentially compared to simulated data, indicating a true micro-PK effect.
+
+The experiment focuses on the influence of micro-PK effects triggered by the unconscious desires of individuals addicted to pornography when viewing erotic images. The study assumes that the unconscious need for explicit material (independent variable) might influence the results of a true random number generator (tRNG), leading to a higher probability of selecting images that match the observer's unconscious needs.
+
+Finally, the study predicts that for pornography addicts, the tRNG will generate fewer erotic images than expected by chance, forming the basis for applying the previous three hypotheses:
+
+4.  When observed by a subject addicted to pornography, the number of erotic images shown will be statistically significantly below the chance level.
 
 ## Participants
 
@@ -84,21 +61,56 @@ kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statis
 
 ## Materials
 
-...
+The study began by collecting socio-demographic data from participants, including gender, age, education, and other personal details. Internet pornography addiction was assessed using the Cyber-Pornography Use Inventory (CPUI), which includes items on perceived compulsivity, isolation, effort to access pornography, and guilt. Attitudes towards pornography were measured using a nine-item scale, and participants' pornography usage behavior was also recorded. Control variables included honesty, attention to the images, and how erotic the images were perceived to be.
+
+The experimental phase involved participants viewing a series of 50 randomly generated images, either erotic or neutral, determined by a quantum random number generator. The experiment was conducted online, with participants instructed to focus on the images while maintaining attention throughout. The images were displayed briefly, followed by a black screen, and this process was repeated 50 times. The study aimed to measure the number of erotic images viewed as the dependent variable.
+
+The stimuli used in the experiment included neutral images from the International Affective Picture System (IAPS) and erotic images from both IAPS and the Open Affective Standardized Image Set (OASIS). Due to a lack of suitable erotic images, particularly homosexual ones, additional images were sourced from license-free databases and validated by experts. Participants could choose image sets based on their sexual orientation, ensuring that the erotic content was relevant to their preferences.
 
 ## Procedure
 
-...
+Participants received a link directing them to the LMU homepage. Here, they were informed about the study's content, requirements, and technical specifications, including a note that the study was optimized for Google Chrome and Firefox and not compatible with smartphones or tablets.
+
+Participants were then directed to SoSci Survey, where the online questionnaire was hosted. They received further details about the study, including its length, voluntariness, and anonymity. Participants had to confirm that they were over 18 years old and had read and understood the consent form to proceed.
+
+The first part of the questionnaire covered several areas:
+
+-   Socio-demographic data
+-   Relationship status
+-   Self-efficacy
+-   Attitudes towards pornography use
+-   Use, duration, frequency, and type of pornography consumption
+-   The Cyber Pornography Use Inventory (CPUI)
+
+After completing the initial questions, participants selected the type of pornographic images they preferred based on their sexual orientation. They were redirected to another homepage to begin the experiment, where they had to reconfirm their age and consent to view explicit content. Participants then viewed 50 randomly generated stimuli, which included both erotic and neutral images.
+
+After the experiment, participants returned to SoSci Survey to answer additional questions about:
+
+-   Self-efficacy
+-   Image evaluation
+-   Honesty in their responses
+-   Attention during image presentation
+-   Their guesses about the study's purpose
+
+The final page of the survey provided contact information and a link to the sources of the images used in the experiment.
 
 ## Sample Size and Data Analysis
 
-...
+The statistical analysis in the study followed the approach of previous studies conducted by the lab utilizing Bayesian inference techniques. Before conducting the study, it was decided to use Bayesian one-sided one-sample t-tests for data analysis.
+
+For the Bayesian analysis, the effect size was defined a priori using a Cauchy distribution, with a scale parameter (r) of .1, based on previous research by the LMU Micro-Pk lab. This choice of a lower r value is typical in psi research, where effect sizes are generally small.
+
+To determine if the effect followed a damped harmonic oscillation, a regression analysis was conducted using the Python module SciPy. Specifically, the `scipy.optimize.curve_fit` function was employed, which uses the Levenberg-Marquardt algorithm to estimate the parameters of the damped harmonic oscillation based on the principle of the sum of least squares. This method allowed the researchers to assess whether the data exhibited the predicted oscillatory pattern.
+
+The sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/erotic/erotic2.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
+-   [Student Report](../data/erotic/erotic1-report.pdf)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/erotic/isst1.html)
 -   [Questionnaire](../data/erotic/isst_2017-05-18_14-23.csv)
+-   [Stimuli Sources](../data/erotic/isst-quellen.html)
 :::

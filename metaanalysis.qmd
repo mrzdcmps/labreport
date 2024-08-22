@@ -17,7 +17,7 @@ Last update: 04 May 2020
 In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for "Smokers 1" is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses.
 
 ```{r}
-st <- readRDS("overview.rds")
+st <- readRDS("data/overview.rds")
 
 # Select studies / conditions
 data <- subset(st, st$Experimental == TRUE)
@@ -85,8 +85,6 @@ funnel(res)
 In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
 
 ```{r}
-st <- readRDS("overview.rds")
-
 # Select studies / conditions
 data <- subset(st, st$Experimental == FALSE)
 

@@ -8,41 +8,8 @@ execute:
 ---
 
 ```{r}
-library(tidyverse)
-library(knitr)
-library(kableExtra)
-
-load("../study_objects.RData")
-st <- readRDS("../overview.rds")
-
-ft <- st %>%
-  filter(Study == "Coin Toss") %>%
-  mutate(
-    across(where(is.numeric), ~ round(., 2)),
-    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
-    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
-    Experimental = ifelse(Experimental, "✔", "✖"),
-    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
-    Labstudy = ifelse(Labstudy, "🏠", "🌍")
-    )
-
-kbl(ft, escape = F,
-    col.names = c("Study",
-                  "Effect expected",
-                  "N",
-                  "Trials",
-                  "M",
-                  "SD",
-                  "Hits (%)",
-                  "t",
-                  "p",
-                  "ES",
-                  "Var",
-                  "BF",
-                  "Direction",
-                  "Lab/Online"),
-    align = "lccccccccccccc") %>%
-  kable_classic("hover", fixed_thead = T)
+source("../scripts/generate_table.R")
+generate_table("Coin Toss")
 ```
 
 ## Hypothesis

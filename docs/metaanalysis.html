@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The LMU Micro-PK Project - Meta-Analysis</title>
+<title>Meta-Analysis – The LMU Micro-PK Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -140,17 +140,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./metaanalysis.html">Micro-PK</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>presence</strong> of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for “Smokers 1” is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>st <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"overview.rds"</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>st <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/overview.rds"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Select studies / conditions</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">subset</span>(st, st<span class="sc">$</span>Experimental <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
@@ -224,15 +224,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 8%">
 <col style="width: 3%">
 <col style="width: 4%">
-<col style="width: 7%">
+<col style="width: 6%">
 <col style="width: 6%">
 <col style="width: 5%">
-<col style="width: 7%">
 <col style="width: 6%">
-<col style="width: 7%">
 <col style="width: 6%">
-<col style="width: 7%">
 <col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 3%">
 <col style="width: 5%">
 </colgroup>
 <thead>
@@ -251,6 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: right;">Var</th>
 <th style="text-align: right;">BF</th>
 <th style="text-align: left;">Direction</th>
+<th style="text-align: right;">Year</th>
 <th style="text-align: left;">Labstudy</th>
 </tr>
 </thead>
@@ -270,6 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0058570</td>
 <td style="text-align: right;">0.3034712</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -287,6 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0023268</td>
 <td style="text-align: right;">0.1448423</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -304,6 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0460249</td>
 <td style="text-align: right;">1.8155253</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -321,6 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0440922</td>
 <td style="text-align: right;">1.0456588</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
@@ -338,6 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0208599</td>
 <td style="text-align: right;">0.7452738</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -355,6 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0143678</td>
 <td style="text-align: right;">1.2000567</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
@@ -372,6 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0263582</td>
 <td style="text-align: right;">0.4729100</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -389,6 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0254140</td>
 <td style="text-align: right;">1.2718689</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
@@ -406,6 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0250580</td>
 <td style="text-align: right;">0.8018915</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -423,7 +434,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0042655</td>
 <td style="text-align: right;">2.2417309</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">15</td>
@@ -440,6 +452,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0086531</td>
 <td style="text-align: right;">66.0635985</td>
 <td style="text-align: left;">different</td>
+<td style="text-align: right;">2015</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -457,6 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0057165</td>
 <td style="text-align: right;">0.0902946</td>
 <td style="text-align: left;">less</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
@@ -474,6 +488,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0049440</td>
 <td style="text-align: right;">0.3958797</td>
 <td style="text-align: left;">less</td>
+<td style="text-align: right;">2017</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -491,6 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0007159</td>
 <td style="text-align: right;">10.4147205</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -508,6 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0007647</td>
 <td style="text-align: right;">0.4976420</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -525,6 +542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0006841</td>
 <td style="text-align: right;">0.4146918</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -542,6 +560,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0000795</td>
 <td style="text-align: right;">0.0993029</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -559,6 +578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0002446</td>
 <td style="text-align: right;">19.8004286</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -576,6 +596,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0004848</td>
 <td style="text-align: right;">0.0884220</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -593,6 +614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0001640</td>
 <td style="text-align: right;">0.0364067</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -610,6 +632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0002463</td>
 <td style="text-align: right;">0.0840137</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -627,6 +650,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0041595</td>
 <td style="text-align: right;">0.9734614</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -644,6 +668,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.0014759</td>
 <td style="text-align: right;">0.6359922</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 </tbody>
@@ -739,17 +764,15 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>absence</strong> of an effect. In studies comparing experimental to control conditions, only the control conditions are included.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>st <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"overview.rds"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Select studies / conditions</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">subset</span>(st, st<span class="sc">$</span>Experimental <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select studies / conditions</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">subset</span>(st, st<span class="sc">$</span>Experimental <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 1%">
-<col style="width: 15%">
+<col style="width: 14%">
 <col style="width: 8%">
 <col style="width: 3%">
 <col style="width: 4%">
@@ -762,6 +785,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <col style="width: 6%">
 <col style="width: 6%">
 <col style="width: 6%">
+<col style="width: 3%">
 <col style="width: 5%">
 </colgroup>
 <thead>
@@ -780,6 +804,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <th style="text-align: right;">Var</th>
 <th style="text-align: right;">BF</th>
 <th style="text-align: left;">Direction</th>
+<th style="text-align: right;">Year</th>
 <th style="text-align: left;">Labstudy</th>
 </tr>
 </thead>
@@ -799,6 +824,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0349754</td>
 <td style="text-align: right;">0.4860153</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -816,6 +842,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0344907</td>
 <td style="text-align: right;">0.6493717</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
@@ -833,6 +860,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0251977</td>
 <td style="text-align: right;">0.4651069</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -850,7 +878,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0036916</td>
 <td style="text-align: right;">0.4177974</td>
 <td style="text-align: left;">different</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">16</td>
@@ -867,6 +896,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0075871</td>
 <td style="text-align: right;">0.1630540</td>
 <td style="text-align: left;">different</td>
+<td style="text-align: right;">2015</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
@@ -884,6 +914,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0045675</td>
 <td style="text-align: right;">0.2963604</td>
 <td style="text-align: left;">different</td>
+<td style="text-align: right;">2016</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
@@ -901,6 +932,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0009973</td>
 <td style="text-align: right;">0.4604948</td>
 <td style="text-align: left;">different</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -918,6 +950,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0009151</td>
 <td style="text-align: right;">3.2747936</td>
 <td style="text-align: left;">different</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -935,6 +968,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0010638</td>
 <td style="text-align: right;">0.3519599</td>
 <td style="text-align: left;">different</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -952,6 +986,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0002444</td>
 <td style="text-align: right;">0.2331401</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -969,6 +1004,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0004847</td>
 <td style="text-align: right;">0.2230455</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
@@ -986,6 +1022,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0001640</td>
 <td style="text-align: right;">0.0375426</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
@@ -1003,6 +1040,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.0002465</td>
 <td style="text-align: right;">0.0272478</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 </tbody>
@@ -1135,18 +1173,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1178,7 +1205,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1186,7 +1235,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

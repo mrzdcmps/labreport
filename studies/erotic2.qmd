@@ -8,41 +8,8 @@ execute:
 ---
 
 ```{r}
-library(tidyverse)
-library(knitr)
-library(kableExtra)
-
-load("../study_objects.RData")
-st <- readRDS("../overview.rds")
-
-ft <- st %>%
-  filter(Study == "Erotic Images 2") %>%
-  mutate(
-    across(where(is.numeric), ~ round(., 2)),
-    `Hits (%)` = formattable::color_tile("coral2","cornflowerblue")(`Hits (%)`),
-    p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
-    Experimental = ifelse(Experimental, "✔", "✖"),
-    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
-    Labstudy = ifelse(Labstudy, "🏠", "🌍")
-    )
-
-kbl(ft, escape = F,
-    col.names = c("Study",
-                  "Effect expected",
-                  "N",
-                  "Trials",
-                  "M",
-                  "SD",
-                  "Hits (%)",
-                  "t",
-                  "p",
-                  "ES",
-                  "Var",
-                  "BF",
-                  "Direction",
-                  "Lab/Online"),
-    align = "lccccccccccccc") %>%
-  kable_classic("hover", fixed_thead = T)
+source("../scripts/generate_table.R")
+generate_table("Erotic Images 2")
 ```
 
 ## Hypothesis
@@ -60,34 +27,13 @@ Hypothesis 6 extended this reasoning to individuals addicted to internet pornogr
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study14_erotic.2)
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$DE02_01, na.rm=T)
-sd_age <- sd(df$DE02_01, na.rm=T)
-female_count <- sum(df$DE01 == 1, na.rm=T)/total_participants*100
-male_count <- sum(df$DE01 == 2, na.rm=T)/total_participants*100
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    paste0(round(female_count, 2), "%"),
-    paste0(round(male_count, 2), "%"),
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = study14_erotic.2,
+  age_col = "DE02_01",
+  gender_col = "DE01",
+  male_value = 2,
+  female_value = 1
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials
@@ -118,5 +64,4 @@ The sample size was determined by practical restrictions, since this study was c
 -   [Student Report](../data/erotic/erotic2-report.pdf)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/erotic/isst2.html)
 -   [Questionnaire](../data/erotic/survey.isst.2018-10-10.xml)
--   [Stimuli Sources](../data/erotic/isst-quellen.html)
 :::

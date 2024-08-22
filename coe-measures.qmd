@@ -37,8 +37,8 @@ The highest reached Bayes Factor at *any time* during data collection characteri
 
 Example:
 ```{r echo=FALSE}
-bf <- readRDS("incongruence-bf.rds")
-sims <- readRDS("sims.rds")
+bf <- readRDS("data/incongruence-bf.rds")
+sims <- readRDS("data/sims.rds")
 ```
 
 ```{r}
