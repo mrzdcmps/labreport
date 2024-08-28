@@ -23,6 +23,11 @@ generate_table <- function(experiment_name) {
       Labstudy = ifelse(Labstudy, "🏠", "🌍")
     )
   
+  if(experiment_name == ""){
+    ft <- ft %>%
+      mutate(Study = text_spec(Study, link = links))
+  }
+  
   kbl(ft, escape = F,
       col.names = c("Study",
                     "Effect expected",
