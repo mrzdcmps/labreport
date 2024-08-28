@@ -1,0 +1,136 @@
+---
+title: "Discussion"
+format: 
+  html:
+    page-layout: full
+editor: visual
+page-navigation: true
+---
+
+::: callout-note
+This section will be updated with each new release of the report. Current state: *04 May 2020*
+:::
+
+```{r setup, include=FALSE}
+st <- readRDS("data/overview.rds")
+load("data/study_objects.RData")
+
+# Number of Studies
+study_objects <- ls(pattern = "^study")
+numbers <- as.numeric(gsub("study([0-9]+).*", "\\1", study_objects))
+max_number <- max(numbers)
+
+#Frequentist m-a with metafor 
+library(metafor)
+
+# Specify parameters of Exp Studies
+exp <- subset(st, Experimental == TRUE)
+yi=exp$ES
+vi=exp$Var
+studies=exp$Study
+
+yi[which(studies == "Smokers 1 Exp")] <- -yi[which(studies == "Smokers 1 Exp")]
+
+res.e <- rma(
+  yi,
+  vi, 
+  method="REML",
+  knha=TRUE,
+  slab=paste(studies)
+  )
+
+# Control studies
+con <- subset(st, Experimental == FALSE)
+yi=con$ES
+vi=con$Var
+studies=con$Study
+
+res.c <- rma(
+  yi,
+  vi, 
+  method="REML",
+  knha=TRUE,
+  slab=paste(studies)
+  )
+
+# CoE Meta-Analysis
+library(metap)
+coe <- readRDS("data/coe.rds")
+
+# Select studies / conditions
+exp <- subset(coe, coe$Experimental == TRUE)
+
+istwo <- ifelse(exp$Direction == "different", TRUE, FALSE) # two-tailed test
+df <- exp$N-1 # degrees of freedom
+
+e.maxbf <- invchisq(two2one(exp$`MaxBF p`, istwo), k=df)
+e.bfenergy <- invchisq(two2one(exp$`Energy p`, istwo), k=df)
+e.fft <- invchisq(two2one(exp$`FFT p`, istwo), k=df)
+
+con <- subset(coe, coe$Experimental == FALSE)
+
+istwo <- ifelse(con$Direction == "different", TRUE, FALSE) # two-tailed test
+df <- con$N-1 # degrees of freedom
+
+c.maxbf <- invchisq(two2one(con$`MaxBF p`, istwo), k=df)
+c.bfenergy <- invchisq(two2one(con$`Energy p`, istwo), k=df)
+c.fft <- invchisq(two2one(con$`FFT p`, istwo), k=df)
+
+options(scipen = 999)
+```
+
+## Results of the Micro-PK Meta-Analysis
+
+### Summary of Results
+
+The meta-analytical assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses `{r} print(max_number)` studies with a total of `{r} nrow(subset(st, st$Experimental == TRUE))` experimental conditions and `{r} nrow(subset(st, st$Experimental == FALSE))` control conditions. In sum, data from `{r} sum(st$N)` participants have been analyzed.
+
+While many of the studies included in this report followed specific hypotheses deviating from a general micro-PK effect, all analyses in the meta-analytical assessment were conducted under the assumption of a general micro-PK effect. This assumption was made to ensure comparability across studies and to allow for the calculation of a combined effect size. Descriptions of the hypotheses for each study can be found in the respective experiments section.
+
+Looking at all `{r} nrow(exp)` conditions, where an effect could be assumed, `{r} round(sum(exp$p < 0.05)/nrow(exp)*100,2)`% showed a significant effect. A random-effects meta-analysis was conducted to assess the overall effect size. The analysis revealed a moderate level of heterogeneity, with `{r} round(res.e$I2,2)`% of the observed variance attributed to differences between studies. The test for heterogeneity was statistically significant (*Q* = `{r} round(res.e$QE,2)`, *p* = `{r} round(res.e$QEp,3)`), indicating that the studies do not share a common effect size.
+
+The overall effect size estimate was `{r} round(res.e$b,3)` with a 95% confidence interval ranging from `{r} round(res.e$ci.lb,4)` to `{r} round(res.e$ci.ub,4)`. The test for the overall effect size was not statistically significant (*p* = `{r} round(res.e$pval,3)`). This suggests that, on average, no meaningful micro-PK effect was observed across all studies.
+
+A second random-effects meta-analysis was conducted on `{r} nrow(con)` control conditions. The analysis revealed moderate heterogeneity, with approximately `{r} round(res.c$I2,2)`% of the observed variance attributed to differences between studies rather than sampling error. The test for heterogeneity was not statistically significant (*Q* = `{r} round(res.c$QE,2)`, *p* = `{r} round(res.c$QEp,3)`), suggesting that the variability among studies was not substantial enough to reject the null hypothesis of homogeneity.
+
+The overall effect size estimate for the control conditions was `{r} round(res.c$b,3)` (95% CI: `{r} round(res.c$ci.lb,4)` to `{r} round(res.c$ci.ub,4)`), which was not statistically significant (*p* = `{r} round(res.c$pval,3)`). This indicates that, on average, there is no significant effect present in the control conditions and studies.
+
+### Implications
+The results of the two meta-analyses offer complementary insights into the effects observed in experimental versus control conditions. The first meta-analysis, which focused on studies where an effect could be assumed, identified a small, non-significant overall effect size (`{r} round(res.e$b,3)`), with about `{r} round(res.e$I2,0)`% of the variability among studies attributed to heterogeneity. This suggests that while there may be some underlying effect, it is not consistently detectable across the studies analyzed.
+
+In contrast, the second meta-analysis, which focused on control conditions, revealed an even smaller and non-significant overall effect size (`{r} round(res.c$b,3)`), with moderate heterogeneity (I2 = `{r} round(res.c$I2,2)`%) that was not statistically significant. The lack of a significant effect in the control conditions is expected, as these conditions are typically designed to isolate and control for potential confounding variables.
+
+When considering both analyses together, the non-significant effect sizes in both the experimental and control conditions suggest that the interventions or experimental manipulations across the studies may not be robust enough to produce a meaningful effect. The moderate levels of heterogeneity observed in both analyses indicate some variability across studies, possibly due to differences in study design, populations, or implementation of the interventions. However, the absence of significant heterogeneity in the control analysis suggests that the variability in effect sizes in the first analysis is more likely attributable to differences in the experimental conditions themselves rather than random error.
+
+Taken together, the analyses suggest that although the estimated ES of the experimental conditions is higher than of the control conditions, the overall effect of micro-PK interventions across the studies is not statistically significant. This indicates that we could not find a evidence for a constant general micro-PK effect in all micro-PK studies conducted at the LMU Micro-PK lab.
+
+## Results of the Change of Evidence Meta-Analysis
+
+### Summary of Results
+
+Since Psi-effects may be influenced by the accumulation of evidence over time, new measures have been devised to analyze how this [evidence changes](coe-measures.html). By comparing these results to simulations, empirical p-values can be calculated. A meta-analytic assessment of these change-of-evidence measures was conducted using the inverse chi-square `invchisq`-function to combine p-values across studies. Three characteristics were analyzed: Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve’s Fast Fourier Transform (FFT).
+
+For all experimental conditions, the combined chi-square statistics were calculated with `{r} e.maxbf$df` degrees of freedom, yielding the following results: `{r} round(e.maxbf$chisq,2)` for the Maximum BF (*p* = `{r} round(e.maxbf$p,3)`), `{r} round(e.bfenergy$chisq,2)` for the BF Energy (*p* = `{r} round(e.bfenergy$p,3)`) and `{r} round(e.fft$chisq,2)` for the FFT amplitude sum (*p* = `{r} round(e.fft$p,3)`).
+
+All three characteristics—Maximum BF, BF Energy, and FFT amplitude sum—demonstrated statistically significant results, suggesting that the changes in evidence observed in the experimental conditions are unlikely to be due to chance alone.
+
+For all control conditions, the combined chi-square statistics were calculated with `{r} c.maxbf$df` degrees of freedom, yielding the following results: `{r} round(c.maxbf$chisq,2)` for the Maximum BF (*p* = `{r} round(c.maxbf$p,3)`), `{r} round(c.bfenergy$chisq,2)` for the BF Energy (*p* = `{r} round(c.bfenergy$p,3)`) and `{r} round(c.fft$chisq,2)` for the FFT amplitude sum (*p* = `{r} round(c.fft$p,3)`).
+
+None of the three characteristics demonstrated statistically significant results, indicating that the changes in evidence observed in the control conditions are likely due to random variation rather than any underlying effect.
+
+### Implications
+
+The results of our meta-analytic assessment reveal distinct patterns in the change of evidence measures across experimental and control conditions. For experimental conditions, the analysis of Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve's Fast Fourier Transform (FFT) yielded statistically significant results, suggesting that the changes in evidence are unlikely to be due to chance alone. This could be the result of a volatile micro-PK effect. In contrast, none of these measures demonstrated statistically significant results in the control conditions, indicating that observed variations are more likely attributable to random fluctuation.
+
+### Publication Bias
+
+These findings prompt a consideration of the most likely alternative explanations for the significant results observed in the experimental conditions. One common concern in meta-analytic studies is the potential for publication bias, which occurs when only studies with significant results are published, while studies with non-significant findings are less likely to be reported. This could lead to an overestimation of the true effect size and distort the overall conclusions drawn from the meta-analysis.
+
+However, in this case, the concern about publication bias is mitigated by the nature of the dataset. The presented lab report encompasses all studies conducted by our research group, including both published and unpublished studies. This comprehensive inclusion strategy ensures that the analysis is not biased by selective reporting and provides a more accurate reflection of the evidence available. By including all relevant studies, regardless of their publication status, we effectively rule out the file drawer problem and mitigate the impact of publication bias.
+
+### Conclusion
+
+Our results, therefore, reflect the true state of evidence for the Psi-effect under investigation. The significant findings in the experimental conditions indicate that the unusual temporal development of evidence found in many of our studies is robust and not merely an artifact of selective publication. The absence of significant results in the control conditions further supports the validity of our findings, as it demonstrates that the significant effects in experimental conditions are not due to random variation or uncontrolled biases.
+
+In conclusion, while at this point in time, we cannot demonstrate a meta-analytically significant effect of micro-PK intervetions across all our studies, the significant change of evidence measures in the experimental conditions seem to be robust and are not likely to be influenced by publication bias, given the inclusion of all studies from our research group. This comprehensive approach strengthens the reliability of our findings and supports the validity of the observed effects. Future research should continue to explore these effects, ideally with replication studies and transparent reporting practices, to further validate and understand the phenomena under investigation.
+
