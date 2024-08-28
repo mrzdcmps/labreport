@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./coe-metaanalysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -100,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Change of Evidence</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./metaanalysis.html"> 
+    <a class="nav-link active" href="./metaanalysis.html" aria-current="page"> 
 <span class="menu-text">Meta-Analysis</span></a>
   </li>  
 </ul>
@@ -109,14 +110,49 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./discussion.html">Discussion</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metaanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro-PK</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coe-metaanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Change of Evidence</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./discussion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Discussion</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -125,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -150,31 +186,30 @@ Note
 <p>This section will be updated with each new release of the report. Current state: <em>04 May 2020</em></p>
 </div>
 </div>
-<section id="results-of-the-micro-pk-meta-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="results-of-the-micro-pk-meta-analysis">Results of the Micro-PK Meta-Analysis</h2>
-<p>The meta-analytical assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses 14 studies with a total of 23 experimental conditions and 13 control conditions. In sum, data from 55668 participants have been analyzed.</p>
-<p>While many of the studies included in this report followed specific hypotheses deviating from a general micro-PK effect, all analyses in the meta-analytical assessment were conducted under the assumption of a general micro-PK effect. This assumption was made to ensure comparability across studies and to allow for the calculation of a combined effect size. Descriptions of the hypotheses for each study can be found in the respective experiments section.</p>
-<p>Looking at all 23 conditions, where an effect could be assumed, 0% showed a significant effect. A random-effects meta-analysis was conducted to assess the overall effect size. The analysis revealed a moderate level of heterogeneity, with 45.34% of the observed variance attributed to differences between studies. The test for heterogeneity was statistically significant (<em>Q</em> = 43.46, <em>p</em> = 0.004), indicating that the studies do not share a common effect size.</p>
-<p>The overall effect size estimate was 0.017 with a 95% confidence interval ranging from -0.0069 to 0.0409. The test for the overall effect size was not statistically significant (<em>p</em> = 0.155). This suggests that, on average, no meaningful micro-PK effect was observed across all studies.</p>
-<p>A second random-effects meta-analysis was conducted on 13 control conditions. The analysis revealed moderate heterogeneity, with approximately 42.66% of the observed variance attributed to differences between studies rather than sampling error. The test for heterogeneity was not statistically significant (<em>Q</em> = 18.71, <em>p</em> = 0.096), suggesting that the variability among studies was not substantial enough to reject the null hypothesis of homogeneity.</p>
-<p>The overall effect size estimate for the control conditions was -0.005 (95% CI: -0.029 to 0.0187), which was not statistically significant (<em>p</em> = 0.646). This indicates that, on average, there is no significant effect present in the control conditions and studies.</p>
-<p>The results of the two meta-analyses offer complementary insights into the effects observed in experimental versus control conditions. The first meta-analysis, which focused on studies where an effect could be assumed, identified a small, non-significant overall effect size (0.017), with about 45% of the variability among studies attributed to heterogeneity. This suggests that while there may be some underlying effect, it is not consistently detectable across the studies analyzed.</p>
-<p>In contrast, the second meta-analysis, which focused on control conditions, revealed an even smaller and non-significant overall effect size (-0.005), with moderate heterogeneity (I2 = 42.66%) that was not statistically significant. The lack of a significant effect in the control conditions is expected, as these conditions are typically designed to isolate and control for potential confounding variables.</p>
-<p>When considering both analyses together, the non-significant effect sizes in both the experimental and control conditions suggest that the interventions or experimental manipulations across the studies may not be robust enough to produce a meaningful effect. The moderate levels of heterogeneity observed in both analyses indicate some variability across studies, possibly due to differences in study design, populations, or implementation of the interventions. However, the absence of significant heterogeneity in the control analysis suggests that the variability in effect sizes in the first analysis is more likely attributable to differences in the experimental conditions themselves rather than random error.</p>
-<p>Taken together, the analyses suggest that although the estimated ES of the experimental conditions is higher than of the control conditions, the overall effect of micro-PK interventions across the studies is not statistically significant. This indicates that we could not find a evidence for a constant general micro-PK effect in all micro-PK studies conducted at the LMU Micro-PK lab.</p>
+<section id="summary-of-results" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-results">Summary of Results</h3>
+<p>The meta-analytic assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses 14 studies with a total of 23 experimental conditions and 13 control conditions, including data from 55668 participants and reveals several key insights. Although individual studies included in this report often tested specific hypotheses, the meta-analysis focused on a general micro-PK effect to ensure comparability. Descriptions of the hypotheses for each study can be found in the respective <a href="experiments.html">experiments</a> section.</p>
+<p>The overall effect size for micro-PK was found to be non-significant (0.017, <em>p</em> = 0.155) across experimental conditions, with moderate heterogeneity (45.34%). Similarly, control conditions showed no significant effect (-0.005, <em>p</em> = 0.646). These results suggest that the experimental manipulations may not be robust enough to produce a consistently meaningful effect. The moderate heterogeneity in both analyses indicates variability due to study design or implementation differences, though the lack of significant heterogeneity in control conditions suggests that variability in experimental conditions is more likely due to differences in interventions.</p>
 </section>
-<section id="results-of-the-change-of-evidence-meta-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="results-of-the-change-of-evidence-meta-analysis">Results of the Change of Evidence Meta-Analysis</h2>
+<section id="change-of-evidence-measures" class="level3">
+<h3 class="anchored" data-anchor-id="change-of-evidence-measures">Change of Evidence Measures</h3>
 <p>Since Psi-effects may be influenced by the accumulation of evidence over time, new measures have been devised to analyze how this <a href="coe-measures.html">evidence changes</a>. By comparing these results to simulations, empirical p-values can be calculated. A meta-analytic assessment of these change-of-evidence measures was conducted using the inverse chi-square <code>invchisq</code>-function to combine p-values across studies. Three characteristics were analyzed: Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve’s Fast Fourier Transform (FFT).</p>
 <p>For all experimental conditions, the combined chi-square statistics were calculated with 35571 degrees of freedom, yielding the following results: 36155.12 for the Maximum BF (<em>p</em> = 0.015), 36096.14 for the BF Energy (<em>p</em> = 0.025) and 36174.83 for the FFT amplitude sum (<em>p</em> = 0.012).</p>
-<p>All three characteristics—Maximum BF, BF Energy, and FFT amplitude sum—demonstrated statistically significant results, suggesting that the changes in evidence observed in the experimental conditions are unlikely to be due to chance alone.</p>
-<p>For all control conditions, the combined chi-square statistics were calculated with 20061 degrees of freedom, yielding the following results: 11953.7 for the Maximum BF (<em>p</em> = 1), 19762.9 for the BF Energy (<em>p</em> = 0.932) and 19712.76 for the FFT amplitude sum (<em>p</em> = 0.96).</p>
-<p>None of the three characteristics demonstrated statistically significant results, indicating that the changes in evidence observed in the control conditions are likely due to random variation rather than any underlying effect.</p>
-<p>The results of our meta-analytic assessment reveal distinct patterns in the change of evidence measures across experimental and control conditions. For experimental conditions, the analysis of Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve’s Fast Fourier Transform (FFT) yielded statistically significant results, suggesting that the changes in evidence are unlikely to be due to chance alone. This could be the result of a volatile micro-PK effect. In contrast, none of these measures demonstrated statistically significant results in the control conditions, indicating that observed variations are more likely attributable to random fluctuation.</p>
-<p>These findings prompt a consideration of the most likely alternative explanations for the significant results observed in the experimental conditions. One common concern in meta-analytic studies is the potential for publication bias, which occurs when only studies with significant results are published, while studies with non-significant findings are less likely to be reported. This could lead to an overestimation of the true effect size and distort the overall conclusions drawn from the meta-analysis.</p>
-<p>However, in this case, the concern about publication bias is mitigated by the nature of the dataset. The presented lab report encompasses all studies conducted by our research group, including both published and unpublished studies. This comprehensive inclusion strategy ensures that the analysis is not biased by selective reporting and provides a more accurate reflection of the evidence available. By including all relevant studies, regardless of their publication status, we effectively rule out the file drawer problem and mitigate the impact of publication bias.</p>
-<p>Our results, therefore, reflect the true state of evidence for the Psi-effect under investigation. The significant findings in the experimental conditions indicate that the unusual temporal development of evidence found in many of our studies is robust and not merely an artifact of selective publication. The absence of significant results in the control conditions further supports the validity of our findings, as it demonstrates that the significant effects in experimental conditions are not due to random variation or uncontrolled biases.</p>
-<p>In conclusion, while at this point in time, we cannot demonstrate a meta-analytically significant effect of micro-PK intervetions across all our studies, the significant change of evidence measures in the experimental conditions seem to be robust and are not likely to be influenced by publication bias, given the inclusion of all studies from our research group. This comprehensive approach strengthens the reliability of our findings and supports the validity of the observed effects. Future research should continue to explore these effects, ideally with replication studies and transparent reporting practices, to further validate and understand the phenomena under investigation.</p>
+<p>The analysis of change of evidence measures demonstrated statistically significant results for experimental conditions, suggesting that observed evidence changes are unlikely due to random variation. This could be the result of a volatile micro-PK effect. In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results in experimental conditions do not necessarily translate into a substantial overall effect, as no significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence are not likely due to random variation.</p>
+</section>
+<section id="addressing-publication-bias" class="level3">
+<h3 class="anchored" data-anchor-id="addressing-publication-bias">Addressing Publication Bias</h3>
+<p>A potential concern in meta-analyses is publication bias, where significant results are more likely to be published compared to non-significant findings. In our case, the comprehensive inclusion of both published and unpublished studies from our research group effectively mitigates this concern. By incorporating all relevant studies, our analysis is less susceptible to selective reporting, enhancing the reliability of our findings.</p>
+</section>
+<section id="implications-of-findings" class="level3">
+<h3 class="anchored" data-anchor-id="implications-of-findings">Implications of Findings</h3>
+<p>The significant change of evidence measures in experimental conditions suggest dynamic factors influencing evidence accumulation. According to the Model of Pragmatic Information, novel, autonomous effects may decrease in detectability over time. This model may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.</p>
+<p>Despite these insights, the non-significant overall effect size indicates that micro-PK interventions, as tested, may not consistently produce a robust effect. Future research should focus on refining experimental designs, replicating studies, and exploring the underlying mechanisms of micro-PK effects to establish more consistent evidence.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>While our meta-analysis at this point in time did not demonstrate a statistically significant effect of micro-PK interventions, the significant change of evidence measures in experimental conditions indicate that the phenomena observed are not purely due to chance. Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.</p>
+<p>We would like to additionally encourage the scientific community to follow this example of transparent reporting and data sharing to enhance the reproducibility and reliability of research findings in the field of parapsychology and related disciplines and to counteract publication bias and selective reporting practices.</p>
 
 
 </section>
@@ -600,6 +635,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="./coe-metaanalysis.html" class="pagination-link" aria-label="Change of Evidence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Change of Evidence</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -43,6 +43,8 @@ website:
           file: metaanalysis.qmd
         - text: "Change of Evidence"
           file: coe-metaanalysis.qmd
+        - text: "Discussion"
+          file: discussion.qmd
 #        - text: "Shiny App"
 #          file: metaanalysis-shiny.qmd
         
