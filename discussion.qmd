@@ -8,7 +8,9 @@ page-navigation: true
 ---
 
 ::: callout-note
-This section will be updated with each new release of the report. Current state: *04 May 2020*
+This section will be updated with each new release of the report.
+
+Current version: v1.0 *04 May 2020*
 :::
 
 ```{r setup, include=FALSE}

@@ -33,4 +33,6 @@ The report is regularly updated to include new studies and results. The current 
 
 ## Reference This Report
 
-Dechamps, M. C. (2024). *The LMU Micro-PK Project: Version 1.0*. https://mrzdcmps.github.io/labreport
+If you find this report useful and wish to cite it in your work, please use the following citation format:
+
+Dechamps, M. C. (2024). *The LMU Micro-PK Project: Version 1.0*. Retrieved from https://mrzdcmps.github.io/labreport
