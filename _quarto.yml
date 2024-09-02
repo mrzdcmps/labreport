@@ -6,7 +6,7 @@ bibliography: references.bib
 csl: apa.csl
   
 website: 
-  title: The LMU Micro-PK Project
+  title: Meta-Analysis of a Complete Micro-PK Database from the LMU Lab
   navbar: 
     background: light
     left: 
@@ -49,6 +49,10 @@ website:
 #          file: metaanalysis-shiny.qmd
         
   back-to-top-navigation: false
+  comments:
+    hypothesis:
+      theme: classic
+      showHighlights: whenSidebarOpen
   page-footer:
     center: "&copy; 2024 Dr. Moritz Dechamps"
     background: light

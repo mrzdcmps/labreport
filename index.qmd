@@ -29,10 +29,14 @@ This report includes all studies conducted at the LMU Lab that explore a general
 
 ### Versions
 
-The report is regularly updated to include new studies and results. The current version is 1.0 and includes all studies conducted until 04 May 2020.
+The report is regularly updated to include new studies and results. The current version  includes all studies conducted from the beginning of the project in 2016 until 04 May 2020.
+
+### Comments and Feedback
+
+Instead of a traditional peer-review process, we would like to encourage you to provide feedback on the report using the hypothesis.is platform, which can be activated by opening the sidebar on the right. This way, we hope to foster a more open and transparent dialogue about the results and methods presented here.
 
 ## Reference This Report
 
 If you find this report useful and wish to cite it in your work, please use the following citation format:
 
-Dechamps, M. C. (2024). *The LMU Micro-PK Project: Version 1.0*. <https://doi.org/10.5281/zenodo.13623032>. Retrieved from <https://mrzdcmps.github.io/labreport>
+Dechamps, M. C. (2024). *Meta-Analysis of a Complete Micro-PK Database from the LMU Lab: Years 2016-2020*. <https://doi.org/10.5281/zenodo.13623032>. Retrieved from <https://mrzdcmps.github.io/labreport>
