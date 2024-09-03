@@ -63,5 +63,5 @@ Participants were tested in the lab. Participants sat in front of a laptop conne
 
 ::: {.callout-note title="Resources" collapse="false"}
 -   [Stimulus material](../data/cointoss/stimuli.zip)
--   [Student report](../data/cointoss/Diskussion%20empra%20en-US.pdf)
+-   [Discussion Student report](../data/cointoss/Diskussion.pdf)
 :::

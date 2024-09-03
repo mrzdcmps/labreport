@@ -88,7 +88,7 @@ If smokers see more or less of the target pictures, a mechanism influencing the 
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://www.scientificexploration.org/docs/32/jse_32_2_Maier.pdf) [@maier2018a]
+-   [Publication](https://www.scientificexploration.org/docs/32/jse_32_2_Maier.pdf) [@maier2018]
 -   [Preregistration](https://osf.io/4fzq8)
 -   [OSF Project](https://osf.io/d6gqm)
 :::

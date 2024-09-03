@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -450,20 +470,33 @@ Resources
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full">Publication</a> <span class="citation" data-cites="maier2018b">(<a href="#ref-maier2018b" role="doc-biblioref"><strong>maier2018b?</strong></a>)</span></li>
-<li><a href="../data/relaxation/experiment-sound.html">Experimental Program</a></li>
-<li><a href="../data/relaxation/questionnaire.pdf">Questionnaire</a></li>
-<li><a href="../data/relaxation/pictures.zip">Picture Stimuli</a></li>
-<li><a href="../data/relaxation/sounds.zip">Audio Stimuli</a></li>
+<li><p><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full">Publication</a> <span class="citation" data-cites="maier2018a">(<a href="#ref-maier2018a" role="doc-biblioref">Maier et al., 2018</a>)</span></p></li>
+<li><p><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01350/full">Commentary on Publication</a> <span class="citation" data-cites="grote2018">(<a href="#ref-grote2018" role="doc-biblioref">Grote, 2018</a>)</span></p></li>
+<li><p><a href="https://journalofscientificexploration.org/index.php/jse/article/view/1535">Reply to Commentary</a> <span class="citation" data-cites="maier2021">(<a href="#ref-maier2021" role="doc-biblioref">Maier et al., 2021</a>)</span></p></li>
+<li><p><a href="https://github.com/mrzdcmps/labreport/blob/main/data/relaxation/experiment-sound.html">Experimental Program</a></p></li>
+<li><p><a href="../data/relaxation/questionnaire.pdf">Questionnaire</a></p></li>
+<li><p><a href="../data/relaxation/pictures.zip">Picture Stimuli</a></p></li>
+<li><p><a href="../data/relaxation/sounds.zip">Audio Stimuli</a></p></li>
 </ul>
 </div>
 </div>
 </div>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-grote2018" class="csl-entry" role="listitem">
+Grote, H. (2018). Commentary: Intentional observer effects on quantum randomness: A bayesian analysis reveals evidence against micro-psychokinesis. <em>Frontiers in Psychology</em>, <em>9</em>. <a href="https://doi.org/10.3389/fpsyg.2018.01350">https://doi.org/10.3389/fpsyg.2018.01350</a>
+</div>
+<div id="ref-maier2018a" class="csl-entry" role="listitem">
+Maier, M. A., Dechamps, M. C., &amp; Pflitsch, M. (2018). Intentional observer effects on quantum randomness: A bayesian analysis reveals evidence against micro-psychokinesis. <em>Frontiers in Psychology</em>, <em>9</em>. <a href="https://doi.org/10.3389/fpsyg.2018.00379">https://doi.org/10.3389/fpsyg.2018.00379</a>
+</div>
+<div id="ref-maier2021" class="csl-entry" role="listitem">
+Maier, M. A., Dechamps, M. C., &amp; Schiepek, G. K. (2021). Reply to grote h. (2018). Commentary: Intentional observer effects on quantum randomness: A bayesian analysis reveals evidence against micro-psychokinesis. Frontiers in psychology 9:1350. Doi: 10.3389/fpsyg.2018.01350. <em>Journal of Scientific Exploration</em>, <em>35</em>(2), 383–388. <a href="https://doi.org/10.31275/20211535">https://doi.org/10.31275/20211535</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

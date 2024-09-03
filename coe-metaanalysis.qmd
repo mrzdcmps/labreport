@@ -62,6 +62,25 @@ print(res)
 plot(res)
 ```
 
+### Robustness to Sample Sizes
+
+In comparison to the inverse chi-square method, which weights each p-value by its degree of freedom and therefor its sample size, Fisher's method combines p-values by taking the sum of their logarithms and then comparing them to a chi-square distribution. This method is less sensitive to sample sizes and can be used as a robustness check countering arguments of selectively continuing data collection of studies with a noticeable BF.
+
+```{r}
+#Max BF
+pvals <- two2one(data$`MaxBF p`, istwo)
+sumlog(pvals)
+
+#Energy BF
+pvals <- two2one(data$`Energy p`, istwo)
+sumlog(pvals)
+
+#FFT Amplitude Sum
+pvals <- two2one(data$`FFT p`, istwo)
+sumlog(pvals)
+```
+
+
 ## Control Studies
 
 In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
@@ -69,7 +88,6 @@ In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that 
 ```{r}
 # Select studies / conditions
 data <- subset(coe, coe$Experimental == FALSE)
-
 knitr::kable(data)
 
 library(metap)
@@ -81,7 +99,6 @@ df <- data$N-1 # degrees of freedom
 
 ```{r}
 pvals <- two2one(data$`MaxBF p`, istwo)
-
 res <- invchisq(pvals, k=df)
 print(res)
 plot(res)
@@ -90,7 +107,6 @@ plot(res)
 
 ```{r}
 pvals <- two2one(data$`Energy p`, istwo)
-
 res <- invchisq(pvals, k=df)
 print(res)
 plot(res)
@@ -100,10 +116,24 @@ plot(res)
 
 ```{r}
 pvals <- two2one(data$`FFT p`, istwo)
-
 res <- invchisq(pvals, k=df)
 print(res)
 plot(res)
 ```
 
+### Robustness to Sample Sizes
+
+```{r}
+#Max BF
+pvals <- two2one(data$`MaxBF p`, istwo)
+sumlog(pvals)
+
+#Energy BF
+pvals <- two2one(data$`Energy p`, istwo)
+sumlog(pvals)
+
+#FFT Amplitude Sum
+pvals <- two2one(data$`FFT p`, istwo)
+sumlog(pvals)
+```
 :::

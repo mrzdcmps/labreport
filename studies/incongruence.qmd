@@ -113,7 +113,7 @@ After the third task, participants completed a post-task questionnaire. They rat
 -   [Publication](https://www.parapsychologypress.org/jparticle/jp-84-2-227-253) [@jakob2020]
 -   [Preregistration](https://osf.io/xm4wf)
 -   [OSF Project](https://osf.io/gnryu/)
--   [Experimental Program](../data/incongruence/ink.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/incongruence/ink.html)
 -   [Questionnaire](../data/incongruence/variables_bink_2017-05-23_15-57.csv)
 -   [Stimuli](../data/incongruence/INK.zip)
 :::

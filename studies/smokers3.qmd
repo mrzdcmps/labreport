@@ -68,7 +68,7 @@ We hypothesized a non-linear effect development resulting in the cumulative z-sc
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://www.scientificexploration.org/docs/33/jse_33_3_Dechamps_Maier.pdf) [@dechamps2019]
+-   [Publication](https://journalofscientificexploration.org/index.php/jse/article/view/1513) [@dechamps2019]
 -   [Preregistration](https://osf.io/r6z8y)
 -   [OSF Project](https://osf.io/wk9es)
 :::

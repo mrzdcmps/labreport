@@ -65,7 +65,7 @@ Participants were tested online. After welcoming them audio playback was tested 
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Experimental Program](../data/meditation/nmedi_org.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/meditation/nmedi_org.html)
 -   [Questionnaire Structure](../data/meditation/survey.nmedi-e.2017-12-16.xml)
 -   [Relaxation Audio](../data/meditation/entspannung.mp3)
 -   [Relaxation Audio English](../data/meditation/entspannung_e.mp3)

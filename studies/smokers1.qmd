@@ -83,11 +83,11 @@ If smokers see more or less of the target pictures, a mechanism influencing the 
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/smokers/smokers1.csv)
--   [Download Data "Smokers"](../smokers/smokers1_exp.csv)
+-   [Download Data "Smokers"](../data/smokers/smokers1_exp.csv)
 -   [Download Data "Non-Smokers"](../data/smokers/smokers1_con.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://www.scientificexploration.org/docs/32/jse_32_2_Maier.pdf) [@maier2018a]
+-   [Publication](https://www.scientificexploration.org/docs/32/jse_32_2_Maier.pdf) [@maier2018]
 -   [OSF Project](https://osf.io/d6gqm)
 :::

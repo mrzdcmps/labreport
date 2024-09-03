@@ -64,7 +64,7 @@ Participants were tested online. After welcoming them a prerecorded relaxation a
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Experimental Program](../data/sound/nor-sound.html)
--   [Relaxation Audio](../data/meditation/relaxation.mp3)
--   [Relaxation Audio English](../data/meditation/relaxation_e.mp3)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/sound/nor-sound.html)
+-   [Relaxation Audio](../data/meditation/entspannung.mp3)
+-   [Relaxation Audio English](../data/meditation/entspannung_e.mp3)
 :::

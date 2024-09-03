@@ -90,9 +90,17 @@ Data were analyzed using a Bayesian one-sample t-test with a one-tailed approach
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full) [@maier2018b]
--   [Experimental Program](../data/relaxation/experiment-sound.html)
+-   [Publication](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full) [@maier2018a]
+
+-   [Commentary on Publication](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01350/full) [@grote2018]
+
+-   [Reply to Commentary](https://journalofscientificexploration.org/index.php/jse/article/view/1535) [@maier2021]
+
+-    [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/relaxation/experiment-sound.html)
+
 -   [Questionnaire](../data/relaxation/questionnaire.pdf)
+
 -   [Picture Stimuli](../data/relaxation/pictures.zip)
+
 -   [Audio Stimuli](../data/relaxation/sounds.zip)
 :::

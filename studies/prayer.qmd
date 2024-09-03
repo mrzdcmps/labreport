@@ -64,6 +64,6 @@ Participants were tested online. After welcoming them audio playback was tested 
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Experimental Program](../data/prayer/nmedi_b.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/prayer/nmedi_b.html)
 -   [Questionnaire](../data/prayer/questionnaire.csv)
 :::

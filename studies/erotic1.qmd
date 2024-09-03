@@ -105,7 +105,7 @@ To determine if the effect followed a damped harmonic oscillation, a regression 
 The sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.
 
 ::: {.callout-tip title="Data" collapse="false"}
--   [Download Data](../data/erotic/erotic2.csv)
+-   [Download Data](../data/erotic/erotic1.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}

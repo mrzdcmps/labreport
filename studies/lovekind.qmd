@@ -62,6 +62,6 @@ Additional questions were asked concerning native language, experience with medi
 
 ::: {.callout-note title="Resources" collapse="false"}
 -   [Preregistration](../data/lovingkind/preregistration.pdf)
--   [Experimental Program](../data/lovingkind/klang.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/lovingkind/klang.html)
 -   [Questionnaire](../data/lovingkind/questionnaire.pdf)
 :::

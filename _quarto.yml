@@ -22,6 +22,7 @@ website:
       style: "docked"
       background: light
       alignment: "center"
+      collapse-level: 1
       contents: 
         - experiments.qmd
         - auto: studies

@@ -62,7 +62,7 @@ Participants were tested in the lab. A prerecorded relaxation audio file was rea
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Experimental Program](../data/allgood/experiment-sound-bitbabbler.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/allgood/experiment-sound-bitbabbler.html)
 -   [Questionnaire](../data/allgood/questionnaire.csv)
 -   [Relaxation Audio](../data/meditation/entspannung.mp3)
 -   [Relaxation Audio English](../data/meditation/entspannung_e.mp3)
