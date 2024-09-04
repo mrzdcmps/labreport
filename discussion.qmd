@@ -4,6 +4,7 @@ format:
   html:
     page-layout: full
 editor: visual
+toc: true
 page-navigation: true
 ---
 
@@ -81,13 +82,13 @@ c.fft <- invchisq(two2one(con$`FFT p`, istwo), k=df)
 options(scipen = 999)
 ```
 
-### Summary of Results
+## Summary of Results
 
 The meta-analytic assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses `{r} print(max_number)` studies with a total of `{r} nrow(subset(st, st$Experimental == TRUE))` experimental conditions and `{r} nrow(subset(st, st$Experimental == FALSE))` control conditions, including data from `{r} sum(st$N)` participants and reveals several key insights. Although individual studies included in this report often tested specific hypotheses, the meta-analysis focused on a general micro-PK effect to ensure comparability. Descriptions of the hypotheses for each study can be found in the respective [experiments](experiments.html) section.
 
 The overall effect size for micro-PK was found to be non-significant (`{r} round(res.e$b,3)`, *p* = `{r} round(res.e$pval,3)`) across experimental conditions, with moderate heterogeneity (`{r} round(res.e$I2,2)`%). Similarly, control conditions showed no significant effect (`{r} round(res.c$b,3)`, *p* = `{r} round(res.c$pval,3)`). These results suggest that the experimental manipulations may not be robust enough to produce a consistently meaningful effect. The moderate heterogeneity in both analyses indicates variability due to study design or implementation differences, though the lack of significant heterogeneity in control conditions suggests that variability in experimental conditions is more likely due to differences in interventions.
 
-### Change of Evidence Measures
+## Change of Evidence Measures
 
 Since Psi-effects may be influenced by the accumulation of evidence over time, new measures have been devised to analyze how this [evidence changes](coe-measures.html). By comparing these results to simulations, empirical p-values can be calculated. A meta-analytic assessment of these change-of-evidence measures was conducted using the inverse chi-square `invchisq`-function to combine p-values across studies. Three characteristics were analyzed: Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve’s Fast Fourier Transform (FFT).
 
@@ -97,17 +98,17 @@ The analysis of change of evidence measures demonstrated statistically significa
 
 In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results in experimental conditions do not necessarily translate into a substantial overall effect, as no significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence are not likely due to random variation.
 
-### Addressing Publication Bias
+## Addressing Publication Bias
 
 A potential concern in meta-analyses is publication bias, where significant results are more likely to be published compared to non-significant findings. In our case, the comprehensive inclusion of both published and unpublished studies from our research group effectively mitigates this concern. By incorporating all relevant studies, our analysis is less susceptible to selective reporting, enhancing the reliability of our findings.
 
-### Implications of Findings
+## Implications of Findings
 
 The significant change of evidence measures in experimental conditions suggest dynamic factors influencing evidence accumulation. According to the Model of Pragmatic Information, novel, autonomous effects may decrease in detectability over time. This model may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.
 
 Despite these insights, the non-significant overall effect size indicates that micro-PK interventions, as tested, may not consistently produce a robust effect. Future research should focus on refining experimental designs, replicating studies, and exploring the underlying mechanisms of micro-PK effects to establish more consistent evidence.
 
-### Conclusion
+## Conclusion
 
 While our meta-analysis at this point in time did not demonstrate a statistically significant effect of micro-PK interventions, the significant change of evidence measures in experimental conditions indicate that the phenomena observed are not purely due to chance. Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.
 
