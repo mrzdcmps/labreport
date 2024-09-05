@@ -57,6 +57,7 @@ plotbf(bf, sims)+
 
 ```{r}
 res <- maxbf(bf, sims)
+print(res)
 ```
 
 ### Energy of BF
@@ -76,6 +77,7 @@ plotbf(bf)+
 
 ```{r}
 res <- energybf(bf, sims)
+print(res)
 ```
 
 ### Frequency Analysis
@@ -92,6 +94,7 @@ plotfft(fftcreate(bf), sims)
 
 ```{r}
 res <- ffttest(bf, sims)
+print(res)
 ```
 
 ## The 'changeofevidence' package

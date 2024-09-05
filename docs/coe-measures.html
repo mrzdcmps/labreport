@@ -333,11 +333,13 @@ Figure&nbsp;1: Empirical Bayes Factor (black) and simulated Bayes Factors (grey)
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">maxbf</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">maxbf</span>(bf, sims)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&gt;&gt; MAXIMUM BF &lt;&lt; 
-Highest BF: 10.71555 ( at N = 153 ) 
-Sims with this or a higher BFs: 1.7 % </code></pre>
+<pre><code>Change of Evidence Results 
+Number of Simulations:  1000 
+Maximum Bayes Factor (BF): 10.71555 (at N = 153)
+Simulations with this or higher BF:  1.7 %</code></pre>
 </div>
 </div>
 </section>
@@ -363,14 +365,14 @@ Figure&nbsp;2: The green area indicates the positive energy (bf directed towards
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">energybf</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">energybf</span>(bf, sims)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&gt;&gt; BF ENERGY &lt;&lt; 
-Calculating Energy of sims... 
-
- Energy of BF of data:  564.2794 
-Sims Energy: M = -19.24502 , SD = 224.5401 
-Sims with this or higher Energy: 1.9 % </code></pre>
+<pre><code>Change of Evidence Results 
+Number of Simulations:  1000 
+Energy of Bayes Factor (BF):  564.2794 
+Simulations' Energy: M =  -19.24502 , SD =  224.5401 
+Simulations with this or higher Energy:  1.9 %</code></pre>
 </div>
 </div>
 </section>
@@ -394,14 +396,14 @@ Figure&nbsp;3: The Fast Fourier Transform of the Bayes Factor curve. The x-axis 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">ffttest</span>(bf, sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">ffttest</span>(bf, sims)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&gt;&gt; FREQUENCY ANALYSIS &lt;&lt; 
-
-Number of Frequencies:  118 
-Sum of Amplitudes: 9.885522 
-Sims Amplitude Sums: M = 2.228911 SD = 3.614552 
-Simulations with this or higher amplitude sum: 1.8 % </code></pre>
+<pre><code>Change of Evidence Results 
+Number of Simulations:  1000 
+Sum of Amplitudes:  9.885522 
+Simulations' Amplitude Sum: M =  2.228911 , SD =  3.614552 
+Simulations with this or higher Amplitude Sum:  1.8 %</code></pre>
 </div>
 </div>
 </section>
