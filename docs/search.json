@@ -1767,5 +1767,65 @@
       "Studies",
       "Epsi Correlation"
     ]
+  },
+  {
+    "objectID": "studies/robots.html",
+    "href": "studies/robots.html",
+    "title": "Robots",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nYear\nLab/Online\n\n\n\n\nRobots\n✔\n34\n10\n5.29\n1.66\n52.94\n1.03\n0.15\n0.18\n0.03\n1.18\ngreater\n2023\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Robots"
+    ]
+  },
+  {
+    "objectID": "studies/robots.html#design-and-hypothesis",
+    "href": "studies/robots.html#design-and-hypothesis",
+    "title": "Robots",
+    "section": "Design and Hypothesis",
+    "text": "Design and Hypothesis\n\nOriginal Study Design and Hypotheses\nThe study was initially designed as a preregistered replication of (Dechamps et al., 2021) micro-psychokinesis research (see priming studies), which had found intriguing patterns across three studies. The original research used subliminal priming to test whether participants could unconsciously influence quantum random number generators to select positive images more frequently.\nHypothesis: We expected to replicate a strong correlational effect (r = .032, BF10 = 36.46) between experimental and control conditions that had been found in a post-hoc analysis of the combined data from Dechamps et al.’s three studies. We predicted this correlation would appear specifically when standard micro-PK effects were absent, representing a stable relationship between the two conditions.\n\n\nThe Critical Discovery\nHowever, after data collection and analysis were complete, we discovered that the original correlation effect they were trying to replicate was based on a coding error in the original dataset. Eight participants in Study 3 had been incorrectly coded with negative values, and when this error was corrected, the strong evidence for correlation completely disappeared (r = -.01, BF01 = 49.48).\n\n\nTransformed Research Question\nThis discovery transformed the study from a planned replication into an unintentional exploration of experimenter effects in micro-PK research. The new research question became: Would experimenters’ strong but false expectations about a correlation effect actually influence the appearance of such an effect in the data?\nThis addresses a fundamental concern in micro-PK research - that experimenters’ beliefs and expectations might unconsciously influence quantum-based outcomes, making it difficult to distinguish between participant effects and experimenter effects. The study thus became an anecdotal field experiment examining whether purely subjective experimenter expectations, contradicting objective reality, could manifest as measurable effects in micro-PK data.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Robots"
+    ]
+  },
+  {
+    "objectID": "studies/robots.html#participants",
+    "href": "studies/robots.html#participants",
+    "title": "Robots",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n2052\n\n\nFemale\n49.03%\n\n\nMale\n47.71%\n\n\nMean Age\n44.22 years\n\n\nSD Age\n13.84 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Robots"
+    ]
+  },
+  {
+    "objectID": "studies/robots.html#materials-and-procedure",
+    "href": "studies/robots.html#materials-and-procedure",
+    "title": "Robots",
+    "section": "Materials and Procedure",
+    "text": "Materials and Procedure\nMaterials and Procedure were identical to the priming studies.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Robots"
+    ]
+  },
+  {
+    "objectID": "studies/robots.html#sample-size-and-data-analysis",
+    "href": "studies/robots.html#sample-size-and-data-analysis",
+    "title": "Robots",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nWe employed Bayesian inference statistics to test the hypothesis, which allow for sequential data accumulation until specific stopping criteria are met. For the correlation effect analysis, we used a Bayesian correlation test with a stopping rule of BF = 10 (indicating strong evidence for either the null or alternative hypothesis). If this criterion wasn’t reached by approximately 1,000 participants, data collection would continue if a clear trend toward BF10 = 10 was observable.\nThe correlation analysis used a Beta (0.1) prior distribution based on an estimated effect size of r = .1, which had been previously applied in analyzing the original faulty correlation data from Dechamps et al. (2021). For standard micro-PK effects, we conducted separate one-sample Bayesian t-tests for experimental and control conditions using one-tailed approaches with informed priors centered around 0.05 (δ ~ Cauchy [0.05, 0.05]). Interestingly, we expected and hoped for null findings, as the absence of standard micro-PK effects was considered a precondition for the correlation effect to appear, consistent with their preregistration.\nThe Bayesian analyses were performed irregularly during data collection, approximately weekly for the first 1,000 participants and then again with the complete sample of over 2,000 participants, using R’s ‘Bayes Factor’ package. Data collection occurred between January and February 2021.\nRegarding sample size, although the stopping criterion of BF10 = 10 for the correlation effect was reached early at n = 24, we considered this subsample too small to provide convincing evidence and continued until reaching 1,000 participants. At this point, the correlation was r = .034 (similar to the original r = .032), but the Bayesian evidence remained inconclusive (BF10 = 0.42). Following the preregistration, we collected data from an additional 1,000 participants before stopping due to exhausted financial resources. The final sample included N = 2,052 participants.\nNo micro-PK effect is expected in both conditions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Robots"
+    ]
   }
 ]

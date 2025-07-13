@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Studie "Intuition und Rateverhalten"</title> 
+    <script src="jspsych-7.2/jspsych.js"></script>
+    <script src="jspsych-7.2/plugin-external-html.js"></script>
+    <script src="jspsych-7.2/plugin-instructions.js"></script>
+    <script src="jspsych-7.2/plugin-survey.js"></script>
+    <script src="jspsych-7.2/plugin-html-button-response.js"></script>
+    <script src="jspsych-7.2/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych-6.1.0/quantis.js"></script>
+    <link rel="stylesheet" href="jspsych-7.2/jspsych.css"></link>
+    <link rel="stylesheet" href="jspsych-6.1.0/css/custom.css"></link>
+    <link rel="stylesheet" href="jspsych-6.1.0/css/survey.css"></link>
+    <link rel="stylesheet" href="consent/consent.css"></link>
+    <link rel="stylesheet" href="https://unpkg.com/@jspsych/plugin-survey@0.2.0/css/survey.css">
+
+    <style>
+        body {
+            background-color: darkgreen;
+            background-image: '18973603.jpg';
+        }
+        .jspsych-content {
+            max-width: 95%;
+        }
+        label {
+            display:block;
+            }
+
+        #loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            display:none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .roulettebtn {
+            background-color: darkgreen;
+            color: white; 
+            width: 9rem;
+            padding: 1rem 2rem; 
+            text-align: center; 
+            display: inline-block; 
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #jspsych-html-button-response-btngroup div.jspsych-html-button-response-button:nth-child(even) > .roulettebtn {
+            border: 4px solid red;
+        }
+        #jspsych-html-button-response-btngroup div.jspsych-html-button-response-button:nth-child(odd) > .roulettebtn {
+            border: 4px solid black;
+        }
+        #jspsych-html-button-response-btngroup div.jspsych-html-button-response-button:nth-child(even) > .roulettebtn:hover {
+            background-color: red;
+        }
+        #jspsych-html-button-response-btngroup div.jspsych-html-button-response-button:nth-child(odd) > .roulettebtn:hover {
+            background-color: black;
+        }
+
+        /*#answer,
+        #show,
+        #hide:target {
+            display: none; 
+        }
+
+        #hide:target + #show,
+        #hide:target ~ #answer {
+            display: inherit; 
+        }
+
+        #robotresults a {
+            width:100%;
+            background-color: #1f890d;
+            color: white;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            outline: none;
+        }*/
+        #robotresults { 
+            width:50%;
+            min-width: 20em;
+            margin: auto;
+        }
+        #answer {
+            padding: 0 18px;
+            width:100%;
+            column-width: 10em;
+        }
+        #answer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Robot Details */
+        details {
+            text-align: left;
+            border: 1px solid #0b3004;
+            border-radius: 4px;
+            padding: 0.5em 0.5em 0;
+            max-width: 40rem;
+            margin:auto;
+            margin-top: 1em;
+        }
+
+        summary {
+            text-align: center;
+            margin: -0.5em -0.5em 0;
+            padding: 0.5em;
+        }
+
+        details[open] {
+            padding: 0.5em;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #0b3004;
+            margin-bottom: 0.5em;
+        }
+
+
+        /* IGT score */
+        #score {
+            width: 20rem;
+            padding: 1rem;
+            margin: 0px auto 4rem;
+            background-color: #1f890d;
+            border: 1px solid #0b3004;
+            border-radius: 8px;
+        }
+    </style>
+
+  </head>
+  <body></body>
+  <script>
+
+    /* initialize jsPsych */
+    var jsPsych = initJsPsych({
+      on_finish: function() {
+        jsPsych.data.displayData();
+      },
+      //experiment_width: 1200
+    });
+
+
+    // SONA & subject ID
+    let sona_id = jsPsych.data.urlVariables()['sonaid'];
+    
+    if(!sona_id){
+        var subject_id = jsPsych.randomization.randomID(16);
+    } else {
+        var subject_id = sona_id;
+        var TXT_ending = 
+            '<hr><p><a href="https://lmu-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=282&credit_token=a078e493a5f94a3eb5f351f7aab97a72&survey_code=' + subject_id + '">Klicken Sie bitte hier, um Ihre Versuchspersonenstunde in SONA zu erhalten.</a></p>';
+  }
+
+    // add time to data
+    var start_time = new Date();
+    console.log(subject_id);
+
+    // counter balance order of ratings
+    var condition = jsPsych.randomization.sampleWithReplacement(["exp","con"], 1)[0];
+
+    // add properties to data file
+    jsPsych.data.addProperties({
+        subject: subject_id, 
+        time: start_time.toISOString(), 
+        condition: condition
+    });
+
+    // number of robots
+    var robots_n = 99;
+
+    // style feedback
+    var feedback_color = [
+        '<div style="width:4rem; height:4rem; background-color: #111; border:2px solid white;"></div>',
+        '<div style="width:4rem; height:4rem; background-color: red; border:2px solid red;"></div>'
+    ]
+    var feedback_hit = [
+        '<span style="font-size:2rem; color:red;">&#10006;</span>',
+        '<span style="font-size:2rem; color:green;">&#10004;</span>'
+    ];
+    var feedback_color_robot = [
+        '<div style="width:1rem; height:1rem; background-color: black; border:1px solid white; display: inline-block;"></div>',
+        '<div style="width:1rem; height:1rem; background-color: red; border:1px solid red;display: inline-block;"></div>'
+    ]
+
+    //sample 
+    var sample_rbits = new Array(99).fill(0).fill(1,52);
+    sample_rbits = jsPsych.randomization.shuffle(sample_rbits);
+
+    var sample_rhits = [];
+    for (var i=robots_n; i--;) {
+                sample_rhits[i] = 'Robot ' + (i+1) + ': ' + feedback_color_robot[sample_rbits[i]*1];
+            }
+    
+    var willkommen_exp = {
+        type: jsPsychInstructions,
+        pages: [
+        `<h1>Studie "Intuition und Rateverhalten"</h1>
+        <p>In dieser Studie werden Sie mehrfach an einem Roulettespiel teilnehmen. Zur Erinnerung, der Gewinn, den Sie dabei erspielen, wird Ihnen im Anschluss ausgezahlt. Sie können kein Geld verlieren. Sie beginnen mit 1 Euro im Konto.</p>
+        <p>Im Folgenden können Sie jeweils auf Rot oder Schwarz setzen. Sie können dabei pro Runde 10 Cent gewinnen bzw. verlieren. Sie können Ihre Wahl jede Runde verändern. Es ist möglich, dass Sie einige Augenblicke warten müssen, bis das Experiment nach Ihrer Farbwahl weiterläuft. Haben Sie in dem Fall bitte kurz Geduld.</p>
+        <p>Es gibt zusätzlich zu Ihnen noch „Robot-Klone“ von Ihnen. Diese wählen dasselbe wie Sie, spielen aber an eigenen Tischen. Sie bekommen das Ergebnis der Robot-Klone ebenfalls angerechnet und am Ende ausgezahlt.</p>`,
+        `<p>Hier sehen Sie ein Beispiel. Sie haben sich richtigerweise für schwarz entschieden und hätten so zu Ihrem 1 Euro Startkapital 0,10€ gewonnen. Die Robot-Klone hätten für Sie zusätzlich 0,50€ gewonnen.</p>
+        <br>
+        <div id="score">Gesamtgewinn: 1,60€</div>
+        <div style="display:flex; justify-content:center; padding-bottom:1rem;">${feedback_color[0]} ${feedback_hit[1]}</div>
+        <div id="robotresults">
+                    Rundengewinn: 0,60€<br>
+                    <details>
+                        <summary>
+                            Die Roboter haben diese Runde erspielt: 0,50€
+                        </summary>
+                        <div id="answer">
+                            <ul>
+                                <li>${sample_rhits.join('</li><li>')}</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>`
+        ],
+        show_clickable_nav: true
+    }
+
+    var willkommen_con = {
+            type: jsPsychInstructions,
+            pages: [
+            `<h1>Studie "Intuition und Rateverhalten"</h1>
+            <p>In dieser Studie werden Sie mehrfach an einem Roulettespiel teilnehmen. Zur Erinnerung, der Gewinn, den Sie dabei erspielen, wird Ihnen im Anschluss ausgezahlt. Sie können kein Geld verlieren. Sie beginnen mit 1 Euro im Konto.</p>
+            <p>Im Folgenden können Sie jeweils auf Rot oder Schwarz setzen. Sie können dabei pro Runde 10 Cent gewinnen bzw. verlieren. Sie können Ihre Wahl jede Runde verändern. Es ist möglich, dass Sie einige Augenblicke warten müssen, bis das Experiment nach Ihrer Farbwahl weiterläuft. Haben Sie in dem Fall bitte kurz Geduld.</p>`,
+            `<p>Hier sehen Sie ein Beispiel. Sie haben sich richtigerweise für schwarz entschieden und hätten so zu Ihrem 1 Euro Startkapital 0,10€ gewonnen.</p>
+            <br>
+            <div id="score">Gesamtgewinn: 1,10€</div>
+            <div style="display:flex; justify-content:center; padding-bottom:1rem;">${feedback_color[0]} ${feedback_hit[1]}</div>
+                <div id="robotresults">
+                    Rundengewinn: 0,10€
+                </div>`
+            ],
+            show_clickable_nav: true
+    }
+
+    // consent to participate.
+    var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+    // declare the block.
+    var informed_consent = {
+        type: jsPsychExternalHtml,
+        url: "consent/pana_consent.html",
+        cont_btn: "start",
+        check_fn: check_consent
+    };
+
+    // initial score
+    var game_score_exp = 10;
+    var game_score_con = 10;
+
+    // decide player number between number of robots + 1
+    var player = parseInt(Zufallswert(robots_n), 10);
+    console.log("Player N: " + player);
+    jsPsych.data.addProperties({ player: player });
+
+    // show loader
+    function showloader() { document.getElementById("loader").style.display = "inherit" };
+    document.querySelectorAll(".roulettebtn").forEach(btn => 
+        btn.addEventListener("click", () => showloader())
+    )
+
+
+    // game pt1: ask user to choose
+    var gametrial_choice = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'choice' },
+        stimulus: '<div id="loader"></div><p>Auf welche Farbe möchten Sie setzen?</p>',
+        choices: ['Schwarz', 'Rot'],
+        button_html: '<button class="roulettebtn" onclick="showloader()">%choice%</button>',
+        //on_finish: showloader()
+        //prompt: ""
+    }
+
+    // game pt 2: show result
+    var gametrial_result = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: '',
+        data: { test_part: 'result', bits: '' },
+        choices: ['Weiter'],
+        prompt: '',
+        on_start: function(trial){
+            var choice = jsPsych.data.getLastTrialData().trials[0].response;
+            var bits = [];
+            var rbits = [];
+            var hits = [];
+            var rhits = [];
+            for(var i=0; i <= robots_n; i++){
+                var Z = parseInt(Zufallswert(), 10);
+                bits.push(Z);
+                rbits.push(Z);
+                hits.push(Z==choice);
+                rhits.push(Z==choice);
+            }
+
+            // exclude player score from robot list
+            rhits.splice(player, 1);
+            rbits.splice(player, 1);
+            
+            //calculate scores
+            var robot_score = rhits.filter(Boolean).length; //score from robots
+            robot_score = robot_score-(robots_n-robot_score);
+            
+            var player_score = hits[player]*2-1; //player score
+
+            var trial_score = robot_score+player_score; //trial score
+
+            game_score_exp = game_score_exp+trial_score; //total score over all trials;
+            game_score_con = game_score_con+player_score; //total score over all trials;
+
+            for (var i=rhits.length; i--;) {
+                //rhits[i] = 'Robot ' + (i+1) + ': ' + (rhits[i]*2-1);
+                rhits[i] = 'Robot ' + (i+1) + ': ' + feedback_color_robot[rbits[i]*1];
+            }
+
+            //exp condition
+            if(condition=="exp"){
+                trial.prompt = `<br>
+                <div id="robotresults">
+                    Rundengewinn: ${(trial_score/10).toFixed(2)}€<br>
+                    <details>
+                        <summary>
+                            Die Roboter haben diese Runde erspielt: ${(robot_score/10).toFixed(2)}€
+                        </summary>
+                        <div id="answer">
+                            <ul>
+                                <li>${rhits.join('</li><li>')}</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>`; 
+            //con condition
+            } else if(condition=="con"){
+                trial.prompt = `<br>
+                <div id="robotresults">
+                    Rundengewinn: ${(player_score/10).toFixed(2)}€<br>
+                </div>`; 
+            }
+
+
+            // stimulus
+            if(condition=="con") trial.stimulus = `<div id="score">Gesamtgewinn: ${(game_score_con/10).toFixed(2)}€</div>`;
+            else if(condition=="exp") trial.stimulus = `<div id="score">Gesamtgewinn: ${(game_score_exp/10).toFixed(2)}€</div>`;
+            
+            trial.stimulus += '<div style="display:flex; justify-content:center; padding-bottom:1rem;">' + feedback_color[bits[player]] + feedback_hit[hits[player]*1] + '</div>';
+
+            trial.data.bits = bits;
+            trial.data.hits = hits;
+        }
+    }
+
+    var survey_demo = {
+        type: jsPsychSurvey,
+        data: { test_part: 'survey', endresult: '' },
+        pages: [
+        [
+        {
+                type: 'html',
+                prompt: '<p>Danke fürs Mitmachen! Wir würden nun noch gerne einige Details über Sie erfahren.</p>',
+            },
+            {
+                type: 'text',
+                prompt: "Wie alt sind Sie?", 
+                name: 'age', 
+                textbox_columns: 5,
+                required: true,
+                input_type: "number"
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Welchem Geschlecht fühlen Sie sich zugehörig?", 
+                name: 'gender', 
+                options: ['weiblich', 'männlich', 'divers'],
+                required: true
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Kennen Sie das Spiel Roulette?", 
+                name: 'roulette', 
+                options: ['Ja', 'Nein'],
+                required: true
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Wie wichtig war Ihnen das Gewinnen?", 
+                name: 'gewinnen', 
+                options: ['1 - gar nicht wichtig', '2', '3', '4', '5', '6', '7 - sehr wichtig'],
+                required: true
+            }, 
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten',
+
+        // store endresult to data
+        on_start: function(trial) {
+            if(condition=="exp") var game_score = game_score_exp;
+            else if(condition=="con") var game_score = game_score_con;
+            trial.data.endresult = game_score*10;
+        }
+        //title: 'Studie "Wie fühlst Du Dich gerade?"'
+    };
+
+
+    // save data to csv
+    function saveData(name, data){
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'save-data6.php');
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+      xhr.send(JSON.stringify({filename: name, filedata: data}));
+    }
+
+    var ending = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: function(){
+            if(condition=="exp") var game_score = game_score_exp;
+            else if(condition=="con") var game_score = game_score_con;
+                
+            var txt = `<h2>Danke fürs Mitmachen!</h2>
+                <p>Ihr Gewinn beträgt ${(game_score/10).toFixed(2)}€!</p>
+                <p>Sollte der Gewinn negativ sein, bekommen Sie leider nichts ausgezahlt.</p>
+                <p>Die Auszahlung des Gewinns ist an folgenden Terminen im Raum 3137b (Schweinchenbau bzw. Leopoldstraße 13, München) möglich:</p>
+                <li>
+                    <ul>- Dienstags von 10 Uhr bis 12 Uhr</ul>
+                    <ul>- Mittwochs von 14 Uhr bis 16 Uhr</ul>
+                    <ul>- Donnerstags von 10 Uhr bis 12 Uhr</ul>
+                </li>
+                <p>
+                Geben Sie hierfür bitte (mindestens zwei Stunden vorher) unter <a class="normal" href="mailto:anna.neudert@campus.lmu.de">Anna.Neudert@campus.lmu.de</a> Bescheid, wenn Sie an einem Termin kommen möchten und geben Sie Ihren VP-Code an. Sie erhalten dann eine entsprechende Rückmeldung, in der der Raum auch noch einmal genannt wird. Sollten Sie an diesen Terminen keine Zeit haben, schreiben Sie ebenfalls eine Mail an die genannte Adresse und schlagen Sie einen alternativen Termin vor.</p>
+                <p>Ihr VP-Code: <b>${subject_id}</b></p>
+                <a href="mailto:anna.neudert@campus.lmu.de?subject=Auszahlung%20${subject_id}&body=Mein%20VP-Code%3A%20${subject_id}%0D%0AMein%20Gewinn%3A%20${(game_score/10).toFixed(2)}%E2%82%AC%0D%0AIch%20w%C3%BCrde%20gerne%20zu%20diesem%20Termin%20zur%20Auszahlung%20kommen%3A">Jetzt Mail schreiben</a>
+                `;
+                if (sona_id) txt += TXT_ending;
+                return txt;
+        },
+        //choices: "ALL_KEYS"
+        choices: "NO_KEYS",
+        on_start: function() {
+            saveData("/robot/robot1_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + subject_id, jsPsych.data.get().csv());
+        }
+    }
+
+
+    /* create timeline */
+    var timeline = [];
+
+    //exp condition
+    if(condition=="exp")        timeline.push(willkommen_exp);
+    else if(condition=="con")   timeline.push(willkommen_con);
+    else alert("No condition set!");
+    timeline.push(informed_consent);
+    for(var i=0; i < 10; i++){
+        timeline.push(gametrial_choice);
+        timeline.push(gametrial_result);
+    }
+    timeline.push(survey_demo);
+    timeline.push(ending);
+
+    /* start the experiment */
+    jsPsych.run(timeline);
+
+
+  </script>
+</html>
