@@ -1,0 +1,88 @@
+---
+title: "Stories"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Stories")
+```
+
+## Hypothesis
+
+This experiment was developed by students in an empirical course. It aimed to investigate whether intrinsic motivation could influence micro-psychokinesis (micro-PK). We hypothesized that providing participants with a compelling incentive to influence the outcome would increase the likelihood of their desired result occurring.
+
+The study used a card-drawing task where participants were asked to uncover one of two hidden cards (red or black). In the experimental group, participants were given an intrinsic motivational incentive: they were presented with an intriguing but incomplete story and told that uncovering the red card would reveal the conclusion. The control group, however, received no such incentive and was simply instructed to try to uncover the red card.
+
+We formulated two main hypotheses: First (H1), that the experimental group would uncover significantly more red cards than the control group due to the motivational incentive. Second (H2), that the experimental group would uncover more red cards than expected by chance alone, indicating a potential micro-PK effect.
+
+## Participants
+
+```{r}
+generate_demographics_table(
+  data = study24_stories,
+  age_col = "age",
+  gender_col = "gender",
+  male_value = "männlich",
+  female_value = "weiblich"
+)
+```
+
+## Materials
+
+**Card-Drawing Task**\
+The core task involved a virtual card selection where participants were shown two hidden cards, one red and one black, and asked to uncover one. The outcome (red or black) was determined randomly via a qRNG draw.
+
+**Motivational Incentives**\
+To create intrinsic motivation, participants in the experimental group were presented with an incomplete story from one of two thematic categories:
+
+-   *"Reincarnation/Rebirth"* – A narrative about James Leininger, a child who claimed memories of a past life.
+-   *"True Crime/Murder Mystery"* – A fictional unsolved murder case.
+
+Participants were told that uncovering the red card would reveal the story’s conclusion, providing an incentive to influence the outcome.
+
+The control group received no narrative incentive. They were simply instructed to "try to uncover the red card," ensuring a baseline comparison without motivational manipulation.
+
+**Questionnaires**\
+Exploratory psychological measures were included to assess additional variables:\
+- *Vitality* (measured in both study phases).\
+- *Autonomy, self-control capacity, and willpower beliefs* (measured only in the first phase).
+
+These were intended to examine potential psychological correlates of micro-PK performance.
+
+## Procedure
+
+Participants were randomly assigned to either the experimental or control group upon starting the online study. Both groups received an initial briefing on data privacy, voluntary participation, and their right to withdraw, followed by basic demographic questions (age and gender).
+
+In the *experimental group*, participants were first asked to choose between two thematic story categories "Reincarnation/Rebirth" or "True Crime/Murder Mystery" to personalize their incentive. They then read an intriguing but incomplete story (e.g., about a child’s past-life memories or an unsolved crime) and were told that uncovering the red card in the subsequent task would reveal the conclusion. This narrative hook served as the intrinsic motivator to influence the outcome.
+
+In the *control group*, participants proceeded directly to the card task without any narrative incentive. They were simply instructed to "try to uncover the red card," providing a baseline for comparison.
+
+The card-drawing task was identical for both groups: participants viewed two face-down virtual cards (one red, one black) and selected one to "reveal." The outcome was predetermined by a random algorithm, with no actual participant control. In the experimental group, those who uncovered the red card saw the story’s conclusion; those who drew the black card exited the task immediately. Control-group participants saw no follow-up content regardless of their draw.
+
+After the task, all participants completed questionnaires (see above).
+
+## Sample Size and Data Analysis
+
+The study involved a total of 613 participants across two phases of data collection. The first phase was part of an empirical course and included 283 participants, with 13 excluded due to self-reported non-serious engagement or being underage, leaving 270 valid cases. The second phase was a continuation within a thesis and recruited 330 additional participants, with exclusions for similar reasons, resulting in 317 valid cases. The combined dataset for analysis thus comprised 587 participants (after removing duplicates and invalid responses).\
+For *data analysis*, the study employed Bayesian statistics to assess evidence for or against the hypotheses. Key analyses included:
+
+1.  Bayesian independent samples t-tests (Cauchy prior width = 0.1) to compare the frequency of red card selections between experimental and control groups (H1).
+2.  Bayesian contingency tests (with a prior of 1) to determine whether the experimental group’s results deviated from chance (H2).
+3.  Sequential analysis to track effect trends as more participants were added.
+4.  Post-hoc gender analyses using Bayesian one-sample t-tests to explore differences in micro-PK performance between males and females.
+
+Results showed no statistically significant support for micro-PK effects in either phase or the combined dataset. While initial descriptive trends in the first phase suggested a slight advantage for the experimental group, this disappeared in the replication. Bayesian factors (BF) consistently favored the null hypothesis (BF \< 1), indicating that observed variations were likely due to chance. However, exploratory gender analyses revealed that male participants exhibited a moderate trend toward higher red card selections (BF = 6.54), though this was not predicted by the original hypotheses.
+
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/stories/stories.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   [Student Report](../data/stories/stories-report.pdf)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/stories/pfade.html)
+:::

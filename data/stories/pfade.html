@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pfade der Wahl:</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-preload.js"></script>
+    <script src="jspsych/plugin-fullscreen.js"></script>
+    <script src="jspsych/plugin-call-function.js"></script>
+    <script src="jspsych/plugin-external-html.js"></script>
+    <script src="jspsych/plugin-instructions.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-image-keyboard-response.js"></script>
+    <script src="jspsych/plugin-survey.js"></script>
+    <script src="jspsych-6.1.0/quantis.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="jspsych/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="jspsych/survey.css"></link>
+    <link rel="stylesheet" href="consent/consent.css"></link>
+
+    <style>
+        .cards {
+            margin: 0px 8px;
+        }
+        .cardchoice {
+        cursor: pointer;
+            width:auto;
+        }
+    </style>
+
+  </head>
+  <body></body>
+  <script>
+
+    /* define parameters */
+    // study name
+    var studyname = 'pfade';
+    var studypart = 1;
+
+    //initialize Experiment
+    const jsPsych = initJsPsych({
+        /* on_finish: function() {
+        jsPsych.data.displayData();
+      } */
+    });
+
+    // SONA & subject ID
+    let vl = jsPsych.data.urlVariables()['vl'];
+    let sona_id = jsPsych.data.urlVariables()['sonaid'];
+
+    var TXT_ending = '';
+
+    let nosavetest = jsPsych.data.urlVariables()['test'];
+    if(nosavetest) console.log("TEST! Data will not be saved");
+    
+    if(!sona_id){
+        var subject_id = jsPsych.randomization.randomID(16);
+        //var TXT_ending = '<hr><p><a href="https://app.prolific.com/submissions/complete?cc=CUIJUER2">Please click here to get back to Prolific.</a></p>(Code: CUIJUER2)';
+    } else {
+        var subject_id = sona_id;
+        TXT_ending = 
+            '<hr><p><a href="https://lmu-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=369&credit_token=6aa80b68b0d74b51a1d209dea3cd5e9e&survey_code=' + subject_id + '">Bitte hier klicken, um die Versuchspersonenstunde auf SONA gutgeschrieben zu bekommen.</a></p>';
+    }
+
+
+    // specify starting time
+    var start_time = new Date();
+
+    var condition = jsPsych.randomization.sampleWithReplacement(["Anreiz","KeinAnreiz"], 1)[0];
+
+    // add to data file
+    jsPsych.data.addProperties({ 
+        study: studyname + studypart, //e.g. "newstudy1"
+        subject: subject_id,
+        vl: vl,
+        time: start_time.toISOString(), 
+        condition: condition
+    });
+
+
+    /* welcome message & instructions */
+    var welcome = {
+        type: jsPsychInstructions,
+        data: { test_part: "instruction" },
+        pages: [
+            `<p style="font-weight:bold;">Studie "Pfade der Wahl: Dem Schicksal auf die Schliche kommen"</p>
+            <p>Bitte beachten Sie, dass nur Personen zur Teilnahme an dieser Studie zugelassen sind, die mindestens 18 Jahre alt und der deutschen Sprache mächtig sind. Sollte dies nicht der Fall sein, brechen Sie hier bitte ab.</p>
+            <p>Diese Studie beschäftigt sich mit dem Zusammenhang von Motivation und Realitätswahrnehmung.</p>
+            <p>Die Teilnahme an dieser Studie basiert auf Freiwilligkeit. Hiermit informieren wir Sie darüber, dass Sie die Studie jederzeit ohne Angabe von Gründen abbrechen können, allerdings bitten wir sie zur validen Erfassung von Ergebnissen zur gewissenhaften sowie vollständigen Teilnahme an dieser Studie. Alle Angaben werden streng vertraulich behandelt und keinesfalls an dritte weitergegeben. Die Studie erfasst keine personenbezogenen Daten, durch welche Rückschlüsse auf einzelne Personen möglich wären. Die Durchführung erfolgt vollkommen anonym. Durch die Teilnahme geben Sie Ihr Einverständnis, die von Ihnen bereitgestellten Daten zur Beantwortung der Forschungsfrage zu verarbeiten.</p>
+            <p>Für die Teilnahme an dieser Studie wird kein Entgelt ausbezahlt.</p>
+            <p>Die Durchführung der Studie wird etwa 5-10 Min. dauern.</p>`
+            ],
+        show_clickable_nav: true
+    };
+
+        /* Consent */
+    // consent to participate.
+    var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+    // declare the block.
+    var informed_consent = {
+        type: jsPsychExternalHtml,
+        url: "consent/consent_mm.html",
+        cont_btn: "start",
+        check_fn: check_consent
+    };
+
+    /* Story Choice */
+    var choice = {
+      type: jsPsychHtmlButtonResponse,
+      data: { test_part:'choice' },
+      stimulus: `<p>Im folgenden Teil der Studie haben Sie die Wahl zwischen zwei Themenbereichen. Bitte wählen Sie das Thema, dass Sie persönlich eher interessiert. Zu dem gewählten Thema wird Ihnen eine Geschichte gezeigt, die Sie bitte aufmerksam durchlesen.</p>`,
+      choices: ['Themenbereich Reinkarnation/Wiedergeburt', 'Themenbereich True Crime/Kriminalfall'],
+      on_finish: function(data){
+
+            if(data.response == 0) var story = "reinkarnation";
+            else var story = "krimi";
+
+        jsPsych.data.addProperties({ story: story });
+      }
+    }
+
+
+    /* Story 1 */
+    var storyReinkarnationINT = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'story' },
+        stimulus: `<div style="hyphens: auto; text-align: justify; max-width:80vw;">Der Fall von James Leininger<br>
+            <p>James Leininger behauptete, Erinnerungen an ein früheres Leben zu haben. Bereits im Alter von 2 Jahren träumte er wiederholt intensiv von einem Flugzeugabsturz und behauptete, ein amerikanischer Pilot zu sein, der von den Japanern getötet wurde. Es zeigte sich, dass James tatsächlich Detailwissen über das Leben eines amerikanischen Piloten aus dem zweiten Weltkrieg hatte. Das stellte seine Angehörigen und die Wissenschaft vor ein großes Rätsel. Aber welches Detailwissen hatte James, das so viel Aufmerksamkeit auf den Jungen zog?</p>
+            <p>Um das zu erfahren, versuchen Sie, im folgenden Spiel die rote Karte aufzudecken. Auf ihrer Rückseite erwartet Sie der Schlüssel zum Fall James Leininger. Wenn Ihnen das gelingt, erhalten Sie seine ganze Geschichte.</p></div><br>`,
+        choices: ['Ich habe die Geschichte gelesen']
+    };
+    var storyReinkarnation = {
+        timeline: [storyReinkarnationINT],
+        conditional_function: function(){
+            if(jsPsych.data.allData.trials[3].story=="reinkarnation"){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    var storyKrimiINT = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'story' },
+        stimulus: `<div style="hyphens: auto; text-align: justify; max-width:80vw;">
+            <p>Als ich starb war ich noch kein ganzer Mensch, doch war ich schon jemand. Man tötete mich dafür, wer ich war. Starb ich allein? Nein, wir waren zu sechst, im selben Haus zur selben Zeit. Nun lebt dort niemand mehr, nicht meine Mutter, nicht meine beiden Väter. Der Tatort: Ein Hof auf freiem Feld. Die Nacht vom Mond erhellt, doch hat niemand etwas gesehen. Was man fand? Fußspuren, die zum Hof führten, doch nicht mehr davon weg; alle Opfer versteckt. Und die Tiere? Auch vier Tag später noch ruhig, gefüttert und versorgt. Na, kannst du meinen Mörder finden?</p>
+            <p>Um das zu erfahren, versuchen Sie, im folgenden Spiel die rote Karte aufzudecken. Auf ihrer Rückseite erwarten Sie die fehlenden Details, um den Möder zu entlarven.</p></div><br>`,
+        choices: ['Ich habe die Geschichte gelesen']
+    };
+    var storyKrimi = {
+        timeline: [storyKrimiINT],
+        conditional_function: function(){
+            if(jsPsych.data.allData.trials[3].story=="krimi"){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    /* Card */
+    var cardKeinAnreiz = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'card' },
+        stimulus: `<p>Im Folgenden werden Ihnen zwei identisch aussehende Karten gezeigt. Jedoch ist eine Karte auf der Rückseite rot, die andere ist schwarz. Versuchen Sie bitte die rote Karte zu entdecken.</p>`,
+        choices: [0,1],
+        button_html: '<img src="img/Roulette/card_back.png" class="cardchoice">'
+    };
+
+    var cardAnreiz = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'card' },
+        stimulus: `<p>Im Folgenden werden Ihnen zwei identisch aussehende Karten gezeigt. Jedoch ist eine Karte rot auf der Rückseite, die andere schwarz. Erinnern Sie sich: Falls Sie die rote Karte aufdecken, erhalten Sie weitere Informationen zu Ihrem gewählten Themenbereich.</p>`,
+        choices: [0,1],
+        button_html: '<img src="img/Roulette/card_back.png" class="cardchoice">'
+    };
+
+    var cardResult = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: '<img src="img/black.png">',
+        data: { test_part: 'card_result' },
+        choices: ['Weiter'],
+        on_start: function(trial){
+            var Z = Zufallswert();
+            Z = parseInt(Z, 10);
+
+            var lastdata = jsPsych.data.get().last(1).values()[0].response;
+            if (lastdata==Z){
+            var successresponse = "Richtig!<br>";
+            trial.data.correct = true;
+            } else {
+            var successresponse = "Leider falsch!<br>";
+            trial.data.correct = false;
+            }
+
+            /* Variant2: Show Heart A*/
+            /*var cardresultarr = Array(1).fill('<img src="img/Roulette/card_back.png" class="cards">');
+            cardresultarr.splice(Z, 0, '<img src="img/Roulette/card_heart_A.png" class="cards winner">'); //Replace one card with Heart A
+            if (lastdata!=Z){
+            cardresultarr[lastdata] = '<img src="img/Roulette/card_club_2.png" class="cards">';
+            }*/
+            var cardresultarr = Array(1).fill('<img src="img/Roulette/card_back.png" class="cards">');
+            if(lastdata==Z) cardresultarr.splice(lastdata, 0, '<img src="img/Roulette/card_heart_A.png" class="cards winner">')
+            else cardresultarr.splice(lastdata, 0, '<img src="img/Roulette/card_club_2.png" class="cards winner">')
+            
+            cardresultarr.unshift(successresponse); //add Richtig or Leider falsch Message at the top
+
+            trial.stimulus = cardresultarr.join('');
+
+            trial.data.qbit = Z;
+        }
+    };
+
+    /* Story 2 */
+    var storyReinkarnation2INT = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'story2' },
+        stimulus: `<div style="hyphens: auto; text-align: justify; max-width:80vw;">
+            <p>Herzlichen Glückwunsch. Sie haben die rote Karte aufgedeckt und somit Zugang zu den fehlenden Informationen im Fall James  Leininger erhalten.</p>
+            <p>James Leininger behauptete, Erinnerung an ein früheres Leben als Pilot im zweiten Weltkrieg und einen Flugzeugabsturz zu haben. Er konnte genaue Details nennen, beispielsweise spezifische Informationen über das Flugzeug, die Trägergruppe, den Namen seines Kameraden und sogar persönliche Details über seine damalige Familie. James Eltern fanden heraus, dass seine Aussagen erstaunliche Ähnlichkeiten mit dem Tod eines Piloten namens James Huston aus dem Zweiten Weltkrieg aufwiesen. Außerdem überstieg das Wissen, das James über diesen verstorbenen Piloten zu haben schien, das normale Verständnis eines Kleinkinds. Es gibt keinen endgültigen Beweis, dass James Leiningers tatsächlich Erinnerungen an ein früheres Leben hat. Es wäre durchaus denkbar, dass es sich dabei um einen Betrug handelt. Die Idee der Reinkarnation sollte bei der Untersuchung derartiger Fälle aber nicht außen vor gelassen werden.</p></div><br>`,
+        choices: ['Weiter']
+    };
+    var storyReinkarnation2 = {
+        timeline: [storyReinkarnation2INT],
+        conditional_function: function(){
+
+            if(jsPsych.data.allData.trials[3].story=="reinkarnation" && jsPsych.data.get().filter({test_part: 'card_result'}).trials[0].correct==true){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    var storyKrimi2INT = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'story2' },
+        stimulus: `<div style="hyphens: auto; text-align: justify; max-width:80vw;">
+            <p>Herzlichen Glückwunsch. Sie haben die rote Karte aufgedeckt und somit Zugang zu den fehlenden Informationen erhalten, um den Mörder der Tat aufzudecken.</p>
+            <p>Na, hast du meinen Mörder gefunden? Ich bin Josef Gruber, geboren 1919, gestorben 1922 – noch ein Baby, doch schon mit Geschichte. Ich starb in einer Nacht im März auf dem Hof meiner Familie. Alle wurden sie damals erschlagen, meine beiden Großeltern, meine Mutter, meine Schwester, selbst die Magd. Sechs unschuldige Leben mag man meinen… Doch so unschuldig war niemand von uns. Ich bin das Ergebnis einer Affäre: Mein Großvater und meine Mutter. Mein offizieller Vater aber, das war ein junger Mann aus dem Dorf. Er liebte mich sehr, bis er erfuhr, dass er nicht mein leiblicher Vater war. Dann hasste er uns alle. Eines Nachts im März 1922, da stürmt er auf den Hof, erschlug uns alle, lebte mit unseren Leichen für vier Tage unter einem Dach und verpflegte das Vieh. Niemand erkannte, dass wir schon nicht mehr lebten. Er aber wollte uns nicht mehr sehen, so hat er uns versteckt. Dann verließ er den Hof. Das war meine Geschichte. Ein Hinweis noch: Bis heute weiß niemand, wer der Täter wirklich war, denn der Fall bleibt auch 101 Jahr später ungeklärt und meine Geschichte hier eine reine Vermutung. Danke fürs miträtseln!.</p></div><br>`,
+        choices: ['Weiter']
+    };
+    var storyKrimi2 = {
+        timeline: [storyKrimi2INT],
+        conditional_function: function(){
+            if(jsPsych.data.allData.trials[3].story=="krimi" && jsPsych.data.get().filter({test_part: 'card_result'}).trials[0].correct==true){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    var storyFailINT = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'story2' },
+        stimulus: `<p>Sie haben die schwarze Karte aufgedeckt. Deshalb erhalten Sie leider keine weiteren Informationen zu ihrem Themenbereich.</p>
+        <p>Bitte gehen Sie weiter zur nächsten Seite.</p>`,
+        choices: ['Weiter']
+    };
+    var storyFail = {
+        timeline: [storyFailINT],
+        conditional_function: function(){
+            if(jsPsych.data.get().filter({test_part: 'card_result'}).trials[0].correct==false){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+        /* Survey */
+        var surveySMS5 = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveySMS5' },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'SMS5Intro',
+                prompt: `
+                <p>Beantworten Sie bitte spontan die folgenden Aussagen zu Ihrem Befinden.</p>
+                <p>Klicken Sie dazu bitte in jeder Zeile auf den Kreis unter den Zahlen zwischen 1 = "völlig unzutreffend" und 7 = "trifft ganz genau zu", um auszudrücken, wie sehr die jeweilige Aussage auf Sie zutrifft.</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: ' ',
+                name: 'SMS-5',
+                required: true,
+                statements: [
+                    {prompt: 'Ich fühle mich erledigt.', name: 'SMS5_1'},
+                    {prompt: 'Ich fühle mich ausgeglichen.', name: 'SMS5_2'},
+                    {prompt: 'Ich fühle mich antriebslos.', name: 'SMS5_3'},
+                    {prompt: 'Ich fühle mich wach und konzentriert.', name: 'SMS5_4'},
+                    {prompt: 'Ich fühle mich, als hätte ich keine Willenskraft mehr.', name: 'SMS5_5'}
+                ],
+                options: ['1', '2', '3', '4', '5', '6', '7'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveySVSScaleValues = [
+                {value: '0'},
+                {value: '1'},
+                {value: '2'},
+                {value: '3'},
+                {value: '4'},
+                {value: '5'},
+                {value: '6'},
+                {value: '7'},
+                {value: '8'},
+                {value: '9'},
+                {value: '10'},
+                ];
+
+    var surveySVS = {
+        type: jsPsychSurvey,
+        data: { test_part: "surveySVS-GM3" },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'SVSIntro',
+                prompt: `
+                <p>Nun möchten wir Sie bitten, Ihre Einschätzungen zu den folgenden Aussagen mitzuteilen. Bitte verwenden Sie die Skala von 0 bis 10, um Ihre Zustimmung oder Ablehnung zu jeder Aussage auszudrücken. Wir bitten Sie, nicht lange nachzudenken, sondern spontan zu antworten!</p>
+                <p><b>Während der Studie ...</b></p>`
+
+            },
+            {
+                type: 'likert',
+                prompt: '... fühlte ich mich lebendig und vital.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            },
+            {
+                type: 'likert',
+                prompt: '... war ich voller Tatendrang.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            },
+            {
+                type: 'likert',
+                prompt: '... hatte ich Energie und Lebensfreude.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyITW = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyITW' },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'ITWIntro',
+                prompt: `
+                <p>Wie sehr treffen folgende Aussagen auf Sie zu?</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: ' ',
+                name: 'ITW',
+                required: true,
+                statements: [
+                    {prompt: 'Anstrengende mentale Tätigkeiten (z. B. Nachdenken über eine schwierige Fragestellung, sich stark auf etwas konzentrieren) verbrauchen meine Kraftressourcen, die ich im Anschluss wieder auftanken muss (z. B. indem ich Pausen mache, nichts tue, fernsehe, einen Snack esse.', name: 'ITW_1'},
+                    {prompt: 'Im Laufe einer fordernden mentalen Tätigkeit wird meine Energie verbraucht und ich brauche eine Pause, um wieder aufzutanken.', name: 'ITW_2'},
+                    {prompt: 'Nachdem ich mich eine Zeit lang voll und ganz auf etwas konzentriert habe, fühle ich mich manchmal energetisiert und bereit für weitere anspruchsvolle Tätigkeiten.', name: 'ITW_3'},
+                    {prompt: 'Meine mentale Kraft lädt sich von selbst auf. Auch bei einer anstrengenden mentalen Tätigkeit kann ich lange weitermachen.', name: 'ITW_4'},
+                    {prompt: 'Wenn ich eine anspruchsvolle mentale Tätigkeit erledigt habe, kann ich mich nicht mit der gleichen Konzentration gleich der nächsten widmen, weil ich geistig wieder zu Kräften kommen muss.', name: 'ITW_5'},
+                    {prompt: 'Nach einer fordernden geistigen Tätigkeit fühle ich mich energetisiert und bereit für neue Aufgaben.', name: 'ITW_6'}
+                ],
+                options: ['Stimmt gar nicht', 'Stimmt nicht', 'Stimmt eher nicht', 'Stimmt eher', 'Stimmt überwiegend', 'Stimmt genau'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+
+    var surveyAutonmie = {
+        type: jsPsychSurvey,
+        data: { test_part: 'autonomie' },
+        pages: [
+        [
+            {
+                type: 'likert-table',
+                prompt: 'Wie haben Sie sich bei der Bearbeitung der vorhergehenden Aufgabe gefühlt?',
+                required: true,
+                statements: [
+                    {prompt: 'Ich fühlte mich während der Studie frei und autonom.', name: 'autonomie1'},
+                    {prompt: 'Ich hatte das Gefühl während der Studie alles frei gestalten zu können.', name: 'autonomie2'},
+                    {prompt: 'Ich hatte das Gefühl während der Studie eigene Vorstellungen umsetzen zu können.', name: 'autonomie3'}
+                ],
+                options: ['1 trifft gar nicht zu', '2 trifft eher nicht zu', '3 trifft teilweise zu', '4 trifft eher zu', '5 trifft vollständig zu'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    /* Survey Post */
+    var surveyDemographics = {
+        type: jsPsychSurvey,
+        data: { test_part: 'demographics' },
+        pages: [
+        [
+            {
+                type: 'text',
+                prompt: "Wie alt sind Sie?", 
+                name: 'age', 
+                textbox_columns: 5,
+                required: true,
+                input_type: "number"
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Welchem Geschlecht fühlen Sie sich zugehörig?", 
+                name: 'gender', 
+                options: ['weiblich', 'männlich', 'divers'],
+                required: true
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyHandaufsherz = {
+        type: jsPsychSurvey,
+        data: { test_part: 'handaufsherz' },
+        pages: [
+        [
+            {
+              type: 'multi-choice',
+              prompt: "Hand auf\'s Herz: Haben Sie diese Studie wirklich aufmerksam bearbeitet, sodass wir Ihre Daten in unsere Datenanalyse integrieren können?",
+              name: 'handaufsherz', 
+              options: ['Ja', 'Nein'],
+              required: true
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+  
+
+    /* ending */
+    // save data to csv
+    function saveData(name, data){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data6.php');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.send(JSON.stringify({filename: name, filedata: data}));
+      };
+
+    function saveDataDB() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data-db-maria.php'); // change 'write_data.php' to point to php script.
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if(xhr.status == 200){
+                var response = JSON.parse(xhr.responseText);
+                console.log(response.success);
+            }
+        };
+        xhr.send(jsPsych.data.get().json());
+    };
+
+    var ending = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: `<p>Herzlichen Dank für Ihre Teilnahme an unserer Studie. Diese diente der Erfassung verschiedener, individueller Realitätswahrnehmungen. Dabei wurde manipuliert, ob ein Anreiz zur Motivation gegeben war. Des Weiteren überprüft die Studie, ob sich der Ausgang des durchgeführten Spiels „Karte aufdecken“ willentlich beeinflussen lässt. Dies beruht auf der Theorie der Sobjektivität, welche einen Erklärungsansatz zur Existenz des freien Willens bietet.</p>
+        <p>Sie sind am Ende der Studie angelangt und können das Browser-Fenster nun schließen.</p>
+        <p>Auf Wiedersehen.</p>` + TXT_ending,
+        //choices: "ALL_KEYS",
+        choices: "NO_KEYS",
+        on_start: function() {
+            
+            if(!nosavetest){
+              //save top csv
+              if(vl) saveData("/" + studyname + "/study" + studypart + "/" + vl + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + vl + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+              else saveData("/" + studyname + "/study" + studypart + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+
+              //save to db
+              saveDataDB();
+            }
+
+        }
+    }
+
+
+
+    /* create timeline */
+
+    var timeline = [];
+    timeline.push(welcome);
+    timeline.push(informed_consent);
+    timeline.push(surveyDemographics);
+
+    if(condition == "Anreiz"){
+        timeline.push(choice);
+        timeline.push(storyReinkarnation);
+        timeline.push(storyKrimi);
+        timeline.push(cardAnreiz);
+        timeline.push(cardResult);
+        timeline.push(storyReinkarnation2);
+        timeline.push(storyKrimi2);
+        timeline.push(storyFail);
+    }
+    else if(condition == "KeinAnreiz"){
+        timeline.push(cardKeinAnreiz);
+        timeline.push(cardResult);
+    }
+    else alert("No condition set!");
+    
+    timeline.push(surveySVS);
+    //timeline.push(surveyAutonmie);
+    //timeline.push(surveySMS5);
+    //timeline.push(surveyITW);
+    timeline.push(surveyHandaufsherz);
+    timeline.push(ending);
+
+
+
+    /* start the experiment */
+
+    jsPsych.run(timeline);
+
+  </script>
+</html>
