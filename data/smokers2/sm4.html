@@ -1,0 +1,436 @@
+<!doctype html>
+<meta charset="utf-8" />
+<html>
+<head>
+    <title>Experiment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-5.0.3/plugins/single-stim-quantis.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-multi-stim-multi-response.js"></script>    
+    <script src="jspsych-5.0.3/plugins/jspsych-single-stim.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-text.js"></script>
+
+    <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+<style>
+    .button {
+    background-color: #555555;
+    border: 2px solid #cccccc;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+        }
+
+    .button:hover {background-color: #e7e7e7;
+                    color: black;
+        }
+</style>
+</head>
+<body>
+<div width="100%" height="100%" bgcolor="#000">
+<script>
+    
+    /////////////////////
+
+    // ------------------------- EDIT THIS VARIABLES ------------------------------------
+    // ---> note that all file pathes are relative to the apache base directory which is normally
+    // var/www/html
+    // ---> time is always in ms
+    // ---> text can be formatted with HTML text formatting elements like <p> <b> <mark> and so on
+    // ---> IMPORTANT! Firefox has problems with empty strings like ''. Try to fill all strings!
+    // this behavior does not happen on Chromium
+
+    // total number of trials
+    var Ntrials = 40;
+    // first text to show = welcome text
+
+    var TEXT_STARTEXPERIMENT = "<p>Schieben Sie nun bitte den Mauszeiger zur Seite und drücken Sie eine beliebige Taste um mit der Darstellung der Bilder zu beginnen.</p>";
+    
+    var TEXT_VOLLBILD = "<p>In diesem Teil der Studie werden Ihnen flackernde Bildreize und Bilder mit unterschiedlichen Inhalten dargeboten. Dieser Teil dauert etwa 3 Minuten. Bitte versuchen Sie nicht abzuschweifen und Ihren Blick für die gesamte Länge auf den Bildschirm zu richten. Betrachten Sie dazu bitte das <b>+</b></p>";
+    
+    var TEXT_ACTIVATEFS = "<center><p>Bitte aktivieren Sie für den folgenden Teil den Vollbildmodus Ihres Browsers.</p><p>Drücken Sie dazu die Taste</p><p><font size='6'>F11</font></b></p><p>Bei Laptops müssen Sie evtl zusätzlich die Fn-Taste drücken. Alternativ können Sie den Vollbildmodus auch im Menü Ihres Browsers aktivieren. Sie können <a href='http://www.giga.de/downloads/google-chrome/tipps/vollbildmodus-tastenkombination-fuer-euren-browser/' target='_blank'>hier</a> nachsehen, wie das funktioniert.</p>";
+    
+    
+    var TEXT_CONSENT = "<p>Die Richtlinien guter ethischer Forschung sehen vor, dass sich die Teilnehmer/innen an empirischen Studien explizit und nachvollziehbar mit der Teilnahme einverstanden erklären.</p>" +
+    "<p><b>Freiwilligkeit.</b> Ihre Teilnahme ist auch an diesem Teil der Untersuchung freiwillig. Es steht Ihnen zu jedem Zeitpunkt dieser Studie frei, Ihre Teilnahme abzubrechen, ohne dass Ihnen daraus Nachteile entstehen.</p>" +
+    "<p><b>Anonymität.</b> Ihre Daten sind selbstverständlich vertraulich, werden nur in anonymisierter Form ausgewertet und nicht an Dritte weitergegeben. Demographische Angaben wie Alter oder Geschlecht lassen keinen eindeutigen Schluss auf Ihre Person zu.</p>" +
+    "<p><b>Fragen.</b> Falls Sie noch Fragen zu dieser Studie haben sollten, finden Sie im Anschluss ein Impressum mit Kontaktdaten der Studienleiter.</p>" +
+    
+    "<p><label><input type='checkbox' onchange=\"document.getElementById('jspsych-instructions-next').disabled = !this.checked;\"><u>Ich bestätige, die Einverständniserklärung gelesen und verstanden zu haben.</u></input></label></p>" +
+    "<center><button class='button' disabled id='jspsych-instructions-next' onclick='openFullscreen();'>Versuch starten</button></center>";
+    
+  
+    // duration of fixation cross in ms
+    var TIME_CROSS = 600;
+    // duration of stimulus image
+    var TIME_STIMULUS = 1000;
+    // delay after stimulus
+    var TIME_POST_STIMULUS = 400;
+    // durations of mask, prime, mask
+    var TIME_MASKED_PRIME = [110,55,110];
+
+    // picture to use as fixation cross between trials
+    var IM_FIXATION_CROSS = 'img/cross.png';
+    var IM_FIXATION_CROSS_L = 'img/cross_l.png';
+    var IM_FIXATION_CROSS_R = 'img/cross_r.png';
+    
+    // path to audio test file
+   // var AUDIOTEST_FILE = 'audio/testton.mp3';
+    
+    // path to audio file
+   // var AUDIO_FILE = 'audio/entspannung.mp3';
+
+    // an array of paths to images for stimuli
+    var images_A = ['img/SM4/s01.png',
+                      'img/SM4/s02.png',
+                      'img/SM4/s03.png',
+                      'img/SM4/s04.png',
+                      'img/SM4/s05.png',
+                      'img/SM4/s06.png',
+                      'img/SM4/s07.png',
+                      'img/SM4/s08.png',
+                      'img/SM4/s09.png',
+                      'img/SM4/s10.png'];
+
+    var images_B = ['img/SM4/n01.jpg',
+                      'img/SM4/n02.jpg',
+                      'img/SM4/n03.jpg',
+                      'img/SM4/n04.jpg',
+                      'img/SM4/n05.jpg',
+                      'img/SM4/n06.jpg',
+                      'img/SM4/n07.jpg',
+                      'img/SM4/n08.jpg',
+                      'img/SM4/n09.jpg',
+                      'img/SM4/n10.jpg'];
+    
+    var images_mask = ['img/SM4/m01.png',
+                      'img/SM4/m02.png',
+                      'img/SM4/m03.png',
+                      'img/SM4/m04.png',
+                      'img/SM4/m05.png'];
+    
+    var images_prime = ['img/SM4/p01.png',
+                      'img/SM4/p02.png',
+                      'img/SM4/p03.png',
+                      'img/SM4/p04.png',
+                      'img/SM4/p05.png'];  
+    
+
+
+
+    // var images_cross_rnd = jsPsych.randomization.repeat(images_cross, Math.floor(Ntrials / images_cross.length) + 1);
+
+    // ------------------------- END VARIABLE BLOCK ------------------------------------
+   
+    // function to read pid
+    
+// Fullscreen script
+    
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+    // randomisation of images and sounds
+    //
+    images_A = jsPsych.randomization.sample(images_A, Ntrials, true);
+    images_B = jsPsych.randomization.sample(images_B, Ntrials, true);
+    
+    var repeats = Ntrials/images_mask.length
+        
+    images_mask = jsPsych.randomization.repeat(images_mask, repeats);
+    images_prime = jsPsych.randomization.repeat(images_prime, repeats);
+    
+    // no repeats of masks
+    images_mask = jsPsych.randomization.shuffleNoRepeats(images_mask);
+
+
+	var images = {stim_A: images_A, stim_B: images_B};
+
+    
+    // set trial number
+    var i_trial = 0;
+    
+    // define random order of experimental or control condition: choose randomly 20 out of 40.
+    var list = [];
+    for (var j = 0; j <= 39; j++) {
+    list.push(j);
+    }
+
+    var random_trial_list = jsPsych.randomization.sample(list, 20, false)
+    
+
+    var vollbild_block = {
+    type: 'instructions',
+    pages: [
+        TEXT_CONSENT,
+        TEXT_VOLLBILD
+    ],
+    show_clickable_nav: true
+}; 
+    
+    
+    /* define start experiment block */
+        var startexperiment_block = {
+        type: "text",
+        text: TEXT_STARTEXPERIMENT,
+        timing_post_trial: 500
+    };
+
+
+
+    jsPsych.pluginAPI.preloadImages(images_A, function () {
+    }, function () {
+        console.log('loading pos images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_prime, function () {
+    }, function () {
+        console.log('loading prime images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_mask, function () {
+    }, function () {
+        console.log('loading mask images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_B, function () {
+        startExperiment();
+    }, function () {
+        console.log('loading neg images...')
+    });
+
+    
+
+    /* define test block */
+    var test_stimuli = [
+        {
+            stimulus: images,
+            data: {}
+        }
+    ];
+    
+    
+    var show_prime = function(){
+        return [images_mask[i_trial], images_prime[i_trial], images_mask[i_trial]]
+    };
+    
+    var show_prime_fake = function(){
+        return [images_mask[i_trial], images_mask[i_trial+1], images_mask[i_trial]]
+    };
+
+
+ /*   var get_cross_or_number = function(){
+        return images_cross_rnd[i_trial]
+    };
+*/   
+    
+var ID_block = {
+      type: 'survey-text',
+      questions: ["Bitte Code eintragen"],
+        on_finish: function(trial_data){
+            // pase subject id
+            subject_id = JSON.parse(trial_data.responses).Q0;
+            console.log('test person entered subject id ' + subject_id );
+            var datetime = new Date();
+            filename = 'SM4 ' + 
+		datetime.getFullYear() +'.'+datetime.getMonth()+1+'.'+datetime.getDate()+' '+
+		datetime.getHours() +'.' + datetime.getMinutes()+
+		' ' + subject_id;
+            // add id and datetime to data. each file line will contain this information
+            jsPsych.data.addProperties({
+                time : datetime,
+                subject_id: subject_id
+            });
+        }
+    };
+
+// REAL PRIME
+  var prime = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: 225,
+    timing_post_trial: 425,
+    response_ends_trial: false
+   }; 
+    
+  var prime_pause = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: 225,
+    timing_post_trial: 625,
+    response_ends_trial: false
+   }; 
+    
+// FAKE PRIME
+  var prime_fake = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime_fake,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: 225,
+    timing_post_trial: 425,
+    response_ends_trial: false
+   }; 
+    
+  var prime_fake_pause = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime_fake,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: 225,
+    timing_post_trial: 625,
+    response_ends_trial: false
+   }; 
+  
+
+  var intertrial_l = {
+        type: 'single-stim',
+        stimulus: IM_FIXATION_CROSS_L,
+        is_html: false,
+        timing_response: TIME_CROSS,
+        timing_post_trial: 0,
+        response_ends_trial: false    
+  };
+    
+  var intertrial_r = {
+        type: 'single-stim',
+        stimulus: IM_FIXATION_CROSS_R,
+        is_html: false,
+        timing_response: TIME_CROSS,
+        timing_post_trial: 0,
+        response_ends_trial: false    
+  };
+    
+
+
+    var test_block = {
+        type: "single-stim-quantis",
+        choices: 'none',
+
+        timing_stim: TIME_STIMULUS,
+        timing_response: TIME_STIMULUS,
+        timing_post_trial: TIME_POST_STIMULUS,
+
+        stimuli: images,
+        
+        //sounds: sounds,
+        //player: player,
+        //sourceMp3: sourceMp3,
+
+
+        i_trial: function(){return i_trial}, // current trial modulo number of images
+        on_finish: function (data) {
+            jsPsych.data.addDataToLastTrial(
+                    {   trial_number: i_trial
+                    });
+            if (random_trial_list.indexOf(i_trial) > -1) {
+               jsPsych.data.addDataToLastTrial(
+                    {   exp_condition: 1
+                    }); 
+            } else {
+                jsPsych.data.addDataToLastTrial(
+                    {   exp_condition: 0
+                    }); 
+            }
+            i_trial++;
+        },
+        timeline: test_stimuli
+    };
+
+   var save_block = {
+    type: 'single-stim',
+//    stimulus: 'saving data',
+    is_html: true,
+    timing_response: 100,
+    response_ends_trial: false,
+    on_finish:  function (data) {
+                saveData('data/sm4/' + filename + '.csv', jsPsych.data.dataAsCSV())
+            }
+    };
+
+    var debrief_block = {
+        type: "text",
+        text: "<p><b>Vielen Dank für die Teilnahme!</b></p><br><br><p>Wenden Sie sich bitte an <a href='mailto:moritz.dechamps@psy.lmu.de'>Moritz Dechamps</a>, wenn Sie Fragen zu diesem Teil der Studie haben.</p>",
+        cont_key: '?'
+    };
+
+
+    /* create experiment timeline array */
+    var timeline = [];
+    timeline.push(ID_block);
+    timeline.push(vollbild_block);
+    timeline.push(startexperiment_block);
+    for(var i=0; i < Ntrials; i++){
+        if (random_trial_list.indexOf(i) > -1) {
+            timeline.push(intertrial_l); // add a fixation trial
+            timeline.push(prime);
+            timeline.push(intertrial_r); // add a fixation trial
+            timeline.push(prime_pause);
+            timeline.push(intertrial_l); // add a fixation trial
+            timeline.push(prime);
+            timeline.push(intertrial_r); // add a fixation trial
+            timeline.push(prime);
+        } else {
+            timeline.push(intertrial_l); // add a fixation trial
+            timeline.push(prime_fake);
+            timeline.push(intertrial_r); // add a fixation trial
+            timeline.push(prime_fake_pause);
+            timeline.push(intertrial_l); // add a fixation trial
+            timeline.push(prime_fake);
+            timeline.push(intertrial_r); // add a fixation trial
+            timeline.push(prime_fake);
+        }
+      timeline.push(test_block); // add a word trial
+    }
+    timeline.push(save_block);
+    timeline.push(debrief_block);
+
+    function saveData(filename, filedata) {
+        console.log("starting save data...", filename, filedata);
+        $.ajax({
+            type: 'post',
+            cache: false,
+            url: 'save-data.php', // this is the path to the above PHP script
+            data: {filename: filename, filedata: filedata}
+        })
+                .done(function (data) {
+                    // alert("OK OK OK" + data)
+                })
+                .fail(function () {
+                    alert("Ajax failed to send data")
+                });
+        console.log("finished save data");
+    }
+
+    /* start the experiment */
+    function startExperiment() {
+        jsPsych.init({
+            timeline: timeline
+          //  fullscreen: true
+        });
+    }
+</script>
+    </div>
+</body>
+</html>

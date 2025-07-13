@@ -1,0 +1,58 @@
+---
+title: "Smokers Priming"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Smokers Priming")
+```
+
+## Hypothesis
+
+In this experiment only smokers were included. The aim was to further explore the role of felt deprivation in micro-psychokinetic effects, specifically in the context of smoking. The study hypothesized that smokers would see fewer smoking-related images in trials where they were primed with sentences activating the lack of nicotine than in neutral priming trials. This hypothesis was based on results of the previous smoker studies which suggested that the subconscious state of deprivation leads to a self-fulfilling prophecy, where the expectation of not having enough nicotine results in fewer instances of the desired outcome, in this case, seeing smoking-related images.
+
+## Participants
+
+Participants consisted of smokers above the age of 18.
+No demographic data are available for this study.
+
+## Materials
+
+Experimental primes consisted of 5 different sentences that aimed to activate a feeling of deprivation or lacking. They included:
+
+-   "I am missing it so much"
+-   "I need more"
+-   "It is not enough"
+-   "I have too little"
+-   "I am lacking"
+
+Primes were displayed subliminally and were accompanied by masking consisting of random consonants.
+
+Neutral primes consisted of the same priming procedure but displayed a different set of random consonants as prime that did not activate any specific feeling of deprivation.
+
+Smoking-related and neutral images were identical to those of the [previous smoker studies](smokers1.html).
+
+## Procedure
+
+The study was part of a lab study testing participants who identified as smokers. Participants were asked to attentively observe a series of 20 images that were preceeded by the 4 separate priming procedures each displaying mask - prime - mask (110 ms - 55 ms - 110 ms). A fixation cross wass displayed before each priming procedure, first on the left side of the screen, then on the right side and then left and right once more. This was done to facilitate a subconscious processing of the complete priming sentence. Images were displayed for 1000ms, followed by a blank screen for 400ms. 
+
+Experimental and control trials were randomly shuffled for each participant.
+
+## Sample Size and Data Analysis
+
+The study used the standard analysis protocol for Micro-Pk studies which includes a one-tailed Bayesian t-test with a prior following Cauchy(0, 0.1). We expected less smoking-related images than chance (50%) in the experimental condition and a lesser or no effect in the control condition, since this paradigm had already declined at this point.
+
+Since this study was an add-on to a different smokers-related lab study conducted by another research group, the sample size was limited and not further extended after completion of the main study.
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/erotic/erotic2.csvsmokers2/smokers-priming.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/smokers2/sm4.html)
+-   [Stimuli](../data/erotic/erotic2.csvsmokers2/stimuli.zip)
+:::

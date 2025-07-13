@@ -6,7 +6,6 @@ format:
     #css: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 #toc: true
 toc-depth: 3
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -51,7 +50,26 @@ links = c(
   "studies/priming4.html",
   "studies/priming4.html",
   "studies/erotic1.html",
-  "studies/erotic2.html"
+  "studies/erotic2.html",
+  "studies/smokers-priming.html",
+  "studies/smokers-priming.html",
+  "studies/sobjectivity.html",
+  "studies/sobjectivity.html",
+  "studies/sobjectivity.html",
+  "studies/epsi.html",
+  "studies/epsi.html",
+  "studies/robots.html",
+  "studies/games.html",
+  "studies/schroedinger.html",
+  "studies/schroedinger.html",
+  "studies/desire.html",
+  "studies/stories.html",
+  "studies/stories.html",
+  "studies/willpower.html",
+  "studies/willpower.html",
+  "studies/baseline1.html",
+  "studies/baseline1.html",
+  "studies/baseline2.html"
 )
 
 source("scripts/generate_table.R")

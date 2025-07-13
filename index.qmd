@@ -25,11 +25,13 @@ For each study, the [main results](experiments.html) (including distinctions bet
 
 ### Included Studies
 
-This report includes all studies conducted at the LMU Lab that explore a general and universal Micro-PK effect. Excluded are case studies of individuals or studies on related psi effects such as precognition. Detailed information on each study, along with relevant data and resources, can be found in the [experiments section](experiments.html).
+This report includes all studies conducted at the LMU Lab that explore a general and universal Micro-PK effect. Excluded are case studies of individuals or studies on related psi effects such as precognition. Some studies included followed modified hypotheses and/or experimental designs. To compare and aggregate the studies for this report, we assumed one-tailed hypotheses (with the exception of the Smokers 1 study) and single-group designs tested with one-sample t-tests against the mean expected by chance. Experimental and control conditions are therefor viewed as separate studies.
+
+Detailed information on the original hypotheses and design of each study, along with relevant data and resources, can be found in the [experiments section](experiments.html).
 
 ### Versions
 
-The report is regularly updated to include new studies and results. The current version  includes all studies conducted from the beginning of the project in 2016 until 04 May 2020.
+The report is regularly updated to include new studies and results. The current second version includes all studies conducted from the beginning of the project in 2016 until 13 July 2025.
 
 ### Comments and Feedback
 
@@ -39,4 +41,10 @@ Instead of a traditional peer-review process, we would like to encourage you to 
 
 If you find this report useful and wish to cite it in your work, please use the following citation format:
 
+Dechamps, M. C. (2025). *Meta-Analysis of a Complete Micro-PK Database from the LMU Lab: Years 2016-2025*. <https://doi.org/10.5281/zenodo.13643264>. Retrieved from <https://mrzdcmps.github.io/labreport>
+
+::: {.callout-note collapse="true"}
+## Previous Versions
+
 Dechamps, M. C. (2024). *Meta-Analysis of a Complete Micro-PK Database from the LMU Lab: Years 2016-2020*. <https://doi.org/10.5281/zenodo.13643264>. Retrieved from <https://mrzdcmps.github.io/labreport>
+:::

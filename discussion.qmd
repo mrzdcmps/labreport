@@ -15,7 +15,7 @@ Current version: *Studies 2016 - 2020*
 :::
 
 ```{r setup, include=FALSE}
-st <- readRDS("data/overview.rds")
+st <- readRDS("data/overview2025-07-12.rds")
 load("data/study_objects.RData")
 
 # Number of Studies
