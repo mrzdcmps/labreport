@@ -1,0 +1,107 @@
+---
+title: "Sobjectivity"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Sobjectivity")
+```
+
+## Hypothesis
+
+In this series of experiments we hypothesize that psi effects like micro-psychokinesis (micro-PK) may be more likely to occur when there's less objective confirmation or "witnessing" of the results. We propose that maximum objectivity (Cmax) suppresses psi effects, while reduced objectivity (Creduced) allows them to emerge in a "sobjective" realm where a transfer of pragmatic information can occur (Ip \> 0).
+
+### Study Design
+
+Participants performed a micro-PK task attempting to influence a quantum random number generator (qRNG) to produce more positive images. The study used two conditions:
+
+-   Control condition (Cmax): Both objective data (actual qRNG selections) and subjective data (participants' memory of results) were recorded and analyzed
+
+-   Experimental condition (Creduced): Objective data were automatically deleted before analysis, leaving only participants' subjective recall
+
+### Key Hypotheses
+
+Experimental condition: Micro-PK effects would emerge in the subjective memory data when objective confirmation was removed (Creduced condition)
+
+Control condition: No micro-PK effects would be found in either objective or subjective data when both were available (Cmax condition)
+
+The study builds on [previous research](priming1.html) that initially found strong micro-PK effects which then disappeared in subsequent replications, suggesting that maximum objective confirmation had been reached and was suppressing the effects.
+
+## Participants
+
+#### Study 1
+
+```{r}
+generate_demographics_table(
+  data = study16_sobjectivity.1,
+  age_col = "age",
+  gender_col = "sex",
+  male_value = "m\xe4nnlich",
+  female_value = "weiblich"
+)
+```
+
+#### Study 2
+
+```{r}
+generate_demographics_table(
+  data = study17_sobjectivity.2,
+  age_col = "age",
+  gender_col = "sex",
+  male_value = "m\xe4nnlich",
+  female_value = "weiblich"
+)
+```
+
+#### Study 3
+
+```{r}
+generate_demographics_table(
+  data = study18_sobjectivity.3,
+  age_col = "age",
+  gender_col = "gender",
+  male_value = "männlich",
+  female_value = "weiblich"
+)
+```
+
+## Materials
+
+Materials were identical to the [priming studies](priming1.html).
+
+## Procedure
+
+Participants were invited by Kantar with the exclusion criterion being that participants had not previously taken part in experiments using this paradigm. Participants were instructed to ensure an undisturbed environment and provided basic demographic information before entering full-screen mode and receiving written task instructions. They were informed they would see flickering visual stimuli and positive and negative images that should be watched passively, and were reminded they could withdraw at any time.
+
+Each participant completed 40 trials, with every target pair being selected twice and shuffled into a unique order. A software randomizer then assigned 20 trials to the experimental condition (Creduced) and 20 to the control condition (Cmax). During each trial, a fixation cross appeared for 1200 ms to direct attention, followed by the subliminal priming sequence. The three prime presentations (50/50, 60/40, and 70/30 mixtures) were each displayed for 55 ms with forward and backward masks lasting 110 ms each, separated by 1000 ms black screens. After the priming procedure, the quantum random number generator determined whether the positive or negative target from the matched pair would be presented. Depending on the condition, this random selection was either stored to memory (Cmax) or added to a temporary counter (Creduced). The selected target appeared for 1000 ms, followed by a 1200 ms inter-trial interval.
+
+After 24 trials, participants clicked a continue button to confirm their alertness, with data excluded if they failed to respond within 10 seconds. Upon completing all 40 trials, participants viewed the actual number of positive images chosen by the quantum random number generator in each condition, displayed as "A" for the control condition and "B" for the experimental condition. No explicit instruction to memorize these numbers was given, creating an incidental learning task. Following a brief filler task involving luckiness ratings, participants completed a recall task where they attempted to remember the numbers previously shown after "A" and "B."
+
+The design created three dependent variables: for the experimental condition (Creduced), only subjective memory data were available since the temporary counter was not saved to results files; for the control condition (Cmax), both subjective memory data and objective computer-stored data were retained, allowing comparison between objective reality and subjective recall across different levels of confirmation.
+
+## Sample Size and Data Analysis
+
+A sequential Bayesian analysis plan was applied for every study. Three separate one-sample t-tests were conducted for each study, comparing the mean number of positive images selected (Cmax objective) or reported (Cmax subjective and Creduced subjective) against the expected chance level of 10.
+
+Only data from Cmax objective is considered in this meta-analysis.
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data Study 1](../data/sobjectivity/sobjectivity1.csv)
+-   [Download Data Study 2](../data/sobjectivity/sobjectivity2.csv)
+-   [Download Data Study 3](../data/sobjectivity/sobjectivity3.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   [Publication](https://journals.lub.lu.se/jaex/article/view/23535) [@maier2022]
+-   [Preregistrations](https://osf.io/nveaq/registrations)
+-   [OSF Project](https://osf.io/nveaq/)
+-   [OSF Data and Materials](https://osf.io/nveaq/files/osfstorage)
+-   [Experimental Program Study 1](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/prime-del-study1.html)
+-   [Experimental Program Study 2](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/prime-del.html)
+-   [Experimental Program Study 3](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/sob_rr.html)
+-   [Stimuli](../data/priming/NPrime.zip)
+:::

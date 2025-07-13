@@ -1,0 +1,687 @@
+Data collection for this study is complete. Thank you for your interest!
+<!--
+<!doctype html>
+<meta charset="utf-8" />
+<html>
+<head>
+    <title>Experiment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-button-response.js"></script>
+    <script src="jspsych-5.0.3/plugins/single-stim-quantis-prime.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-multi-stim-multi-response.js"></script>    
+    <script src="jspsych-5.0.3/plugins/jspsych-single-stim.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-likert.js"></script>
+
+    <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+<div width="100%" height="100%" bgcolor="#000">
+<script>
+    
+// function to read pid
+    
+    function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+};
+    
+    var subject_id = getParameterByName('pid');
+    
+    /////////////////////
+
+    // ------------------------- EDIT THIS VARIABLES ------------------------------------
+    //   note that all file pathes are relative to the apache base directory which is normally
+    // var/www/html
+    //   time is always in ms
+    //   text can be formatted with HTML text formatting elements like <p> <b> <mark> and so on
+    //   IMPORTANT! Firefox has problems with empty strings like ''. Try to fill all strings!
+    // this behavior does not happen on Chromium
+
+    // total number of trials
+    var Ntrials = 40;
+    // when to show a check
+    var Ncheck = 24
+    
+    // set counter
+    var count_save = 0;
+    var count_nosave = 0;
+    
+    // first text to show = welcome text
+
+    var TEXT_STARTEXPERIMENT_DE = "<p>Schieb nun bitte den Mauszeiger zur Seite und drücke eine beliebige Taste um mit der Darstellung der Bilder zu beginnen.</p>";
+    
+    var TEXT_STARTEXPERIMENT_IT = "<p>Ora spostare il puntatore del mouse di lato e premere un tasto qualsiasi per iniziare a visualizzare le immagini.</p>";
+    
+    var TEXT_VOLLBILD_DE = "<p>In diesem Teil der Studie werden Dir flackernde Bildreize und Bilder mit unangenehmen und angenehmen Inhalten dargeboten. Sollten diese für Dich unakzeptabel sein, kannst Du jederzeit abbrechen. Bitte schließe dazu einfach das Browserfenster.</p><p>Du wirst zwischendurch aufgefordert WEITER zu klicken, bitte mach das zügig, da die Studie sonst vorzeitig beendet wird und Deine Ergebnisse nicht verwendet werden können.</p>";
+    
+    var TEXT_VOLLBILD_IT = "<p>In questa parte dello studio vengono presentati stimoli pittorici tremolanti e immagini dai contenuti sgradevoli e piacevoli. Se per voi sono inaccettabili, potete fermarvi in qualsiasi momento. Chiudere la finestra del browser.</p>";
+    
+    var TEXT_ACTIVATEFS_DE = "<center><p>Bitte aktivieren Sie für den folgenden Teil den Vollbildmodus Ihres Browsers.</p><p>Drücken Sie dazu die Taste</p><p><font size='6'>F11</font></b></p><p>Bei Laptops müssen Sie evtl zusätzlich die Fn-Taste drücken. Alternativ können Sie den Vollbildmodus auch im Menü Ihres Browsers aktivieren. Sie können <a href='http://www.giga.de/downloads/google-chrome/tipps/vollbildmodus-tastenkombination-fuer-euren-browser/' target='_blank'>hier</a> nachsehen, wie das funktioniert.</p>";
+    
+    var TEXT_ACTIVATEFS_IT = "<center><p>Si prega di attivare la modalità a schermo intero del browser per la parte seguente.</p><p>Per fare questo, premere il pulsante</p><p><font size='6'>F11</font></b></p><p>Per i computer portatili, potrebbe essere necessario premere il tasto Fn. In alternativa, è possibile attivare la modalità a schermo intero nel menu del browser.</p>";
+    
+    var TEXT_END_DE = "<p>Vielen Dank!</p><p>Du kannst den Vollbildmodus nun wieder deaktivieren, beispielsweise durch Drücken der Taste <b>Esc</b> oder <b>F11</b>.</p><p><a href='http://norstatsurveys.com/wix/p1874301048.aspx?__sid__=" + subject_id + "'>Klick bitte hier, um einige abschließende Fragen zu beantworten.</a></p>";
+    
+    var TEXT_END_IT = "<p>Grazie mille!</p><p>Ora è possibile disattivare nuovamente la modalità a schermo intero, ad esempio premendo Esc o F11.</p><p><a href='http://norstatsurveys.com/wix/p1874301048.aspx?__sid__=" + subject_id + "'>Clicca qui per rispondere ad alcune domande finali.</a></p>";
+    
+    var TEXT_CHECK = "<p style='padding-top:350px;'><center><big>Bitte auf WEITER klicken</big></center></p>";
+    
+    var q3_pre = "<p>3. Bitte gib Deine Zustimmung zu folgenden Aussagen an, bei denen es um <i>Glück haben</i> geht.</p><p>Es gibt keine richtigen und falschen Antworten. Versuche bitte, die Aussagen so schnell wie möglich zu bewerten. Klicke dazu in den entsprechenden Kreis, so dass ihn ein schwarzer Punkt ausgefüllt erscheinen lässt, von ganz links <i>stimme gar nicht zu</i> bis ganz rechts <i>stimme total zu</i>.</p>";
+    
+    var q3_alles = "Ich habe das Gefühl, dass mir heute alles gelingt.";
+    var q3_qbl1 = "Man kann sein Glück erhöhen, indem man auf seine Instinkte hört.";
+    var q3_qbl2 = "Pessimismus führt zu mehr Pech."
+    var q3_qbl3 = "Handelt man nach glücksleitenden Gefühlen, kann man sein Glück beeinflussen.";
+    var q3_qbl4 = "Eine optimistische Haltung kann zu mehr Glücksmomenten führen.";
+    var q3_qbl5 = "Man kann Glück haben, wenn man es sich stark genug wünscht.";
+    var q3_qbl6 = "Ich bin ein Glückspilz.";
+    
+    
+    
+    // text after end of experiment
+   // var TEXT_DEBRIEF =  "<p>Vielen Dank!</p>" +
+// "<p><a href='http://norstatsurveys.com/wix/p1853828385.aspx?__sid__=" + subject_id + "'>Klick bitte hier, um einige abschließende Fragen zu beantworten.</a></p>";
+
+    // duration of fixation cross in ms
+    var TIME_CROSS = 1200;
+    // duration of stimulus image
+    var TIME_STIMULUS = 1000;
+    // delay after stimulus
+    var TIME_POST_STIMULUS = 1200;
+    // durations of mask, prime, mask
+    var TIME_MASKED_PRIME = [110,55,110];
+    // time before check leads to experiment end
+    var TIME_CHECK_EXIT = 10000;
+
+    // picture to use as fixation cross between trials
+    var IM_FIXATION_CROSS = 'img/cross.png';
+    
+    // path to audio test file
+   // var AUDIOTEST_FILE = 'audio/testton.mp3';
+    
+    // path to audio file
+   // var AUDIO_FILE = 'audio/entspannung.mp3';
+
+    // an array of paths to images for stimuli
+    var images_pos = ['img/Norstat-Prime/01pos.jpg',
+                      'img/Norstat-Prime/02pos.jpg',
+                      'img/Norstat-Prime/03pos.jpg',
+                      'img/Norstat-Prime/04pos.jpg',
+                      'img/Norstat-Prime/05pos.jpg',
+                      'img/Norstat-Prime/06pos.jpg',
+                      'img/Norstat-Prime/07pos.jpg',
+                      'img/Norstat-Prime/08pos.jpg',
+                      'img/Norstat-Prime/09pos.jpg',
+                      'img/Norstat-Prime/10pos.jpg',
+                      'img/Norstat-Prime/11pos.jpg',
+                      'img/Norstat-Prime/12pos.jpg',
+                      'img/Norstat-Prime/13pos.jpg',
+                      'img/Norstat-Prime/14pos.jpg',
+                      'img/Norstat-Prime/15pos.jpg',
+                      'img/Norstat-Prime/16pos.jpg',
+                      'img/Norstat-Prime/17pos.jpg',
+                      'img/Norstat-Prime/18pos.jpg',
+                      'img/Norstat-Prime/19pos.jpg',
+                      'img/Norstat-Prime/20pos.jpg'];
+
+    var images_neg = ['img/Norstat-Prime/01neg.jpg',
+                      'img/Norstat-Prime/02neg.jpg',
+                      'img/Norstat-Prime/03neg.jpg',
+                      'img/Norstat-Prime/04neg.jpg',
+                      'img/Norstat-Prime/05neg.jpg',
+                      'img/Norstat-Prime/06neg.jpg',
+                      'img/Norstat-Prime/07neg.jpg',
+                      'img/Norstat-Prime/08neg.jpg',
+                      'img/Norstat-Prime/09neg.jpg',
+                      'img/Norstat-Prime/10neg.jpg',
+                      'img/Norstat-Prime/11neg.jpg',
+                      'img/Norstat-Prime/12neg.jpg',
+                      'img/Norstat-Prime/13neg.jpg',
+                      'img/Norstat-Prime/14neg.jpg',
+                      'img/Norstat-Prime/15neg.jpg',
+                      'img/Norstat-Prime/16neg.jpg',
+                      'img/Norstat-Prime/17neg.jpg',
+                      'img/Norstat-Prime/18neg.jpg',
+                      'img/Norstat-Prime/19neg.jpg',
+                      'img/Norstat-Prime/20neg.jpg'];
+    
+    var images_mask = ['img/Norstat-Prime/01mask.jpg',
+                      'img/Norstat-Prime/02mask.jpg',
+                      'img/Norstat-Prime/03mask.jpg',
+                      'img/Norstat-Prime/04mask.jpg',
+                      'img/Norstat-Prime/05mask.jpg',
+                      'img/Norstat-Prime/06mask.jpg',
+                      'img/Norstat-Prime/07mask.jpg',
+                      'img/Norstat-Prime/08mask.jpg',
+                      'img/Norstat-Prime/09mask.jpg',
+                      'img/Norstat-Prime/10mask.jpg',
+                      'img/Norstat-Prime/11mask.jpg',
+                      'img/Norstat-Prime/12mask.jpg',
+                      'img/Norstat-Prime/13mask.jpg',
+                      'img/Norstat-Prime/14mask.jpg',
+                      'img/Norstat-Prime/15mask.jpg',
+                      'img/Norstat-Prime/16mask.jpg',
+                      'img/Norstat-Prime/17mask.jpg',
+                      'img/Norstat-Prime/18mask.jpg',
+                      'img/Norstat-Prime/19mask.jpg',
+                      'img/Norstat-Prime/20mask.jpg'];
+    
+    var images_p50 = ['img/Norstat-Prime/01-50.jpg',
+                      'img/Norstat-Prime/02-50.jpg',
+                      'img/Norstat-Prime/03-50.jpg',
+                      'img/Norstat-Prime/04-50.jpg',
+                      'img/Norstat-Prime/05-50.jpg',
+                      'img/Norstat-Prime/06-50.jpg',
+                      'img/Norstat-Prime/07-50.jpg',
+                      'img/Norstat-Prime/08-50.jpg',
+                      'img/Norstat-Prime/09-50.jpg',
+                      'img/Norstat-Prime/10-50.jpg',
+                      'img/Norstat-Prime/11-50.jpg',
+                      'img/Norstat-Prime/12-50.jpg',
+                      'img/Norstat-Prime/13-50.jpg',
+                      'img/Norstat-Prime/14-50.jpg',
+                      'img/Norstat-Prime/15-50.jpg',
+                      'img/Norstat-Prime/16-50.jpg',
+                      'img/Norstat-Prime/17-50.jpg',
+                      'img/Norstat-Prime/18-50.jpg',
+                      'img/Norstat-Prime/19-50.jpg',
+                      'img/Norstat-Prime/20-50.jpg'];
+    
+    var images_p60 = ['img/Norstat-Prime/01-60.jpg',
+                      'img/Norstat-Prime/02-60.jpg',
+                      'img/Norstat-Prime/03-60.jpg',
+                      'img/Norstat-Prime/04-60.jpg',
+                      'img/Norstat-Prime/05-60.jpg',
+                      'img/Norstat-Prime/06-60.jpg',
+                      'img/Norstat-Prime/07-60.jpg',
+                      'img/Norstat-Prime/08-60.jpg',
+                      'img/Norstat-Prime/09-60.jpg',
+                      'img/Norstat-Prime/10-60.jpg',
+                      'img/Norstat-Prime/11-60.jpg',
+                      'img/Norstat-Prime/12-60.jpg',
+                      'img/Norstat-Prime/13-60.jpg',
+                      'img/Norstat-Prime/14-60.jpg',
+                      'img/Norstat-Prime/15-60.jpg',
+                      'img/Norstat-Prime/16-60.jpg',
+                      'img/Norstat-Prime/17-60.jpg',
+                      'img/Norstat-Prime/18-60.jpg',
+                      'img/Norstat-Prime/19-60.jpg',
+                      'img/Norstat-Prime/20-60.jpg'];
+    
+    var images_p70 = ['img/Norstat-Prime/01-70.jpg',
+                      'img/Norstat-Prime/02-70.jpg',
+                      'img/Norstat-Prime/03-70.jpg',
+                      'img/Norstat-Prime/04-70.jpg',
+                      'img/Norstat-Prime/05-70.jpg',
+                      'img/Norstat-Prime/06-70.jpg',
+                      'img/Norstat-Prime/07-70.jpg',
+                      'img/Norstat-Prime/08-70.jpg',
+                      'img/Norstat-Prime/09-70.jpg',
+                      'img/Norstat-Prime/10-70.jpg',
+                      'img/Norstat-Prime/11-70.jpg',
+                      'img/Norstat-Prime/12-70.jpg',
+                      'img/Norstat-Prime/13-70.jpg',
+                      'img/Norstat-Prime/14-70.jpg',
+                      'img/Norstat-Prime/15-70.jpg',
+                      'img/Norstat-Prime/16-70.jpg',
+                      'img/Norstat-Prime/17-70.jpg',
+                      'img/Norstat-Prime/18-70.jpg',
+                      'img/Norstat-Prime/19-70.jpg',
+                      'img/Norstat-Prime/20-70.jpg'];
+
+
+    // ------------------------- END VARIABLE BLOCK ------------------------------------
+   
+
+    // generate a random subject ID
+     //Math.floor(Math.random()*100000);
+    
+    var datetime = new Date();
+    
+    var filename = 'PrimeDel3_' +
+		datetime.getFullYear() +'.'+datetime.getMonth()+1+'.'+datetime.getDate()+' '+
+		datetime.getHours() +'.' + datetime.getMinutes()+
+		' ' + subject_id;
+            // add id and datetime to data. each file line will contain this information
+            jsPsych.data.addProperties({
+                time : datetime,
+                subject_id: subject_id
+            });
+    console.log('subject id = ' + subject_id );
+    
+    // define order of images displayed in each trial
+    var trial_order = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+    var trial_order = jsPsych.randomization.repeat(trial_order, 2);
+    // console.log('trial order = ' + trial_order);
+    
+    // set trial number
+    var i_trial = 0;
+    
+    // define random order of experimental or control condition: choose randomly 20 out of 40.
+    var list = [];
+    for (var j = 0; j <= 39; j++) {
+    list.push(j);
+    }
+
+    var random_trial_list = jsPsych.randomization.sample(list, 20, false)
+    
+//    function getRandomInt(min, max) {
+//    min = Math.ceil(min);
+//    max = Math.floor(max);
+//    return Math.floor(Math.random() * (max - min + 1)) + min;
+//}  
+//    var RI1 = getRandomInt(7,20);
+//    var RI2 = getRandomInt(21,37);
+    
+//    console.log('random trial list = ' + random_trial_list);
+
+    // randomisation of images and sounds
+    //
+    // images_A = jsPsych.randomization.sample(images_A, Ntrials, true);
+    // images_B = jsPsych.randomization.sample(images_B, Ntrials, true);
+
+	/*
+    function repeatArray(arr, count) {
+	  var ln = arr.length;
+	  var b = new Array();
+	  for(i=0; i<count; i++) {
+		b.push(arr[i%ln]);		  
+	  }
+		return b;
+	}
+    */
+
+	var images = {stim_A: images_pos, stim_B: images_neg};
+
+    var language = 'de';
+    var language_block = {
+        type: 'button-response',
+        stimulus: "img/language.png",
+        choices: ['Deutsch','Italiano'],
+        on_finish: function(data) {
+            console.log(data.button_pressed);
+            if(data.button_pressed == 0){
+                language = 'de';
+                console.log("Language ",language);
+            } else {
+                console.log("Language IT");
+            }
+        }
+    }
+    
+    
+    var pages1 = function(){
+       if(language == 'de'){
+           return [TEXT_ACTIVATEFS_DE, TEXT_VOLLBILD_DE]
+       } else {
+           return [TEXT_ACTIVATEFS_IT, TEXT_VOLLBILD_IT]
+       }
+    }
+    
+    var pages2 = function(){
+       if(language == 'de'){
+           return TEXT_STARTEXPERIMENT_DE
+       } else {
+           return TEXT_STARTEXPERIMENT_IT
+       }
+    }
+    
+    var pages3 = function(){
+       if(language == 'de'){
+           return TEXT_END_DE
+       } else {
+           return TEXT_END_IT
+       }
+    }
+        
+    var vollbild_block = {
+        type: 'instructions',
+        pages: pages1,
+        show_clickable_nav: true
+    }    
+
+    
+    /* define start experiment block */
+    var startexperiment_block = {
+        type: "text",
+        text: pages2,
+        timing_post_trial: 500
+    }
+    
+        // Post-task questionnaire
+    var q1_age = {
+        type: 'survey-text',
+        questions: ["1. Alter"],
+        columns: [5],
+        required: true,
+        preamble: "<p>Bevor es losgeht, würden wir gerne noch einige wenige persönliche Informationen über Dich erfahren. Bitte beantworte die Fragen nach Alter und Geschlecht auf dieser und der nächsten Seite. Bestätige die Eingabe bitte durch Klicken auf den Button und nicht durch Betätigen der Enter-Taste.</p><p><b><a href='https://passback.lifepointspanel.com/Survey/EarlyScreenOut?ProjectToken=a5a78f9f-0307-665c-5d02-21c333318928'>Klicke bitte hier, falls Du unter 18 Jahre alt bist.</a></b></p>"
+    }
+    
+    var q2_sex = {
+        type: 'survey-multi-choice',
+        questions: ["2. Dein Geschlecht"],
+        options: [["weiblich","männlich","divers"]],
+        required: true,
+        horizontal: false
+    }
+    
+    var q3scale = ["Stimme gar nicht zu","","","Weder noch","","","Stimme total zu"];
+    var q3_p1 = {
+        type: 'survey-likert',
+        questions: [q3_qbl1],
+        labels: [q3scale],
+        required: true,
+        preamble: q3_pre
+    }
+    var q3_p2 = {
+        type: 'survey-likert',
+        questions: [q3_qbl2],
+        labels: [q3scale],
+        required: true
+    }
+    var q3_p3 = {
+        type: 'survey-likert',
+        questions: [q3_qbl3],
+        labels: [q3scale],
+        required: true
+    }
+    var q3_p4 = {
+        type: 'survey-likert',
+        questions: [q3_qbl4],
+        labels: [q3scale],
+        required: true
+    }
+    var q3_p5 = {
+        type: 'survey-likert',
+        questions: [q3_qbl5],
+        labels: [q3scale],
+        required: true
+    }
+    var q3_p6 = {
+        type: 'survey-likert',
+        questions: [q3_qbl6],
+        labels: [q3scale],
+        required: true
+    }
+
+    
+    var q4_counts = {
+        type: 'survey-text',
+        questions: ["A","B"],
+        columns: [5,5],
+        required: true,
+        preamble: "<p>Welche Zahlen sahst Du vorher hinter A und hinter B?</p><p>Gib bitte eine Zahl ein, auch wenn Du dir nicht sicher bist, ob sie korrekt ist! Bestätige die Eingabe bitte durch Klicken auf den Button und nicht durch Betätigen der Enter-Taste.</p>"
+    }
+        
+
+    jsPsych.pluginAPI.preloadImages(images_pos, function () {
+    }, function () {
+        console.log('loading pos images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_p50, function () {
+    }, function () {
+        console.log('loading p50 images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_p60, function () {
+    }, function () {
+        console.log('loading p60 images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_p70, function () {
+    }, function () {
+        console.log('loading p70 images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_mask, function () {
+    }, function () {
+        console.log('loading mask images...')
+    });
+    jsPsych.pluginAPI.preloadImages(images_neg, function () {
+        startExperiment();
+    }, function () {
+        console.log('loading neg images...')
+    });
+
+    
+
+    /* define test block */
+    var test_stimuli = [
+        {
+            stimulus: images,
+            data: {}
+        }
+    ];
+    
+    
+    var show_prime50 = function(){
+        return [images_mask[trial_order[i_trial]], images_p50[trial_order[i_trial]], images_mask[trial_order[i_trial]]]
+    }
+
+    var show_prime60 = function(){
+        return [images_mask[trial_order[i_trial]], images_p60[trial_order[i_trial]], images_mask[trial_order[i_trial]]]
+    }
+    
+    var show_prime70 = function(){
+        return [images_mask[trial_order[i_trial]], images_p70[trial_order[i_trial]], images_mask[trial_order[i_trial]]]
+    }
+
+ /*   var get_cross_or_number = function(){
+        return images_cross_rnd[i_trial]
+    };
+*/   
+
+  var prime50 = {
+    type: 'multi-stim-multi-response',
+ //   stimuli: [images_mask[trial_order[i_trial]], images_p50[trial_order[i_trial]], images_mask[trial_order[i_trial]]],
+    stimuli: show_prime50,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: 300,
+    response_ends_trial: false,
+//    on_finish: function () {
+//        console.log('P 50 i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+//    }
+   } 
+  
+  var prime60 = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime60,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: 275,
+    response_ends_trial: false,
+//    on_finish: function () {
+//        console.log('P 60 i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+//   }
+  }
+  
+  var prime70 = {
+    type: 'multi-stim-multi-response',
+    stimuli: show_prime70,
+    choices: 'none',
+    timing_stim: TIME_MASKED_PRIME,
+    timing_response: 250,
+    response_ends_trial: false,
+//    on_finish: function () {
+//        console.log('P 70 i_trial = ' + i_trial + ' trial_order = ' + trial_order[i_trial])
+//   }
+  }
+
+  var intertrial = {
+        type: 'single-stim',
+        stimulus: IM_FIXATION_CROSS,
+//        stimulus: get_cross_or_number,
+        is_html: false,
+        timing_response: TIME_CROSS,
+        timing_post_trial: 0,
+        response_ends_trial: false    };
+    
+  var check_block_alt = {
+    type: 'instructions',
+    pages: [
+        TEXT_CHECK
+    ],
+    show_clickable_nav: true
+    }
+  
+  var check_block = {
+      type: 'button-response',
+      stimulus: TEXT_CHECK,
+      is_html: true,
+      choices: ['WEITER'],
+      timing_response: TIME_CHECK_EXIT,
+      on_finish: function(data){
+          console.log("RT " + data.rt)
+          if (data.rt == -1){
+              //jsPsych.endExperiment('<p>Die Studie wurde beendet, da nicht rechtzeitig geklickt wurde.</p><p><a href=\"javascript:history.go(0)\">Du kannst hier klicken, oder die Seite neu laden, um erneut teilzunehmen.</a>');
+              jsPsych.endExperiment('<p>Die Studie wurde beendet, da nicht rechtzeitig geklickt wurde.</p><p><a href=\'https://passback.lifepointspanel.com/Survey/EarlyScreenOut?ProjectToken=a5a78f9f-0307-665c-5d02-21c333318928\'>Klicke bitte hier, um zurück zum Panel zu gelangen.</a></p>');
+          }
+      }
+  }
+
+
+  var test_block = {
+        type: "single-stim-quantis-prime",
+        choices: 'none',
+
+        timing_stim: TIME_STIMULUS,
+        timing_response: TIME_STIMULUS,
+        timing_post_trial: TIME_POST_STIMULUS,
+
+        stimuli: images,
+      
+        device_address : '111599A410',
+        
+        i_trial: function(){return i_trial}, // current trial modulo number of images
+        trial_order: function(){return trial_order[i_trial]},
+        on_finish: function (data) {
+            lasttrialdata = jsPsych.data.getLastTrialData();
+            //console.log(lasttrialdata);
+            jsPsych.data.addDataToLastTrial(
+                    {   trial_number: i_trial
+                    });
+            if (random_trial_list.indexOf(i_trial) > -1) {
+                //count_save = count_save + lasttrialdata.qbit;
+                if(lasttrialdata.qbit == 0) count_save++
+                jsPsych.data.addDataToLastTrial(
+                    {   condition: 'save',
+                    });
+                //console.log('count save ' + count_save);
+            } else {
+                //count_nosave = count_nosave + lasttrialdata.qbit;
+                if(lasttrialdata.qbit == 0) count_nosave++
+                jsPsych.data.addDataToLastTrial(
+                    {   condition: 'nosave',
+                        qbit: 'NA',
+                        stimulus: 'NA',
+                    });
+                //console.log('count nosave ' + count_nosave);
+            }
+            i_trial++;
+        },
+        timeline: test_stimuli
+    };
+
+
+    
+   var save_block = {
+    type: 'single-stim',
+//    stimulus: 'saving data',
+    is_html: true,
+    timing_response: 100,
+    response_ends_trial: false,
+    on_finish:  function (data) {
+                saveData('data/prime-del/prime-del3/' + filename + '.csv', jsPsych.data.dataAsCSV())
+            }
+    };
+
+    
+    var result_block = {
+        type: 'instructions',
+        pages: [function(){
+        return "<p>Vielen Dank!</p><p>Du siehst nun zwei Zahlen nach A und nach B. Sieh Dir diese Zahlen bitte in Ruhe an:</p><p style='font-size:x-large;'>A: <b>" + count_save + "</b><br>B: <b>" + count_nosave + "</b></p>"
+    }],
+        show_clickable_nav: true
+    };
+    
+    var debrief_block = {
+        type: "text",
+        //text: pages3,
+        text: function(){
+            return "<p><b>Vielen Dank für die Teilnahme!</b></p><p><a href='https://qpsy.de/limesurvey/index.php/946694?newtest=Y&lang=de&pid=" + subject_id + "&save=" + count_save + "&nosave=" + count_nosave + "'>Klicke bitte hier, um zur nächsten Seite zu gelangen.</a></p>"
+        },
+        cont_key: '?'
+    };
+
+
+    /* create experiment timeline array */
+    var timeline = [];
+    //timeline.push(language_block);
+    timeline.push(vollbild_block);
+    timeline.push(q1_age);
+    timeline.push(q2_sex);
+    timeline.push(startexperiment_block);
+    for(var i=0; i < Ncheck; i++){
+      timeline.push(intertrial); // add a fixation trial
+      timeline.push(prime50);
+      timeline.push(prime60);
+      timeline.push(prime70);
+      timeline.push(test_block); // add a word trial
+    }
+    timeline.push(check_block);
+    for(var i=Ncheck; i < Ntrials; i++){
+      timeline.push(intertrial); // add a fixation trial
+      timeline.push(prime50);
+      timeline.push(prime60);
+      timeline.push(prime70);
+      timeline.push(test_block); // add a word trial
+    }
+    //timeline.push(result_block);
+    //timeline.push(q3_p1);
+    //timeline.push(q3_p2);
+    //timeline.push(q3_p3);
+    //timeline.push(q3_p4);
+    //timeline.push(q3_p5);
+    //timeline.push(q3_p6);
+    //timeline.push(q4_counts);
+    timeline.push(save_block);
+    timeline.push(debrief_block);
+
+    function saveData(filename, filedata) {
+        console.log("starting save data...", filename, filedata);
+        $.ajax({
+            type: 'post',
+            cache: false,
+            url: 'save-data.php', // this is the path to the above PHP script
+            data: {filename: filename, filedata: filedata}
+        })
+                .done(function (data) {
+                    // alert("OK OK OK" + data)
+                })
+                .fail(function () {
+                    alert("Ajax failed to send data")
+                });
+        console.log("finished save data");
+    }
+
+    /* start the experiment */
+    function startExperiment() {
+        jsPsych.init({
+            timeline: timeline
+	  //  fullscreen: true
+        });
+    }
+</script>
+    </div>
+</body>
+</html>
+
+-->

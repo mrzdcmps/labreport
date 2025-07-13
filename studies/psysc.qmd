@@ -1,7 +1,6 @@
 ---
 title: "Psyscanner"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
