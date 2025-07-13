@@ -61,5 +61,5 @@ For the lab report we consider both conditions as experimental conditions, since
 
 ::: {.callout-note title="Resources" collapse="false"}
 -   [Student Report](../data/schroedinger/cat-report.pdf)
--   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/games/schroedinger/katze.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/schroedinger/katze.html)
 :::

@@ -1,0 +1,467 @@
+Data collection for this study is complete. Thank you for your interest!
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sexuelles Verlangen</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-preload.js"></script>
+    <script src="jspsych/plugin-fullscreen.js"></script>
+    <script src="jspsych/plugin-call-function.js"></script>
+    <script src="jspsych/plugin-external-html.js"></script>
+    <script src="jspsych/plugin-instructions.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-image-button-response.js"></script>
+    <script src="jspsych/plugin-survey.js"></script>
+    <script src="jspsych-6.1.0/quantis.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="jspsych/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="jspsych/survey.css"></link>
+    <link rel="stylesheet" href="consent/consent.css"></link>
+
+    <style>
+        figure { 
+            display: inline-block;
+        }
+        #jspsych-image-button-response-stimulus {
+            max-width: min(600px, 90vw);
+            max-height: min(600px, 90vh);
+        }
+        .choice {
+            cursor: pointer;
+            max-width: min(10em, 25vw);
+            max-height: min(10em, 25vw);
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+    </style>
+
+  </head>
+  <body></body>
+  <script>
+
+    /* define parameters */
+
+    // study name
+    var studyname = 'verlangen';
+    var studypart = 1;
+
+    //initialize Experiment
+    const jsPsych = initJsPsych({
+        /* on_finish: function() {
+        jsPsych.data.displayData();
+      } */
+    });
+
+    // SONA & subject ID
+    let vl = jsPsych.data.urlVariables()['vl'];
+    let sona_id = jsPsych.data.urlVariables()['sonaid'];
+
+    let nosavetest = jsPsych.data.urlVariables()['test'];
+    if(nosavetest) console.log("TEST! Data will not be saved");
+    
+    if(!sona_id){
+        var subject_id = jsPsych.randomization.randomID(16);
+        var TXT_ending = '<hr><p><a href="https://app.prolific.com/submissions/complete?cc=CUIJUER2">Please click here to get back to Prolific.</a></p>(Code: CUIJUER2)';
+    } else {
+        var subject_id = sona_id;
+        var TXT_ending = 
+            '<hr><p><a href="https://lmu-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=23&credit_token=0d538279da184fa187234ebaf2788909&survey_code=' + subject_id + '">Please click here to get your subject credit hour in SONA.</a></p>';
+    }
+
+
+    // specify starting time
+    var start_time = new Date();
+
+    // decide conditions
+    var condition = jsPsych.randomization.sampleWithReplacement(["del","save"], 1)[0];
+
+    // add to data file
+    jsPsych.data.addProperties({ 
+        study: studyname + studypart, //e.g. "newstudy1"
+        subject: subject_id,
+        vl: vl,
+        time: start_time.toISOString(), 
+        condition: condition
+    });
+
+    // number of trials
+    var Ntrials = 10;
+
+    /* Stimuli */
+    </script>
+    <script src='https://qpsy.de/file_array.php?d=img/Neutral'></script>
+    <script>
+    var images_neu = file_array.slice(0,10); //select first 10 items    */
+
+    </script>
+    <script src='https://qpsy.de/file_array.php?d=img/Verlangen/Heterosexuelle Paare'></script>
+    <script>
+    var images_hetero = file_array;
+
+    </script>
+    <script src='https://qpsy.de/file_array.php?d=img/Verlangen/Lesbische Paare'></script>
+    <script>
+    var images_lesbian = file_array;
+
+    </script>
+    <script src='https://qpsy.de/file_array.php?d=img/Verlangen/Schwule Paare'></script>
+    <script>
+    var images_gay = file_array;
+
+
+    /* welcome message & instructions */
+    var welcome = {
+        type: jsPsychInstructions,
+        data: { test_part: "welcome" },
+        pages: [
+            `<p style="font-weight:bold;">Studie "Sexuelles Verlangen"</p>
+            <span style="font-style:italic;">Hinweis</span>
+            <p>Im Folgenden werden Ihnen erotische Abbildungen gezeigt, die von manchen Menschen möglicherweise als triggernd oder unangenehm empfunden werden können. Bitte treffen Sie eine bewusste Entscheidung, ob Sie sich mit den Inhalten der Studie auseinandersetzen wollen.</p>
+            <p>Aufgrund der Inhalte ist diese Studie nicht jugendfrei. Bitte fahren Sie nur fort, wenn Sie volljährig sind.</p><br>
+            <button class="jspsych-btn" onclick="jsPsych.endExperiment('Die Studie wurde beendet.')">Nicht teilnehmen (Studie beenden)</button>`
+            ],
+        show_clickable_nav: true
+    };
+
+    var instructions = {
+        type: jsPsychInstructions,
+        data: { test_part: "instruction" },
+        pages: [
+            `<p>Sie werden im Folgenden erotische oder neutrale Abbildungen sehen. Wir bitten Sie sich für die Durchführung der Studie in eine private, ungestörte Atmosphäre zu begeben.</p>`,
+            `<figure>
+                <img src="${images_neu[0]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_neu[1]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_neu[2]}" alt="Pos" style="width:18em;">
+                <figcaption>Beispiele neutrales Bild</figcaption>
+            </figure>`,
+            `<p>Zu Beginn werden Sie eine kurze Geschichte lesen. Wir bitten Sie, den Text aufmerksam zu lesen und sich so gut wie möglich in die Person hineinzuversetzen und sich die andere Person so realistisch wie möglich vorzustellen.</p>`
+            ],
+        show_clickable_nav: true
+    };
+
+    /* Consent */
+    // consent to participate.
+    var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+    // declare the block.
+    var informed_consent = {
+        type: jsPsychExternalHtml,
+        url: "consent/consent_mm.html",
+        cont_btn: "start",
+        check_fn: check_consent
+    };
+
+
+    /* Story */
+    var story = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'story' },
+        stimulus: '<p style="hyphens: auto; text-align: justify; max-width:80vw;">Es ist ein warmer Sommerabend, wir gehen in eine Bar. Kaum angekommen, bestellen wir direkt die erste Runde an Cocktails. Gegenübersitzend wird unser Augenkontakt immer intensiver und mir wird klar, dass mein Begehren auf Gegenseitigkeit beruht. Unsere Hände berühren sich oft auf dem Tisch. Spannung liegt in der Luft. Ein ungeduldiger Gedanke schleicht sich ein, was zwischen uns passieren würde, wenn wir allein wären, doch ich beherrsche mich. Drei Cocktails später und unsere Gespräche werden immer erotischer, ein Versprechen dessen, was kommen mag? Es scheint, als wüssten wir beide ganz genau, wie der Abend enden wird. Der Heimweg wird zu einem Abenteuer. Wir können die Finger nicht voneinander lassen. Unsere Hände erkunden einander. Mein Atem beschleunigt sich. Ich spüre die Hände an meinem Körper. Ich werde immer erregter. Ich will nur noch eines…</p><br>',
+        choices: ['Ich habe die Geschichte gelesen']
+    };
+
+    var surveyStory = {
+        type: jsPsychSurvey,
+        data: { test_part: 'story' },
+        pages: [
+        [
+            {
+                type: 'multi-choice',
+                prompt: "Welches Geschlecht hatte die andere Person in der Geschichte in Ihrer Vorstellung?", 
+                name: 'storygender', 
+                options: ['weiblich', 'männlich', 'divers'],
+                required: true
+            },
+            {
+                type: 'likert-table',
+                prompt: 'Bitte geben Sie an, wie sehr die folgenden Aussagen auf Sie zutreffen.',
+                statements: [
+                {prompt: 'Ich fühle mich in diesem Moment sexuell erregt', name: 'erregt'},
+                {prompt: 'Ich fühle in diesem Moment sexuelles Verlangen', name: 'verlangen'},
+                {prompt: 'Ich bin in diesem Moment offen für sexuelle Aktivitäten', name: 'aktivitaet'},
+                ],
+                options: ['Trifft nicht zu', 'Trifft eher nicht zu', 'Teils/Teils', 'Trifft eher zu', 'Trifft voll und ganz zu'],
+                required: true
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var stimChoice = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'stimChoice', qbit: '' },
+        stimulus: '<p>Im Folgenden werden Ihnen zufällig 10 Bilder gezeigt. Diese Bilder können entweder erotisch oder neutral sein. Bitte wählen Sie aus den 3 Bildern das aus, welches für Sie in diesem Moment am sexuell erregendsten ist.</p>',
+        choices: [images_hetero[8], images_gay[7], images_lesbian[5]],
+        button_html: `<img src="%choice%" class="choice">`,
+        post_trial_gap: 500
+    };
+    
+    /* Image presentation */
+    var pic = {
+        type: jsPsychImageButtonResponse,
+        data: { test_part: 'pic', qbit: '' },
+        stimulus: 'img/black.png',
+        choices: ['Weiter'],
+        //trial_duration: 0,
+        //post_trial_gap: 200,
+        on_start: function(trial){
+
+            // stimulus choice
+            var stimChoice = jsPsych.data.get().filter({test_part: 'stimChoice'}).trials[0].response;
+            var images_sex;
+            if (stimChoice == 0) images_sex = images_hetero;
+            else if (stimChoice == 1) images_sex = images_gay;
+            else if (stimChoice == 2) images_sex = images_lesbian;
+            else alert("No image category");
+
+            Z = parseInt(Zufallswert());
+            if(Z==0) trial.stimulus = jsPsych.randomization.sampleWithReplacement(images_sex, 1);
+            else if(Z==1) trial.stimulus = jsPsych.randomization.sampleWithReplacement(images_neu, 1);
+            else alert("No Qbit available");
+            trial.data.qbit = Z;
+
+            //delete data
+            if(condition == "del"){
+                trial.data.stimulus = '';
+                trial.data.qbit = '';
+            }
+        },
+        on_load: function(){
+            // Disable the button
+            var button = document.querySelector(".jspsych-btn");
+            button.disabled = true;
+
+            // Set a timeout to enable the button after 3 seconds (3000 milliseconds)
+            setTimeout(function() {
+                button.disabled = false;
+            }, 3000);
+        }
+    };
+
+    var picType = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'pic' },
+        stimulus: 'Welche Art von Abbildung haben Sie gerade gesehen?',
+        choices: ['erotische Abbildung', 'neutrale Abbildung'],
+        post_trial_gap: 1000,
+    };
+
+    /* Survey Post */
+    var surveyPost = {
+        type: jsPsychSurvey,
+        data: { test_part: 'survey' },
+        pages: [
+        [
+            {
+                type: 'likert',
+                prompt: 'Wie erregt sind Sie in diesem Moment?',
+                required: true,
+                name: 'erregtpost',
+                likert_scale_min_label: 'gar nicht erregt',
+                likert_scale_max_label: 'sehr erregt',
+                likert_scale_min: 1,
+                likert_scale_max: 5
+            }
+        ],
+        [
+            {
+                type: 'text',
+                prompt: "Wie alt sind Sie?", 
+                name: 'age', 
+                textbox_columns: 5,
+                required: true,
+                input_type: "number"
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Welchem Geschlecht fühlen Sie sich zugehörig?", 
+                name: 'gender', 
+                options: ['weiblich', 'männlich', 'divers'],
+                required: true
+            }
+        ],
+        [
+            {
+                type: 'html',
+                prompt: `<p>Im Folgenden bitten wir Sie, ihre aktuelle sexuelle Orientierung mittels der Kinsey Skala einzuordnen. Wobei hier ein Wert von 0 für eine ausschließlich heterosexuelle Orientierung steht. Ein Wert von 3 bedeutet eine gleichermaßen heterosexuelle wie homosexuelle Orientierung und ein Wert von 6 eine ausschließlich homosexuelle Orientierung. Ihre Einordnung auf der Skala soll ihre sexuelle Orientierung wiederspiegeln, unabhängig davon wie viel Erfahrung sie bereits mit dem einem, oder dem anderen Geschlecht gehabt bzw. nicht gehabt haben.</p>
+                <img src="img/Verlangen/kinseyscale.png">`,
+            },
+            {
+                type: 'likert',
+                prompt: ' ',
+                name: 'kinsey',
+                likert_scale_values: [
+                    {value: 0},
+                    {value: 1},
+                    {value: 2},
+                    {value: 3},
+                    {value: 4},
+                    {value: 5},
+                    {value: 6},
+                    {value: 'X'}
+                ]
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Von welchem Geschlecht fühlen Sie sich aktuell am meisten angezogen", 
+                name: 'preferredsex', 
+                options: ['weiblich', 'männlich', 'beide gleich'],
+                required: true
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Wie würden Sie Ihren aktuellen Beziehungsstatus am ehesten definieren? ", 
+                name: 'beziehungsstatus', 
+                options: ['vergeben', 'Single', 'offene Partnerschaft'],
+                required: true
+            }
+        ],
+        [
+            {
+              type: 'multi-choice',
+              prompt: "Hand auf\'s Herz: Haben Sie diese Studie wirklich aufmerksam bearbeitet, sodass wir Ihre Daten in unsere Datenanalyse integrieren können?",
+              name: 'handaufsherz', 
+              options: ['Ja', 'Nein'],
+              required: true
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Beenden',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    
+    /* preload images */
+    var preload = {
+        type: jsPsychPreload,
+        images: images_neu.concat(images_hetero, images_gay, images_lesbian)
+    }
+
+    /* helper */
+    //fuilscreen
+    var enter_fullscreen = {
+        type: jsPsychFullscreen,
+        fullscreen_mode: true
+    }
+
+    var exit_fullscreen = {
+        type: jsPsychFullscreen,
+        fullscreen_mode: false,
+        delay_after: 0
+    }
+
+    // Hide and Show cursor 
+    var hide_cursor = {
+         type: jsPsychCallFunction,
+         func: function(){
+            document.querySelector('head').insertAdjacentHTML('beforeEnd', '<style id="hide-cursor">body { cursor: none; }</style>');
+         }
+      };
+  
+      var show_cursor = {
+         type: jsPsychCallFunction,
+         func: function(){
+            document.querySelector('#hide-cursor').remove();
+         }
+      };
+
+
+    /* ending */
+    // save data to csv
+    function saveData(name, data){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data6.php');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.send(JSON.stringify({filename: name, filedata: data}));
+      };
+
+      function saveDataDB() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data-db-maria.php'); // change 'write_data.php' to point to php script.
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+            console.log("Response from server:", xhr.responseText);
+
+            try {
+                var response = JSON.parse(xhr.responseText);
+                console.log(response.success);
+            } catch (error) {
+                console.error("Error parsing JSON:", error);
+            }
+        }
+        };
+        xhr.send(jsPsych.data.get().json());
+    };
+
+    var ending = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<p>Vielen Dank!</p><br>',
+        //choices: "ALL_KEYS",
+        choices: "NO_KEYS",
+        on_start: function() {
+            
+            if(!nosavetest){
+              //save top csv
+              if(vl) saveData("/" + studyname + "/study" + studypart + "/" + vl + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + vl + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+              else saveData("/" + studyname + "/study" + studypart + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+
+              //save to db
+              saveDataDB();
+            }
+
+        }
+    }
+
+
+
+    /* create timeline */
+    
+    //control condition
+    var timeline = [];
+    timeline.push(welcome);
+    timeline.push(informed_consent);
+    timeline.push(preload);
+    timeline.push(instructions);
+    timeline.push(story);
+    timeline.push(surveyStory);
+    timeline.push(stimChoice);
+    timeline.push(enter_fullscreen);
+    //timeline.push(hide_cursor);
+    for(var i=0; i < Ntrials; i++){
+        timeline.push(pic);
+        timeline.push(picType);
+    }
+    //timeline.push(show_cursor);
+    timeline.push(exit_fullscreen);
+    timeline.push(surveyPost);
+    timeline.push(ending);
+
+
+
+    /* start the experiment */
+
+    jsPsych.run(timeline);
+
+  </script>
+</html>
+
+-->

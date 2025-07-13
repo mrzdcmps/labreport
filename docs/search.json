@@ -2067,5 +2067,89 @@
       "Studies",
       "Schrödingers Cat"
     ]
+  },
+  {
+    "objectID": "studies/desire.html",
+    "href": "studies/desire.html",
+    "title": "Desire",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nYear\nLab/Online\n\n\n\n\nDesire\n✔\n201\n10\n5.01\n1.59\n50.15\n0.13\n0.45\n0.01\n0\n0.47\ngreater\n2023\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
+  },
+  {
+    "objectID": "studies/desire.html#hypothesis",
+    "href": "studies/desire.html#hypothesis",
+    "title": "Desire",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis experiment was developed by students in an empirical course. We set out to explore whether a sexual desire can influence objective reality in a micro-PK effect. To test the effect of objective data being present or not, we divided participants into two groups. In the experimental group, the data about which images were shown were not stored. Thus, according to theory, allowing the subjective intention of the viewer (their sexual desire) to influence which images appeared. In contrast, the control group’s data were stored, objectifying the outcomes and theoretically preventing subjective influence.\nOur first hypothesis (H1) was that significantly more erotic images would be reported in the experimental group than in the control group, due to the influence of increased sexual desire. Our second hypothesis (H2) proposed that the intensity of sexual desire would moderate the relationship between group assignment and the number of erotic images shown—that is, the stronger the desire, the greater the influence on quantum outcomes in the experimental group.\nTo induce desire, we used a short erotic story before presenting participants with images selected via a quantum random number generator. Participants self-reported their level of sexual desire and the number of erotic images they believed they had seen. While descriptively we did observe a small increase in erotic images shown in the experimental group, Bayesian statistical analysis did not support our hypotheses. Neither the group difference in erotic image frequency (H1) nor the moderating role of desire intensity (H2) reached statistical significance.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
+  },
+  {
+    "objectID": "studies/desire.html#participants",
+    "href": "studies/desire.html#participants",
+    "title": "Desire",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n201\n\n\nFemale\n61.19%\n\n\nMale\n35.32%\n\n\nMean Age\n22.76 years\n\n\nSD Age\n6.49 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
+  },
+  {
+    "objectID": "studies/desire.html#materials",
+    "href": "studies/desire.html#materials",
+    "title": "Desire",
+    "section": "Materials",
+    "text": "Materials\nStimuli We used a total of 30 erotic, non-copyrighted images depicting intimate scenes between couples. These were divided into three pools of ten images each: heterosexual, gay, and lesbian couples. Before the trials, participants selected which type of couple they found most erotically appealing, and this choice determined which erotic image pool would be used for them during the experiment.\nAdditionally, we prepared a pool of neutral images, which featured abstract close-ups of natural materials like stone or wood. These served as a comparison to the erotic stimuli.\nDesire Manipulation To manipulate participants’ sexual desire, we presented them with an eroticizing short story at the beginning of the experiment. This narrative was intended to create a mood of arousal and increase the motivational relevance of the erotic images.\nQuestionnaires The measurement of sexual desire was conducted using a three-item Likert scale immediately after the story, assessing momentary arousal, desire, and openness to sexual activity. A single-item arousal rating was collected again after the trials. Sexual orientation was measured with the Kinsey scale.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
+  },
+  {
+    "objectID": "studies/desire.html#procedure",
+    "href": "studies/desire.html#procedure",
+    "title": "Desire",
+    "section": "Procedure",
+    "text": "Procedure\nParticipants were instructed to complete the online study in a private setting. After giving informed consent, they were shown example images to distinguish between neutral and erotic categories.\nTo induce sexual desire, all participants read an eroticizing short story. Immediately afterward, they reported the gender of the imagined partner in the story and completed a three-item questionnaire assessing their current level of sexual desire.\nNext, participants viewed a series of 10 image trials. Before each trial, a quantum random number generator determined whether the upcoming image would be drawn from the participant’s selected erotic pool or from the neutral pool. Within the chosen pool, one image was randomly selected and displayed. After each image, participants were asked whether they had seen a neutral or erotic image.\nParticipants were randomly assigned to one of two groups. In the experimental group, data on the images shown were not stored, theoretically allowing for subjective influence (micro-PK). In the control group, this data was stored (objectified), which might prevent such influence according to the underlying theory.\nAfter the image trials, participants again rated their current level of sexual arousal using a single-item scale. Finally, they provided demographic data (age, gender, sexual orientation, relationship status), responded to the Kinsey scale, and confirmed via a “hand-on-heart” item whether their data should be used in the analysis.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
+  },
+  {
+    "objectID": "studies/desire.html#sample-size-and-data-analysis",
+    "href": "studies/desire.html#sample-size-and-data-analysis",
+    "title": "Desire",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nData of 420 participants were collected for the study as part of the empirical course. Participants were recruited privately through platforms like WhatsApp and Instagram. Initially, more individuals took part, but three were excluded based on a “hand-on-heart” item indicating their data should not be used. Data were collected via an online survey accessible by link and could be completed on either a laptop or smartphone. Participants were randomly assigned to either the experimental or control group.\nFor data analysis, we used Bayesian statistical methods, primarily carried out with R and JASP. To test our hypotheses:\n\nH1 (that more erotic images would be seen in the experimental group), we used a Bayesian independent samples t-test.\nH2 (that sexual desire would moderate the relationship between group assignment and number of erotic images), we applied a Bayesian ANCOVA, using desire as a covariate.\n\nAdditional exploratory analyses included a Bayesian multivariate ANOVA and subgroup analyses for participants with higher levels of reported desire (cut-off ≥ 3 on the 5-point scale). All tests were interpreted using Bayes Factors (BF10) to compare the strength of evidence for the alternative hypothesis versus the null.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
+  },
+  {
+    "objectID": "studies/desire.html#lab-report-data",
+    "href": "studies/desire.html#lab-report-data",
+    "title": "Desire",
+    "section": "Lab Report Data",
+    "text": "Lab Report Data\nFor the lab report only objective data from the control condition is considered, since the experimental group used only reported data.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nStimuli (Erotic Material!)\nExperimental Program",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
   }
 ]
