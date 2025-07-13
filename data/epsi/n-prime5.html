@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Studie Flackernde Reize</title>
+    <script src="jspsych-6.1.0/jspsych.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-animation.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-survey-html-form.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-call-function.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-fullscreen.js"></script>
+    <script src="jspsych-6.1.0/quantis.js"></script>
+    <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
+    <link rel="stylesheet" href="jspsych-6.1.0/css/custom.css"></link>
+    <link rel="stylesheet" href="jspsych-6.1.0/css/survey.css"></link>
+
+  </head>
+  <body></body>
+  <script>
+
+      // function to read pid
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      };
+
+      var subject_id = getParameterByName('pid');
+
+      // add time to data
+      var start_time = new Date();
+      console.log("Start time: " + start_time);
+
+      jsPsych.data.addProperties({subject: subject_id, time: start_time});
+
+
+      // total number of trials
+      var Ntrials = 40;
+
+      // texts
+      var TEXT_WELCOME = "<p><b>Studie \"Flackernde Reize\"</b></p><p>Willkommen zum Experiment!</p>";
+
+      var TEXT_STARTEXPERIMENT_DE = "<p>Drücken Sie eine beliebige Taste, um mit der Darstellung der Bilder zu beginnen.</p>";
+
+      var TEXT_INSTRUKTION_DE = "<p>In diesem Teil der Studie werden Ihnen flackernde Bildreize und Bilder mit unangenehmen und angenehmen Inhalten dargeboten. Sollten diese für Sie unakzeptabel sein, können Sie jederzeit abbrechen. Bitte schließen Sie dazu das Browserfenster.</p>" +
+      "<p><a href='https://passback.lifepointspanel.com/Survey/EarlyScreenOut?ProjectToken=b3df1e29-8198-a34b-f287-b7c7f7188434'>Klicken Sie bitte hier, wenn Sie nicht an der Studie teilnehmen möchten</a></p>";
+
+      var TEXT_END_DE = "<p>Vielen Dank!</p><p><a href='https://qpsy.de/rngm.html?pid=" + subject_id + "'>Klicken Sie bitte hier, für den zweiten Teil der Studie.</a></p>";
+
+      // stimuli
+      // duration of fixation cross in ms
+      var TIME_CROSS = 1200;
+      // duration of stimulus image
+      var TIME_STIMULUS = 1000;
+      // delay after stimulus
+      var TIME_POST_STIMULUS = 1200;
+      // durations of mask, prime, mask
+      //var TIME_MASKED_PRIME = [1100,550,1100];
+      var TIME_MASK = 110;
+      var TIME_PRIME = 55;
+      var TIME_PRIME_PTG = 1000;
+
+      var images_pos = [];
+      var images_neg = [];
+      var images_mask = [];
+      var images_p50 = [];
+      var images_p60 = [];
+      var images_p70 = [];
+
+      for (var j = 1; j <= 20; j++) {
+          images_pos.push('img/Norstat-Prime/'+("00" + j).slice(-2)+'pos.jpg');
+          images_neg.push('img/Norstat-Prime/'+("00" + j).slice(-2)+'neg.jpg');
+          images_mask.push('img/Norstat-Prime/'+("00" + j).slice(-2)+'mask.jpg');
+          images_p50.push('img/Norstat-Prime/'+("00" + j).slice(-2)+'-50.jpg');
+          images_p60.push('img/Norstat-Prime/'+("00" + j).slice(-2)+'-60.jpg');
+          images_p70.push('img/Norstat-Prime/'+("00" + j).slice(-2)+'-70.jpg');
+      }
+
+      // randomization
+      // define order of images displayed in each trial
+      var trial_order = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+      var trial_order = jsPsych.randomization.repeat(trial_order, 2);
+
+      // define random order of experimental or control condition: choose randomly 20 out of 40.
+      var list = [];
+      for (var j = 0; j < Ntrials; j++) {
+      list.push(j);
+      }
+
+      var random_trial_list = jsPsych.randomization.sampleWithoutReplacement(list, 20)
+      console.log("random trial list: " + random_trial_list);
+
+      // set trial number
+      var i_trial = 0;
+
+
+      // experimental blocks
+      var instructions = {
+        type: "instructions",
+        pages: [
+          TEXT_WELCOME,
+          TEXT_INSTRUKTION_DE
+        ],
+          show_clickable_nav: true,
+          button_label_previous: "Zurück",
+          button_label_next: "Weiter"
+
+      };
+
+      var startexperiment = {
+        type: "html-keyboard-response",
+        stimulus: '<p>Drücken Sie eine beliebige Taste, um zu beginnen.</p>',
+        post_trial_gap: 200,
+      };
+
+      // priming
+
+      // VERSION 2
+      var priming = {
+        type: 'image-keyboard-response',
+        stimulus: jsPsych.timelineVariable('stim'),
+        trial_duration: jsPsych.timelineVariable('time'),
+        choices: jsPsych.NO_KEYS,
+        response_ends_trial: false,
+        post_trial_gap: jsPsych.timelineVariable('ptg'),
+        data: jsPsych.timelineVariable('data'),
+      }
+
+      var pprocedure_con = {
+        timeline: [priming],
+        timeline_variables: [
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: 0, data: { test_part: "prime", condition: "con" } },
+          { stim: function(){ return images_p50[trial_order[i_trial]] }, time: TIME_PRIME, ptg: 0, data: { test_part: "prime", condition: "con" } },
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: TIME_PRIME_PTG, data: { test_part: "prime", condition: "con" } },
+        ],
+        repetitions: 3
+      }
+
+      var pprocedure_exp = {
+        timeline: [priming],
+        timeline_variables: [
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: 0, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_p50[trial_order[i_trial]] }, time: TIME_PRIME, ptg: 0, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: TIME_PRIME_PTG, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: 0, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_p60[trial_order[i_trial]] }, time: TIME_PRIME, ptg: 0, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: TIME_PRIME_PTG, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: 0, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_p70[trial_order[i_trial]] }, time: TIME_PRIME, ptg: 0, data: { test_part: "prime", condition: "exp" } },
+          { stim: function(){ return images_mask[trial_order[i_trial]] }, time: TIME_MASK, ptg: TIME_PRIME_PTG, data: { test_part: "prime", condition: "exp" } },
+        ]
+      }
+
+
+      // fixation
+      var fixation = {
+        type: 'html-keyboard-response',
+        stimulus: '<div style="font-size:60px;">+</div>',
+        choices: jsPsych.NO_KEYS,
+        trial_duration: TIME_CROSS,
+        data: {test_part: 'fixation'}
+      }
+
+      // show stim
+      var test_block = {
+        type: 'image-keyboard-response',
+        stimulus: 'img/black.png',
+        choices: jsPsych.NO_KEYS,
+        response_ends_trial: false,
+        stimulus_duration: TIME_STIMULUS,
+        trial_duration: TIME_STIMULUS,
+        post_trial_gap: TIME_POST_STIMULUS,
+        data: {test_part: 'test'},
+        on_start: function(trial){
+          var Z = Zufallswert();
+          if (Z==0){
+            trial.stimulus = images_pos[trial_order[i_trial]];
+            trial.data.valence = "pos";
+          } else {
+            trial.stimulus = images_neg[trial_order[i_trial]];
+            trial.data.valence = "neg";
+          }
+          trial.data.qbit = Z;
+          console.log("Trial " + i_trial);
+        },
+        on_finish: function(data){
+          data.trial = i_trial+1;
+          data.condition = jsPsych.data.get().last(2).select('condition').values[0];
+          i_trial++;
+        }
+      }
+
+
+      // exp structure
+      // save data to csv
+      function saveData(name, data){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data6.php');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.send(JSON.stringify({filename: name, filedata: data}));
+      }
+
+      var ending = {
+          type: 'html-keyboard-response',
+          stimulus: TEXT_END_DE,
+          on_start: function() {
+              saveData("norstat-prime/study5/NP5_" + start_time.toUTCString().replace(/:\s*/g, ".") + "_" + subject_id, jsPsych.data.get().csv());
+        }
+      }
+
+      // fullscreen trials
+      var fullscreen_on = {
+          type: 'fullscreen',
+          fullscreen_mode: true
+      }
+
+      var fullscreen_off = {
+          type: 'fullscreen',
+          fullscreen_mode: false
+      }
+
+      /* Hide and Show cursor */
+      var hide_cursor = {
+  	   type: 'call-function',
+  	   func: function(){
+  		  document.querySelector('head').insertAdjacentHTML('beforeEnd', '<style id="hide-cursor">body { cursor: none; }</style>');
+  	   }
+      }
+
+      var show_cursor = {
+  	   type: 'call-function',
+  	   func: function(){
+  		  document.querySelector('#hide-cursor').remove();
+  	   }
+      }
+
+      /* create timeline */
+      var timeline = [];
+      timeline.push(instructions);
+      timeline.push(fullscreen_on);
+      timeline.push(startexperiment);
+      timeline.push(hide_cursor);
+      for(var i=0; i < Ntrials; i++){
+        timeline.push(fixation);
+          if (random_trial_list.indexOf(i) > -1) {
+            timeline.push(pprocedure_exp);
+          } else {
+            timeline.push(pprocedure_con);
+          }
+        timeline.push(test_block); // add a word trial
+      }
+      timeline.push(show_cursor);
+      timeline.push(fullscreen_off);
+      timeline.push(ending);
+
+
+      /* start the experiment */
+      jsPsych.init({
+        timeline: timeline,
+        preload_images: images_pos.concat(images_neg,images_mask,images_p50,images_p60,images_p70),
+        experiment_width: 1200
+      });
+    </script>
+  </html>

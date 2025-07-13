@@ -1665,11 +1665,107 @@
     "href": "studies/sobjectivity.html#sample-size-and-data-analysis",
     "title": "Sobjectivity",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nA sequential Bayesian analysis plan was applied for every study. Three separate one-sample t-tests were conducted for each study, comparing the mean number of positive images selected (Cmax objective) or reported (Cmax subjective and Creduced subjective) against the expected chance level of 10.\nOnly data from Cmax objective is considered in this meta-analysis.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data Study 1\nDownload Data Study 2\nDownload Data Study 3\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier et al., 2022)\nPreregistrations\nOSF Project\nOSF Data and Materials\nExperimental Program Study 1\nExperimental Program Study 2\nExperimental Program Study 3\nStimuli",
+    "text": "Sample Size and Data Analysis\nA sequential Bayesian analysis plan was applied for every study. Three separate one-sample t-tests were conducted for each study, comparing the mean number of positive images selected (Cmax objective) or reported (Cmax subjective and Creduced subjective) against the expected chance level of 10.\nOnly data from Cmax objective is considered in this meta-analysis. Only data from Cmax objective is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data Study 1\nDownload Data Study 2\nDownload Data Study 3\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier et al., 2022)\nPreregistrations\nOSF Project\nOSF Data and Materials\nExperimental Program Study 1\nExperimental Program Study 2\nExperimental Program Study 3\nStimuli",
     "crumbs": [
       "Experiments",
       "Studies",
       "Sobjectivity"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html",
+    "href": "studies/epsi.html",
+    "title": "Epsi Correlation",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nYear\nLab/Online\n\n\n\n\nEpsi Correlation Condition A\n✖\n2052\n20\n9.96\n2.26\n49.81\n-0.75\n0.77\n-0.02\n0\n0.10\ngreater\n2021\n🌍\n\n\nEpsi Correlation Condition B\n✖\n2052\n20\n9.94\n2.26\n49.72\n-1.14\n0.87\n-0.03\n0\n0.08\ngreater\n2021\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#hypothesis",
+    "href": "studies/epsi.html#hypothesis",
+    "title": "Epsi Correlation",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this series of experiments we hypothesize that psi effects like micro-psychokinesis (micro-PK) may be more likely to occur when there’s less objective confirmation or “witnessing” of the results. We propose that maximum objectivity (Cmax) suppresses psi effects, while reduced objectivity (Creduced) allows them to emerge in a “sobjective” realm where a transfer of pragmatic information can occur (Ip &gt; 0).\n\nStudy Design\nParticipants performed a micro-PK task attempting to influence a quantum random number generator (qRNG) to produce more positive images. The study used two conditions:\n\nControl condition (Cmax): Both objective data (actual qRNG selections) and subjective data (participants’ memory of results) were recorded and analyzed\nExperimental condition (Creduced): Objective data were automatically deleted before analysis, leaving only participants’ subjective recall\n\n\n\nKey Hypotheses\nExperimental condition: Micro-PK effects would emerge in the subjective memory data when objective confirmation was removed (Creduced condition)\nControl condition: No micro-PK effects would be found in either objective or subjective data when both were available (Cmax condition)\nThe study builds on previous research that initially found strong micro-PK effects which then disappeared in subsequent replications, suggesting that maximum objective confirmation had been reached and was suppressing the effects.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#participants",
+    "href": "studies/epsi.html#participants",
+    "title": "Epsi Correlation",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n2052\n\n\nFemale\n49.03%\n\n\nMale\n47.71%\n\n\nMean Age\n44.22 years\n\n\nSD Age\n13.84 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#materials",
+    "href": "studies/epsi.html#materials",
+    "title": "Epsi Correlation",
+    "section": "Materials",
+    "text": "Materials\nMaterials were identical to the priming studies.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#procedure",
+    "href": "studies/epsi.html#procedure",
+    "title": "Epsi Correlation",
+    "section": "Procedure",
+    "text": "Procedure\nParticipants were invited by Kantar with the exclusion criterion being that participants had not previously taken part in experiments using this paradigm. Participants were instructed to ensure an undisturbed environment and provided basic demographic information before entering full-screen mode and receiving written task instructions. They were informed they would see flickering visual stimuli and positive and negative images that should be watched passively, and were reminded they could withdraw at any time.\nEach participant completed 40 trials, with every target pair being selected twice and shuffled into a unique order. A software randomizer then assigned 20 trials to the experimental condition (Creduced) and 20 to the control condition (Cmax). During each trial, a fixation cross appeared for 1200 ms to direct attention, followed by the subliminal priming sequence. The three prime presentations (50/50, 60/40, and 70/30 mixtures) were each displayed for 55 ms with forward and backward masks lasting 110 ms each, separated by 1000 ms black screens. After the priming procedure, the quantum random number generator determined whether the positive or negative target from the matched pair would be presented. Depending on the condition, this random selection was either stored to memory (Cmax) or added to a temporary counter (Creduced). The selected target appeared for 1000 ms, followed by a 1200 ms inter-trial interval.\nAfter 24 trials, participants clicked a continue button to confirm their alertness, with data excluded if they failed to respond within 10 seconds. Upon completing all 40 trials, participants viewed the actual number of positive images chosen by the quantum random number generator in each condition, displayed as “A” for the control condition and “B” for the experimental condition. No explicit instruction to memorize these numbers was given, creating an incidental learning task. Following a brief filler task involving luckiness ratings, participants completed a recall task where they attempted to remember the numbers previously shown after “A” and “B.”\nThe design created three dependent variables: for the experimental condition (Creduced), only subjective memory data were available since the temporary counter was not saved to results files; for the control condition (Cmax), both subjective memory data and objective computer-stored data were retained, allowing comparison between objective reality and subjective recall across different levels of confirmation.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#sample-size-and-data-analysis",
+    "href": "studies/epsi.html#sample-size-and-data-analysis",
+    "title": "Epsi Correlation",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nWe employed Bayesian inference statistics to test the hypothesis, which allow for sequential data accumulation until specific stopping criteria are met. For the correlation effect analysis, we used a Bayesian correlation test with a stopping rule of BF = 10 (indicating strong evidence for either the null or alternative hypothesis). If this criterion wasn’t reached by approximately 1,000 participants, data collection would continue if a clear trend toward BF10 = 10 was observable.\nThe correlation analysis used a Beta (0.1) prior distribution based on an estimated effect size of r = .1, which had been previously applied in analyzing the original faulty correlation data from Dechamps et al. (2021). For standard micro-PK effects, we conducted separate one-sample Bayesian t-tests for experimental and control conditions using one-tailed approaches with informed priors centered around 0.05 (δ ~ Cauchy [0.05, 0.05]). Interestingly, we expected and hoped for null findings, as the absence of standard micro-PK effects was considered a precondition for the correlation effect to appear, consistent with their preregistration.\nThe Bayesian analyses were performed irregularly during data collection, approximately weekly for the first 1,000 participants and then again with the complete sample of over 2,000 participants, using R’s ‘Bayes Factor’ package. Data collection occurred between January and February 2021.\nRegarding sample size, although the stopping criterion of BF10 = 10 for the correlation effect was reached early at n = 24, we considered this subsample too small to provide convincing evidence and continued until reaching 1,000 participants. At this point, the correlation was r = .034 (similar to the original r = .032), but the Bayesian evidence remained inconclusive (BF10 = 0.42). Following the preregistration, we collected data from an additional 1,000 participants before stopping due to exhausted financial resources. The final sample included N = 2,052 participants.\nNo micro-PK effect is expected in both conditions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#design-and-hypothesis",
+    "href": "studies/epsi.html#design-and-hypothesis",
+    "title": "Epsi Correlation",
+    "section": "Design and Hypothesis",
+    "text": "Design and Hypothesis\n\nOriginal Study Design and Hypotheses\nThe study was initially designed as a preregistered replication of (Dechamps et al., 2021) micro-psychokinesis research (see priming studies), which had found intriguing patterns across three studies. The original research used subliminal priming to test whether participants could unconsciously influence quantum random number generators to select positive images more frequently.\nHypothesis: We expected to replicate a strong correlational effect (r = .032, BF10 = 36.46) between experimental and control conditions that had been found in a post-hoc analysis of the combined data from Dechamps et al.’s three studies. We predicted this correlation would appear specifically when standard micro-PK effects were absent, representing a stable relationship between the two conditions.\n\n\nThe Critical Discovery\nHowever, after data collection and analysis were complete, we discovered that the original correlation effect they were trying to replicate was based on a coding error in the original dataset. Eight participants in Study 3 had been incorrectly coded with negative values, and when this error was corrected, the strong evidence for correlation completely disappeared (r = -.01, BF01 = 49.48).\n\n\nTransformed Research Question\nThis discovery transformed the study from a planned replication into an unintentional exploration of experimenter effects in micro-PK research. The new research question became: Would experimenters’ strong but false expectations about a correlation effect actually influence the appearance of such an effect in the data?\nThis addresses a fundamental concern in micro-PK research - that experimenters’ beliefs and expectations might unconsciously influence quantum-based outcomes, making it difficult to distinguish between participant effects and experimenter effects. The study thus became an anecdotal field experiment examining whether purely subjective experimenter expectations, contradicting objective reality, could manifest as measurable effects in micro-PK data.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#materials-and-procedure",
+    "href": "studies/epsi.html#materials-and-procedure",
+    "title": "Epsi Correlation",
+    "section": "Materials and Procedure",
+    "text": "Materials and Procedure\nMaterials and Procedure were identical to the priming studies.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
     ]
   }
 ]
