@@ -1665,7 +1665,7 @@
     "href": "studies/sobjectivity.html#sample-size-and-data-analysis",
     "title": "Sobjectivity",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nA sequential Bayesian analysis plan was applied for every study. Three separate one-sample t-tests were conducted for each study, comparing the mean number of positive images selected (Cmax objective) or reported (Cmax subjective and Creduced subjective) against the expected chance level of 10.\nOnly data from Cmax objective is considered in this meta-analysis. Only data from Cmax objective is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data Study 1\nDownload Data Study 2\nDownload Data Study 3\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier et al., 2022)\nPreregistrations\nOSF Project\nOSF Data and Materials\nExperimental Program Study 1\nExperimental Program Study 2\nExperimental Program Study 3\nStimuli",
+    "text": "Sample Size and Data Analysis\nA sequential Bayesian analysis plan was applied for every study. Three separate one-sample t-tests were conducted for each study, comparing the mean number of positive images selected (Cmax objective) or reported (Cmax subjective and Creduced subjective) against the expected chance level of 10.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1737,7 +1737,7 @@
     "href": "studies/epsi.html#sample-size-and-data-analysis",
     "title": "Epsi Correlation",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nWe employed Bayesian inference statistics to test the hypothesis, which allow for sequential data accumulation until specific stopping criteria are met. For the correlation effect analysis, we used a Bayesian correlation test with a stopping rule of BF = 10 (indicating strong evidence for either the null or alternative hypothesis). If this criterion wasn’t reached by approximately 1,000 participants, data collection would continue if a clear trend toward BF10 = 10 was observable.\nThe correlation analysis used a Beta (0.1) prior distribution based on an estimated effect size of r = .1, which had been previously applied in analyzing the original faulty correlation data from Dechamps et al. (2021). For standard micro-PK effects, we conducted separate one-sample Bayesian t-tests for experimental and control conditions using one-tailed approaches with informed priors centered around 0.05 (δ ~ Cauchy [0.05, 0.05]). Interestingly, we expected and hoped for null findings, as the absence of standard micro-PK effects was considered a precondition for the correlation effect to appear, consistent with their preregistration.\nThe Bayesian analyses were performed irregularly during data collection, approximately weekly for the first 1,000 participants and then again with the complete sample of over 2,000 participants, using R’s ‘Bayes Factor’ package. Data collection occurred between January and February 2021.\nRegarding sample size, although the stopping criterion of BF10 = 10 for the correlation effect was reached early at n = 24, we considered this subsample too small to provide convincing evidence and continued until reaching 1,000 participants. At this point, the correlation was r = .034 (similar to the original r = .032), but the Bayesian evidence remained inconclusive (BF10 = 0.42). Following the preregistration, we collected data from an additional 1,000 participants before stopping due to exhausted financial resources. The final sample included N = 2,052 participants.\nNo micro-PK effect is expected in both conditions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "text": "Sample Size and Data Analysis\nWe employed Bayesian inference statistics to test the hypothesis, which allow for sequential data accumulation until specific stopping criteria are met. For the correlation effect analysis, we used a Bayesian correlation test with a stopping rule of BF = 10 (indicating strong evidence for either the null or alternative hypothesis). If this criterion wasn’t reached by approximately 1,000 participants, data collection would continue if a clear trend toward BF10 = 10 was observable.\nThe correlation analysis used a Beta (0.1) prior distribution based on an estimated effect size of r = .1, which had been previously applied in analyzing the original faulty correlation data from Dechamps et al. (2021). For standard micro-PK effects, we conducted separate one-sample Bayesian t-tests for experimental and control conditions using one-tailed approaches with informed priors centered around 0.05 (δ ~ Cauchy [0.05, 0.05]). Interestingly, we expected and hoped for null findings, as the absence of standard micro-PK effects was considered a precondition for the correlation effect to appear, consistent with their preregistration.\nThe Bayesian analyses were performed irregularly during data collection, approximately weekly for the first 1,000 participants and then again with the complete sample of over 2,000 participants, using R’s ‘Bayes Factor’ package. Data collection occurred between January and February 2021.\nRegarding sample size, although the stopping criterion of BF10 = 10 for the correlation effect was reached early at n = 24, we considered this subsample too small to provide convincing evidence and continued until reaching 1,000 participants. At this point, the correlation was r = .034 (similar to the original r = .032), but the Bayesian evidence remained inconclusive (BF10 = 0.42). Following the preregistration, we collected data from an additional 1,000 participants before stopping due to exhausted financial resources. The final sample included N = 2,052 participants.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1797,7 +1797,7 @@
     "href": "studies/robots.html#participants",
     "title": "Robots",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n2052\n\n\nFemale\n49.03%\n\n\nMale\n47.71%\n\n\nMean Age\n44.22 years\n\n\nSD Age\n13.84 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n34\n\n\nFemale\n67.65%\n\n\nMale\n26.47%\n\n\nMean Age\n27.26 years\n\n\nSD Age\n12.65 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1809,7 +1809,7 @@
     "href": "studies/robots.html#materials-and-procedure",
     "title": "Robots",
     "section": "Materials and Procedure",
-    "text": "Materials and Procedure\nMaterials and Procedure were identical to the priming studies.",
+    "text": "Materials and Procedure\nParticipants accessed the online experiment via a link shared through social networks. Upon opening the link, they first saw an instruction page tailored to their group (experimental or control), followed by a visual example of how the game worked. After confirming their understanding and accepting the privacy policy, they proceeded to the experiment.\nEach participant played ten rounds of a roulette game, where they were asked: “Which color would you like to bet on?” and chose between red or black. The outcome of each round was determined by a qRNG, and the result was immediately shown on-screen. Participants were also shown their updated total winnings and whether their choice matched the randomly selected color. If correct, they gained money; otherwise, they did not. Losses were set to zero, so participants could only win or break even.\nThe crucial difference between the two groups was the visibility and relevance of the additional qRNGs:\n\nIn the experimental group, the results from 99 additional roulette tables (each controlled by its own qRNG) were shown and counted toward the participant’s total winnings. These additional outcomes were tied to the participant’s chosen color and presented as if generated by “robot clones.”\nIn the control group, these extra qRNGs were also run, but their outcomes were not shown and had no bearing on the participant’s winnings.\n\nAfter the roulette game, participants filled out a brief questionnaire including their age, gender, familiarity with roulette, and how important winning was to them (on a 1–7 scale). Finally, they saw a closing screen with instructions on how to claim any winnings.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1821,11 +1821,251 @@
     "href": "studies/robots.html#sample-size-and-data-analysis",
     "title": "Robots",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nWe employed Bayesian inference statistics to test the hypothesis, which allow for sequential data accumulation until specific stopping criteria are met. For the correlation effect analysis, we used a Bayesian correlation test with a stopping rule of BF = 10 (indicating strong evidence for either the null or alternative hypothesis). If this criterion wasn’t reached by approximately 1,000 participants, data collection would continue if a clear trend toward BF10 = 10 was observable.\nThe correlation analysis used a Beta (0.1) prior distribution based on an estimated effect size of r = .1, which had been previously applied in analyzing the original faulty correlation data from Dechamps et al. (2021). For standard micro-PK effects, we conducted separate one-sample Bayesian t-tests for experimental and control conditions using one-tailed approaches with informed priors centered around 0.05 (δ ~ Cauchy [0.05, 0.05]). Interestingly, we expected and hoped for null findings, as the absence of standard micro-PK effects was considered a precondition for the correlation effect to appear, consistent with their preregistration.\nThe Bayesian analyses were performed irregularly during data collection, approximately weekly for the first 1,000 participants and then again with the complete sample of over 2,000 participants, using R’s ‘Bayes Factor’ package. Data collection occurred between January and February 2021.\nRegarding sample size, although the stopping criterion of BF10 = 10 for the correlation effect was reached early at n = 24, we considered this subsample too small to provide convincing evidence and continued until reaching 1,000 participants. At this point, the correlation was r = .034 (similar to the original r = .032), but the Bayesian evidence remained inconclusive (BF10 = 0.42). Following the preregistration, we collected data from an additional 1,000 participants before stopping due to exhausted financial resources. The final sample included N = 2,052 participants.\nNo micro-PK effect is expected in both conditions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "text": "Sample Size and Data Analysis\nThe primary goal was to explore whether the proposed design—linking one person to multiple qRNGs—could yield detectable effects even with a small number of participants. Therefore, no power analysis or fixed endpoint was set. Instead, we employed Bayesian sequential analysis, which allows data collection to continue until sufficient evidence is reached for or against a hypothesis, based on the accumulation of data.\nTo calculate Bayes Factors, we used a Cauchy distribution centered around zero with a scale parameter r = 0.1, reflecting a small expected effect size (Cohen’s d ≈ 0.1). This prior distribution is consistent with earlier micro-PK research by the same working group.\nWe used RStudio and JASP for all analyses, including data preparation, descriptive statistics, group comparisons, and t-tests. In addition to the main hypothesis tests, we conducted exploratory subgroup analyses (e.g., by age, gender, and importance of winning) and linear regressions to examine possible trends over time or by participant order.",
     "crumbs": [
       "Experiments",
       "Studies",
       "Robots"
+    ]
+  },
+  {
+    "objectID": "studies/games.html",
+    "href": "studies/games.html",
+    "title": "Games",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nYear\nLab/Online\n\n\n\n\nGames\n✔\n205\n1-6\n0.91\n1.34\n50.82\n0.16\n0.44\n0.01\n0\n0.47\ngreater\n2023\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#hypothesis",
+    "href": "studies/games.html#hypothesis",
+    "title": "Games",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis experiment was developed by students in an empirical course. We set out to replicate the phenomenon of micro-psychokinesis (MPK)—the hypothesized ability of the human mind to influence quantum-level events—while exploring how intrinsic motivation might facilitate or modulate this effect.\nTo test this, we designed a study in which participants played a sequence of digital mini-games, the selection and continuation of which were governed by the QRNG. Crucially, the games were categorized in advance as either “fun” or “not fun,” and participants’ enjoyment, as well as their motivational states, were measured through various questionnaires. We were particularly interested in whether intrinsic aspects of motivation—such as self-regulation, vitality, and perceived autonomy—would correlate with how many enjoyable games were presented by the QRNG, suggesting a non-random influence consistent with MPK.\nOur hypothesis was that individuals with higher intrinsic motivation, particularly in terms of their engagement, autonomy, and self-regulatory capacity, would exhibit an increased likelihood of being presented with games they found enjoyable. This would indicate an intentional construction of subjective reality interacting with objective quantum processes. We also explored whether these correlations varied by gender, given potential differences in gaming preferences and motivation structures.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#participants",
+    "href": "studies/games.html#participants",
+    "title": "Games",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n205\n\n\nFemale\n50.24%\n\n\nMale\n48.78%\n\n\nMean Age\n29.88 years\n\n\nSD Age\n11.65 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#materials-and-procedure",
+    "href": "studies/games.html#materials-and-procedure",
+    "title": "Games",
+    "section": "Materials and Procedure",
+    "text": "Materials and Procedure\nParticipants accessed the online experiment via a link shared through social networks. Upon opening the link, they first saw an instruction page tailored to their group (experimental or control), followed by a visual example of how the game worked. After confirming their understanding and accepting the privacy policy, they proceeded to the experiment.\nEach participant played ten rounds of a roulette game, where they were asked: “Which color would you like to bet on?” and chose between red or black. The outcome of each round was determined by a qRNG, and the result was immediately shown on-screen. Participants were also shown their updated total winnings and whether their choice matched the randomly selected color. If correct, they gained money; otherwise, they did not. Losses were set to zero, so participants could only win or break even.\nThe crucial difference between the two groups was the visibility and relevance of the additional qRNGs:\n\nIn the experimental group, the results from 99 additional roulette tables (each controlled by its own qRNG) were shown and counted toward the participant’s total winnings. These additional outcomes were tied to the participant’s chosen color and presented as if generated by “robot clones.”\nIn the control group, these extra qRNGs were also run, but their outcomes were not shown and had no bearing on the participant’s winnings.\n\nAfter the roulette game, participants filled out a brief questionnaire including their age, gender, familiarity with roulette, and how important winning was to them (on a 1–7 scale). Finally, they saw a closing screen with instructions on how to claim any winnings.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#sample-size-and-data-analysis",
+    "href": "studies/games.html#sample-size-and-data-analysis",
+    "title": "Games",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nThe final sample consisted of 205 participants (100 male, 103 female, 2 diverse) collected by the students of the empirical course.\nFor data analysis, we used Pearson correlation to examine relationships between motivational constructs and game-related variables. Specifically, we analyzed whether intrinsic motivation factors such as self-regulation, self-control, vitality, perceived autonomy, and ego depletion were correlated with:\n\nThe number of games played,\nThe number of “fun” games presented (as determined by the QRNG),\nThe participants’ subjective enjoyment of the games.\n\nThe analysis was first conducted across the full sample and then separately by gender to explore potential differences. Key findings included small to moderate significant correlations, particularly between subjective enjoyment and motivational variables like self-regulation, perceived autonomy, and ego depletion. Interestingly, while male participants showed a stronger correlation between motivational constructs and the type of games presented, female participants showed more robust correlations between their subjective fun ratings and motivational measures.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/robots.html#hypothesis",
+    "href": "studies/robots.html#hypothesis",
+    "title": "Robots",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nIn this experiment, we investigated whether it is possible to reduce the typically large sample sizes required in micro-psychokinesis (micro-PK) research by extending the classical system of one person interacting with one quantum random number generator (qRNG) to a system in which one person is linked to multiple qRNGs.\nOur central hypothesis was that participants could influence the outcome of qRNGs more effectively when their mind was meaningfully connected to multiple qRNGs, as opposed to just one. To test this, we designed a roulette game in which participants were assigned to either an experimental or a control group. In both groups, the participants placed bets on red or black. However, only in the experimental group did the outcomes from an additional 99 qRNGs (representing robot clones of the player) contribute to the total winnings shown to the participant. In the control group, these extra qRNGs were also run but their outcomes were hidden and irrelevant to the player’s reward. If a meaning-based connection as proposed by the unus mundus theory holds, only the qRNGs that were meaningful to the participant—that is, those in the experimental group—should be susceptible to induced correlations.\nWe hypothesized (H1) that both groups might show positive deviations from chance due to mind-matter interactions, but the experimental group would show a faster and stronger effect. Furthermore (H2), we expected that the experimental group would outperform the control group in total effect strength. Exploratorily, we also examined whether factors such as roulette experience, age, gender, and motivation to win would modulate the strength or presence of the effect.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Robots"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#materials",
+    "href": "studies/games.html#materials",
+    "title": "Games",
+    "section": "Materials",
+    "text": "Materials\nIn this study, we used a range of psychological questionnaires and digital games as materials to assess participants’ motivation and to examine potential micro-psychokinetic effects. The study was conducted online and designed to be completed on a computer. Participants began by answering demographic questions, followed by several instruments designed to measure motivational constructs:\n\nPrimary motivation question: Participants selected their main reason for taking part in the study from a set of predefined options.\nIntrinsic Motivation Inventory (IMI): We adapted items from the pressure/tension and interest/enjoyment subscales to assess aspects of self-control and self-regulation in relation to the study and the games.\nSubjective Vitality Scales (SVS): A short questionnaire assessing participants’ current energy and vitality.\nGame presentation and feedback: Participants were shown previews of various mini-games and asked to indicate which ones they expected to enjoy. However, the actual game selection was determined by a quantum random number generator (QRNG). After each game, participants rated their enjoyment on a 5-point scale (Appendix E).\nGame categories: We categorized ten games into two types:\n\n“Fun” games (e.g., Pinball, Pong, Boomshine, Tetris, Snake), chosen for their general enjoyability.\n“Not fun” games, designed to strain short-term memory and include tasks like memorizing sequences or doing arithmetic problems.\n\nPost-game questionnaires:\n\nSelf-perceived autonomy (Janke & Glöckner-Rist, 2012)\nEgo depletion / Self-control capacity (SMS-5; Lindner et al., 2019)\nImplicit Theory of Willpower (Job et al., 2010)\n\n\nAll games were limited to two minutes or ended earlier if completed. Participants could play up to six games (including a trial game), with each subsequent game being randomly determined by the QRNG.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#procedure",
+    "href": "studies/games.html#procedure",
+    "title": "Games",
+    "section": "Procedure",
+    "text": "Procedure\nThe study was conducted online.\nFirst, participants were informed about the study’s goals, data protection, and their rights, and provided informed consent. They then completed a short demographic questionnaire, indicating their age, gender, and current occupation.\nNext, we assessed their initial motivation for participating in the study through a single-choice question. This was followed by a series of psychological questionnaires designed to measure various aspects of intrinsic motivation, including adapted subscales from the Intrinsic Motivation Inventory (IMI) that focused on pressure/tension (self-control) and interest/enjoyment (self-regulation), as well as the Subjective Vitality Scales (SVS) to capture their current sense of energy and vitality.\nFollowing this initial assessment, participants viewed image previews of ten mini-games — five categorized as “fun” (e.g., Tetris, Pong) and five as “not fun” due to their cognitive demands (e.g., memory tasks, arithmetic). Participants indicated which games they would prefer to play, though this had no influence on actual game presentation.\nEach participant then completed one trial game to familiarize themselves with the format. After that, the qRNG controlled the game sequence. After each game, the QRNG decided—with a 50% probability—whether another game would follow or the study would proceed to the final questionnaire phase. If another game was selected, the QRNG again determined with a 50% chance whether it would be a fun or not-fun game. The same game could be repeated. Participants played a maximum of six games, including the trial.\nAfter each game, participants rated how much fun they had on a 5-point Likert scale. Once the game phase ended (after the maximum number or when the QRNG selected to stop), participants were directed to the final set of questionnaires, assessing:\n\nPerceived autonomy during the study,\nSelf-control capacity / ego depletion (SMS-5),\nImplicit theory of willpower, exploring beliefs about mental stamina and recovery.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#lab-report-data",
+    "href": "studies/games.html#lab-report-data",
+    "title": "Games",
+    "section": "Lab Report Data",
+    "text": "Lab Report Data\nFor the lab report only the qRNG choices are considered that decided if another game is played or not. Since participants could have between 1 and 6 trials a mean expected hit was calculated by dividing the number of games played by the number of participants and subtracting 1 for the first guaranteed hit.\n\\(m_{expected} = 389/205-1 = 0.897561\\)\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/sobjectivity.html#lab-report-data",
+    "href": "studies/sobjectivity.html#lab-report-data",
+    "title": "Sobjectivity",
+    "section": "Lab Report Data",
+    "text": "Lab Report Data\nOnly data from Cmax objective is considered in this meta-analysis. Only data from Cmax objective is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data Study 1\nDownload Data Study 2\nDownload Data Study 3\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier et al., 2022)\nPreregistrations\nOSF Project\nOSF Data and Materials\nExperimental Program Study 1\nExperimental Program Study 2\nExperimental Program Study 3\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Sobjectivity"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#lab-report-data",
+    "href": "studies/epsi.html#lab-report-data",
+    "title": "Epsi Correlation",
+    "section": "Lab Report Data",
+    "text": "Lab Report Data\nNo micro-PK effect is expected in both conditions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/robots.html#lab-report-data",
+    "href": "studies/robots.html#lab-report-data",
+    "title": "Robots",
+    "section": "Lab Report Data",
+    "text": "Lab Report Data\nFor this lab report only the human subjects’ scores of both conditions are considered.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Robots"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html",
+    "href": "studies/schroedinger.html",
+    "title": "Schrödingers Cat",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nYear\nLab/Online\n\n\n\n\nSchrödingers Cat Exp\n✔\n285\n10\n4.83\n1.60\n48.32\n-1.78\n0.96\n-0.11\n0\n0.16\ngreater\n2023\n🌍\n\n\nSchrödingers Cat Con\n✖\n285\n10\n5.08\n1.59\n50.84\n0.90\n0.19\n0.05\n0\n0.78\ngreater\n2023\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html#hypothesis",
+    "href": "studies/schroedinger.html#hypothesis",
+    "title": "Schrödingers Cat",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis experiment was developed by students in an empirical course. We set out to investigate whether hopeful, emotionally anchored intentions could influence objective reality—in this case, by improving performance in a simple online guessing game.\nWe hypothesized that a volitional impulse, grounded in an optimistic emotional conviction, could act as a bridge between subjective mental images and objective outcomes. Based on this, we designed an experiment in which participants were asked to guess whether a cat was hidden in a box, with a 50% chance of being correct each time. Before one of the two conditions, participants read a short text meant to induce hopeful, trusting intentions toward a benevolent higher power which served as experimental condition. The other condition served as a baseline and included no such manipulation.\nOur primary hypothesis (H1) stated that guessing accuracy would be higher in the hope condition than in the control condition. Additionally, we explored whether personal traits like optimism (H2) and subjective vitality (H3) would correlate positively with guessing performance, assuming that such traits might predispose individuals to form stronger or more effective positive intentions.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html#participants",
+    "href": "studies/schroedinger.html#participants",
+    "title": "Schrödingers Cat",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n285\n\n\nFemale\n62.46%\n\n\nMale\n35.44%\n\n\nMean Age\n29.49 years\n\n\nSD Age\n11.41 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html#materials",
+    "href": "studies/schroedinger.html#materials",
+    "title": "Schrödingers Cat",
+    "section": "Materials",
+    "text": "Materials\nIn this study, we used a range of psychological questionnaires and digital games as materials to assess participants’ motivation and to examine potential micro-psychokinetic effects. The study was conducted online and designed to be completed on a computer. Participants began by answering demographic questions, followed by several instruments designed to measure motivational constructs:\n\nPrimary motivation question: Participants selected their main reason for taking part in the study from a set of predefined options.\nIntrinsic Motivation Inventory (IMI): We adapted items from the pressure/tension and interest/enjoyment subscales to assess aspects of self-control and self-regulation in relation to the study and the games.\nSubjective Vitality Scales (SVS): A short questionnaire assessing participants’ current energy and vitality.\nGame presentation and feedback: Participants were shown previews of various mini-games and asked to indicate which ones they expected to enjoy. However, the actual game selection was determined by a quantum random number generator (QRNG). After each game, participants rated their enjoyment on a 5-point scale (Appendix E).\nGame categories: We categorized ten games into two types:\n\n“Fun” games (e.g., Pinball, Pong, Boomshine, Tetris, Snake), chosen for their general enjoyability.\n“Not fun” games, designed to strain short-term memory and include tasks like memorizing sequences or doing arithmetic problems.\n\nPost-game questionnaires:\n\nSelf-perceived autonomy (Janke & Glöckner-Rist, 2012)\nEgo depletion / Self-control capacity (SMS-5; Lindner et al., 2019)\nImplicit Theory of Willpower (Job et al., 2010)\n\n\nAll games were limited to two minutes or ended earlier if completed. Participants could play up to six games (including a trial game), with each subsequent game being randomly determined by the QRNG.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html#procedure",
+    "href": "studies/schroedinger.html#procedure",
+    "title": "Schrödingers Cat",
+    "section": "Procedure",
+    "text": "Procedure\nThe study was conducted online.\nFirst, participants were informed about the study’s goals, data protection, and their rights, and provided informed consent. They then completed a short demographic questionnaire, indicating their age, gender, and current occupation.\nNext, we assessed their initial motivation for participating in the study through a single-choice question. This was followed by a series of psychological questionnaires designed to measure various aspects of intrinsic motivation, including adapted subscales from the Intrinsic Motivation Inventory (IMI) that focused on pressure/tension (self-control) and interest/enjoyment (self-regulation), as well as the Subjective Vitality Scales (SVS) to capture their current sense of energy and vitality.\nFollowing this initial assessment, participants viewed image previews of ten mini-games — five categorized as “fun” (e.g., Tetris, Pong) and five as “not fun” due to their cognitive demands (e.g., memory tasks, arithmetic). Participants indicated which games they would prefer to play, though this had no influence on actual game presentation.\nEach participant then completed one trial game to familiarize themselves with the format. After that, the qRNG controlled the game sequence. After each game, the QRNG decided—with a 50% probability—whether another game would follow or the study would proceed to the final questionnaire phase. If another game was selected, the QRNG again determined with a 50% chance whether it would be a fun or not-fun game. The same game could be repeated. Participants played a maximum of six games, including the trial.\nAfter each game, participants rated how much fun they had on a 5-point Likert scale. Once the game phase ended (after the maximum number or when the QRNG selected to stop), participants were directed to the final set of questionnaires, assessing:\n\nPerceived autonomy during the study,\nSelf-control capacity / ego depletion (SMS-5),\nImplicit theory of willpower, exploring beliefs about mental stamina and recovery.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html#sample-size-and-data-analysis",
+    "href": "studies/schroedinger.html#sample-size-and-data-analysis",
+    "title": "Schrödingers Cat",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\n309 Participants were recruited through various personal and university-related channels as part of the empirical course. After applying our pre-registered exclusion criteria—removing those who did not complete the study or indicated they had not done so carefully—we were left with a final sample of 285 participants.\nThe main dependent variable was “guessing performance,” measured as the number of correct guesses in each condition. To test our main hypothesis (H1), we conducted a one-sided, dependent-samples t-test comparing performance in the hope condition to the control condition. Bayesian statistics were used for inference: the Bayes factor (BF+0 = 0.148) provided moderate evidence against our hypothesis. An additional analysis in the reverse direction yielded a Bayes factor of 3.19, suggesting moderate evidence that performance was actually better in the control condition.\nWe also explored correlations between guessing performance and personality traits such as optimism and vitality. However, no significant relationships were found, and the exploratory hypotheses (H2 and H3) were rejected. A small positive correlation between performance across the two conditions (r = .117) indicated some individual consistency in guessing ability, but this was not central to our main research questions.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html#lab-report-data",
+    "href": "studies/schroedinger.html#lab-report-data",
+    "title": "Schrödingers Cat",
+    "section": "Lab Report Data",
+    "text": "Lab Report Data\nFor the lab report we consider both conditions as experimental conditions, since a micro-PK effect should be observable in both conditions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
+    ]
+  },
+  {
+    "objectID": "studies/schroedinger.html#materials-and-procedure",
+    "href": "studies/schroedinger.html#materials-and-procedure",
+    "title": "Schrödingers Cat",
+    "section": "Materials and Procedure",
+    "text": "Materials and Procedure\nWe conducted an entirely online study using a within-subjects design with two experimental conditions: a control (baseline) condition and a hope (experimental) condition. After providing informed consent and basic demographic information, participants were randomly assigned to one of two groups that differed only in the order in which they completed the two conditions.\nIn each condition, participants encountered ten guessing trials. On each trial, they saw a closed box and had to decide whether or not it contained a cat, with a 50% probability of being correct. They were instructed to rely on their gut feeling for each decision. The correct answers were pre-determined by the computer.\nIn the experimental condition, participants first read a brief instructional text designed to evoke a sense of trust and optimism in a higher power. This was intended to induce emotionally anchored, hopeful intentions. They were encouraged to maintain this emotional state throughout the guessing task. In contrast, the control condition involved the same guessing task but without any priming text.\nAfter completing both conditions, participants filled out a series of short questionnaires measuring constructs such as optimism, pessimism, vitality, autonomy, willpower, and momentary self-control capacity. Finally, they were asked whether they had completed the study carefully, which served as a control measure for data validity.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Schrödingers Cat"
     ]
   }
 ]

@@ -55,6 +55,8 @@ The Bayesian analyses were performed irregularly during data collection, approxi
 
 Regarding sample size, although the stopping criterion of BF10 = 10 for the correlation effect was reached early at n = 24, we considered this subsample too small to provide convincing evidence and continued until reaching 1,000 participants. At this point, the correlation was r = .034 (similar to the original r = .032), but the Bayesian evidence remained inconclusive (BF10 = 0.42). Following the preregistration, we collected data from an additional 1,000 participants before stopping due to exhausted financial resources. The final sample included N = 2,052 participants.
 
+## Lab Report Data
+
 No micro-PK effect is expected in both conditions.
 
 ::: {.callout-tip title="Data" collapse="false"}

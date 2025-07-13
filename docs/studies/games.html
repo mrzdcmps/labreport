@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Epsi Correlation – Meta-Analysis of a Complete Micro-PK Database from the LMU Lab</title>
+<title>Games – Meta-Analysis of a Complete Micro-PK Database from the LMU Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -104,6 +84,35 @@ div.csl-indent {
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -151,7 +160,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../studies/allgood.html">Studies</a></li><li class="breadcrumb-item"><a href="../studies/epsi.html">Epsi Correlation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../studies/allgood.html">Studies</a></li><li class="breadcrumb-item"><a href="../studies/games.html">Games</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -198,7 +207,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../studies/epsi.html" class="sidebar-item-text sidebar-link active">
+  <a href="../studies/epsi.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Epsi Correlation</span></a>
   </div>
 </li>
@@ -216,7 +225,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../studies/games.html" class="sidebar-item-text sidebar-link">
+  <a href="../studies/games.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Games</span></a>
   </div>
 </li>
@@ -339,9 +348,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../studies/allgood.html">Studies</a></li><li class="breadcrumb-item"><a href="../studies/epsi.html">Epsi Correlation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../studies/allgood.html">Studies</a></li><li class="breadcrumb-item"><a href="../studies/games.html">Games</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Epsi Correlation</h1>
+<h1 class="title">Games</h1>
 </div>
 
 
@@ -382,59 +391,31 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Epsi Correlation Condition A</td>
-<td style="text-align: center;"><span style="     color: red !important;">✖</span></td>
-<td style="text-align: center;">2052</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">9.96</td>
-<td style="text-align: center;">2.26</td>
-<td style="text-align: center;"><span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #6495ed">49.81</span></td>
-<td style="text-align: center;">-0.75</td>
-<td style="text-align: center;"><span style="     ">0.77</span></td>
-<td style="text-align: center;">-0.02</td>
+<td style="text-align: left;">Games</td>
+<td style="text-align: center;"><span style="     color: darkgreen !important;">✔</span></td>
+<td style="text-align: center;">205</td>
+<td style="text-align: center;">1-6</td>
+<td style="text-align: center;">0.91</td>
+<td style="text-align: center;">1.34</td>
+<td style="text-align: center;"><span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #6495ed">50.82</span></td>
+<td style="text-align: center;">0.16</td>
+<td style="text-align: center;"><span style="     ">0.44</span></td>
+<td style="text-align: center;">0.01</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">0.47</td>
 <td style="text-align: center;">greater</td>
-<td style="text-align: center;">2021</td>
-<td style="text-align: center;">🌍</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Epsi Correlation Condition B</td>
-<td style="text-align: center;"><span style="     color: red !important;">✖</span></td>
-<td style="text-align: center;">2052</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">9.94</td>
-<td style="text-align: center;">2.26</td>
-<td style="text-align: center;"><span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ee6a50">49.72</span></td>
-<td style="text-align: center;">-1.14</td>
-<td style="text-align: center;"><span style="     ">0.87</span></td>
-<td style="text-align: center;">-0.03</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0.08</td>
-<td style="text-align: center;">greater</td>
-<td style="text-align: center;">2021</td>
+<td style="text-align: center;">2023</td>
 <td style="text-align: center;">🌍</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<section id="design-and-hypothesis" class="level2">
-<h2 class="anchored" data-anchor-id="design-and-hypothesis">Design and Hypothesis</h2>
-<section id="original-study-design-and-hypotheses" class="level3">
-<h3 class="anchored" data-anchor-id="original-study-design-and-hypotheses">Original Study Design and Hypotheses</h3>
-<p>The study was initially designed as a preregistered replication of <span class="citation" data-cites="dechamps2021">(<a href="#ref-dechamps2021" role="doc-biblioref">Dechamps et al., 2021</a>)</span> micro-psychokinesis research (see <a href="prime1.html">priming studies</a>), which had found intriguing patterns across three studies. The original research used subliminal priming to test whether participants could unconsciously influence quantum random number generators to select positive images more frequently.</p>
-<p>Hypothesis: We expected to replicate a strong correlational effect (r = .032, BF10 = 36.46) between experimental and control conditions that had been found in a post-hoc analysis of the combined data from Dechamps et al.’s three studies. We predicted this correlation would appear specifically when standard micro-PK effects were absent, representing a stable relationship between the two conditions.</p>
-</section>
-<section id="the-critical-discovery" class="level3">
-<h3 class="anchored" data-anchor-id="the-critical-discovery">The Critical Discovery</h3>
-<p>However, after data collection and analysis were complete, we discovered that the original correlation effect they were trying to replicate was based on a coding error in the original dataset. Eight participants in Study 3 had been incorrectly coded with negative values, and when this error was corrected, the strong evidence for correlation completely disappeared (r = -.01, BF01 = 49.48).</p>
-</section>
-<section id="transformed-research-question" class="level3">
-<h3 class="anchored" data-anchor-id="transformed-research-question">Transformed Research Question</h3>
-<p>This discovery transformed the study from a planned replication into an unintentional exploration of experimenter effects in micro-PK research. The new research question became: Would experimenters’ strong but false expectations about a correlation effect actually influence the appearance of such an effect in the data?</p>
-<p>This addresses a fundamental concern in micro-PK research - that experimenters’ beliefs and expectations might unconsciously influence quantum-based outcomes, making it difficult to distinguish between participant effects and experimenter effects. The study thus became an anecdotal field experiment examining whether purely subjective experimenter expectations, contradicting objective reality, could manifest as measurable effects in micro-PK data.</p>
-</section>
+<section id="hypothesis" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis">Hypothesis</h2>
+<p>This experiment was developed by students in an empirical course. We set out to replicate the phenomenon of micro-psychokinesis (MPK)—the hypothesized ability of the human mind to influence quantum-level events—while exploring how intrinsic motivation might facilitate or modulate this effect.</p>
+<p>To test this, we designed a study in which participants played a sequence of digital mini-games, the selection and continuation of which were governed by the QRNG. Crucially, the games were categorized in advance as either “fun” or “not fun,” and participants’ enjoyment, as well as their motivational states, were measured through various questionnaires. We were particularly interested in whether intrinsic aspects of motivation—such as self-regulation, vitality, and perceived autonomy—would correlate with how many enjoyable games were presented by the QRNG, suggesting a non-random influence consistent with MPK.</p>
+<p>Our hypothesis was that individuals with higher intrinsic motivation, particularly in terms of their engagement, autonomy, and self-regulatory capacity, would exhibit an increased likelihood of being presented with games they found enjoyable. This would indicate an intentional construction of subjective reality interacting with objective quantum processes. We also explored whether these correlations varied by gender, given potential differences in gaming preferences and motivation structures.</p>
 </section>
 <section id="participants" class="level2">
 <h2 class="anchored" data-anchor-id="participants">Participants</h2>
@@ -450,43 +431,80 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">N</td>
-<td style="text-align: left;">2052</td>
+<td style="text-align: left;">205</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Female</td>
-<td style="text-align: left;">49.03%</td>
+<td style="text-align: left;">50.24%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Male</td>
-<td style="text-align: left;">47.71%</td>
+<td style="text-align: left;">48.78%</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Mean Age</td>
-<td style="text-align: left;">44.22 years</td>
+<td style="text-align: left;">29.88 years</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">SD Age</td>
-<td style="text-align: left;">13.84 years</td>
+<td style="text-align: left;">11.65 years</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="materials-and-procedure" class="level2">
-<h2 class="anchored" data-anchor-id="materials-and-procedure">Materials and Procedure</h2>
-<p>Materials and Procedure were identical to the <a href="priming1.html">priming studies</a>.</p>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<p>In this study, we used a range of psychological questionnaires and digital games as materials to assess participants’ motivation and to examine potential micro-psychokinetic effects. The study was conducted online and designed to be completed on a computer. Participants began by answering demographic questions, followed by several instruments designed to measure motivational constructs:</p>
+<ol type="1">
+<li><p>Primary motivation question: Participants selected their main reason for taking part in the study from a set of predefined options.</p></li>
+<li><p>Intrinsic Motivation Inventory (IMI): We adapted items from the pressure/tension and interest/enjoyment subscales to assess aspects of self-control and self-regulation in relation to the study and the games.</p></li>
+<li><p>Subjective Vitality Scales (SVS): A short questionnaire assessing participants’ current energy and vitality.</p></li>
+<li><p>Game presentation and feedback: Participants were shown previews of various mini-games and asked to indicate which ones they expected to enjoy. However, the actual game selection was determined by a quantum random number generator (QRNG). After each game, participants rated their enjoyment on a 5-point scale (Appendix E).</p></li>
+<li><p>Game categories: We categorized ten games into two types:</p>
+<ul>
+<li><em>“Fun” games</em> (e.g., Pinball, Pong, Boomshine, Tetris, Snake), chosen for their general enjoyability.</li>
+<li><em>“Not fun” games</em>, designed to strain short-term memory and include tasks like memorizing sequences or doing arithmetic problems.</li>
+</ul></li>
+<li><p>Post-game questionnaires:</p>
+<ul>
+<li>Self-perceived autonomy (Janke &amp; Glöckner-Rist, 2012)</li>
+<li>Ego depletion / Self-control capacity (SMS-5; Lindner et al., 2019)</li>
+<li>Implicit Theory of Willpower (Job et al., 2010)</li>
+</ul></li>
+</ol>
+<p>All games were limited to two minutes or ended earlier if completed. Participants could play up to six games (including a trial game), with each subsequent game being randomly determined by the QRNG.</p>
+</section>
+<section id="procedure" class="level2">
+<h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
+<p>The study was conducted online.</p>
+<p>First, participants were informed about the study’s goals, data protection, and their rights, and provided informed consent. They then completed a short demographic questionnaire, indicating their age, gender, and current occupation.</p>
+<p>Next, we assessed their initial motivation for participating in the study through a single-choice question. This was followed by a series of psychological questionnaires designed to measure various aspects of intrinsic motivation, including adapted subscales from the Intrinsic Motivation Inventory (IMI) that focused on pressure/tension (self-control) and interest/enjoyment (self-regulation), as well as the Subjective Vitality Scales (SVS) to capture their current sense of energy and vitality.</p>
+<p>Following this initial assessment, participants viewed image previews of ten mini-games — five categorized as “fun” (e.g., Tetris, Pong) and five as “not fun” due to their cognitive demands (e.g., memory tasks, arithmetic). Participants indicated which games they would prefer to play, though this had no influence on actual game presentation.</p>
+<p>Each participant then completed one trial game to familiarize themselves with the format. After that, the qRNG controlled the game sequence. After each game, the QRNG decided—with a 50% probability—whether another game would follow or the study would proceed to the final questionnaire phase. If another game was selected, the QRNG again determined with a 50% chance whether it would be a fun or not-fun game. The same game could be repeated. Participants played a maximum of six games, including the trial.</p>
+<p>After each game, participants rated how much fun they had on a 5-point Likert scale. Once the game phase ended (after the maximum number or when the QRNG selected to stop), participants were directed to the final set of questionnaires, assessing:</p>
+<ul>
+<li>Perceived autonomy during the study,</li>
+<li>Self-control capacity / ego depletion (SMS-5),</li>
+<li>Implicit theory of willpower, exploring beliefs about mental stamina and recovery.</li>
+</ul>
 </section>
 <section id="sample-size-and-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="sample-size-and-data-analysis">Sample Size and Data Analysis</h2>
-<p>We employed Bayesian inference statistics to test the hypothesis, which allow for sequential data accumulation until specific stopping criteria are met. For the correlation effect analysis, we used a Bayesian correlation test with a stopping rule of BF = 10 (indicating strong evidence for either the null or alternative hypothesis). If this criterion wasn’t reached by approximately 1,000 participants, data collection would continue if a clear trend toward BF10 = 10 was observable.</p>
-<p>The correlation analysis used a Beta (0.1) prior distribution based on an estimated effect size of r = .1, which had been previously applied in analyzing the original faulty correlation data from Dechamps et al.&nbsp;(2021). For standard micro-PK effects, we conducted separate one-sample Bayesian t-tests for experimental and control conditions using one-tailed approaches with informed priors centered around 0.05 (δ ~ Cauchy [0.05, 0.05]). Interestingly, we expected and hoped for null findings, as the absence of standard micro-PK effects was considered a precondition for the correlation effect to appear, consistent with their preregistration.</p>
-<p>The Bayesian analyses were performed irregularly during data collection, approximately weekly for the first 1,000 participants and then again with the complete sample of over 2,000 participants, using R’s ‘Bayes Factor’ package. Data collection occurred between January and February 2021.</p>
-<p>Regarding sample size, although the stopping criterion of BF10 = 10 for the correlation effect was reached early at n = 24, we considered this subsample too small to provide convincing evidence and continued until reaching 1,000 participants. At this point, the correlation was r = .034 (similar to the original r = .032), but the Bayesian evidence remained inconclusive (BF10 = 0.42). Following the preregistration, we collected data from an additional 1,000 participants before stopping due to exhausted financial resources. The final sample included N = 2,052 participants.</p>
+<p>The final sample consisted of 205 participants (100 male, 103 female, 2 diverse) collected by the students of the empirical course.</p>
+<p>For data analysis, we used Pearson correlation to examine relationships between motivational constructs and game-related variables. Specifically, we analyzed whether intrinsic motivation factors such as self-regulation, self-control, vitality, perceived autonomy, and ego depletion were correlated with:</p>
+<ul>
+<li>The number of games played,</li>
+<li>The number of “fun” games presented (as determined by the QRNG),</li>
+<li>The participants’ subjective enjoyment of the games.</li>
+</ul>
+<p>The analysis was first conducted across the full sample and then separately by gender to explore potential differences. Key findings included small to moderate significant correlations, particularly between subjective enjoyment and motivational variables like self-regulation, perceived autonomy, and ego depletion. Interestingly, while male participants showed a stronger correlation between motivational constructs and the type of games presented, female participants showed more robust correlations between their subjective fun ratings and motivational measures.</p>
 </section>
 <section id="lab-report-data" class="level2">
 <h2 class="anchored" data-anchor-id="lab-report-data">Lab Report Data</h2>
-<p>No micro-PK effect is expected in both conditions.</p>
+<p>For the lab report only the qRNG choices are considered that decided if another game is played or not. Since participants could have between 1 and 6 trials a mean expected hit was calculated by dividing the number of games played by the number of participants and subtracting 1 for the first guaranteed hit.</p>
+<p><span class="math inline">\(m_{expected} = 389/205-1 = 0.897561\)</span></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Data">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -500,7 +518,7 @@ Data
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="../data/epis/epsi.csv">Download Data</a></li>
+<li><a href="../data/games/games.csv">Download Data</a></li>
 </ul>
 </div>
 </div>
@@ -518,29 +536,17 @@ Resources
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://journalofscientificexploration.org/index.php/jse/article/view/2235">Publication</a> <span class="citation" data-cites="maier2022a">(<a href="#ref-maier2022a" role="doc-biblioref">Maier &amp; Dechamps, 2022</a>)</span></li>
-<li><a href="https://osf.io/a47g2">Preregistration</a></li>
-<li><a href="https://osf.io/tbha6/">OSF Project</a></li>
-<li><a href="https://osf.io/tbha6/files/osfstorage">OSF Data and Materials</a></li>
-<li><a href="https://github.com/mrzdcmps/labreport/blob/main/data/epsi/n-prime5.html">Experimental Program</a></li>
-<li><a href="../data/priming/NPrime.zip">Stimuli</a></li>
+<li><a href="../data/games/games-report.pdf">Student Report</a></li>
+<li><a href="https://github.com/mrzdcmps/labreport/blob/main/data/games/coolestudie.html">Experimental Program</a></li>
 </ul>
 </div>
 </div>
 </div>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-dechamps2021" class="csl-entry" role="listitem">
-Dechamps, M. C., Maier, M. A., Pflitsch, M., &amp; Duggan, M. (2021). Observer dependent biases of quantum randomness. <em>Journal of Anomalous Experience and Cognition</em>, <em>1</em>(1-2), 114–155. <a href="https://doi.org/10.31156/jaex.23205">https://doi.org/10.31156/jaex.23205</a>
-</div>
-<div id="ref-maier2022a" class="csl-entry" role="listitem">
-Maier, M., &amp; Dechamps, M. (2022). A pre-registered test of a correlational micro-PK effect: Efforts to learn from a failure to replicate. <em>Journal of Scientific Exploration</em>, <em>36</em>(2), 251–263. <a href="https://doi.org/10.31275/20222235">https://doi.org/10.31275/20222235</a>
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

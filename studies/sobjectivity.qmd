@@ -87,6 +87,8 @@ The design created three dependent variables: for the experimental condition (Cr
 
 A sequential Bayesian analysis plan was applied for every study. Three separate one-sample t-tests were conducted for each study, comparing the mean number of positive images selected (Cmax objective) or reported (Cmax subjective and Creduced subjective) against the expected chance level of 10.
 
+## Lab Report Data
+
 Only data from Cmax objective is considered in this meta-analysis. Only data from Cmax objective is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.
 
 ::: {.callout-tip title="Data" collapse="false"}

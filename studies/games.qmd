@@ -1,0 +1,102 @@
+---
+title: "Games"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Games")
+```
+
+## Hypothesis
+
+This experiment was developed by students in an empirical course. We set out to replicate the phenomenon of micro-psychokinesis (MPK)—the hypothesized ability of the human mind to influence quantum-level events—while exploring how intrinsic motivation might facilitate or modulate this effect.
+
+To test this, we designed a study in which participants played a sequence of digital mini-games, the selection and continuation of which were governed by the QRNG. Crucially, the games were categorized in advance as either “fun” or “not fun,” and participants’ enjoyment, as well as their motivational states, were measured through various questionnaires. We were particularly interested in whether intrinsic aspects of motivation—such as self-regulation, vitality, and perceived autonomy—would correlate with how many enjoyable games were presented by the QRNG, suggesting a non-random influence consistent with MPK.
+
+Our hypothesis was that individuals with higher intrinsic motivation, particularly in terms of their engagement, autonomy, and self-regulatory capacity, would exhibit an increased likelihood of being presented with games they found enjoyable. This would indicate an intentional construction of subjective reality interacting with objective quantum processes. We also explored whether these correlations varied by gender, given potential differences in gaming preferences and motivation structures.
+
+## Participants
+
+```{r}
+generate_demographics_table(
+  data = study21_games,
+  age_col = "age",
+  gender_col = "gender",
+  male_value = "männlich",
+  female_value = "weiblich"
+)
+```
+
+## Materials
+
+In this study, we used a range of psychological questionnaires and digital games as materials to assess participants’ motivation and to examine potential micro-psychokinetic effects. The study was conducted online and designed to be completed on a computer. Participants began by answering demographic questions, followed by several instruments designed to measure motivational constructs:
+
+1.  Primary motivation question: Participants selected their main reason for taking part in the study from a set of predefined options.
+
+2.  Intrinsic Motivation Inventory (IMI): We adapted items from the pressure/tension and interest/enjoyment subscales to assess aspects of self-control and self-regulation in relation to the study and the games.
+
+3.  Subjective Vitality Scales (SVS): A short questionnaire assessing participants' current energy and vitality.
+
+4.  Game presentation and feedback: Participants were shown previews of various mini-games and asked to indicate which ones they expected to enjoy. However, the actual game selection was determined by a quantum random number generator (QRNG). After each game, participants rated their enjoyment on a 5-point scale (Appendix E).
+
+5.  Game categories: We categorized ten games into two types:
+
+    -   *“Fun” games* (e.g., Pinball, Pong, Boomshine, Tetris, Snake), chosen for their general enjoyability.
+    -   *“Not fun” games*, designed to strain short-term memory and include tasks like memorizing sequences or doing arithmetic problems.
+
+6.  Post-game questionnaires:
+
+    -   Self-perceived autonomy (Janke & Glöckner-Rist, 2012)
+    -   Ego depletion / Self-control capacity (SMS-5; Lindner et al., 2019)
+    -   Implicit Theory of Willpower (Job et al., 2010)
+
+All games were limited to two minutes or ended earlier if completed. Participants could play up to six games (including a trial game), with each subsequent game being randomly determined by the QRNG.
+
+## Procedure
+
+The study was conducted online.
+
+First, participants were informed about the study's goals, data protection, and their rights, and provided informed consent. They then completed a short demographic questionnaire, indicating their age, gender, and current occupation.
+
+Next, we assessed their initial motivation for participating in the study through a single-choice question. This was followed by a series of psychological questionnaires designed to measure various aspects of intrinsic motivation, including adapted subscales from the Intrinsic Motivation Inventory (IMI) that focused on pressure/tension (self-control) and interest/enjoyment (self-regulation), as well as the Subjective Vitality Scales (SVS) to capture their current sense of energy and vitality.
+
+Following this initial assessment, participants viewed image previews of ten mini-games — five categorized as “fun” (e.g., Tetris, Pong) and five as “not fun” due to their cognitive demands (e.g., memory tasks, arithmetic). Participants indicated which games they would prefer to play, though this had no influence on actual game presentation.
+
+Each participant then completed one trial game to familiarize themselves with the format. After that, the qRNG controlled the game sequence. After each game, the QRNG decided—with a 50% probability—whether another game would follow or the study would proceed to the final questionnaire phase. If another game was selected, the QRNG again determined with a 50% chance whether it would be a fun or not-fun game. The same game could be repeated. Participants played a maximum of six games, including the trial.
+
+After each game, participants rated how much fun they had on a 5-point Likert scale. Once the game phase ended (after the maximum number or when the QRNG selected to stop), participants were directed to the final set of questionnaires, assessing:
+
+-   Perceived autonomy during the study,
+-   Self-control capacity / ego depletion (SMS-5),
+-   Implicit theory of willpower, exploring beliefs about mental stamina and recovery.
+
+## Sample Size and Data Analysis
+
+The final sample consisted of 205 participants (100 male, 103 female, 2 diverse) collected by the students of the empirical course.
+
+For data analysis, we used Pearson correlation to examine relationships between motivational constructs and game-related variables. Specifically, we analyzed whether intrinsic motivation factors such as self-regulation, self-control, vitality, perceived autonomy, and ego depletion were correlated with:
+
+-   The number of games played,
+-   The number of “fun” games presented (as determined by the QRNG),
+-   The participants’ subjective enjoyment of the games.
+
+The analysis was first conducted across the full sample and then separately by gender to explore potential differences. Key findings included small to moderate significant correlations, particularly between subjective enjoyment and motivational variables like self-regulation, perceived autonomy, and ego depletion. Interestingly, while male participants showed a stronger correlation between motivational constructs and the type of games presented, female participants showed more robust correlations between their subjective fun ratings and motivational measures.
+
+## Lab Report Data
+
+For the lab report only the qRNG choices are considered that decided if another game is played or not. Since participants could have between 1 and 6 trials a mean expected hit was calculated by dividing the number of games played by the number of participants and subtracting 1 for the first guaranteed hit.
+
+$m_{expected} = 389/205-1 = 0.897561$
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/games/games.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   [Student Report](../data/games/games-report.pdf)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/games/coolestudie.html)
+:::

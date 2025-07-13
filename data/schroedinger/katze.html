@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Schrödingers Katze</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-preload.js"></script>
+    <script src="jspsych/plugin-fullscreen.js"></script>
+    <script src="jspsych/plugin-call-function.js"></script>
+    <script src="jspsych/plugin-external-html.js"></script>
+    <script src="jspsych/plugin-instructions.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-image-keyboard-response.js"></script>
+    <script src="jspsych/plugin-survey.js"></script>
+    <script src="jspsych-6.1.0/quantis.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="jspsych/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="jspsych/survey.css"></link>
+    <link rel="stylesheet" href="consent/consent.css"></link>
+
+    <style>
+        .cards {
+            margin: 0px 8px;
+        }
+        .choice {
+            cursor: pointer;
+            width: 6em;
+            border: 2px solid black;
+        }
+        .displayChoice {
+            width:3em;
+        }
+    </style>
+
+  </head>
+  <body></body>
+  <script>
+
+    /* define parameters */
+    // study name
+    var studyname = 'katze';
+    var studypart = 1;
+
+    //initialize Experiment
+    const jsPsych = initJsPsych({
+        /* on_finish: function() {
+        jsPsych.data.displayData();
+      } */
+    });
+
+    // SONA & subject ID
+    let vl = jsPsych.data.urlVariables()['vl'];
+    let sona_id = jsPsych.data.urlVariables()['sonaid'];
+
+    let nosavetest = jsPsych.data.urlVariables()['test'];
+    if(nosavetest) console.log("TEST! Data will not be saved");
+    
+    if(!sona_id){
+        var subject_id = jsPsych.randomization.randomID(16);
+        var TXT_ending = '<hr><p><a href="https://app.prolific.com/submissions/complete?cc=CUIJUER2">Please click here to get back to Prolific.</a></p>(Code: CUIJUER2)';
+    } else {
+        var subject_id = sona_id;
+        var TXT_ending = 
+            '<hr><p><a href="https://lmu-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=23&credit_token=0d538279da184fa187234ebaf2788909&survey_code=' + subject_id + '">Please click here to get your subject credit hour in SONA.</a></p>';
+    }
+
+
+    // specify starting time
+    var start_time = new Date();
+
+    var condition = jsPsych.randomization.sampleWithReplacement(["C1","C2"], 1)[0];
+
+    // add to data file
+    jsPsych.data.addProperties({ 
+        study: studyname + studypart, //e.g. "newstudy1"
+        subject: subject_id,
+        vl: vl,
+        time: start_time.toISOString(), 
+        condition: condition
+    });
+
+
+    /* welcome message & instructions */
+    var welcome = {
+        type: jsPsychInstructions,
+        data: { test_part: "instruction" },
+        pages: [
+            `<h1>Studie "Schrödingers Katze"</h1>
+            <p>Danke, dass Sie sich die Zeit nehmen, um an unserer Studie „Schrödingers Katze“ teilzunehmen</p>`
+            ],
+        show_clickable_nav: true
+    };
+
+        /* Consent */
+    // consent to participate.
+    var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+    // declare the block.
+    var informed_consent = {
+        type: jsPsychExternalHtml,
+        url: "consent/consent_mm.html",
+        cont_btn: "start",
+        check_fn: check_consent
+    };
+
+    /* Instructions */
+    var instruction1C1 = {
+      type: jsPsychHtmlButtonResponse,
+      data: { test_part:'instruction' },
+      stimulus: `<p>Im Folgenden werden Sie nacheinander 10 Boxen sehen, die mit 50%iger Wahrscheinlichkeit eine Katze enthalten. Ihre Aufgabe ist zu erraten, ob sich eine Katze in der Box befindet oder nicht. Sie können später Ihre Entscheidungen am oberen Bildschirmrand sehen. Folgen Sie bei jeder Entscheidung Ihrem Bauchgefühl.</p>
+      <p>Bevor Sie die Entscheidungen treffen, nehmen Sie sich bitte Zeit, um den folgenden Text aufmerksam zu lesen und zu verinnerlichen. Versuchen Sie, den durch den Text erzeugten emotionalen Zustand für alle 10 Entscheidungen beizubehalten:</p>
+      <p style="hyphens: auto; text-align: justify; width:80%; margin:auto;">Ich war nie alleine. Und ich werde auch niemals alleine sein. Denn das ganze Universum liebt mich. Genauso wie ich das ganze Universum liebe. Weil ich es liebe, habe ich Vertrauen, dass es nur das Beste für mich möchte. Ich bin davon überzeugt, dass es mich bei jedem Atemzug begleitet. Deshalb kann ich keine falschen Entscheidungen treffen. Jede einzelne Entscheidung wird die Richtige sein, und ich werde mit Leichtigkeit geleitet werden.</p><br>`,
+      choices: ['Weiter']
+    }
+
+    var instruction1C2 = {
+      type: jsPsychHtmlButtonResponse,
+      data: { test_part:'instruction' },
+      stimulus: `<p>Im Folgenden werden Sie nacheinander 10 Boxen sehen, die mit 50%iger Wahrscheinlichkeit eine Katze enthalten. Ihre Aufgabe ist zu erraten, ob sich eine Katze in der Box befindet oder nicht. Sie können später am oberen Bildschirmrand Ihre Entscheidungen sehen. Folgen Sie bei jeder Entscheidung Ihrem Bauchgefühl.</p><br>`,
+      choices: ['Weiter']
+    }
+
+    /* Instructions */
+    var instruction2C1 = {
+      type: jsPsychHtmlButtonResponse,
+      data: { test_part:'instruction' },
+      stimulus: `<p>Nun werden Sie wieder gebeten, 10 Entscheidungen über die Katze in der Box zu treffen. Diesmal müssen Sie jedoch keinen bestimmten emotionalen Zustand beibehalten. Folgen Sie dennoch bei jeder Entscheidung Ihrem Bauchgefühl.</p><br>`,
+      choices: ['Weiter']
+    }
+
+    var instruction2C2 = {
+      type: jsPsychHtmlButtonResponse,
+      data: { test_part:'instruction' },
+      stimulus: `<p>Nun werden Sie wieder gebeten, 10 Entscheidungen über die Katze in der Box zu treffen. Folgen Sie wieder bei jeder Entscheidung Ihrem Bauchgefühl.</p>
+      <p>Bevor Sie die Entscheidungen treffen, nehmen Sie sich bitte Zeit, um den folgenden Text aufmerksam zu lesen und zu verinnerlichen. Versuchen Sie, den durch den Text erzeugten emotionalen Zustand für alle 10 Entscheidungen beizubehalten:</p>
+      <p style="hyphens: auto; text-align: justify; width:80%; margin:auto;">Ich war nie alleine. Und ich werde auch niemals alleine sein. Denn das ganze Universum liebt mich. Genauso wie ich das ganze Universum liebe. Weil ich es liebe, habe ich Vertrauen, dass es nur das Beste für mich möchte. Ich bin davon überzeugt, dass es mich bei jedem Atemzug begleitet. Deshalb kann ich keine falschen Entscheidungen treffen. Jede einzelne Entscheidung wird die Richtige sein, und ich werde mit Leichtigkeit geleitet werden.</p><br>`,
+      choices: ['Weiter']
+    }
+
+
+
+    /* Cat */
+    var ntrials = 10;
+
+    var catChoice1 = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'choice1', qbit: '' },
+        stimulus: ' ',
+        choices: ["cat","empty"],
+        button_html: '<img src="img/Katze/%choice%.png" class="choice">',
+        post_trial_gap: 500,
+        on_start: function(trial){
+            var Z = parseInt(Zufallswert());
+            trial.data.qbit = Z;
+
+            var choiceData = jsPsych.data.get().filter({test_part: 'choice1'}).trials;
+            var displayChoices = Array(choiceData.length).fill('<img src="img/Katze/box.png" class="displayChoice">');
+
+            var trialstimulus = displayChoices.concat(
+                `<p>Ist die Katze in der Kiste?</p>
+                <img src="img/Katze/box.png">`
+                );
+            trial.stimulus = trialstimulus.join('');
+
+            console.log(trial.data.qbit);
+        }
+    };
+
+
+    var catResult1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: function(){
+            
+            // get all cat trials
+            var choiceData = jsPsych.data.get().filter({test_part: 'choice1'}).trials;
+
+            // Use Array.reduce() to calculate the sum
+            const sumQbitEqualsResponse = choiceData.reduce((sum, entry) => {
+            // Check if qbit equals response
+            if (entry.qbit === entry.response) {
+                // If true, add 1 to the sum
+                return sum + 1;
+            } else {
+                // If false, return the current sum unchanged
+                return sum;
+            }
+            }, 0); // Start with a sum of 0
+
+            // Print the result
+            return `<img src="img/Katze/cat.png">
+            <p>Sie haben ${sumQbitEqualsResponse} von 10 Entscheidungen richtig getroffen!</p>`
+        },
+        data: { test_part: 'result1' },
+        choices: ['Weiter']
+    };
+
+    var catChoice2 = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'choice2', qbit: '' },
+        stimulus: ' ',
+        choices: ["cat","empty"],
+        button_html: '<img src="img/Katze/%choice%.png" class="choice">',
+        post_trial_gap: 500,
+        on_start: function(trial){
+            var Z = parseInt(Zufallswert());
+            trial.data.qbit = Z;
+
+            var choiceData = jsPsych.data.get().filter({test_part: 'choice2'}).trials;
+            var displayChoices = Array(choiceData.length).fill('<img src="img/Katze/box.png" class="displayChoice">');
+
+            var trialstimulus = displayChoices.concat(
+                `<p>Ist die Katze in der Kiste?</p>
+                <img src="img/Katze/box.png">`
+                );
+            trial.stimulus = trialstimulus.join('');
+
+            console.log(trial.data.qbit);
+        }
+    };
+
+
+    var catResult2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: function(){
+            
+            // get all cat trials
+            var choiceData = jsPsych.data.get().filter({test_part: 'choice2'}).trials;
+
+            // Use Array.reduce() to calculate the sum
+            const sumQbitEqualsResponse = choiceData.reduce((sum, entry) => {
+            // Check if qbit equals response
+            if (entry.qbit === entry.response) {
+                // If true, add 1 to the sum
+                return sum + 1;
+            } else {
+                // If false, return the current sum unchanged
+                return sum;
+            }
+            }, 0); // Start with a sum of 0
+
+            // Print the result
+            return `<img src="img/Katze/cat.png">
+            <p>Sie haben ${sumQbitEqualsResponse} von 10 Entscheidungen richtig getroffen!</p>`
+        },
+        data: { test_part: 'result2' },
+        choices: ['Weiter']
+    };
+
+
+    /* Survey */
+    var surveySMS5 = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveySMS5' },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'SMS5Intro',
+                prompt: `
+                <p>Beantworten Sie bitte spontan die folgenden Aussagen zu Ihrem Befinden.</p>
+                <p>Klicken Sie dazu bitte in jeder Zeile auf den Kreis unter den Zahlen zwischen 1 = "völlig unzutreffend" und 7 = "trifft ganz genau zu", um auszudrücken, wie sehr die jeweilige Aussage auf Sie zutrifft.</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: ' ',
+                name: 'SMS-5',
+                required: true,
+                statements: [
+                    {prompt: 'Ich fühle mich erledigt.', name: 'SMS5_1'},
+                    {prompt: 'Ich fühle mich ausgeglichen.', name: 'SMS5_2'},
+                    {prompt: 'Ich fühle mich antriebslos.', name: 'SMS5_3'},
+                    {prompt: 'Ich fühle mich wach und konzentriert.', name: 'SMS5_4'},
+                    {prompt: 'Ich fühle mich, als hätte ich keine Willenskraft mehr.', name: 'SMS5_5'}
+                ],
+                options: ['1', '2', '3', '4', '5', '6', '7'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveySVSScaleValues = [
+                {value: '0'},
+                {value: '1'},
+                {value: '2'},
+                {value: '3'},
+                {value: '4'},
+                {value: '5'},
+                {value: '6'},
+                {value: '7'},
+                {value: '8'},
+                {value: '9'},
+                {value: '10'},
+                ];
+
+    var surveySVS = {
+        type: jsPsychSurvey,
+        data: { test_part: "surveySVS-GM3" },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'SVSIntro',
+                prompt: `
+                <p>Nun möchten wir Sie bitten, Ihre Einschätzungen zu den folgenden Aussagen mitzuteilen. Bitte verwenden Sie die Skala von 0 bis 10, um Ihre Zustimmung oder Ablehnung zu jeder Aussage auszudrücken. Wir bitten Sie, nicht lange nachzudenken, sondern spontan zu antworten!</p>
+                <p><b>Während der Studie ...</b></p>`
+
+            },
+            {
+                type: 'likert',
+                prompt: '... fühlte ich mich lebendig und vital.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            },
+            {
+                type: 'likert',
+                prompt: '... war ich voller Tatendrang.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            },
+            {
+                type: 'likert',
+                prompt: '... hatte ich Energie und Lebensfreude.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyITW = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyITW' },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'ITWIntro',
+                prompt: `
+                <p>Wie sehr treffen folgende Aussagen auf Sie zu?</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: ' ',
+                name: 'ITW',
+                required: true,
+                statements: [
+                    {prompt: 'Anstrengende mentale Tätigkeiten (z. B. Nachdenken über eine schwierige Fragestellung, sich stark auf etwas konzentrieren) verbrauchen meine Kraftressourcen, die ich im Anschluss wieder auftanken muss (z. B. indem ich Pausen mache, nichts tue, fernsehe, einen Snack esse.', name: 'ITW_1'},
+                    {prompt: 'Im Laufe einer fordernden mentalen Tätigkeit wird meine Energie verbraucht und ich brauche eine Pause, um wieder aufzutanken.', name: 'ITW_2'},
+                    {prompt: 'Nachdem ich mich eine Zeit lang voll und ganz auf etwas konzentriert habe, fühle ich mich manchmal energetisiert und bereit für weitere anspruchsvolle Tätigkeiten.', name: 'ITW_3'},
+                    {prompt: 'Meine mentale Kraft lädt sich von selbst auf. Auch bei einer anstrengenden mentalen Tätigkeit kann ich lange weitermachen.', name: 'ITW_4'},
+                    {prompt: 'Wenn ich eine anspruchsvolle mentale Tätigkeit erledigt habe, kann ich mich nicht mit der gleichen Konzentration gleich der nächsten widmen, weil ich geistig wieder zu Kräften kommen muss.', name: 'ITW_5'},
+                    {prompt: 'Nach einer fordernden geistigen Tätigkeit fühle ich mich energetisiert und bereit für neue Aufgaben.', name: 'ITW_6'}
+                ],
+                options: ['Stimmt gar nicht', 'Stimmt nicht', 'Stimmt eher nicht', 'Stimmt eher', 'Stimmt überwiegend', 'Stimmt genau'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+
+    var surveyAutonmie = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyAutonomie' },
+        pages: [
+        [
+            {
+                type: 'likert-table',
+                prompt: 'Wie haben Sie sich bei der Bearbeitung der vorhergehenden Aufgabe gefühlt?',
+                required: true,
+                statements: [
+                    {prompt: 'Ich fühlte mich während der Studie frei und autonom.', name: 'autonomie1'},
+                    {prompt: 'Ich hatte das Gefühl während der Studie alles frei gestalten zu können.', name: 'autonomie2'},
+                    {prompt: 'Ich hatte das Gefühl während der Studie eigene Vorstellungen umsetzen zu können.', name: 'autonomie3'}
+                ],
+                options: ['1 trifft gar nicht zu', '2 trifft eher nicht zu', '3 trifft teilweise zu', '4 trifft eher zu', '5 trifft vollständig zu'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyLOT = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyLOT-R' },
+        pages: [
+        [
+            {
+                type: 'likert-table',
+                prompt: 'Bitte geben Sie an, inwieweit Ihre Meinung mit den folgenden Aussagen übereinstimmt.',
+                required: true,
+                statements: [
+                    {prompt: 'Auch in ungewissen Zeiten erwarte ich normalerweise das Beste.', name: 'LOT1'},
+                    {prompt: 'Es fällt mir leicht, mich zu entspannen.', name: 'LOT2'},
+                    {prompt: 'Wenn bei mir etwas schief laufen kann, dann tut es das auch.', name: 'LOT3'},
+                    {prompt: 'Meine Zukunft sehe ich immer optimistisch.', name: 'LOT4'},
+                    {prompt: 'In meinem Freundeskreis fühle ich mich wohl.', name: 'LOT5'},
+                    {prompt: 'Es ist wichtig für mich, ständig beschäftigt zu sein.', name: 'LOT6'},
+                    {prompt: 'Fast nie entwickeln sich die Dinge nach meinen Vorstellungen.', name: 'LOT7'},
+                    {prompt: 'Ich bin nicht allzu leicht aus der Fassung zu bringen.', name: 'LOT8'},
+                    {prompt: 'Ich zähle selten darauf, dass mir etwas Gutes widerfährt.', name: 'LOT9'},
+                    {prompt: 'Alles in allem erwarte ich, dass mir mehr gute als schlechte Dinge widerfahren.', name: 'LOT10'}
+
+                ],
+                options: ['trifft überhaupt nicht zu', 'trifft kaum zu', 'teils/teils', 'trifft etwas zu', 'trifft ausgesprochen zu'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    /* Survey Post */
+    var surveyDemographics = {
+        type: jsPsychSurvey,
+        data: { test_part: 'demographics' },
+        pages: [
+        [
+            {
+                type: 'text',
+                prompt: "Wie alt sind Sie?", 
+                name: 'age', 
+                textbox_columns: 5,
+                required: true,
+                input_type: "number"
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Welchem Geschlecht fühlen Sie sich zugehörig?", 
+                name: 'gender', 
+                options: ['weiblich', 'männlich', 'divers'],
+                required: true
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyHandaufsherz = {
+        type: jsPsychSurvey,
+        data: { test_part: 'handaufsherz' },
+        pages: [
+        [
+            {
+              type: 'multi-choice',
+              prompt: "Hand auf\'s Herz: Haben Sie diese Studie wirklich aufmerksam bearbeitet, sodass wir Ihre Daten in unsere Datenanalyse integrieren können?",
+              name: 'handaufsherz', 
+              options: ['Ja', 'Nein'],
+              required: true
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+  
+    /* preload images */
+    var preload = {
+        type: jsPsychPreload,
+        images: ["img/Katze/box.png", "img/Katze/cat.png", "img/Katze/empty.png"]
+    }
+
+    /* ending */
+    // save data to csv
+    function saveData(name, data){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data6.php');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.send(JSON.stringify({filename: name, filedata: data}));
+      };
+
+    function saveDataDB() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data-db-maria.php'); // change 'write_data.php' to point to php script.
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if(xhr.status == 200){
+                var response = JSON.parse(xhr.responseText);
+                console.log(response.success);
+            }
+        };
+        xhr.send(jsPsych.data.get().json());
+    };
+
+    var ending = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: `<p>Vielen Dank, dass Sie an der Studie teilgenommen haben. Sie können das Fenster nun schließen.</p>`,
+        //choices: "ALL_KEYS",
+        choices: "NO_KEYS",
+        on_start: function() {
+            
+            if(!nosavetest){
+              //save top csv
+              if(vl) saveData("/" + studyname + "/study" + studypart + "/" + vl + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + vl + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+              else saveData("/" + studyname + "/study" + studypart + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+
+              //save to db
+              saveDataDB();
+            }
+
+        }
+    }
+
+
+
+    /* create timeline */
+
+    var timeline = [];
+    timeline.push(welcome);
+    timeline.push(informed_consent);
+    timeline.push(preload);
+    timeline.push(surveyDemographics);
+
+    if(condition == "C1") timeline.push(instruction1C1);
+    else if(condition == "C2") timeline.push(instruction1C2);
+    else alert("No condition set!");
+
+    for(var i=0; i < ntrials; i++){
+        timeline.push(catChoice1);
+    }
+    timeline.push(catResult1);
+
+    if(condition == "C1") timeline.push(instruction2C1);
+    else if(condition == "C2") timeline.push(instruction2C2);
+    else alert("No condition set!");
+
+    for(var i=0; i < ntrials; i++){
+        timeline.push(catChoice2);
+    }
+    timeline.push(catResult2);
+    
+    timeline.push(surveySVS);
+    timeline.push(surveyAutonmie);
+    timeline.push(surveyLOT);
+    timeline.push(surveySMS5);
+    timeline.push(surveyITW);
+    timeline.push(surveyHandaufsherz);
+    timeline.push(ending);
+
+
+
+    /* start the experiment */
+
+    jsPsych.run(timeline);
+
+  </script>
+</html>

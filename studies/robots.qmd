@@ -53,6 +53,8 @@ To calculate Bayes Factors, we used a Cauchy distribution centered around zero w
 
 We used RStudio and JASP for all analyses, including data preparation, descriptive statistics, group comparisons, and t-tests. In addition to the main hypothesis tests, we conducted exploratory subgroup analyses (e.g., by age, gender, and importance of winning) and linear regressions to examine possible trends over time or by participant order.
 
+## Lab Report Data
+
 For this lab report only the human subjects' scores of both conditions are considered.
 
 ::: {.callout-tip title="Data" collapse="false"}

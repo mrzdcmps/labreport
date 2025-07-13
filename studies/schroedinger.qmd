@@ -1,0 +1,65 @@
+---
+title: "Schrödingers Cat"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Schrödinger")
+```
+
+## Hypothesis
+
+This experiment was developed by students in an empirical course. We set out to investigate whether hopeful, emotionally anchored intentions could influence objective reality—in this case, by improving performance in a simple online guessing game.
+
+We hypothesized that a volitional impulse, grounded in an optimistic emotional conviction, could act as a bridge between subjective mental images and objective outcomes. Based on this, we designed an experiment in which participants were asked to guess whether a cat was hidden in a box, with a 50% chance of being correct each time. Before one of the two conditions, participants read a short text meant to induce hopeful, trusting intentions toward a benevolent higher power which served as experimental condition. The other condition served as a baseline and included no such manipulation.
+
+Our primary hypothesis (H1) stated that guessing accuracy would be higher in the hope condition than in the control condition. Additionally, we explored whether personal traits like optimism (H2) and subjective vitality (H3) would correlate positively with guessing performance, assuming that such traits might predispose individuals to form stronger or more effective positive intentions.
+
+## Participants
+
+```{r}
+generate_demographics_table(
+  data = study22_schroedinger,
+  age_col = "age",
+  gender_col = "gender",
+  male_value = "männlich",
+  female_value = "weiblich"
+)
+```
+
+## Materials and Procedure
+
+We conducted an entirely online study using a within-subjects design with two experimental conditions: a control (baseline) condition and a hope (experimental) condition. After providing informed consent and basic demographic information, participants were randomly assigned to one of two groups that differed only in the order in which they completed the two conditions.
+
+In each condition, participants encountered ten guessing trials. On each trial, they saw a closed box and had to decide whether or not it contained a cat, with a 50% probability of being correct. They were instructed to rely on their gut feeling for each decision. The correct answers were pre-determined by the computer.
+
+In the experimental condition, participants first read a brief instructional text designed to evoke a sense of trust and optimism in a higher power. This was intended to induce emotionally anchored, hopeful intentions. They were encouraged to maintain this emotional state throughout the guessing task. In contrast, the control condition involved the same guessing task but without any priming text.
+
+After completing both conditions, participants filled out a series of short questionnaires measuring constructs such as optimism, pessimism, vitality, autonomy, willpower, and momentary self-control capacity. Finally, they were asked whether they had completed the study carefully, which served as a control measure for data validity.
+
+
+## Sample Size and Data Analysis
+
+309 Participants were recruited through various personal and university-related channels as part of the empirical course. After applying our pre-registered exclusion criteria—removing those who did not complete the study or indicated they had not done so carefully—we were left with a final sample of 285 participants.
+
+The main dependent variable was "guessing performance," measured as the number of correct guesses in each condition. To test our main hypothesis (H1), we conducted a one-sided, dependent-samples t-test comparing performance in the hope condition to the control condition. Bayesian statistics were used for inference: the Bayes factor (BF+0 = 0.148) provided moderate evidence against our hypothesis. An additional analysis in the reverse direction yielded a Bayes factor of 3.19, suggesting moderate evidence that performance was actually better in the control condition.
+
+We also explored correlations between guessing performance and personality traits such as optimism and vitality. However, no significant relationships were found, and the exploratory hypotheses (H2 and H3) were rejected. A small positive correlation between performance across the two conditions (r = .117) indicated some individual consistency in guessing ability, but this was not central to our main research questions.
+
+
+## Lab Report Data
+
+For the lab report we consider both conditions as experimental conditions, since a micro-PK effect should be observable in both conditions.
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/schroedinger/cat.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   [Student Report](../data/schroedinger/cat-report.pdf)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/games/schroedinger/katze.html)
+:::
