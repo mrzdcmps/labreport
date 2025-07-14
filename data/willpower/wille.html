@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Willenskraft</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-preload.js"></script>
+    <script src="jspsych/plugin-fullscreen.js"></script>
+    <script src="jspsych/plugin-call-function.js"></script>
+    <script src="jspsych/plugin-instructions.js"></script>
+    <script src="jspsych/plugin-external-html.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-image-keyboard-response.js"></script>
+    <script src="jspsych/plugin-survey.js"></script>
+    <script src="jspsych/plugin-survey-text.js"></script>
+    <script src="jspsych-6.1.0/quantis.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="jspsych/survey.css"></link>
+    <link rel="stylesheet" href="consent/consent.css"></link>
+
+    <style>
+        figure { 
+            display: inline-block;
+        }
+        #jspsych-image-keyboard-response-stimulus {
+            width:80%;
+            height: 80%;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+    </style>
+
+</head>
+<body></body>
+<script>
+
+    //initialize Experiment
+    const jsPsych = initJsPsych({
+        on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+
+    // SONA & subject ID
+    let vl = jsPsych.data.urlVariables()['vl'];
+    let sona_id = jsPsych.data.urlVariables()['sonaid'];
+
+    let nosavetest = jsPsych.data.urlVariables()['test'];
+    if(nosavetest) console.log("TEST! Data will not be saved");
+    
+    if(!sona_id){
+        var subject_id = jsPsych.randomization.randomID(16);
+    } else {
+        var subject_id = sona_id;
+        var TXT_ending = 
+            '<hr><p><a href="https://lmu-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=23&credit_token=0d538279da184fa187234ebaf2788909&survey_code=' + subject_id + '">Klicken Sie bitte hier, um Ihre Versuchspersonenstunde in SONA zu erhalten.</a></p>';
+    }
+
+    // add parameters to data
+    var start_time = new Date();
+    console.log("Start time: " + start_time);
+
+    var condition = jsPsych.randomization.sampleWithReplacement(["del","save"], 1)[0];
+
+    jsPsych.data.addProperties({ 
+        subject: subject_id,
+        vl: vl,
+        time: start_time.toISOString(), 
+        condition: condition
+    });
+
+    // number of trials
+    var Ntrials = 20;
+
+    // images
+    </script>
+    <script src='file_array.php?d=img/Einzelfall/pos100'></script>
+    <script>
+    var images_pos = file_array;
+
+    </script>
+    <script src='file_array.php?d=img/Einzelfall/neu'></script>
+    <script>
+    var images_neu = file_array.slice(0,15); //select first 15 items
+
+    /* Introduction */
+    var willkommen = {
+            type: jsPsychInstructions,
+            data: { test_part: 'welcome' },
+            pages: [
+            `<h1>Studie "Willenskraft"</h1>
+            <p>Willkommen zur Studie.</p>
+            <p>In dieser Studie werden Dir nacheinander positive oder neutrale Bilder angezeigt. Obwohl die Auswahl zufällig ist, haben Studien gezeigt, dass unter bestimmten Umständen eine willentliche Beeinflussung möglich ist, welches Bild angezeigt wird.</p>
+            <p>Wir bitten Dich, zu versuchen, durch Willenskraft möglichst viele positive Bilder zu sehen.</p>
+            <p>Klicke bitte weiter, um teilzunehmen.</p>`
+            ],
+            show_clickable_nav: true
+    }
+
+    /* Consent */
+    // consent to participate.
+    var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+    // declare the block.
+    var informed_consent = {
+        type: jsPsychExternalHtml,
+        url: "consent/pana_consent.html",
+        cont_btn: "start",
+        check_fn: check_consent
+    };
+
+    /* Instruction */
+    var affektreport = {
+        type: jsPsychSurveyText,
+        preamble: '<p>Schön, dass Du mitmachst!</p>',
+        questions: [
+            {prompt: 'Bitte beschreibe in einem Satz, wie Du Dich im Moment fühlst.', placeholder: 'ca. 50-100 Zeichen', rows: 5}
+        ]
+    };
+    var instruction = {
+            type: jsPsychInstructions,
+            data: { test_part: 'instructions' },
+            pages: [
+            `<p>Es werden Dir nun nacheinander 20 Bilder dargeboten, die entweder ein positives oder ein neutrales Motiv zeigen.</p>
+            <figure>
+                <img src="${images_pos[0]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_pos[5]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_pos[31]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_pos[62]}" alt="Pos" style="width:18em;">
+                <figcaption>Beispiele positives Bild</figcaption>
+            </figure>
+            <figure>
+                <img src="${images_neu[0]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_neu[1]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_neu[3]}" alt="Pos" style="width:18em;"><br>
+                <img src="${images_neu[4]}" alt="Pos" style="width:18em;">
+                <figcaption>Beispiele neutrales Bild</figcaption>
+            </figure>`,
+            `<p>Klicke bitte auf Weiter, um mit der Darstellung der Bilder zu beginnen.</p>
+            <p>Glaube an Deine Willenskraft, mehr positive Bilder zu sehen!</p>`
+            ],
+            show_clickable_nav: true
+    }
+
+
+    /* Image presentation */
+    var pic = {
+        type: jsPsychImageKeyboardResponse,
+        data: { test_part: 'pic', qbit: '' },
+        stimulus: 'img/black.png',
+        choices: "NO_KEYS",
+        trial_duration: 2000,
+        post_trial_gap: 1000,
+        on_start: function(trial){
+            Z = parseInt(Zufallswert(),10);
+            if(Z==0) trial.stimulus = jsPsych.randomization.sampleWithReplacement(images_pos, 1);
+            else if(Z==1) trial.stimulus = jsPsych.randomization.sampleWithReplacement(images_neu, 1);
+            else alert("No Qbit available");
+            trial.data.qbit = Z;
+
+            //delete data
+            if(condition == "del"){
+                trial.data.stimulus = '';
+                trial.data.qbit = '';
+            }
+        }
+    };
+
+    var mantra = {
+        type: jsPsychHtmlKeyboardResponse,
+        data: { test_part: 'mantra' },
+        stimulus: '<span style="font-size:1.5em">Glaube an Deine<br>Willenskraft!</span>',
+        choices: "NO_KEYS",
+        trial_duration: 2000,
+        post_trial_gap: 500,
+    };
+
+    /* Survey */
+    var surveySMS5 = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveySMS5' },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'SMS5Intro',
+                prompt: `
+                <p>Beantworte bitte spontan die folgenden Aussagen zu Deinem Befinden <b>während des Ansehens der Bilder</b>.</p>
+                <p>Klicke dazu bitte in jeder Zeile auf den Kreis unter den Zahlen zwischen 1 = "völlig unzutreffend" und 7 = "trifft ganz genau zu", um auszudrücken, wie sehr die jeweilige Aussage auf Dich zutrifft.</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: ' ',
+                name: 'SMS-5',
+                required: true,
+                statements: [
+                    {prompt: 'Ich fühle mich erledigt.', name: 'SMS5_1'},
+                    {prompt: 'Ich fühle mich ausgeglichen.', name: 'SMS5_2'},
+                    {prompt: 'Ich fühle mich antriebslos.', name: 'SMS5_3'},
+                    {prompt: 'Ich fühle mich wach und konzentriert.', name: 'SMS5_4'},
+                    {prompt: 'Ich fühle mich, als hätte ich keine Willenskraft mehr.', name: 'SMS5_5'}
+                ],
+                options: ['1', '2', '3', '4', '5', '6', '7'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveySVSScaleValues = [
+                {value: '0'},
+                {value: '1'},
+                {value: '2'},
+                {value: '3'},
+                {value: '4'},
+                {value: '5'},
+                {value: '6'},
+                {value: '7'},
+                {value: '8'},
+                {value: '9'},
+                {value: '10'},
+                ];
+
+    var surveySVS = {
+        type: jsPsychSurvey,
+        data: { test_part: "surveySVS-GM3" },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'SVSIntro',
+                prompt: `
+                <p>Nachfolgend möchten wir gerne von Dir wissen, wie Du folgende Aussagen einschätzt. Bitte benutze die Skala von 0-10, um Deine Zustimmung bzw. Ablehnung zu jeder Aussage zum Ausdruck zu bringen. Denke nicht lange nach, sondern antworte spontan!</p>
+                <p><b>Während ich die Bilder angesehen habe, ...</b></p>`,
+            },
+            {
+                type: 'likert',
+                prompt: '... fühlte ich mich lebendig und vital.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            },
+            {
+                type: 'likert',
+                prompt: '... war ich voller Tatendrang.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            },
+            {
+                type: 'likert',
+                prompt: '... hatte ich Energie und Lebensfreude.',
+                required: true,
+                likert_scale_min_label: 'Trifft gar nicht zu',
+                likert_scale_max_label: 'Trifft völlig zu.',
+                likert_scale_values: surveySVSScaleValues
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyITW = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyITW' },
+        pages: [
+        [
+            {
+                type: 'html',
+                name: 'ITWIntro',
+                prompt: `
+                <p>Wie sehr treffen folgende Aussagen auf Dich zu?</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: ' ',
+                name: 'ITW',
+                required: true,
+                statements: [
+                    {prompt: 'Anstrengende mentale Tätigkeiten (z. B. Nachdenken über eine schwierige Fragestellung, sich stark auf etwas konzentrieren) verbrauchen meine Kraftressourcen, die ich im Anschluss wieder auftanken muss (z. B. indem ich Pausen mache, nichts tue, fernsehe, einen Snack esse.', name: 'ITW_1'},
+                    {prompt: 'Im Laufe einer fordernden mentalen Tätigkeit wird meine Energie verbraucht und ich brauche eine Pause, um wieder aufzutanken.', name: 'ITW_2'},
+                    {prompt: 'Nachdem ich mich eine Zeit lang voll und ganz auf etwas konzentriert habe, fühle ich mich manchmal energetisiert und bereit für weitere anspruchsvolle Tätigkeiten.', name: 'ITW_3'},
+                    {prompt: 'Meine mentale Kraft lädt sich von selbst auf. Auch bei einer anstrengenden mentalen Tätigkeit kann ich lange weitermachen.', name: 'ITW_4'},
+                    {prompt: 'Wenn ich eine anspruchsvolle mentale Tätigkeit erledigt habe, kann ich mich nicht mit der gleichen Konzentration gleich der nächsten widmen, weil ich geistig wieder zu Kräften kommen muss.', name: 'ITW_5'},
+                    {prompt: 'Nach einer fordernden geistigen Tätigkeit fühle ich mich energetisiert und bereit für neue Aufgaben.', name: 'ITW_6'}
+                ],
+                options: ['Stimmt gar nicht', 'Stimmt nicht', 'Stimmt eher nicht', 'Stimmt eher', 'Stimmt überwiegend', 'Stimmt genau'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyImages = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyImages' },
+        pages: [
+        [
+            {
+                type: 'text',
+                prompt: "Was glaubst Du, wie viele der 20 Bilder, die Du gesehen hast, waren positiv?", 
+                name: 'posimgs', 
+                textbox_columns: 5,
+                required: true,
+                placeholder: '0 bis 20',
+                validation: "/^([01]?\d|20)$/",
+                input_type: "number"
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyDemo = {
+        type: jsPsychSurvey,
+        data: { test_part: 'demographics' },
+        pages: [
+        [
+            {
+                type: 'text',
+                prompt: "Wie alt bist Du?", 
+                name: 'age', 
+                textbox_columns: 5,
+                required: true,
+                input_type: "number"
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Welchem Geschlecht fühlst Du Dich zugehörig?", 
+                name: 'gender', 
+                options: ['weiblich', 'männlich', 'divers'],
+                required: true
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+    var surveyAutonmie = {
+        type: jsPsychSurvey,
+        data: { test_part: 'autonomie' },
+        pages: [
+        [
+            {
+                type: 'likert-table',
+                prompt: 'Wie fühltest Du Dich bei der Bearbeitung der vorhergehenden Aufgabe?',
+                required: true,
+                statements: [
+                    {prompt: 'Ich fühlte mich bei der vorhergehenden Aufgabe, positive Bilder zu wünschen frei und autonom.', name: 'autonomie1'},
+                    {prompt: 'Ich hatte das Gefühl bei der vorhergehenden Aufgabe, positive Bilder zu wünschen alles frei gestalten zu können.', name: 'autonomie2'},
+                    {prompt: 'Ich hatte das Gefühl bei der vorhergehenden Aufgabe, positive Bilder zu wünschen eigene Vorstellungen umsetzen zu können.', name: 'autonomie3'}
+                ],
+                options: ['1 trifft gar nicht zu', '2 trifft eher nicht zu', '3 trifft teilweise zu', '4 trifft eher zu', '5 trifft vollständig zu'],
+            }
+        ]
+        ],
+        button_label_next: 'Weiter',
+        button_label_back: 'Zurück',
+        button_label_finish: 'Weiter',
+        required_error: 'Bitte alle Fragen beantworten'
+    };
+
+  
+    /* preload images */
+    var preload = {
+        type: jsPsychPreload,
+        images: images_pos.concat(images_neu)
+    }
+
+    /* helper */
+    //fuilscreen
+    var enter_fullscreen = {
+        type: jsPsychFullscreen,
+        fullscreen_mode: true
+    }
+
+    var exit_fullscreen = {
+        type: jsPsychFullscreen,
+        fullscreen_mode: false,
+        delay_after: 0
+    }
+
+    // Hide and Show cursor 
+    var hide_cursor = {
+         type: jsPsychCallFunction,
+         func: function(){
+            document.querySelector('head').insertAdjacentHTML('beforeEnd', '<style id="hide-cursor">body { cursor: none; }</style>');
+         }
+      };
+  
+      var show_cursor = {
+         type: jsPsychCallFunction,
+         func: function(){
+            document.querySelector('#hide-cursor').remove();
+         }
+      };
+
+    // save data to csv
+    function saveData(name, data){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data6.php');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.send(JSON.stringify({filename: name, filedata: data}));
+      };
+  
+      var ending = {
+          type: jsPsychHtmlKeyboardResponse,
+          choices: "NO_KEYS",
+          stimulus: "<p>Vielen Dank für die Teilnahme!</p><p>Du kannst das Fenster nun schließen.</p>",
+          on_start: function() {          
+            if(!nosavetest){
+              if(vl) saveData("/wille/study2/" + vl + "/wille2_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + vl + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+              else saveData("/wille/study2/wille2_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+            }
+        }
+      };
+
+    /* create timeline */
+    var timeline = [];
+    timeline.push(willkommen);
+    timeline.push(informed_consent);
+    timeline.push(preload);
+    timeline.push(affektreport);
+    timeline.push(instruction);
+    timeline.push(enter_fullscreen);
+    timeline.push(hide_cursor);
+    for(var i=0; i < Ntrials; i++){
+        timeline.push(mantra);
+        timeline.push(pic);
+    }
+    timeline.push(show_cursor);
+    timeline.push(exit_fullscreen);
+    timeline.push(surveySMS5);
+    timeline.push(surveySVS);
+    timeline.push(surveyITW);
+    timeline.push(surveyImages);
+    timeline.push(surveyAutonmie);
+    timeline.push(surveyDemo);
+    timeline.push(ending);
+
+    /* start the experiment */
+    jsPsych.run(timeline);
+
+
+  </script>
+</html>

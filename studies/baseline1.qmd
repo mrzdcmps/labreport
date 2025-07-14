@@ -1,0 +1,74 @@
+---
+title: "Baseline 1"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Baseline 1")
+```
+
+## Hypothesis
+
+In this study, we investigated micro-psychokinesis (micro-PK) effects by exploring how participants' implicit expectations about probability might influence random outcomes in a coin toss game. Our central idea was that one of the key challenges in micro-PK research - the decline effect where psi phenomena weaken over time - might be related to participants' subconscious resistance to outcomes that violate their deeply held expectations about how probability should work.
+
+We reasoned that most people have strong implicit expectations that coin tosses should result in roughly 50% wins, based on their lifetime experiences with randomness. To test this, we created a masked experimental design where participants played what they believed was a fair coin toss game, but we secretly manipulated the underlying probabilities. We assigned participants to either a "lucky" condition with a pre-set 60% baseline win probability or an "unlucky" condition with a pre-set 40% baseline win probability, using a quantum random number generator to determine outcomes.
+
+Our primary hypothesis was that participants' deeply rooted expectation of 50% probability would manifest as a micro-PK effect that would bias the results toward their expected outcome, regardless of the actual programmed probabilities. Specifically, we predicted that individuals in the "unlucky" condition would exhibit more than 40% hits on average, while those in the "lucky" condition would exhibit fewer than 60% hits on average, as their subconscious minds worked to bring the outcomes in line with their 50% probability expectations.
+
+This approach was designed to work with, rather than against, the psychological factors that typically cause decline effects in psi research. Instead of asking participants to demonstrate anomalous abilities that might trigger subconscious resistance, we hypothesized that aligning experimental outcomes with participants' probabilistic expectations would actually support micro-PK performance and potentially prevent the decline effects that plague replication attempts in parapsychology research.
+
+## Participants
+
+```{r}
+generate_demographics_table(
+  data = study26_baseline.1,
+  age_col = "age",
+  gender_col = "gender",
+  male_value = "male",
+  female_value = "female"
+)
+```
+
+## Materials
+
+**Coin Toss Game** We designed a 20-round coin toss game where participants guessed the outcome of each flip. We created an AI-generated imaginary coin as the visual stimulus, showing both "heads" and "tails" sides. A quantum random number generator (qRNG) connected to our server determined the actual outcomes by generating numbers between 1 and 100 for each toss. We secretly manipulated the probabilities: participants in the "lucky" condition had a 60% win probability (wins occurred when qRNG results were 60 or below), while those in the "unlucky" condition had a 40% win probability (wins occurred when results were 40 or below). Participants remained completely unaware of this biased structure.
+
+**Psychological Measures** We administered several questionnaires to assess potential moderating factors:
+
+-   Belief in Luck and Luckiness Scale (BLLS): A 16-item scale with two subscales measuring participants' belief in luck and personal luckiness, rated on 5-point Likert scales (high reliability: α = .82 for Belief in Luck, α = .85 for Luckiness)
+-   General Belief in a Just World Scale (GBJW): A six-item scale assessing belief in world fairness, rated on a 6-point Likert scale (α = .78)
+-   Additional questions: Three 5-point Likert scale items measuring motivation to win, belief in unchangeable natural laws, and perceived ability to influence reality
+
+## Procedure
+
+We randomly assigned participants to either the "lucky" or "unlucky" condition upon accessing the online study. Participants first completed the questionnaire measuring their beliefs about luck, then proceeded to the coin toss game. In each of the 20 rounds, participants viewed the imaginary coin and selected either "heads" or "tails" via button press.
+
+After each guess, the system displayed a 4000ms spinning coin animation that concluded by showing either the participant's chosen side (indicating a win) or the opposite side (indicating a loss). We provided immediate feedback with "Well done!" for correct guesses and "Unfortunately, wrong guess" for incorrect ones. Throughout the game, we displayed participants' cumulative wins and losses to maintain engagement with their performance.
+The entire study was conducted with informed consent obtained via button press, and we maintained anonymity throughout data collection and analysis.
+
+## Sample Size and Data Analysis
+
+We employed a single-group design with two conditions: a "lucky" condition (LC) with 60% win probability and an "unlucky" condition (UC) with 40% win probability. Our final sample included 801 participants in the lucky condition and 725 participants in the unlucky condition, with the number of successful hits in the coin toss game serving as our dependent variable.
+
+We conducted our statistical analysis using Bayesian methods, which we determined a priori before data collection. We established a small prior effect size estimate following an uninformed Cauchy distribution δ ~ Cauchy (0, 0.1) to reflect our conservative expectations about micro-PK effects. Our hypotheses were tested using one-sample Bayesian t-tests, where we predicted that participants in the lucky condition would average fewer than 12 hits (below the expected 60% baseline), while participants in the unlucky condition would average more than 8 hits (above the expected 40% baseline).
+
+We set a Bayes factor threshold of 10 as our criterion for determining strong evidence, whether supporting our alternative hypothesis (H1) or the null hypothesis (H0). This threshold allowed us to distinguish between strong, moderate, and anecdotal evidence levels. We performed all data analysis using R (version 4.4.1), and made our materials, data, and analysis scripts openly available through the Open Science Framework at https://osf.io/2zgp5.
+
+The Bayesian approach was particularly suitable for our research question because it allowed us to quantify evidence for both the presence and absence of micro-PK effects, while also enabling us to track how evidence accumulated as we collected more data throughout the study.
+
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/baseline/baseline1.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   Publication
+-   [OSF Project](https://osf.io/2zgp5/)
+-   [OSF Data and Analyses](https://osf.io/2zgp5/files/osfstorage)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/baseline/randomness.html)
+-   [Coin Stimuli](../data/baseline/coin.zip)
+:::

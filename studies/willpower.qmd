@@ -1,0 +1,88 @@
+---
+title: "Willpower"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Willpower ")
+```
+
+## Hypothesis
+
+This experiment was developed by students in an empirical course. We aimed to explore the complementary relationship between willpower and objectification, with a focus on how affect might influence this dynamic. We hypothesized that reducing objectivity in measurement, specifically by partially deleting objective data, could enhance willpower, operationalized as vitality, by creating a more "sobjective" (subjective-objective) experimental environment. This approach was inspired by the Model of Pragmatic Information, which suggests that maximum information transfer occurs when novelty and confirmation are balanced, a state achievable by moderating objectivity.
+
+Our first hypothesis was that participants in the "delete condition" (where objective data was erased) would exhibit higher vitality compared to those in the "save condition" (where data was retained), as the reduced objectivity might foster a more favorable unconscious state for micro-psychokinesis (micro-PK) effects. Additionally, we investigated the role of affect, proposing that positive affect would correlate with both the number of positive images received from a quantum random number generator (qRNG) (Hypothesis 2) and the number of positive images subjectively remembered by participants (Hypothesis 3). These hypotheses were based on the idea that emotional states could influence the manifestation of micro-PK effects, either objectively or subjectively.
+
+We also included supplementary hypotheses to further examine potential micro-PK effects. Hypothesis 4 predicted that participants in the delete condition would remember more positive images, indicating a subjective micro-PK effect, while Hypothesis 5 anticipated that the objectively recorded number of positive images would exceed chance levels, suggesting an objective micro-PK effect. Finally, we explored the relationships between vitality and two additional variables: implicit theory of willpower (Hypothesis 6) and ego depletion (Hypothesis 7). These hypotheses were designed to assess whether these factors could serve as proxies or complementary measures for vitality in future research.
+
+## Participants
+
+```{r}
+generate_demographics_table(
+  data = study25_willpower,
+  age_col = "age",
+  gender_col = "gender",
+  male_value = "männlich",
+  female_value = "weiblich"
+)
+```
+
+## Materials
+
+**Card-Drawing Task**\
+The core task involved a virtual card selection where participants were shown two hidden cards, one red and one black, and asked to uncover one. The outcome (red or black) was determined randomly via a qRNG draw.
+
+**Motivational Incentives**\
+To create intrinsic motivation, participants in the experimental group were presented with an incomplete story from one of two thematic categories:
+
+-   *"Reincarnation/Rebirth"* – A narrative about James Leininger, a child who claimed memories of a past life.
+-   *"True Crime/Murder Mystery"* – A fictional unsolved murder case.
+
+Participants were told that uncovering the red card would reveal the story’s conclusion, providing an incentive to influence the outcome.
+
+The control group received no narrative incentive. They were simply instructed to "try to uncover the red card," ensuring a baseline comparison without motivational manipulation.
+
+**Questionnaires**\
+Exploratory psychological measures were included to assess additional variables:\
+- *Vitality* (measured in both study phases).\
+- *Autonomy, self-control capacity, and willpower beliefs* (measured only in the first phase).
+
+These were intended to examine potential psychological correlates of micro-PK performance.
+
+## Procedure
+
+Participants were randomly assigned to either the experimental or control group upon starting the online study. Both groups received an initial briefing on data privacy, voluntary participation, and their right to withdraw, followed by basic demographic questions (age and gender).
+
+In the *experimental group*, participants were first asked to choose between two thematic story categories "Reincarnation/Rebirth" or "True Crime/Murder Mystery" to personalize their incentive. They then read an intriguing but incomplete story (e.g., about a child’s past-life memories or an unsolved crime) and were told that uncovering the red card in the subsequent task would reveal the conclusion. This narrative hook served as the intrinsic motivator to influence the outcome.
+
+In the *control group*, participants proceeded directly to the card task without any narrative incentive. They were simply instructed to "try to uncover the red card," providing a baseline for comparison.
+
+The card-drawing task was identical for both groups: participants viewed two face-down virtual cards (one red, one black) and selected one to "reveal." The outcome was predetermined by a random algorithm, with no actual participant control. In the experimental group, those who uncovered the red card saw the story’s conclusion; those who drew the black card exited the task immediately. Control-group participants saw no follow-up content regardless of their draw.
+
+After the task, all participants completed questionnaires (see above).
+
+## Sample Size and Data Analysis
+
+The study involved a total of 613 participants across two phases of data collection. The first phase was part of an empirical course and included 283 participants, with 13 excluded due to self-reported non-serious engagement or being underage, leaving 270 valid cases. The second phase was a continuation within a thesis and recruited 330 additional participants, with exclusions for similar reasons, resulting in 317 valid cases. The combined dataset for analysis thus comprised 587 participants (after removing duplicates and invalid responses).\
+For *data analysis*, the study employed Bayesian statistics to assess evidence for or against the hypotheses. Key analyses included:
+
+1.  Bayesian independent samples t-tests (Cauchy prior width = 0.1) to compare the frequency of red card selections between experimental and control groups (H1).
+2.  Bayesian contingency tests (with a prior of 1) to determine whether the experimental group’s results deviated from chance (H2).
+3.  Sequential analysis to track effect trends as more participants were added.
+4.  Post-hoc gender analyses using Bayesian one-sample t-tests to explore differences in micro-PK performance between males and females.
+
+Results showed no statistically significant support for micro-PK effects in either phase or the combined dataset. While initial descriptive trends in the first phase suggested a slight advantage for the experimental group, this disappeared in the replication. Bayesian factors (BF) consistently favored the null hypothesis (BF \< 1), indicating that observed variations were likely due to chance. However, exploratory gender analyses revealed that male participants exhibited a moderate trend toward higher red card selections (BF = 6.54), though this was not predicted by the original hypotheses.
+
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/willpower/willpower.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   [Student Report](../data/stories/willpower-report.pdf)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/willpower/wille.html)
+:::

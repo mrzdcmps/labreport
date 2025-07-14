@@ -52,8 +52,6 @@ links = c(
   "studies/schroedinger.html",
   "studies/desire.html",
   "studies/stories.html",
-  "studies/stories.html",
-  "studies/willpower.html",
   "studies/willpower.html",
   "studies/baseline1.html",
   "studies/baseline1.html",

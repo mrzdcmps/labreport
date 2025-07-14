@@ -1,0 +1,1139 @@
+<script>alert("TEST! Data will not be saved");</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kopf oder Zahl</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-preload.js"></script>
+    <script src="jspsych/plugin-fullscreen.js"></script>
+    <script src="jspsych/plugin-call-function.js"></script>
+    <script src="jspsych/plugin-external-html.js"></script>
+    <script src="jspsych/plugin-instructions.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-image-button-response.js"></script>
+    <script src="jspsych/plugin-canvas-slider-response.js"></script>
+    <script src="jspsych/plugin-survey.js"></script>
+    <script src="jspsych/plugin-survey-html-form.js"></script>
+    <script src="jspsych-6.1.0/quantis.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="jspsych/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="jspsych/survey.css"></link>
+<link rel="stylesheet" href="https://unpkg.com/@jspsych/plugin-survey@0.2.0/css/survey.css">
+    <link rel="stylesheet" href="consent/consent.css"></link>
+
+    <style>
+    .resultbar {
+        width:20rem;
+        padding: 1rem;
+        margin: 0px auto 4rem;
+        background-color: #eaeaea;
+        border: 1px solid #888;
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .rb_wins, .rb_losses {
+    }
+    /*.rb_wins {
+        margin-right: 5rem;
+    }*/
+
+    #coin {
+    position: relative;
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    }
+    #coin div {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+            border-radius: 50%;
+    -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+        -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+    }
+    .coin_choice {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .coin {
+        margin: 20px auto;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+        -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+        box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+        float:left;
+    }
+    .side-a {
+    /*background-color: #bb0000;*/
+        background-image: url("img/Coin/coin-heads.png");
+        background-size: cover;
+        margin-right: 5px;
+    }
+    .side-b {
+    /*background-color: #3e3e3e;*/
+        background-image: url("img/Coin/coin-tails.png");
+        background-size: cover;
+        margin-left: 5px;
+    }
+
+    #coin {
+    transition: -webkit-transform 1s ease-in;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    }
+    #coin div {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    }
+    .side-a {
+    z-index: 100;
+    }
+    .side-b {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+
+    }
+
+    #coin.heads {
+    -webkit-animation: flipHeads 3s ease-out forwards;
+    -moz-animation: flipHeads 3s ease-out forwards;
+        -o-animation: flipHeads 3s ease-out forwards;
+        animation: flipHeads 3s ease-out forwards;
+    }
+    #coin.tails {
+    -webkit-animation: flipTails 3s ease-out forwards;
+    -moz-animation: flipTails 3s ease-out forwards;
+        -o-animation: flipTails 3s ease-out forwards;
+        animation: flipTails 3s ease-out forwards;
+    }
+
+    @-webkit-keyframes flipHeads {
+    from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+    to { -webkit-transform: rotateY(1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+    }
+    @-webkit-keyframes flipTails {
+    from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+    to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
+    }
+    @keyframes flipHeads {
+    from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+    to { -webkit-transform: rotateY(1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+    }
+    @keyframes flipTails {
+    from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+    to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
+    }
+
+    .sv_main .sv_container .sv_body .sv_p_root table th {
+        font-size: 0.85em;
+    }
+
+    .input-field {
+            width: 30px;
+            text-align: center;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+    th {
+        width: 10%;
+    }
+    </style>
+
+  </head>
+  <body></body>
+  <script>
+
+    /* define parameters */
+
+    // study name
+    var studyname = 'randomness';
+    var studypart = 2;
+
+    //initialize Experiment
+    const jsPsych = initJsPsych({
+        on_finish: function() {
+        jsPsych.data.displayData();
+      } 
+    });
+
+    // SONA & subject ID
+    let vl = jsPsych.data.urlVariables()['vl'];
+    let sona_id = jsPsych.data.urlVariables()['sonaid'];
+
+    let nosavetest = jsPsych.data.urlVariables()['test'];
+    if(nosavetest) alert("TEST! Data will not be saved");
+    
+    if(!sona_id){
+        var subject_id = jsPsych.randomization.randomID(16);
+        //var TXT_ending = '<hr><p><a href="https://app.prolific.com/submissions/complete?cc=CUIJUER2">Please click here to get back to Prolific.</a></p>(Code: CUIJUER2)';
+    } else {
+        var subject_id = sona_id;
+
+    }
+
+
+    // specify starting time
+    var start_time = new Date();
+
+    // decide conditions
+    var condition = "lucky";
+
+    // add to data file
+    jsPsych.data.addProperties({ 
+        study: studyname + studypart, //e.g. "newstudy1"
+        subject: subject_id,
+        vl: vl,
+        time: start_time.toISOString(), 
+        condition: condition
+    });
+
+    // Variable to hold the generated data
+    var myData = null; 
+    var wins = 0;
+    var losses = 0;
+
+    // number of trials
+    var Ntrials = 20;
+
+    // win probability in percent
+    var winprob = 60;
+  
+
+    // language block
+    var language = 'de';
+    var l = 0;
+    var language_block = {
+        type: jsPsychImageButtonResponse,
+        stimulus: "img/language-b.png",
+        choices: ['Deutsch','English'],
+        on_finish: function(data) {
+            if(data.response == 0){
+                language = 'de';
+                l = 0;
+            } else {
+                language = 'en';
+                l = 1;
+            }
+            console.log("Language ",language);
+        }
+    }
+
+    // button labeling
+    var continue_button = ['Weiter', 'Continue'];
+    var continue_button_back = ['Zurück', 'Back'];
+    var answer_all_questions = ['Bitte alle Fragen beantworten', 'Please answer all questions'];
+
+    /* welcome message & instructions */
+    var welcome_p = [
+            [
+            `<h3>Willkommen zur Studie "Kopf oder Zahl?"</h3>
+            <p>In dieser Studie möchten wir dich bitten, nach der Beantwortung eines kurzen Fragebogens ein Münzwurf-Spiel zu spielen, in welchem zufällig Kopf oder Zahl geworfen wird. Du kannst 20 Mal einen Tipp abgeben.</p>
+            <p>Danach möchten wir dich bitten, noch ein paar kurze Fragen zu beantworten. Die Studie dauert insgesamt ca. 5-10 Minuten.</p>
+            <p>Beantworte die Fragen bitte an einem ruhigen und ungestörten Ort, an dem du dich gut konzentrieren kannst. Wir würden dich bitten, die Studie bis zum Ende auszufüllen. Allerdings kannst du die Befragung jederzeit abbrechen, ohne dass dies negative Folgen für dich hat.</p>
+            <p>Bitte nicht teilnehmen, wenn du unter 18 Jahre alt bist und falls Du an diesem Experiment bereits teilgenommen hast.</p>
+            <p>Vielen Dank vorab für deine Teilnahme!</p>`
+            ],
+            [
+            `<h3>Welcome to the study "Heads or Tails?"</h3>
+            <p>In this study, we would like to ask you to play a coin toss game, after completing a short questionnaire. Heads or tails will appear at random. You can take a guess 20 times in a row.</p>
+            <p>Afterwards, we would like to ask you to answer a few short questions. The study will take about 5-10 minutes in total.</p>
+            <p>Please answer the questions in a quiet and undisturbed environment where you can concentrate well. We would ask you to fully complete the survey to the end. However, you can stop the survey at any time without any negative consequences to you.</p>
+            <p>Please do not participate if you are under 18 years old and if you have already participated in this experiment.</p>
+            <p>Thank you in advance for your participation!</p>`
+            ]
+    ]
+    var welcome = {
+        type: jsPsychInstructions,
+        data: { test_part: "welcome" },
+        pages: function(){ return welcome_p[l]; },
+        show_clickable_nav: true,
+        button_label_next: function(){ return continue_button[l]; },
+        button_label_previous: function(){ return continue_button_back[l]; }
+    };
+
+    /*var instructions = {
+        type: jsPsychInstructions,
+        data: { test_part: "instruction" },
+        pages: [
+            `<p>Instruktionen.</p>`
+            ],
+        show_clickable_nav: true
+    };*/
+
+    /* Consent */
+    // consent to participate.
+    var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+    // declare the block.
+    var informed_consent_u = [
+        "consent/consent_mm.html",
+        "consent/consent_mm_en.html"
+    ];
+    var informed_consent = {
+        type: jsPsychExternalHtml,
+        url: function(){ return informed_consent_u[l]; },
+        cont_btn: "start",
+        check_fn: check_consent
+    };
+
+    /* Questionnaire pre */
+    // BLLS
+    var surveyBLLS_p = [
+    [
+        [
+            {
+                type: 'html',
+                name: 'BLLSIntro',
+                prompt: `
+                <p>Bitte beantworte den folgenden kurzen Fragebogen bevor es losgeht.</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: 'Inwieweit stimmst du persönlich den folgenden Aussagen zu oder nicht zu?',
+                name: 'BLLS',
+                required: true,
+                statements: [
+                    {prompt: 'Ich glaube an Glück und Pech.', name: 'BLLS_1'},
+                    {prompt: 'Ich bemühe mich, nett zu sein.', name: 'BLLS_2'},
+                    {prompt: 'Ich habe meistens Pech.', name: 'BLLS_3'},
+                    {prompt: 'So etwas wie Glück oder Pech gibt es nicht.', name: 'BLLS_4'},
+                    {prompt: 'Es ist schwer, nett zu sein.', name: 'BLLS_5'},
+                    {prompt: 'Ich habe kein Glück.', name: 'BLLS_6'},
+                    {prompt: 'Glück und Pech gibt es wirklich.', name: 'BLLS_7'},
+                    {prompt: 'Im Allgemeinen habe ich viel Glück.', name: 'BLLS_8'},
+                    {prompt: 'Ich bin nett, wenn ich es versuche.', name: 'BLLS_9'},
+                    {prompt: 'Glück hat keinen Einfluss auf das, was mir passiert.', name: 'BLLS_10'},
+                    {prompt: 'Ich halte mich für einen Glückspilz.', name: 'BLLS_11'},
+                    {prompt: 'Der Glaube an Glück ist völlig vernünftig.', name: 'BLLS_12'},
+                    {prompt: 'Es ist schön, wenn man sich Mühe gibt.', name: 'BLLS_13'},
+                    {prompt: 'Ich habe oft Pech.', name: 'BLLS_14'},
+                    {prompt: 'Glück existiert nur in den Köpfen der Menschen.', name: 'BLLS_15'},
+                    {prompt: 'Ich habe in der Regel Glück.', name: 'BLLS_16'}
+                ],
+                options: ['1 Stimme überhaupt nicht zu', '2 Stimme eher nicht zu', '3 Teils/teils', '4 Stimme eher zu', '5 Stimme voll und ganz zu'],
+            }
+        ]
+    ],
+    [
+        [
+            {
+                type: 'html',
+                name: 'BLLSIntro',
+                prompt: `
+                <p>Please answer the following short questionnaire before proceeding.</p>`,
+            },
+            {
+                type: 'likert-table',
+                prompt: 'To what extent do you personally agree or disagree with the following statements?',
+                name: 'BLLS',
+                required: true,
+                statements: [
+                    {prompt: 'I believe in good and bad luck.', name: 'BLLS_1'},
+                    {prompt: 'I try hard to be nice.', name: 'BLLS_2'},
+                    {prompt: 'I mostly have bad luck.', name: 'BLLS_3'},
+                    {prompt: 'There is no such thing as good or bad luck.', name: 'BLLS_4'},
+                    {prompt: 'It\'s hard to be nice.', name: 'BLLS_5'},
+                    {prompt: 'I\'m not lucky.', name: 'BLLS_6'},
+                    {prompt: 'Good and bad luck really do exist.', name: 'BLLS_7'},
+                    {prompt: 'I generally have good luck.', name: 'BLLS_8'},
+                    {prompt: 'I\'m nice if I try.', name: 'BLLS_9'},
+                    {prompt: 'Luck doesn\'t affect what happens to me.', name: 'BLLS_10'},
+                    {prompt: 'I consider myself a lucky person.', name: 'BLLS_11'},
+                    {prompt: 'Belief in luck is completely sensible.', name: 'BLLS_12'},
+                    {prompt: 'It\'s nice to try hard.', name: 'BLLS_13'},
+                    {prompt: 'Bad luck happens to me often.', name: 'BLLS_14'},
+                    {prompt: 'Luck only exists in peoples\' minds.', name: 'BLLS_15'},
+                    {prompt: 'I\'m usually lucky.', name: 'BLLS_16'}
+                ],
+                options: ['1 Strongly disagree', '2 Disagree', '3 Neutral', '4 Agree', '5 Strongly agree'],
+            }
+        ]
+    ]
+    ]
+    var surveyBLLS = {
+        type: jsPsychSurvey,
+        data: { test_part: 'BLLS' },
+        pages: function(){ return surveyBLLS_p[l]; },
+        button_label_next: function(){ return continue_button[l]; },
+        button_label_back: function(){ return continue_button_back[l]; },
+        button_label_finish: function(){ return continue_button[l]; },
+        required_error: function(){ return answer_all_questions[l]; }
+    };
+
+
+    /* Coin Toss */
+    // display wins and losses at top
+    var resultbar = [
+        `<div class="resultbar">
+            <div class="rb_wins">Gewonnen: ${wins}</div>
+            <div class="rb_losses">Verloren: ${losses}</div>
+        </div>`,
+        `<div class="resultbar">
+            <div class="rb_wins">Wins: ${wins}</div>
+            <div class="rb_losses">Losses: ${losses}</div>
+        </div>`
+    ];
+
+    var coinChoice = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'choice' },
+        stimulus: function() { return [
+            `<div class="resultbar">
+                <div class="rb_wins">Gewonnen: ${wins}</div>
+                <div class="rb_losses">Verloren: ${losses}</div>
+            </div>
+            <p>Bitte entscheide dich</p>
+            <div class="coin_choice">
+                <div class="coin side-a"></div>
+                <div class="coin side-b"></div>
+            </div>
+            `,
+
+            `<div class="resultbar">
+                <div class="rb_wins">Wins: ${wins}</div>
+                <div class="rb_losses">Losses: ${losses}</div>
+            </div>
+            <p>Please decide</p>
+            <div class="coin_choice">
+                <div class="coin side-a"></div>
+                <div class="coin side-b"></div>
+            </div>
+            `
+        ][l]},
+        choices: function() { return [ ['Kopf','Zahl'], ['Heads','Tails'] ][l]; },
+        /*on_start: function(trial) {
+            trial.stimulus = resultbar[l] + trial.stimulus;
+        }*/
+    };
+
+
+    var coinResult = {
+        type: jsPsychHtmlKeyboardResponse,
+        data: { test_part: 'result', qbit: '' },
+        stimulus: `
+        <div id="coin">
+        <div class="side-a"></div>
+        <div class="side-b"></div>
+        </div>`,
+        choices: function() { return new Array(continue_button[l]); },
+        trial_duration: 4000,
+        //post_trial_gap: 200,
+        on_load: function(trial){
+
+            // stimulus choice
+            var choice = jsPsych.data.getLastTrialData().trials[0].response;
+            var flipResult = parseInt(Zufallswert(99)); // 1-100
+            var coin = document.getElementById("coin");
+            coin.className = "";
+
+            setTimeout(function() {
+            if (flipResult < winprob) { 
+                //win
+                if(choice==0) coin.classList.add("heads");
+                else coin.classList.add("tails");
+                wins++;
+                //console.log("wins " + wins);
+            } else {
+                //loss
+                if(choice==0) coin.classList.add("tails");
+                else coin.classList.add("heads");
+                losses++;
+                //console.log("losses " + losses);
+            }
+            }, 100);
+
+            //update myData
+            myData = {
+              correct: flipResult < winprob,
+              qbit: flipResult
+            };
+
+        },
+        on_finish: function(data){
+            Object.assign(data, myData);
+            //console.log(data);
+            //i_trial++;
+        }
+    };
+
+    var coinFeedback= {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'feedback' },
+        stimulus: '<div id="msg"></div><div id="coin" class="coin" style="float:none;"></div>',
+        choices: function() { return new Array(continue_button[l]); },
+        //post_trial_gap: 200,
+        on_load: function(trial){
+
+            // stimulus choice
+            var lastdata = jsPsych.data.get().last(2);
+            var choice = lastdata.trials[0].response;
+            var flipResult = lastdata.trials[1].qbit;
+            var correct = lastdata.trials[1].correct;
+            //console.log(choice);
+            //console.log(flipResult);
+            
+            // Success message
+            if (correct == true) {
+                var msg = [
+                    "Richtig geraten!",
+                    "Well done!"
+                ][l];
+            } else var msg = [
+                "Leider falsch geraten.",
+                "Unfortunately, wrong guess."
+            ][l];
+
+            document.getElementById("msg").innerHTML = msg;
+
+            // display coin
+            var coin = document.getElementById("coin");
+            //coin.className = "";
+            if (correct == true) {
+                // win
+                if(choice==0) coin.classList.add("side-a");
+                else coin.classList.add("side-b");
+            } else {
+                // loss
+                if(choice==0) coin.classList.add("side-b");
+                else coin.classList.add("side-a");
+            }
+
+        },
+    };
+
+    var coinEnd = {
+        type: jsPsychHtmlButtonResponse,
+        data: { test_part: 'end' },
+        //stimulus: function() { return coinEnd_s[l] },
+        stimulus:'',
+        choices: function() { return new Array(continue_button[l]); },
+        on_start: function(trial) {
+            trial.stimulus = 
+            [
+                `<div class="rb_wins">Gewonnen: ${wins}</div>
+                <div class="rb_losses">Verloren: ${losses}</div>
+                <p>Fast geschafft! Wir haben noch ein paar abschließende Fragen an dich. Bitte klicke auf "weiter".</p>`,
+                `<div class="rb_wins">Wins: ${wins}</div>
+                <div class="rb_losses">Losses: ${losses}</div>
+                <p>Almost done! We have a few final questions for you. Please click "continue".</p>`
+            ][l];
+        }
+    }
+
+
+    /* Survey Post */
+    // // GWAL / GBJW
+    // var surveyGWAL_p = [
+    // [
+    //     [
+    //         {
+    //             type: 'html',
+    //             name: 'GWALIntro',
+    //             prompt: `
+    //             <p>Bitte beantworte die folgenden Fragen.</p>`,
+    //         },
+    //         {
+    //             type: 'likert-table',
+    //             prompt: 'Inwieweit stimmst du persönlich den folgenden Aussagen zu oder nicht zu?',
+    //             name: 'GWAL',
+    //             required: true,
+    //             statements: [
+    //                 {prompt: 'Ich finde, dass es auf der Welt im Allgemeinen gerecht zugeht.', name: 'GWAL_1'},
+    //                 {prompt: 'Ich glaube, dass die Leute im Großen und Ganzen das bekommen, was ihnen gerechterweise zusteht.', name: 'GWAL_2'},
+    //                 {prompt: 'Ungerechtigkeiten sind nach meiner Auffassung in allen Lebensbereichen (z.B. Beruf, Familie, Politik) eher die Ausnahme als die Regel.', name: 'GWAL_3'},
+    //                 {prompt: 'Ich bin überzeugt, dass irgendwann jeder für erlittene Ungerechtigkeit entschädigt wird.', name: 'GWAL_4'},
+    //                 {prompt: 'Ich denke, dass sich bei wichtigen Entscheidungen alle Beteiligten um Gerechtigkeit bemühen.', name: 'GWAL_5'},
+    //                 {prompt: 'Ich bin sicher, dass immer wieder die Gerechtigkeit in der Welt die Oberhand gewinnt.', name: 'GWAL_6'}
+    //             ],
+    //             options: ['1 Stimmt überhaupt nicht', '2 Stimmt weitgehend nicht', '3 Stimmt eher nicht', '4 Stimmt ein wenig', '5 Stimmt weitgehend', '6 Stimmt genau'],
+    //         }
+    //     ]
+    // ],
+    // [
+    //     [
+    //         {
+    //             type: 'html',
+    //             name: 'GWALIntro',
+    //             prompt: `
+    //             <p>Please answer the following questions.</p>`,
+    //         },
+    //         {
+    //             type: 'likert-table',
+    //             prompt: 'To what extent do you personally agree or disagree with the following statements?',
+    //             name: 'GWAL',
+    //             required: true,
+    //             statements: [
+    //                 {prompt: 'I think basically the world is a just place.', name: 'GWAL_1'},
+    //                 {prompt: 'I believe that, by and large, people get what they deserve.', name: 'GWAL_2'},
+    //                 {prompt: 'I firmly believe that injustices in all areas of life (e.g., professional, family, politics) are the exception rather than the rule.', name: 'GWAL_3'},
+    //                 {prompt: 'I am convinced that in the long run people will be compensated for injustices.', name: 'GWAL_4'},
+    //                 {prompt: 'I think people try to be fairly when making important decisions.', name: 'GWAL_5'},
+    //                 {prompt: 'I am confident that justice always prevails over injustice.', name: 'GWAL_6'}
+    //             ],
+    //             options: ['1 Strongly disagree', '2 Disagree', '3 Slightly disagree', '4 Slightly agree', '5 Agree', '6 Strongly agree'],
+    //         }
+    //     ]
+    // ]
+    // ];
+    // var surveyGWAL = {
+    //     type: jsPsychSurvey,
+    //     data: { test_part: 'GWAL' },
+    //     pages: function(){ return surveyGWAL_p[l]; },
+    //     button_label_next: function(){ return continue_button[l]; },
+    //     button_label_back: function(){ return continue_button_back[l]; },
+    //     button_label_finish: function(){ return continue_button[l]; },
+    //     required_error: function(){ return answer_all_questions[l]; }
+    // };
+
+    // Post
+    var surveyChance_p = [
+    [
+        [
+            {
+                type: 'likert-table',
+                prompt: 'Wie sehr stimmst Du den folgenden Aussagen zu oder nicht zu?',
+                name: 'surveyChance',
+                required: true,
+                statements: [
+                    {prompt: 'Dem Zufall kann man nicht entkommen.', name: 'chance1'},
+                    {prompt: 'Wenn ich in letzter Zeit viel Glück hatte, werde ich wahrscheinlich weiterhin Glück haben.', name: 'chance2'},
+                    {prompt: 'Wenn ich in letzter Zeit viel Glück hatte, werde ich wahrscheinlich bald Pech haben.', name: 'chance3'},
+                    {prompt: 'Glück ist völlig zufällig und unvorhersehbar.', name: 'chance4'},
+                    {prompt: 'Mit der Zeit gleicht sich Glück aus.', name: 'chance5'},
+                    {prompt: 'In manchen Situationen habe ich das Gefühl, den Zufall beeinflussen zu können.', name: 'influence1'},
+                    {prompt: 'Wenn ich mir etwas wirklich wünsche, dann tritt es auch eher ein.', name: 'influence2'},
+                    {prompt: 'Ich kann mein Glück durch bestimmte Handlungen oder Rituale verbessern.', name: 'influence3'},
+                    {prompt: 'Meine Gedanken und Gefühle können den Ausgang von Zufallsereignissen beeinflussen.', name: 'influence4'},
+                ],
+                options: ['1 stimme gar nicht zu', '2', '3', '4', '5 stimme voll und ganz zu'],
+            }
+        ]
+    ],
+    [
+        [
+            {
+                type: 'likert-table',
+                prompt: 'To what extent do you agree or disagree with the following statements?',
+                name: 'surveyChance',
+                required: true,
+                statements: [
+                    {prompt: 'You can\'t escape chance.', name: 'chance1'},
+                    {prompt: 'If I\'ve been lucky lately, I\'ll probably continue to be lucky.', name: 'chance2'},
+                    {prompt: 'If I\'ve been lucky lately, I\'ll probably have bad luck soon.', name: 'chance3'},
+                    {prompt: 'Luck is completely random and unpredictable', name: 'chance4'},
+                    {prompt: 'Over time, luck balances out.', name: 'chance5'},
+                    {prompt: 'In some situations, I feel like I can influence chance.', name: 'influence1'},
+                    {prompt: 'If I really wish for something, it is more likely to happen.', name: 'influence2'},
+                    {prompt: '"I can improve my luck through certain actions or rituals.', name: 'influence3'},
+                    {prompt: 'My thoughts and feelings can affect the outcome of chance events.', name: 'influence4'},
+                ],
+                options: ['1 strongly disagree', '2', '3', '4', '5 strongly agree'],
+            }
+        ]
+    ]
+    ];
+    var surveyChance = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyChance' },
+        pages: function(){ return surveyChance_p[l]; },
+        button_label_next: function(){ return continue_button[l]; },
+        button_label_back: function(){ return continue_button_back[l]; },
+        button_label_finish: function(){ return continue_button[l]; },
+        required_error: function(){ return answer_all_questions[l]; }
+    };
+
+    // Experience
+    var surveyExperience_p = [
+    [
+        [
+            {
+                type: 'likert',
+                name: 'Alltag',
+                prompt: 'Wie oft denkst Du bei Deinen täglichen Entscheidungen über Wahrscheinlichkeiten nach?',
+                likert_scale_min_label: 'Nie',
+                likert_scale_max_label: 'Sehr häufig',
+                likert_scale_values: [
+                    {value: 1},
+                    {value: 2},
+                    {value: 3},
+                    {value: 4},
+                    {value: 5}
+                ]
+            },
+            {
+                type: 'likert',
+                name: 'Kenntnis',
+                prompt: 'Wie gut kennst Du dich mit Wahrscheinlichkeit in Spielen, wie Würfeln oder Münzwürfen aus?',
+                likert_scale_min_label: 'Gar nicht',
+                likert_scale_max_label: 'Sehr gut',
+                likert_scale_values: [
+                    {value: 1},
+                    {value: 2},
+                    {value: 3},
+                    {value: 4},
+                    {value: 5}
+                ]
+            },
+            {
+                type: 'likert',
+                name: 'Aktivitäten',
+                prompt: 'Wie häufig beschäftigst Du dich mit Aktivitäten, die mit Wahrscheinlichkeiten zu tun haben, z.B. Lotterie, Wetten, Glücksspiel, etc.',
+                likert_scale_min_label: 'Nie',
+                likert_scale_max_label: 'Sehr häufig',
+                likert_scale_values: [
+                    {value: 1},
+                    {value: 2},
+                    {value: 3},
+                    {value: 4},
+                    {value: 5}
+                ]
+            },
+            {
+                type: 'multi-choice',
+                name: 'Ausbildung',
+                prompt: 'Hast du einen Kurs oder eine formale Ausbildung über Wahrscheinlichkeitstheorie oder Statistik absolviert?',
+                options: ['Nein', 'Mittel/Realschulniveau', 'Gymnasialniveau', 'Teil des Studiums (z.B. Psychologie)', 'zentraler Aspekt des Studiums (z.B. Mathematik, Statistik)']
+            },
+            {
+                type: 'multi-choice',
+                name: 'Strategie',
+                prompt: 'Hast Du beim Münzwurfspiel eine bestimmte Strategie angewendet?',
+                options: ['Ja', 'Nein'],
+            },
+            {
+                type: 'text',
+                prompt: 'Falls ja, welche?',
+                name: 'StrategieText',
+                textbox_columns: 50,
+                required: false
+            }
+        ]
+    ],
+    [
+        [
+            {
+                type: 'likert',
+                name: 'Alltag',
+                prompt: 'How often do you think about probabilities in your daily decisions?',
+                likert_scale_min_label: 'Never',
+                likert_scale_max_label: 'Very often',
+                likert_scale_values: [
+                    {value: 1},
+                    {value: 2},
+                    {value: 3},
+                    {value: 4},
+                    {value: 5}
+                ]
+            },
+            {
+                type: 'likert',
+                name: 'Kenntnis',
+                prompt: 'How well do you understand probability in games, such as dice or coin tosses?',
+                likert_scale_min_label: 'Not at all',
+                likert_scale_max_label: 'Very well',
+                likert_scale_values: [
+                    {value: 1},
+                    {value: 2},
+                    {value: 3},
+                    {value: 4},
+                    {value: 5}
+                ]
+            },
+            {
+                type: 'likert',
+                name: 'Aktivitäten',
+                prompt: 'How often do you engage in activities related to probabilities, e.g. lottery, betting, gambling, etc.',
+                likert_scale_min_label: 'Never',
+                likert_scale_max_label: 'Very often',
+                likert_scale_values: [
+                    {value: 1},
+                    {value: 2},
+                    {value: 3},
+                    {value: 4},
+                    {value: 5}
+                ]
+            },
+            {
+                type: 'multi-choice',
+                name: 'Ausbildung',
+                prompt: 'Have you completed a course or formal education on probability or statistics?',
+                options: ['No', 'Lower secondary school level', 'High school level', 'Part of study program (e.g. psychology)', 'Central aspect of study program (e.g. mathematics, statistics)']
+            },
+            {
+                type: 'multi-choice',
+                name: 'Strategie',
+                prompt: 'Did you apply a specific strategy in the coin toss game?',
+                options: ['Yes', 'No'],
+            },
+            {
+                type: 'text',
+                prompt: 'If yes, which one?',
+                name: 'StrategieText',
+                textbox_columns: 50,
+                required: false
+            }
+        ]
+    ]
+    ];
+    var surveyExperience = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyExperience' },
+        pages: function(){ return surveyExperience_p[l]; },
+        button_label_next: function(){ return continue_button[l]; },
+        button_label_back: function(){ return continue_button_back[l]; },
+        button_label_finish: function(){ return continue_button[l]; },
+        required_error: function(){ return answer_all_questions[l]; }
+    };
+
+    // Explicit knowledge
+    var surveyExplicit_p = [
+    [
+        [
+            {
+                type: 'multi-choice',
+                name: 'Roulette',
+                prompt: 'Die Wahrscheinlichkeit, dass beim Roulette Rot oder Schwarz fällt, beträgt 50% pro Runde. Welche Aussage in Bezug zur nächsten Runde ist richtig, wenn Schwarz 5 Mal hintereinander gefallen ist?',
+                options: ['schwarz ist wahrscheinlicher', 'rot ist wahrscheinlicher', 'beide sind gleich wahrscheinlich'],
+            }
+        ]
+    ],
+    [
+        [
+            {
+                type: 'multi-choice',
+                name: 'Roulette',
+                prompt: 'The probability of red or black in roulette is 50% on one spin. Which statement regarding the next spin is correct if black has come up 5 times in a row?',
+                options: ['black is more probable', 'red is more probable', 'both are equally probable'],
+            }
+        ]
+    ]
+    ];
+
+    var surveyExplicit = {
+        type: jsPsychSurvey,
+        data: { test_part: 'surveyExplicit' },
+        pages: function(){ return surveyExplicit_p[l]; },
+        button_label_next: function(){ return continue_button[l]; },
+        button_label_back: function(){ return continue_button_back[l]; },
+        button_label_finish: function(){ return continue_button[l]; },
+        required_error: function(){ return answer_all_questions[l]; }
+    };
+
+    // Implitict knowledge
+    var surveyImplicit_p = [
+        `<p>Bitte versuche eine möglichst zufällige Folge von 0 und 1 zu produzieren.</p>
+        <p>Tippe dazu bitte jeweils eine "0" oder eine "1" in jedes der Felder.</p><p>
+            ${Array.from({ length: 20 }).map((_, i) => `
+                <input type="text" id="input${i}" name="input${i}" class="input-field" maxlength="1" required>
+            `).join('')}</p>`,
+        `<p>Please try to produce a sequence of 0 and 1 that is as random as possible.</p>
+        <p>To do this, please type a "0" or a "1" in each of the fields.</p><p>
+            ${Array.from({ length: 20 }).map((_, i) => `
+                <input type="text" id="input${i}" name="input${i}" class="input-field" maxlength="1" required>
+            `).join('')}</p>`
+    ];
+
+    // Survey trial definition
+    var surveyImplicit = {
+        type: jsPsychSurveyHtmlForm,
+        html: function() { return surveyImplicit_p[l]; },
+        button_label: function(){ return continue_button[l]; },
+        on_load: function() {
+            // Add event listeners to each input field to restrict input to "0" or "1"
+            for (let i = 0; i < 20; i++) {
+                const input = document.getElementById(`input${i}`);
+                input.addEventListener('input', (event) => {
+                    const value = event.target.value;
+                    if (value === "0" || value === "1") {
+                        // Move to the next input field if valid
+                        const nextInput = document.getElementById(`input${i + 1}`);
+                        if (nextInput) {
+                            nextInput.focus();
+                        }
+                    } else {
+                        event.target.value = ""; // Clear invalid input
+                    }
+                });
+            }
+        }
+    };
+
+    // Demographics
+    var surveyDemographics_p = [
+        [
+        [
+            {
+                type: 'text',
+                prompt: "Wie alt bist Du?", 
+                name: 'age', 
+                textbox_columns: 5,
+                required: true,
+                input_type: "number"
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Welchem Geschlecht fühlst du dich zugehörig?", 
+                name: 'gender', 
+                options: ['weiblich', 'männlich', 'divers'],
+                required: true
+            },
+            {
+                type: 'multi-choice',
+                prompt: "Was ist dein höchster Bildungsabschluss?", 
+                name: 'bildung', 
+                options: [
+                    'Volks- oder Hauptschulabschluss',
+                    'Mittlere Reife',
+                    'Fach- oder Hochschulreife (Abitur)',
+                    'Fach- oder Hochschulabschluss',
+                    'Abgeschlossene Berufsausbildung',
+                    'Kein Abschluss',
+                    'Anderes'
+                ], 
+                required: true
+            }, 
+            {
+                type: 'multi-choice',
+                prompt: "Deine aktuelle Tätigkeit:",
+                name: 'taetigkeit',
+                options: [
+                    'Psychologiestudent/in an der LMU',
+                    'Schüler/in',
+                    'Student/in',
+                    'Auszubildende/r',
+                    'Berufstätig',
+                    'Arbeitssuchend',
+                    'Hausfrau/-mann',
+                    'Rentner/in',
+                    'Sonstiges'
+                ],
+            }
+        ]
+        ],
+        [
+        [
+            {
+                type: 'text',
+                prompt: "How old are you?", 
+                name: 'age', 
+                textbox_columns: 5,
+                required: true,
+                input_type: "number"
+            },
+            {
+                type: 'multi-choice',
+                prompt: "What gender do you identify with?",
+                name: 'gender', 
+                options: ['female', 'male', 'other'],
+                required: true
+            },
+            {
+                type: 'multi-choice',
+                prompt: "What is your highest educational qualification?",
+                name: 'bildung', 
+                options: [
+                    'Lower secondary school certificate',
+                    'Intermediate school certificate',
+                    'General qualification for university entrance',
+                    'University degree',
+                    'Vocational training',
+                    'No degree',
+                    'Other'
+                ],
+                required: true
+            }, 
+            {
+                type: 'multi-choice',
+                prompt: "Your current occupation:",
+                name: 'taetigkeit',
+                options: [
+                    'Psychology student at LMU',
+                    'Pupil',
+                    'Student',
+                    'Apprentice',
+                    'Employed',
+                    'Seeking employment',
+                    'Homemaker',
+                    'Retired',
+                    'Other'
+                ],
+            }
+        ]
+        ]                
+    ]
+    var surveyDemographics = {
+        type: jsPsychSurvey,
+        data: { test_part: 'demographics' },
+        pages: function(){ return surveyDemographics_p[l]; },
+        button_label_next: function(){ return continue_button[l]; },
+        button_label_back: function(){ return continue_button_back[l]; },
+        button_label_finish: function(){ return continue_button[l]; },
+        required_error: function(){ return answer_all_questions[l]; }
+    };
+
+        // hand aufs herz question
+        var handaufsherz_p = [
+        [
+          [
+            {
+              type: 'multi-choice',
+              prompt: "Hand auf\'s Herz: Hast du diese Studie wirklich aufmerksam und gewissenhaft bearbeitet, sodass wir deine Daten verwenden können?",
+              name: 'handaufsherz', 
+              options: ['Ja', 'Nein'],
+              required: true
+            },
+            {
+              type: 'text',
+              prompt: "Ist dir an dieser Studie etwas Ungewöhnliches aufgefallen?", 
+              placeholder: '',
+              name: 'ungewoehnlich', 
+              textbox_rows: 5,
+              required: false
+            }, 
+          ]
+        ],
+        [
+          [
+            {
+              type: 'multi-choice',
+              prompt: "Please be honest: Did you really work on this study attentively and conscientiously so that we can use your data?",
+              name: 'handaufsherz', 
+              options: ['Yes', 'No'],
+              required: true
+            },
+            {
+              type: 'text',
+              prompt: "Did you notice anything unusual about this study?", 
+              placeholder: '',
+              name: 'ungewoehnlich', 
+              textbox_rows: 5,
+              required: false
+            }, 
+          ]
+        ]
+    ]
+    var handaufsherz = {
+        type: jsPsychSurvey,
+        data: {test_part:'handaufsherz'},
+        pages: function(){ return handaufsherz_p[l]; },
+        button_label_next: function(){ return continue_button[l]; },
+        button_label_back: function(){ return continue_button_back[l]; },
+        button_label_finish: function(){ return continue_button[l]; },
+        required_error: function(){ return answer_all_questions[l]; }
+        };
+
+
+    /* preload images */
+    var preload = {
+        type: jsPsychPreload,
+        images: ['img/Coin/coin-heads.png', 'img/Coin/coin-tails.png']
+    }
+
+    /* ending */
+    // save data to csv
+    function saveData(name, data){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data6.php');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.send(JSON.stringify({filename: name, filedata: data}));
+      };
+
+      function saveDataDB() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save-data-db-maria.php'); // change 'write_data.php' to point to php script.
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                console.log("Response from server:", xhr.responseText);
+
+                try {
+                    var response = JSON.parse(xhr.responseText);
+                    console.log(response.success);
+                } catch (error) {
+                    console.error("Error parsing JSON:", error);
+                }
+            }
+        };
+
+        // Get the data and replace empty strings with null for integer fields
+        var data = jsPsych.data.get().values(); // Extract the array of trial data
+        data = data.map(function(trial) {
+            if (trial.correct === '') {
+                trial.correct = null;
+            }
+            return trial;
+        });
+
+        xhr.send(JSON.stringify(data));
+    }
+
+
+    var ending = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: function() {return ['<p>Vielen Danke für die Teilnahme!</p><p>Sie können das Fenster nun schließen.</p><hr><p><a href="https://lmu-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=366&credit_token=eb5a4bb640844b2c8f0252cf226b4532&survey_code=' + subject_id + '">Zurück zu SONA und VPh gutschreiben.</a></p>', '<p>Thank you for your participation!</p><p>You can now close the window.</p><hr><p><a href="https://lmu-psy.sona-systems.com/webstudy_credit.aspx?experiment_id=366&credit_token=eb5a4bb640844b2c8f0252cf226b4532&survey_code=' + subject_id + '">Go back to SONA.</a></p>'][l]; },
+        //choices: "ALL_KEYS",
+        choices: "NO_KEYS",
+        on_start: function() {
+            
+            if(!nosavetest){
+              //save top csv
+//               if(vl) // saveData("/" + studyname + "/study" + studypart + "/" + vl + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + vl + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+//               else // saveData("/" + studyname + "/study" + studypart + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+
+              //save to db
+              saveDataDB();
+            }
+
+        }
+    }
+
+
+    /* create timeline */
+    
+    //control condition
+    var timeline = [];
+    timeline.push(language_block);
+    timeline.push(informed_consent);
+    timeline.push(preload);
+    timeline.push(welcome);
+    timeline.push(surveyBLLS);
+    for(var i=0; i < Ntrials; i++){
+        timeline.push(coinChoice);
+        timeline.push(coinResult);
+        timeline.push(coinFeedback);
+    }
+    timeline.push(coinEnd);
+    timeline.push(surveyChance);
+    timeline.push(surveyExperience);
+    timeline.push(surveyExplicit);
+    timeline.push(surveyImplicit);
+    timeline.push(surveyDemographics);
+    timeline.push(handaufsherz);
+    timeline.push(ending);
+
+
+    /* start the experiment */
+
+    jsPsych.run(timeline);
+
+  </script>
+</html>
