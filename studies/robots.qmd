@@ -63,5 +63,5 @@ For this lab report only the human subjects' scores of both conditions are consi
 
 ::: {.callout-note title="Resources" collapse="false"}
 -   [Student Report](../data/robots/robots_report.pdf)
--   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/robot/robot.html)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/robots/robot.html)
 :::

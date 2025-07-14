@@ -60,7 +60,7 @@ Regarding sample size, although the stopping criterion of BF10 = 10 for the corr
 No micro-PK effect is expected in both conditions.
 
 ::: {.callout-tip title="Data" collapse="false"}
--   [Download Data](../data/epis/epsi.csv)
+-   [Download Data](../data/epsi/epsi.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}

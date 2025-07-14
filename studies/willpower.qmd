@@ -8,7 +8,7 @@ execute:
 
 ```{r}
 source("../scripts/generate_table.R")
-generate_table("Willpower ")
+generate_table("Willpower")
 ```
 
 ## Hypothesis

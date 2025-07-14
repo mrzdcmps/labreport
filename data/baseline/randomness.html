@@ -1,4 +1,3 @@
-<script>alert("TEST! Data will not be saved");</script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -914,8 +913,8 @@
             
             if(!nosavetest){
               //save top csv
-//               if(vl) // saveData("/" + studyname + "/study" + studypart + "/" + vl + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + vl + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
-//               else // saveData("/" + studyname + "/study" + studypart + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+              if(vl) saveData("/" + studyname + "/study" + studypart + "/" + vl + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + vl + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
+              else saveData("/" + studyname + "/study" + studypart + "/" + studyname + "_" + start_time.toISOString().replace(/:\s*/g, ".") + "_" + condition + "_" + subject_id, jsPsych.data.get().csv());
 
               //save to db
               saveDataDB();
