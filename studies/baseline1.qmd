@@ -66,7 +66,7 @@ The Bayesian approach was particularly suitable for our research question becaus
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   Publication
+-   Publication (in press)
 -   [OSF Project](https://osf.io/2zgp5/)
 -   [OSF Data and Analyses](https://osf.io/2zgp5/files/osfstorage)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/baseline/randomness.html)

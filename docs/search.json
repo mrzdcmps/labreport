@@ -2289,7 +2289,7 @@
     "href": "studies/baseline1.html#sample-size-and-data-analysis",
     "title": "Baseline 1",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nWe employed a single-group design with two conditions: a “lucky” condition (LC) with 60% win probability and an “unlucky” condition (UC) with 40% win probability. Our final sample included 801 participants in the lucky condition and 725 participants in the unlucky condition, with the number of successful hits in the coin toss game serving as our dependent variable.\nWe conducted our statistical analysis using Bayesian methods, which we determined a priori before data collection. We established a small prior effect size estimate following an uninformed Cauchy distribution δ ~ Cauchy (0, 0.1) to reflect our conservative expectations about micro-PK effects. Our hypotheses were tested using one-sample Bayesian t-tests, where we predicted that participants in the lucky condition would average fewer than 12 hits (below the expected 60% baseline), while participants in the unlucky condition would average more than 8 hits (above the expected 40% baseline).\nWe set a Bayes factor threshold of 10 as our criterion for determining strong evidence, whether supporting our alternative hypothesis (H1) or the null hypothesis (H0). This threshold allowed us to distinguish between strong, moderate, and anecdotal evidence levels. We performed all data analysis using R (version 4.4.1), and made our materials, data, and analysis scripts openly available through the Open Science Framework at https://osf.io/2zgp5.\nThe Bayesian approach was particularly suitable for our research question because it allowed us to quantify evidence for both the presence and absence of micro-PK effects, while also enabling us to track how evidence accumulated as we collected more data throughout the study.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication\nOSF Project\nOSF Data and Analyses\nExperimental Program\nCoin Stimuli",
+    "text": "Sample Size and Data Analysis\nWe employed a single-group design with two conditions: a “lucky” condition (LC) with 60% win probability and an “unlucky” condition (UC) with 40% win probability. Our final sample included 801 participants in the lucky condition and 725 participants in the unlucky condition, with the number of successful hits in the coin toss game serving as our dependent variable.\nWe conducted our statistical analysis using Bayesian methods, which we determined a priori before data collection. We established a small prior effect size estimate following an uninformed Cauchy distribution δ ~ Cauchy (0, 0.1) to reflect our conservative expectations about micro-PK effects. Our hypotheses were tested using one-sample Bayesian t-tests, where we predicted that participants in the lucky condition would average fewer than 12 hits (below the expected 60% baseline), while participants in the unlucky condition would average more than 8 hits (above the expected 40% baseline).\nWe set a Bayes factor threshold of 10 as our criterion for determining strong evidence, whether supporting our alternative hypothesis (H1) or the null hypothesis (H0). This threshold allowed us to distinguish between strong, moderate, and anecdotal evidence levels. We performed all data analysis using R (version 4.4.1), and made our materials, data, and analysis scripts openly available through the Open Science Framework at https://osf.io/2zgp5.\nThe Bayesian approach was particularly suitable for our research question because it allowed us to quantify evidence for both the presence and absence of micro-PK effects, while also enabling us to track how evidence accumulated as we collected more data throughout the study.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (in press)\nOSF Project\nOSF Data and Analyses\nExperimental Program\nCoin Stimuli",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -2366,6 +2366,102 @@
       "Experiments",
       "Studies",
       "Willpower"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html",
+    "href": "studies/baseline2.html",
+    "title": "Baseline 2",
+    "section": "",
+    "text": "Study\nEffect expected\nN\nTrials\nM\nSD\nHits (%)\nt\np\nES\nVar\nBF\nDirection\nYear\nLab/Online\n\n\n\n\nBaseline 2\n✔\n2094\n20\n12.02\n2.19\n49.93\n0.37\n0.64\n0.01\n0\n0.13\nless\n2024\n🌍",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#hypothesis",
+    "href": "studies/baseline2.html#hypothesis",
+    "title": "Baseline 2",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nThis preregistered replication study focused exclusively on testing the micro-PK effect found in the “lucky” condition of the Baseline 1 study. We hypothesized that participants in this micro-PK study would demonstrate fewer hits in a coin toss game than expected by chance when the probability of winning is pre-set at 60%. Specifically, we predicted that the average number of hits in a series of 20 coin tosses would be lower than 12, which is the expected number of hits given the 60% pre-set winning probability.\nOur theoretical justification remained consistent with the previous study: we reasoned that participants’ implicit beliefs and expectations about coin tosses being fair (expecting a 50% hit rate) would bias the quantum random number generator outcomes during their observations. If participants’ fairness expectations actively influence reality construction through micro-PK abilities, we should observe a substantial deviation from the 60% baseline toward their expected 50% probability. This study aimed to provide insights into whether participants’ micro-PK abilities are influenced by their fairness expectations and whether these expectations lead to measurable effects on quantum randomness.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#participants",
+    "href": "studies/baseline2.html#participants",
+    "title": "Baseline 2",
+    "section": "Participants",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n2094\n\n\nFemale\n58.55%\n\n\nMale\n40.31%\n\n\nMean Age\n32.27 years\n\n\nSD Age\n45.59 years",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#materials-and-procedure",
+    "href": "studies/baseline2.html#materials-and-procedure",
+    "title": "Baseline 2",
+    "section": "Materials and Procedure",
+    "text": "Materials and Procedure\nThe procedure was identical to the lucky subsample of the previous study with the following key specifications: We used the same 20-round coin toss game where participants guessed the outcome of each flip, with outcomes determined by a quantum random number generator (qRNG) that generated numbers between 0 and 99 for each trial. A hit occurred when the generated number was below 60, ensuring a 60% hit probability that remained hidden from participants, who believed they were playing a fair coin toss game.\nHowever, this replication study streamlined the measurement approach. We measured potential predictors and covariates including beliefs about chance, experience with probability, and both explicit and implicit knowledge of probability (assessed through a sequence production task). Nonetheless, the focus remained primarily on the main behavioral outcome.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#sample-size-and-data-analysis",
+    "href": "studies/baseline2.html#sample-size-and-data-analysis",
+    "title": "Baseline 2",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nWe employed a Sequential Bayesian design with a maximum sample size of 2,000 participants (based on a Bayes Factor Design Analysis).\nOur statistical analysis used a Bayesian one-sample t-test with a Cauchy(0, 0.1) prior distribution, testing the directional hypothesis that participants would achieve fewer than 12 hits out of 20 coin tosses. We set our stopping criteria at a Bayes Factor of 10 or greater for strong evidence in favor of either the alternative hypothesis (H1) or null hypothesis (H0). We did not reach that point but stopped data collection after accumulating a little over our specified maximum N.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (in preparation)\nOSF Project\nExperimental Program\nCoin Stimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#hypothesis-and-idea",
+    "href": "studies/baseline2.html#hypothesis-and-idea",
+    "title": "Baseline 2",
+    "section": "Hypothesis and Idea",
+    "text": "Hypothesis and Idea\nThis replication study focused exclusively on testing the micro-PK effect found in the “lucky” condition of our pilot study. We hypothesized that participants in this micro-PK study would demonstrate fewer hits in a coin toss game than expected by chance when the probability of winning is pre-set at 60%. Specifically, we predicted that the average number of hits in a series of 20 coin tosses would be lower than 12, which is the expected number of hits given the 60% pre-set winning probability.\nOur theoretical justification remained consistent with the pilot study: we reasoned that participants’ implicit beliefs and expectations about coin tosses being fair (expecting a 50% hit rate) would bias the quantum random number generator outcomes during their observations. If participants’ fairness expectations actively influence reality construction through micro-PK abilities, we should observe a substantial deviation from the 60% baseline toward their expected 50% probability. This study aimed to provide insights into whether participants’ micro-PK abilities are influenced by their fairness expectations and whether these expectations lead to measurable effects on quantum randomness.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#materials-and-procedure-1",
+    "href": "studies/baseline2.html#materials-and-procedure-1",
+    "title": "Baseline 2",
+    "section": "Materials and Procedure",
+    "text": "Materials and Procedure\nThe procedure was identical to the lucky subsample of the pilot study with the following key specifications: We used the same 20-round coin toss game where participants guessed the outcome of each flip, with outcomes determined by a quantum random number generator (qRNG) that generated numbers between 0 and 99 for each trial. A hit occurred when the generated number was below 60, ensuring a 60% hit probability that remained hidden from participants, who believed they were playing a fair coin toss game.\nHowever, this replication study streamlined the measurement approach compared to the pilot study. While we planned to measure potential predictors and covariates including beliefs about chance, experience with probability, and both explicit and implicit knowledge of probability (assessed through a sequence production task), the focus remained primarily on the main behavioral outcome. The same ethical procedures were maintained, with participants recruited through psychology students’ empirical course requirements and university information mail systems, requiring participants to be at least 18 years old with proper informed consent.",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#sample-size-and-data-analysis-1",
+    "href": "studies/baseline2.html#sample-size-and-data-analysis-1",
+    "title": "Baseline 2",
+    "section": "Sample Size and Data Analysis",
+    "text": "Sample Size and Data Analysis\nWe employed a Sequential Bayesian design with a maximum sample size of 2,000 participants (based on a Bayes Factor Design Analysis).\nOur statistical analysis used a Bayesian one-sample t-test with a Cauchy(0, 0.1) prior distribution, testing the directional hypothesis that participants would achieve fewer than 12 hits out of 20 coin tosses. We set our stopping criteria at a Bayes Factor of 10 or greater for strong evidence in favor of either the alternative hypothesis (H1) or null hypothesis (H0). We did not reach that point but stopped data collection after accumulating a little over our specified maximum N.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (in preparation)\nOSF Project\nExperimental Program\nCoin Stimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
     ]
   }
 ]
