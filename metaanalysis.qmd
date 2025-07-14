@@ -6,14 +6,14 @@ format:
 page-navigation: true
 ---
 
-Last update: 04 May 2020
+Last update: 14 July 2025
 
 ## Frequentist Meta-Analysis
 
 ::: panel-tabset
 ## Experimental Studies
 
-In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for "Smokers 1" is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses.
+In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for "Smokers 1" is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses. Studies that expected a micro-Pk avoidance of certain stimuli (Smokers 2, Baseline Lucky) are inverted as well, since we hypothesized less target stimuli.
 
 ```{r}
 st <- readRDS("data/overview2025-07-12.rds")
@@ -39,8 +39,15 @@ library(metafor)
 yi=data$ES
 vi=data$Var
 studies=data$Study
+
 # invert ES of Smokers 1, since the hypothesis was two-sided and the results showed a negative effect (smokers are avoiding smoking-related images)
 yi[which(studies == "Smokers 1 Exp")] <- -yi[which(studies == "Smokers 1 Exp")]
+
+# invert ES of studies with "less" hypothesis
+yi[which(studies == "Smokers 2 Exp")] <- -yi[which(studies == "Smokers 2 Exp")]
+yi[which(studies == "Smokers 3")] <- -yi[which(studies == "Smokers 3")]
+yi[which(studies == "Baseline 1 Lucky")] <- -yi[which(studies == "Baseline 1 Lucky")]
+yi[which(studies == "Baseline 2")] <- -yi[which(studies == "Baseline 2")]
 
 # Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316
 # knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018
@@ -81,7 +88,7 @@ funnel(res)
 
 ## Control Studies
 
-In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
+In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included. To ensure comparability, all studies are tested with directional hypotheses in the same direction as the corresponding experimental conditions.
 
 ```{r}
 # Select studies / conditions
@@ -105,6 +112,9 @@ library(metafor)
 yi=data$ES
 vi=data$Var
 studies=data$Study
+
+# invert ES of studies with "less" hypothesis
+yi[which(studies == "Smokers 2 Con")] <- -yi[which(studies == "Smokers 2 Con")]
 
 # Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316
 # knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018

@@ -221,14 +221,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Last update: 04 May 2020</p>
+<p>Last update: 14 July 2025</p>
 <section id="frequentist-meta-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="frequentist-meta-analysis">Frequentist Meta-Analysis</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Experimental Studies</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Control Studies</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>presence</strong> of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for “Smokers 1” is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses.</p>
+<p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>presence</strong> of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included. The effect size for “Smokers 1” is inverted, since a two-tailed hypothesis was formulated and the resulting effect was negative. All other studies/conditions have directional hypotheses. Studies that expected a micro-Pk avoidance of certain stimuli (Smokers 2, Baseline Lucky) are inverted as well, since we hypothesized less target stimuli.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>st <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/overview2025-07-12.rds"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -707,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.6764936</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: right;">2021</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">44</td>
@@ -764,6 +764,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">47</td>
+<td style="text-align: left;">Schrödingers Cat Con</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">285</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: right;">5.0842105</td>
+<td style="text-align: right;">1.5855631</td>
+<td style="text-align: right;">50.84211</td>
+<td style="text-align: right;">0.8966135</td>
+<td style="text-align: right;">0.1853423</td>
+<td style="text-align: right;">0.0531108</td>
+<td style="text-align: right;">0.0035137</td>
+<td style="text-align: right;">0.7779826</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: left;">FALSE</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">48</td>
 <td style="text-align: left;">Desire</td>
 <td style="text-align: left;">TRUE</td>
@@ -781,87 +799,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2023</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">49</td>
-<td style="text-align: left;">Stories 1</td>
+<td style="text-align: left;">Stories</td>
 <td style="text-align: left;">TRUE</td>
-<td style="text-align: right;">436</td>
+<td style="text-align: right;">766</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">0.5252294</td>
-<td style="text-align: right;">0.4999367</td>
-<td style="text-align: right;">52.52294</td>
-<td style="text-align: right;">1.0537423</td>
-<td style="text-align: right;">0.1462929</td>
-<td style="text-align: right;">0.0504651</td>
-<td style="text-align: right;">0.0022965</td>
-<td style="text-align: right;">0.8173454</td>
+<td style="text-align: right;">0.5065274</td>
+<td style="text-align: right;">0.5002841</td>
+<td style="text-align: right;">50.65274</td>
+<td style="text-align: right;">0.3611095</td>
+<td style="text-align: right;">0.3590586</td>
+<td style="text-align: right;">0.0130474</td>
+<td style="text-align: right;">0.0013056</td>
+<td style="text-align: right;">0.3452430</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: right;">2023</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">50</td>
-<td style="text-align: left;">Stories 2</td>
+<td style="text-align: left;">Willpower</td>
 <td style="text-align: left;">TRUE</td>
-<td style="text-align: right;">330</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">0.4818182</td>
-<td style="text-align: right;">0.5004281</td>
-<td style="text-align: right;">48.18182</td>
-<td style="text-align: right;">-0.6600131</td>
-<td style="text-align: right;">0.7451464</td>
-<td style="text-align: right;">-0.0363325</td>
-<td style="text-align: right;">0.0030323</td>
-<td style="text-align: right;">0.2442486</td>
-<td style="text-align: left;">greater</td>
-<td style="text-align: right;">2023</td>
-<td style="text-align: left;">FALSE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">51</td>
-<td style="text-align: left;">Willpower 1</td>
-<td style="text-align: left;">TRUE</td>
-<td style="text-align: right;">453</td>
+<td style="text-align: right;">703</td>
 <td style="text-align: left;">20</td>
-<td style="text-align: right;">10.0684327</td>
-<td style="text-align: right;">2.3066269</td>
-<td style="text-align: right;">50.34216</td>
-<td style="text-align: right;">0.6314446</td>
-<td style="text-align: right;">0.2640345</td>
-<td style="text-align: right;">0.0296679</td>
-<td style="text-align: right;">0.0022085</td>
-<td style="text-align: right;">0.5298907</td>
+<td style="text-align: right;">9.9843528</td>
+<td style="text-align: right;">2.2960476</td>
+<td style="text-align: right;">49.92176</td>
+<td style="text-align: right;">-0.1806900</td>
+<td style="text-align: right;">0.5716685</td>
+<td style="text-align: right;">-0.0068149</td>
+<td style="text-align: right;">0.0014225</td>
+<td style="text-align: right;">0.2376857</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: right;">2023</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">52</td>
-<td style="text-align: left;">Willpower 2</td>
-<td style="text-align: left;">TRUE</td>
-<td style="text-align: right;">257</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: right;">9.8249027</td>
-<td style="text-align: right;">2.2613607</td>
-<td style="text-align: right;">49.12451</td>
-<td style="text-align: right;">-1.2412981</td>
-<td style="text-align: right;">0.8921841</td>
-<td style="text-align: right;">-0.0774301</td>
-<td style="text-align: right;">0.0039027</td>
-<td style="text-align: right;">0.2063993</td>
-<td style="text-align: left;">greater</td>
-<td style="text-align: right;">2024</td>
-<td style="text-align: left;">FALSE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">53</td>
+<td style="text-align: left;">51</td>
 <td style="text-align: left;">Baseline 1 Lucky</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">801</td>
 <td style="text-align: left;">20</td>
 <td style="text-align: right;">11.7990012</td>
 <td style="text-align: right;">2.1279800</td>
-<td style="text-align: right;">49.16251</td>
+<td style="text-align: right;">50.83749</td>
 <td style="text-align: right;">-2.6732654</td>
 <td style="text-align: right;">0.0038324</td>
 <td style="text-align: right;">-0.0944552</td>
@@ -871,8 +853,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2024</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">54</td>
+<tr class="odd">
+<td style="text-align: left;">52</td>
 <td style="text-align: left;">Baseline 1 Unlucky</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">725</td>
@@ -889,15 +871,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2024</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">55</td>
+<tr class="even">
+<td style="text-align: left;">53</td>
 <td style="text-align: left;">Baseline 2</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">2094</td>
 <td style="text-align: left;">20</td>
 <td style="text-align: right;">12.0176695</td>
 <td style="text-align: right;">2.1911024</td>
-<td style="text-align: right;">50.07362</td>
+<td style="text-align: right;">49.92638</td>
 <td style="text-align: right;">0.3690207</td>
 <td style="text-align: right;">0.6439252</td>
 <td style="text-align: right;">0.0080642</td>
@@ -922,26 +904,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>yi<span class="ot">=</span>data<span class="sc">$</span>ES</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>vi<span class="ot">=</span>data<span class="sc">$</span>Var</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>studies<span class="ot">=</span>data<span class="sc">$</span>Study</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># invert ES of Smokers 1, since the hypothesis was two-sided and the results showed a negative effect (smokers are avoiding smoking-related images)</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 1 Exp"</span>)] <span class="ot">&lt;-</span> <span class="sc">-</span>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 1 Exp"</span>)]</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rma</span>(</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  yi,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  vi, </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">method=</span><span class="st">"REML"</span>,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="co">#mods = ~ data$Labstudy,</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">knha=</span><span class="cn">TRUE</span>,</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">slab=</span><span class="fu">paste</span>(studies)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># forest plot</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">forest</span>(res, </span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"ES"</span>, <span class="at">mlab=</span><span class="st">"RE"</span>, <span class="at">psize=</span><span class="dv">1</span>,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">ilab =</span> data<span class="sc">$</span>N, <span class="at">ilab.lab =</span> <span class="st">"N"</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">header=</span>T, <span class="at">shade=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># invert ES of Smokers 1, since the hypothesis was two-sided and the results showed a negative effect (smokers are avoiding smoking-related images)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 1 Exp"</span>)] <span class="ot">&lt;-</span> <span class="sc">-</span>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 1 Exp"</span>)]</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># invert ES of studies with "less" hypothesis</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 2 Exp"</span>)] <span class="ot">&lt;-</span> <span class="sc">-</span>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 2 Exp"</span>)]</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 3"</span>)] <span class="ot">&lt;-</span> <span class="sc">-</span>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 3"</span>)]</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Baseline 1 Lucky"</span>)] <span class="ot">&lt;-</span> <span class="sc">-</span>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Baseline 1 Lucky"</span>)]</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Baseline 2"</span>)] <span class="ot">&lt;-</span> <span class="sc">-</span>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Baseline 2"</span>)]</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rma</span>(</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  yi,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  vi, </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">method=</span><span class="st">"REML"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="co">#mods = ~ data$Labstudy,</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">knha=</span><span class="cn">TRUE</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">slab=</span><span class="fu">paste</span>(studies)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># forest plot</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="fu">forest</span>(res, </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"ES"</span>, <span class="at">mlab=</span><span class="st">"RE"</span>, <span class="at">psize=</span><span class="dv">1</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">ilab =</span> data<span class="sc">$</span>N, <span class="at">ilab.lab =</span> <span class="st">"N"</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">header=</span>T, <span class="at">shade=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -959,23 +948,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.rma</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Random-Effects Model (k = 35; tau^2 estimator: REML)
+Random-Effects Model (k = 34; tau^2 estimator: REML)
 
   logLik  deviance       AIC       BIC      AICc   
- 38.1153  -76.2307  -72.2307  -69.1780  -71.8436   
+ 39.2253  -78.4505  -74.4505  -71.4575  -74.0505   
 
-tau^2 (estimated amount of total heterogeneity): 0.0007 (SE = 0.0005)
-tau (square root of estimated tau^2 value):      0.0260
-I^2 (total heterogeneity / total variability):   41.29%
-H^2 (total variability / sampling variability):  1.70
+tau^2 (estimated amount of total heterogeneity): 0.0005 (SE = 0.0004)
+tau (square root of estimated tau^2 value):      0.0231
+I^2 (total heterogeneity / total variability):   36.71%
+H^2 (total variability / sampling variability):  1.58
 
 Test for Heterogeneity:
-Q(df = 34) = 59.8637, p-val = 0.0040
+Q(df = 33) = 54.8958, p-val = 0.0097
 
 Model Results:
 
 estimate      se    tval  df    pval    ci.lb   ci.ub    
-  0.0083  0.0096  0.8626  34  0.3944  -0.0113  0.0279    
+  0.0164  0.0088  1.8601  33  0.0718  -0.0015  0.0344  . 
 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
@@ -998,7 +987,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>absence</strong> of an effect. In studies comparing experimental to control conditions, only the control conditions are included.</p>
+<p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>absence</strong> of an effect. In studies comparing experimental to control conditions, only the control conditions are included. To ensure comparability, all studies are tested with directional hypotheses in the same direction as the corresponding experimental conditions.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select studies / conditions</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">subset</span>(st, st<span class="sc">$</span>Experimental <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
@@ -1295,7 +1284,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.6922438</td>
 <td style="text-align: left;">greater</td>
 <td style="text-align: right;">2021</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">39</td>
@@ -1387,24 +1376,6 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">2021</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">47</td>
-<td style="text-align: left;">Schrödingers Cat Con</td>
-<td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">285</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: right;">5.084211</td>
-<td style="text-align: right;">1.585563</td>
-<td style="text-align: right;">50.84211</td>
-<td style="text-align: right;">0.8966135</td>
-<td style="text-align: right;">0.1853423</td>
-<td style="text-align: right;">0.0531108</td>
-<td style="text-align: right;">0.0035137</td>
-<td style="text-align: right;">0.7779826</td>
-<td style="text-align: left;">greater</td>
-<td style="text-align: right;">2023</td>
-<td style="text-align: left;">FALSE</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1421,23 +1392,26 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>vi<span class="ot">=</span>data<span class="sc">$</span>Var</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>studies<span class="ot">=</span>data<span class="sc">$</span>Study</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># invert ES of studies with "less" hypothesis</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 2 Con"</span>)] <span class="ot">&lt;-</span> <span class="sc">-</span>yi[<span class="fu">which</span>(studies <span class="sc">==</span> <span class="st">"Smokers 2 Con"</span>)]</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rma</span>(</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  yi,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  vi, </span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">method=</span><span class="st">"REML"</span>,</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">#mods = ~ data$Labstudy,</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">knha=</span><span class="cn">TRUE</span>,</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">slab=</span><span class="fu">paste</span>(studies)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># forest plot</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">forest</span>(res, </span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"ES"</span>, <span class="at">mlab=</span><span class="st">"RE"</span>, <span class="at">psize=</span><span class="dv">1</span>,</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">ilab =</span> data<span class="sc">$</span>N, <span class="at">ilab.lab =</span> <span class="st">"N"</span>,</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">header=</span>T, <span class="at">shade=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended method = REML: Langan et al. 2018 https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1316</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># knha = Hartung method to control ES non-normality Rubio-Aparicio et al. 2018</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rma</span>(</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  yi,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  vi, </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">method=</span><span class="st">"REML"</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#mods = ~ data$Labstudy,</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">knha=</span><span class="cn">TRUE</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">slab=</span><span class="fu">paste</span>(studies)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># forest plot</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="fu">forest</span>(res, </span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"ES"</span>, <span class="at">mlab=</span><span class="st">"RE"</span>, <span class="at">psize=</span><span class="dv">1</span>,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">ilab =</span> data<span class="sc">$</span>N, <span class="at">ilab.lab =</span> <span class="st">"N"</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">header=</span>T, <span class="at">shade=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1455,23 +1429,23 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.rma</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Random-Effects Model (k = 20; tau^2 estimator: REML)
+Random-Effects Model (k = 19; tau^2 estimator: REML)
 
   logLik  deviance       AIC       BIC      AICc   
- 31.3749  -62.7498  -58.7498  -56.8610  -57.9998   
+ 29.6427  -59.2854  -55.2854  -53.5047  -54.4854   
 
 tau^2 (estimated amount of total heterogeneity): 0.0002 (SE = 0.0003)
-tau (square root of estimated tau^2 value):      0.0143
-I^2 (total heterogeneity / total variability):   21.01%
-H^2 (total variability / sampling variability):  1.27
+tau (square root of estimated tau^2 value):      0.0149
+I^2 (total heterogeneity / total variability):   23.10%
+H^2 (total variability / sampling variability):  1.30
 
 Test for Heterogeneity:
-Q(df = 19) = 21.6078, p-val = 0.3042
+Q(df = 18) = 21.3290, p-val = 0.2631
 
 Model Results:
 
 estimate      se     tval  df    pval    ci.lb   ci.ub    
- -0.0091  0.0070  -1.2945  19  0.2110  -0.0238  0.0056    
+ -0.0076  0.0072  -1.0481  18  0.3084  -0.0228  0.0076    
 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>

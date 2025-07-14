@@ -89,7 +89,7 @@ A sequential Bayesian analysis plan was applied for every study. Three separate 
 
 ## Lab Report Data
 
-Only data from Cmax objective is considered in this meta-analysis. Only data from Cmax objective is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.
+Only data from Cmax objective is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data Study 1](../data/sobjectivity/sobjectivity1.csv)

@@ -23,7 +23,7 @@ We also included supplementary hypotheses to further examine potential micro-PK 
 
 ```{r}
 generate_demographics_table(
-  data = study25_willpower,
+  data = study25_willpower.save,
   age_col = "age",
   gender_col = "gender",
   male_value = "männlich",
@@ -33,53 +33,59 @@ generate_demographics_table(
 
 ## Materials
 
-**Card-Drawing Task**\
-The core task involved a virtual card selection where participants were shown two hidden cards, one red and one black, and asked to uncover one. The outcome (red or black) was determined randomly via a qRNG draw.
+A qRNG was used to select visual stimuli from a pool of 115 images, consisting of 100 positive and 15 neutral pictures sourced from the *Open Affective Standardized Image Set (OASIS)* database. The positive images were chosen for their emotional salience, while the neutral ones were selected for low arousal and medium valence.  
 
-**Motivational Incentives**\
-To create intrinsic motivation, participants in the experimental group were presented with an incomplete story from one of two thematic categories:
+To measure psychological variables, we used several validated questionnaires:  
 
--   *"Reincarnation/Rebirth"* – A narrative about James Leininger, a child who claimed memories of a past life.
--   *"True Crime/Murder Mystery"* – A fictional unsolved murder case.
-
-Participants were told that uncovering the red card would reveal the story’s conclusion, providing an incentive to influence the outcome.
-
-The control group received no narrative incentive. They were simply instructed to "try to uncover the red card," ensuring a baseline comparison without motivational manipulation.
-
-**Questionnaires**\
-Exploratory psychological measures were included to assess additional variables:\
-- *Vitality* (measured in both study phases).\
-- *Autonomy, self-control capacity, and willpower beliefs* (measured only in the first phase).
-
-These were intended to examine potential psychological correlates of micro-PK performance.
+- *Vitality* was assessed using a modified German Subjective Vitality Scale (SVS-GM), with three items rated on a 10-point scale.  
+- *Implicit theory of willpower* was measured via a 6-item scale (Job et al., 2010), assessing beliefs about willpower as either limited or unlimited.  
+- *Ego depletion* (current self-control capacity) was evaluated using the SMS-5 questionnaire (Lindner et al., 2019), a 5-item scale with a 7-point response range.  
+- *Affect* was captured qualitatively through a free-text field where participants described their emotional state; responses were later coded on a 5-point scale (-2 to +2).  
+The study also included a brief *autonomy assessment* (Janke & Glöckner-Rist, 2012), though this variable was not central to our hypotheses. The experiment followed a between-subjects design with two conditions: one where qRNG-generated image data was deleted ("delete condition") and another where it was saved ("save condition"). All materials were presented in German or English, depending on participant preference.  
 
 ## Procedure
 
-Participants were randomly assigned to either the experimental or control group upon starting the online study. Both groups received an initial briefing on data privacy, voluntary participation, and their right to withdraw, followed by basic demographic questions (age and gender).
+The experiment began with an introductory screen explaining the task: participants were told they would view a series of images and should use their willpower to try to see as many positive images as possible. After providing informed consent, they proceeded to describe their current emotional state in a free-text field, which was later coded for affect.  
 
-In the *experimental group*, participants were first asked to choose between two thematic story categories "Reincarnation/Rebirth" or "True Crime/Murder Mystery" to personalize their incentive. They then read an intriguing but incomplete story (e.g., about a child’s past-life memories or an unsolved crime) and were told that uncovering the red card in the subsequent task would reveal the conclusion. This narrative hook served as the intrinsic motivator to influence the outcome.
+Next, participants were shown examples of positive and neutral images to familiarize them with the stimuli. They then entered the main experimental phase, consisting of 20 trials. Each trial followed the same sequence:  
 
-In the *control group*, participants proceeded directly to the card task without any narrative incentive. They were simply instructed to "try to uncover the red card," providing a baseline for comparison.
+1. A 2-second display of the phrase *"Believe in your willpower!"* to prime intentionality.
+2. A 500-millisecond black screen as an interstimulus interval.  
+3. A 2-second display of an image (positive or neutral) selected by the quantum random number generator (qRNG).  
+4. A 1-second black screen before the next trial.  
 
-The card-drawing task was identical for both groups: participants viewed two face-down virtual cards (one red, one black) and selected one to "reveal." The outcome was predetermined by a random algorithm, with no actual participant control. In the experimental group, those who uncovered the red card saw the story’s conclusion; those who drew the black card exited the task immediately. Control-group participants saw no follow-up content regardless of their draw.
+After completing the trials, participants answered questionnaires assessing ego depletion, vitality, and implicit theory of willpower, followed by an estimate of how many positive images they believed they had seen. Finally, they provided demographic information (age, gender) before concluding the study.  
 
-After the task, all participants completed questionnaires (see above).
+The experiment employed a *between-subjects design*:  
+- In the "delete condition" (N=248), the qRNG’s objective image data was erased after temporary storage.  
+- In the "save condition" (N=257), the data was permanently retained.  
 
 ## Sample Size and Data Analysis
 
-The study involved a total of 613 participants across two phases of data collection. The first phase was part of an empirical course and included 283 participants, with 13 excluded due to self-reported non-serious engagement or being underage, leaving 270 valid cases. The second phase was a continuation within a thesis and recruited 330 additional participants, with exclusions for similar reasons, resulting in 317 valid cases. The combined dataset for analysis thus comprised 587 participants (after removing duplicates and invalid responses).\
-For *data analysis*, the study employed Bayesian statistics to assess evidence for or against the hypotheses. Key analyses included:
+Sample size consisted of participants collected for an empirical course and a later continuation of a single student. 
 
-1.  Bayesian independent samples t-tests (Cauchy prior width = 0.1) to compare the frequency of red card selections between experimental and control groups (H1).
-2.  Bayesian contingency tests (with a prior of 1) to determine whether the experimental group’s results deviated from chance (H2).
-3.  Sequential analysis to track effect trends as more participants were added.
-4.  Post-hoc gender analyses using Bayesian one-sample t-tests to explore differences in micro-PK performance between males and females.
+For confirmatory analysis, we employed Bayesian statistical methods to assess evidence for our hypotheses while accounting for the small expected effect sizes typical in micro-PK research. Key analyses included:  
 
-Results showed no statistically significant support for micro-PK effects in either phase or the combined dataset. While initial descriptive trends in the first phase suggested a slight advantage for the experimental group, this disappeared in the replication. Bayesian factors (BF) consistently favored the null hypothesis (BF \< 1), indicating that observed variations were likely due to chance. However, exploratory gender analyses revealed that male participants exhibited a moderate trend toward higher red card selections (BF = 6.54), though this was not predicted by the original hypotheses.
+- Bayesian independent-samples *t*-tests (one-tailed, Cauchy prior *r* = 0.1) to compare vitality between the delete and save conditions (Hypothesis 1) and to evaluate subjective recall of positive images (Hypothesis 4).  
+- Bayesian one-sample *t*-tests to check whether the number of objectively received positive images exceeded chance (Hypothesis 5).  
+- Bayesian Pearson correlations (stretched beta prior width = 0.1) to examine relationships between affect and objective/subjective image counts (Hypotheses 2 & 3) and between vitality, implicit theory of willpower, and ego depletion (Hypotheses 6 & 7).  
+
+We also conducted exploratory analyses, including subgroup comparisons by gender and age, using the same Bayesian framework. Classical frequentist *t*-tests (α = .05) supplemented these analyses to estimate effect sizes (Cohen’s *d*).  
+
+A Bayesian ANCOVA further explored how ego depletion and implicit willpower theories influenced vitality across conditions. All analyses were performed in JASP (v0.18.3), with Bayes Factors (BF₁₀) interpreted as follows:  
+- *BF₁₀ > 10* → Strong evidence for the alternative hypothesis (H₁).  
+- *BF₁₀ < 1/10* → Strong evidence for the null (H₀).  
+- *Values near 1* → Inconclusive results.  
+
+Despite the robust design, most hypotheses yielded anecdotal-to-moderate evidence for H₀ suggesting no clear effects—though small trends in predicted directions left room for further investigation with larger samples.
+
+## Lab Report Data
+For the lab report, only objective qRNG of the save-condition and no subjective estimates are included.
 
 
 ::: {.callout-tip title="Data" collapse="false"}
--   [Download Data](../data/willpower/willpower.csv)
+-   [Download All Data](../data/willpower/willpower.csv)
+-   [Download Data of Save Condition](../data/willpower/willpower-save.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}

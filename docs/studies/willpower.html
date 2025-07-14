@@ -178,6 +178,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../studies/baseline2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Baseline 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../studies/cointoss.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coin Toss</span></a>
   </div>
@@ -370,7 +376,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cell">
 <div class="cell-output-display">
-<table class="lightable-classic lightable-hover table table-striped table-hover table-condensed caption-top" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto; font-family: Arial; margin-left: auto; margin-right: auto;">
+<table class="lightable-classic lightable-hover table table-striped table-hover table-condensed caption-top" data-quarto-postprocess="true" style="color: black; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto; color: black; font-family: Arial; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Study</th>
@@ -458,41 +464,57 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<p><strong>Card-Drawing Task</strong><br>
-The core task involved a virtual card selection where participants were shown two hidden cards, one red and one black, and asked to uncover one. The outcome (red or black) was determined randomly via a qRNG draw.</p>
-<p><strong>Motivational Incentives</strong><br>
-To create intrinsic motivation, participants in the experimental group were presented with an incomplete story from one of two thematic categories:</p>
+<p>A qRNG was used to select visual stimuli from a pool of 115 images, consisting of 100 positive and 15 neutral pictures sourced from the <em>Open Affective Standardized Image Set (OASIS)</em> database. The positive images were chosen for their emotional salience, while the neutral ones were selected for low arousal and medium valence.</p>
+<p>To measure psychological variables, we used several validated questionnaires:</p>
 <ul>
-<li><em>“Reincarnation/Rebirth”</em> – A narrative about James Leininger, a child who claimed memories of a past life.</li>
-<li><em>“True Crime/Murder Mystery”</em> – A fictional unsolved murder case.</li>
+<li><em>Vitality</em> was assessed using a modified German Subjective Vitality Scale (SVS-GM), with three items rated on a 10-point scale.<br>
+</li>
+<li><em>Implicit theory of willpower</em> was measured via a 6-item scale (Job et al., 2010), assessing beliefs about willpower as either limited or unlimited.<br>
+</li>
+<li><em>Ego depletion</em> (current self-control capacity) was evaluated using the SMS-5 questionnaire (Lindner et al., 2019), a 5-item scale with a 7-point response range.<br>
+</li>
+<li><em>Affect</em> was captured qualitatively through a free-text field where participants described their emotional state; responses were later coded on a 5-point scale (-2 to +2).<br>
+The study also included a brief <em>autonomy assessment</em> (Janke &amp; Glöckner-Rist, 2012), though this variable was not central to our hypotheses. The experiment followed a between-subjects design with two conditions: one where qRNG-generated image data was deleted (“delete condition”) and another where it was saved (“save condition”). All materials were presented in German or English, depending on participant preference.</li>
 </ul>
-<p>Participants were told that uncovering the red card would reveal the story’s conclusion, providing an incentive to influence the outcome.</p>
-<p>The control group received no narrative incentive. They were simply instructed to “try to uncover the red card,” ensuring a baseline comparison without motivational manipulation.</p>
-<p><strong>Questionnaires</strong><br>
-Exploratory psychological measures were included to assess additional variables:<br>
-- <em>Vitality</em> (measured in both study phases).<br>
-- <em>Autonomy, self-control capacity, and willpower beliefs</em> (measured only in the first phase).</p>
-<p>These were intended to examine potential psychological correlates of micro-PK performance.</p>
 </section>
 <section id="procedure" class="level2">
 <h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
-<p>Participants were randomly assigned to either the experimental or control group upon starting the online study. Both groups received an initial briefing on data privacy, voluntary participation, and their right to withdraw, followed by basic demographic questions (age and gender).</p>
-<p>In the <em>experimental group</em>, participants were first asked to choose between two thematic story categories “Reincarnation/Rebirth” or “True Crime/Murder Mystery” to personalize their incentive. They then read an intriguing but incomplete story (e.g., about a child’s past-life memories or an unsolved crime) and were told that uncovering the red card in the subsequent task would reveal the conclusion. This narrative hook served as the intrinsic motivator to influence the outcome.</p>
-<p>In the <em>control group</em>, participants proceeded directly to the card task without any narrative incentive. They were simply instructed to “try to uncover the red card,” providing a baseline for comparison.</p>
-<p>The card-drawing task was identical for both groups: participants viewed two face-down virtual cards (one red, one black) and selected one to “reveal.” The outcome was predetermined by a random algorithm, with no actual participant control. In the experimental group, those who uncovered the red card saw the story’s conclusion; those who drew the black card exited the task immediately. Control-group participants saw no follow-up content regardless of their draw.</p>
-<p>After the task, all participants completed questionnaires (see above).</p>
+<p>The experiment began with an introductory screen explaining the task: participants were told they would view a series of images and should use their willpower to try to see as many positive images as possible. After providing informed consent, they proceeded to describe their current emotional state in a free-text field, which was later coded for affect.</p>
+<p>Next, participants were shown examples of positive and neutral images to familiarize them with the stimuli. They then entered the main experimental phase, consisting of 20 trials. Each trial followed the same sequence:</p>
+<ol type="1">
+<li>A 2-second display of the phrase <em>“Believe in your willpower!”</em> to prime intentionality.</li>
+<li>A 500-millisecond black screen as an interstimulus interval.<br>
+</li>
+<li>A 2-second display of an image (positive or neutral) selected by the quantum random number generator (qRNG).<br>
+</li>
+<li>A 1-second black screen before the next trial.</li>
+</ol>
+<p>After completing the trials, participants answered questionnaires assessing ego depletion, vitality, and implicit theory of willpower, followed by an estimate of how many positive images they believed they had seen. Finally, they provided demographic information (age, gender) before concluding the study.</p>
+<p>The experiment employed a <em>between-subjects design</em>:<br>
+- In the “delete condition” (N=248), the qRNG’s objective image data was erased after temporary storage.<br>
+- In the “save condition” (N=257), the data was permanently retained.</p>
 </section>
 <section id="sample-size-and-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="sample-size-and-data-analysis">Sample Size and Data Analysis</h2>
-<p>The study involved a total of 613 participants across two phases of data collection. The first phase was part of an empirical course and included 283 participants, with 13 excluded due to self-reported non-serious engagement or being underage, leaving 270 valid cases. The second phase was a continuation within a thesis and recruited 330 additional participants, with exclusions for similar reasons, resulting in 317 valid cases. The combined dataset for analysis thus comprised 587 participants (after removing duplicates and invalid responses).<br>
-For <em>data analysis</em>, the study employed Bayesian statistics to assess evidence for or against the hypotheses. Key analyses included:</p>
-<ol type="1">
-<li>Bayesian independent samples t-tests (Cauchy prior width = 0.1) to compare the frequency of red card selections between experimental and control groups (H1).</li>
-<li>Bayesian contingency tests (with a prior of 1) to determine whether the experimental group’s results deviated from chance (H2).</li>
-<li>Sequential analysis to track effect trends as more participants were added.</li>
-<li>Post-hoc gender analyses using Bayesian one-sample t-tests to explore differences in micro-PK performance between males and females.</li>
-</ol>
-<p>Results showed no statistically significant support for micro-PK effects in either phase or the combined dataset. While initial descriptive trends in the first phase suggested a slight advantage for the experimental group, this disappeared in the replication. Bayesian factors (BF) consistently favored the null hypothesis (BF &lt; 1), indicating that observed variations were likely due to chance. However, exploratory gender analyses revealed that male participants exhibited a moderate trend toward higher red card selections (BF = 6.54), though this was not predicted by the original hypotheses.</p>
+<p>Sample size consisted of participants collected for an empirical course and a later continuation of a single student.</p>
+<p>For confirmatory analysis, we employed Bayesian statistical methods to assess evidence for our hypotheses while accounting for the small expected effect sizes typical in micro-PK research. Key analyses included:</p>
+<ul>
+<li>Bayesian independent-samples <em>t</em>-tests (one-tailed, Cauchy prior <em>r</em> = 0.1) to compare vitality between the delete and save conditions (Hypothesis 1) and to evaluate subjective recall of positive images (Hypothesis 4).<br>
+</li>
+<li>Bayesian one-sample <em>t</em>-tests to check whether the number of objectively received positive images exceeded chance (Hypothesis 5).<br>
+</li>
+<li>Bayesian Pearson correlations (stretched beta prior width = 0.1) to examine relationships between affect and objective/subjective image counts (Hypotheses 2 &amp; 3) and between vitality, implicit theory of willpower, and ego depletion (Hypotheses 6 &amp; 7).</li>
+</ul>
+<p>We also conducted exploratory analyses, including subgroup comparisons by gender and age, using the same Bayesian framework. Classical frequentist <em>t</em>-tests (α = .05) supplemented these analyses to estimate effect sizes (Cohen’s <em>d</em>).</p>
+<p>A Bayesian ANCOVA further explored how ego depletion and implicit willpower theories influenced vitality across conditions. All analyses were performed in JASP (v0.18.3), with Bayes Factors (BF₁₀) interpreted as follows:<br>
+- <em>BF₁₀ &gt; 10</em> → Strong evidence for the alternative hypothesis (H₁).<br>
+- <em>BF₁₀ &lt; 1/10</em> → Strong evidence for the null (H₀).<br>
+- <em>Values near 1</em> → Inconclusive results.</p>
+<p>Despite the robust design, most hypotheses yielded anecdotal-to-moderate evidence for H₀ suggesting no clear effects—though small trends in predicted directions left room for further investigation with larger samples.</p>
+</section>
+<section id="lab-report-data" class="level2">
+<h2 class="anchored" data-anchor-id="lab-report-data">Lab Report Data</h2>
+<p>For the lab report, only objective qRNG of the save-condition and no subjective estimates are included.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Data">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -506,7 +528,8 @@ Data
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="../data/willpower/willpower.csv">Download Data</a></li>
+<li><a href="../data/willpower/willpower.csv">Download All Data</a></li>
+<li><a href="../data/willpower/willpower-save.csv">Download Data of Save Condition</a></li>
 </ul>
 </div>
 </div>

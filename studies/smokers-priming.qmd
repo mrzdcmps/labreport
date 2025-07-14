@@ -49,10 +49,10 @@ The study used the standard analysis protocol for Micro-Pk studies which include
 Since this study was an add-on to a different smokers-related lab study conducted by another research group, the sample size was limited and not further extended after completion of the main study.
 
 ::: {.callout-tip title="Data" collapse="false"}
--   [Download Data](../data/erotic/erotic2.csvsmokers2/smokers-priming.csv)
+-   [Download Data](../data/smokers2/smokers-priming.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/smokers2/sm4.html)
--   [Stimuli](../data/erotic/erotic2.csvsmokers2/stimuli.zip)
+-   [Stimuli](../data/smokers2/stimuli.zip)
 :::

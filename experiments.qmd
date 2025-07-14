@@ -11,7 +11,7 @@ execute:
   warning: false
 ---
 
-Last update: 04 May 2020
+Last update: 14 July 2025
 
 ```{r}
 source("scripts/generate_table.R")
@@ -30,4 +30,4 @@ If an experiment is classified as an online study, it was set up with the softwa
 
 ### Procedural Details
 
-Please refer to the experimental programs attached to the resources of each study for all procedural details, like stimulus presentation timings, questionnaires, etc.
+Please refer to the experimental programs attached to the resources of each study for all procedural details, like stimulus presentation timings, questionnaires, etc. where not specified explicitly.

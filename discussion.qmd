@@ -3,7 +3,6 @@ title: "Discussion"
 format: 
   html:
     page-layout: full
-editor: visual
 toc: true
 page-navigation: true
 ---
@@ -23,6 +22,26 @@ study_objects <- ls(pattern = "^study")
 numbers <- as.numeric(gsub("study([0-9]+).*", "\\1", study_objects))
 max_number <- max(numbers)
 
+# Number of individual participants
+exclude_studies <- c(
+  "Monks T2 Exp",
+  "Monks T2 Con",
+  "Psyscanner Style 2 Exp",
+  "Psyscanner Style 2 Con",
+  "Psyscanner Style 3 Exp",
+  "Psyscanner Style 3 Con",
+  "Priming 1 Con",
+  "Priming 2 Con",
+  "Priming 3 Con",
+  "Priming 4 Con",
+  "Smokers Priming Con",
+  "Epsi Correlation Condition B",
+  "Schrödingers Cat Con"
+)
+
+n_participants <- sum(st[!(st$Study %in% exclude_studies), ]$N, na.rm = TRUE)
+
+
 #Frequentist m-a with metafor 
 library(metafor)
 
@@ -33,6 +52,10 @@ vi=exp$Var
 studies=exp$Study
 
 yi[which(studies == "Smokers 1 Exp")] <- -yi[which(studies == "Smokers 1 Exp")]
+yi[which(studies == "Smokers 2 Exp")] <- -yi[which(studies == "Smokers 2 Exp")]
+yi[which(studies == "Smokers 3")] <- -yi[which(studies == "Smokers 3")]
+yi[which(studies == "Baseline 1 Lucky")] <- -yi[which(studies == "Baseline 1 Lucky")]
+yi[which(studies == "Baseline 2")] <- -yi[which(studies == "Baseline 2")]
 
 res.e <- rma(
   yi,
@@ -47,6 +70,8 @@ con <- subset(st, Experimental == FALSE)
 yi=con$ES
 vi=con$Var
 studies=con$Study
+
+yi[which(studies == "Smokers 2 Con")] <- -yi[which(studies == "Smokers 2 Con")]
 
 res.c <- rma(
   yi,
@@ -84,7 +109,7 @@ options(scipen = 999)
 
 ## Summary of Results
 
-The meta-analytic assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses `{r} print(max_number)` studies with a total of `{r} nrow(subset(st, st$Experimental == TRUE))` experimental conditions and `{r} nrow(subset(st, st$Experimental == FALSE))` control conditions, including data from `{r} sum(st$N)` participants and reveals several key insights. Although individual studies included in this report often tested specific hypotheses, the meta-analysis focused on a general micro-PK effect to ensure comparability. Descriptions of the hypotheses for each study can be found in the respective [experiments](experiments.html) section.
+The meta-analytic assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses `{r} print(max_number)` studies with a total of `{r} nrow(subset(st, st$Experimental == TRUE))` experimental conditions and `{r} nrow(subset(st, st$Experimental == FALSE))` control conditions, including data from `{r} n_participants` individual participants and reveals several key insights. Although individual studies included in this report often tested specific hypotheses, the meta-analysis focused on a general micro-PK effect to ensure comparability. Descriptions of the hypotheses for each study can be found in the respective [experiments](experiments.html) section.
 
 The overall effect size for micro-PK was found to be non-significant (`{r} round(res.e$b,3)`, *p* = `{r} round(res.e$pval,3)`) across experimental conditions, with moderate heterogeneity (`{r} round(res.e$I2,2)`%). Similarly, control conditions showed no significant effect (`{r} round(res.c$b,3)`, *p* = `{r} round(res.c$pval,3)`). These results suggest that the experimental manipulations may not be robust enough to produce a consistently meaningful effect. The moderate heterogeneity in both analyses indicates variability due to study design or implementation differences, though the lack of significant heterogeneity in control conditions suggests that variability in experimental conditions is more likely due to differences in interventions.
 
