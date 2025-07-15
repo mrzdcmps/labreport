@@ -110,92 +110,55 @@ generate_table <- function(experiment_name) {
     )
 }
 
-# generate_table_all <- function() {
-#   st <- readRDS("data/overview2025-07-12.rds")
-#   
-#   # Make sure `links` is a named vector like: c("Study A" = "http://...", ...)
-#   # You can load or define `links` here or assume it’s in the global environment
-#   
-#   links <- setNames(links, st$Study)
-#   
-#   ft <- st %>%
-#     mutate(
-#       across(where(is.numeric), ~ round(., 2)),
-#       `Hits (%)` = formattable::color_tile("coral2", "cornflowerblue")(`Hits (%)`),
-#       p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
-#       Experimental = ifelse(Experimental, "✔", "✖"),
-#       Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
-#       Labstudy = ifelse(Labstudy, "🏠", "🌍"),
-#       Study = text_spec(Study, link = links[Study])  # Match by study name
-#       #Study = text_spec(Study, link = links)
-#     )
-#   
-#   kbl(ft, escape = FALSE,
-#       col.names = c("Study",
-#                     "Effect expected",
-#                     "N",
-#                     "Trials",
-#                     "M",
-#                     "SD",
-#                     "Hits (%)",
-#                     "t",
-#                     "p",
-#                     "ES",
-#                     "Var",
-#                     "BF",
-#                     "Direction",
-#                     "Year",
-#                     "Lab/Online"),
-#       align = "lcccccccccccccc") %>%
-#     kable_classic("hover") %>%
-#     kable_styling(
-#       fixed_thead = TRUE,
-#       html_font = "Arial",
-#       bootstrap_options = c("striped", "hover", "condensed")
-#     )
-# }
-# 
-# 
-# generate_table <- function(experiment_name) {
-#   load("../data/study_objects.RData", envir = .GlobalEnv)
-#   st <- readRDS("../data/overview2025-07-12.rds")
-#   
-#   ft <- st %>%
-#     filter(grepl(experiment_name, Study)) %>%
-#     mutate(
-#       across(where(is.numeric), ~ round(., 2)),
-#       `Hits (%)` = formattable::color_tile("coral2", "cornflowerblue")(`Hits (%)`),
-#       p = cell_spec(p, bold = ifelse(p < 0.05, TRUE, FALSE)),
-#       Experimental = ifelse(Experimental, "✔", "✖"),
-#       Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
-#       Labstudy = ifelse(Labstudy, "🏠", "🌍")
-#       # No Study = text_spec() here
-#     )
-#   
-#   kbl(ft, escape = FALSE,
-#       col.names = c("Study",
-#                     "Effect expected",
-#                     "N",
-#                     "Trials",
-#                     "M",
-#                     "SD",
-#                     "Hits (%)",
-#                     "t",
-#                     "p",
-#                     "ES",
-#                     "Var",
-#                     "BF",
-#                     "Direction",
-#                     "Year",
-#                     "Lab/Online"),
-#       align = "lcccccccccccccc") %>%
-#     kable_classic("hover") %>%
-#     kable_styling(
-#       fixed_thead = TRUE,
-#       html_font = "Arial",
-#       bootstrap_options = c("striped", "hover", "condensed")
-#     )
-# }
+generate_coe_table <- function() {
+  
+  coe <- readRDS("data/coe_2025-07-14.rds") %>%
+    select(
+      Study,
+      Experimental,
+      N,
+      MaxBF,
+      `MaxBF p`,
+      Energy,
+      `Energy p`,
+      `FFT Amplitude sum`,
+      `FFT p`,
+      Direction,
+      Labstudy
+    )
+  
+  # exclude games from links
+  links <- links[-which(links == "studies/games.html")]
+  links <- setNames(links, coe$Study)
+  
+  ft <- coe %>%
+    mutate(
+      across(where(is.numeric), ~ round(., 2)),
+      `MaxBF p` = cell_spec(`MaxBF p`, bold = ifelse(`MaxBF p` < 0.05, TRUE, FALSE)),
+      `Energy p` = cell_spec(`Energy p`, bold = ifelse(`Energy p` < 0.05, TRUE, FALSE)),
+      `FFT p` = cell_spec(`FFT p`, bold = ifelse(`FFT p` < 0.05, TRUE, FALSE)),
+      Experimental = ifelse(Experimental, "✔", "✖"),
+      Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
+      `Labstudy` = ifelse(Labstudy, "🏠", "🌍"),
+      Study = text_spec(Study, link = links[Study])
+    )
+  
+  kbl(ft, escape = F,
+      col.names = c("Study",
+                    "Effect expected",
+                    "N",
+                    "MaxBF",
+                    "p",
+                    "Energy",
+                    "p",
+                    "Asum",
+                    "p",
+                    "Direction",
+                    "Lab/Online"),
+      align = "lcccccccccc") %>%
+    kable_classic("hover", fixed_thead = T) %>%
+    add_header_above(c(" " = 3, "Max BF" = 2, "BF Energy" = 2, "FFT Amplitude sum" = 2, " " = 2))
+}
 
 
 

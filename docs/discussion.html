@@ -81,6 +81,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -209,20 +238,21 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>This section will be updated with each new release of the report.</p>
-<p>Current version: <em>Studies 2016 - 2020</em></p>
+<p>Current version: <em>Studies 2016 - 2025</em> (v2)</p>
 </div>
 </div>
 <section id="summary-of-results" class="level2">
 <h2 class="anchored" data-anchor-id="summary-of-results">Summary of Results</h2>
 <p>The meta-analytic assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses 27 studies with a total of 34 experimental conditions and 19 control conditions, including data from 45787 individual participants and reveals several key insights. Although individual studies included in this report often tested specific hypotheses, the meta-analysis focused on a general micro-PK effect to ensure comparability. Descriptions of the hypotheses for each study can be found in the respective <a href="experiments.html">experiments</a> section.</p>
-<p>The overall effect size for micro-PK was found to be non-significant (0.016, <em>p</em> = 0.072) across experimental conditions, with moderate heterogeneity (36.71%). Similarly, control conditions showed no significant effect (-0.008, <em>p</em> = 0.308). These results suggest that the experimental manipulations may not be robust enough to produce a consistently meaningful effect. The moderate heterogeneity in both analyses indicates variability due to study design or implementation differences, though the lack of significant heterogeneity in control conditions suggests that variability in experimental conditions is more likely due to differences in interventions.</p>
+<p>The overall effect size for micro-PK was found to be marginally significant (0.016, <em>p</em> = 0.072) across experimental conditions, with moderate heterogeneity (36.71%). Control conditions showed no significant effect (-0.008, <em>p</em> = 0.308) with low heterogeneity (23.1%). These results suggest that while the experimental manipulations may produce a weak effect, it is not robust enough to reach conventional significance levels. The moderate heterogeneity in experimental conditions compared to the low heterogeneity in control conditions indicates that variability is more likely due to differences in interventions rather than methodological factors.</p>
 </section>
 <section id="change-of-evidence-measures" class="level2">
 <h2 class="anchored" data-anchor-id="change-of-evidence-measures">Change of Evidence Measures</h2>
 <p>Since Psi-effects may be influenced by the accumulation of evidence over time, new measures have been devised to analyze how this <a href="coe-measures.html">evidence changes</a>. By comparing these results to simulations, empirical p-values can be calculated. A meta-analytic assessment of these change-of-evidence measures was conducted using the inverse chi-square <code>invchisq</code>-function to combine p-values across studies. Three characteristics were analyzed: Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve’s Fast Fourier Transform (FFT).</p>
-<p>For all experimental conditions, the combined chi-square statistics were calculated with 35571 degrees of freedom, yielding the following results: 36155.12 for the Maximum BF (<em>p</em> = 0.015), 36096.14 for the BF Energy (<em>p</em> = 0.025) and 36174.83 for the FFT amplitude sum (<em>p</em> = 0.012).</p>
-<p>The analysis of change of evidence measures demonstrated statistically significant results for experimental conditions, suggesting that observed evidence changes are unlikely due to random variation. This could be the result of a volatile micro-PK effect. The tests are robust to using methods that do or do not account for varying sample sizes, thus addressing potential issues of overweighting studies that show a noticeable BF early on and whose data collection is extended.</p>
-<p>In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results in experimental conditions do not necessarily translate into a substantial overall effect, as no significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence are not likely due to random variation.</p>
+<p>For all experimental conditions, the combined chi-square statistics were calculated with 41493 degrees of freedom, yielding the following results: 41336.33 for the Maximum BF (<em>p</em> = 0.706), 42142.89 for the BF Energy (<em>p</em> = 0.012) and 42011.57 for the FFT amplitude sum (<em>p</em> = 0.036).</p>
+<p>The analysis of change of evidence measures revealed mixed results for experimental conditions. While the Maximum BF showed no significant deviation from chance expectations (<em>p</em> = 0.706), both BF Energy (<em>p</em> = 0.012) and FFT amplitude sum (<em>p</em> = 0.036) demonstrated statistically significant results. This pattern suggests that while the peak evidence accumulation may not differ substantially from simulated data, the overall energy and frequency characteristics of evidence changes show systematic deviations from random variation. The assignment of <span class="math inline">\(p_{MaxBF} = 1\)</span> to studies in the direction of H0 (MaxBF = 1) might be responsible for the difference and suggests that the MaxBF criterion could be limited.</p>
+<p>Nonetheless, the significant findings for BF Energy and FFT amplitude sum indicate the presence of a subtle but detectable pattern in how evidence accumulates over time in experimental conditions, potentially reflecting a volatile micro-PK effect that manifests not as consistent directional changes but as systematic alterations in the dynamics of evidence accumulation. The tests are robust to using methods that do or do not account for varying sample sizes, thus addressing potential issues of overweighting studies that show a noticeable BF early on and whose data collection is extended.</p>
+<p>In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results for two of the three measures in experimental conditions do not necessarily translate into a substantial overall effect, as only a marginally significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence accumulation patterns are not likely due to random variation alone, suggesting that experimental manipulations may influence the temporal dynamics of evidence accumulation even when they do not produce detectable overall effects.</p>
 </section>
 <section id="addressing-publication-bias" class="level2">
 <h2 class="anchored" data-anchor-id="addressing-publication-bias">Addressing Publication Bias</h2>
@@ -230,12 +260,14 @@ Note
 </section>
 <section id="implications-of-findings" class="level2">
 <h2 class="anchored" data-anchor-id="implications-of-findings">Implications of Findings</h2>
-<p>The significant change of evidence measures in experimental conditions suggest dynamic factors influencing evidence accumulation. According to the Model of Pragmatic Information, novel, autonomous effects may decrease in detectability over time. This model may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.</p>
-<p>Despite these insights, the non-significant overall effect size indicates that micro-PK interventions, as tested, may not consistently produce a robust effect. Future research should focus on refining experimental designs, replicating studies, and exploring the underlying mechanisms of micro-PK effects to establish more consistent evidence.</p>
+<p>The significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions suggest dynamic factors influencing evidence accumulation patterns. This goes hand in hand with theories about decline effects in (parapsychologcial) science. E.g., the Model of Pragmatic Information suggests that novel, autonomous effects may decrease in detectability over time. It may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.</p>
+<p>Weak and volatile effects are often observed in parapsychological research, exemplified by failed direct replications, a phenomenon known as the decline effect. This pattern is not unique to Psi research but has been documented in other scientific areas as well. The change of evidence measures presented here might offer a fruitful approach to identify decline patterns within individual studies and differentiate between false positives combined with regression to the mean versus genuine effect-plus-decline patterns.</p>
+<p>The marginally significant overall effect size (<em>p</em> = 0.072) suggests that micro-PK interventions may produce a weak but detectable effect, though not at conventional significance levels. This finding, combined with the significant change of evidence measures, indicates that while micro-PK effects may be present, they are subtle and may manifest primarily through alterations in evidence accumulation dynamics rather than consistent directional effects. Future research should focus on refining experimental designs, replicating studies, and exploring the underlying mechanisms of micro-PK effects to establish more robust evidence.</p>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>While our meta-analysis at this point in time did not demonstrate a statistically significant effect of micro-PK interventions, the significant change of evidence measures in experimental conditions indicate that the phenomena observed are not purely due to chance. Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.</p>
+<p>While our meta-analysis demonstrated only a marginally significant effect of micro-PK interventions (p = 0.072), the significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions indicate that the phenomena observed are not purely due to chance. These findings suggest that micro-PK effects, while subtle, may influence the temporal dynamics of evidence accumulation in ways that traditional effect size measures might not fully capture.</p>
+<p>Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Particular attention should be given to understanding the mechanisms underlying the observed changes in evidence accumulation patterns. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.</p>
 <p>We would like to additionally encourage the scientific community to follow this example of transparent reporting and data sharing to enhance the reproducibility and reliability of research findings in the field of parapsychology and related disciplines and to counteract publication bias and selective reporting practices.</p>
 
 

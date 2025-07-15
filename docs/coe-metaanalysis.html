@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Last update: 04 May 2020</p>
+<p>Last update: 14 July 2025</p>
 <section id="meta-analysis-of-change-of-evidence-measures" class="level2">
 <h2 class="anchored" data-anchor-id="meta-analysis-of-change-of-evidence-measures">Meta-Analysis of Change of Evidence Measures</h2>
 <p>In these meta-analyses, we will analyze the overall significance of the change of evidence-measures in all experimental and control studies. Since we don’t have effect sizes for these measures, we will combine the empirical p-values of the studies, this means, we will analyze the amount of simulations that show an equal or higher value in the maxbf, energybf, and frequency tests than the empirical BF.</p>
@@ -233,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>presence</strong> of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>coe <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/coe.rds"</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>coe <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/coe_2025-07-14.rds"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Select studies / conditions</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">subset</span>(coe, coe<span class="sc">$</span>Experimental <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
@@ -243,17 +243,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 2%">
-<col style="width: 17%">
-<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 8%">
 <col style="width: 4%">
-<col style="width: 11%">
+<col style="width: 4%">
 <col style="width: 6%">
+<col style="width: 10%">
+<col style="width: 5%">
 <col style="width: 9%">
 <col style="width: 6%">
-<col style="width: 13%">
+<col style="width: 12%">
 <col style="width: 4%">
-<col style="width: 7%">
 <col style="width: 6%">
+<col style="width: 3%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -261,6 +263,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: left;">Study</th>
 <th style="text-align: left;">Experimental</th>
 <th style="text-align: right;">N</th>
+<th style="text-align: left;">Trials</th>
+<th style="text-align: left;">Labstudy</th>
 <th style="text-align: left;">MaxBF</th>
 <th style="text-align: right;">MaxBF p</th>
 <th style="text-align: right;">Energy</th>
@@ -268,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: right;">FFT Amplitude sum</th>
 <th style="text-align: right;">FFT p</th>
 <th style="text-align: left;">Direction</th>
-<th style="text-align: left;">Labstudy</th>
+<th style="text-align: right;">Year</th>
 </tr>
 </thead>
 <tbody>
@@ -277,344 +281,548 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">Loving Kind</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">171</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">4.16 (n=32)</td>
 <td style="text-align: right;">0.113</td>
-<td style="text-align: right;">17.332366</td>
+<td style="text-align: right;">17.3323658</td>
 <td style="text-align: right;">0.155</td>
-<td style="text-align: right;">3.223027</td>
+<td style="text-align: right;">3.2230266</td>
 <td style="text-align: right;">0.120</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Prayer</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">431</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1.44 (n=17)</td>
 <td style="text-align: right;">0.481</td>
-<td style="text-align: right;">-269.852281</td>
+<td style="text-align: right;">-269.8522810</td>
 <td style="text-align: right;">0.723</td>
-<td style="text-align: right;">1.415288</td>
+<td style="text-align: right;">1.4152882</td>
 <td style="text-align: right;">0.481</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">Monks T1 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">23</td>
-<td style="text-align: left;">1.98 (n=22)</td>
-<td style="text-align: right;">0.150</td>
-<td style="text-align: right;">6.443314</td>
-<td style="text-align: right;">0.106</td>
-<td style="text-align: right;">1.813206</td>
-<td style="text-align: right;">0.133</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">400</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.98 (n=22)</td>
+<td style="text-align: right;">0.139</td>
+<td style="text-align: right;">6.4433144</td>
+<td style="text-align: right;">0.109</td>
+<td style="text-align: right;">1.8132058</td>
+<td style="text-align: right;">0.124</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">Monks T2 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">23</td>
-<td style="text-align: left;">1.74 (n=14)</td>
-<td style="text-align: right;">0.196</td>
-<td style="text-align: right;">4.114508</td>
-<td style="text-align: right;">0.145</td>
-<td style="text-align: right;">1.535508</td>
-<td style="text-align: right;">0.195</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">400</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.74 (n=14)</td>
+<td style="text-align: right;">0.169</td>
+<td style="text-align: right;">4.1145076</td>
+<td style="text-align: right;">0.136</td>
+<td style="text-align: right;">1.5355084</td>
+<td style="text-align: right;">0.176</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">Meditation T2</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">48</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1.74 (n=4)</td>
 <td style="text-align: right;">0.248</td>
-<td style="text-align: right;">-13.477604</td>
+<td style="text-align: right;">-13.4776043</td>
 <td style="text-align: right;">0.571</td>
-<td style="text-align: right;">1.336472</td>
+<td style="text-align: right;">1.3364722</td>
 <td style="text-align: right;">0.324</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">9</td>
 <td style="text-align: left;">Sound preference</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">70</td>
-<td style="text-align: left;">1.27 (n=53)</td>
-<td style="text-align: right;">0.455</td>
-<td style="text-align: right;">-1.286672</td>
-<td style="text-align: right;">0.230</td>
-<td style="text-align: right;">1.344490</td>
-<td style="text-align: right;">0.361</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">40</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.27 (n=53)</td>
+<td style="text-align: right;">0.502</td>
+<td style="text-align: right;">-1.2866724</td>
+<td style="text-align: right;">0.310</td>
+<td style="text-align: right;">1.3444904</td>
+<td style="text-align: right;">0.413</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">All-will-be-good</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">38</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">1.77 (n=5)</td>
 <td style="text-align: right;">0.233</td>
-<td style="text-align: right;">-9.020942</td>
+<td style="text-align: right;">-9.0209420</td>
 <td style="text-align: right;">0.539</td>
-<td style="text-align: right;">1.431673</td>
+<td style="text-align: right;">1.4316730</td>
 <td style="text-align: right;">0.267</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">11</td>
 <td style="text-align: left;">One-armed Bandit</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">40</td>
-<td style="text-align: left;">4.15 (n=24)</td>
-<td style="text-align: right;">0.051</td>
-<td style="text-align: right;">44.754281</td>
-<td style="text-align: right;">0.031</td>
-<td style="text-align: right;">3.872203</td>
-<td style="text-align: right;">0.041</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">200</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">4.15 (n=24)</td>
+<td style="text-align: right;">0.053</td>
+<td style="text-align: right;">44.7542814</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">3.8722029</td>
+<td style="text-align: right;">0.036</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">12</td>
 <td style="text-align: left;">Coin Toss</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">40</td>
-<td style="text-align: left;">1.15 (n=17)</td>
-<td style="text-align: right;">0.512</td>
-<td style="text-align: right;">-2.651081</td>
-<td style="text-align: right;">0.310</td>
-<td style="text-align: right;">1.198054</td>
-<td style="text-align: right;">0.418</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">200</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.15 (n=17)</td>
+<td style="text-align: right;">0.494</td>
+<td style="text-align: right;">-2.6510812</td>
+<td style="text-align: right;">0.309</td>
+<td style="text-align: right;">1.1980540</td>
+<td style="text-align: right;">0.415</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">13</td>
 <td style="text-align: left;">Incongruence Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">236</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">10.72 (n=153)</td>
-<td style="text-align: right;">0.038</td>
-<td style="text-align: right;">564.279423</td>
-<td style="text-align: right;">0.018</td>
-<td style="text-align: right;">9.885522</td>
-<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">0.034</td>
+<td style="text-align: right;">564.2794225</td>
+<td style="text-align: right;">0.014</td>
+<td style="text-align: right;">9.8855220</td>
+<td style="text-align: right;">0.023</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">15</td>
 <td style="text-align: left;">Smokers 1 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">122</td>
-<td style="text-align: left;">66.06 (n=122)</td>
-<td style="text-align: right;">0.008</td>
-<td style="text-align: right;">497.532426</td>
-<td style="text-align: right;">0.012</td>
-<td style="text-align: right;">44.307712</td>
-<td style="text-align: right;">0.009</td>
-<td style="text-align: left;">different</td>
+<td style="text-align: left;">400</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">66.06 (n=122)</td>
+<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">497.5324261</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">44.3077124</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: left;">different</td>
+<td style="text-align: right;">2015</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">17</td>
 <td style="text-align: left;">Smokers 2 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">175</td>
-<td style="text-align: left;">10.19 (n=7)</td>
-<td style="text-align: right;">0.052</td>
-<td style="text-align: right;">-59.180724</td>
-<td style="text-align: right;">0.119</td>
-<td style="text-align: right;">6.991435</td>
-<td style="text-align: right;">0.055</td>
-<td style="text-align: left;">less</td>
+<td style="text-align: left;">400</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">10.19 (n=7)</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">-59.1807244</td>
+<td style="text-align: right;">0.117</td>
+<td style="text-align: right;">6.9914349</td>
+<td style="text-align: right;">0.052</td>
+<td style="text-align: left;">less</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">19</td>
 <td style="text-align: left;">Smokers 3</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">203</td>
-<td style="text-align: left;">1.89 (n=3)</td>
-<td style="text-align: right;">0.283</td>
-<td style="text-align: right;">-130.013155</td>
-<td style="text-align: right;">0.289</td>
-<td style="text-align: right;">1.306952</td>
-<td style="text-align: right;">0.340</td>
-<td style="text-align: left;">less</td>
+<td style="text-align: left;">400</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.89 (n=3)</td>
+<td style="text-align: right;">0.248</td>
+<td style="text-align: right;">-130.0131545</td>
+<td style="text-align: right;">0.259</td>
+<td style="text-align: right;">1.3069516</td>
+<td style="text-align: right;">0.298</td>
+<td style="text-align: left;">less</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">20</td>
 <td style="text-align: left;">Psyscanner Style 1 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">1400</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">12.92 (n=825)</td>
 <td style="text-align: right;">0.041</td>
-<td style="text-align: right;">4219.990983</td>
+<td style="text-align: right;">4219.9909834</td>
 <td style="text-align: right;">0.017</td>
-<td style="text-align: right;">17.408978</td>
+<td style="text-align: right;">17.4089785</td>
 <td style="text-align: right;">0.024</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">22</td>
 <td style="text-align: left;">Psyscanner Style 2 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">1308</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">3.2 (n=355)</td>
 <td style="text-align: right;">0.234</td>
-<td style="text-align: right;">-100.586634</td>
+<td style="text-align: right;">-100.5866340</td>
 <td style="text-align: right;">0.185</td>
-<td style="text-align: right;">3.625750</td>
+<td style="text-align: right;">3.6257502</td>
 <td style="text-align: right;">0.202</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">24</td>
 <td style="text-align: left;">Psyscanner Style 3 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">1462</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">2.39 (n=187)</td>
 <td style="text-align: right;">0.341</td>
-<td style="text-align: right;">-335.853817</td>
+<td style="text-align: right;">-335.8538173</td>
 <td style="text-align: right;">0.241</td>
-<td style="text-align: right;">2.955509</td>
+<td style="text-align: right;">2.9555095</td>
 <td style="text-align: right;">0.261</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">26</td>
 <td style="text-align: left;">Relaxation</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">12571</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">7.44 (n=380)</td>
 <td style="text-align: right;">0.110</td>
-<td style="text-align: right;">-6613.797389</td>
+<td style="text-align: right;">-6613.7973890</td>
 <td style="text-align: right;">0.110</td>
-<td style="text-align: right;">7.517862</td>
+<td style="text-align: right;">7.5178618</td>
 <td style="text-align: right;">0.093</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">27</td>
 <td style="text-align: left;">Priming 1 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">4092</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">28.78 (n=1680)</td>
 <td style="text-align: right;">0.023</td>
-<td style="text-align: right;">13019.985027</td>
+<td style="text-align: right;">13019.9850265</td>
 <td style="text-align: right;">0.019</td>
-<td style="text-align: right;">32.312257</td>
+<td style="text-align: right;">32.3122569</td>
 <td style="text-align: right;">0.020</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">29</td>
 <td style="text-align: left;">Priming 2 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">2063</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1.15 (n=21)</td>
 <td style="text-align: right;">0.767</td>
-<td style="text-align: right;">-1698.465345</td>
+<td style="text-align: right;">-1698.4653454</td>
 <td style="text-align: right;">0.903</td>
-<td style="text-align: right;">1.166660</td>
+<td style="text-align: right;">1.1666602</td>
 <td style="text-align: right;">0.868</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">31</td>
 <td style="text-align: left;">Priming 3 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">6099</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1.01 (n=28)</td>
 <td style="text-align: right;">0.868</td>
-<td style="text-align: right;">-5344.888154</td>
+<td style="text-align: right;">-5344.8881540</td>
 <td style="text-align: right;">0.826</td>
-<td style="text-align: right;">1.222472</td>
+<td style="text-align: right;">1.2224719</td>
 <td style="text-align: right;">0.844</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2019</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">33</td>
 <td style="text-align: left;">Priming 4 Exp</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">4060</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1.65 (n=11)</td>
 <td style="text-align: right;">0.539</td>
-<td style="text-align: right;">-3516.542596</td>
+<td style="text-align: right;">-3516.5425960</td>
 <td style="text-align: right;">0.884</td>
-<td style="text-align: right;">1.501313</td>
+<td style="text-align: right;">1.5013128</td>
 <td style="text-align: right;">0.656</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2020</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">35</td>
 <td style="text-align: left;">Erotic Images 1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">241</td>
-<td style="text-align: left;">1.39 (n=111)</td>
-<td style="text-align: right;">0.487</td>
-<td style="text-align: right;">-54.619823</td>
-<td style="text-align: right;">0.282</td>
-<td style="text-align: right;">1.426101</td>
-<td style="text-align: right;">0.429</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">200</td>
 <td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1.39 (n=111)</td>
+<td style="text-align: right;">0.492</td>
+<td style="text-align: right;">-54.6198230</td>
+<td style="text-align: right;">0.288</td>
+<td style="text-align: right;">1.4261007</td>
+<td style="text-align: right;">0.446</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">36</td>
 <td style="text-align: left;">Erotic Images 2</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">678</td>
-<td style="text-align: left;">5.24 (n=363)</td>
-<td style="text-align: right;">0.115</td>
-<td style="text-align: right;">482.409201</td>
-<td style="text-align: right;">0.059</td>
-<td style="text-align: right;">5.292795</td>
-<td style="text-align: right;">0.099</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">50</td>
 <td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">5.24 (n=363)</td>
+<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">482.4092013</td>
+<td style="text-align: right;">0.053</td>
+<td style="text-align: right;">5.2927945</td>
+<td style="text-align: right;">0.101</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">37</td>
+<td style="text-align: left;">Smokers Priming Exp</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.76 (n=4)</td>
+<td style="text-align: right;">0.203</td>
+<td style="text-align: right;">-0.2905169</td>
+<td style="text-align: right;">0.345</td>
+<td style="text-align: right;">1.5031201</td>
+<td style="text-align: right;">0.248</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">44</td>
+<td style="text-align: left;">Robots</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">2.28 (n=13)</td>
+<td style="text-align: right;">0.150</td>
+<td style="text-align: right;">10.8768366</td>
+<td style="text-align: right;">0.113</td>
+<td style="text-align: right;">2.1187153</td>
+<td style="text-align: right;">0.125</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">Schrödingers Cat Exp</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">285</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1 (n=1)</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">-212.2066205</td>
+<td style="text-align: right;">0.986</td>
+<td style="text-align: right;">0.8261145</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">46</td>
+<td style="text-align: left;">Schrödingers Cat Con</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">285</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1.87 (n=104)</td>
+<td style="text-align: right;">0.327</td>
+<td style="text-align: right;">-15.6696056</td>
+<td style="text-align: right;">0.172</td>
+<td style="text-align: right;">1.9681821</td>
+<td style="text-align: right;">0.279</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">47</td>
+<td style="text-align: left;">Desire</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">201</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1.45 (n=14)</td>
+<td style="text-align: right;">0.440</td>
+<td style="text-align: right;">-41.5934015</td>
+<td style="text-align: right;">0.282</td>
+<td style="text-align: right;">1.5823083</td>
+<td style="text-align: right;">0.352</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">Stories</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">766</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">2.18 (n=207)</td>
+<td style="text-align: right;">0.305</td>
+<td style="text-align: right;">-39.9578792</td>
+<td style="text-align: right;">0.129</td>
+<td style="text-align: right;">2.7597607</td>
+<td style="text-align: right;">0.195</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">Willpower</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">703</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">15.68 (n=58)</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">193.4717104</td>
+<td style="text-align: right;">0.126</td>
+<td style="text-align: right;">10.2119849</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">Baseline 1 Lucky</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">801</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">13.21 (n=627)</td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">1588.9475978</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">14.5909943</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: left;">less</td>
+<td style="text-align: right;">2024</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">Baseline 1 Unlucky</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">725</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1 (n=1)</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">-518.3810925</td>
+<td style="text-align: right;">0.810</td>
+<td style="text-align: right;">0.9199984</td>
+<td style="text-align: right;">0.960</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">Baseline 2</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2094</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">4.04 (n=6)</td>
+<td style="text-align: right;">0.161</td>
+<td style="text-align: right;">-1539.0855934</td>
+<td style="text-align: right;">0.615</td>
+<td style="text-align: right;">2.3741518</td>
+<td style="text-align: right;">0.280</td>
+<td style="text-align: left;">less</td>
+<td style="text-align: right;">2024</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Paket 'metap' wurde unter R Version 4.5.1 erstellt</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>istwo <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(data<span class="sc">$</span>Direction <span class="sc">==</span> <span class="st">"different"</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>) <span class="co"># two-tailed test</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> data<span class="sc">$</span>N<span class="dv">-1</span> <span class="co"># degrees of freedom</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>istwo <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(data<span class="sc">$</span>Direction <span class="sc">==</span> <span class="st">"different"</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>) <span class="co"># two-tailed test</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> data<span class="sc">$</span>N<span class="dv">-1</span> <span class="co"># degrees of freedom</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="max-bf" class="level3">
 <h3 class="anchored" data-anchor-id="max-bf">Max BF</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  36155.12  with df =  35571  p =  0.01460616 </code></pre>
+<pre><code>chisq =  41336.33  with df =  41493  p =  0.706167 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -627,14 +835,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="bf-energy" class="level3">
 <h3 class="anchored" data-anchor-id="bf-energy">BF Energy</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  36096.14  with df =  35571  p =  0.0248961 </code></pre>
+<pre><code>chisq =  42142.89  with df =  41493  p =  0.01233156 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -647,14 +855,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fft-amplitude-sum" class="level3">
 <h3 class="anchored" data-anchor-id="fft-amplitude-sum">FFT Amplitude Sum</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  36174.83  with df =  35571  p =  0.01210754 </code></pre>
+<pre><code>chisq =  42011.57  with df =  41493  p =  0.03632617 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -668,23 +876,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="robustness-to-sample-sizes">Robustness to Sample Sizes</h3>
 <p>In comparison to the inverse chi-square method, which weights each p-value by its degree of freedom and therefor its sample size, Fisher’s method combines p-values by taking the sum of their logarithms and then comparing them to a chi-square distribution. This method is less sensitive to sample sizes and can be used as a robustness check countering arguments of selectively continuing data collection of studies with a noticeable BF.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Max BF</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Max BF</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>chisq =  116.8555  with df =  66  p =  0.0001159669 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Energy BF</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  84.68508  with df =  46  p =  0.0004450107 </code></pre>
+<pre><code>chisq =  120.4762  with df =  66  p =  4.881634e-05 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Energy BF</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#FFT Amplitude Sum</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  88.05687  with df =  46  p =  0.000187993 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#FFT Amplitude Sum</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>chisq =  87.62367  with df =  46  p =  0.0002103507 </code></pre>
+<pre><code>chisq =  121.2422  with df =  66  p =  4.051184e-05 </code></pre>
 </div>
 </div>
 </section>
@@ -692,24 +900,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the <strong>absence</strong> of an effect. In studies comparing experimental to control conditions, only the control conditions are included.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select studies / conditions</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">subset</span>(coe, coe<span class="sc">$</span>Experimental <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select studies / conditions</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">subset</span>(coe, coe<span class="sc">$</span>Experimental <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 2%">
-<col style="width: 17%">
-<col style="width: 10%">
+<col style="width: 19%">
+<col style="width: 8%">
 <col style="width: 3%">
-<col style="width: 10%">
-<col style="width: 6%">
-<col style="width: 10%">
-<col style="width: 6%">
-<col style="width: 13%">
 <col style="width: 4%">
-<col style="width: 7%">
 <col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 12%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 3%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -717,6 +927,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: left;">Study</th>
 <th style="text-align: left;">Experimental</th>
 <th style="text-align: right;">N</th>
+<th style="text-align: left;">Trials</th>
+<th style="text-align: left;">Labstudy</th>
 <th style="text-align: left;">MaxBF</th>
 <th style="text-align: right;">MaxBF p</th>
 <th style="text-align: right;">Energy</th>
@@ -724,7 +936,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: right;">FFT Amplitude sum</th>
 <th style="text-align: right;">FFT p</th>
 <th style="text-align: left;">Direction</th>
-<th style="text-align: left;">Labstudy</th>
+<th style="text-align: right;">Year</th>
 </tr>
 </thead>
 <tbody>
@@ -733,34 +945,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">Monks T1 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">29</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">1 (n=1)</td>
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">-9.659564</td>
-<td style="text-align: right;">0.792</td>
+<td style="text-align: right;">0.786</td>
 <td style="text-align: right;">0.9418921</td>
-<td style="text-align: right;">0.895</td>
+<td style="text-align: right;">0.899</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">Monks T2 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">29</td>
-<td style="text-align: left;">1.18 (n=7)</td>
-<td style="text-align: right;">0.445</td>
-<td style="text-align: right;">-5.080576</td>
-<td style="text-align: right;">0.472</td>
-<td style="text-align: right;">1.0954834</td>
-<td style="text-align: right;">0.475</td>
-<td style="text-align: left;">greater</td>
+<td style="text-align: left;">400</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.18 (n=7)</td>
+<td style="text-align: right;">0.440</td>
+<td style="text-align: right;">-5.080576</td>
+<td style="text-align: right;">0.469</td>
+<td style="text-align: right;">1.0954834</td>
+<td style="text-align: right;">0.495</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">7</td>
 <td style="text-align: left;">Meditation T1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">40</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1 (n=1)</td>
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">-17.858023</td>
@@ -768,97 +986,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.8598144</td>
 <td style="text-align: right;">1.000</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">14</td>
 <td style="text-align: left;">Incongruence Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">271</td>
-<td style="text-align: left;">1.17 (n=125)</td>
-<td style="text-align: right;">0.616</td>
-<td style="text-align: right;">-89.808184</td>
-<td style="text-align: right;">0.405</td>
-<td style="text-align: right;">1.2501113</td>
-<td style="text-align: right;">0.525</td>
-<td style="text-align: left;">different</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">2.1 (n=125)</td>
+<td style="text-align: right;">0.289</td>
+<td style="text-align: right;">-7.056369</td>
+<td style="text-align: right;">0.171</td>
+<td style="text-align: right;">2.0230283</td>
+<td style="text-align: right;">0.265</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2017</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">16</td>
 <td style="text-align: left;">Smokers 1 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">132</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">1 (n=1)</td>
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">-99.068118</td>
-<td style="text-align: right;">0.986</td>
+<td style="text-align: right;">0.987</td>
 <td style="text-align: right;">0.8035244</td>
-<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.999</td>
 <td style="text-align: left;">different</td>
-<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">2015</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">18</td>
 <td style="text-align: left;">Smokers 2 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">220</td>
-<td style="text-align: left;">3.56 (n=10)</td>
-<td style="text-align: right;">0.155</td>
-<td style="text-align: right;">-138.717494</td>
-<td style="text-align: right;">0.285</td>
-<td style="text-align: right;">2.2931728</td>
-<td style="text-align: right;">0.177</td>
-<td style="text-align: left;">different</td>
+<td style="text-align: left;">400</td>
 <td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">6.97 (n=10)</td>
+<td style="text-align: right;">0.080</td>
+<td style="text-align: right;">-80.293313</td>
+<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">4.4652477</td>
+<td style="text-align: right;">0.086</td>
+<td style="text-align: left;">less</td>
+<td style="text-align: right;">2016</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">21</td>
 <td style="text-align: left;">Psyscanner Style 1 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1003</td>
-<td style="text-align: left;">1 (n=1)</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">-506.646162</td>
-<td style="text-align: right;">0.570</td>
-<td style="text-align: right;">1.0942438</td>
-<td style="text-align: right;">0.977</td>
-<td style="text-align: left;">different</td>
+<td style="text-align: left;">30</td>
 <td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1.12 (n=2)</td>
+<td style="text-align: right;">0.735</td>
+<td style="text-align: right;">-483.528052</td>
+<td style="text-align: right;">0.449</td>
+<td style="text-align: right;">1.2492501</td>
+<td style="text-align: right;">0.755</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">23</td>
 <td style="text-align: left;">Psyscanner Style 2 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1095</td>
-<td style="text-align: left;">5.91 (n=936)</td>
-<td style="text-align: right;">0.105</td>
-<td style="text-align: right;">1012.370693</td>
-<td style="text-align: right;">0.054</td>
-<td style="text-align: right;">6.7424289</td>
-<td style="text-align: right;">0.080</td>
-<td style="text-align: left;">different</td>
+<td style="text-align: left;">30</td>
 <td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">7.84 (n=936)</td>
+<td style="text-align: right;">0.087</td>
+<td style="text-align: right;">1605.391713</td>
+<td style="text-align: right;">0.042</td>
+<td style="text-align: right;">9.0438404</td>
+<td style="text-align: right;">0.060</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">25</td>
 <td style="text-align: left;">Psyscanner Style 3 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">941</td>
-<td style="text-align: left;">2.91 (n=17)</td>
-<td style="text-align: right;">0.234</td>
-<td style="text-align: right;">-530.178690</td>
-<td style="text-align: right;">0.823</td>
-<td style="text-align: right;">1.9538020</td>
-<td style="text-align: right;">0.355</td>
-<td style="text-align: left;">different</td>
+<td style="text-align: left;">30</td>
 <td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">3.72 (n=17)</td>
+<td style="text-align: right;">0.181</td>
+<td style="text-align: right;">-572.637818</td>
+<td style="text-align: right;">0.637</td>
+<td style="text-align: right;">2.4770702</td>
+<td style="text-align: right;">0.298</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">28</td>
 <td style="text-align: left;">Priming 1 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">4092</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1.38 (n=58)</td>
 <td style="text-align: right;">0.648</td>
 <td style="text-align: right;">-3306.742875</td>
@@ -866,13 +1098,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.3074276</td>
 <td style="text-align: right;">0.768</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">30</td>
 <td style="text-align: left;">Priming 2 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2063</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1 (n=1)</td>
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">-1611.962028</td>
@@ -880,13 +1114,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.9568926</td>
 <td style="text-align: right;">0.994</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2018</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">32</td>
 <td style="text-align: left;">Priming 3 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">6099</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1 (n=1)</td>
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">-5561.551895</td>
@@ -894,13 +1130,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.0836289</td>
 <td style="text-align: right;">0.955</td>
 <td style="text-align: left;">greater</td>
-<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2019</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">34</td>
 <td style="text-align: left;">Priming 4 Con</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">4060</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
 <td style="text-align: left;">1.56 (n=5)</td>
 <td style="text-align: right;">0.562</td>
 <td style="text-align: right;">-3668.203466</td>
@@ -908,25 +1146,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.3702124</td>
 <td style="text-align: right;">0.732</td>
 <td style="text-align: left;">greater</td>
+<td style="text-align: right;">2020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">Smokers Priming Con</td>
 <td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">1.88 (n=6)</td>
+<td style="text-align: right;">0.164</td>
+<td style="text-align: right;">1.791793</td>
+<td style="text-align: right;">0.287</td>
+<td style="text-align: right;">1.5536720</td>
+<td style="text-align: right;">0.227</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">39</td>
+<td style="text-align: left;">Sobjectivity 1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">898</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1.41 (n=2)</td>
+<td style="text-align: right;">0.580</td>
+<td style="text-align: right;">-663.231171</td>
+<td style="text-align: right;">0.893</td>
+<td style="text-align: right;">1.1422082</td>
+<td style="text-align: right;">0.853</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">Sobjectivity 2</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">986</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1 (n=1)</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">-775.260879</td>
+<td style="text-align: right;">0.954</td>
+<td style="text-align: right;">0.9212182</td>
+<td style="text-align: right;">0.994</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">41</td>
+<td style="text-align: left;">Sobjectivity 3</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">1503</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">56.51 (n=56)</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">975.793930</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">47.2555391</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2023</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">Epsi Correlation Condition A</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2052</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">1.6 (n=78)</td>
+<td style="text-align: right;">0.529</td>
+<td style="text-align: right;">-1574.744262</td>
+<td style="text-align: right;">0.765</td>
+<td style="text-align: right;">1.4901842</td>
+<td style="text-align: right;">0.631</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">Epsi Correlation Condition B</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2052</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">2.47 (n=8)</td>
+<td style="text-align: right;">0.322</td>
+<td style="text-align: right;">-1578.129000</td>
+<td style="text-align: right;">0.769</td>
+<td style="text-align: right;">2.1287147</td>
+<td style="text-align: right;">0.399</td>
+<td style="text-align: left;">greater</td>
+<td style="text-align: right;">2021</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metap)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>istwo <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(data<span class="sc">$</span>Direction <span class="sc">==</span> <span class="st">"different"</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>) <span class="co"># two-tailed test</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> data<span class="sc">$</span>N<span class="dv">-1</span> <span class="co"># degrees of freedom</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metap)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>istwo <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(data<span class="sc">$</span>Direction <span class="sc">==</span> <span class="st">"different"</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>) <span class="co"># two-tailed test</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> data<span class="sc">$</span>N<span class="dv">-1</span> <span class="co"># degrees of freedom</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="max-bf-1" class="level3">
 <h3 class="anchored" data-anchor-id="max-bf-1">Max BF</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  11953.7  with df =  20061  p =  1 </code></pre>
+<pre><code>chisq =  18595.24  with df =  27584  p =  1 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -939,13 +1273,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="bf-energy-1" class="level3">
 <h3 class="anchored" data-anchor-id="bf-energy-1">BF Energy</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  19762.9  with df =  20061  p =  0.9321976 </code></pre>
+<pre><code>chisq =  27103.61  with df =  27584  p =  0.9800317 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -958,13 +1292,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fft-amplitude-sum-1" class="level3">
 <h3 class="anchored" data-anchor-id="fft-amplitude-sum-1">FFT Amplitude Sum</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">invchisq</span>(pvals, <span class="at">k=</span>df)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  19712.76  with df =  20061  p =  0.9595416 </code></pre>
+<pre><code>chisq =  27152.37  with df =  27584  p =  0.9674448 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -977,23 +1311,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="robustness-to-sample-sizes-1" class="level3">
 <h3 class="anchored" data-anchor-id="robustness-to-sample-sizes-1">Robustness to Sample Sizes</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Max BF</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Max BF</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">MaxBF p</span><span class="st">`</span>, istwo)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>chisq =  39.16682  with df =  38  p =  0.4172743 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Energy BF</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  24.0675  with df =  26  p =  0.5721054 </code></pre>
+<pre><code>chisq =  30.83717  with df =  38  p =  0.7887142 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Energy BF</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Energy p</span><span class="st">`</span>, istwo)</span>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#FFT Amplitude Sum</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>chisq =  23.4718  with df =  26  p =  0.60614 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#FFT Amplitude Sum</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">two2one</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">FFT p</span><span class="st">`</span>, istwo)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sumlog</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>chisq =  23.20571  with df =  26  p =  0.6212849 </code></pre>
+<pre><code>chisq =  35.51057  with df =  38  p =  0.5851368 </code></pre>
 </div>
 </div>
 </section>

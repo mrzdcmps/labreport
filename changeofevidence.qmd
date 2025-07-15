@@ -10,102 +10,14 @@ execute:
 page-navigation: true
 ---
 
-Last update: 04 May 2020
+Last update: 14 July 2025
 
 Change of Evidence measures compare the Bayesian evidence for an effect over the course of data collection to those of monte-carlo simulations. They can reveal unusual changes in evidence which can be the consequence of the rise and decline of volatile effects.
 
 ```{r}
-coe <- readRDS("data/coe.rds")
 
-library(formattable)
-library(dplyr)
-library(knitr)
-library(kableExtra)
 
-links = c(
-  "studies/lovekind.html",
-  "studies/prayer.html",
-  "studies/monks.html",
-  "studies/monks.html",
-  "studies/monks.html",
-  "studies/monks.html",
-  "studies/meditation.html",
-  "studies/meditation.html",
-  "studies/sound.html",
-  "studies/allgood.html",
-  "studies/bandit.html",
-  "studies/cointoss.html",
-  "studies/incongruence.html",
-  "studies/incongruence.html",
-  "studies/smokers1.html",
-  "studies/smokers1.html",
-  "studies/smokers2.html",
-  "studies/smokers2.html",
-  "studies/smokers3.html",
-  "studies/psysc.html",
-  "studies/psysc.html",
-  "studies/psysc.html",
-  "studies/psysc.html",
-  "studies/psysc.html",
-  "studies/psysc.html",
-  "studies/relax.html",
-  "studies/priming1.html",
-  "studies/priming1.html",
-  "studies/priming2.html",
-  "studies/priming2.html",
-  "studies/priming3.html",
-  "studies/priming3.html",
-  "studies/priming4.html",
-  "studies/priming4.html",
-  "studies/erotic1.html",
-  "studies/erotic2.html"
-  # "studies/smokers-priming.html",
-  # "studies/smokers-priming.html",
-  # "studies/sobjectivity.html",
-  # "studies/sobjectivity.html",
-  # "studies/sobjectivity.html",
-  # "studies/epsi.html",
-  # "studies/epsi.html",
-  # "studies/robots.html",
-  # "studies/games.html",
-  # "studies/schroedinger.html",
-  # "studies/schroedinger.html",
-  # "studies/desire.html",
-  # "studies/stories.html",
-  # "studies/stories.html",
-  # "studies/willpower.html",
-  # "studies/willpower.html",
-  # "studies/baseline1.html",
-  # "studies/baseline1.html",
-  # "studies/baseline2.html"
-)
-
-ft <- coe %>%
-  mutate(
-    across(where(is.numeric), ~ round(., 2)),
-    `MaxBF p` = cell_spec(`MaxBF p`, bold = ifelse(`MaxBF p` < 0.05, TRUE, FALSE)),
-    `Energy p` = cell_spec(`Energy p`, bold = ifelse(`Energy p` < 0.05, TRUE, FALSE)),
-    `FFT p` = cell_spec(`FFT p`, bold = ifelse(`FFT p` < 0.05, TRUE, FALSE)),
-    Experimental = ifelse(Experimental, "✔", "✖"),
-    Experimental = cell_spec(Experimental, color = ifelse(Experimental == "✔", "darkgreen", "red")),
-    `Labstudy` = ifelse(Labstudy, "🏠", "🌍"),
-    Study = text_spec(Study, link = links)
-    )
-
-kbl(ft, escape = F,
-    col.names = c("Study",
-                  "Effect expected",
-                  "N",
-                  "MaxBF",
-                  "p",
-                  "Energy",
-                  "p",
-                  "Asum",
-                  "p",
-                  "Direction",
-                  "Lab/Online"),
-    align = "lcccccccccc") %>%
-  kable_classic("hover", fixed_thead = T) %>%
-  add_header_above(c(" " = 3, "Max BF" = 2, "BF Energy" = 2, "FFT Amplitude sum" = 2, " " = 2))
+source("scripts/generate_table.R")
+generate_coe_table()
 
 ```

@@ -7,7 +7,7 @@ editor: visual
 page-navigation: true
 ---
 
-Last update: 04 May 2020
+Last update: 14 July 2025
 
 ## Meta-Analysis of Change of Evidence Measures
 
@@ -20,17 +20,18 @@ The resulting p-values will be analyzed using the inverse chi-square method, whi
 
 In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included.
 
-```{r}
-coe <- readRDS("data/coe.rds")
+```{r warning=FALSE}
+coe <- readRDS("data/coe_2025-07-14.rds")
 
 # Select studies / conditions
 data <- subset(coe, coe$Experimental == TRUE)
 
 knitr::kable(data)
 
-library(metap)
 istwo <- ifelse(data$Direction == "different", TRUE, FALSE) # two-tailed test
 df <- data$N-1 # degrees of freedom
+
+library(metap)
 ```
 
 ### Max BF

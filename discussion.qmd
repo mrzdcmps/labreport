@@ -10,7 +10,7 @@ page-navigation: true
 ::: callout-note
 This section will be updated with each new release of the report.
 
-Current version: *Studies 2016 - 2020*
+Current version: *Studies 2016 - 2025* (v2)
 :::
 
 ```{r setup, include=FALSE}
@@ -83,7 +83,7 @@ res.c <- rma(
 
 # CoE Meta-Analysis
 library(metap)
-coe <- readRDS("data/coe.rds")
+coe <- readRDS("data/coe_2025-07-14.rds")
 
 # Select studies / conditions
 exp <- subset(coe, coe$Experimental == TRUE)
@@ -111,7 +111,7 @@ options(scipen = 999)
 
 The meta-analytic assessment of all micro-PK experiments conducted at the LMU Micro-PK lab currently encompasses `{r} print(max_number)` studies with a total of `{r} nrow(subset(st, st$Experimental == TRUE))` experimental conditions and `{r} nrow(subset(st, st$Experimental == FALSE))` control conditions, including data from `{r} n_participants` individual participants and reveals several key insights. Although individual studies included in this report often tested specific hypotheses, the meta-analysis focused on a general micro-PK effect to ensure comparability. Descriptions of the hypotheses for each study can be found in the respective [experiments](experiments.html) section.
 
-The overall effect size for micro-PK was found to be non-significant (`{r} round(res.e$b,3)`, *p* = `{r} round(res.e$pval,3)`) across experimental conditions, with moderate heterogeneity (`{r} round(res.e$I2,2)`%). Similarly, control conditions showed no significant effect (`{r} round(res.c$b,3)`, *p* = `{r} round(res.c$pval,3)`). These results suggest that the experimental manipulations may not be robust enough to produce a consistently meaningful effect. The moderate heterogeneity in both analyses indicates variability due to study design or implementation differences, though the lack of significant heterogeneity in control conditions suggests that variability in experimental conditions is more likely due to differences in interventions.
+The overall effect size for micro-PK was found to be  marginally significant (`{r} round(res.e$b,3)`, *p* = `{r} round(res.e$pval,3)`) across experimental conditions, with moderate heterogeneity (`{r} round(res.e$I2,2)`%). Control conditions showed no significant effect (`{r} round(res.c$b,3)`, *p* = `{r} round(res.c$pval,3)`) with low heterogeneity (`{r} round(res.c$I2,2)`%). These results suggest that while the experimental manipulations may produce a weak effect, it is not robust enough to reach conventional significance levels. The moderate heterogeneity in experimental conditions compared to the low heterogeneity in control conditions indicates that variability is more likely due to differences in interventions rather than methodological factors.
 
 ## Change of Evidence Measures
 
@@ -119,9 +119,11 @@ Since Psi-effects may be influenced by the accumulation of evidence over time, n
 
 For all experimental conditions, the combined chi-square statistics were calculated with `{r} e.maxbf$df` degrees of freedom, yielding the following results: `{r} round(e.maxbf$chisq,2)` for the Maximum BF (*p* = `{r} round(e.maxbf$p,3)`), `{r} round(e.bfenergy$chisq,2)` for the BF Energy (*p* = `{r} round(e.bfenergy$p,3)`) and `{r} round(e.fft$chisq,2)` for the FFT amplitude sum (*p* = `{r} round(e.fft$p,3)`).
 
-The analysis of change of evidence measures demonstrated statistically significant results for experimental conditions, suggesting that observed evidence changes are unlikely due to random variation. This could be the result of a volatile micro-PK effect. The tests are robust to using methods that do or do not account for varying sample sizes, thus addressing potential issues of overweighting studies that show a noticeable BF early on and whose data collection is extended.
+The analysis of change of evidence measures revealed mixed results for experimental conditions. While the Maximum BF showed no significant deviation from chance expectations (*p* = `{r} round(e.maxbf$p,3)`), both BF Energy (*p* = `{r} round(e.bfenergy$p,3)`) and FFT amplitude sum (*p* = `{r} round(e.fft$p,3)`) demonstrated statistically significant results. This pattern suggests that while the peak evidence accumulation may not differ substantially from simulated data, the overall energy and frequency characteristics of evidence changes show systematic deviations from random variation. The assignment of $p_{MaxBF} = 1$ to studies in the direction of H0 (MaxBF = 1) might be responsible for the difference and suggests that the MaxBF criterion could be limited.
 
-In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results in experimental conditions do not necessarily translate into a substantial overall effect, as no significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence are not likely due to random variation.
+Nonetheless, the significant findings for BF Energy and FFT amplitude sum indicate the presence of a subtle but detectable pattern in how evidence accumulates over time in experimental conditions, potentially reflecting a volatile micro-PK effect that manifests not as consistent directional changes but as systematic alterations in the dynamics of evidence accumulation. The tests are robust to using methods that do or do not account for varying sample sizes, thus addressing potential issues of overweighting studies that show a noticeable BF early on and whose data collection is extended.
+
+In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results for two of the three measures in experimental conditions do not necessarily translate into a substantial overall effect, as only a marginally significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence accumulation patterns are not likely due to random variation alone, suggesting that experimental manipulations may influence the temporal dynamics of evidence accumulation even when they do not produce detectable overall effects.
 
 ## Addressing Publication Bias
 
@@ -129,12 +131,16 @@ A potential concern in meta-analyses is publication bias, where significant resu
 
 ## Implications of Findings
 
-The significant change of evidence measures in experimental conditions suggest dynamic factors influencing evidence accumulation. According to the Model of Pragmatic Information, novel, autonomous effects may decrease in detectability over time. This model may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.
+The significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions suggest dynamic factors influencing evidence accumulation patterns. This goes hand in hand with theories about decline effects in (parapsychologcial) science. E.g., the Model of Pragmatic Information suggests that novel, autonomous effects may decrease in detectability over time. It may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.
 
-Despite these insights, the non-significant overall effect size indicates that micro-PK interventions, as tested, may not consistently produce a robust effect. Future research should focus on refining experimental designs, replicating studies, and exploring the underlying mechanisms of micro-PK effects to establish more consistent evidence.
+Weak and volatile effects are often observed in parapsychological research, exemplified by failed direct replications, a phenomenon known as the decline effect. This pattern is not unique to Psi research but has been documented in other scientific areas as well. The change of evidence measures presented here might offer a fruitful approach to identify decline patterns within individual studies and differentiate between false positives combined with regression to the mean versus genuine effect-plus-decline patterns.
+
+The marginally significant overall effect size (*p* = `{r} round(res.e$pval,3)`) suggests that micro-PK interventions may produce a weak but detectable effect, though not at conventional significance levels. This finding, combined with the significant change of evidence measures, indicates that while micro-PK effects may be present, they are subtle and may manifest primarily through alterations in evidence accumulation dynamics rather than consistent directional effects. Future research should focus on refining experimental designs, replicating studies, and exploring the underlying mechanisms of micro-PK effects to establish more robust evidence.
 
 ## Conclusion
 
-While our meta-analysis at this point in time did not demonstrate a statistically significant effect of micro-PK interventions, the significant change of evidence measures in experimental conditions indicate that the phenomena observed are not purely due to chance. Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.
+While our meta-analysis demonstrated only a marginally significant effect of micro-PK interventions (p = 0.072), the significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions indicate that the phenomena observed are not purely due to chance. These findings suggest that micro-PK effects, while subtle, may influence the temporal dynamics of evidence accumulation in ways that traditional effect size measures might not fully capture.
+
+Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Particular attention should be given to understanding the mechanisms underlying the observed changes in evidence accumulation patterns. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.
 
 We would like to additionally encourage the scientific community to follow this example of transparent reporting and data sharing to enhance the reproducibility and reliability of research findings in the field of parapsychology and related disciplines and to counteract publication bias and selective reporting practices.
