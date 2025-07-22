@@ -1,6 +1,8 @@
 library(tidyverse)
 library(knitr)
 library(kableExtra)
+library(changeofevidence)
+library(patchwork)
 
 links = c(
   "studies/lovekind.html",
@@ -200,5 +202,69 @@ generate_demographics_table <- function(data, age_col, gender_col, male_value, f
   kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
     kable_styling(
       full_width = FALSE
-      )
+    )
 }
+
+
+####
+
+#Generate plots
+generate_bfplot <- function(data){
+  plotbf(data)
+}
+
+generate_rwplot <- function(data, n_bits) {
+  offset <- n_bits / 2
+  
+  # Determine whether data is a list or single vector
+  if (is.list(data)) {
+    rw <- lapply(data, function(x) cumsum(x - offset))
+  } else if (is.numeric(data)) {
+    rw <- cumsum(data - offset)
+  } else {
+    stop("`data` must be a numeric vector or a list of numeric vectors.")
+  }
+  
+  # Call plot function
+  changeofevidence::plotrw(rw, n_bits = n_bits)
+}
+
+generate_coeplot <- function(data) {
+  plots_row1 <- list()
+  plot_row2 <- NULL
+  
+  common_theme <- ggplot2::theme(text = ggplot2::element_text(size = 10))
+  
+  p1 <- plotbf(data)+
+    ggplot2::geom_point(aes(x = which.max(data), y = max(data)), color = "red", size = 3) +
+    ggplot2::geom_text(aes(x = which.max(data), y = max(data),
+                           label = paste("Max BF:", round(max(data), 2))), vjust = -1) +
+    ggplot2::ggtitle("Maximum BF") +
+    common_theme
+  plots_row1 <- c(plots_row1, list(p1))
+  
+  p2 <- plotbf(data) +
+    ggplot2::geom_ribbon(
+      aes(x = 1:length(data), ymin = pmin(data, 1), ymax = 1),
+      fill = "red", alpha = 0.3
+    ) +
+    ggplot2::geom_ribbon(
+      aes(x = 1:length(data), ymin = 1, ymax = pmax(data, 1)),
+      fill = "green", alpha = 0.3
+    ) +
+    ggplot2::ggtitle("Energy of BF") +
+    ggplot2::theme(axis.title.y = element_blank()) +  # remove y-axis label
+    common_theme
+  plots_row1 <- c(plots_row1, list(p2))
+  
+  fft <- changeofevidence::fftcreate(data)
+  p3 <- plotfft(fft) +
+    ggplot2::ggtitle("FFT Test") +
+    common_theme
+  plot_row2 <- p3
+  
+  combined <- (patchwork::wrap_plots(plots_row1) / plot_row2)
+  
+  print(combined)
+}
+

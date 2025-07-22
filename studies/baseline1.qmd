@@ -60,6 +60,34 @@ We set a Bayes factor threshold of 10 as our criterion for determining strong ev
 
 The Bayesian approach was particularly suitable for our research question because it allowed us to quantify evidence for both the presence and absence of micro-PK effects, while also enabling us to track how evidence accumulated as we collected more data throughout the study.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  lucky = study26_baseline.1.lucky$BF,
+  unlucky = study26_baseline.1.unlucky$BF
+  ))
+```
+
+## Random Walk
+```{r}
+rw1 <- 20-cumsum(study26_baseline.1.lucky$hits - 12)
+rw2 <- cumsum(study26_baseline.1.unlucky$hits - 8)
+changeofevidence::plotrw(list(lucky = rw1, unlucky = rw2), n_bits = 20)
+```
+
+## Change of Evidence
+### Lucky
+```{r}
+generate_coeplot(study26_baseline.1.lucky$BF)
+```
+### Unlucky
+```{r}
+generate_coeplot(study26_baseline.1.unlucky$BF)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/baseline/baseline1.csv)

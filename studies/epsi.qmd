@@ -59,6 +59,38 @@ Regarding sample size, although the stopping criterion of BF10 = 10 for the corr
 
 No micro-PK effect is expected in both conditions.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  "Condition A" = study19_epsi$BF.exp,
+  "Condition B" = study19_epsi$BF.con
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  high = study19_epsi$sumsexp,
+  low = study19_epsi$sumscon
+), 20)
+
+```
+
+## Change of Evidence
+### Condition A
+```{r}
+generate_coeplot(study19_epsi$BF.exp)
+```
+### Condition B
+```{r}
+generate_coeplot(study19_epsi$BF.con)
+```
+:::
+
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/epsi/epsi.csv)
 :::

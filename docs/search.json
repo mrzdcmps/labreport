@@ -580,7 +580,7 @@
     "href": "studies/prayer.html#participants",
     "title": "Prayer",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n431\n\n\nFemale\n235\n\n\nMale\n166\n\n\nOther\n4\n\n\nMean Age\n41.18 years\n\n\nSD Age\n13.09 years",
+    "text": "Participants\n\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\n1\nN\n431\n\n\n2\nFemale\n54.52%\n\n\n3\nMale\n38.52%\n\n\n6\nOther\n0.93%\n\n\n4\nMean Age\n41.18 years\n\n\n5\nSD Age\n13.09 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -604,7 +604,7 @@
     "href": "studies/prayer.html#procedure",
     "title": "Prayer",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire",
+    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. They were then asked to to enter a devotional state through prayer. They could choose freely how long to pray, but it was noted that most chose a duration between 10 and 30 minutes. After the prayer they were presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -664,7 +664,7 @@
     "href": "studies/meditation.html#procedure",
     "title": "Meditation",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them (2 mins). They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After this set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire Structure\nRelaxation Audio\nRelaxation Audio English",
+    "text": "Procedure\nParticipants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them (2 mins). They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After this set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -700,7 +700,7 @@
     "href": "studies/incongruence.html#participants",
     "title": "Incongruence",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n507\n\n\nFemale\n365\n\n\nMale\n141\n\n\nMean Age\n23.41 years\n\n\nSD Age\n6.73 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n507\n\n\nFemale\n71.99%\n\n\nMale\n27.81%\n\n\nMean Age\n23.41 years\n\n\nSD Age\n6.73 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -724,7 +724,7 @@
     "href": "studies/incongruence.html#procedure",
     "title": "Incongruence",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in a lab with ten identical computers, each separated by dividers. The entire experiment lasted around 30 minutes. An experimenter explained the procedure using a standardized script and answered any participant questions. Once ready, participants began by completing the INK questionnaire and then proceeded to the image display by pressing any button.\nThe experiment consisted of three micro-PK tasks performed in the following order: “attachment,” “self-esteem protection,” and “loss of control.” Each task involved three series of ten trials, totaling 30 trials. Participants viewed a fixation cue for 700 ms, then a stimulus (pictures for 400 ms; words for 800 ms), followed by a black screen for 400 ms.\nFor each trial, a quantum random number generator (QRNG) determined whether the stimulus would be need-related or neutral, and BitBabbler’s randomization function selected the specific stimulus from the chosen set. The QRNG’s randomization ensured that the selected stimulus was either from a need-related set or a neutral set.\nAfter the third task, participants completed a post-task questionnaire. They rated the unpleasantness of the disgusting pictures on a scale from 1 (very unpleasant) to 5 (not at all unpleasant) and shared their assumptions about the study’s purpose.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\nDownload Data “High”\nDownload Data “Low”\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Jakob et al., 2020)\nPreregistration\nOSF Project\nExperimental Program\nQuestionnaire\nStimuli",
+    "text": "Procedure\nParticipants were tested in a lab with ten identical computers, each separated by dividers. The entire experiment lasted around 30 minutes. An experimenter explained the procedure using a standardized script and answered any participant questions. Once ready, participants began by completing the INK questionnaire and then proceeded to the image display by pressing any button.\nThe experiment consisted of three micro-PK tasks performed in the following order: “attachment,” “self-esteem protection,” and “loss of control.” Each task involved three series of ten trials, totaling 30 trials. Participants viewed a fixation cue for 700 ms, then a stimulus (pictures for 400 ms; words for 800 ms), followed by a black screen for 400 ms.\nFor each trial, a quantum random number generator (QRNG) determined whether the stimulus would be need-related or neutral, and BitBabbler’s randomization function selected the specific stimulus from the chosen set. The QRNG’s randomization ensured that the selected stimulus was either from a need-related set or a neutral set.\nAfter the third task, participants completed a post-task questionnaire. They rated the unpleasantness of the disgusting pictures on a scale from 1 (very unpleasant) to 5 (not at all unpleasant) and shared their assumptions about the study’s purpose.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -796,7 +796,7 @@
     "href": "studies/erotic2.html#sample-size-and-data-analysis",
     "title": "Erotic Images 2",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nThe study used Bayesian one-sample t-tests to evaluate the hypotheses. The test value—the expected number of erotic images seen by chance—was set at 25, assuming a 50:50 chance of viewing erotic versus neutral images out of 50 total images. A low Cauchy prior level of .1 was chosen for the Bayesian analysis, reflecting the expectation of weak effect sizes in micro-psychokinetic studies, where subtle, unconscious influences are at play. This decision was based on prior research indicating that such effects tend to be minimal.\nThe sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program\nQuestionnaire Structure",
+    "text": "Sample Size and Data Analysis\nThe study used Bayesian one-sample t-tests to evaluate the hypotheses. The test value—the expected number of erotic images seen by chance—was set at 25, assuming a 50:50 chance of viewing erotic versus neutral images out of 50 total images. A low Cauchy prior level of .1 was chosen for the Bayesian analysis, reflecting the expectation of weak effect sizes in micro-psychokinetic studies, where subtle, unconscious influences are at play. This decision was based on prior research indicating that such effects tend to be minimal.\nThe sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -868,7 +868,7 @@
     "href": "studies/epsi.html#lab-report-data",
     "title": "Epsi Correlation",
     "section": "Lab Report Data",
-    "text": "Lab Report Data\nNo micro-PK effect is expected in both conditions.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "text": "Lab Report Data\nNo micro-PK effect is expected in both conditions.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -904,7 +904,7 @@
     "href": "studies/cointoss.html#participants",
     "title": "Coin Toss",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n24\n\n\nMale\n16\n\n\nMean Age\n26.45 years\n\n\nSD Age\n5.59 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n60%\n\n\nMale\n40%\n\n\nMean Age\n26.45 years\n\n\nSD Age\n5.59 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -928,7 +928,7 @@
     "href": "studies/cointoss.html#procedure",
     "title": "Coin Toss",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. They were told a cover story about gambing research and asked to play a coin tossing game for two rounds, consisting of 100 tosses each. For each round they could decide on “heads” (1 bit) or “tails” (0 bit). Subsequently, the qRNG would produce random bits that were translated to either seide of the coin. For the second round, participants could change their target if they wanted. Then they were asked to fill out a questionnaire asking if they changed their strategy, looked at the screen, felt that the outcome was important to them, felt that they could influence the outcome, and if they considered themselves to be a “lucky child”.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStimulus material\nDiscussion Student report",
+    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. They were told a cover story about gambing research and asked to play a coin tossing game for two rounds, consisting of 100 tosses each. For each round they could decide on “heads” (1 bit) or “tails” (0 bit). Subsequently, the qRNG would produce random bits that were translated to either seide of the coin. For the second round, participants could change their target if they wanted. Then they were asked to fill out a questionnaire asking if they changed their strategy, looked at the screen, felt that the outcome was important to them, felt that they could influence the outcome, and if they considered themselves to be a “lucky child”.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1000,7 +1000,7 @@
     "href": "studies/baseline1.html#sample-size-and-data-analysis",
     "title": "Baseline 1",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nWe employed a single-group design with two conditions: a “lucky” condition (LC) with 60% win probability and an “unlucky” condition (UC) with 40% win probability. Our final sample included 801 participants in the lucky condition and 725 participants in the unlucky condition, with the number of successful hits in the coin toss game serving as our dependent variable.\nWe conducted our statistical analysis using Bayesian methods, which we determined a priori before data collection. We established a small prior effect size estimate following an uninformed Cauchy distribution δ ~ Cauchy (0, 0.1) to reflect our conservative expectations about micro-PK effects. Our hypotheses were tested using one-sample Bayesian t-tests, where we predicted that participants in the lucky condition would average fewer than 12 hits (below the expected 60% baseline), while participants in the unlucky condition would average more than 8 hits (above the expected 40% baseline).\nWe set a Bayes factor threshold of 10 as our criterion for determining strong evidence, whether supporting our alternative hypothesis (H1) or the null hypothesis (H0). This threshold allowed us to distinguish between strong, moderate, and anecdotal evidence levels. We performed all data analysis using R (version 4.4.1), and made our materials, data, and analysis scripts openly available through the Open Science Framework at https://osf.io/2zgp5.\nThe Bayesian approach was particularly suitable for our research question because it allowed us to quantify evidence for both the presence and absence of micro-PK effects, while also enabling us to track how evidence accumulated as we collected more data throughout the study.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (in press)\nOSF Project\nOSF Data and Analyses\nExperimental Program\nCoin Stimuli",
+    "text": "Sample Size and Data Analysis\nWe employed a single-group design with two conditions: a “lucky” condition (LC) with 60% win probability and an “unlucky” condition (UC) with 40% win probability. Our final sample included 801 participants in the lucky condition and 725 participants in the unlucky condition, with the number of successful hits in the coin toss game serving as our dependent variable.\nWe conducted our statistical analysis using Bayesian methods, which we determined a priori before data collection. We established a small prior effect size estimate following an uninformed Cauchy distribution δ ~ Cauchy (0, 0.1) to reflect our conservative expectations about micro-PK effects. Our hypotheses were tested using one-sample Bayesian t-tests, where we predicted that participants in the lucky condition would average fewer than 12 hits (below the expected 60% baseline), while participants in the unlucky condition would average more than 8 hits (above the expected 40% baseline).\nWe set a Bayes factor threshold of 10 as our criterion for determining strong evidence, whether supporting our alternative hypothesis (H1) or the null hypothesis (H0). This threshold allowed us to distinguish between strong, moderate, and anecdotal evidence levels. We performed all data analysis using R (version 4.4.1), and made our materials, data, and analysis scripts openly available through the Open Science Framework at https://osf.io/2zgp5.\nThe Bayesian approach was particularly suitable for our research question because it allowed us to quantify evidence for both the presence and absence of micro-PK effects, while also enabling us to track how evidence accumulated as we collected more data throughout the study.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1036,7 +1036,7 @@
     "href": "studies/allgood.html#participants",
     "title": "All-will-be-good",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n38\n\n\nFemale\n29\n\n\nMale\n9\n\n\nMean Age\n23.03 years\n\n\nSD Age\n6.7 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n38\n\n\nFemale\n76.32%\n\n\nMale\n23.68%\n\n\nMean Age\n23.03 years\n\n\nSD Age\n6.7 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1048,7 +1048,7 @@
     "href": "studies/allgood.html#materials",
     "title": "All-will-be-good",
     "section": "Materials",
-    "text": "Materials\nPicture stimuli comprised 100 positive and 100 negative images further described in study “relaxation”. Audio stimuli comprised two consonant chords and two dissonant chords. The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.",
+    "text": "Materials\nPicture stimuli comprised 100 positive and 100 negative images further described in study Relaxation. Audio stimuli comprised two consonant chords and two dissonant chords. The relaxation exercise consisted of a 2-minute prerecorded audio file asking participants to focus on their breathing and become peaceful and relaxed.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1060,7 +1060,7 @@
     "href": "studies/allgood.html#procedure",
     "title": "All-will-be-good",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying “all will be good” over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire\nRelaxation Audio\nRelaxation Audio English",
+    "text": "Procedure\nParticipants were tested in the lab. A prerecorded relaxation audio file was read to them (2 mins) after ensuring that sound playback was functioning. They were then asked to attentively perceive a set of 200 trial presentations consisting of images and sounds while saying “all will be good” over and over to themselves. They were then asked to fill out a questionnaire consisting of BFI-10, sensation seeking, whether they looked at the pictures and whether they followed instructions regarding the inner monologue, and a scale comprising questions related to personal struggle vs easiness.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1329,7 +1329,7 @@
     "href": "studies/bandit.html#participants",
     "title": "One-Armed Bandit",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n21\n\n\nMale\n19\n\n\nMean Age\n23.98 years\n\n\nSD Age\n12.51 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n40\n\n\nFemale\n52.5%\n\n\nMale\n47.5%\n\n\nMean Age\n23.98 years\n\n\nSD Age\n12.51 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1353,7 +1353,7 @@
     "href": "studies/bandit.html#procedure",
     "title": "One-Armed Bandit",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. The qRNG first selected a random image 1 out of 10, then a fixation cross was shown before the qRNG selected a random bit 0 or 1 determining whether the image should be shown out of the win or loss set. This way, 10 sets of 20 trials each with short breaks in between were presented to the participants. For each block with more than 50% hits they received a candy (Smartie) for each additional hit (e.g. 12 hits = 2 smarties).\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nStimulus material\nQuestionnaire\nStudent report",
+    "text": "Procedure\nParticipants were tested in the lab. Participants sat in front of a laptop connected to a qRNG. The qRNG first selected a random image 1 out of 10, then a fixation cross was shown before the qRNG selected a random bit 0 or 1 determining whether the image should be shown out of the win or loss set. This way, 10 sets of 20 trials each with short breaks in between were presented to the participants. For each block with more than 50% hits they received a candy (Smartie) for each additional hit (e.g. 12 hits = 2 smarties).",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1413,7 +1413,7 @@
     "href": "studies/baseline2.html#sample-size-and-data-analysis",
     "title": "Baseline 2",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nWe employed a Sequential Bayesian design with a maximum sample size of 2,000 participants (based on a Bayes Factor Design Analysis).\nOur statistical analysis used a Bayesian one-sample t-test with a Cauchy(0, 0.1) prior distribution, testing the directional hypothesis that participants would achieve fewer than 12 hits out of 20 coin tosses. We set our stopping criteria at a Bayes Factor of 10 or greater for strong evidence in favor of either the alternative hypothesis (H1) or null hypothesis (H0). We did not reach that point but stopped data collection after accumulating a little over our specified maximum N.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (in preparation)\nOSF Project\nExperimental Program\nCoin Stimuli",
+    "text": "Sample Size and Data Analysis\nWe employed a Sequential Bayesian design with a maximum sample size of 2,000 participants (based on a Bayes Factor Design Analysis).\nOur statistical analysis used a Bayesian one-sample t-test with a Cauchy(0, 0.1) prior distribution, testing the directional hypothesis that participants would achieve fewer than 12 hits out of 20 coin tosses. We set our stopping criteria at a Bayes Factor of 10 or greater for strong evidence in favor of either the alternative hypothesis (H1) or null hypothesis (H0). We did not reach that point but stopped data collection after accumulating a little over our specified maximum N.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1497,7 +1497,7 @@
     "href": "studies/desire.html#lab-report-data",
     "title": "Desire",
     "section": "Lab Report Data",
-    "text": "Lab Report Data\nFor the lab report only objective data from the control condition is considered, since the experimental group used only reported data.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nStimuli (Erotic Material!)\nExperimental Program",
+    "text": "Lab Report Data\nFor the lab report only objective data from the control condition is considered, since the experimental group used only reported data.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1569,7 +1569,7 @@
     "href": "studies/erotic1.html#sample-size-and-data-analysis",
     "title": "Erotic Images 1",
     "section": "Sample Size and Data Analysis",
-    "text": "Sample Size and Data Analysis\nThe statistical analysis in the study followed the approach of previous studies conducted by the lab utilizing Bayesian inference techniques. Before conducting the study, it was decided to use Bayesian one-sided one-sample t-tests for data analysis.\nFor the Bayesian analysis, the effect size was defined a priori using a Cauchy distribution, with a scale parameter (r) of .1, based on previous research by the LMU Micro-Pk lab. This choice of a lower r value is typical in psi research, where effect sizes are generally small.\nTo determine if the effect followed a damped harmonic oscillation, a regression analysis was conducted using the Python module SciPy. Specifically, the scipy.optimize.curve_fit function was employed, which uses the Levenberg-Marquardt algorithm to estimate the parameters of the damped harmonic oscillation based on the principle of the sum of least squares. This method allowed the researchers to assess whether the data exhibited the predicted oscillatory pattern.\nThe sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program\nQuestionnaire\nStimuli Sources",
+    "text": "Sample Size and Data Analysis\nThe statistical analysis in the study followed the approach of previous studies conducted by the lab utilizing Bayesian inference techniques. Before conducting the study, it was decided to use Bayesian one-sided one-sample t-tests for data analysis.\nFor the Bayesian analysis, the effect size was defined a priori using a Cauchy distribution, with a scale parameter (r) of .1, based on previous research by the LMU Micro-Pk lab. This choice of a lower r value is typical in psi research, where effect sizes are generally small.\nTo determine if the effect followed a damped harmonic oscillation, a regression analysis was conducted using the Python module SciPy. Specifically, the scipy.optimize.curve_fit function was employed, which uses the Levenberg-Marquardt algorithm to estimate the parameters of the damped harmonic oscillation based on the principle of the sum of least squares. This method allowed the researchers to assess whether the data exhibited the predicted oscillatory pattern.\nThe sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1653,7 +1653,7 @@
     "href": "studies/games.html#lab-report-data",
     "title": "Games",
     "section": "Lab Report Data",
-    "text": "Lab Report Data\nFor the lab report only the qRNG choices are considered that decided if another game is played or not. Since participants could have between 1 and 6 trials a mean expected hit was calculated by dividing the number of games played by the number of participants and subtracting 1 for the first guaranteed hit.\n\\(m_{expected} = 389/205-1 = 0.897561\\)\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program",
+    "text": "Lab Report Data\nFor the lab report only the qRNG choices are considered that decided if another game is played or not. Since participants could have between 1 and 6 trials a mean expected hit was calculated by dividing the number of games played by the number of participants and subtracting 1 for the first guaranteed hit.\n\\(m_{expected} = 389/205-1 = 0.897561\\)",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1689,7 +1689,7 @@
     "href": "studies/lovekind.html#participants",
     "title": "Loving Kindness",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n171\n\n\nFemale\n127\n\n\nMale\n44\n\n\nMean Age\n33.29 years\n\n\nSD Age\n14.26 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n171\n\n\nFemale\n74.27%\n\n\nMale\n25.73%\n\n\nMean Age\n33.29 years\n\n\nSD Age\n14.26 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1713,7 +1713,7 @@
     "href": "studies/lovekind.html#procedure",
     "title": "Loving Kindness",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nExperimental Program\nQuestionnaire",
+    "text": "Procedure\nParticipants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.\nAdditional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1749,7 +1749,7 @@
     "href": "studies/monks.html#participants",
     "title": "Monks",
     "section": "Participants",
-    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n52\n\n\nFemale\n15\n\n\nMale\n36\n\n\nMean Age\n31.56 years\n\n\nSD Age\n12.79 years",
+    "text": "Participants\n\n\n\n\n\nCharacteristic\nCount/Statistic\n\n\n\n\nN\n52\n\n\nFemale\n28.85%\n\n\nMale\n69.23%\n\n\nMean Age\n31.56 years\n\n\nSD Age\n12.79 years",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -1773,7 +1773,7 @@
     "href": "studies/monks.html#procedure",
     "title": "Monks",
     "section": "Procedure",
-    "text": "Procedure\nParticipants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\nDownload Exp Data\nDownload Con Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nQuestionnaires\nExplanation Chart\nStimuli",
+    "text": "Procedure\nParticipants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.",
     "crumbs": [
       "Experiments",
       "Studies",
@@ -2354,6 +2354,198 @@
       "Experiments",
       "Studies",
       "Stories"
+    ]
+  },
+  {
+    "objectID": "studies/allgood.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/allgood.html#results-of-universal-micro-pk-hypothesis",
+    "title": "All-will-be-good",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire\nRelaxation Audio\nRelaxation Audio English",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "All-will-be-good"
+    ]
+  },
+  {
+    "objectID": "studies/bandit.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/bandit.html#results-of-universal-micro-pk-hypothesis",
+    "title": "One-Armed Bandit",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nStimulus material\nQuestionnaire\nStudent report",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "One-Armed Bandit"
+    ]
+  },
+  {
+    "objectID": "studies/baseline1.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/baseline1.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Baseline 1",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLucky\n\n\n\n\n\n\n\n\n\n\n\nUnlucky\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (in press)\nOSF Project\nOSF Data and Analyses\nExperimental Program\nCoin Stimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 1"
+    ]
+  },
+  {
+    "objectID": "studies/baseline2.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/baseline2.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Baseline 2",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (in preparation)\nOSF Project\nExperimental Program\nCoin Stimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Baseline 2"
+    ]
+  },
+  {
+    "objectID": "studies/cointoss.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/cointoss.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Coin Toss",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStimulus material\nDiscussion Student report",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Coin Toss"
+    ]
+  },
+  {
+    "objectID": "studies/desire.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/desire.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Desire",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nStimuli (Erotic Material!)\nExperimental Program",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Desire"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/epsi.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Epsi Correlation",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCondition A\n\n\n\n\n\n\n\n\n\n\n\nCondition B\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/erotic1.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/erotic1.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Erotic Images 1",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program\nQuestionnaire\nStimuli Sources",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 1"
+    ]
+  },
+  {
+    "objectID": "studies/erotic2.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/erotic2.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Erotic Images 2",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program\nQuestionnaire Structure",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Erotic Images 2"
+    ]
+  },
+  {
+    "objectID": "studies/games.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/games.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Games",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nStudent Report\nExperimental Program",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Games"
+    ]
+  },
+  {
+    "objectID": "studies/incongruence.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/incongruence.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Incongruence",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHigh\n\n\n\n\n\n\n\n\n\n\n\nLow\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\nDownload Data “High”\nDownload Data “Low”\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Jakob et al., 2020)\nPreregistration\nOSF Project\nExperimental Program\nQuestionnaire\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Incongruence"
+    ]
+  },
+  {
+    "objectID": "studies/epsi.html#results-of-universal-micro-pk-hypothesis-1",
+    "href": "studies/epsi.html#results-of-universal-micro-pk-hypothesis-1",
+    "title": "Epsi Correlation",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPublication (Maier & Dechamps, 2022)\nPreregistration\nOSF Project\nOSF Data and Materials\nExperimental Program\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Epsi Correlation"
+    ]
+  },
+  {
+    "objectID": "studies/lovekind.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/lovekind.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Loving Kindness",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nPreregistration\nExperimental Program\nQuestionnaire",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Loving Kindness"
+    ]
+  },
+  {
+    "objectID": "studies/meditation.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/meditation.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Meditation",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nT1\n\n\n\n\n\n\n\n\n\n\n\nT2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire Structure\nRelaxation Audio\nRelaxation Audio English",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Meditation"
+    ]
+  },
+  {
+    "objectID": "studies/monks.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/monks.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Monks",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExp T1\n\n\n\n\n\n\n\n\n\n\n\nExp T2\n\n\n\n\n\n\n\n\n\n\n\nCon T1\n\n\n\n\n\n\n\n\n\n\n\nCon T2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\nDownload Exp Data\nDownload Con Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nQuestionnaires\nExplanation Chart\nStimuli",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Monks"
+    ]
+  },
+  {
+    "objectID": "studies/prayer.html#results-of-universal-micro-pk-hypothesis",
+    "href": "studies/prayer.html#results-of-universal-micro-pk-hypothesis",
+    "title": "Prayer",
+    "section": "Results of Universal Micro-PK Hypothesis",
+    "text": "Results of Universal Micro-PK Hypothesis\n\nBayes FactorRandom WalkChange of Evidence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\nDownload Data\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\nExperimental Program\nQuestionnaire",
+    "crumbs": [
+      "Experiments",
+      "Studies",
+      "Prayer"
     ]
   }
 ]

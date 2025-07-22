@@ -71,6 +71,25 @@ Additional exploratory analyses included a Bayesian multivariate ANOVA and subgr
 
 For the lab report only objective data from the control condition is considered, since the experimental group used only reported data.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+## Bayes Factor
+```{r}
+generate_bfplot(study23_desire$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(study23_desire$obj, 10)
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study23_desire$BF)
+```
+:::
+
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/desire/desire.csv)
 :::

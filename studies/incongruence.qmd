@@ -1,7 +1,6 @@
 ---
 title: "Incongruence"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -47,33 +46,13 @@ B)  Low-Incongruence of Needs and Micro-PK
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- study9_incongruence
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$Alter, na.rm=T)
-sd_age <- sd(df$Alter, na.rm=T)
-female_count <- sum(df$Geschlecht == 1, na.rm=T)
-male_count <- sum(df$Geschlecht == 2, na.rm=T)
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants,
-    female_count,
-    male_count,
-    paste0(round(mean_age, 2), " years"),
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = study9_incongruence,
+  age_col = "Alter",
+  gender_col = "Geschlecht",
+  male_value = "2",
+  female_value = "1"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
 
 ```
 
@@ -102,6 +81,38 @@ The experiment consisted of three micro-PK tasks performed in the following orde
 For each trial, a quantum random number generator (QRNG) determined whether the stimulus would be need-related or neutral, and BitBabbler’s randomization function selected the specific stimulus from the chosen set. The QRNG’s randomization ensured that the selected stimulus was either from a need-related set or a neutral set.
 
 After the third task, participants completed a post-task questionnaire. They rated the unpleasantness of the disgusting pictures on a scale from 1 (very unpleasant) to 5 (not at all unpleasant) and shared their assumptions about the study's purpose.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  high = study9_incongruence.h$BF,
+  low = study9_incongruence.l$BF
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  high = study9_incongruence.h$self,
+  low = study9_incongruence.l$self
+), 10)
+
+```
+
+## Change of Evidence
+### High
+```{r}
+generate_coeplot(study9_incongruence.h$BF)
+```
+### Low
+```{r}
+generate_coeplot(study9_incongruence.l$BF)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/incongruence/incongruence.csv)

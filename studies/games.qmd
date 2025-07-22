@@ -92,6 +92,24 @@ For the lab report only the qRNG choices are considered that decided if another 
 
 $m_{expected} = 389/205-1 = 0.897561$
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+## Bayes Factor
+```{r}
+generate_bfplot(study21_games$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(study21_games$hits, 2*0.897561)
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study21_games$BF)
+```
+:::
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/games/games.csv)
 :::

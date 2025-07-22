@@ -1,7 +1,6 @@
 ---
 title: "Erotic Images 1"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -10,6 +9,7 @@ execute:
 ```{r}
 source("../scripts/generate_table.R")
 generate_table("Erotic Images 1")
+data <- study14_erotic.1
 ```
 
 ## Hypothesis
@@ -29,34 +29,13 @@ Finally, the study predicts that for pornography addicts, the tRNG will generate
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study14_erotic.1)
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$DE02_01, na.rm=T)
-sd_age <- sd(df$DE02_01, na.rm=T)
-female_count <- sum(df$DE01 == 1, na.rm=T)/total_participants*100
-male_count <- sum(df$DE01 == 2, na.rm=T)/total_participants*100
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    paste0(round(female_count, 2), "%"),
-    paste0(round(male_count, 2), "%"),
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = data,
+  age_col = "DE02_01",
+  gender_col = "DE01",
+  male_value = "2",
+  female_value = "1"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials
@@ -104,6 +83,24 @@ To determine if the effect followed a damped harmonic oscillation, a regression 
 
 The sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+## Bayes Factor
+```{r}
+generate_bfplot(data$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(data$Pbilder, 200)
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(data$BF)
+```
+:::
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/erotic/erotic1.csv)
 :::

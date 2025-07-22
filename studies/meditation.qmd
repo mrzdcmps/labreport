@@ -1,7 +1,6 @@
 ---
 title: "Meditation"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -19,35 +18,7 @@ Participants were asked to 2 runs of stimuli perception. Before the first run, a
 ## Participants
 
 ```{r}
-# library(tidyverse)
-# library(knitr)
-# 
-# df <- study4_meditation
-# 
-# # Data
-# total_participants <- nrow(df)
-# mean_age <- mean(df$DE02_01, na.rm=T)
-# sd_age <- sd(df$DE02_01, na.rm=T)
-# female_count <- sum(df$DE01 == 1, na.rm=T)
-# male_count <- sum(df$DE01 == 2, na.rm=T)
-# other_count <- sum(df$DE01 == 3, na.rm=T)
-# 
-# # Create the table
-# table_data <- data.frame(
-#   Characteristic = c("N", "Female", "Male", "Other", "Mean Age", "SD Age"),
-#   Count_Statistics = c(
-#     total_participants, 
-#     female_count, 
-#     male_count,
-#     other_count,
-#     paste0(round(mean_age, 2), " years"), 
-#     paste0(round(sd_age, 2), " years")
-#     )
-# )
-# 
-# # Print the table using kable
-# kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-#   kableExtra::kable_styling(full_width = FALSE)
+
 print("Demographic Data Not Available")
 
 ```
@@ -59,6 +30,38 @@ Picture stimuli comprised 100 positive and 100 negative images further described
 ## Procedure
 
 Participants were tested online. After welcoming them audio playback was tested to ensure the correct playback of sound stimuli. A prerecorded relaxation audio file was read to them (2 mins). They were then asked to attentively perceive a set of 100 trial presentations consisting of images and sounds. After this set, they were asked to put themselves in a meditative state. They could choose the meditative practice and duration freely, but it was noted that most chose a duration between 10 and 30 minutes. After the meditation they were again presented with 100 trials consisting of either a randomly chosen positive picture and sound or negative picture and sound. They were then thanked and asked to fill out some questions.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  T1 = study4_meditation.t1$BF,
+  T2 = study4_meditation.t2$BF
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  T1 = study4_meditation.t1$sums,
+  T2 = study4_meditation.t2$sums
+), 100)
+
+```
+
+## Change of Evidence
+### T1
+```{r}
+generate_coeplot(study4_meditation.t1$BF)
+```
+### T2
+```{r}
+generate_coeplot(study4_meditation.t2$BF)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/meditation/meditation.csv)

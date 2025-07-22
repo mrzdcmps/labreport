@@ -1,7 +1,6 @@
 ---
 title: "Loving Kindness"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -19,31 +18,13 @@ Participants underwent a pre-recorded "loving kindness"-meditation. At the end o
 ## Participants
 
 ```{r}
-df <- study1_lovingkind
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$DE02_01)
-sd_age <- sd(df$DE02_01)
-female_count <- sum(df$DE01 == 1)
-male_count <- sum(df$DE01 == 2)
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    female_count, 
-    male_count,
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-  )
+generate_demographics_table(
+  data = study1_lovingkind,
+  age_col = "DE02_01",
+  gender_col = "DE01",
+  male_value = "2",
+  female_value = "1"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials
@@ -55,6 +36,25 @@ We used a guided meditation by Inga Jagadamba Stendel as guided loving kindness 
 Participants were tested in the laboratory in a quiet and distraction-free environment. The experimenters introduced themselves and read a standardized instruction. Participants were asked to sit comfortably and listen to a guided loving-kindness meditation (ca. 13 mins) which then transition to the experimental part and the playback of the sounds. Participants listened to a total of 100 sounds before transitioning back to the ending of the guided meditation. All sounds were5 seconds long and are edited to fade out.
 
 Additional questions were asked concerning native language, experience with meditation, subjective effect of the meditation, experienced emotions during meditation and sound display, and ratings of the stimuli.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+## Bayes Factor
+```{r}
+generate_bfplot(study1_lovingkind$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(study1_lovingkind$MED_TÖNE, 100)
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study1_lovingkind$BF)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/lovingkind/lovingkind.csv)

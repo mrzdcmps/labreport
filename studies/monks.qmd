@@ -1,7 +1,6 @@
 ---
 title: "Monks"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -19,34 +18,13 @@ In this experiment we tested experienced meditators and monks and explored their
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- study3_monks
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$Alter, na.rm=T)
-sd_age <- sd(df$Alter, na.rm=T)
-female_count <- sum(df$Geschlecht == 0, na.rm=T)
-male_count <- sum(df$Geschlecht == 1, na.rm=T)
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    female_count, 
-    male_count,
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = study3_monks,
+  age_col = "Alter",
+  gender_col = "Geschlecht",
+  male_value = "1",
+  female_value = "0"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials
@@ -56,6 +34,50 @@ We used 10 images from IAPS with very negative valence, and 10 images with neutr
 ## Procedure
 
 Participants were tested in different locations with several experimenter visiting them at convenient locations. They were tested on similar laptop devices connected to a qRNG. First, they were asked for meditation experience and state affect. After the first run of 400 trials the study was explained to them with the help of a chart. Then followed the second run, again with 400 trials. They were then asked for state affect a second time, whether they felt they succeeded in avoiding negative images and about their strategy.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  `Exp T1` = study3_monks.exp$T1.BF,
+  `Exp T2` = study3_monks.exp$T2.BF,
+  `Con T1` = study3_monks.con$T1.BF,
+  `Con T2` = study3_monks.con$T2.BF
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  `Exp T1` = study3_monks.exp$D1,
+  `Exp T2` = study3_monks.exp$D2,
+  `Con T1` = study3_monks.con$D1,
+  `Con T2` = study3_monks.con$D2
+), 400)
+
+```
+
+## Change of Evidence
+### Exp T1
+```{r}
+generate_coeplot(study3_monks.exp$T1.BF)
+```
+### Exp T2
+```{r}
+generate_coeplot(study3_monks.exp$T2.BF)
+```
+### Con T1
+```{r}
+generate_coeplot(study3_monks.con$T1.BF)
+```
+### Con T2
+```{r}
+generate_coeplot(study3_monks.con$T2.BF)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/monks/monks.csv)

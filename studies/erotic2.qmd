@@ -1,7 +1,6 @@
 ---
 title: "Erotic Images 2"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -56,6 +55,24 @@ The study used Bayesian one-sample t-tests to evaluate the hypotheses. The test 
 
 The sample size was determined by practical restrictions, since this study was conducted as a student project with limited resources.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+## Bayes Factor
+```{r}
+generate_bfplot(study14_erotic.2$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(study14_erotic.2$sums, 50)
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study14_erotic.2$BF)
+```
+:::
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/erotic/erotic2.csv)
 :::
