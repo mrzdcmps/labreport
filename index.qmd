@@ -41,7 +41,7 @@ Instead of a traditional peer-review process, we would like to encourage you to 
 
 If you find this report useful and wish to cite it in your work, please use the following citation format:
 
-Dechamps, M. C. (2025). *Meta-Analysis of a Complete Micro-PK Database from the LMU Lab: Years 2016-2025*. <https://doi.org/10.5281/zenodo.13643264>. Retrieved from <https://mrzdcmps.github.io/labreport>
+Dechamps, M. C. (2025). *Meta-Analysis of a Complete Micro-PK Database from the LMU Lab: Years 2016-2025*. <https://doi.org/10.5281/zenodo.13623031>. Retrieved from <https://mrzdcmps.github.io/labreport>
 
 ::: {.callout-note collapse="true"}
 ## Previous Versions
