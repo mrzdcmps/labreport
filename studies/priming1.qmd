@@ -1,7 +1,6 @@
 ---
 title: "Priming 1"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -39,34 +38,13 @@ Studies 2, 3, and 4 were pre-registered. All studies were conducted online.
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study13_priming.1)
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$s2, na.rm=T)
-sd_age <- sd(df$s2, na.rm=T)
-female_count <- sum(df$gender_image == 2, na.rm=T)/total_participants*100
-male_count <- sum(df$gender_image == 1, na.rm=T)/total_participants*100
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    paste0(round(female_count, 2), "%"),
-    paste0(round(male_count, 2), "%"),
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = study13_priming.1,
+  age_col = "s2",
+  gender_col = "gender_image",
+  male_value = "1",
+  female_value = "2"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials
@@ -94,6 +72,38 @@ After the task, participants completed a questionnaire assessing stimulus-seekin
 The study employed a Bayesian approach, which allows for data accumulation until a specific stopping criterion is met. The stopping rule was defined as a Bayes Factor (BF) of 10, indicating strong evidence for either the null hypothesis (H0) or the alternative hypothesis (H1). For the analyses in Study 1, an uninformed prior following a Cauchy distribution centered around 0 with an r = 0.1 was chosen, based on an estimated effect size of Cohen’s d = 0.1, which has been previously applied in similar research. The prediction was that there would be more positive stimuli than expected by chance in the experimental condition, with a smaller effect in the control condition. Two separate one-sample Bayesian t-tests with a one-tailed approach were used for the analyses, performed regularly (almost weekly) with updated sample means. The statistical software JASP (Version 0.9) was used for these analyses. Data collection occurred from March to July 2018.
 
 Although the stopping criterion of BF10 = 10 was reached multiple times during data collection, it went unnoticed due to the large volume of data points added weekly. As a result, data collection continued until the criterion was securely met, which occurred at N = 4,092 participants. Demographic data were available for 4,034 participants. Data collection was then stopped according to Bayesian rules of analysis.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  exp = study13_priming.1$expbf,
+  con = study13_priming.1$conbf
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  exp = study13_priming.1$sumsexp,
+  con = study13_priming.1$sumscon
+), 20)
+
+```
+
+## Change of Evidence
+### Exp
+```{r}
+generate_coeplot(study13_priming.1$expbf)
+```
+### Con
+```{r}
+generate_coeplot(study13_priming.1$conbf)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming1.csv)

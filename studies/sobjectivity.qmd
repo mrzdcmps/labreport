@@ -1,5 +1,5 @@
 ---
-title: "Sobjectivity"
+title: "Sobjectivity 1 & 2"
 format: html
 execute: 
   echo: false
@@ -8,7 +8,7 @@ execute:
 
 ```{r}
 source("../scripts/generate_table.R")
-generate_table("Sobjectivity")
+generate_table("Sobjectivity [12]")
 ```
 
 ## Hypothesis
@@ -57,18 +57,6 @@ generate_demographics_table(
 )
 ```
 
-#### Study 3
-
-```{r}
-generate_demographics_table(
-  data = study18_sobjectivity.3,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "männlich",
-  female_value = "weiblich"
-)
-```
-
 ## Materials
 
 Materials were identical to the [priming studies](priming1.html).
@@ -89,12 +77,43 @@ A sequential Bayesian analysis plan was applied for every study. Three separate 
 
 ## Lab Report Data
 
-Only data from Cmax objective is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.
+Only data from Cmax objective (qRNG output) is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  `Study 1` = study16_sobjectivity.1$osave.bf,
+  `Study 2` = study17_sobjectivity.2$osum1.bf
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  `Study 1` = study16_sobjectivity.1$sums,
+  `Study 2` = study17_sobjectivity.2$sums
+), 20)
+
+```
+
+## Change of Evidence
+### Study 1
+```{r}
+generate_coeplot(study16_sobjectivity.1$osave.bf)
+```
+### Study 2
+```{r}
+generate_coeplot(study17_sobjectivity.2$osum1.bf)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data Study 1](../data/sobjectivity/sobjectivity1.csv)
 -   [Download Data Study 2](../data/sobjectivity/sobjectivity2.csv)
--   [Download Data Study 3](../data/sobjectivity/sobjectivity3.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
@@ -104,6 +123,5 @@ Only data from Cmax objective is considered in this meta-analysis. No effect is 
 -   [OSF Data and Materials](https://osf.io/nveaq/files/osfstorage)
 -   [Experimental Program Study 1](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/prime-del-study1.html)
 -   [Experimental Program Study 2](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/prime-del.html)
--   [Experimental Program Study 3](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/sob_rr.html)
 -   [Stimuli](../data/priming/NPrime.zip)
 :::

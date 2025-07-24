@@ -1,7 +1,6 @@
 ---
 title: "Priming 2"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -19,34 +18,13 @@ This study was a direct replication of [Priming 1](priming1.html). All predictio
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study13_priming.2)
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$s2, na.rm=T)
-sd_age <- sd(df$s2, na.rm=T)
-female_count <- sum(df$gender_image == 2, na.rm=T)/total_participants*100
-male_count <- sum(df$gender_image == 1, na.rm=T)/total_participants*100
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    paste0(round(female_count, 2), "%"),
-    paste0(round(male_count, 2), "%"),
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = study13_priming.2,
+  age_col = "s2",
+  gender_col = "gender_image",
+  male_value = "1",
+  female_value = "2"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials and Procedure
@@ -56,6 +34,38 @@ All materials and procedures were identical to those in [Priming 1](priming1.htm
 ## Sample Size and Data Analysis
 
 Participant recruitment and data collection for the study were conducted by Norstat, following the same protocol as Study 1. Initially, data collection was planned to stop when the sequential Bayes Factor (BF) reached the predefined threshold, which occurred at n = 937. However, due to concerns about the small predicted effect size and potential lack of statistical power, the researchers decided to continue collecting data. They closely monitored the BF and eventually stopped recruitment when the sample size reached N = 2,063. Demographic data were available for 2,021 participants.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  exp = study13_priming.2$expbf,
+  con = study13_priming.2$conbf
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  exp = study13_priming.2$sumsexp,
+  con = study13_priming.2$sumscon
+), 20)
+
+```
+
+## Change of Evidence
+### Exp
+```{r}
+generate_coeplot(study13_priming.2$expbf)
+```
+### Con
+```{r}
+generate_coeplot(study13_priming.2$conbf)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming2.csv)

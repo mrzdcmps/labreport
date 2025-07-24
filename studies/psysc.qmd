@@ -90,6 +90,62 @@ Data analysis was conducted using Bayesian inference techniques with a preregist
 
 For the control groups with low PT scores, two-sided Bayesian one-sample t-tests were performed against a 50% probability. Given that 30 stimuli were presented per trait, the expected number of trait-related targets by chance was 15. A narrow informed prior of δ \~ Cauchy(.05, .05) was used. The stopping rule was set at BF = 10, indicating strong evidence in either direction (H0 or H1). It was predicted that at least one high PT group would show a BF10 \> 10 in favor of H1. Additionally, p-values from frequentist t-tests were provided, and a maximum sample size of 1,000 participants was preregistered to ensure the detection of a trend towards BF = 10 if no clear evidence emerged at this sample size.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  `DE high` = study11_psyscanner.de.h$BF,
+  `DE low` = study11_psyscanner.de.l$BF,
+  `AV high` = study11_psyscanner.av.h$BF,
+  `AV low` = study11_psyscanner.av.l$BF,
+  `OC high` = study11_psyscanner.oc.h$BF,
+  `OC low` = study11_psyscanner.oc.l$BF
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  `DE high` = study11_psyscanner.de.h$de.sum,
+  `DE low` = study11_psyscanner.de.l$de.sum,
+  `AV high` = study11_psyscanner.av.h$av.sum,
+  `AV low` = study11_psyscanner.av.l$av.sum,
+  `OC high` = study11_psyscanner.oc.h$oc.sum,
+  `OC low` = study11_psyscanner.oc.l$oc.sum
+), 30)
+
+```
+
+## Change of Evidence
+### DE high
+```{r}
+generate_coeplot(study11_psyscanner.de.h$BF)
+```
+### DE low
+```{r}
+generate_coeplot(study11_psyscanner.de.l$BF)
+```
+### AV high
+```{r}
+generate_coeplot(study11_psyscanner.av.h$BF)
+```
+### AV low
+```{r}
+generate_coeplot(study11_psyscanner.av.l$BF)
+```
+### OC high
+```{r}
+generate_coeplot(study11_psyscanner.oc.h$BF)
+```
+### OC low
+```{r}
+generate_coeplot(study11_psyscanner.oc.l$BF)
+```
+:::
+
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/psyscanner/psyscanner.csv)
 :::

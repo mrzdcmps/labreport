@@ -45,7 +45,7 @@ links = c(
   "studies/smokers-priming.html",
   "studies/sobjectivity.html",
   "studies/sobjectivity.html",
-  "studies/sobjectivity.html",
+  "studies/sobjectivity3.html",
   "studies/epsi.html",
   "studies/epsi.html",
   "studies/robots.html",

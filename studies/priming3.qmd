@@ -1,7 +1,6 @@
 ---
 title: "Priming 3"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -27,34 +26,13 @@ These were computed and compared to 10,000 simulations of these conditions, whic
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study13_priming.3)
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$S2, na.rm=T)
-sd_age <- sd(df$S2, na.rm=T)
-female_count <- sum(df$gender_image == 2, na.rm=T)/total_participants*100
-male_count <- sum(df$gender_image == 1, na.rm=T)/total_participants*100
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    paste0(round(female_count, 2), "%"),
-    paste0(round(male_count, 2), "%"),
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = study13_priming.3,
+  age_col = "S2",
+  gender_col = "gender_image",
+  male_value = "1",
+  female_value = "2"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials and Procedure
@@ -64,6 +42,38 @@ All materials and procedures were identical to those in [Priming 1](priming1.htm
 ## Sample Size and Data Analysis
 
 Participant recruitment and data collection were conducted by Norstat, following the same protocol as in Studies 1 and 2. Due to the exhaustion of the German participant pool during Study 3, additional invitations were sent to Austrian panelists. Data collection took place from October to December 2019, resulting in a final sample size of 6,099 participants, with demographic data available for 6,047 of them.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  exp = study13_priming.3$expbf,
+  con = study13_priming.3$conbf
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  exp = study13_priming.3$sumsexp,
+  con = study13_priming.3$sumscon
+), 20)
+
+```
+
+## Change of Evidence
+### Exp
+```{r}
+generate_coeplot(study13_priming.3$expbf)
+```
+### Con
+```{r}
+generate_coeplot(study13_priming.3$conbf)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming3.csv)

@@ -1,0 +1,96 @@
+---
+title: "Sobjectivity 3"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+  
+```{r}
+source("../scripts/generate_table.R")
+generate_table("Sobjectivity 3")
+```
+
+## Hypothesis
+
+This is a replication of the previous [Sobjectivity 1](sobjectivity.html) study.
+
+In the experiment, participants were exposed to quantum-randomly generated sequences of positive images. Crucially, we manipulated whether the objective data from these sequences were preserved or erased after presentation. Half of the participants were assigned to an "erasure" condition, in which the computer data were deleted before the result file was created; the other half were in a "non-erasure" condition, in which the data were retained. We then measured how many positive images participants recalled (subjective recall) and compared these with the objectively stored values, where available.
+
+Our central hypothesis was that participants in the erasure condition would, on average, recall more positive images than those in the non-erasure condition. This would suggest that subjective memory is influenced by whether or not the corresponding objective record still exists—a possible indicator of observer effects in quantum systems. We expected strong Bayesian evidence in favor of this hypothesis.
+
+Additionally, we explored four supplementary hypotheses. First, we expected no meaningful deviation from chance (a value of 10) in the subjective recall scores of the non-erasure group, as well as in the objective image counts of that same group. In contrast, we hypothesized that recall scores in the erasure group would exceed chance. Lastly, we predicted a positive correlation between subjective recall and the objective number of positive images in the non-erasure group, as a check on the fidelity of subjective reports.
+
+## Participants
+
+```{r}
+generate_demographics_table(
+  data = study18_sobjectivity.3,
+  age_col = "age",
+  gender_col = "gender",
+  male_value = "männlich",
+  female_value = "weiblich"
+)
+```
+
+## Materials
+
+Materials were identical to the [priming studies](priming1.html).
+
+## Procedure
+
+Participants were recruited via the polling platforms Kantar and Prolific and invited to take part online using their own computers. They first confirmed basic eligibility (e.g., being over 18) and were instructed to ensure a quiet, undisturbed environment. Once they entered full-screen mode, they read a detailed explanation of the task, which involved viewing flickering and emotionally charged images. They were informed about a required attention check and reminded of their right to withdraw at any time.
+
+Each participant completed 20 trials. In each trial, they first saw a fixation cross, followed by a subliminal priming sequence consisting of three image blends: 50/50, 60/40, and 70/30 mixes of a positive and a negative image, each masked before and after to ensure subliminal exposure. The prime sequence aimed to unconsciously strengthen the desire to see the positive image. After the priming, a quantum random number generator (qRNG) randomly selected either the positive or negative image from the pair to be shown. The choice was either stored (Cmax) or only temporarily counted (Creduced), depending on a random condition assigned later. The selected image was shown for one second, followed by a brief inter-trial interval.
+
+After 14 trials, participants were asked to click a “Next” button as an attention check. If they failed to respond within 10 seconds, their data were excluded. After completing all 20 trials, participants saw two numbers labeled “A” and “B.” “A” was an artificial number drawn from a binomial distribution; “B” was the actual number of positive images they had been shown. No explicit instruction to memorize these numbers was given, making it an incidental memory task.
+
+A brief filler task followed, involving six statements on perceived luckiness. Then, participants were asked to recall the numbers they had seen after A and B. The recalled number for B—the number of positive images—was the main subjective dependent variable.
+
+At the very end of the experiment, a pseudo-random process determined whether each participant’s objective data (i.e., the actual number of positive images shown) would be stored or erased. This erasure manipulation was not decided in advance but executed just before saving the data file. In the erasure condition, all relevant data were overwritten in the JavaScript object and thus not saved; in the non-erasure condition, the data were preserved. This created a between-subjects manipulation for comparing subjective memory under erased versus preserved objective data conditions.
+
+Finally, participants answered three honesty-check questions regarding their environment, attentiveness, and prior participation in similar studies. They were assured these answers would not affect their compensation and were thanked for their participation.
+
+## Sample Size and Data Analysis
+
+We followed a preregistered, contingent plan based on the assumptions of normality and homogeneity of variance. The analysis focused on testing our main hypothesis: whether participants in the erasure condition recalled more positive images than those in the non-erasure condition. To reduce the influence of outliers, we used log-transformed subjective recall data as our primary dependent variable.
+
+We planned to conduct a one-tailed Bayesian two-sample t-test to compare the log-transformed recall scores between the two groups (logCreducedsubjective > logCmaxsubjective). If assumptions of normality and equal variances held, this test alone would serve as the basis for evaluating the hypothesis, with data collection stopping once strong evidence was reached (Bayes factor BF₁₀ > 10). We used an uninformed prior (Cauchy distribution centered at 0 with scale r = 0.1), corresponding to an expected small effect size (Cohen’s d ≈ 0.1). All analyses were performed in R and JASP, and analysis scripts were shared via OSF.
+
+## Lab Report Data
+
+Only data from Cmax objective (qRNG output) is considered in this meta-analysis. No effect is expected for these data since the paradigm had already declined at this point.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(study18_sobjectivity.3$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(study18_sobjectivity.3$obj, 20)
+
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study18_sobjectivity.3$BF)
+```
+:::
+
+::: {.callout-tip title="Data" collapse="false"}
+-   [Download Data](../data/sobjectivity/sobjectivity3.csv)
+:::
+
+::: {.callout-note title="Resources" collapse="false"}
+-   Publication submitted
+-   [Preregistration](https://osf.io/meqgw)
+-   [OSF Project](https://osf.io/bj82z/)
+-   [OSF Data and Materials](https://osf.io/bj82z/files/osfstorage)
+-   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/sob_rr.html)
+-   [Stimuli](../data/priming/NPrime.zip)
+:::

@@ -1,7 +1,6 @@
 ---
 title: "Smokers 1"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -21,34 +20,13 @@ We tested non-smokers as control group and hypothesized no deviation from chance
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study10_smokers, Study == 1)
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$Age, na.rm=T)
-sd_age <- sd(df$Age, na.rm=T)
-female_count <- sum(df$Sex == 1, na.rm=T)
-male_count <- sum(df$Sex == 2, na.rm=T)
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants,
-    female_count,
-    male_count,
-    paste0(round(mean_age, 2), " years"),
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = subset(study10_smokers, Study==1),
+  age_col = "Age",
+  gender_col = "Sex",
+  male_value = "2",
+  female_value = "1"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials
@@ -80,6 +58,38 @@ For sample size estimation, data collection, and data analyses, the suggestions 
 To the test for differences from the expected mean (50%), Bayesian analyses with a r = .5 from the Cauchy distribution were performed. Data was checked separately for each group, smokers and non-smokers, by performing Bayesian one sample t-tests to determine if the mean number of shown target stimuli differs from the expected value (200) in the group of smokers and non-smokers, respectively. We expect the group of smokers to show a different number of smoking-associated pictures than a truly random distribution would suggest while the measured value should not differ from the expected value in the group of non-smokers.
 
 If smokers see more or less of the target pictures, a mechanism influencing the selection of the eigenstate that leads to the correspondent picture based on a psychological variable can be assumed.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  exp = study10_smokers.1.exp$BF,
+  con = study10_smokers.1.con$BF
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  exp = study10_smokers.1.exp$PosBilder,
+  con = study10_smokers.1.con$PosBilder
+), 400)
+
+```
+
+## Change of Evidence
+### Exp
+```{r}
+generate_coeplot(study10_smokers.1.exp$BF)
+```
+### Con
+```{r}
+generate_coeplot(study10_smokers.1.con$BF)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/smokers/smokers1.csv)

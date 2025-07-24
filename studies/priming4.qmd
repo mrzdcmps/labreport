@@ -1,7 +1,6 @@
 ---
 title: "Priming 4"
 format: html
-editor: visual
 execute: 
   echo: false
   warning: false
@@ -19,36 +18,13 @@ The preregistered study was a conceptual replication of Study 3, testing the Mod
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study13_priming.4)
-
-# Data
-total_participants <- nrow(df)
-mean_age <- mean(df$S1, na.rm=T)
-sd_age <- sd(df$S1, na.rm=T)
-female_count <- sum(df$S2 == "F", na.rm=T)/total_participants*100
-male_count <- sum(df$S2 == "M", na.rm=T)/total_participants*100
-other_count <- sum(df$S2 == "", na.rm=T)/total_participants*100
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Other", "Mean Age", "SD Age"),
-  Count_Statistics = c(
-    total_participants, 
-    paste0(round(female_count, 2), "%"),
-    paste0(round(male_count, 2), "%"),
-    paste0(round(other_count, 2), "%"),
-    paste0(round(mean_age, 2), " years"), 
-    paste0(round(sd_age, 2), " years")
-    )
+generate_demographics_table(
+  data = study13_priming.4,
+  age_col = "S1",
+  gender_col = "S2",
+  male_value = "M",
+  female_value = "F"
 )
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
 ```
 
 ## Materials
@@ -72,6 +48,38 @@ After all 40 trials, participants rated their perception of friendly faces as po
 The analysis strategy for this study followed the same approach as Study 3, focusing on changes in evidence using sequential Bayes factors (BFs) from two Bayesian one-sample t-tests (one-tailed) on the raw data (mean of positive pictures) from the positive and neutral priming conditions. Due to the anticipated volatile effect, a fixed BF threshold could not be used as a stopping criterion. Based on the positive results of Study 1, the pre-registered target sample size was around 4,000 participants.
 
 Data collection was conducted by Kantar between February and March 2020, with about 100 participants recruited per day. The final sample consisted of 3,996 participants (with demographic data for 3,951 participants). Once the target sample size was reached, data collection was halted, and the data were analyzed.
+
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  exp = study13_priming.4$expbf,
+  con = study13_priming.4$conbf
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  exp = study13_priming.4$sumsexp,
+  con = study13_priming.4$sumscon
+), 20)
+
+```
+
+## Change of Evidence
+### Exp
+```{r}
+generate_coeplot(study13_priming.4$expbf)
+```
+### Con
+```{r}
+generate_coeplot(study13_priming.4$conbf)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/priming/priming4.csv)

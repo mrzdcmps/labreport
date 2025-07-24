@@ -57,6 +57,25 @@ We used RStudio and JASP for all analyses, including data preparation, descripti
 
 For this lab report only the human subjects' scores of both conditions are considered.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+## Bayes Factor
+```{r}
+generate_bfplot(study20_robots$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(study20_robots$hit_player, 10)
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study20_robots$BF)
+```
+:::
+
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/robots/robots.csv)
 :::

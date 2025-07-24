@@ -82,6 +82,27 @@ Despite the robust design, most hypotheses yielded anecdotal-to-moderate evidenc
 ## Lab Report Data
 For the lab report, only objective qRNG of the save-condition and no subjective estimates are included.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(study25_willpower.save$BF)
+```
+
+## Random Walk
+```{r}
+generate_rwplot(study25_willpower.save$pics, 20)
+
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study25_willpower.save$BF)
+```
+:::
+
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download All Data](../data/willpower/willpower.csv)

@@ -48,6 +48,38 @@ The study used the standard analysis protocol for Micro-Pk studies which include
 
 Since this study was an add-on to a different smokers-related lab study conducted by another research group, the sample size was limited and not further extended after completion of the main study.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  exp = study15_smokers.2$BF.exp,
+  con = study15_smokers.2$BF.con
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  exp = study15_smokers.2$sum_condition_experimental,
+  con = study15_smokers.2$sum_condition_control
+), 20)
+
+```
+
+## Change of Evidence
+### Exp
+```{r}
+generate_coeplot(study15_smokers.2$BF.exp)
+```
+### Con
+```{r}
+generate_coeplot(study15_smokers.2$BF.con)
+```
+:::
+
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/smokers2/smokerspriming.csv)
 :::

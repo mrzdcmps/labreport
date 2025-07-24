@@ -55,6 +55,38 @@ We also explored correlations between guessing performance and personality trait
 
 For the lab report we consider both conditions as experimental conditions, since a micro-PK effect should be observable in both conditions.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(list(
+  exp = study22_schroedinger$BF.exp,
+  con = study22_schroedinger$BF.con
+))
+```
+
+## Random Walk
+```{r}
+generate_rwplot(list(
+  exp = study22_schroedinger$hitsExp,
+  con = study22_schroedinger$hitsCon
+), 10)
+
+```
+
+## Change of Evidence
+### Exp
+```{r}
+generate_coeplot(study22_schroedinger$BF.exp)
+```
+### Con
+```{r}
+generate_coeplot(study22_schroedinger$BF.con)
+```
+:::
+
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/schroedinger/cat.csv)
 :::

@@ -68,7 +68,7 @@ After the task, all participants completed questionnaires (see above).
 ## Sample Size and Data Analysis
 
 The study involved a total of 613 participants across two phases of data collection. The first phase was part of an empirical course and included 283 participants, with 13 excluded due to self-reported non-serious engagement or being underage, leaving 270 valid cases. The second phase was a continuation within a thesis and recruited 330 additional participants, with exclusions for similar reasons, resulting in 317 valid cases. The combined dataset for analysis thus comprised 587 participants (after removing duplicates and invalid responses).\
-For *data analysis*, the study employed Bayesian statistics to assess evidence for or against the hypotheses. Key analyses included:
+For data analysis, the study employed Bayesian statistics to assess evidence for or against the hypotheses. Key analyses included:
 
 1.  Bayesian independent samples t-tests (Cauchy prior width = 0.1) to compare the frequency of red card selections between experimental and control groups (H1).
 2.  Bayesian contingency tests (with a prior of 1) to determine whether the experimental group’s results deviated from chance (H2).
@@ -77,6 +77,25 @@ For *data analysis*, the study employed Bayesian statistics to assess evidence f
 
 Results showed no statistically significant support for micro-PK effects in either phase or the combined dataset. While initial descriptive trends in the first phase suggested a slight advantage for the experimental group, this disappeared in the replication. Bayesian factors (BF) consistently favored the null hypothesis (BF \< 1), indicating that observed variations were likely due to chance. However, exploratory gender analyses revealed that male participants exhibited a moderate trend toward higher red card selections (BF = 6.54), though this was not predicted by the original hypotheses.
 
+## Results of Universal Micro-PK Hypothesis
+
+::: {.panel-tabset}
+
+## Bayes Factor
+```{r}
+generate_bfplot(study24_stories$BF)
+```
+
+## Random Walk
+```{r}
+changeofevidence::plotrw(cumsum(ifelse(study24_stories$correct, 1, -1)))
+```
+
+## Change of Evidence
+```{r}
+generate_coeplot(study24_stories$BF)
+```
+:::
 
 ::: {.callout-tip title="Data" collapse="false"}
 -   [Download Data](../data/stories/stories.csv)
