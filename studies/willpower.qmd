@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Willpower")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -22,13 +22,7 @@ We also included supplementary hypotheses to further examine potential micro-PK 
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study25_willpower.save,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "männlich",
-  female_value = "weiblich"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -88,18 +82,18 @@ For the lab report, only objective qRNG of the save-condition and no subjective 
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(study25_willpower.save$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study25_willpower.save$pics, 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study25_willpower.save$BF)
+coeplot("Willpower")
 ```
 :::
 
@@ -110,6 +104,6 @@ generate_coeplot(study25_willpower.save$BF)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Student Report](../data/stories/willpower-report.pdf)
+-   [Student Report](../data/willpower/willpower-report.pdf)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/willpower/wille.html)
 :::

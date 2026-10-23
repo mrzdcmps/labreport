@@ -10,36 +10,22 @@ page-navigation: true
 ::: callout-note
 This section will be updated with each new release of the report.
 
-Current version: *Studies 2016 - 2025* (v2)
+Current version: *Studies 2016 - 2025* (v3)
 :::
 
 ```{r setup, include=FALSE}
-st <- readRDS("data/overview2025-07-12.rds")
-load("data/study_objects.RData")
+source("scripts/registry.R")
+r  <- registry()
+st <- r$st
 
-# Number of Studies
-study_objects <- ls(pattern = "^study")
-numbers <- as.numeric(gsub("study([0-9]+).*", "\\1", study_objects))
-max_number <- max(numbers)
+# Number of studies: the registry knows them, so this no longer needs
+# the 5.9 MB study_objects.RData loaded just to run ls(pattern="^study").
+max_number <- length(unique(r$study))
 
-# Number of individual participants
-exclude_studies <- c(
-  "Monks T2 Exp",
-  "Monks T2 Con",
-  "Psyscanner Style 2 Exp",
-  "Psyscanner Style 2 Con",
-  "Psyscanner Style 3 Exp",
-  "Psyscanner Style 3 Con",
-  "Priming 1 Con",
-  "Priming 2 Con",
-  "Priming 3 Con",
-  "Priming 4 Con",
-  "Smokers Priming Con",
-  "Epsi Correlation Condition B",
-  "Schrödingers Cat Con"
-)
-
-n_participants <- sum(st[!(st$Study %in% exclude_studies), ]$N, na.rm = TRUE)
+# Number of individual participants. Rows that reuse the same people
+# share a `sample` id in the registry, which replaces the
+# hand-maintained 13-name exclusion list that used to sit here.
+n_participants <- r$n_participants
 
 
 #Frequentist m-a with metafor 
@@ -51,11 +37,10 @@ yi=exp$ES
 vi=exp$Var
 studies=exp$Study
 
-yi[which(studies == "Smokers 1 Exp")] <- -yi[which(studies == "Smokers 1 Exp")]
-yi[which(studies == "Smokers 2 Exp")] <- -yi[which(studies == "Smokers 2 Exp")]
-yi[which(studies == "Smokers 3")] <- -yi[which(studies == "Smokers 3")]
-yi[which(studies == "Baseline 1 Lucky")] <- -yi[which(studies == "Baseline 1 Lucky")]
-yi[which(studies == "Baseline 2")] <- -yi[which(studies == "Baseline 2")]
+# Avoidance hypotheses enter the meta-analysis with a flipped sign.
+# The registry derives that from each condition, so the five study
+# names that used to be hardcoded here are gone.
+yi <- yi * r$es_sign[studies]
 
 res.e <- rma(
   yi,
@@ -71,7 +56,7 @@ yi=con$ES
 vi=con$Var
 studies=con$Study
 
-yi[which(studies == "Smokers 2 Con")] <- -yi[which(studies == "Smokers 2 Con")]
+yi <- yi * r$es_sign[studies]
 
 res.c <- rma(
   yi,
@@ -81,28 +66,48 @@ res.c <- rma(
   slab=paste(studies)
   )
 
-# CoE Meta-Analysis
+# CoE Meta-Analysis -- same computations as coe-metaanalysis.qmd.
+# Primary analysis: the aggregate CoE p-value per condition, the
+# harmonic mean of the three measures (floored at 1/1001 for log()).
 library(metap)
-coe <- readRDS("data/coe_2025-07-14.rds")
-
-# Select studies / conditions
+coe <- r$st2
+coe$p_agg <- pmax(coe$`COE p`, 1 / 1001)
 exp <- subset(coe, coe$Experimental == TRUE)
-
-istwo <- ifelse(exp$Direction == "different", TRUE, FALSE) # two-tailed test
-df <- exp$N-1 # degrees of freedom
-
-e.maxbf <- invchisq(two2one(exp$`MaxBF p`, istwo), k=df)
-e.bfenergy <- invchisq(two2one(exp$`Energy p`, istwo), k=df)
-e.fft <- invchisq(two2one(exp$`FFT p`, istwo), k=df)
-
 con <- subset(coe, coe$Experimental == FALSE)
 
-istwo <- ifelse(con$Direction == "different", TRUE, FALSE) # two-tailed test
-df <- con$N-1 # degrees of freedom
+e.agg  <- invchisq(exp$p_agg, k = exp$N - 1)    # weighted by N - 1
+e.aggF <- sumlog(exp$p_agg)                     # unweighted (Fisher)
+c.agg  <- invchisq(con$p_agg, k = con$N - 1)
+c.aggF <- sumlog(con$p_agg)
+e.sig  <- sum(exp$p_agg < .05)
+c.sig  <- sum(con$p_agg < .05)
 
-c.maxbf <- invchisq(two2one(con$`MaxBF p`, istwo), k=df)
-c.bfenergy <- invchisq(two2one(con$`Energy p`, istwo), k=df)
-c.fft <- invchisq(two2one(con$`FFT p`, istwo), k=df)
+# Experimental vs. control
+mw <- wilcox.test(exp$p_agg, con$p_agg, alternative = "less", exact = FALSE)
+fisher_x <- function(p) -2 * sum(log(p))
+obs_diff <- fisher_x(exp$p_agg) - fisher_x(con$p_agg)
+set.seed(20261016)
+perm <- replicate(10000, {
+  lab <- sample(coe$Experimental)
+  fisher_x(coe$p_agg[lab]) - fisher_x(coe$p_agg[!lab])
+})
+perm_p <- (1 + sum(perm >= obs_diff)) / (1 + length(perm))
+
+# Sensitivity: one condition per participant sample
+first_per_sample <- function(d) d[!duplicated(r$sample[d$Study]), ]
+exp1   <- first_per_sample(exp)
+e.ind  <- invchisq(exp1$p_agg, k = exp1$N - 1)
+e.indF <- sumlog(exp1$p_agg)
+
+# Component measures (exploratory). No two2one(): CoE p-values are
+# one-tailed exceedance probabilities already, also for the two-sided
+# Smokers 1 conditions.
+comp_p <- function(d, col) pmax(d[[col]], 1 / 1001)
+e.maxbf    <- invchisq(comp_p(exp, "MaxBF p"),  k = exp$N - 1)
+e.bfenergy <- invchisq(comp_p(exp, "Energy p"), k = exp$N - 1)
+e.fft      <- invchisq(comp_p(exp, "FFT p"),    k = exp$N - 1)
+
+fp <- function(p) if (p < .001) "< .001" else paste("=", sub("^0", "", sprintf("%.3f", p)))
 
 options(scipen = 999)
 ```
@@ -115,15 +120,15 @@ The overall effect size for micro-PK was found to be  marginally significant (`{
 
 ## Change of Evidence Measures
 
-Since Psi-effects may be influenced by the accumulation of evidence over time, new measures have been devised to analyze how this [evidence changes](coe-measures.html). By comparing these results to simulations, empirical p-values can be calculated. A meta-analytic assessment of these change-of-evidence measures was conducted using the inverse chi-square `invchisq`-function to combine p-values across studies. Three characteristics were analyzed: Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve’s Fast Fourier Transform (FFT).
+Since Psi-effects may be influenced by the accumulation of evidence over time, [change of evidence measures](coe-measures.html) compare how evidence develops during data collection with Monte Carlo simulations of the same studies under the null hypothesis. Three characteristics of each Bayes factor trajectory are assessed (its maximum, its energy and the amplitude sum of its Fourier transform) and combined per condition into an aggregate CoE p-value, the harmonic mean of the three. The aggregate p-values were combined across conditions with the inverse chi-square method, which weights conditions by sample size, and with Fisher's method, which weights them equally. The first two versions of this report tested the three measures separately, and the aggregate replaces these three strongly correlated tests with one.
 
-For all experimental conditions, the combined chi-square statistics were calculated with `{r} e.maxbf$df` degrees of freedom, yielding the following results: `{r} round(e.maxbf$chisq,2)` for the Maximum BF (*p* = `{r} round(e.maxbf$p,3)`), `{r} round(e.bfenergy$chisq,2)` for the BF Energy (*p* = `{r} round(e.bfenergy$p,3)`) and `{r} round(e.fft$chisq,2)` for the FFT amplitude sum (*p* = `{r} round(e.fft$p,3)`).
+In experimental conditions, `{r} e.sig` of `{r} nrow(exp)` conditions (`{r} round(100 * e.sig / nrow(exp))`%) showed an aggregate CoE p-value below .05, compared with the 5% expected by chance. Combined, the aggregate p-values deviated from the null distribution in the weighted analysis (χ²(`{r} e.agg$df`) = `{r} round(e.agg$chisq, 1)`, *p* `{r} fp(e.agg$p)`) as well as in the unweighted analysis (χ²(`{r} e.aggF$df`) = `{r} round(e.aggF$chisq, 1)`, *p* `{r} fp(e.aggF$p)`). Control conditions showed no such deviation. Here `{r} c.sig` of `{r} nrow(con)` conditions fell below .05, and neither the weighted (*p* `{r} fp(c.agg$p)`) nor the unweighted analysis (*p* `{r} fp(c.aggF$p)`) differed from chance.
 
-The analysis of change of evidence measures revealed mixed results for experimental conditions. While the Maximum BF showed no significant deviation from chance expectations (*p* = `{r} round(e.maxbf$p,3)`), both BF Energy (*p* = `{r} round(e.bfenergy$p,3)`) and FFT amplitude sum (*p* = `{r} round(e.fft$p,3)`) demonstrated statistically significant results. This pattern suggests that while the peak evidence accumulation may not differ substantially from simulated data, the overall energy and frequency characteristics of evidence changes show systematic deviations from random variation. The assignment of $p_{MaxBF} = 1$ to studies in the direction of H0 (MaxBF = 1) might be responsible for the difference and suggests that the MaxBF criterion could be limited.
+The direct comparison of the two condition types is the critical test of the volatile effect hypothesis, because artefacts of the analysis would appear alike in both condition types, which pass through identical procedures. Aggregate CoE p-values were smaller in experimental than in control conditions (Mann-Whitney U, *W* = `{r} format(mw$statistic)`, *p* `{r} fp(mw$p.value)`; permutation test on the difference in Fisher chi-square statistics with 10,000 permutations, *p* `{r} fp(perm_p)`). The combination methods treat all conditions as independent, although some reuse the same participants, such as the two time points of the Monks study and the three median splits of the Psychoscanner sample. When only one condition per participant sample is kept, the experimental conditions still deviate from chance (weighted *p* `{r} fp(e.ind$p)`, unweighted *p* `{r} fp(e.indF$p)`).
 
-Nonetheless, the significant findings for BF Energy and FFT amplitude sum indicate the presence of a subtle but detectable pattern in how evidence accumulates over time in experimental conditions, potentially reflecting a volatile micro-PK effect that manifests not as consistent directional changes but as systematic alterations in the dynamics of evidence accumulation. The tests are robust to using methods that do or do not account for varying sample sizes, thus addressing potential issues of overweighting studies that show a noticeable BF early on and whose data collection is extended.
+Among the individual measures, which the [CoE meta-analysis](coe-metaanalysis.html) reports as an exploratory breakdown, the weighted deviation of the experimental conditions is carried by BF Energy (*p* `{r} fp(e.bfenergy$p)`) and FFT amplitude sum (*p* `{r} fp(e.fft$p)`), while the Maximum BF shows none (*p* `{r} fp(e.maxbf$p)`). The assignment of $p_{MaxBF} = 1$ to conditions whose evidence never favoured H1 (MaxBF = 1) may limit that measure.
 
-In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results for two of the three measures in experimental conditions do not necessarily translate into a substantial overall effect, as only a marginally significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence accumulation patterns are not likely due to random variation alone, suggesting that experimental manipulations may influence the temporal dynamics of evidence accumulation even when they do not produce detectable overall effects.
+Evidence dynamics thus deviate systematically from chance in experimental but not in control conditions, while the overall effect size is only marginally significant. This pattern is consistent with a volatile micro-PK effect that shows less as a stable directional shift than as altered accumulation of evidence over time. The results hold for methods that do and do not account for sample size, which addresses the concern of overweighting studies whose data collection was extended after an early noticeable BF.
 
 ## Addressing Publication Bias
 
@@ -131,7 +136,7 @@ A potential concern in meta-analyses is publication bias, where significant resu
 
 ## Implications of Findings
 
-The significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions suggest dynamic factors influencing evidence accumulation patterns. This goes hand in hand with theories about decline effects in (parapsychologcial) science. E.g., the Model of Pragmatic Information suggests that novel, autonomous effects may decrease in detectability over time. It may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.
+The aggregate change of evidence measure, which deviates from chance in experimental but not in control conditions, suggests dynamic factors influencing evidence accumulation patterns. This goes hand in hand with theories about decline effects in (parapsychologcial) science. E.g., the Model of Pragmatic Information suggests that novel, autonomous effects may decrease in detectability over time. It may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.
 
 Weak and volatile effects are often observed in parapsychological research, exemplified by failed direct replications, a phenomenon known as the decline effect. This pattern is not unique to Psi research but has been documented in other scientific areas as well. The change of evidence measures presented here might offer a fruitful approach to identify decline patterns within individual studies and differentiate between false positives combined with regression to the mean versus genuine effect-plus-decline patterns.
 
@@ -139,7 +144,7 @@ The marginally significant overall effect size (*p* = `{r} round(res.e$pval,3)`)
 
 ## Conclusion
 
-While our meta-analysis demonstrated only a marginally significant effect of micro-PK interventions (p = 0.072), the significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions indicate that the phenomena observed are not purely due to chance. These findings suggest that micro-PK effects, while subtle, may influence the temporal dynamics of evidence accumulation in ways that traditional effect size measures might not fully capture.
+While our meta-analysis demonstrated only a marginally significant effect of micro-PK interventions (*p* `{r} fp(res.e$pval)`), the aggregate change of evidence measure deviated from chance in experimental conditions and differed from control conditions, indicating that the phenomena observed are not purely due to chance. These findings suggest that micro-PK effects, while subtle, may influence the temporal dynamics of evidence accumulation in ways that traditional effect size measures might not fully capture.
 
 Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Particular attention should be given to understanding the mechanisms underlying the observed changes in evidence accumulation patterns. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.
 

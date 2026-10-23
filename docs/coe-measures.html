@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -88,14 +88,15 @@ div.csl-indent {
 <link href="./changeofevidence.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-59974ff5f99283286ec136e9ced43699.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4cdc678d484c340c60f6c6e54a47defe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -150,7 +151,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -254,7 +255,8 @@ window.Quarto = {
   <li><a href="#energy-of-bf" id="toc-energy-of-bf" class="nav-link" data-scroll-target="#energy-of-bf">Energy of BF</a></li>
   <li><a href="#frequency-analysis" id="toc-frequency-analysis" class="nav-link" data-scroll-target="#frequency-analysis">Frequency Analysis</a></li>
   </ul></li>
-  <li><a href="#the-changeofevidence-package" id="toc-the-changeofevidence-package" class="nav-link" data-scroll-target="#the-changeofevidence-package">The ‘changeofevidence’ package</a></li>
+  <li><a href="#aggregate-coe-p-value" id="toc-aggregate-coe-p-value" class="nav-link" data-scroll-target="#aggregate-coe-p-value">Aggregate CoE p-Value</a></li>
+  <li><a href="#the-changeofevidence-package" id="toc-the-changeofevidence-package" class="nav-link" data-scroll-target="#the-changeofevidence-package">The ‘changeofevidence’ Package</a></li>
   </ul>
 </nav>
     </div>
@@ -281,46 +283,49 @@ window.Quarto = {
 
 
 <p>Empirical research on Micro-Pk often times reports a decline of initially present effects <span class="citation" data-cites="Colborn_2018">(<a href="#ref-Colborn_2018" role="doc-biblioref">Colborn, 2018</a>)</span>. This phenomenon can be explained either by an initial false positive followed naturally by a regression to the true mean. Alternatively, it fits the predictions of the Model of Pragmatic Information, which states that novel, autonomous effects are inversely linked to their confirmation or detectability <span class="citation" data-cites="7-05370-002">(<a href="#ref-7-05370-002" role="doc-biblioref">Lucadou et al., 2007</a>)</span>. This would result in a decrease of effect size over time, since accumulated data means more power and possibility of convincing confirmatory results <span class="citation" data-cites="maier2022">(<a href="#ref-maier2022" role="doc-biblioref">Maier et al., 2022</a>)</span>.</p>
-<p>Recently, efforts have been made to find ways to methodically distinguish false positives from decline effects using so called <em>change of evidence</em>-measures <span class="citation" data-cites="dechamps2019a">(<a href="#ref-dechamps2019a" role="doc-biblioref">Dechamps, 2019</a>)</span>. These measures work by analyzing the temporal development of Bayesian evidence for the effect over the course of data collection and compare certain characteristics to a set of simulations representing possible an empirical null distribution.</p>
+<p>The Change of Evidence (CoE) measures were developed to detect unusual patterns in Bayesian evidence accumulation that might indicate such volatile effects <span class="citation" data-cites="dechamps2019a">(<a href="#ref-dechamps2019a" role="doc-biblioref">Dechamps, 2019</a>)</span>. They work by comparing observed characteristics of the evidence trajectory against empirical null distributions generated through Monte Carlo simulation.</p>
 <section id="bayesian-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-analysis">Bayesian Analysis</h2>
 <p>In Bayesian statistics, test results often times are reported as <em>Bayes Factors</em> (BF). A BF characterizes the relative evidence for two hypotheses, e.g.&nbsp;the presence of an effect versus the absence of an effect. A BF of 1 indicates equal evidence for both hypotheses, a BF &gt; 1 indicates evidence for the presence of an effect (H1), and a BF &lt; 1 indicates evidence for the absence of an effect (H0). A BF is symmetrical around 1, meaning that a BF of 0.5 indicates the same evidence for H0 as a BF of 2 indicates for H1. Similar to the convetion of using a p-value of 0.05 as a threshold for significance, a BF can be classified into different categories of evidence strength, whereas a BF &gt; 3 is considered moderate evidence, and a BF &gt; 10 is considered strong evidence <span class="citation" data-cites="jeffreys1961theory">(<a href="#ref-jeffreys1961theory" role="doc-biblioref">Jeffreys, 1961</a>)</span></p>
 <p><span class="math display">\[ BF = \frac{P(D|H1)}{P(D|H0)} \]</span></p>
 <p>An advantage of Bayesian testing is that it allows for the continuous updating of evidence as new data comes in. In contrast to using p-values, there is no need for an a priori power analysis. Instead a desired level of evidence can be set, and the data collection can be stopped as soon as this level is reached. Even then, data can be added to further substantiate the evidence without the risk of inflating error rates, since the BF is consistent over time.</p>
+<p>For each study condition we compute sequential Bayes Factors across the course of data collection. The BF at each point quantifies the relative evidence for the effect hypothesis (deviation from mean chance expectation) versus the null hypothesis (chance performance), using the same prior as the endpoint analysis (a Cauchy(0, 0.1) prior unless a study specified otherwise). The resulting trajectory shows how evidence evolves as data accumulate, revealing patterns that the endpoint analysis alone would obscure.</p>
 <p>The possibility of monitoring the change of evidence over time is especially useful in the context of Micro-Pk research, where an effect volatility could be assumed. If this was the case, the BF would not be consistent, but dependent on the level of confirmatory power. This would result in unusual patterns of evidence change, which could be detected by comparing the empirical BF to a set of simulated BFs as is done with the following change of evidence-measures.</p>
 </section>
 <section id="simulations" class="level2">
 <h2 class="anchored" data-anchor-id="simulations">Simulations</h2>
-<p>The change of evidence measures are based on a set of Monte-Carlo simulations. These simulations are based on the same data generating process as the empirical data, but with the effect size set to 0. This means that the simulations represent the null hypothesis, and the BFs calculated from these simulations represent the empirical null distribution. The empirical BF is then compared to this distribution to detect unusual patterns of evidence change.</p>
-<p>The simulations used for the analysis of this lab report are generated with true random numbers using the same qRNG as most of the studies. This ensures that the simulations are based on the same random process as the empirical data. The number of simulations is set to 1000, which is a common number in the literature.</p>
+<p>To assess whether an observed trajectory characteristic exceeds chance expectation, we generate empirical null distributions through Monte Carlo simulation. For each study condition we simulate 1,000 datasets using the same data-generating process as the empirical data (the same number of trials per participant, chance level, test direction and prior) but with the effect size set to zero. Each simulated dataset yields a Bayes Factor trajectory, from which we compute the same summary statistics as for the empirical data. The distribution of these simulated statistics is the null distribution against which the observed values are compared, and each p-value below is the share of simulations with an equal or more extreme value.</p>
+<p>The simulation sets are built from pre-recorded output of a quantum random number generator of the kind used in the studies themselves, so the null distribution reflects the stochastic properties of the actual measurement system rather than idealized mathematical randomness.</p>
+<p>All examples on this page use the Incongruence Exp condition (<em>N</em> = 236), whose sequential analysis is summarized below.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(bf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  Sequential Bayesian Testing
+  --------------------------------
+  Test: One-sample t-test (parametric)
+  Sample size: 236
+  Final Bayes Factor: BF10 = 2.242; BF01 = 0.446
+  Prior: Cauchy(0, 0.1)
+  Alternative hypothesis: greater
+  Frequentist:  t-value = 1.774; p = 0.039; d = 0.115
+  Bayesian δ:   0.081, 95% CI [-0.026, 0.208]
+  </code></pre>
+</div>
+</div>
 </section>
 <section id="measures" class="level2">
 <h2 class="anchored" data-anchor-id="measures">Measures</h2>
 <section id="maximum-bf" class="level3">
 <h3 class="anchored" data-anchor-id="maximum-bf">Maximum BF</h3>
-<p>The highest reached Bayes Factor at <em>any time</em> during data collection characterizes the maximum evidence for the presence of an effect. If the examined effect is indeed volatile this is a useful characteristic indicative of the strength of the effect before it declines.</p>
-<p>Example:</p>
+<p>The Maximum BF captures the highest Bayes Factor reached at <em>any</em> point during data collection, regardless of the final outcome. It operationalizes the prediction that volatile effects produce genuine evidence accumulation before they decline, reaching peaks higher than random fluctuation typically produces. For each condition we record the maximum BF and the sample size <em>n</em> at which it occurred. The empirical p-value is the share of simulations whose Maximum BF is equal to or greater than the observed one.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(changeofevidence)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>maxbfcoord <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">which.max</span>(bf<span class="sc">$</span>BF), <span class="fu">max</span>(bf<span class="sc">$</span>BF))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(bf) <span class="co"># Incongruence Exp Study</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  Sequential Bayesian Testing
-  --------------------------------  
-  Test type: one-sample
-  Sample size: 236
-  Final Bayes Factor: BF10=2.242; BF01=0.446
-  Parameter prior: Cauchy(0, 0.1)
-  Directionality of H1 analysis prior: greater
-  Orthodox Test: t-value=1.774; p=0.039
-              </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotbf</span>(bf, sims)<span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>maxbfcoord[<span class="dv">1</span>], <span class="at">y=</span>maxbfcoord[<span class="dv">2</span>]), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x=</span>maxbfcoord[<span class="dv">1</span>], <span class="at">y=</span>maxbfcoord[<span class="dv">2</span>], <span class="at">label=</span><span class="fu">paste</span>(<span class="st">"Max BF:"</span>, <span class="fu">round</span>(maxbfcoord[<span class="dv">2</span>], <span class="dv">2</span>))), <span class="at">vjust=</span><span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">n =</span> <span class="fu">which.max</span>(bf<span class="sc">$</span>BF), <span class="at">bf =</span> <span class="fu">max</span>(bf<span class="sc">$</span>BF, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotbf</span>(bf, <span class="at">sims.df =</span> sims, <span class="at">show_annotations =</span> <span class="cn">FALSE</span>, <span class="at">max_sims =</span> <span class="dv">100</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> mb[[<span class="st">"n"</span>]], <span class="at">y =</span> mb[[<span class="st">"bf"</span>]]), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> mb[[<span class="st">"n"</span>]], <span class="at">y =</span> mb[[<span class="st">"bf"</span>]],</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"Max BF: %.2f (n = %d)"</span>, mb[[<span class="st">"bf"</span>]], mb[[<span class="st">"n"</span>]])),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-maxbf" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -328,33 +333,32 @@ window.Quarto = {
 <img src="coe-measures_files/figure-html/fig-maxbf-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maxbf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Empirical Bayes Factor (black) and simulated Bayes Factors (grey) for the Incongruence Exp Study. The red point indicates the maximum Bayes Factor.
+Figure&nbsp;1: Empirical Bayes Factor (black) and 100 of the simulated Bayes Factor trajectories (grey) for the Incongruence Exp condition. The red point marks the maximum Bayes Factor.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">maxbf</span>(bf, sims)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">maxbf</span>(bf, sims)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>*** Change of Evidence Results ***
 
 Number of Simulations: 1000 
 -----------------------------------
 Max BF: 10.716 at N = 153 
-Sims with ≥ this BF: 1.7 %</code></pre>
+Sims with ≥ this BF: 3.4 %</code></pre>
 </div>
 </div>
 </section>
 <section id="energy-of-bf" class="level3">
 <h3 class="anchored" data-anchor-id="energy-of-bf">Energy of BF</h3>
-<p>The energy of the Bayes Factor provides an indicator for the <em>general orientation</em> of the BF curve over the course of data collection. It is calculated as the integral of the BF in relation to the BF=1 line. Areas above the BF=1 line are positive, areas below are negative. The energy of the BF is a measure of the overall evidence for the presence of an effect at any point in time.</p>
-<p>Example:</p>
+<p>The BF Energy quantifies the overall orientation of the evidence trajectory relative to equipoise (BF = 1). It is the integral of the BF trajectory, with areas where the BF exceeds 1 contributing positively and areas below 1 contributing negatively. It captures whether evidence generally favored the effect hypothesis across the whole observation sequence, even if the final BF was equivocal. Positive values indicate an overall orientation toward the effect hypothesis, negative values toward the null. The empirical p-value is the share of simulations whose Energy is equal to or greater than the observed one.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotbf</span>(bf)<span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(bf<span class="sc">$</span>BF), <span class="at">ymin =</span> <span class="fu">pmin</span>(bf<span class="sc">$</span>BF, <span class="dv">1</span>), <span class="at">ymax =</span> <span class="dv">1</span>), <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(bf<span class="sc">$</span>BF), <span class="at">ymin =</span> <span class="dv">1</span>, <span class="at">ymax =</span> <span class="fu">pmax</span>(bf<span class="sc">$</span>BF, <span class="dv">1</span>)), <span class="at">fill =</span> <span class="st">"green"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq_along</span>(bf<span class="sc">$</span>BF)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotbf</span>(bf, <span class="at">show_annotations =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">ymin =</span> <span class="fu">pmin</span>(bf<span class="sc">$</span>BF, <span class="dv">1</span>), <span class="at">ymax =</span> <span class="dv">1</span>), <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">ymin =</span> <span class="dv">1</span>, <span class="at">ymax =</span> <span class="fu">pmax</span>(bf<span class="sc">$</span>BF, <span class="dv">1</span>)), <span class="at">fill =</span> <span class="st">"green"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-energybf" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -362,32 +366,30 @@ Sims with ≥ this BF: 1.7 %</code></pre>
 <img src="coe-measures_files/figure-html/fig-energybf-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-energybf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The green area indicates the positive energy (bf directed towards H<sub>1</sub>), the red area the negative energy (bf directed towards H<sub>0</sub>).
+Figure&nbsp;2: The green area indicates the positive energy (BF directed towards H<sub>1</sub>), the red area the negative energy (BF directed towards H<sub>0</sub>).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">energybf</span>(bf, sims)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">energybf</span>(bf, sims)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>*** Change of Evidence Results ***
 
 Number of Simulations: 1000 
 -----------------------------------
-Energy: 564.279 
-Simulated Energy: M = -19.245 , SD = 224.54 
-Sims with ≥ this Energy: 1.9 %</code></pre>
+Energy: 564.134 
+Simulated Energy: M = -52.415 , SD = 179.955 
+Sims with ≥ this Energy: 1.4 %</code></pre>
 </div>
 </div>
 </section>
 <section id="frequency-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="frequency-analysis">Frequency Analysis</h3>
-<p>The Frequency Analysis provides a measure of the pronouncedness of <em>oscillatory patterns</em> in the BF curve. If an effect is countered by a decline effect the BF curve will oscillate between and increase and decrease of evidence. This measure is calculated by specifying the Fast Fourier transforms of the experimental and simulated BF curves and adding up all amplitude values. A sampling rate of 1 over the number of data points is used and only the first half of the fft is considered, since it is symmetrical.</p>
-<p>Example:</p>
+<p>The FFT Amplitude Sum assesses oscillatory structure in the evidence trajectory. If effects accumulate, dissipate and potentially reappear, the trajectory oscillates between phases, producing pronounced periodic structure that differs from both monotonic accumulation and random fluctuation. We compute the Fast Fourier Transform of the BF trajectory with a sampling rate of 1 over the number of data points, consider only the first half of the spectrum because of its symmetry, and sum all amplitudes. Higher sums indicate more pronounced oscillation. The empirical p-value is the share of simulations whose Amplitude Sum is equal to or greater than the observed one.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotfft</span>(<span class="fu">fftcreate</span>(bf), sims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotfft</span>(<span class="fu">fftcreate</span>(bf<span class="sc">$</span>BF), <span class="at">sims.df =</span> sims)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-fft" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -402,23 +404,50 @@ Figure&nbsp;3: The Fast Fourier Transform of the Bayes Factor curve. The x-axis 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">ffttest</span>(bf, sims)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ffttest</span>(<span class="fu">fftcreate</span>(bf<span class="sc">$</span>BF), sims)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>*** Change of Evidence Results ***
 
 Number of Simulations: 1000 
 -----------------------------------
-Amplitude Sum: 9.886 
-Simulated Amplitude Sum: M = 2.229 , SD = 3.615 
-Sims with ≥ this Amplitude: 1.8 %</code></pre>
+Amplitude Sum: 9.89 
+Simulated Amplitude Sum: M = 2.307 , SD = 3.742 
+Sims with ≥ this Amplitude: 2.3 %</code></pre>
 </div>
 </div>
 </section>
+</section>
+<section id="aggregate-coe-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="aggregate-coe-p-value">Aggregate CoE p-Value</h2>
+<p>Because the three measures capture related aspects of the same trajectory, they are highly intercorrelated. To avoid testing the same information three times while keeping each measure’s sensitivity, they are combined into a single aggregate CoE p-value using the harmonic mean p-value [HMP; <span class="citation" data-cites="wilson2019">Wilson (<a href="#ref-wilson2019" role="doc-biblioref">2019</a>)</span>]. The HMP is designed for combining dependent tests. Bonferroni-type corrections assume independence and become overly conservative when tests are correlated, whereas the HMP accounts for the information the measures share. A condition then yields one omnibus test of whether its trajectory shows non-random CoE patterns, while remaining sensitive to any of the three signatures.</p>
+<p><span class="math display">\[ p_{\text{HMP}} = \frac{3}{\frac{1}{p_{\text{MaxBF}}} + \frac{1}{p_{\text{Energy}}} + \frac{1}{p_{\text{FFT}}}} \]</span></p>
+<p>The methods that later combine conditions (inverse chi-square, Fisher) assume p-values that are uniformly distributed under the null. Because the three measures are correlated, we checked this property for the HMP directly against the simulations. Every simulated trajectory was scored exactly like the data, with its three statistics ranked against the other 999 simulations of the condition and their harmonic mean taken. This yields the null distribution of the HMP for each condition (<a href="#fig-hmp" class="quarto-xref">Figure&nbsp;4</a>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">h =</span> cal<span class="sc">$</span>hmp_null), <span class="fu">aes</span>(h)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.025</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="at">fill =</span> <span class="st">"grey70"</span>, <span class="at">colour =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> cal<span class="sc">$</span>hmp_obs, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Harmonic mean p-value"</span>, <span class="at">y =</span> <span class="st">"Simulations"</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-hmp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hmp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="coe-measures_files/figure-html/fig-hmp-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hmp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Null distribution of the harmonic mean p-value for the Incongruence Exp condition (1,000 simulations), with the observed value in red.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>For Incongruence Exp, the aggregate CoE p-value is 0.021.</p>
+<p>Across all 52 conditions, the HMP of the null simulations fell at or below .05 in 5.1% and at or below .01 in 1.1% of cases, close to the nominal 5% and 1%. With three measures this strongly correlated, the HMP behaves like a single p-value under the null, and it is used directly as the aggregate CoE p-value.</p>
+<p>The aggregate CoE p-values are then combined across conditions in the <a href="coe-metaanalysis.html">CoE meta-analysis</a>, using both weighted (inverse chi-square) and unweighted (Fisher’s) methods.</p>
 </section>
 <section id="the-changeofevidence-package" class="level2">
-<h2 class="anchored" data-anchor-id="the-changeofevidence-package">The ‘changeofevidence’ package</h2>
-<p>The <code>changeofevidence</code> package is a collection of functions to calculate the change of evidence measures. It is available on <a href="https://github.com/mrzdcmps/changeofevidence">Github</a>.</p>
+<h2 class="anchored" data-anchor-id="the-changeofevidence-package">The ‘changeofevidence’ Package</h2>
+<p>All Change of Evidence analyses were conducted with the <code>changeofevidence</code> R package, which is available on <a href="https://github.com/mrzdcmps/changeofevidence">Github</a> and allows independent replication of all reported analyses.</p>
 
 
 
@@ -439,6 +468,9 @@ Lucadou, W. von, Römer, H., &amp; Walach, H. (2007). Synchronistics phenomena a
 </div>
 <div id="ref-maier2022" class="csl-entry" role="listitem">
 Maier, M. A., Dechamps, M. C., &amp; Rabeyron, T. (2022). Quantum measurement as pragmatic information transfer. <em>Journal of Anomalous Experience and Cognition</em>, <em>2</em>(1), 16–48. <a href="https://doi.org/10.31156/jaex.23535">https://doi.org/10.31156/jaex.23535</a>
+</div>
+<div id="ref-wilson2019" class="csl-entry" role="listitem">
+Wilson, D. J. (2019). The harmonic mean p-value for combining dependent tests. <em>Proceedings of the National Academy of Sciences</em>, <em>116</em>(4), 1195–1200. <a href="https://doi.org/10.1073/pnas.1814092116">https://doi.org/10.1073/pnas.1814092116</a>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -492,13 +524,14 @@ Maier, M. A., Dechamps, M. C., &amp; Rabeyron, T. (2022). Quantum measurement as
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -856,7 +889,7 @@ Maier, M. A., Dechamps, M. C., &amp; Rabeyron, T. (2022). Quantum measurement as
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2024-2025 Dr.&nbsp;Moritz Dechamps</p>
+<p>© 2024-2026 Dr.&nbsp;Moritz Dechamps</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

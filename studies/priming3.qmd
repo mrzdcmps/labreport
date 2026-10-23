@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Priming 3")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -26,13 +26,7 @@ These were computed and compared to 10,000 simulations of these conditions, whic
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study13_priming.3,
-  age_col = "S2",
-  gender_col = "gender_image",
-  male_value = "1",
-  female_value = "2"
-)
+demographics_table()
 ```
 
 ## Materials and Procedure
@@ -49,29 +43,23 @@ Participant recruitment and data collection were conducted by Norstat, following
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  exp = study13_priming.3$expbf,
-  con = study13_priming.3$conbf
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  exp = study13_priming.3$sumsexp,
-  con = study13_priming.3$sumscon
-), 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Exp
 ```{r}
-generate_coeplot(study13_priming.3$expbf)
+coeplot("Priming 3 Exp")
 ```
 ### Con
 ```{r}
-generate_coeplot(study13_priming.3$conbf)
+coeplot("Priming 3 Con")
 ```
 :::
 

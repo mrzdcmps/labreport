@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Relaxation")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -20,13 +20,7 @@ We hypothesized that the mean score for positive stimuli would be above the chan
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study12_relaxation,
-  age_col = "age",
-  gender_col = "sex",
-  male_value = "2",
-  female_value = "1"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -67,23 +61,23 @@ Data were analyzed using a Bayesian one-sample t-test with a one-tailed approach
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(study12_relaxation$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study12_relaxation$Pos_Imgs, 100)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study12_relaxation$BF)
+coeplot("Relaxation")
 ```
 :::
 
 ::: {.callout-tip title="Data" collapse="false"}
--   [Download Data](../data/relaxation/stimrelaxation.csv)
+-   [Download Data](../data/relaxation/relaxation.csv)
 -   [Data Sets Including Simulations](https://open-data.spr.ac.uk/dataset/intentional-observer-effects-quantum-randomness)
 :::
 

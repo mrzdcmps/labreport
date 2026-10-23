@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Meditation")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -37,29 +37,23 @@ Participants were tested online. After welcoming them audio playback was tested 
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  T1 = study4_meditation.t1$BF,
-  T2 = study4_meditation.t2$BF
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  T1 = study4_meditation.t1$sums,
-  T2 = study4_meditation.t2$sums
-), 100)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### T1
 ```{r}
-generate_coeplot(study4_meditation.t1$BF)
+coeplot("Meditation T1")
 ```
 ### T2
 ```{r}
-generate_coeplot(study4_meditation.t2$BF)
+coeplot("Meditation T2")
 ```
 :::
 

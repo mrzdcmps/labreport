@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Baseline 2")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -20,13 +20,7 @@ Our theoretical justification remained consistent with the previous study: we re
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study27_baseline.2,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "male",
-  female_value = "female"
-)
+demographics_table()
 ```
 
 ## Materials and Procedure
@@ -46,18 +40,17 @@ Our statistical analysis used a Bayesian one-sample t-test with a Cauchy(0, 0.1)
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study27_baseline.2$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-rw <- 20-cumsum(study27_baseline.2$hits - 12)
-changeofevidence::plotrw(rw, n_bits = 20)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study27_baseline.2$BF)
+coeplot("Baseline 2")
 ```
 :::
 ::: {.callout-tip title="Data" collapse="false"}
@@ -66,6 +59,7 @@ generate_coeplot(study27_baseline.2$BF)
 
 ::: {.callout-note title="Resources" collapse="false"}
 -   Publication (in preparation)
+-   [Preregistration](https://osf.io/rmgv7)
 -   [OSF Project](https://osf.io/2zgp5/)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/baseline/randomness2.html)
 -   [Coin Stimuli](../data/baseline/coin.zip)

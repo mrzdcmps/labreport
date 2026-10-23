@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Smokers Priming")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -54,29 +54,23 @@ Since this study was an add-on to a different smokers-related lab study conducte
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  exp = study15_smokers.2$BF.exp,
-  con = study15_smokers.2$BF.con
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  exp = study15_smokers.2$sum_condition_experimental,
-  con = study15_smokers.2$sum_condition_control
-), 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Exp
 ```{r}
-generate_coeplot(study15_smokers.2$BF.exp)
+coeplot("Smokers Priming Exp")
 ```
 ### Con
 ```{r}
-generate_coeplot(study15_smokers.2$BF.con)
+coeplot("Smokers Priming Con")
 ```
 :::
 

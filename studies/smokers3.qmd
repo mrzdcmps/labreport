@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Smokers 3")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -19,13 +19,7 @@ In this study, we used cigarette addiction as unconscious drive (see [Smokers 1]
 
 ```{r}
 
-generate_demographics_table(
-  data = study10_smokers.3,
-  age_col = "Age",
-  gender_col = "Sex",
-  male_value = "2",
-  female_value = "1"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -47,17 +41,17 @@ We hypothesized a non-linear effect development resulting in the cumulative z-sc
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study10_smokers.3$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study10_smokers.3$PosBilder, 400)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study10_smokers.3$BF)
+coeplot("Smokers 3")
 ```
 :::
 

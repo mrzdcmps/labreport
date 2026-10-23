@@ -1,140 +1,210 @@
 ---
 title: "CoE Meta-Analysis"
-format: 
+format:
   html:
     page-layout: full
 editor: visual
 page-navigation: true
+execute:
+  warning: false
+  message: false
 ---
 
-Last update: 14 July 2025
+Last update: 23 October 2026
 
-## Meta-Analysis of Change of Evidence Measures
-
-In these meta-analyses, we will analyze the overall significance of the change of evidence-measures in all experimental and control studies. Since we don't have effect sizes for these measures, we will combine the empirical p-values of the studies, this means, we will analyze the amount of simulations that show an equal or higher value in the maxbf, energybf, and frequency tests than the empirical BF.
-
-The resulting p-values will be analyzed using the inverse chi-square method, which converts each p-value into a chi-square statistic and then sums them up. The method allows for the incorporation of different degrees of freedom, making it particularly useful when the p-values come from tests with varying sample sizes.
-
-::: panel-tabset
-## Experimental Studies
-
-In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **presence** of an effect. In studies comparing experimental to control conditions, only the experimental conditions are included.
-
-```{r warning=FALSE}
-coe <- readRDS("data/coe_2025-07-14.rds")
-
-# Select studies / conditions
-data <- subset(coe, coe$Experimental == TRUE)
-
-knitr::kable(data)
-
-istwo <- ifelse(data$Direction == "different", TRUE, FALSE) # two-tailed test
-df <- data$N-1 # degrees of freedom
-
+```{r setup}
+#| include: false
+source("scripts/registry.R")
 library(metap)
+library(ggplot2)
+
+r   <- registry()
+coe <- r$st2
+# Aggregate CoE p-value: the harmonic mean of the three component
+# p-values as returned by coe(). A harmonic mean of 0 (some component
+# with no simulation as extreme as the data) is set to 1/1001, the
+# smallest p-value 1,000 simulations can resolve, because Fisher's
+# method cannot take log(0).
+coe$p_agg <- pmax(coe$`COE p`, 1 / 1001)
+exp <- coe[coe$Experimental, ]
+con <- coe[!coe$Experimental, ]
+
+fmt_p <- function(p) if (p < .001) "< .001" else sub("^0", "", sprintf("%.3f", p))
+
+combine <- function(d) {
+  w <- invchisq(d$p_agg, k = d$N - 1)
+  f <- sumlog(d$p_agg)
+  data.frame(Conditions = nrow(d),
+             `p < .05` = sprintf("%d (%.0f%%)", sum(d$p_agg < .05),
+                                 100 * mean(d$p_agg < .05)),
+             `Inverse Chi-Square (Weighted)` =
+               sprintf("χ²(%d) = %.1f, p = %s", w$df, w$chisq, fmt_p(w$p)),
+             `Fisher (Unweighted)` =
+               sprintf("χ²(%d) = %.1f, p = %s", f$df, f$chisq, fmt_p(f$p)),
+             check.names = FALSE)
+}
+
+mw <- wilcox.test(exp$p_agg, con$p_agg, alternative = "less", exact = FALSE)
+
+# Permutation test on the difference of Fisher chi-square statistics,
+# reassigning condition labels at random (group sizes held fixed).
+fisher_x <- function(p) -2 * sum(log(p))
+obs_diff <- fisher_x(exp$p_agg) - fisher_x(con$p_agg)
+set.seed(20261016)
+perm <- replicate(10000, {
+  lab <- sample(coe$Experimental)
+  fisher_x(coe$p_agg[lab]) - fisher_x(coe$p_agg[!lab])
+})
+perm_p <- (1 + sum(perm >= obs_diff)) / (1 + length(perm))
+
+grp_cols <- c(Experimental = "#2166ac", Control = "grey50")
 ```
 
-### Max BF
+## Aggregate CoE p-Value
+
+Each condition has three change of evidence measures (Maximum BF, BF Energy and FFT Amplitude Sum), all computed on the same Bayes factor trajectory. Because they capture related aspects of that trajectory and are highly intercorrelated, the primary analysis combines them per condition into a single aggregate CoE p-value, the harmonic mean of the three component p-values ([details](coe-measures.html#aggregate-coe-p-value)).
+
+The aggregate p-values are combined across conditions, separately for experimental and control conditions, with two methods. The inverse chi-square method weights each condition by its degrees of freedom (*N* − 1), so that larger studies count more. Fisher's method weights all conditions equally and serves as a robustness check against the argument that data collection was selectively extended in studies with a noticeable BF, which would give exactly those studies more weight in the weighted analysis.
+
+If the observed trajectories do not differ from chance, the aggregate p-values are approximately uniformly distributed (as the null simulations confirm, see [CoE measures](coe-measures.html#aggregate-coe-p-value)), and about 5% of conditions should fall below .05.
 
 ```{r}
-pvals <- two2one(data$`MaxBF p`, istwo)
-
-res <- invchisq(pvals, k=df)
-print(res)
-plot(res)
+#| label: tbl-aggregate
+#| tbl-cap: "Aggregate CoE p-values combined across conditions."
+tab <- rbind(cbind(Type = "Experimental", combine(exp)),
+             cbind(Type = "Control",      combine(con)))
+names(tab)[1] <- ""
+kable(tab, align = "lccc") |> kable_styling(full_width = FALSE)
 ```
-### BF Energy
+
+### Comparison with the Simulations
+
+If the conditions contain no more temporal structure than chance, their aggregate p-values lie on the diagonal, with the *k*-th smallest of *n* p-values close to *k* / (*n* + 1). The grey band marks the pointwise 95% range expected under the null. Points above the band indicate more small p-values, and thus more non-random evidence dynamics, than the simulations produce.
 
 ```{r}
-pvals <- two2one(data$`Energy p`, istwo)
-
-res <- invchisq(pvals, k=df)
-print(res)
-plot(res)
+#| label: fig-qq
+#| fig-cap: "Observed aggregate CoE p-values against the uniform distribution expected under the null, for experimental and control conditions (−log₁₀ scale, so that small p-values lie to the right and top). Grey band, pointwise 95% range under the null."
+#| fig-height: 4.5
+#| fig-width: 9
+qq <- function(d, label) {
+  n <- nrow(d); i <- seq_len(n)
+  data.frame(group = sprintf("%s (n = %d)", label, n),
+             expected = -log10(i / (n + 1)),
+             observed = -log10(sort(d$p_agg)),
+             lo = -log10(qbeta(.975, i, n - i + 1)),
+             hi = -log10(qbeta(.025, i, n - i + 1)))
+}
+qd <- rbind(qq(exp, "Experimental"), qq(con, "Control"))
+qd$group <- factor(qd$group, levels = unique(qd$group))   # Experimental left
+ggplot(qd, aes(expected, observed)) +
+  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey85") +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", colour = "grey40") +
+  geom_point(size = 2, colour = grp_cols[["Experimental"]]) +
+  facet_wrap(~ group) +
+  labs(x = expression(Expected~~-log[10](p)),
+       y = expression(Observed~~-log[10](p))) +
+  theme_bw(base_size = 11)
 ```
 
-### FFT Amplitude Sum
+## Experimental vs. Control Conditions
+
+The comparison of the two condition types is the critical test of the volatile effect hypothesis. If the observed patterns were only statistical artefacts of the analysis, the aggregate p-values should be distributed alike in both, since both pass through the same procedures. If experimental conditions carry volatile effects, their aggregate p-values should be systematically smaller. We test this with a one-sided Mann-Whitney U test and, as a robustness check, with a permutation test on the difference in Fisher chi-square statistics between the two condition types, reassigning the condition labels at random 10,000 times.
 
 ```{r}
-pvals <- two2one(data$`FFT p`, istwo)
-
-res <- invchisq(pvals, k=df)
-print(res)
-plot(res)
+#| label: fig-expcon
+#| echo: false
+#| fig-cap: "Aggregate CoE p-values of experimental and control conditions. Violins show the distribution, boxes the median and interquartile range, points the individual conditions."
+#| fig-height: 4.5
+#| fig-width: 7
+pd <- rbind(data.frame(Condition = "Experimental", p = exp$p_agg),
+            data.frame(Condition = "Control",      p = con$p_agg))
+pd$Condition <- factor(pd$Condition, levels = c("Experimental", "Control"))
+y_top <- 1.06; tick <- 0.03
+set.seed(1)
+ggplot(pd, aes(Condition, p, fill = Condition)) +
+  # p-values live on [0, 1]; bound the density estimate accordingly
+  geom_violin(alpha = 0.5, trim = FALSE, bounds = c(0, 1), scale = "width") +
+  geom_boxplot(width = 0.2, alpha = 0.6, outlier.shape = NA,
+               colour = "grey20", fill = "white", linewidth = 0.6) +
+  geom_jitter(width = 0.15, alpha = 0.5, size = 2, shape = 21,
+              colour = "grey20", stroke = 0.3) +
+  annotate("segment", x = 1, xend = 2, y = y_top, yend = y_top,
+           colour = "grey20", linewidth = 0.6) +
+  annotate("segment", x = c(1, 2), xend = c(1, 2), y = y_top,
+           yend = y_top - tick, colour = "grey20", linewidth = 0.6) +
+  annotate("text", x = 1.5, y = y_top + 0.07,
+           label = paste0("Mann-Whitney U\np ", ifelse(mw$p.value < .001, "< .001",
+                                                      paste("=", fmt_p(mw$p.value)))),
+           size = 3.2, colour = "grey20") +
+  scale_fill_manual(values = grp_cols) +
+  scale_y_continuous(breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
+  coord_cartesian(ylim = c(0, 1.2), clip = "off") +
+  labs(x = NULL, y = "Aggregate CoE p-Value") +
+  theme_bw(base_size = 12) +
+  theme(legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(size = 11, face = "bold"),
+        axis.title = element_text(face = "bold"))
 ```
 
-### Robustness to Sample Sizes
+| Test | Statistic | *p* (one-sided) |
+|---|---|---|
+| Mann-Whitney U (experimental < control) | *W* = `{r} format(mw$statistic)` | `{r} fmt_p(mw$p.value)` |
+| Permutation test, Fisher χ² difference (10,000 permutations) | Δχ² = `{r} sprintf("%.1f", obs_diff)` | `{r} fmt_p(perm_p)` |
 
-In comparison to the inverse chi-square method, which weights each p-value by its degree of freedom and therefor its sample size, Fisher's method combines p-values by taking the sum of their logarithms and then comparing them to a chi-square distribution. This method is less sensitive to sample sizes and can be used as a robustness check countering arguments of selectively continuing data collection of studies with a noticeable BF.
+The median aggregate p-value is `{r} sprintf("%.3f", median(exp$p_agg))` in experimental and `{r} sprintf("%.3f", median(con$p_agg))` in control conditions.
+
+## Sensitivity to Shared Participants
+
+The combination methods assume independent p-values, but some conditions reuse the same participants, namely the two time points of the Monks study, the three median splits of the Psychoscanner sample and the experimental and control columns of the Priming studies. The table below repeats the combination with only the first condition of each participant sample.
 
 ```{r}
-#Max BF
-pvals <- two2one(data$`MaxBF p`, istwo)
-sumlog(pvals)
-
-#Energy BF
-pvals <- two2one(data$`Energy p`, istwo)
-sumlog(pvals)
-
-#FFT Amplitude Sum
-pvals <- two2one(data$`FFT p`, istwo)
-sumlog(pvals)
+#| label: tbl-independent
+#| tbl-cap: "Aggregate CoE p-values combined across conditions, one condition per participant sample."
+first_per_sample <- function(d) d[!duplicated(r$sample[d$Study]), ]
+tab2 <- rbind(cbind(Type = "Experimental", combine(first_per_sample(exp))),
+              cbind(Type = "Control",      combine(first_per_sample(con))))
+names(tab2)[1] <- ""
+kable(tab2, align = "lccc") |> kable_styling(full_width = FALSE)
 ```
 
+## Individual Measures (Exploratory)
 
-## Control Studies
-
-In this analysis all Micro-Pk studies of the LMU Micro-Pk Lab are included that hypothesize the **absence** of an effect. In studies comparing experimental to control conditions, only the control conditions are included.
+::: {.callout-note collapse="true" title="Meta-Analysis of the Three Component Measures"}
+The component measures were the primary analysis in the first two versions of this report. They are kept as an exploratory breakdown because they show which aspect of the trajectory drives a result, although testing all three separately repeats largely the same information three times.
 
 ```{r}
-# Select studies / conditions
-data <- subset(coe, coe$Experimental == FALSE)
-knitr::kable(data)
-
-library(metap)
-istwo <- ifelse(data$Direction == "different", TRUE, FALSE) # two-tailed test
-df <- data$N-1 # degrees of freedom
+#| label: tbl-components
+#| tbl-cap: "Component p-values combined across conditions (inverse chi-square weighted by N − 1, Fisher unweighted)."
+comp <- function(d, label) {
+  do.call(rbind, lapply(c("MaxBF p", "Energy p", "FFT p"), function(col) {
+    p <- pmax(d[[col]], 1 / 1001)   # a component p of 0 cannot enter log()
+    w <- invchisq(p, k = d$N - 1); f <- sumlog(p)
+    data.frame(Conditions = label,
+               `Inverse Chi-Square (Weighted)` = sprintf("χ²(%d) = %.1f, p = %s", w$df, w$chisq, fmt_p(w$p)),
+               `Fisher (Unweighted)` = sprintf("χ²(%d) = %.1f, p = %s", f$df, f$chisq, fmt_p(f$p)),
+               check.names = FALSE)
+  }))
+}
+ct <- rbind(comp(exp, "Experimental"), comp(con, "Control"))
+ct <- cbind(Measure = rep(c("Maximum BF", "BF Energy", "FFT Amplitude Sum"), 2), ct)
+kable(ct, align = "llcc", row.names = FALSE) |> kable_styling(full_width = FALSE)
 ```
 
-### Max BF
+Component p-values of 0 (no simulation as extreme as the data) are set to 1/1001 before combining, the smallest value 1,000 simulations can resolve.
 
-```{r}
-pvals <- two2one(data$`MaxBF p`, istwo)
-res <- invchisq(pvals, k=df)
-print(res)
-plot(res)
-```
-### BF Energy
-
-```{r}
-pvals <- two2one(data$`Energy p`, istwo)
-res <- invchisq(pvals, k=df)
-print(res)
-plot(res)
-```
-
-### FFT Amplitude Sum
-
-```{r}
-pvals <- two2one(data$`FFT p`, istwo)
-res <- invchisq(pvals, k=df)
-print(res)
-plot(res)
-```
-
-### Robustness to Sample Sizes
-
-```{r}
-#Max BF
-pvals <- two2one(data$`MaxBF p`, istwo)
-sumlog(pvals)
-
-#Energy BF
-pvals <- two2one(data$`Energy p`, istwo)
-sumlog(pvals)
-
-#FFT Amplitude Sum
-pvals <- two2one(data$`FFT p`, istwo)
-sumlog(pvals)
-```
+Earlier versions passed the p-values of the two-sided Smokers 1 conditions through `two2one()`, which halves them. That conversion applies to p-values of two-sided tests, whereas CoE p-values are one-tailed exceedance probabilities already, computed against simulations that use the same two-sided Bayes factor. It is no longer applied.
 :::
+
+## Data
+
+```{r}
+#| label: tbl-data
+#| tbl-cap: "Aggregate and component CoE p-values per condition."
+d <- coe[, c("Study", "Experimental", "N", "COE p", "MaxBF p", "Energy p",
+             "FFT p", "Direction")]
+names(d)[4] <- "Aggregate p"
+d[] <- lapply(d, function(x) if (is.numeric(x) && !is.integer(x)) round(x, 3) else x)
+kable(d, row.names = FALSE) |> kable_styling(full_width = FALSE, font_size = 12)
+```

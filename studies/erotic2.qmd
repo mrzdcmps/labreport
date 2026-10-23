@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Erotic Images 2")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -26,13 +26,7 @@ Hypothesis 6 extended this reasoning to individuals addicted to internet pornogr
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study14_erotic.2,
-  age_col = "DE02_01",
-  gender_col = "DE01",
-  male_value = 2,
-  female_value = 1
-)
+demographics_table()
 ```
 
 ## Materials
@@ -60,17 +54,17 @@ The sample size was determined by practical restrictions, since this study was c
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study14_erotic.2$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study14_erotic.2$sums, 50)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study14_erotic.2$BF)
+coeplot("Erotic Images 2")
 ```
 :::
 ::: {.callout-tip title="Data" collapse="false"}

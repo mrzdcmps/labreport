@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Sobjectivity [12]")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -36,25 +36,13 @@ The study builds on [previous research](priming1.html) that initially found stro
 #### Study 1
 
 ```{r}
-generate_demographics_table(
-  data = study16_sobjectivity.1,
-  age_col = "age",
-  gender_col = "sex",
-  male_value = "m\xe4nnlich",
-  female_value = "weiblich"
-)
+demographics_table("Sobjectivity 1")
 ```
 
 #### Study 2
 
 ```{r}
-generate_demographics_table(
-  data = study17_sobjectivity.2,
-  age_col = "age",
-  gender_col = "sex",
-  male_value = "m\xe4nnlich",
-  female_value = "weiblich"
-)
+demographics_table("Sobjectivity 2")
 ```
 
 ## Materials
@@ -85,29 +73,23 @@ Only data from Cmax objective (qRNG output) is considered in this meta-analysis.
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  `Study 1` = study16_sobjectivity.1$osave.bf,
-  `Study 2` = study17_sobjectivity.2$osum1.bf
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  `Study 1` = study16_sobjectivity.1$sums,
-  `Study 2` = study17_sobjectivity.2$sums
-), 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Study 1
 ```{r}
-generate_coeplot(study16_sobjectivity.1$osave.bf)
+coeplot("Sobjectivity 1")
 ```
 ### Study 2
 ```{r}
-generate_coeplot(study17_sobjectivity.2$osum1.bf)
+coeplot("Sobjectivity 2")
 ```
 :::
 

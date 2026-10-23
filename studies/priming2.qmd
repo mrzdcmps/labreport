@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Priming 2")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -18,13 +18,7 @@ This study was a direct replication of [Priming 1](priming1.html). All predictio
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study13_priming.2,
-  age_col = "s2",
-  gender_col = "gender_image",
-  male_value = "1",
-  female_value = "2"
-)
+demographics_table()
 ```
 
 ## Materials and Procedure
@@ -41,29 +35,23 @@ Participant recruitment and data collection for the study were conducted by Nors
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  exp = study13_priming.2$expbf,
-  con = study13_priming.2$conbf
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  exp = study13_priming.2$sumsexp,
-  con = study13_priming.2$sumscon
-), 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Exp
 ```{r}
-generate_coeplot(study13_priming.2$expbf)
+coeplot("Priming 2 Exp")
 ```
 ### Con
 ```{r}
-generate_coeplot(study13_priming.2$conbf)
+coeplot("Priming 2 Con")
 ```
 :::
 

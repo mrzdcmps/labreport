@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./coe-metaanalysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-59974ff5f99283286ec136e9ced43699.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4cdc678d484c340c60f6c6e54a47defe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -95,7 +96,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -238,7 +239,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>This section will be updated with each new release of the report.</p>
-<p>Current version: <em>Studies 2016 - 2025</em> (v2)</p>
+<p>Current version: <em>Studies 2016 - 2025</em> (v3)</p>
 </div>
 </div>
 <section id="summary-of-results" class="level2">
@@ -248,11 +249,11 @@ Note
 </section>
 <section id="change-of-evidence-measures" class="level2">
 <h2 class="anchored" data-anchor-id="change-of-evidence-measures">Change of Evidence Measures</h2>
-<p>Since Psi-effects may be influenced by the accumulation of evidence over time, new measures have been devised to analyze how this <a href="coe-measures.html">evidence changes</a>. By comparing these results to simulations, empirical p-values can be calculated. A meta-analytic assessment of these change-of-evidence measures was conducted using the inverse chi-square <code>invchisq</code>-function to combine p-values across studies. Three characteristics were analyzed: Maximum Bayes Factor (BF), BF Energy, and the amplitude sum of the BF curve’s Fast Fourier Transform (FFT).</p>
-<p>For all experimental conditions, the combined chi-square statistics were calculated with 41493 degrees of freedom, yielding the following results: 41336.33 for the Maximum BF (<em>p</em> = 0.706), 42142.89 for the BF Energy (<em>p</em> = 0.012) and 42011.57 for the FFT amplitude sum (<em>p</em> = 0.036).</p>
-<p>The analysis of change of evidence measures revealed mixed results for experimental conditions. While the Maximum BF showed no significant deviation from chance expectations (<em>p</em> = 0.706), both BF Energy (<em>p</em> = 0.012) and FFT amplitude sum (<em>p</em> = 0.036) demonstrated statistically significant results. This pattern suggests that while the peak evidence accumulation may not differ substantially from simulated data, the overall energy and frequency characteristics of evidence changes show systematic deviations from random variation. The assignment of <span class="math inline">\(p_{MaxBF} = 1\)</span> to studies in the direction of H0 (MaxBF = 1) might be responsible for the difference and suggests that the MaxBF criterion could be limited.</p>
-<p>Nonetheless, the significant findings for BF Energy and FFT amplitude sum indicate the presence of a subtle but detectable pattern in how evidence accumulates over time in experimental conditions, potentially reflecting a volatile micro-PK effect that manifests not as consistent directional changes but as systematic alterations in the dynamics of evidence accumulation. The tests are robust to using methods that do or do not account for varying sample sizes, thus addressing potential issues of overweighting studies that show a noticeable BF early on and whose data collection is extended.</p>
-<p>In contrast, none of the three characteristics demonstrated statistically significant results for the control conditions. However, these significant results for two of the three measures in experimental conditions do not necessarily translate into a substantial overall effect, as only a marginally significant effect was found in the aggregate meta-analysis of micro-PK interventions. They do, however, indicate that the observed changes in evidence accumulation patterns are not likely due to random variation alone, suggesting that experimental manipulations may influence the temporal dynamics of evidence accumulation even when they do not produce detectable overall effects.</p>
+<p>Since Psi-effects may be influenced by the accumulation of evidence over time, <a href="coe-measures.html">change of evidence measures</a> compare how evidence develops during data collection with Monte Carlo simulations of the same studies under the null hypothesis. Three characteristics of each Bayes factor trajectory are assessed (its maximum, its energy and the amplitude sum of its Fourier transform) and combined per condition into an aggregate CoE p-value, the harmonic mean of the three. The aggregate p-values were combined across conditions with the inverse chi-square method, which weights conditions by sample size, and with Fisher’s method, which weights them equally. The first two versions of this report tested the three measures separately, and the aggregate replaces these three strongly correlated tests with one.</p>
+<p>In experimental conditions, 7 of 33 conditions (21%) showed an aggregate CoE p-value below .05, compared with the 5% expected by chance. Combined, the aggregate p-values deviated from the null distribution in the weighted analysis (χ²(41493) = 42238.1, <em>p</em> = .005) as well as in the unweighted analysis (χ²(66) = 119.6, <em>p</em> &lt; .001). Control conditions showed no such deviation. Here 1 of 19 conditions fell below .05, and neither the weighted (<em>p</em> = .888) nor the unweighted analysis (<em>p</em> = .552) differed from chance.</p>
+<p>The direct comparison of the two condition types is the critical test of the volatile effect hypothesis, because artefacts of the analysis would appear alike in both condition types, which pass through identical procedures. Aggregate CoE p-values were smaller in experimental than in control conditions (Mann-Whitney U, <em>W</em> = 170, <em>p</em> = .003; permutation test on the difference in Fisher chi-square statistics with 10,000 permutations, <em>p</em> = .007). The combination methods treat all conditions as independent, although some reuse the same participants, such as the two time points of the Monks study and the three median splits of the Psychoscanner sample. When only one condition per participant sample is kept, the experimental conditions still deviate from chance (weighted <em>p</em> = .010, unweighted <em>p</em> &lt; .001).</p>
+<p>Among the individual measures, which the <a href="coe-metaanalysis.html">CoE meta-analysis</a> reports as an exploratory breakdown, the weighted deviation of the experimental conditions is carried by BF Energy (<em>p</em> = .011) and FFT amplitude sum (<em>p</em> = .042), while the Maximum BF shows none (<em>p</em> = .724). The assignment of <span class="math inline">\(p_{MaxBF} = 1\)</span> to conditions whose evidence never favoured H1 (MaxBF = 1) may limit that measure.</p>
+<p>Evidence dynamics thus deviate systematically from chance in experimental but not in control conditions, while the overall effect size is only marginally significant. This pattern is consistent with a volatile micro-PK effect that shows less as a stable directional shift than as altered accumulation of evidence over time. The results hold for methods that do and do not account for sample size, which addresses the concern of overweighting studies whose data collection was extended after an early noticeable BF.</p>
 </section>
 <section id="addressing-publication-bias" class="level2">
 <h2 class="anchored" data-anchor-id="addressing-publication-bias">Addressing Publication Bias</h2>
@@ -260,13 +261,13 @@ Note
 </section>
 <section id="implications-of-findings" class="level2">
 <h2 class="anchored" data-anchor-id="implications-of-findings">Implications of Findings</h2>
-<p>The significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions suggest dynamic factors influencing evidence accumulation patterns. This goes hand in hand with theories about decline effects in (parapsychologcial) science. E.g., the Model of Pragmatic Information suggests that novel, autonomous effects may decrease in detectability over time. It may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.</p>
+<p>The aggregate change of evidence measure, which deviates from chance in experimental but not in control conditions, suggests dynamic factors influencing evidence accumulation patterns. This goes hand in hand with theories about decline effects in (parapsychologcial) science. E.g., the Model of Pragmatic Information suggests that novel, autonomous effects may decrease in detectability over time. It may explain the observed volatility and highlights the potential of change of evidence measures for understanding temporal dynamics in micro-PK effects.</p>
 <p>Weak and volatile effects are often observed in parapsychological research, exemplified by failed direct replications, a phenomenon known as the decline effect. This pattern is not unique to Psi research but has been documented in other scientific areas as well. The change of evidence measures presented here might offer a fruitful approach to identify decline patterns within individual studies and differentiate between false positives combined with regression to the mean versus genuine effect-plus-decline patterns.</p>
 <p>The marginally significant overall effect size (<em>p</em> = 0.072) suggests that micro-PK interventions may produce a weak but detectable effect, though not at conventional significance levels. This finding, combined with the significant change of evidence measures, indicates that while micro-PK effects may be present, they are subtle and may manifest primarily through alterations in evidence accumulation dynamics rather than consistent directional effects. Future research should focus on refining experimental designs, replicating studies, and exploring the underlying mechanisms of micro-PK effects to establish more robust evidence.</p>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>While our meta-analysis demonstrated only a marginally significant effect of micro-PK interventions (p = 0.072), the significant change of evidence measures for BF Energy and FFT amplitude sum in experimental conditions indicate that the phenomena observed are not purely due to chance. These findings suggest that micro-PK effects, while subtle, may influence the temporal dynamics of evidence accumulation in ways that traditional effect size measures might not fully capture.</p>
+<p>While our meta-analysis demonstrated only a marginally significant effect of micro-PK interventions (<em>p</em> = .072), the aggregate change of evidence measure deviated from chance in experimental conditions and differed from control conditions, indicating that the phenomena observed are not purely due to chance. These findings suggest that micro-PK effects, while subtle, may influence the temporal dynamics of evidence accumulation in ways that traditional effect size measures might not fully capture.</p>
 <p>Future research should focus on refining experimental designs, conducting replication studies, and maintaining transparent reporting practices to further explore and validate micro-PK effects. Particular attention should be given to understanding the mechanisms underlying the observed changes in evidence accumulation patterns. Addressing these aspects will help in understanding the underlying mechanisms and improving the robustness of evidence in this field.</p>
 <p>We would like to additionally encourage the scientific community to follow this example of transparent reporting and data sharing to enhance the reproducibility and reliability of research findings in the field of parapsychology and related disciplines and to counteract publication bias and selective reporting practices.</p>
 
@@ -325,13 +326,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -689,7 +691,7 @@ Note
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2024-2025 Dr.&nbsp;Moritz Dechamps</p>
+<p>© 2024-2026 Dr.&nbsp;Moritz Dechamps</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Incongruence")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -46,13 +46,7 @@ B)  Low-Incongruence of Needs and Micro-PK
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study9_incongruence,
-  age_col = "Alter",
-  gender_col = "Geschlecht",
-  male_value = "2",
-  female_value = "1"
-)
+demographics_table()
 
 ```
 
@@ -88,29 +82,23 @@ After the third task, participants completed a post-task questionnaire. They rat
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  high = study9_incongruence.h$BF,
-  low = study9_incongruence.l$BF
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  high = study9_incongruence.h$self,
-  low = study9_incongruence.l$self
-), 10)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### High
 ```{r}
-generate_coeplot(study9_incongruence.h$BF)
+coeplot("Incongruence Exp")
 ```
 ### Low
 ```{r}
-generate_coeplot(study9_incongruence.l$BF)
+coeplot("Incongruence Con")
 ```
 :::
 

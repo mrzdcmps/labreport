@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Priming 1")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -38,13 +38,7 @@ Studies 2, 3, and 4 were pre-registered. All studies were conducted online.
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study13_priming.1,
-  age_col = "s2",
-  gender_col = "gender_image",
-  male_value = "1",
-  female_value = "2"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -79,29 +73,23 @@ Although the stopping criterion of BF10 = 10 was reached multiple times during d
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  exp = study13_priming.1$expbf,
-  con = study13_priming.1$conbf
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  exp = study13_priming.1$sumsexp,
-  con = study13_priming.1$sumscon
-), 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Exp
 ```{r}
-generate_coeplot(study13_priming.1$expbf)
+coeplot("Priming 1 Exp")
 ```
 ### Con
 ```{r}
-generate_coeplot(study13_priming.1$conbf)
+coeplot("Priming 1 Con")
 ```
 :::
 

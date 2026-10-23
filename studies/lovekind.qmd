@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Loving Kind")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -18,13 +18,7 @@ Participants underwent a pre-recorded "loving kindness"-meditation. At the end o
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study1_lovingkind,
-  age_col = "DE02_01",
-  gender_col = "DE01",
-  male_value = "2",
-  female_value = "1"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -42,17 +36,17 @@ Additional questions were asked concerning native language, experience with medi
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study1_lovingkind$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study1_lovingkind$MED_TÖNE, 100)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study1_lovingkind$BF)
+coeplot("Loving Kind")
 ```
 :::
 

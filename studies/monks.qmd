@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Monks")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -18,13 +18,7 @@ In this experiment we tested experienced meditators and monks and explored their
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study3_monks,
-  age_col = "Alter",
-  gender_col = "Geschlecht",
-  male_value = "1",
-  female_value = "0"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -41,41 +35,31 @@ Participants were tested in different locations with several experimenter visiti
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  `Exp T1` = study3_monks.exp$T1.BF,
-  `Exp T2` = study3_monks.exp$T2.BF,
-  `Con T1` = study3_monks.con$T1.BF,
-  `Con T2` = study3_monks.con$T2.BF
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  `Exp T1` = study3_monks.exp$D1,
-  `Exp T2` = study3_monks.exp$D2,
-  `Con T1` = study3_monks.con$D1,
-  `Con T2` = study3_monks.con$D2
-), 400)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Exp T1
 ```{r}
-generate_coeplot(study3_monks.exp$T1.BF)
+coeplot("Monks T1 Exp")
 ```
 ### Exp T2
 ```{r}
-generate_coeplot(study3_monks.exp$T2.BF)
+coeplot("Monks T2 Exp")
 ```
 ### Con T1
 ```{r}
-generate_coeplot(study3_monks.con$T1.BF)
+coeplot("Monks T1 Con")
 ```
 ### Con T2
 ```{r}
-generate_coeplot(study3_monks.con$T2.BF)
+coeplot("Monks T2 Con")
 ```
 :::
 

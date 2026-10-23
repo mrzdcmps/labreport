@@ -10,14 +10,14 @@ execute:
 page-navigation: true
 ---
 
-Last update: 14 July 2025
+Last update: 23 October 2026
 
 Change of Evidence measures compare the Bayesian evidence for an effect over the course of data collection to those of monte-carlo simulations. They can reveal unusual changes in evidence which can be the consequence of the rise and decline of volatile effects.
 
 ```{r}
 
 
-source("scripts/generate_table.R")
-generate_coe_table()
+source("scripts/registry.R")
+coe_table()
 
 ```

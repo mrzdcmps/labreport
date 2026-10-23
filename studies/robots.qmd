@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Robot")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -22,13 +22,7 @@ We hypothesized (H1) that both groups might show positive deviations from chance
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study20_robots,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "männlich",
-  female_value = "weiblich"
-)
+demographics_table()
 ```
 
 ## Materials and Procedure
@@ -62,17 +56,17 @@ For this lab report only the human subjects' scores of both conditions are consi
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study20_robots$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study20_robots$hit_player, 10)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study20_robots$BF)
+coeplot("Robots")
 ```
 :::
 

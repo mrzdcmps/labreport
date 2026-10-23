@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Psyscanner")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -28,42 +28,7 @@ We hypothesized that the control subsamples (low PT scorers) would not show stro
 ## Participants
 
 ```{r}
-library(tidyverse)
-library(knitr)
-
-df <- subset(study11_psyscanner)
-
-# Data
-total_participants <- nrow(df)
-age1 <- sum(df$Age == "A1", na.rm=T)/total_participants*100
-age2 <- sum(df$Age == "A2", na.rm=T)/total_participants*100
-age3 <- sum(df$Age == "A3", na.rm=T)/total_participants*100
-age4 <- sum(df$Age == "A4", na.rm=T)/total_participants*100
-age5 <- sum(df$Age == "A5", na.rm=T)/total_participants*100
-female_count <- sum(df$Sex == "F", na.rm=T)
-male_count <- sum(df$Sex == "M", na.rm=T)
-diverse_count <- sum(df$Sex == "D", na.rm=T)
-
-# Create the table
-table_data <- data.frame(
-  Characteristic = c("N", "Female", "Male", "Other", "18 - 27 yrs", "28 - 37 yrs", "38 - 47 yrs", "48 - 57 yrs", "> 57 yrs"),
-  Count_Statistics = c(
-    total_participants,
-    female_count,
-    male_count,
-    diverse_count,
-    paste0(round(age1, 2), "%"),
-    paste0(round(age2, 2), "%"),
-    paste0(round(age3, 2), "%"),
-    paste0(round(age4, 2), "%"),
-    paste0(round(age5, 2), "%")
-    )
-)
-
-# Print the table using kable
-kable(table_data, format = "html", col.names = c("Characteristic", "Count/Statistic")) %>%
-  kableExtra::kable_styling(full_width = FALSE)
-
+demographics_table()
 ```
 
 ## Procedure
@@ -96,53 +61,39 @@ For the control groups with low PT scores, two-sided Bayesian one-sample t-tests
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  `DE high` = study11_psyscanner.de.h$BF,
-  `DE low` = study11_psyscanner.de.l$BF,
-  `AV high` = study11_psyscanner.av.h$BF,
-  `AV low` = study11_psyscanner.av.l$BF,
-  `OC high` = study11_psyscanner.oc.h$BF,
-  `OC low` = study11_psyscanner.oc.l$BF
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  `DE high` = study11_psyscanner.de.h$de.sum,
-  `DE low` = study11_psyscanner.de.l$de.sum,
-  `AV high` = study11_psyscanner.av.h$av.sum,
-  `AV low` = study11_psyscanner.av.l$av.sum,
-  `OC high` = study11_psyscanner.oc.h$oc.sum,
-  `OC low` = study11_psyscanner.oc.l$oc.sum
-), 30)
+rwplot()
 
 ```
 
 ## Change of Evidence
-### DE high
+### DE High
 ```{r}
-generate_coeplot(study11_psyscanner.de.h$BF)
+coeplot("Psyscanner Style 1 Exp")
 ```
-### DE low
+### DE Low
 ```{r}
-generate_coeplot(study11_psyscanner.de.l$BF)
+coeplot("Psyscanner Style 1 Con")
 ```
-### AV high
+### AV High
 ```{r}
-generate_coeplot(study11_psyscanner.av.h$BF)
+coeplot("Psyscanner Style 2 Exp")
 ```
-### AV low
+### AV Low
 ```{r}
-generate_coeplot(study11_psyscanner.av.l$BF)
+coeplot("Psyscanner Style 2 Con")
 ```
-### OC high
+### OC High
 ```{r}
-generate_coeplot(study11_psyscanner.oc.h$BF)
+coeplot("Psyscanner Style 3 Exp")
 ```
-### OC low
+### OC Low
 ```{r}
-generate_coeplot(study11_psyscanner.oc.l$BF)
+coeplot("Psyscanner Style 3 Con")
 ```
 :::
 

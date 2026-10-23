@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Desire")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -22,13 +22,7 @@ To induce desire, we used a short erotic story before presenting participants wi
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study23_desire,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "männlich",
-  female_value = "weiblich"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -76,17 +70,17 @@ For the lab report only objective data from the control condition is considered,
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study23_desire$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study23_desire$obj, 10)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study23_desire$BF)
+coeplot("Desire")
 ```
 :::
 

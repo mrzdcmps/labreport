@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Prayer")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -18,14 +18,7 @@ Participants were asked to pray to enter a state of devotion. Subsequently they 
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study2_prayer,
-  age_col = "DE02_01",
-  gender_col = "DE01",
-  male_value = "2",
-  female_value = "1",
-  other_value = "3"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -41,17 +34,17 @@ Participants were tested online. After welcoming them audio playback was tested 
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study2_prayer$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study2_prayer$Pos, 100)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study2_prayer$BF)
+coeplot("Prayer")
 ```
 :::
 

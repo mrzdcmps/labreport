@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Baseline 1")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -24,13 +24,7 @@ This approach was designed to work with, rather than against, the psychological 
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study26_baseline.1,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "male",
-  female_value = "female"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -65,27 +59,22 @@ The Bayesian approach was particularly suitable for our research question becaus
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  lucky = study26_baseline.1.lucky$BF,
-  unlucky = study26_baseline.1.unlucky$BF
-  ))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-rw1 <- 20-cumsum(study26_baseline.1.lucky$hits - 12)
-rw2 <- cumsum(study26_baseline.1.unlucky$hits - 8)
-changeofevidence::plotrw(list(lucky = rw1, unlucky = rw2), n_bits = 20)
+rwplot()
 ```
 
 ## Change of Evidence
 ### Lucky
 ```{r}
-generate_coeplot(study26_baseline.1.lucky$BF)
+coeplot("Baseline 1 Lucky")
 ```
 ### Unlucky
 ```{r}
-generate_coeplot(study26_baseline.1.unlucky$BF)
+coeplot("Baseline 1 Unlucky")
 ```
 :::
 

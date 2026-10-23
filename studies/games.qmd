@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Games")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -22,13 +22,7 @@ Our hypothesis was that individuals with higher intrinsic motivation, particular
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study21_games,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "männlich",
-  female_value = "weiblich"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -97,17 +91,17 @@ $m_{expected} = 389/205-1 = 0.897561$
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(study21_games$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study21_games$hits, 2*0.897561)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study21_games$BF)
+coeplot("Games")
 ```
 :::
 ::: {.callout-tip title="Data" collapse="false"}

@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Priming 4")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -18,13 +18,7 @@ The preregistered study was a conceptual replication of Study 3, testing the Mod
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study13_priming.4,
-  age_col = "S1",
-  gender_col = "S2",
-  male_value = "M",
-  female_value = "F"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -55,29 +49,23 @@ Data collection was conducted by Kantar between February and March 2020, with ab
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  exp = study13_priming.4$expbf,
-  con = study13_priming.4$conbf
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  exp = study13_priming.4$sumsexp,
-  con = study13_priming.4$sumscon
-), 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Exp
 ```{r}
-generate_coeplot(study13_priming.4$expbf)
+coeplot("Priming 4 Exp")
 ```
 ### Con
 ```{r}
-generate_coeplot(study13_priming.4$conbf)
+coeplot("Priming 4 Con")
 ```
 :::
 

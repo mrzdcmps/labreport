@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Sound preference")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -18,13 +18,7 @@ Participants were asked to listen to 40 positive or negative audio stimuli. Befo
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study5_sound,
-  age_col = "A002_01",
-  gender_col = "A001",
-  male_value = "2",
-  female_value = "1"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -43,17 +37,17 @@ Participants were tested online. After welcoming them a prerecorded relaxation a
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(study5_sound$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study5_sound$SUMS, 40)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study5_sound$BF)
+coeplot("Sound preference")
 ```
 :::
 

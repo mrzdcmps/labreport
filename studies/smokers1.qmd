@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Smokers 1")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -20,13 +20,7 @@ We tested non-smokers as control group and hypothesized no deviation from chance
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = subset(study10_smokers, Study==1),
-  age_col = "Age",
-  gender_col = "Sex",
-  male_value = "2",
-  female_value = "1"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -65,29 +59,23 @@ If smokers see more or less of the target pictures, a mechanism influencing the 
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  exp = study10_smokers.1.exp$BF,
-  con = study10_smokers.1.con$BF
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  exp = study10_smokers.1.exp$PosBilder,
-  con = study10_smokers.1.con$PosBilder
-), 400)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Exp
 ```{r}
-generate_coeplot(study10_smokers.1.exp$BF)
+coeplot("Smokers 1 Exp")
 ```
 ### Con
 ```{r}
-generate_coeplot(study10_smokers.1.con$BF)
+coeplot("Smokers 1 Con")
 ```
 :::
 

@@ -7,15 +7,15 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Epsi")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Design and Hypothesis
 
 ### Original Study Design and Hypotheses
 
-The study was initially designed as a preregistered replication of [@dechamps2021] micro-psychokinesis research (see [priming studies](prime1.html)), which had found intriguing patterns across three studies. The original research used subliminal priming to test whether participants could unconsciously influence quantum random number generators to select positive images more frequently.
+The study was initially designed as a preregistered replication of [@dechamps2021] micro-psychokinesis research (see [priming studies](priming1.html)), which had found intriguing patterns across three studies. The original research used subliminal priming to test whether participants could unconsciously influence quantum random number generators to select positive images more frequently.
 
 Hypothesis: We expected to replicate a strong correlational effect (r = .032, BF10 = 36.46) between experimental and control conditions that had been found in a post-hoc analysis of the combined data from Dechamps et al.'s three studies. We predicted this correlation would appear specifically when standard micro-PK effects were absent, representing a stable relationship between the two conditions.
 
@@ -32,13 +32,7 @@ This addresses a fundamental concern in micro-PK research - that experimenters' 
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study19_epsi,
-  age_col = "age",
-  gender_col = "sex",
-  male_value = "M",
-  female_value = "F"
-)
+demographics_table()
 ```
 
 ## Materials and Procedure
@@ -65,29 +59,23 @@ No micro-PK effect is expected in both conditions.
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(list(
-  "Condition A" = study19_epsi$BF.exp,
-  "Condition B" = study19_epsi$BF.con
-))
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(list(
-  high = study19_epsi$sumsexp,
-  low = study19_epsi$sumscon
-), 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ### Condition A
 ```{r}
-generate_coeplot(study19_epsi$BF.exp)
+coeplot("Epsi Correlation Condition A")
 ```
 ### Condition B
 ```{r}
-generate_coeplot(study19_epsi$BF.con)
+coeplot("Epsi Correlation Condition B")
 ```
 :::
 

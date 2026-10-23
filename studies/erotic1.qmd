@@ -7,9 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Erotic Images 1")
-data <- study14_erotic.1
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -29,13 +28,7 @@ Finally, the study predicts that for pornography addicts, the tRNG will generate
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = data,
-  age_col = "DE02_01",
-  gender_col = "DE01",
-  male_value = "2",
-  female_value = "1"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -88,17 +81,17 @@ The sample size was determined by practical restrictions, since this study was c
 ::: {.panel-tabset}
 ## Bayes Factor
 ```{r}
-generate_bfplot(data$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(data$Pbilder, 200)
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(data$BF)
+coeplot("Erotic Images 1")
 ```
 :::
 ::: {.callout-tip title="Data" collapse="false"}

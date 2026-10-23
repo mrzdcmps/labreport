@@ -7,8 +7,8 @@ execute:
 ---
 
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Stories")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -22,13 +22,7 @@ We formulated two main hypotheses: First (H1), that the experimental group would
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study24_stories,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "männlich",
-  female_value = "weiblich"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -83,17 +77,17 @@ Results showed no statistically significant support for micro-PK effects in eith
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(study24_stories$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-changeofevidence::plotrw(cumsum(ifelse(study24_stories$correct, 1, -1)))
+rwplot()
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study24_stories$BF)
+coeplot("Stories")
 ```
 :::
 

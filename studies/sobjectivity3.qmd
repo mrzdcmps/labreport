@@ -7,8 +7,8 @@ execute:
 ---
   
 ```{r}
-source("../scripts/generate_table.R")
-generate_table("Sobjectivity 3")
+source("../scripts/registry.R")
+study_table()
 ```
 
 ## Hypothesis
@@ -24,13 +24,7 @@ Additionally, we explored four supplementary hypotheses. First, we expected no m
 ## Participants
 
 ```{r}
-generate_demographics_table(
-  data = study18_sobjectivity.3,
-  age_col = "age",
-  gender_col = "gender",
-  male_value = "männlich",
-  female_value = "weiblich"
-)
+demographics_table()
 ```
 
 ## Materials
@@ -67,18 +61,18 @@ Only data from Cmax objective (qRNG output) is considered in this meta-analysis.
 
 ## Bayes Factor
 ```{r}
-generate_bfplot(study18_sobjectivity.3$BF)
+bfplot()
 ```
 
 ## Random Walk
 ```{r}
-generate_rwplot(study18_sobjectivity.3$obj, 20)
+rwplot()
 
 ```
 
 ## Change of Evidence
 ```{r}
-generate_coeplot(study18_sobjectivity.3$BF)
+coeplot("Sobjectivity 3")
 ```
 :::
 
