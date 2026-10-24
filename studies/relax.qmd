@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: maier2018a
+  url: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full
 ---
 
 ```{r}
@@ -82,8 +85,7 @@ coeplot("Relaxation")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00379/full) [@maier2018a]
-
+-   `{r} publication_link()`
 -   [Commentary on Publication](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01350/full) [@grote2018]
 
 -   [Reply to Commentary](https://journalofscientificexploration.org/index.php/jse/article/view/1535) [@maier2021]

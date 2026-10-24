@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: dechamps2021
+  url: https://journals.lub.lu.se/jaex/article/view/23205
 ---
 
 ```{r}
@@ -68,7 +71,7 @@ coeplot("Priming 3 Con")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://journals.lub.lu.se/jaex/article/view/23205) [@dechamps2021]
+-   `{r} publication_link()`
 -   [Preregistration](https://osf.io/894cb)
 -   [OSF Project](https://osf.io/hgxt3)
 -   [Analyses](https://osf.io/hgxt3/files/osfstorage)

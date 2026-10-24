@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: maier2022a
+  url: https://journalofscientificexploration.org/index.php/jse/article/view/2235
 ---
 
 ```{r}
@@ -84,7 +87,7 @@ coeplot("Epsi Correlation Condition B")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://journalofscientificexploration.org/index.php/jse/article/view/2235) [@maier2022a]
+-   `{r} publication_link()`
 -   [Preregistration](https://osf.io/a47g2)
 -   [OSF Project](https://osf.io/tbha6/)
 -   [OSF Data and Materials](https://osf.io/tbha6/files/osfstorage)

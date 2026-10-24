@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: maier2018
+  url: https://www.scientificexploration.org/docs/32/jse_32_2_Maier.pdf
 ---
 
 ```{r}
@@ -86,6 +89,6 @@ coeplot("Smokers 1 Con")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://www.scientificexploration.org/docs/32/jse_32_2_Maier.pdf) [@maier2018]
+-   `{r} publication_link()`
 -   [OSF Project](https://osf.io/d6gqm)
 :::

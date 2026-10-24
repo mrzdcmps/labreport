@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: jakob2020
+  url: https://www.parapsychologypress.org/jparticle/jp-84-2-227-253
 ---
 
 ```{r}
@@ -109,7 +112,7 @@ coeplot("Incongruence Con")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://www.parapsychologypress.org/jparticle/jp-84-2-227-253) [@jakob2020]
+-   `{r} publication_link()`
 -   [Preregistration](https://osf.io/xm4wf)
 -   [OSF Project](https://osf.io/gnryu/)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/incongruence/ink.html)

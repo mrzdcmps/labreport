@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: jakob2024
+  url: https://journals.lub.lu.se/jaex/article/view/23809
 ---
 
 ```{r}
@@ -102,7 +105,7 @@ coeplot("Psyscanner Style 3 Con")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://journals.lub.lu.se/jaex/article/view/23809) [@jakob2024]
+-   `{r} publication_link()`
 -   [Preregistration](https://osf.io/qxu3s/registrations)
 -   [OSF Project](https://osf.io/qxu3s/)
 -   [Main Analyses](../data/psyscanner/psyscanner-analysis.html)

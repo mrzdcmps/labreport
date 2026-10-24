@@ -4,6 +4,8 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  status: submitted
 ---
 
 ```{r}
@@ -58,7 +60,7 @@ coeplot("Baseline 2")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   Publication (in preparation)
+-   `{r} publication_link()`
 -   [Preregistration](https://osf.io/rmgv7)
 -   [OSF Project](https://osf.io/2zgp5/)
 -   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/baseline/randomness2.html)

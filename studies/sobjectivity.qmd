@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: maier2022
+  url: https://journals.lub.lu.se/jaex/article/view/23535
 ---
 
 ```{r}
@@ -99,7 +102,7 @@ coeplot("Sobjectivity 2")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://journals.lub.lu.se/jaex/article/view/23535) [@maier2022]
+-   `{r} publication_link()`
 -   [Preregistrations](https://osf.io/nveaq/registrations)
 -   [OSF Project](https://osf.io/nveaq/)
 -   [OSF Data and Materials](https://osf.io/nveaq/files/osfstorage)

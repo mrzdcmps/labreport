@@ -4,6 +4,9 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: dechamps2019
+  url: https://journalofscientificexploration.org/index.php/jse/article/view/1513
 ---
 
 ```{r}
@@ -60,7 +63,7 @@ coeplot("Smokers 3")
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   [Publication](https://journalofscientificexploration.org/index.php/jse/article/view/1513) [@dechamps2019]
+-   `{r} publication_link()`
 -   [Preregistration](https://osf.io/r6z8y)
 -   [OSF Project](https://osf.io/wk9es)
 :::

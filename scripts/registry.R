@@ -103,12 +103,86 @@ COLS_ST <- c("Study", "Effect expected", "N", "Trials", "M",
     no       = cell_spec("✖", color = "grey60"))
 }
 
-# Publication cell: the short citation linked to the article, the status
+# ---------------------------------------------------------------------
+# Publications
+#
+# Declared once, in the front matter of the study page, e.g.
+#
+#   publication:
+#     key: dechamps2025        # entry in references.bib
+#     url: https://...
+#
+# or, while not yet published,
+#
+#   publication:
+#     status: in press
+#
+# Both the Published column of the tables and the Publication line under
+# Resources (publication_link()) are built from it, and the short
+# citation ("Dechamps et al., 2025") from the bibliography. Publications
+# are not analysis data, so they do not live in the v2 registry: changing
+# one needs only quarto render.
+# ---------------------------------------------------------------------
+.meta_cache <- new.env(parent = emptyenv())
+
+.page_meta <- function(page) {
+  if (is.null(page) || is.na(page)) return(list())
+  if (!is.null(.meta_cache[[page]])) return(.meta_cache[[page]])
+  f <- file.path(.lr_root(), "studies", paste0(page, ".qmd"))
+  meta <- list()
+  if (file.exists(f)) {
+    l <- readLines(f, warn = FALSE, encoding = "UTF-8")
+    d <- which(trimws(l) == "---")
+    if (length(d) >= 2 && d[1] == 1)
+      meta <- yaml::yaml.load(paste(l[(d[1] + 1):(d[2] - 1)], collapse = "\n"))
+  }
+  .meta_cache[[page]] <- meta
+  meta
+}
+
+# "Maier & Dechamps, 2018", "Jakob et al., 2020" from a references.bib key
+.bib_label <- function(key) {
+  bib <- paste(readLines(file.path(.lr_root(), "references.bib"), warn = FALSE,
+                         encoding = "UTF-8"), collapse = "\n")
+  start <- regexpr(paste0("@[A-Za-z]+\\{", key, ","), bib)
+  if (start < 0) stop("Publication key '", key, "' not found in references.bib")
+  entry <- substr(bib, start, start + 3000)
+  entry <- sub("\n@.*", "", entry)               # stop at the next entry
+  au <- regmatches(entry, regexpr("author\\s*=\\s*\\{[^}]*\\}", entry))
+  yr <- regmatches(entry, regexpr("year\\s*=\\s*\\{?[0-9]{4}", entry))
+  au <- sub("^author\\s*=\\s*\\{", "", sub("\\}$", "", au))
+  surnames <- trimws(sub(",.*", "", strsplit(au, "\\s+and\\s+")[[1]]))
+  surnames <- gsub("[{}]", "", surnames)
+  who <- if (length(surnames) == 1) surnames
+         else if (length(surnames) == 2) paste(surnames, collapse = " & ")
+         else paste(surnames[1], "et al.")
+  paste0(who, ", ", sub(".*([0-9]{4})$", "\\1", yr))
+}
+
+# Published cell: the short citation linked to the article, the status
 # ("in press", "submitted", ...) in grey italics, or a dash.
-.publication_cell <- function(pb) {
+.publication_cell <- function(page) {
+  pb <- .page_meta(page)$publication
   if (is.null(pb)) return(cell_spec("–", color = "grey60"))
-  if (!is.null(pb$url)) return(text_spec(pb$citation, link = pb$url))
+  if (!is.null(pb$url) && !is.null(pb$key))
+    return(text_spec(.bib_label(pb$key), link = pb$url))
+  if (!is.null(pb$url)) return(text_spec("Publication", link = pb$url))
   cell_spec(pb$status, color = "grey40", italic = TRUE)
+}
+
+# The Publication line under Resources, as inline R on a study page:
+#   -   `{r} publication_link()`
+# Wrapped in I(): Quarto's `{r} ...` inline syntax escapes markdown in the
+# result unless it is marked as-is (knitr::asis_output() does not help
+# there), which left "[Publication](...)" as literal text.
+publication_link <- function(page = NULL) {
+  pb <- .page_meta(page %||% .current_page())$publication
+  md <- if (is.null(pb)) ""
+        else if (!is.null(pb$url))
+          paste0("[Publication](", pb$url, ")",
+                 if (!is.null(pb$key)) paste0(" [@", pb$key, "]") else "")
+        else paste0("Publication (", pb$status, ")")
+  I(md)
 }
 
 .mark <- function(x, yes, no, col_yes, col_no)
@@ -139,7 +213,7 @@ study_table <- function(x = NULL, page = NULL, linked = FALSE, all = FALSE,
                            "darkgreen", "red")
   ft$Labstudy <- ifelse(ft$Labstudy, "\U0001F3E0", "\U0001F30D")
   ft$Prereg <- vapply(ft$Study, function(n) .prereg_cell(r$prereg[[n]]), "")
-  ft$Published <- vapply(ft$Study, function(n) .publication_cell(r$publication[[n]]), "")
+  ft$Published <- vapply(ft$Study, function(n) .publication_cell(r$page[[n]]), "")
   if (linked) ft$Study <- text_spec(ft$Study, link = unname(r$links[ft$Study]))
 
   kbl(ft, escape = FALSE, col.names = COLS_ST,

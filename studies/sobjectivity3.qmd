@@ -4,8 +4,11 @@ format: html
 execute: 
   echo: false
   warning: false
+publication:
+  key: maier_observer_2026
+  url: https://journals.lub.lu.se/jaex/article/view/26236/25848
 ---
-  
+
 ```{r}
 source("../scripts/registry.R")
 study_table()
@@ -49,7 +52,7 @@ Finally, participants answered three honesty-check questions regarding their env
 
 We followed a preregistered, contingent plan based on the assumptions of normality and homogeneity of variance. The analysis focused on testing our main hypothesis: whether participants in the erasure condition recalled more positive images than those in the non-erasure condition. To reduce the influence of outliers, we used log-transformed subjective recall data as our primary dependent variable.
 
-We planned to conduct a one-tailed Bayesian two-sample t-test to compare the log-transformed recall scores between the two groups (logCreducedsubjective > logCmaxsubjective). If assumptions of normality and equal variances held, this test alone would serve as the basis for evaluating the hypothesis, with data collection stopping once strong evidence was reached (Bayes factor BF₁₀ > 10). We used an uninformed prior (Cauchy distribution centered at 0 with scale r = 0.1), corresponding to an expected small effect size (Cohen’s d ≈ 0.1). All analyses were performed in R and JASP, and analysis scripts were shared via OSF.
+We planned to conduct a one-tailed Bayesian two-sample t-test to compare the log-transformed recall scores between the two groups (logCreducedsubjective \> logCmaxsubjective). If assumptions of normality and equal variances held, this test alone would serve as the basis for evaluating the hypothesis, with data collection stopping once strong evidence was reached (Bayes factor BF₁₀ \> 10). We used an uninformed prior (Cauchy distribution centered at 0 with scale r = 0.1), corresponding to an expected small effect size (Cohen’s d ≈ 0.1). All analyses were performed in R and JASP, and analysis scripts were shared via OSF.
 
 ## Lab Report Data
 
@@ -57,34 +60,36 @@ Only data from Cmax objective (qRNG output) is considered in this meta-analysis.
 
 ## Results of Universal Micro-PK Hypothesis
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## Bayes Factor
+
 ```{r}
 bfplot()
 ```
 
 ## Random Walk
+
 ```{r}
 rwplot()
 
 ```
 
 ## Change of Evidence
+
 ```{r}
 coeplot("Sobjectivity 3")
 ```
 :::
 
 ::: {.callout-tip title="Data" collapse="false"}
--   [Download Data](../data/sobjectivity/sobjectivity3.csv)
+- [Download Data](../data/sobjectivity/sobjectivity3.csv)
 :::
 
 ::: {.callout-note title="Resources" collapse="false"}
--   Publication submitted
--   [Preregistration](https://osf.io/meqgw)
--   [OSF Project](https://osf.io/bj82z/)
--   [OSF Data and Materials](https://osf.io/bj82z/files/osfstorage)
--   [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/sob_rr.html)
--   [Stimuli](../data/priming/NPrime.zip)
+- `{r} publication_link()`
+- [Preregistration](https://osf.io/meqgw)
+- [OSF Project](https://osf.io/bj82z/)
+- [OSF Data and Materials](https://osf.io/bj82z/files/osfstorage)
+- [Experimental Program](https://github.com/mrzdcmps/labreport/blob/main/data/sobjectivity/sob_rr.html)
+- [Stimuli](../data/priming/NPrime.zip)
 :::
