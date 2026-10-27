@@ -117,11 +117,20 @@ COLS_ST <- c("Study", "Effect expected", "N", "Trials", "M",
 #   publication:
 #     status: in press
 #
-# Both the Published column of the tables and the Publication line under
-# Resources (publication_link()) are built from it, and the short
-# citation ("Dechamps et al., 2025") from the bibliography. Publications
-# are not analysis data, so they do not live in the v2 registry: changing
-# one needs only quarto render.
+# A page that combines several studies of which only some are published
+# lists one entry per publication and names the conditions it covers:
+#
+#   publication:
+#     - studies: Sobjectivity 1
+#       key: maier2022
+#       url: https://...
+#
+# Conditions not named in any entry show a dash. Both the Published
+# column of the tables and the Publication line under Resources
+# (publication_link()) are built from it, and the short citation
+# ("Dechamps et al., 2025") from the bibliography. Publications are not
+# analysis data, so they do not live in the v2 registry: changing one
+# needs only quarto render.
 # ---------------------------------------------------------------------
 .meta_cache <- new.env(parent = emptyenv())
 
@@ -159,11 +168,21 @@ COLS_ST <- c("Study", "Effect expected", "N", "Trials", "M",
   paste0(who, ", ", sub(".*([0-9]{4})$", "\\1", yr))
 }
 
+# The publication entries of a page as a list of entries, whether the
+# front matter gives one mapping or a list of them.
+.publications <- function(page) {
+  pb <- .page_meta(page)$publication
+  if (is.null(pb)) return(list())
+  if (!is.null(names(pb))) list(pb) else pb
+}
+
 # Published cell: the short citation linked to the article, the status
 # ("in press", "submitted", ...) in grey italics, or a dash.
-.publication_cell <- function(page) {
-  pb <- .page_meta(page)$publication
-  if (is.null(pb)) return(cell_spec("–", color = "grey60"))
+.publication_cell <- function(page, study = NULL) {
+  pbs <- Filter(function(e) is.null(e$studies) || study %in% e$studies,
+                .publications(page))
+  if (length(pbs) == 0) return(cell_spec("–", color = "grey60"))
+  pb <- pbs[[1]]
   if (!is.null(pb$url) && !is.null(pb$key))
     return(text_spec(.bib_label(pb$key), link = pb$url))
   if (!is.null(pb$url)) return(text_spec("Publication", link = pb$url))
@@ -176,13 +195,15 @@ COLS_ST <- c("Study", "Effect expected", "N", "Trials", "M",
 # result unless it is marked as-is (knitr::asis_output() does not help
 # there), which left "[Publication](...)" as literal text.
 publication_link <- function(page = NULL) {
-  pb <- .page_meta(page %||% .current_page())$publication
-  md <- if (is.null(pb)) ""
-        else if (!is.null(pb$url))
-          paste0("[Publication](", pb$url, ")",
-                 if (!is.null(pb$key)) paste0(" [@", pb$key, "]") else "")
-        else paste0("Publication (", pb$status, ")")
-  I(md)
+  md <- vapply(.publications(page %||% .current_page()), function(pb) {
+    label <- if (is.null(pb$studies)) "Publication"
+             else paste("Publication of", paste(pb$studies, collapse = " & "))
+    if (!is.null(pb$url))
+      paste0("[", label, "](", pb$url, ")",
+             if (!is.null(pb$key)) paste0(" [@", pb$key, "]") else "")
+    else paste0(label, " (", pb$status, ")")
+  }, "")
+  I(paste(md, collapse = ", "))
 }
 
 .mark <- function(x, yes, no, col_yes, col_no)
@@ -213,7 +234,7 @@ study_table <- function(x = NULL, page = NULL, linked = FALSE, all = FALSE,
                            "darkgreen", "red")
   ft$Labstudy <- ifelse(ft$Labstudy, "\U0001F3E0", "\U0001F30D")
   ft$Prereg <- vapply(ft$Study, function(n) .prereg_cell(r$prereg[[n]]), "")
-  ft$Published <- vapply(ft$Study, function(n) .publication_cell(r$page[[n]]), "")
+  ft$Published <- vapply(ft$Study, function(n) .publication_cell(r$page[[n]], n), "")
   if (linked) ft$Study <- text_spec(ft$Study, link = unname(r$links[ft$Study]))
 
   kbl(ft, escape = FALSE, col.names = COLS_ST,
@@ -268,9 +289,13 @@ demographics_table <- function(x = NULL, page = NULL, r = registry()) {
   d <- r$demographics[[cond]]
   if (is.null(d)) return(invisible(NULL))
   if (isTRUE(d$none)) return(cat(d$note %||% "Demographic Data Not Available"))
-  kable(d$rows, format = "html",
-        col.names = c("Characteristic", "Count/Statistic")) |>
+  k <- kable(d$rows, format = "html",
+             col.names = c("Characteristic", "Count/Statistic")) |>
     kable_styling(full_width = FALSE)
+  if (!is.null(d$note))
+    k <- footnote(k, general = d$note, general_title = "Note:",
+                  footnote_as_chunk = TRUE)
+  k
 }
 
 # The page name is the source filename, which is also the registry

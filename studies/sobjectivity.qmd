@@ -5,8 +5,9 @@ execute:
   echo: false
   warning: false
 publication:
-  key: maier2022
-  url: https://journals.lub.lu.se/jaex/article/view/23535
+  - studies: Sobjectivity 1
+    key: maier2022
+    url: https://journals.lub.lu.se/jaex/article/view/23535
 ---
 
 ```{r}
