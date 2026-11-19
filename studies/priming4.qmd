@@ -44,7 +44,7 @@ After all 40 trials, participants rated their perception of friendly faces as po
 
 The analysis strategy for this study followed the same approach as Study 3, focusing on changes in evidence using sequential Bayes factors (BFs) from two Bayesian one-sample t-tests (one-tailed) on the raw data (mean of positive pictures) from the positive and neutral priming conditions. Due to the anticipated volatile effect, a fixed BF threshold could not be used as a stopping criterion. Based on the positive results of Study 1, the pre-registered target sample size was around 4,000 participants.
 
-Data collection was conducted by Kantar between February and March 2020, with about 100 participants recruited per day. The final sample consisted of 3,996 participants (with demographic data for 3,951 participants). Once the target sample size was reached, data collection was halted, and the data were analyzed.
+Data collection was conducted by Kantar between February and March 2020, with about 100 participants recruited per day. The final sample consisted of 3,996 participants (with demographic data for 3,887 of them). Once the target sample size was reached, data collection was halted, and the data were analyzed.
 
 ## Results of Universal Micro-PK Hypothesis
 

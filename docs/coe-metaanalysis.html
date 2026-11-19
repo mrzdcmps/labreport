@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Last update: 23 October 2026</p>
+<p>Last update: 19 November 2026</p>
 <section id="aggregate-coe-p-value" class="level2">
 <h2 class="anchored" data-anchor-id="aggregate-coe-p-value">Aggregate CoE p-Value</h2>
 <p>Each condition has three change of evidence measures (Maximum BF, BF Energy and FFT Amplitude Sum), all computed on the same Bayes factor trajectory. Because they capture related aspects of that trajectory and are highly intercorrelated, the primary analysis combines them per condition into a single aggregate CoE p-value, the harmonic mean of the three component p-values (<a href="coe-measures.html#aggregate-coe-p-value">details</a>).</p>
@@ -260,14 +260,14 @@ Table&nbsp;1: Aggregate CoE p-values combined across conditions.
 <td style="text-align: left;">Experimental</td>
 <td style="text-align: center;">33</td>
 <td style="text-align: center;">7 (21%)</td>
-<td style="text-align: center;">χ²(41493) = 42238.1, p = .005</td>
+<td style="text-align: center;">χ²(41429) = 42174.7, p = .005</td>
 <td style="text-align: left;">χ²(66) = 119.6, p = &lt; .001</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Control</td>
 <td style="text-align: center;">19</td>
 <td style="text-align: center;">1 (5%)</td>
-<td style="text-align: center;">χ²(27584) = 27298.6, p = .888</td>
+<td style="text-align: center;">χ²(27520) = 27234.6, p = .888</td>
 <td style="text-align: left;">χ²(38) = 36.2, p = .552</td>
 </tr>
 </tbody>
@@ -361,7 +361,7 @@ Figure&nbsp;2: Aggregate CoE p-values of experimental and control conditions. Vi
 </section>
 <section id="sensitivity-to-shared-participants" class="level2">
 <h2 class="anchored" data-anchor-id="sensitivity-to-shared-participants">Sensitivity to Shared Participants</h2>
-<p>The combination methods assume independent p-values, but some conditions reuse the same participants, namely the two time points of the Monks study, the three median splits of the Psychoscanner sample and the experimental and control columns of the Priming studies. The table below repeats the combination with only the first condition of each participant sample.</p>
+<p>The combination methods assume independent p-values, but some conditions reuse the same participants, namely the two time points of the Monks study, the three median splits of the Psychoscanner sample, the two Schrödinger’s Cat conditions and the two Epsi conditions. The table below repeats the combination with only the first condition of each participant sample.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>first_per_sample <span class="ot">&lt;-</span> <span class="cf">function</span>(d) d[<span class="sc">!</span><span class="fu">duplicated</span>(r<span class="sc">$</span>sample[d<span class="sc">$</span>Study]), ]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tab2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">cbind</span>(<span class="at">Type =</span> <span class="st">"Experimental"</span>, <span class="fu">combine</span>(<span class="fu">first_per_sample</span>(exp))),</span>
@@ -390,14 +390,14 @@ Table&nbsp;2: Aggregate CoE p-values combined across conditions, one condition p
 <td style="text-align: left;">Experimental</td>
 <td style="text-align: center;">29</td>
 <td style="text-align: center;">7 (24%)</td>
-<td style="text-align: center;">χ²(38419) = 39067.4, p = .010</td>
+<td style="text-align: center;">χ²(38355) = 39004.1, p = .010</td>
 <td style="text-align: left;">χ²(58) = 107.3, p = &lt; .001</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Control</td>
 <td style="text-align: center;">15</td>
 <td style="text-align: center;">1 (7%)</td>
-<td style="text-align: center;">χ²(23471) = 23068.9, p = .969</td>
+<td style="text-align: center;">χ²(23407) = 23004.9, p = .969</td>
 <td style="text-align: left;">χ²(30) = 24.6, p = .744</td>
 </tr>
 </tbody>
@@ -457,38 +457,38 @@ Table&nbsp;3: Component p-values combined across conditions (inverse chi-square 
 <tr class="odd">
 <td style="text-align: left;">Maximum BF</td>
 <td style="text-align: left;">Experimental</td>
-<td style="text-align: center;">χ²(41493) = 41321.4, p = .724</td>
+<td style="text-align: center;">χ²(41429) = 41257.5, p = .724</td>
 <td style="text-align: center;">χ²(66) = 113.9, p = &lt; .001</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BF Energy</td>
 <td style="text-align: left;">Experimental</td>
-<td style="text-align: center;">χ²(41493) = 42154.2, p = .011</td>
+<td style="text-align: center;">χ²(41429) = 42087.0, p = .011</td>
 <td style="text-align: center;">χ²(66) = 120.8, p = &lt; .001</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FFT Amplitude Sum</td>
 <td style="text-align: left;">Experimental</td>
-<td style="text-align: center;">χ²(41493) = 41991.1, p = .042</td>
+<td style="text-align: center;">χ²(41429) = 41929.6, p = .041</td>
 <td style="text-align: center;">χ²(66) = 118.9, p = &lt; .001</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Maximum BF</td>
 <td style="text-align: left;">Control</td>
-<td style="text-align: center;">χ²(27584) = 18482.7, p = 1.000</td>
+<td style="text-align: center;">χ²(27520) = 18418.8, p = 1.000</td>
 <td style="text-align: center;">χ²(38) = 38.0, p = .467</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">BF Energy</td>
 <td style="text-align: left;">Control</td>
-<td style="text-align: center;">χ²(27584) = 27129.3, p = .974</td>
+<td style="text-align: center;">χ²(27520) = 27066.7, p = .974</td>
 <td style="text-align: center;">χ²(38) = 31.1, p = .777</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FFT Amplitude Sum</td>
 <td style="text-align: left;">Control</td>
-<td style="text-align: center;">χ²(27584) = 27087.5, p = .983</td>
-<td style="text-align: center;">χ²(38) = 35.5, p = .584</td>
+<td style="text-align: center;">χ²(27520) = 27022.8, p = .983</td>
+<td style="text-align: center;">χ²(38) = 35.5, p = .585</td>
 </tr>
 </tbody>
 </table>
@@ -855,21 +855,21 @@ Table&nbsp;4: Aggregate and component CoE p-values per condition.
 <tr class="odd">
 <td style="text-align: left;">Priming 4 Exp</td>
 <td style="text-align: left;">TRUE</td>
-<td style="text-align: right;">4060</td>
-<td style="text-align: right;">0.667</td>
-<td style="text-align: right;">0.539</td>
-<td style="text-align: right;">0.877</td>
+<td style="text-align: right;">3996</td>
 <td style="text-align: right;">0.666</td>
+<td style="text-align: right;">0.539</td>
+<td style="text-align: right;">0.886</td>
+<td style="text-align: right;">0.657</td>
 <td style="text-align: left;">greater</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Priming 4 Con</td>
 <td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">4060</td>
-<td style="text-align: right;">0.717</td>
+<td style="text-align: right;">3996</td>
+<td style="text-align: right;">0.718</td>
 <td style="text-align: right;">0.562</td>
 <td style="text-align: right;">0.972</td>
-<td style="text-align: right;">0.727</td>
+<td style="text-align: right;">0.731</td>
 <td style="text-align: left;">greater</td>
 </tr>
 <tr class="odd">

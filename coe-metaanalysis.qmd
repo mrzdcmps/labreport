@@ -10,7 +10,7 @@ execute:
   message: false
 ---
 
-Last update: 23 October 2026
+Last update: 19 November 2026
 
 ```{r setup}
 #| include: false
@@ -157,7 +157,7 @@ The median aggregate p-value is `{r} sprintf("%.3f", median(exp$p_agg))` in expe
 
 ## Sensitivity to Shared Participants
 
-The combination methods assume independent p-values, but some conditions reuse the same participants, namely the two time points of the Monks study, the three median splits of the Psychoscanner sample and the experimental and control columns of the Priming studies. The table below repeats the combination with only the first condition of each participant sample.
+The combination methods assume independent p-values, but some conditions reuse the same participants, namely the two time points of the Monks study, the three median splits of the Psychoscanner sample, the two Schrödinger's Cat conditions and the two Epsi conditions. The table below repeats the combination with only the first condition of each participant sample.
 
 ```{r}
 #| label: tbl-independent
