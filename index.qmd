@@ -31,7 +31,7 @@ Detailed information on the original hypotheses and design of each study, along 
 
 ### Versions
 
-The report is regularly updated to include new studies and results. The current third version (v3) includes all studies conducted from the beginning of the project in 2016 until 13 July 2025. Compared with the second version, all analyses were rerun with version 2.2.3 of the `changeofevidence` package, the three change of evidence measures of each condition are combined into an aggregate CoE p-value, and the null simulations of nine conditions were replaced by sets generated with the same prior as their analysis. In November 2026 the data of Priming 4 were corrected: the data file used so far contained 64 duplicate rows of 60 participants, created when the experimental data were joined with repeated questionnaire submissions, so that the analysis now uses the 3,996 participants of the published study instead of 4,060.
+The report is regularly updated to include new studies and results. The current third version (v3) includes all studies conducted from 2015, the year of the first study, until 13 July 2025. Compared with the second version, all analyses were rerun with version 2.2.3 of the `changeofevidence` package, the three change of evidence measures of each condition are combined into an aggregate CoE p-value, and the null simulations of nine conditions were replaced by sets generated with the same prior as their analysis. In November 2026 the data of Priming 4 were corrected: the data file used so far contained 64 duplicate rows of 60 participants, created when the experimental data were joined with repeated questionnaire submissions, so that the analysis now uses the 3,996 participants of the published study instead of 4,060.
 
 ### Comments and Feedback
 
@@ -41,7 +41,7 @@ Instead of a traditional peer-review process, we would like to encourage you to 
 
 If you find this report useful and wish to cite it in your work, please use the following citation format:
 
-Dechamps, M. C. (2026). *Meta-Analysis of a Complete Micro-PK Database from the LMU Lab: Years 2016-2025* (Version 3). <https://doi.org/10.5281/zenodo.13623031>. Retrieved from <https://mrzdcmps.github.io/labreport>
+Dechamps, M. C. (2026). *Meta-Analysis of a Complete Micro-PK Database from the LMU Lab: Years 2015–2025* (Version 3) [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.24373565>. Retrieved from <https://mrzdcmps.github.io/labreport>
 
 ::: {.callout-note collapse="true"}
 ## Previous Versions

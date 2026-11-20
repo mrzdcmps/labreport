@@ -10,7 +10,7 @@ page-navigation: true
 ::: callout-note
 This section will be updated with each new release of the report.
 
-Current version: *Studies 2016 - 2025* (v3)
+Current version: *Studies 2015 - 2025* (v3)
 :::
 
 ```{r setup, include=FALSE}
